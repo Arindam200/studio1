@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { Menu } from "../ui/navbar-menu";
 import Link from "next/link";
 import { cn } from "@/lib/utils";

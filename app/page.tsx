@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { GridBackgroundDemo } from "../components/ui/background";
 import { Marquee } from "@/components/ui/marquee";
 

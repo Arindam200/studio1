@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Spotlight } from "@/components/ui/spotlight";
-import Underline from "@/components/ui/underline";
+// import Underline from "@/components/ui/underline";
 import { AnimatedTooltip } from "./animated-tooltip";
 import Navbar from "./navbar";
 

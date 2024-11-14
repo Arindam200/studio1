@@ -53,17 +53,17 @@ const people = [
       "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
   },
 ];
-
-export const AnimatedTooltip = ({
-  // items = people,
-}: {
-  // items: {
-  //   id: number;
-  //   name: string;
-  //   designation: string;
-  //   image: string;
-  // }[];
-}) => {
+// {
+//   // items = people,
+// }: {
+//   // items: {
+//   //   id: number;
+//   //   name: string;
+//   //   designation: string;
+//   //   image: string;
+//   // }[];
+// }
+export const AnimatedTooltip = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const springConfig = { stiffness: 100, damping: 5 };
   const x = useMotionValue(0); // going to set this value on mouse move
@@ -84,7 +84,7 @@ export const AnimatedTooltip = ({
 
   return (
     <>
-      {people.map((item, idx) => (
+      {people.map((item) => (
         <div
           className="-mr-4 relative group"
           key={item.name}
