@@ -1,20 +1,20 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+// import { useState, useEffect } from 'react'
 import Link from "next/link"
 import  Navbar2  from './acc-navbar'
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
+  // // const [isScrolled, setIsScrolled] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
+  // useEffect(() => {
+  //   // const handleScroll = () => {
+  //   //   setIsScrolled(window.scrollY > 20)
+  //   // }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  //   window.addEventListener('scroll', handleScroll)
+  //   return () => window.removeEventListener('scroll', handleScroll)
+  // }, [])
 
   return (
     <header className="fixed top-2 z-50 w-full">
