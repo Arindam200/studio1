@@ -1,12 +1,21 @@
 "use client";
 import React from "react";
 import { Spotlight } from "@/components/ui/spotlight";
-// import Underline from "@/components/ui/underline";
+import { ArrowRight } from 'lucide-react';
 import { AnimatedTooltip } from "./animated-tooltip";
 import Navbar from "./navbar";
+import type { Variants } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+
+const gVariants: Variants = {
+  normal: { rotate: 0 },
+  animate: { rotate: 180 },
+};
 
 
 export function GridBackgroundDemo() {
+
+  const controls = useAnimation();
   return (
     <div className="h-[50rem] overflow-x-hidden w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex flex-col items-center justify-center cursor-all-scroll">
       <Navbar />
@@ -49,11 +58,42 @@ export function GridBackgroundDemo() {
       
       <div className="flex max-sm:gap-3 gap-5 py-2 pb-4">
       
-<button className="px-8 max-sm:px-4 max-sm:text-base py-2 text-center text-lg rounded-md bg-gradient-to-b from-orange-500 to-orange-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
-  Book a Call
+<button onMouseEnter={() => controls.start('animate')}
+      onMouseLeave={() => controls.start('normal')} className="px-6 gap-2 flex max-sm:px-4 max-sm:text-base py-2.5 text-center text-lg font-semibold rounded-md bg-gradient-to-b from-orange-500 to-orange-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M21 10.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6" />
+        <path d="M16 2v4" />
+        <path d="M3 10h18" />
+        <path d="M8 2v4" />
+        <motion.g
+          transition={{ type: 'spring', stiffness: 50, damping: 10 }}
+          variants={gVariants}
+          animate={controls}
+        >
+          <path d="m15.2 16.9-.9-.4" />
+          <path d="m15.2 19.1-.9.4" />
+          <path d="m16.9 15.2-.4-.9" />
+          <path d="m16.9 20.8-.4.9" />
+          <path d="m19.5 14.3-.4.9" />
+          <path d="m19.5 21.7-.4-.9" />
+          <path d="m21.7 16.5-.9.4" />
+          <path d="m21.7 19.5-.9-.4" />
+          <circle cx="18" cy="18" r="3" />
+        </motion.g>
+      </svg> Book a Call
 </button>
-<button className="shadow-[0_4px_14px_0_rgb(0,0,0,10%)] max-sm:px-4 max-sm:text-base hover:shadow-[0_6px_20px_rgba(93,93,93,23%)] px-8 py-2 bg-[#fff] text-[#696969] rounded-md font-normal transition duration-200 ease-linear">
-  Know More
+<button className="shadow-[0_4px_14px_0_rgb(0,0,0,10%)] text-lg font-semibold px-6 gap-2 flex max-sm:px-4 max-sm:text-base hover:shadow-[0_6px_20px_rgba(93,93,93,23%)] py-2.5 bg-[#fff] text-orange-500 rounded-md transition duration-200 ease-linear">
+  Know More <ArrowRight className='pt-1' />
 </button>
       </div>
       {/* <Underline /> */}

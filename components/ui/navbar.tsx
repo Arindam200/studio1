@@ -3,8 +3,6 @@
 import { useState, useEffect } from 'react'
 import Link from "next/link"
 import  Navbar2  from './acc-navbar'
-// import { SideMenuBtn } from './cross'
-// import { is } from '@react-three/fiber/dist/declarations/src/core/utils'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -37,14 +35,12 @@ export default function Navbar() {
           )
         }        
         {!isScrolled && (
-          <button className=" shadow-[0_4px_14px_0_rgb(0,0,0,10%)] flex text-lg  max-md:text-sm font-semibold max-md:font-light hover:shadow-[0_6px_20px_rgba(93,93,93,23%)] px-8 py-2.5 max-md:px-4 max-md:py-1.5 bg-[#fff] text-[#696969] rounded-md transition duration-200 ease-linear">
-          Contact Us
+          <button className=" shadow-[0_4px_14px_0_rgb(0,0,0,10%)] flex text-lg  max-md:text-sm font-semibold max-md:font-light hover:shadow-[0_6px_20px_rgba(93,93,93,23%)] px-8 py-2.5 max-md:px-4 max-md:py-1.5 bg-[#fff] text-orange-500 rounded-md transition duration-200 ease-linear">
+          Contact Us 
         </button>)
           }
-        {/* <div className="md:hidden">
-          <SideMenuBtn />
-        </div> */}
       </div>
     </header>
   )
 }
+
