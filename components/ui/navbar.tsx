@@ -24,7 +24,7 @@ export default function Navbar() {
         {!isScrolled && (
           <Link href="/" className="flex items-center space-x-2">
           <img src='https://pbs.twimg.com/profile_images/1816112344445116421/TLDdAxAY_400x400.jpg' className="h-14 w-14 max-md:h-10 max-md:w-10 fill-primary text-primary rounded-full" />
-          <span className="text-lg font-semibold max-sm:hidden sm:visible">Studio1HQ</span>
+          <span className="text-xl font-bold max-sm:hidden sm:visible">Studio1HQ</span>
         </Link>)
           }
           

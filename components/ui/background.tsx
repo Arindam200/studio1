@@ -8,7 +8,7 @@ import Navbar from "./navbar";
 
 export function GridBackgroundDemo() {
   return (
-    <div className="h-[50rem] overflow-x-hidden w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex flex-col items-center justify-center">
+    <div className="h-[50rem] overflow-x-hidden w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex flex-col items-center justify-center cursor-all-scroll">
       <Navbar />
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
@@ -42,17 +42,17 @@ export function GridBackgroundDemo() {
       <div className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 pt-8 py-4 text-center">
       Empowering <span className="font-bold ">  Your Voice</span><br />in the  <span className="font-bold">Developer Community</span>
 
-      <p className="text-xl sm:text-2xl font-semibold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4 text-center">
+      <p className="text-lg max-sm:px-2.5 sm:text-2xl font-semibold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4 text-center">
           Technical Content and DevRel Strategies That Drive Results
       </p>
       </div>
       
-      <div className="flex gap-5 py-2 pb-4">
+      <div className="flex max-sm:gap-3 gap-5 py-2 pb-4">
       
-<button className="px-8 py-2 text-center text-lg rounded-md bg-gradient-to-b from-blue-500 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
+<button className="px-8 max-sm:px-4 max-sm:text-base py-2 text-center text-lg rounded-md bg-gradient-to-b from-blue-500 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
   Book a Call
 </button>
-<button className="shadow-[0_4px_14px_0_rgb(0,0,0,10%)] hover:shadow-[0_6px_20px_rgba(93,93,93,23%)] px-8 py-2 bg-[#fff] text-[#696969] rounded-md font-light transition duration-200 ease-linear">
+<button className="shadow-[0_4px_14px_0_rgb(0,0,0,10%)] max-sm:px-4 max-sm:text-base hover:shadow-[0_6px_20px_rgba(93,93,93,23%)] px-8 py-2 bg-[#fff] text-[#696969] rounded-md font-normal transition duration-200 ease-linear">
   Know More
 </button>
       </div>
