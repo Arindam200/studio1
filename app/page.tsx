@@ -91,9 +91,9 @@ export default function Home() {
         </div>
       ))}
       </Marquee>
-      <div className="py-20 px-5 space-y-8">
+      <div className="py-20 px-5 space-y-8 overflow-x-hidden">
         <h1 className="text-4xl text-white font-bold text-center">What  <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 from">We Do</span></h1>
-        <div className="flex justify-center gap-10 mx-10">
+        <div className="flex justify-center gap-10 sm:mx-10 max-sm:mx-2 max-sm:flex-col">
           <CardWithGridEllipsis >
             <CardBody />
           </CardWithGridEllipsis>

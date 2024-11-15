@@ -9,7 +9,7 @@ export default function Foooter() {
           <div className="space-y-6">
             <div className="space-y-2">
               <h2 className="text-2xl font-bold">Studio1</h2>
-              <p className="text-muted-foreground w-96">
+              <p className="text-muted-foreground sm:w-96">
                 A collection of 100+ responsive HTML templates for your startup business or side project.
               </p>
             </div>
@@ -99,7 +99,7 @@ export default function Foooter() {
           </div>
         </div>
         <div className="mt-12 flex flex-col gap-4 border-t pt-8 md:flex-row md:items-center md:justify-between">
-          <p className="text-sm text-muted-foreground">© 2024 Shadcnblocks. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© 2024 Studio1. All rights reserved.</p>
           <nav className="flex gap-4">
             <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Terms and Conditions

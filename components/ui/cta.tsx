@@ -3,10 +3,10 @@ import {CardWithGrid} from '@/components/ui/cards';
 
 const CTA10 = () => {
   return (
-    <section className="py-32">
+    <section className="sm:py-32 py-20">
       <div className="container">
       <CardWithGrid >
-        <div className="flex w-full flex-col gap-16 overflow-hidden rounded-lg border border-orange-400 p-8 md:rounded-xl lg:flex-row lg:items-center lg:p-16">
+        <div className="flex w-full flex-col gap-16 max-sm:gap-8 overflow-hidden rounded-lg border border-orange-400 p-8 md:rounded-xl lg:flex-row lg:items-center lg:p-16">
         
           <div className="flex-1">
             
@@ -19,7 +19,7 @@ const CTA10 = () => {
             </p>
           </div>
           <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
-          <button className="px-6 gap-2 flex max-sm:px-4 max-sm:text-base py-2.5 text-center text-lg font-semibold rounded-md bg-gradient-to-b from-orange-500 to-orange-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
+          <button className="px-6 gap-2 max-sm:justify-center flex max-sm:px-4 max-sm:text-base py-2.5 text-center text-lg font-semibold rounded-md bg-gradient-to-b from-orange-500 to-orange-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
              Book a Call <ArrowRight className='pt-1' />
             </button>
           </div>

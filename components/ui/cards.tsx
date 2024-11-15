@@ -18,7 +18,7 @@ export const CardBody = ({ className = '' }) => (
 );
 
 export const CardWithGridEllipsis = ({ children }: { children: React.ReactNode }) => (
-    <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} className="border w-[70rem] relative h-56 rounded-md overflow-hidden bg-zinc-950 dark:border-zinc-900 p-1">
+    <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} className="border sm:w-[70rem] relative sm:h-56 rounded-md overflow-hidden bg-zinc-950 dark:border-zinc-900 p-1">
 
       <div
         className={`size-full bg-[url(assets/svg/circle-ellipsis.svg)] bg-repeat bg-[length:30px_30px]`}
@@ -34,7 +34,7 @@ export const CardWithGridEllipsis = ({ children }: { children: React.ReactNode }
 
 export const CardWithGrid = ({ children }: { children: React.ReactNode }) => (
   <div className="border w-full rounded-md overflow-hidden dark:border-zinc-900 bg-zinc-950">
-    <div className="size-full bg-[url(/svg/grid.svg)] bg-repeat bg-[length:50px_50px]">
+    <div className="size-full bg-[url(assets/svg/grid.svg)] bg-repeat bg-[length:50px_50px]">
       <div className="size-full bg-gradient-to-tr from-zinc-950 via-zinc-950/[.85] to-zinc-950">
         {children}
       </div>
