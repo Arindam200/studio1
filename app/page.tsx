@@ -78,7 +78,6 @@ export default function Home() {
   return (
     <div className="bg-black">
       <GridBackgroundDemo />
-      {/* <div className="text-center font-bold text-3xl">Trusted By</div> */}
       <Marquee>
       {arr.map((Logo, index) => (
         <div

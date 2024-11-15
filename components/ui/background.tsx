@@ -40,7 +40,7 @@ export function GridBackgroundDemo() {
   <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
 </button>
       <div className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 pt-8 py-4 text-center">
-      Empowering <span className="font-bold ">  Your Voice</span><br />in the  <span className="font-bold">Developer Community</span>
+      Empowering <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 from"> Your Voice</span><br />in the  <span className="font-bold">Developer Community</span>
 
       <p className="text-lg max-sm:px-2.5 sm:text-2xl font-semibold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4 text-center">
           Technical Content and DevRel Strategies That Drive Results
@@ -49,7 +49,7 @@ export function GridBackgroundDemo() {
       
       <div className="flex max-sm:gap-3 gap-5 py-2 pb-4">
       
-<button className="px-8 max-sm:px-4 max-sm:text-base py-2 text-center text-lg rounded-md bg-gradient-to-b from-blue-500 to-blue-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
+<button className="px-8 max-sm:px-4 max-sm:text-base py-2 text-center text-lg rounded-md bg-gradient-to-b from-orange-500 to-orange-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
   Book a Call
 </button>
 <button className="shadow-[0_4px_14px_0_rgb(0,0,0,10%)] max-sm:px-4 max-sm:text-base hover:shadow-[0_6px_20px_rgba(93,93,93,23%)] px-8 py-2 bg-[#fff] text-[#696969] rounded-md font-normal transition duration-200 ease-linear">
