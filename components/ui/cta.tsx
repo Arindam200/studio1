@@ -3,7 +3,7 @@ import {CardWithGrid} from '@/components/ui/cards';
 
 const CTA10 = () => {
   return (
-    <section className="sm:py-32 py-20">
+    <section className="sm:py-32 py-20" id='#cta'>
       <div className="container">
       <CardWithGrid >
         <div className="flex w-full flex-col gap-16 max-sm:gap-8 overflow-hidden rounded-lg border border-orange-400 p-8 md:rounded-xl lg:flex-row lg:items-center lg:p-16">

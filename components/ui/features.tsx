@@ -48,7 +48,7 @@ import {
   
   const Feature43 = () => {
     return (
-      <section className="sm:py-32 py-20">
+      <section className="sm:py-32 py-20" id='why-us'>
         <div className="container">
           <div className="mb-10 md:mb-20">
             <h2 className="mb-2 text-center text-3xl font-semibold lg:text-5xl">
@@ -58,11 +58,14 @@ import {
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
             {reasons.map((reason, i) => (
               <div key={i} className="flex flex-col">
-                <div className="mb-5 flex size-16 items-center justify-center rounded-full bg-accent">
+                <div className="flex max-sm:justify-center">
+                <div className="mb-5 flex size-16 items-center justify-center rounded-lg bg-zinc-900">
                   {reason.icon}
                 </div>
-                <h3 className="mb-2 text-xl font-semibold">{reason.title}</h3>
-                <p className="text-muted-foreground">{reason.description}</p>
+                </div>
+                
+                <h3 className="mb-2 text-xl font-semibold text-orange-400 max-sm:text-center">{reason.title}</h3>
+                <p className="text-muted-foreground max-sm:text-center">{reason.description}</p>
               </div>
             ))}
           </div>

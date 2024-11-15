@@ -8,47 +8,47 @@ export default function Foooter() {
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="space-y-6">
             <div className="space-y-2">
-              <h2 className="text-2xl font-bold">Studio1</h2>
+              <h2 className="text-2xl font-bold text-orange-400">Studio1</h2>
               <p className="text-muted-foreground sm:w-96">
                 A collection of 100+ responsive HTML templates for your startup business or side project.
               </p>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 ">
               <Link
                 href="#"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                <Instagram className="h-5 w-5" />
+                <Instagram className="h-5 w-5 text-orange-400" />
                 <span className="sr-only">Instagram</span>
               </Link>
               <Link
                 href="#"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                <Facebook className="h-5 w-5" />
+                <Facebook className="h-5 w-5 text-orange-400" />
                 <span className="sr-only">Facebook</span>
               </Link>
               <Link
                 href="#"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                <Twitter className="h-5 w-5" />
+                <Twitter className="h-5 w-5 text-orange-400" />
                 <span className="sr-only">Twitter</span>
               </Link>
               <Link
                 href="#"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                <Linkedin className="h-5 w-5" />
+                <Linkedin className="h-5 w-5 text-orange-400" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
             <div className="space-y-4">
-              <h3 className="font-bold">Product</h3>
+              <h3 className="font-bold text-orange-400">Product</h3>
               <nav className="flex flex-col gap-2">
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors ">
                   Overview
                 </Link>
                 <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
@@ -63,7 +63,7 @@ export default function Foooter() {
               </nav>
             </div>
             <div className="space-y-4">
-              <h3 className="font-bold">Company</h3>
+              <h3 className="font-bold text-orange-400">Company</h3>
               <nav className="flex flex-col gap-2">
                 <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                   About
@@ -80,7 +80,7 @@ export default function Foooter() {
               </nav>
             </div>
             <div className="space-y-4">
-              <h3 className="font-bold">Resources</h3>
+              <h3 className="font-bold text-orange-400">Resources</h3>
               <nav className="flex flex-col gap-2">
                 <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                   Help

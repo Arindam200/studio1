@@ -1,59 +1,102 @@
-// import Image from 'next/image'
-// import { Card, CardContent } from "@/components/ui/card"
-// import { Quote } from 'lucide-react'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+import pfp from '@/app/assets/images/pfp.png';
 
-// const testimonials = [
-//   {
-//     quote: "DevRel Boost transformed our developer community. Their strategies increased engagement by 200% in just three months!",
-//     author: "Sarah Johnson",
-//     title: "CTO, TechInnovate",
-//     avatar: "/placeholder.svg?height=100&width=100"
-//   },
-//   {
-//     quote: "Their technical writing team produced content that not only educated our users but also significantly improved our SEO rankings.",
-//     author: "Michael Chen",
-//     title: "Head of Marketing, AIFlow",
-//     avatar: "/placeholder.svg?height=100&width=100"
-//   },
-//   {
-//     quote: "The DevRel specialists at this agency truly understand the intersection of AI, MLOps, and community building. Invaluable partners!",
-//     author: "Emily Rodriguez",
-//     title: "Community Manager, DataSphere",
-//     avatar: "/placeholder.svg?height=100&width=100"
-//   }
-// ]
+const testimonials = [
+  {
+    name: 'Arindam Majumder',
+    role: 'CEO & Founder',
+    avatar: 'https://avatars.githubusercontent.com/u/109217591?v=4',
+    content:
+      'Lorem ipsum dolor sit, amet Odio, incidunt.  id ut omnis repellat. Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis.',
+  },
+  {
+    name: 'Jane Doe',
+    role: 'CTO',
+    avatar: 'https://avatars.githubusercontent.com/u/109217591?v=4',
+    content:
+      'Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat. Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat.',
+  },
+  {
+    name: 'John Smith',
+    role: 'COO',
+    avatar: 'https://avatars.githubusercontent.com/u/109217591?v=4',
+    content:
+      'Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat. Lorem ipsum dolor sit.',
+  },
+  {
+    name: 'Jane Smith',
+    role: 'Tech Lead',
+    avatar: 'https://avatars.githubusercontent.com/u/109217591?v=4',
+    content:
+      'Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat. incidunt. Ratione, ullam? Iusto id ut omnis repellat ratione.',
+  },
+  {
+    name: 'Richard Doe',
+    role: 'Designer',
+    avatar: 'https://avatars.githubusercontent.com/u/109217591?v=4',
+    content:
+      'Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat.',
+  },
+  {
+    name: 'Gordon Doe',
+    role: 'Developer',
+    avatar: 'https://avatars.githubusercontent.com/u/109217591?v=4',
+    content:
+      'Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat. Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat.',
+  },
+];
 
-// export default function TestimonialSection() {
-//   return (
-//     <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-//       <div className="container px-4 md:px-6">
-//         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">
-//           What Our Clients Say
-//         </h2>
-//         <div className="grid gap-6 lg:grid-cols-3 lg:gap-12">
-//           {testimonials.map((testimonial, index) => (
-//             <Card key={index} className="bg-white dark:bg-gray-900">
-//               <CardContent className="p-6">
-//                 <Quote className="h-8 w-8 text-purple-500 mb-4" />
-//                 <p className="text-lg mb-4">{testimonial.quote}</p>
-//                 <div className="flex items-center">
-//                   <Image
-//                     src={testimonial.avatar}
-//                     alt={testimonial.author}
-//                     width={50}
-//                     height={50}
-//                     className="rounded-full mr-4"
-//                   />
-//                   <div>
-//                     <p className="font-semibold">{testimonial.author}</p>
-//                     <p className="text-sm text-gray-500 dark:text-gray-400">{testimonial.title}</p>
-//                   </div>
-//                 </div>
-//               </CardContent>
-//             </Card>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
+const Testimonial6 = () => {
+  return (
+
+    <section className="py-20 sm:py-32" >
+      <div className="px-2.5 sm:px-10">
+        <div className="mb-8 flex-col px-1 lg:mb-12">
+          <h2 className="text-3xl text-center font-semibold lg:text-5xl mb-12">
+            Why <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 from">Clients Love </span> Us?
+          </h2>
+          <Carousel className="w-full">
+          <div className="flex items-center space-x-2 justify-center">
+          <CarouselPrevious className="static translate-y-0" />
+          <CarouselContent>
+          {testimonials.map((testimonial, idx) => (
+              <CarouselItem
+                key={idx}
+              >
+                <div className="flex flex-col items-center text-center">
+          <p className="sm:mb-16 mb-8 max-w-4xl sm:px-8 px-2 text-sm font-medium lg:text-3xl">
+            {testimonial.content}
+          </p>
+          <div className="flex items-center gap-2 md:gap-4">
+            <Avatar className="size-12 md:size-16">
+              <AvatarImage src={testimonial.avatar} />
+              <AvatarFallback> {testimonial.name} </AvatarFallback>
+            </Avatar>
+            <div className="text-left">
+              <p className="text-sm font-semibold md:text-xl text-orange-400">{testimonial.name}</p>
+              <p className="text-sm text-muted-foreground md:text-base">{testimonial.role}</p>
+            </div>
+          </div>
+        </div>
+                </CarouselItem>
+            ))}
+          
+        </CarouselContent>
+          <CarouselNext className="static translate-y-0" />
+          </div>
+          </Carousel>
+        </div>
+        {/* </Carousel> */}
+      </div>
+    </section>
+  );
+};
+
+export default Testimonial6;
