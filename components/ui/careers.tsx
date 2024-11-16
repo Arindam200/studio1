@@ -47,7 +47,7 @@ const Careers4 = () => {
   ];
 
   return (
-    <section className="py-32">
+    <section className="py-28">
       <div className="container">
         <div className="mx-auto max-w-screen-lg">
           <div className="text-center lg:text-left">

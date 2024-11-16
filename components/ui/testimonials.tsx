@@ -6,7 +6,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
-import pfp from '@/app/assets/images/pfp.png';
 
 const testimonials = [
   {
@@ -56,7 +55,7 @@ const testimonials = [
 const Testimonial6 = () => {
   return (
 
-    <section className="py-20 sm:py-32" >
+    <section className="py-16 sm:py-28" id='testimonials' >
       <div className="px-2.5 sm:px-10">
         <div className="mb-8 flex-col px-1 lg:mb-12">
           <h2 className="text-3xl text-center font-semibold lg:text-5xl mb-12">
@@ -71,7 +70,7 @@ const Testimonial6 = () => {
                 key={idx}
               >
                 <div className="flex flex-col items-center text-center">
-          <p className="sm:mb-16 mb-8 max-w-4xl sm:px-8 px-2 text-sm font-medium lg:text-3xl">
+          <p className="sm:mb-16 mb-8 max-w-4xl sm:px-8 px-2 text-sm font-medium  lg:text-3xl">
             {testimonial.content}
           </p>
           <div className="flex items-center gap-2 md:gap-4">

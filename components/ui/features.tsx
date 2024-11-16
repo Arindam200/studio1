@@ -48,7 +48,7 @@ import {
   
   const Feature43 = () => {
     return (
-      <section className="sm:py-32 py-20" id='why-us'>
+      <section className="sm:py-28 py-16" id='why-us'>
         <div className="container">
           <div className="mb-10 md:mb-20">
             <h2 className="mb-2 text-center text-3xl font-semibold lg:text-5xl">

@@ -40,7 +40,7 @@ const posts = [
 
 const Blog7 = () => {
   return (
-    <section className="py-32">
+    <section className="py-28">
       <div className="container flex flex-col items-center gap-16 lg:px-16">
         <div className="text-center">
           <p className="mb-6 text-xs font-medium uppercase tracking-wider">

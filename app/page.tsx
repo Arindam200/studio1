@@ -111,7 +111,7 @@ export default function Home() {
         </div>
       ))}
       </Marquee>
-      <div className="sm:py-20 py-32 px-5 space-y-8 overflow-x-hidden" id="services">
+      <div className="sm:py-16 py-28 px-5 space-y-8 overflow-x-hidden" id="services">
         <h2 className="text-3xl text-center font-semibold lg:text-5xl mb-12"> What  <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 from">We Do</span></h2>
         <div className="flex justify-center gap-10 sm:mx-10 max-sm:mx-2 max-sm:flex-col">
           {cardContent.map((content, index) => (

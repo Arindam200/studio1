@@ -17,10 +17,10 @@ export default function Navbar2({ className }: { className?: string }) {
         <Link href="#services" >
           <p className=" font-medium text-white">Services</p>
         </Link>
-        <Link href="#process" >
-          <p className=" font-medium text-white">Process</p>
+        <Link href="#why-us" >
+          <p className=" font-medium text-white">Why Us</p>
         </Link>
-        <Link href="#testimonial" >
+        <Link href="#testimonials" >
           <p className=" font-medium text-white">Testimonial</p>
         </Link>
       </Menu>
