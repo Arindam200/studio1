@@ -72,7 +72,7 @@ const Logos = {
       </svg>
     )
   }
-  const arr = [Logos.tailwindcss, Logos.framer, Logos.nextjs, Logos.aws]
+const arr = [Logos.tailwindcss, Logos.framer, Logos.nextjs, Logos.aws]
 
 function Trustedby() {
   return (
