@@ -46,7 +46,7 @@ import {
     },
   ];
   
-  const Feature43 = () => {
+  const Features = () => {
     return (
       <section className="sm:py-28 py-16" id='why-us'>
         <div className="container">
@@ -74,5 +74,5 @@ import {
     );
   };
   
-  export default Feature43;
+  export default Features;
   

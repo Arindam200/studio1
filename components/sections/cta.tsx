@@ -1,7 +1,8 @@
 import { ArrowRight } from 'lucide-react';
 import {CardWithGrid} from '@/components/ui/cards';
+import React from 'react';
 
-const CTA10 = () => {
+const Cta = () => {
   return (
     <section className="sm:py-10 py-8" id='#cta'>
       <div className="container">
@@ -31,4 +32,4 @@ const CTA10 = () => {
   );
 };
 
-export default CTA10;
+export default Cta;

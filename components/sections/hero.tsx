@@ -1,9 +1,10 @@
 "use client";
+
 import React from "react";
 import { Spotlight } from "@/components/ui/spotlight";
 import { ArrowRight } from 'lucide-react';
-import { AnimatedTooltip } from "./animated-tooltip";
-import Navbar from "./navbar";
+import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
+import Navbar from "@/components/sections/navbar";
 import type { Variants } from 'framer-motion';
 import { motion, useAnimation } from 'framer-motion';
 

@@ -1,11 +1,6 @@
 "use client"
 import { cn } from '@/lib/utils';
-import {ShineBorder} from './shineborder';
-const cardContent:CardContent = {
-  title: 'Lorem ipsum dolor',
-  description:
-    'Lorem ipsum dolor, sit amet elit consectetur adipisicing. Nostrum, hic ipsum! dolor, sit amet elit consectetur amete elite!',
-};
+import {ShineBorder} from '@/components/ui/shineborder';
 
 type CardContent = {
   title: string;

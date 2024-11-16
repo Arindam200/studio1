@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from "next/link"
-import  Navbar2  from './acc-navbar'
+import  Navbar2  from '@/components/ui/acc-navbar'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)

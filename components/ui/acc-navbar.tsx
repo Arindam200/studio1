@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Menu } from "../ui/navbar-menu";
+import { Menu } from "@/components/ui/navbar-menu";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
