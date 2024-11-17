@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { Instagram, Facebook, Twitter, Linkedin } from 'lucide-react'
+import Link from "next/link";
+import { Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -10,7 +10,8 @@ export default function Footer() {
             <div className="space-y-2">
               <h2 className="text-2xl font-bold text-orange-400">Studio1</h2>
               <p className="text-muted-foreground sm:w-96">
-                A collection of 100+ responsive HTML templates for your startup business or side project.
+                A collection of 100+ responsive HTML templates for your startup
+                business or side project.
               </p>
             </div>
             <div className="flex gap-4 ">
@@ -48,16 +49,28 @@ export default function Footer() {
             <div className="space-y-4">
               <h3 className="font-bold text-orange-400">Product</h3>
               <nav className="flex flex-col gap-2">
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors ">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors "
+                >
                   Overview
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Pricing
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Marketplace
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Features
                 </Link>
               </nav>
@@ -65,16 +78,28 @@ export default function Footer() {
             <div className="space-y-4">
               <h3 className="font-bold text-orange-400">Company</h3>
               <nav className="flex flex-col gap-2">
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   About
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Team
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Blog
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Careers
                 </Link>
               </nav>
@@ -82,16 +107,28 @@ export default function Footer() {
             <div className="space-y-4">
               <h3 className="font-bold text-orange-400">Resources</h3>
               <nav className="flex flex-col gap-2">
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Help
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Sales
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Advertise
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Privacy
                 </Link>
               </nav>
@@ -99,17 +136,25 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 flex flex-col gap-4 border-t pt-8 md:flex-row md:items-center md:justify-between">
-          <p className="text-sm text-muted-foreground">© 2024 Studio1. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">
+            © 2024 Studio1. All rights reserved.
+          </p>
           <nav className="flex gap-4">
-            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link
+              href="#"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
               Terms and Conditions
             </Link>
-            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link
+              href="#"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
               Privacy Policy
             </Link>
           </nav>
         </div>
       </div>
     </footer>
-  )
+  );
 }

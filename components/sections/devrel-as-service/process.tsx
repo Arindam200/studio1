@@ -1,22 +1,26 @@
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from "lucide-react";
 
 const steps = [
   {
-    name: 'Discovery',
-    description: 'We analyze your current DevRel efforts and identify opportunities for improvement.'
+    name: "Discovery",
+    description:
+      "We analyze your current DevRel efforts and identify opportunities for improvement.",
   },
   {
-    name: 'Strategy',
-    description: 'Develop a customized roadmap aligned with your business goals and developer needs.'
+    name: "Strategy",
+    description:
+      "Develop a customized roadmap aligned with your business goals and developer needs.",
   },
   {
-    name: 'Implementation',
-    description: 'Execute the strategy with our experienced team of DevRel professionals.'
+    name: "Implementation",
+    description:
+      "Execute the strategy with our experienced team of DevRel professionals.",
   },
   {
-    name: 'Measurement',
-    description: 'Track KPIs and adjust strategies based on data-driven insights.'
-  }
+    name: "Measurement",
+    description:
+      "Track KPIs and adjust strategies based on data-driven insights.",
+  },
 ];
 
 export default function Process() {
@@ -39,7 +43,10 @@ export default function Process() {
                 <div className="relative flex items-center space-x-4">
                   <div>
                     <span className="h-12 w-12 rounded-full bg-indigo-50 flex items-center justify-center ring-8 ring-white">
-                      <CheckCircle2 className="h-6 w-6 text-indigo-600" aria-hidden="true" />
+                      <CheckCircle2
+                        className="h-6 w-6 text-indigo-600"
+                        aria-hidden="true"
+                      />
                     </span>
                   </div>
                   <div className="min-w-0 flex-1">
@@ -52,7 +59,10 @@ export default function Process() {
                   </div>
                 </div>
                 {stepIdx !== steps.length - 1 && (
-                  <div className="absolute left-6 top-12 h-16 w-px bg-gray-300" aria-hidden="true" />
+                  <div
+                    className="absolute left-6 top-12 h-16 w-px bg-gray-300"
+                    aria-hidden="true"
+                  />
                 )}
               </div>
             ))}

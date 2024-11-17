@@ -1,36 +1,49 @@
-import { Code2, Users, BookOpen, MessageSquare, Youtube, GitBranch } from 'lucide-react';
+import {
+  Code2,
+  Users,
+  BookOpen,
+  MessageSquare,
+  Youtube,
+  GitBranch,
+} from "lucide-react";
 
 const services = [
   {
-    title: 'Technical Content Creation',
-    description: 'High-quality tutorials, documentation, and technical blog posts that resonate with developers.',
-    icon: Code2
+    title: "Technical Content Creation",
+    description:
+      "High-quality tutorials, documentation, and technical blog posts that resonate with developers.",
+    icon: Code2,
   },
   {
-    title: 'Community Management',
-    description: 'Build and nurture a thriving developer community around your product or platform.',
-    icon: Users
+    title: "Community Management",
+    description:
+      "Build and nurture a thriving developer community around your product or platform.",
+    icon: Users,
   },
   {
-    title: 'Developer Education',
-    description: 'Comprehensive training programs and workshops to help developers succeed with your tools.',
-    icon: BookOpen
+    title: "Developer Education",
+    description:
+      "Comprehensive training programs and workshops to help developers succeed with your tools.",
+    icon: BookOpen,
   },
   {
-    title: 'Developer Support',
-    description: '24/7 technical support and guidance for your developer community.',
-    icon: MessageSquare
+    title: "Developer Support",
+    description:
+      "24/7 technical support and guidance for your developer community.",
+    icon: MessageSquare,
   },
   {
-    title: 'Video Content',
-    description: 'Engaging video tutorials, product demos, and technical workshops.',
-    icon: Youtube
+    title: "Video Content",
+    description:
+      "Engaging video tutorials, product demos, and technical workshops.",
+    icon: Youtube,
   },
   {
-    title: 'API Strategy',
-    description: 'Strategic guidance on API design, documentation, and developer experience.',
-    icon: GitBranch
-  }
+    title: "API Strategy",
+    description:
+      "Strategic guidance on API design, documentation, and developer experience.",
+    icon: GitBranch,
+  },
 ];
 
 export default function Services() {
@@ -42,7 +55,8 @@ export default function Services() {
             Comprehensive DevRel Services
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-            Everything you need to build and maintain a successful developer relations program.
+            Everything you need to build and maintain a successful developer
+            relations program.
           </p>
         </div>
 

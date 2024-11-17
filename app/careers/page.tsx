@@ -1,46 +1,46 @@
-import { buttonVariants } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const Careers4 = () => {
   const jobs = [
     {
-      category: 'Engineering',
+      category: "Engineering",
       openings: [
         {
-          title: 'Senior Software Engineer',
-          location: 'Remote',
-          link: '#',
+          title: "Senior Software Engineer",
+          location: "Remote",
+          link: "#",
         },
         {
-          title: 'Product Manager',
-          location: 'Windhoek, Namibia',
-          link: '#',
+          title: "Product Manager",
+          location: "Windhoek, Namibia",
+          link: "#",
         },
         {
-          title: 'QA Engineer',
-          location: 'Remote',
-          link: '#',
+          title: "QA Engineer",
+          location: "Remote",
+          link: "#",
         },
         {
-          title: 'Technical Support Specialist',
-          location: 'Remote',
-          link: '#',
+          title: "Technical Support Specialist",
+          location: "Remote",
+          link: "#",
         },
       ],
     },
     {
-      category: 'Marketing',
+      category: "Marketing",
       openings: [
         {
-          title: 'Content Writer',
-          location: 'Fes, Morocco',
-          link: '#',
+          title: "Content Writer",
+          location: "Fes, Morocco",
+          link: "#",
         },
         {
-          title: 'Social Media Manager',
+          title: "Social Media Manager",
 
-          location: 'Goa, India',
-          link: '#',
+          location: "Goa, India",
+          link: "#",
         },
       ],
     },
@@ -76,10 +76,10 @@ const Careers4 = () => {
                     <div
                       className={cn(
                         buttonVariants({
-                          variant: 'outline',
-                          size: 'sm',
+                          variant: "outline",
+                          size: "sm",
                         }),
-                        'pointer-events-none rounded-full',
+                        "pointer-events-none rounded-full",
                       )}
                     >
                       {job.location}

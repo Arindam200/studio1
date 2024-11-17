@@ -9,14 +9,14 @@ import Process from "@/components/sections/devrel-as-service/process";
 
 export default function DevRel() {
   return (
-<div className="bg-black">
-    <Hero />
-    <Impact />
-    <Services />
-    <Process />
-    <Team />
-    <Cta />
-    <Foooter />
-</div>
+    <div className="bg-black">
+      <Hero />
+      <Impact />
+      <Services />
+      <Process />
+      <Team />
+      <Cta />
+      <Foooter />
+    </div>
   );
 }

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import type { Variants } from 'framer-motion';
-import { motion, useAnimation } from 'framer-motion';
+import type { Variants } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 const gVariants: Variants = {
   normal: { rotate: 0 },
@@ -14,8 +14,8 @@ const CalendarCogIcon = () => {
   return (
     <div
       className="cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
-      onMouseEnter={() => controls.start('animate')}
-      onMouseLeave={() => controls.start('normal')}
+      onMouseEnter={() => controls.start("animate")}
+      onMouseLeave={() => controls.start("normal")}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ const CalendarCogIcon = () => {
         <path d="M3 10h18" />
         <path d="M8 2v4" />
         <motion.g
-          transition={{ type: 'spring', stiffness: 50, damping: 10 }}
+          transition={{ type: "spring", stiffness: 50, damping: 10 }}
           variants={gVariants}
           animate={controls}
         >
