@@ -2,25 +2,15 @@
 
 import React from "react";
 import { Spotlight } from "@/components/ui/spotlight";
-import { NumberTicker } from "@/components/ui/counter";
 import Navbar from "@/components/sections/navbar";
-// import type { Variants } from 'framer-motion';
-// import { motion, useAnimation } from 'framer-motion';
-
-// const gVariants: Variants = {
-//   normal: { rotate: 0 },
-//   animate: { rotate: 180 },
-// };
-
 
 export default function Page() {
 
-  // const controls = useAnimation();  
   return (
-    <div className="h-[50rem] overflow-x-hidden w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex flex-col items-center justify-center cursor-all-scroll">
+    <div className="bg-black">
+    <div className="h-[44rem] max-sm:h-[36rem] overflow-x-hidden w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex flex-col items-center justify-center cursor-all-scroll">
       <Navbar />
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-
       <Spotlight />
       <button className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block">
   <span className="absolute inset-0 overflow-hidden rounded-full">
@@ -51,21 +41,32 @@ export default function Page() {
       <div className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 pt-8 py-4 text-center">
        <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 from"> Blog as a Service</span>
 
-      <p className="text-lg max-sm:px-2.5 sm:text-2xl font-semibold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4 text-center">
-      Empowering software companies with high-quality, tech-driven content that drives growth.
+      <p className="text-lg sm:w-[60rem] max-sm:mx-2.5 sm:text-2xl font-semibold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4 text-center">
+      Expertly crafted technical blogs tailored to showcase your product, engage your audience, and drive growth effortlessly
       </p>
-      <div className="flex gap-6 justify-center text-3xl mt-4">
-        <div className="">
-        <NumberTicker value={50} /> + Blogs Written
-        </div>
-        <div className="">
-        <NumberTicker value={100} /> + Happy Customers
-        </div>
-        <div className="">
-        <NumberTicker value={100} /> % Satisfaction
-          </div>
+
+      <div className="flex justify-center sm:py-8">
+      <button className="px-10 gap-2 flex max-sm:px-4 max-sm:py-2.5 max-sm:text-base py-4 text-center text-xl font-semibold rounded-md bg-gradient-to-b from-orange-500 to-orange-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
+        Book a Call
+      </button>
       </div>
+
+      
+      
       </div> 
     </div>
+          {/* <div className="flex gap-6 max-sm:gap-2 justify-center text-4xl max-sm:text-lg mt-10 font-semibold">
+          <div className="flex space-x-1 max-sm:flex-col ">
+          <span><NumberTicker value={50} />+ </span>
+          Blogs Written
+          </div>
+          <div className="flex space-x-1 max-sm:flex-col ">
+          <span><NumberTicker value={50} />+ </span> Happy Clients
+          </div>
+          <div className="flex space-x-1 max-sm:flex-col ">
+          <span><NumberTicker value={50} />% </span> Satisfaction
+            </div>
+        </div> */}
+        </div>
   );
 }

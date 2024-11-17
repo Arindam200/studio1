@@ -2,13 +2,13 @@
 
 import React from "react";
 import { Spotlight } from "@/components/ui/spotlight";
-import { NumberTicker } from "@/components/ui/counter";
 import Navbar from "@/components/sections/navbar";
 
-export default function DevRel() {
+export default function Page() {
 
   return (
-    <div className="h-[50rem] overflow-x-hidden w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex flex-col items-center justify-center cursor-all-scroll">
+    <div className="bg-black">
+    <div className="h-[44rem] overflow-x-hidden w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex flex-col items-center justify-center cursor-all-scroll">
       <Navbar />
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
@@ -42,21 +42,20 @@ export default function DevRel() {
       <div className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 pt-8 py-4 text-center">
        <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 from"> DevRel as a Service</span>
 
-      <p className="text-lg max-sm:px-2.5 sm:text-2xl font-semibold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4 text-center">
+      <p className="text-lg sm:w-[60rem] max-sm:mx-2.5 sm:text-2xl font-semibold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4 text-center">
       Build and nurture your developer community with our expert DevRel strategies.
       </p>
-      <div className="flex gap-6 justify-center text-3xl mt-4">
-        <div className="">
-        <NumberTicker value={50} /> + DevRel Strategies
-        </div>
-        <div className="">
-        <NumberTicker value={100} /> + Happy Customers
-        </div>
-        <div className="">
-        <NumberTicker value={100} /> %+ Engagement Increase
-          </div>
+
+      <div className="flex justify-center sm:py-8">
+      <button className="px-10 gap-2 flex max-sm:px-4 max-sm:py-2.5 max-sm:text-base py-4 text-center text-xl font-semibold rounded-md bg-gradient-to-b from-orange-500 to-orange-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
+        Book a Call
+      </button>
       </div>
+
+      
+      
       </div> 
     </div>
+        </div>
   );
 }
