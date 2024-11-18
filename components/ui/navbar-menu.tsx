@@ -12,7 +12,7 @@ export const Menu = ({
   children: React.ReactNode;
 }) => {
   return (
-    <nav className="relative rounded-md py-2.5 border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center sm:space-x-8 space-x-6 px-6 sm:px-8">
+    <nav className="relative rounded-md py-2.5 border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center sm:space-x-8 space-x-4 px-6 sm:px-8">
       {children}
     </nav>
   );
@@ -39,46 +39,16 @@ export const MenuItem = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <div onClick={(active == item) ? () => setActive(null): () => setActive(item)} className="relative ">
+    <div onClick={(active == item) ? () => setActive(null): () => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.3 }}
         className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
       >
         {item} 
         {active == item ? (
-          <svg
-            className="w-4 h-4 inline-block ml-2"
-            fill="none"
-            height="16"
-            viewBox="0 0 24 24"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M6.75 15.25L10.25 11.75L6.75 8.25"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-            />
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down w-4 h-4 inline-block ml-2 max-sm:ml-1"><path d="m6 9 6 6 6-6"/></svg>
         ) : (
-          <svg
-            className="w-4 h-4 inline-block ml-2"
-            fill="none"
-            height="16"
-            viewBox="0 0 24 24"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M15.25 8.25L11.75 11.75L15.25 15.25"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-            />
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-left w-4 h-4 inline-block ml-2"><path d="m15 18-6-6 6-6"/></svg>
         )}
       </motion.p>
       {active !== null && (

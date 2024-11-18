@@ -3,7 +3,7 @@ import { CardWithGrid } from "@/components/ui/cards";
 
 export default function Impact() {
   return (
-    <div className="sm:py-20 py-10 ">
+    <div className="sm:py-20 py-10 " id="impact">
       <div className="text-center mb-6 font-semibold lg:text-5xl text-2xl pb-4">
         Our{" "}
         <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 from">

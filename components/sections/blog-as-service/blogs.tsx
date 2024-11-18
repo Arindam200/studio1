@@ -49,7 +49,7 @@ const cards = [
 
 export default function MinimalCardDemo() {
   return (
-    <div className="sm:px-20 px-2.5 py-10 sm:py-20">
+    <div id="blogs" className="sm:px-20 px-2.5 py-10 sm:py-20">
       <div className="sm:p-2">
         <div className="text-center mb-6 font-semibold lg:text-5xl text-2xl pb-4">
           Our{" "}

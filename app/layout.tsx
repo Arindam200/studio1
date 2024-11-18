@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-
+import Cta from "@/components/sections/cta";
+import Foooter from "@/components/sections/footer";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -27,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-black antialiased overflow-x-hidden`}
       >
         <ThemeProvider
           attribute="class"
@@ -36,6 +37,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <Cta />
+          <Foooter />
         </ThemeProvider>
       </body>
     </html>

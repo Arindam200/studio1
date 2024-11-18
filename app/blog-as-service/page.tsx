@@ -1,7 +1,5 @@
 import React from "react";
 import Hero from "@/components/sections/blog-as-service/hero";
-import Cta from "@/components/sections/cta";
-import Foooter from "@/components/sections/footer";
 import Impact from "@/components/sections/blog-as-service/impact";
 import Process from "@/components/sections/blog-as-service/process";
 import MinimalCardDemo from "@/components/sections/blog-as-service/blogs";
@@ -16,8 +14,6 @@ export default function Page() {
       {/* <AnimatedBeamDemo /> */}
       <Process />
       <Team />
-      <Cta />
-      <Foooter />
     </div>
   );
 }
