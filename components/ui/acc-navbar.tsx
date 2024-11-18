@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
-import { Menu } from "@/components/ui/navbar-menu";
+import React, {useState} from "react";
+import { Menu, MenuItem, HoveredLink } from "@/components/ui/navbar-menu";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 export default function Navbar2({ className }: { className?: string }) {
+  const [active, setActive] = useState<string | null>(null);
   return (
     <div
       className={cn(
@@ -12,13 +13,16 @@ export default function Navbar2({ className }: { className?: string }) {
         className,
       )}
     >
-      <Menu>
+      <Menu setActive={setActive}>
         <Link href="#work">
           <p className=" font-medium text-white">Work</p>
         </Link>
-        <Link href="#services">
-          <p className=" font-medium text-white">Services</p>
-        </Link>
+        <MenuItem setActive={setActive} active={active} item="Services">
+          <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/devrel-as-service">DevRel as Service</HoveredLink>
+            <HoveredLink href="/blog-as-service">Blog as Service</HoveredLink>
+          </div>
+        </MenuItem>
         <Link href="#why-us">
           <p className=" font-medium text-white">Why Us</p>
         </Link>
