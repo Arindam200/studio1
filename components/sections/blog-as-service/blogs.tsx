@@ -2,10 +2,11 @@ import React from "react";
 import {
   MinimalCard,
   MinimalCardDescription,
+  MinimalCardFooter,
   MinimalCardImage,
   MinimalCardTitle,
 } from "@/components/ui/minimal-cards";
-import { link } from "fs";
+import Link from "next/link";
 
 const cards = [
   {
@@ -18,21 +19,31 @@ const cards = [
     title: "Sick title",
     description:
       "How to design with gestures and motion that feel intuitive and natural.",
+      link: "https://dev.to/tolgee_i18n/building-a-kanban-board-with-nextjsvercel-ai-and-tolgee-493g",
   },
   {
     title: "Sick title",
     description:
       "How to design with gestures and motion that feel intuitive and natural.",
+      link: "https://dev.to/tolgee_i18n/building-a-kanban-board-with-nextjsvercel-ai-and-tolgee-493g",
   },
   {
     title: "Sick title",
     description:
       "How to design with gestures and motion that feel intuitive and natural.",
+      link: "https://dev.to/tolgee_i18n/building-a-kanban-board-with-nextjsvercel-ai-and-tolgee-493g",
   },
   {
     title: "Sick title",
     description:
       "How to design with gestures and motion that feel intuitive and natural.",
+      link: "https://dev.to/tolgee_i18n/building-a-kanban-board-with-nextjsvercel-ai-and-tolgee-493g",
+  },
+  {
+    title: "Sick title",
+    description:
+      "How to design with gestures and motion that feel intuitive and natural.",
+      link: "https://dev.to/tolgee_i18n/building-a-kanban-board-with-nextjsvercel-ai-and-tolgee-493g",
   },
 ];
 
@@ -50,15 +61,20 @@ export default function MinimalCardDemo() {
       <div className="min-h-[600px] p-4 flex flex-col justify-center rounded-md space-y-4">
         <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((card) => (
+
             <MinimalCard key={card.title}>
+              <Link href={card.link} > 
               <MinimalCardImage
                 src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8se47yg59oimb4sl06eg.gif"
-                alt="temp"
+                alt={card.title}
               />
               <MinimalCardTitle>{card.title}</MinimalCardTitle>
               <MinimalCardDescription>
                 {card.description}
               </MinimalCardDescription>
+              <MinimalCardFooter>          
+                </MinimalCardFooter>
+                </Link>
             </MinimalCard>
           ))}
         </div>

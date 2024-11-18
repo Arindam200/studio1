@@ -77,7 +77,7 @@ export default function Process() {
               <div className="relative flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8">
                 <div className="flex-shrink-0">
                   <div className="relative flex">
-                    <span className="h-16 w-16 rounded-full bg-gray-700 flex items-center justify-center ring-8 ring-black">
+                    <span className="h-16 w-16 rounded-md bg-zinc-900 flex items-center justify-center ring-8 ring-black">
                       <step.icon
                         className="h-8 w-8 text-orange-500"
                         aria-hidden="true"
@@ -90,7 +90,7 @@ export default function Process() {
                 </div>
                 <div className="flex-grow">
                   <div className="flex items-center">
-                    <h3 className="text-xl font-bold text-white">
+                    <h3 className="text-xl mt-2.5 font-bold text-white">
                       {step.name}
                     </h3>
                     {stepIdx !== steps.length - 1 && (

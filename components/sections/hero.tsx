@@ -170,10 +170,7 @@ export function GridBackgroundDemo() {
             fill="currentColor"
           ></path>
         </svg>
-        {/* <img src="https://cdn.prod.website-files.com/66fc1a4b1a3399833cbb73ce/66fc1a4b1a3399833cbb7519_62d0e2aeb4e06c8b6b8249a4_62736cc4162e55368179f7d1_f2w__pfeil.svg" loading="lazy" alt="" className="-rotate-45"></img> */}
       </div>
-
-      {/* <Feedbacks /> */}
     </div>
   );
 }

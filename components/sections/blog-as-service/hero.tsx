@@ -7,7 +7,7 @@ import Navbar from "@/components/sections/navbar";
 export default function Page() {
   return (
     <div className="bg-black">
-      <div className="h-[50rem] max-sm:h-[36rem] overflow-x-hidden w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex flex-col items-center justify-center cursor-all-scroll">
+      <div className="h-[44rem] max-sm:h-[36rem] overflow-scroll w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex flex-col items-center justify-center cursor-all-scroll">
         <Navbar />
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <Spotlight />
@@ -53,18 +53,6 @@ export default function Page() {
           </div>
         </div>
       </div>
-      {/* <div className="flex gap-6 max-sm:gap-2 justify-center text-4xl max-sm:text-lg mt-10 font-semibold">
-          <div className="flex space-x-1 max-sm:flex-col ">
-          <span><NumberTicker value={50} />+ </span>
-          Blogs Written
-          </div>
-          <div className="flex space-x-1 max-sm:flex-col ">
-          <span><NumberTicker value={50} />+ </span> Happy Clients
-          </div>
-          <div className="flex space-x-1 max-sm:flex-col ">
-          <span><NumberTicker value={50} />% </span> Satisfaction
-            </div>
-        </div> */}
     </div>
   );
 }
