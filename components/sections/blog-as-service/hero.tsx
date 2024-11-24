@@ -46,9 +46,9 @@ export default function Page() {
           </p>
 
           <div className="flex justify-center sm:py-8">
-            <button className="px-10 gap-2 flex max-sm:px-4 max-sm:py-2.5 max-sm:text-base py-4 text-center text-xl font-semibold rounded-md bg-gradient-to-b from-orange-500 to-orange-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
+            <a href="https://cal.com/studio1/collab" className="px-10 gap-2 flex max-sm:px-4 max-sm:py-2.5 max-sm:text-base py-4 text-center text-xl font-semibold rounded-md bg-gradient-to-b from-orange-500 to-orange-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
               Book a Call
-            </button>
+            </a>
           </div>
         </div>
       </div>

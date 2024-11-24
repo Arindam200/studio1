@@ -17,11 +17,14 @@ const testimonials = [
       "Studio1 turned our ideas into clear and engaging content, helping us connect with our community and strengthen our identity. A key collaboration for Opire's growth.",
   },
   {
-    name: "Jane Doe",
-    role: "CTO",
-    avatar: "https://avatars.githubusercontent.com/u/109217591?v=4",
-    content:
-      "Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat. Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat.",
+    name: "Gabriel L. Manor",
+    role: "Director of DevRel, Permit.io",
+    avatar: "https://firebasestorage.googleapis.com/v0/b/testimonialto.appspot.com/o/testimonials%2Fc6788e8d-7e73-41f3-b8c1-74cedbb58d76%2Favatar?alt=media&token=13c320d7-56f4-4593-a2aa-760cb7b177bc",
+    content:`We've been working with Arindam on multiple content pieces for the last couple of months, and his work is astonishing.
+
+We also love his network of writers, where he can scale the workload when needed.
+
+So far, 10/10 experience!`,
   },
   {
     name: "John Smith",

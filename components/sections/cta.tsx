@@ -18,9 +18,9 @@ const Cta = () => {
               </p>
             </div>
             <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
-              <button className="px-6 gap-2 max-sm:justify-center flex max-sm:px-4 max-sm:text-base py-2.5 text-center text-lg font-semibold rounded-md bg-gradient-to-b from-orange-500 to-orange-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
+              <a href="https://cal.com/studio1/collab" className="px-6 gap-2 max-sm:justify-center flex max-sm:px-4 max-sm:text-base py-2.5 text-center text-lg font-semibold rounded-md bg-gradient-to-b from-orange-500 to-orange-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
                 Book a Call <ArrowRight className="pt-1" />
-              </button>
+              </a>
             </div>
           </div>
         </CardWithGrid>

@@ -97,10 +97,10 @@ export function GridBackgroundDemo() {
           </svg>{" "}
           <span className="max-sm:pt-0.5">Book a Call</span>
         </button>
-        <button className="shadow-[0_4px_14px_0_rgb(0,0,0,10%)] text-lg font-semibold px-6 gap-2 flex max-sm:px-4 max-sm:text-base hover:shadow-[0_6px_20px_rgba(93,93,93,23%)] py-2.5 bg-[#fff] text-orange-500 rounded-md transition duration-200 ease-linear">
+        <a href="#services" className="shadow-[0_4px_14px_0_rgb(0,0,0,10%)] text-lg font-semibold px-6 gap-2 flex max-sm:px-4 max-sm:text-base hover:shadow-[0_6px_20px_rgba(93,93,93,23%)] py-2.5 bg-[#fff] text-orange-500 rounded-md transition duration-200 ease-linear">
           <span className="max-sm:pt-0.5">Know More </span>{" "}
           <ArrowRight className="pt-1" />
-        </button>
+        </a>
       </div>
       {/* <Underline /> */}
       <div className="flex py-2">
