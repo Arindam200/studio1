@@ -11,37 +11,37 @@ const reasons = [
   {
     title: "Quality",
     description:
-      "We create project based tutorials, how-to guides, promotional pieces, list-based articles, and feature use cases, all crafted to engage and educate your developer audience.",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe est aliquid exercitationem, quos explicabo repellat?",
     icon: <ZoomIn className="size-6" />,
   },
   {
     title: "Experience",
     description:
-      "Our team includes developers who write and writers who build, ensuring technical content that is both accurate and engaging.",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe est aliquid exercitationem, quos explicabo repellat?",
     icon: <BarChartHorizontal className="size-6" />,
   },
   {
     title: "Support",
     description:
-      "We work as an extension of your team, as a content partner. We ensure the work meets your requirements and expectations, collaborating closely until you're completely satisfied.",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe est aliquid exercitationem, quos explicabo repellat?",
     icon: <CircleHelp className="size-6" />,
   },
   {
-    title: "Expertise",
+    title: "Innovation",
     description:
-      "Team specializes in diverse tech like AI, ML, Python, Cloud, WebDev, DevOps, modern APIs and more.",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe est aliquid exercitationem, quos explicabo repellat?",
     icon: <WandSparkles className="size-6" />,
   },
   {
     title: "Results",
     description:
-      "Content published by us has reached over 600,000 developers so far. We deliver technical content that ranks and converts.",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe est aliquid exercitationem, quos explicabo repellat?",
     icon: <Layers className="size-6" />,
   },
   {
-    title: "Collaboration",
+    title: "Efficiency",
     description:
-      "15+ projects completed in just 3 month of our operations, We collaborated with leading software companies.",
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe est aliquid exercitationem, quos explicabo repellat?",
     icon: <BatteryCharging className="size-6" />,
   },
 ];
