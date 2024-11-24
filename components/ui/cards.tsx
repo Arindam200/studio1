@@ -32,7 +32,7 @@ export const CardWithGridEllipsis = ({
 }) => (
   <ShineBorder
     color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
-    className="border sm:w-[70rem] relative sm:h-60 rounded-md overflow-hidden bg-zinc-950 dark:border-zinc-900 p-1"
+    className="border sm:w-[70rem] relative sm:min-h-72 rounded-md overflow-hidden bg-zinc-950 dark:border-zinc-900 p-1"
   >
     <div
       className={`size-full bg-[url(assets/svg/circle-ellipsis.svg)] bg-repeat bg-[length:30px_30px]`}
