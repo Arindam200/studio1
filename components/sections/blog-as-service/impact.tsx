@@ -13,20 +13,26 @@ export default function Impact() {
       <div className="container flex max-sm:flex-col max-sm:px-5 justify-center gap-6 ">
         <CardWithGrid>
           <div className="w-full h-40 border border-orange-400 rounded-md p-3 flex flex-col justify-center items-center">
-            <div className="text-center text-4xl font-bold">600k+</div>
-            <div className="text-center text-sm">Blog Views</div>
+            <div className="text-center text-4xl font-bold">1,000,000+</div>
+            <div className="text-center text-sm">People impacted</div>
           </div>
         </CardWithGrid>
         <CardWithGrid>
           <div className="w-full h-40 border border-orange-400 rounded-md p-3 flex flex-col justify-center items-center">
-            <div className="text-center text-4xl font-bold">15+</div>
-            <div className="text-center text-sm">Projects Delivered</div>
+            <div className="text-center text-4xl font-bold">1,000,000+</div>
+            <div className="text-center text-sm">People impacted</div>
           </div>
         </CardWithGrid>
         <CardWithGrid>
           <div className="w-full h-40 border border-orange-400 rounded-md p-3 flex flex-col justify-center items-center">
-            <div className="text-center text-4xl font-bold">10+</div>
-            <div className="text-center text-sm">Tech Companies Served</div>
+            <div className="text-center text-4xl font-bold">1,000,000+</div>
+            <div className="text-center text-sm">People impacted</div>
+          </div>
+        </CardWithGrid>
+        <CardWithGrid>
+          <div className="w-full h-40 border border-orange-400 rounded-md p-3 flex flex-col justify-center items-center">
+            <div className="text-center text-4xl font-bold">1,000,000+</div>
+            <div className="text-center text-sm">People impacted</div>
           </div>
         </CardWithGrid>
       </div>
