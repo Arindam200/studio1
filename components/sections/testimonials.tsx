@@ -9,11 +9,11 @@ import {
 
 const testimonials = [
   {
-    name: "Arindam Majumder",
-    role: "CEO & Founder",
-    avatar: "https://avatars.githubusercontent.com/u/109217591?v=4",
+    name: "Ivan Cordoba",
+    role: "Cofounder @Opire.dev",
+    avatar: "https://icordoba.dev/_next/image?url=%2Fimages%2Fimg.jpg&w=3840&q=75",
     content:
-      "Lorem ipsum dolor sit, amet Odio, incidunt.  id ut omnis repellat. Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis.",
+      "Studio1 turned our ideas into clear and engaging content, helping us connect with our community and strengthen our identity. A key collaboration for Opire's growth.",
   },
   {
     name: "Jane Doe",

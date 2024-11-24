@@ -3,9 +3,9 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 const team = [
   {
     name: "Arindam Majumder",
-    role: "Head of Developer Education",
+    role: "Co-founder & Content Lead",
     image: "https://avatars.githubusercontent.com/u/109217591?v=4",
-    bio: "Former Developer Advocate at Google Cloud, Sarah brings 10+ years of experience in building developer education programs and technical content strategies.",
+    bio: "Developer Advocate with expertise in technical writing and open-source. Has reached 270k+ developers through technical content, with notable contributions to Next.js and featured in their RC release blog. Specializes in creating developer-centric content that drives engagement and growth.",
     social: {
       twitter: "#",
       linkedin: "#",
@@ -14,12 +14,12 @@ const team = [
   },
   {
     name: "Amitesh Anand",
-    role: "Head of Community & Events",
+    role: "Co-founder & Operations Lead",
     image: "https://avatars.githubusercontent.com/u/73425223?v=4",
-    bio: "Previously led developer relations at AWS, Marcus specializes in building and scaling global developer communities and organizing impactful tech events.",
+    bio: "Technical writer and developer advocate with expertise in creating scalable content. Published 80k+ words reaching 250k+ readers across major tech platforms. HackerNoon award nominee focused on delivering high-impact technical content.",
     social: {
-      twitter: "#",
-      linkedin: "#",
+      twitter: "https://mobile.twitter.com/astrodevil_",
+      linkedin: "https://www.linkedin.com/in/amitesh1208/",
       github: "#",
     },
   },
@@ -46,7 +46,7 @@ export default function Team() {
             Leadership Team
           </span>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-            Industry veterans passionate about developer success
+          Crafting educational contents for developers and devtool companies
           </p>
         </div>
 
