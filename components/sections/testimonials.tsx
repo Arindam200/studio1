@@ -7,13 +7,14 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+
 const testimonials = [
   {
-    name: "Arindam Majumder",
-    role: "CEO & Founder",
-    avatar: "https://avatars.githubusercontent.com/u/109217591?v=4",
+    name: "Ivan Cordoba",
+    role: "CEO & Founder Opire",
+    avatar: "https://media2.dev.to/dynamic/image/width=320,height=320,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F454958%2F27d5edb2-ad12-47d3-a4a2-b3ce7e14d149.jpg",
     content:
-      "Lorem ipsum dolor sit, amet Odio, incidunt.  id ut omnis repellat. Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis.",
+      "Studio1 turned our ideas into clear and engaging content, helping us connect with our community and strengthen our identity. A key collaboration for Opire's growth.",
   },
   {
     name: "Jane Doe",
