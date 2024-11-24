@@ -14,8 +14,6 @@ export default function Home() {
       <Service />
       <Features />
       <Testimonials />
-      {/* <Cta />
-      <Foooter /> */}
     </div>
   );
 }
