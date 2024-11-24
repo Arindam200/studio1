@@ -12,13 +12,13 @@ const steps = [
   {
     name: "Discovery",
     description:
-      "We analyze your current content strategy and identify opportunities for improvement.",
+      "We analyze your current content strategy and identify opportunities for contribution and improvement.",
     icon: Search,
     details: [
-      "Audit existing blog content",
-      "Analyze audience engagement",
-      "Identify content gaps",
-      "Content strategy assessment",
+      "Knowing Tech stack",
+      "Analyze developer audience",
+      "Identify content scope",
+      "initial communication",
     ],
   },
   {
@@ -27,9 +27,9 @@ const steps = [
       "Develop a customized content plan aligned with your business goals and audience needs.",
     icon: LightbulbIcon,
     details: [
-      "Custom content calendar creation",
+      "Knowing content requirement",
       "Topic ideation",
-      "SEO keyword planning",
+      "Content format decision",
       "Distribution channel selection",
     ],
   },
@@ -39,10 +39,10 @@ const steps = [
       "Our expert team of technical writers produces high-quality, engaging content.",
     icon: Rocket,
     details: [
-      "Content creation",
-      "Community building",
-      "Program launch",
-      "Developer engagement",
+      "Technical content development",
+      "Custom code examples and demos",
+      "Technical review and validation",
+      "SEO optimization and formatting"
     ],
   },
   {
@@ -51,10 +51,10 @@ const steps = [
       "We publish and promote your content across multiple platforms to maximize reach.",
     icon: BarChart,
     details: [
-      "Performance tracking",
+      "Multi-platform publishing",
       "Analytics review",
-      "Strategy adjustment",
-      "ROI measurement",
+      "Social Media posts",
+      "Developer community sharing",
     ],
   },
 ];

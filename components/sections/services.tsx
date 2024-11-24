@@ -2,19 +2,19 @@ import React from "react";
 import { CardWithGridEllipsis, CardBody } from "@/components/ui/cards";
 const cardContent = [
   {
-    title: "Blogs as a Servqice",
+    title: "Blogs as Service",
     description:
-      "We provide a both technical and growth oriented blog writing service. Our team of expert writers can help you create content that will help you grow your business.",
+      "We create high-quality, technical and promotional blogs tailored for devtool and software companies. Our team of expert writers specializes in crafting SEO-optimized content that drives engagement, educates developers, and helps your tools stand out in a competitive market.",
   },
   {
-    title: "DevRel as a Service",
+    title: "DevRel as Service",
     description:
-      "We have an Experienced team of Devrels who can help you grow your developer community. We can help you with the strategy, content creation, and distribution of the content.",
+      "Accelerate your growth with targeted Developer Relations services. We help devtool and software companies connect authentically with developers, grow communities, and turn users into advocates.",
   },
   {
-    title: "Comming Soon",
+    title: "More Services",
     description:
-      "We are working on some exciting products. Stay tuned for more updates.",
+      "Coming soon. We are working to provide more services. Stay tuned for more updates.",
   },
 ];
 
