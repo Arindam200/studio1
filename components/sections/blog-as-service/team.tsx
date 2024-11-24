@@ -7,9 +7,9 @@ const team = [
     image: "https://avatars.githubusercontent.com/u/109217591?v=4",
     bio: "Developer Advocate with expertise in technical writing and open-source. Has reached 270k+ developers through technical content, with notable contributions to Next.js and featured in their RC release blog. Specializes in creating developer-centric content that drives engagement and growth.",
     social: {
-      twitter: "#",
-      linkedin: "#",
-      github: "#",
+      twitter: "https://dub.sh/arindam-x",
+      linkedin: "https://dub.sh/arindam-linkedin",
+      github: "https://git.new/Arindam",
     },
   },
   {
@@ -23,17 +23,6 @@ const team = [
       github: "#",
     },
   },
-  //   {
-  //     name: 'Shivay Lamba',
-  //     role: 'Head of Technical Strategy',
-  //     image: 'https://avatars.githubusercontent.com/u/19529592?v=4',
-  //     bio: 'With experience at Microsoft and GitHub, Alex excels in API strategy, developer experience optimization, and technical partnership development.',
-  //     social: {
-  //       twitter: '#',
-  //       linkedin: '#',
-  //       github: '#'
-  //     }
-  //   }
 ];
 
 export default function Team() {
