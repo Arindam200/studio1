@@ -39,7 +39,7 @@ export default function Navbar() {
         {!isScrolled && (
           <Link href="/" className="flex items-center space-x-2">
             <img
-              src="https://pbs.twimg.com/profile_images/1816112344445116421/TLDdAxAY_400x400.jpg"
+              src="https://images.spr.so/cdn-cgi/imagedelivery/j42No7y-dcokJuNgXeA0ig/c39661a2-dfd5-43da-8dc3-7083651708a5/std1/w=128,quality=90,fit=scale-down"
               alt="Studio1HQ Logo"
               className="h-14 w-14 max-md:h-10 max-md:w-10 fill-primary text-primary rounded-full"
             />
