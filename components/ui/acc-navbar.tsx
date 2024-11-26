@@ -14,7 +14,7 @@ export default function Navbar2({ className }: { className?: string }) {
       )}
     >
       <Menu setActive={setActive}>
-        <Link href="#work">
+        <Link href="#services">
           <p className=" font-medium text-white">Work</p>
         </Link>
         <MenuItem setActive={setActive} active={active} item="Services">

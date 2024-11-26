@@ -22,7 +22,6 @@ const testimonials = [
     avatar:
       "https://firebasestorage.googleapis.com/v0/b/testimonialto.appspot.com/o/testimonials%2Fc6788e8d-7e73-41f3-b8c1-74cedbb58d76%2Favatar?alt=media&token=13c320d7-56f4-4593-a2aa-760cb7b177bc",
     content: `We've been working with Arindam on multiple content pieces for the last couple of months, and his work is astonishing.
-
 We also love his network of writers, where he can scale the workload when needed.
 
 So far, 10/10 experience!`,
@@ -76,7 +75,7 @@ const Testimonial6 = () => {
                 {testimonials.map((testimonial, idx) => (
                   <CarouselItem key={idx}>
                     <div className="flex flex-col items-center text-center">
-                      <p className="sm:mb-16 mb-8 max-w-4xl sm:px-8 px-2 text-sm font-medium  lg:text-3xl">
+                      <p className="sm:mb-16 mb-8 max-w-4xl sm:px-8 px-2 text-md font-medium lg:text-3xl">
                         {testimonial.content}
                       </p>
                       <div className="flex items-center gap-2 md:gap-4">

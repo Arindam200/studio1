@@ -53,7 +53,6 @@ const people = [
   },
   {
     id: 7,
-
     name: "Nebius",
     designation: "AI Cloud",
     image:
