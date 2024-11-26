@@ -51,12 +51,12 @@ export default function Services() {
     <div id="work" className="sm:py-24 py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-        <div className="text-center mb-6 font-semibold lg:text-5xl text-2xl pb-4">
-          Our{" "}
-          <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 from">
-            Services
-          </span>
-        </div>
+          <div className="text-center mb-6 font-semibold lg:text-5xl text-2xl pb-4">
+            Our{" "}
+            <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 from">
+              Services
+            </span>
+          </div>
           {/* <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
             Everything you need to build and maintain a successful developer
             relations program.
@@ -76,7 +76,10 @@ export default function Services() {
               </div>
               <div className="mt-4">
                 <h3 className="text-lg font-medium">
-                  <a href="#" className="focus:outline-none text-2xl text-orange-400">
+                  <a
+                    href="#"
+                    className="focus:outline-none text-2xl text-orange-400"
+                  >
                     <span className="absolute inset-0 " aria-hidden="true" />
                     {service.title}
                   </a>

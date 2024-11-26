@@ -42,7 +42,7 @@ const steps = [
       "Technical content development",
       "Custom code examples and demos",
       "Technical review and validation",
-      "SEO optimization and formatting"
+      "SEO optimization and formatting",
     ],
   },
   {
@@ -61,7 +61,10 @@ const steps = [
 
 export default function Process() {
   return (
-    <div id="process" className="bg-black text-white py-16 max-sm:px-5 sm:py-10 flex flex-col justify-center items-center">
+    <div
+      id="process"
+      className="bg-black text-white py-16 max-sm:px-5 sm:py-10 flex flex-col justify-center items-center"
+    >
       <div className="text-center font-semibold lg:text-5xl text-2xl pb-4">
         How it{" "}
         <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600">

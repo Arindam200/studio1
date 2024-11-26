@@ -10,53 +10,60 @@ import {
 
 const steps = [
   {
-    name: 'Discovery',
-    description: 'We analyze your current DevRel efforts and identify opportunities for improvement.',
+    name: "Discovery",
+    description:
+      "We analyze your current DevRel efforts and identify opportunities for improvement.",
     icon: Search,
     details: [
-      'Audit existing developer programs',
-      'Analyze community engagement',
-      'Identify growth opportunities',
-      'Assessment report'
-    ]
+      "Audit existing developer programs",
+      "Analyze community engagement",
+      "Identify growth opportunities",
+      "Assessment report",
+    ],
   },
   {
-    name: 'Strategy',
-    description: 'Develop a customized roadmap aligned with your business goals and developer needs.',
+    name: "Strategy",
+    description:
+      "Develop a customized roadmap aligned with your business goals and developer needs.",
     icon: LightbulbIcon,
     details: [
-      'Custom roadmap creation',
-      'Resource allocation',
-      'Timeline planning',
-      'KPI definition'
-    ]
+      "Custom roadmap creation",
+      "Resource allocation",
+      "Timeline planning",
+      "KPI definition",
+    ],
   },
   {
-    name: 'Implementation',
-    description: 'Execute the strategy with our experienced team of DevRel professionals.',
+    name: "Implementation",
+    description:
+      "Execute the strategy with our experienced team of DevRel professionals.",
     icon: Rocket,
     details: [
-      'Content creation',
-      'Community building',
-      'Plan exciting campaigns',
-      'Developer engagement'
-    ]
+      "Content creation",
+      "Community building",
+      "Plan exciting campaigns",
+      "Developer engagement",
+    ],
   },
   {
-    name: 'Measurement',
-    description: 'Track KPIs and adjust strategies based on data-driven insights.',
+    name: "Measurement",
+    description:
+      "Track KPIs and adjust strategies based on data-driven insights.",
     icon: BarChart,
     details: [
-      'Performance tracking',
-      'Analytics review',
-      'Strategy adjustment',
-      'ROI measurement'
-    ]
-  }
+      "Performance tracking",
+      "Analytics review",
+      "Strategy adjustment",
+      "ROI measurement",
+    ],
+  },
 ];
 export default function Process() {
   return (
-    <div id="process" className="bg-black text-white py-8 max-sm:px-5 sm:py-10 flex flex-col justify-center items-center">
+    <div
+      id="process"
+      className="bg-black text-white py-8 max-sm:px-5 sm:py-10 flex flex-col justify-center items-center"
+    >
       <div className="text-center font-semibold lg:text-5xl text-2xl sm:pb-4">
         How it{" "}
         <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600">

@@ -26,7 +26,7 @@ const transition = {
   restDelta: 0.001,
   restSpeed: 0.001,
 };
- 
+
 export const MenuItem = ({
   setActive,
   active,
@@ -39,16 +39,45 @@ export const MenuItem = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <div onClick={(active == item) ? () => setActive(null): () => setActive(item)} className="relative">
+    <div
+      onClick={active == item ? () => setActive(null) : () => setActive(item)}
+      className="relative"
+    >
       <motion.p
         transition={{ duration: 0.3 }}
         className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
       >
-        {item} 
+        {item}
         {active == item ? (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down w-4 h-4 inline-block ml-2 max-sm:ml-1"><path d="m6 9 6 6 6-6"/></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="lucide lucide-chevron-down w-4 h-4 inline-block ml-2 max-sm:ml-1"
+          >
+            <path d="m6 9 6 6 6-6" />
+          </svg>
         ) : (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-left w-4 h-4 inline-block ml-2"><path d="m15 18-6-6 6-6"/></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="lucide lucide-chevron-left w-4 h-4 inline-block ml-2"
+          >
+            <path d="m15 18-6-6 6-6" />
+          </svg>
         )}
       </motion.p>
       {active !== null && (
@@ -83,7 +112,8 @@ export const HoveredLink = ({ children, ...rest }: any) => {
   return (
     <Link
       {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-black ">
+      className="text-neutral-700 dark:text-neutral-200 hover:text-black "
+    >
       {children}
     </Link>
   );

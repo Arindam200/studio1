@@ -42,11 +42,15 @@ export default function Page() {
           </span>
 
           <p className="text-lg sm:w-[60rem] max-sm:mx-2.5 sm:text-2xl font-semibold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4 text-center">
-            Creating developer-focused content that builds trust and drives technical adoption
+            Creating developer-focused content that builds trust and drives
+            technical adoption
           </p>
 
           <div className="flex justify-center sm:py-8">
-            <a href="https://cal.com/studio1/collab" className="px-10 gap-2 flex max-sm:px-4 max-sm:py-2.5 max-sm:text-base py-4 text-center text-xl font-semibold rounded-md bg-gradient-to-b from-orange-500 to-orange-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
+            <a
+              href="https://cal.com/studio1/collab"
+              className="px-10 gap-2 flex max-sm:px-4 max-sm:py-2.5 max-sm:text-base py-4 text-center text-xl font-semibold rounded-md bg-gradient-to-b from-orange-500 to-orange-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200"
+            >
               Book a Call
             </a>
           </div>

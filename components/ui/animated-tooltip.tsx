@@ -12,10 +12,10 @@ import {
 const people = [
   {
     id: 1,
-    name: "Nebius",
-    designation: "AI Cloud",
+    name: "Latitude",
+    designation: "LLM development platform",
     image:
-      "https://storage.nemax.nebius.cloud/www-gpu-community-images/speaker_83cdf76a-c815-45b3-bdea-5d88db8e0db6.jpg",
+      "https://media2.dev.to/dynamic/image/width=320,height=320,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F8649%2F4a824627-0334-40e4-8df4-7f7465a347f0.png",
   },
   {
     id: 2,
@@ -26,31 +26,38 @@ const people = [
   },
   {
     id: 3,
-    name: "Jane Smith",
-    designation: "Data Scientist",
-    image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+    name: "CopilotKit",
+    designation: "Ai Agents",
+    image: "https://avatars.githubusercontent.com/u/131273140?s=200&v=4",
   },
   {
     id: 4,
-    name: "Emily Davis",
-    designation: "UX Designer",
+    name: "Permit.io",
+    designation: "Authorization as a Service",
     image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+      "https://media.licdn.com/dms/image/v2/D4D0BAQEUnapZHA3qpg/company-logo_200_200/company-logo_200_200/0/1704364380450/permitio_logo?e=2147483647&v=beta&t=0vSDXykS9qDKgJhg-h4CJNPYYe0JCFy3DugA87Lh-2I",
   },
   {
     id: 5,
-    name: "Tyler Durden",
-    designation: "Soap Developer",
+    name: "Crawlee",
+    designation: "Web Scraping framework",
     image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+      "https://ph-files.imgix.net/52d7b824-8e98-4d20-8f09-3290c4f3f97a.png?auto=format",
   },
   {
     id: 6,
-    name: "Dora",
-    designation: "The Explorer",
+    name: "Tolgee",
+    designation: "i18n tool",
     image:
-      "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
+      "https://media2.dev.to/dynamic/image/width=320,height=320,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Forganization%2Fprofile_image%2F4876%2F895c36ae-8f92-4d4c-aa17-1e0c19959cad.png",
+  },
+  {
+    id: 7,
+
+    name: "Nebius",
+    designation: "AI Cloud",
+    image:
+      "https://storage.nemax.nebius.cloud/www-gpu-community-images/speaker_83cdf76a-c815-45b3-bdea-5d88db8e0db6.jpg",
   },
 ];
 // {

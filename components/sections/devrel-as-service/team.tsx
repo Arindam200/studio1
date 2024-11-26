@@ -25,21 +25,20 @@ const team = [
       github: "#",
     },
   },
-    {
-      name: 'Shivay Lamba',
-      role: 'ML Engineer and Open source advocate',
-      image: 'https://avatars.githubusercontent.com/u/19529592?v=4',
-      bio: "",
-      social: {
-        twitter: 'https://x.com/HowDevelop',
-        linkedin: '#',
-        github: '#'
-      }
-    }
+  {
+    name: "Shivay Lamba",
+    role: "ML Engineer and Open source advocate",
+    image: "https://avatars.githubusercontent.com/u/19529592?v=4",
+    bio: "",
+    social: {
+      twitter: "https://x.com/HowDevelop",
+      linkedin: "#",
+      github: "#",
+    },
+  },
 ];
 
 export default function Team() {
-
   return (
     <div id="team" className="py-10 sm:py-24 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,7 +48,7 @@ export default function Team() {
             Leadership Team
           </span>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-          Helping in growth of devtool companies
+            Helping in growth of devtool companies
           </p>
         </div>
 
