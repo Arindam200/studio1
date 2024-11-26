@@ -29,19 +29,19 @@ const services = [
   {
     title: "Developer Support",
     description:
-      "24/7 technical support and guidance for your developer community.",
+      "Building a responsive developer community where questions are answered and solutions are shared collaboratively.",
     icon: MessageSquare,
   },
   {
     title: "Video Content",
     description:
-      "Engaging video tutorials, product demos, and technical workshops.",
+      "Engaging video tutorials, product demos, and technical livestreams.",
     icon: Youtube,
   },
   {
-    title: "API Strategy",
+    title: "Tool Audit",
     description:
-      "Strategic guidance on API design, documentation, and developer experience.",
+      "Strategic onboarding and developer experience assessment through comprehensive tool ecosystem analysis.",
     icon: GitBranch,
   },
 ];

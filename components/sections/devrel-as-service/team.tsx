@@ -5,33 +5,33 @@ import { useState } from "react";
 const team = [
   {
     name: "Arindam Majumder",
-    role: "Head of Developer Education",
+    role: "Open source developer and DevRel",
     image: "https://avatars.githubusercontent.com/u/109217591?v=4",
-    bio: "Former Developer Advocate at Google Cloud, Sarah brings 10+ years of experience in building developer education programs and technical content strategies.",
+    bio: "",
     social: {
-      twitter: "#",
-      linkedin: "#",
-      github: "#",
+      twitter: "https://dub.sh/arindam-x",
+      linkedin: "https://dub.sh/arindam-linkedin",
+      github: "https://git.new/Arindam",
     },
   },
   {
     name: "Amitesh Anand",
-    role: "Head of Community & Events",
+    role: "Technical writer and DevRel",
     image: "https://avatars.githubusercontent.com/u/73425223?v=4",
-    bio: "Previously led developer relations at AWS, Marcus specializes in building and scaling global developer communities and organizing impactful tech events.",
+    bio: "",
     social: {
-      twitter: "#",
-      linkedin: "#",
+      twitter: "https://mobile.twitter.com/astrodevil_",
+      linkedin: "https://www.linkedin.com/in/amitesh1208/",
       github: "#",
     },
   },
     {
       name: 'Shivay Lamba',
-      role: 'Head of Technical Strategy',
+      role: 'ML Engineer and Open source advocate',
       image: 'https://avatars.githubusercontent.com/u/19529592?v=4',
-      bio: 'With experience at Microsoft and GitHub, Alex excels in API strategy, developer experience optimization, and technical partnership development.',
+      bio: "",
       social: {
-        twitter: '#',
+        twitter: 'https://x.com/HowDevelop',
         linkedin: '#',
         github: '#'
       }
@@ -49,7 +49,7 @@ export default function Team() {
             Leadership Team
           </span>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-            Industry veterans passionate about developer success
+          Helping in growth of devtool companies
           </p>
         </div>
 

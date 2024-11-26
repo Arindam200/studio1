@@ -38,7 +38,7 @@ const steps = [
     details: [
       'Content creation',
       'Community building',
-      'Program launch',
+      'Plan exciting campaigns',
       'Developer engagement'
     ]
   },
