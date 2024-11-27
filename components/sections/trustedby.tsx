@@ -58,9 +58,16 @@ const Logos = {
       className="sm:h-14 h-30 sm:min-w-40 w-[240px]"
     />
   ),
+  Webcrumbs: () => (
+    <img
+      src="https://camo.githubusercontent.com/9350767c2dd34b635f3e63e8e61798502bc4eee59df80accb9dc145af0d778c9/68747470733a2f2f63646e2e7765626372756d62732e6f72672f6173736574732f696d616765732f6272616e642f6c6f676f5f7265642e737667"
+      alt="Webcrumbs"
+      className="h-16 sm:min-w-44 w-[140px]"
+      />
+  ),
 };
 
-const arr = [ Logos.permit, Logos.Tolgee, Logos.Nebius, Logos.CopilotKit, Logos.Latitude, Logos.Opire, Logos.Crawlee, Logos.Encore];
+const arr = [ Logos.permit, Logos.Tolgee, Logos.Nebius, Logos.CopilotKit, Logos.Latitude, Logos.Opire, Logos.Crawlee, Logos.Encore, Logos.Webcrumbs ];
 
 function Trustedby() {
   return (
