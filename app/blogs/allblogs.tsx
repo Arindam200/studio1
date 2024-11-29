@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react'
 import {
   MinimalCard,
@@ -101,4 +103,5 @@ export default function Allblogs({ query }: AllblogsProps) {
     </div>
   )
 }
+
 
