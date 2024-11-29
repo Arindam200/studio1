@@ -7,7 +7,7 @@ import {
   MinimalCardTitle,
 } from "@/components/ui/minimal-cards";
 import Link from "next/link";
-import { ArrowRight} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Data } from "@/data";
 
 const cards = Data.Blogs;
@@ -43,7 +43,10 @@ export default function MinimalCardDemo() {
         </div>
       </div>
       <div className="flex justify-center py-4">
-        <Link href="/blogs" className="inline-flex gap-3 h-12 animate-shimmer items-center justify-center rounded-md border border-orange-400 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-orange-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-orange-50">
+        <Link
+          href="/blogs"
+          className="inline-flex gap-3 h-12 animate-shimmer items-center justify-center rounded-md border border-orange-400 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-orange-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 focus:ring-offset-orange-50"
+        >
           Read More Blogs <ArrowRight size={24} />
         </Link>
       </div>

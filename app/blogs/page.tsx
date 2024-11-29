@@ -1,30 +1,30 @@
-import React from 'react';
-import Navbar from '@/components/sections/navbar';
-import DotPattern from '@/components/ui/dot-pattern';
+import React from "react";
+import Navbar from "@/components/sections/navbar";
+import DotPattern from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
-import Searchbar from '@/components/ui/searchbar';
-import { Suspense } from 'react';
-import Hero from './hero';
+import Searchbar from "@/components/ui/searchbar";
+import { Suspense } from "react";
+import Hero from "./hero";
 import { baseUrl } from "@/app/sitemap";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Blog",
+  title: "Blog",
+  description: "All Blogs of Studio1.",
+  openGraph: {
+    title: "Blogs | Studio1",
     description: "All Blogs of Studio1.",
-    openGraph: {
-      title: "Blogs | Studio1",
-      description: "All Blogs of Studio1.",
-      url: baseUrl + "/blogs",
-      siteName: "Studio1",
-      locale: "en_US",
-      type: "website",
-    },
-    twitter: {
-      title: "Blog | Studio1",
-      card: "summary_large_image",
-      description: "All Blogs of Studio1.",
-    },
-  };
+    url: baseUrl + "/blogs",
+    siteName: "Studio1",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    title: "Blog | Studio1",
+    card: "summary_large_image",
+    description: "All Blogs of Studio1.",
+  },
+};
 
 export default function Page({
   searchParams,
@@ -36,13 +36,13 @@ export default function Page({
   const query = searchParams?.query || "";
   return (
     <>
-    <div className="sm:h-[35rem] h-[28rem] relative flex flex-col justify-center items-center">
+      <div className="sm:h-[35rem] h-[28rem] relative flex flex-col justify-center items-center">
         <Navbar />
         <DotPattern
           className={cn(
             "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
-        )}
-      />
+          )}
+        />
         <div className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 pt-8 py-4 text-center">
           <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 from">
             {" "}
@@ -54,15 +54,15 @@ export default function Page({
             strategies.
           </p>
           <div className="flex justify-center text-lg">
-          <Suspense fallback={<div>Loading...</div>}>
-            <Searchbar />
-          </Suspense>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Searchbar />
+            </Suspense>
           </div>
-        </div>     
-    </div>
-    <Suspense fallback={<div>Loading...</div>}>
-      <Hero query={query}/>
-    </Suspense>
+        </div>
+      </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Hero query={query} />
+      </Suspense>
     </>
-  )
+  );
 }

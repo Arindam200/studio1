@@ -1,6 +1,6 @@
 import { Data } from "@/data";
 
-const services = Data.DevRelAsServiceServices
+const services = Data.DevRelAsServiceServices;
 
 export default function Services() {
   return (

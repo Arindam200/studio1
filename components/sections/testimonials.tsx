@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Carousel,
@@ -7,7 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Data } from '@/data';
+import { Data } from "@/data";
 
 const testimonials = Data.Testimonials;
 
@@ -35,12 +35,19 @@ const Testimonial6: React.FC = () => {
                           <p key={index} className="sm:mb-2.5 mb-1.5">
                             {line.split(" ").map((word, wordIndex) => {
                               const isHighlighted = testimonial.highlights.some(
-                                highlight => word.toLowerCase().includes(highlight.toLowerCase())
+                                (highlight) =>
+                                  word
+                                    .toLowerCase()
+                                    .includes(highlight.toLowerCase()),
                               );
                               return (
                                 <span
                                   key={`${index}-${wordIndex}`}
-                                  className={isHighlighted ? "text-orange-500 font-semibold" : ""}
+                                  className={
+                                    isHighlighted
+                                      ? "text-orange-500 font-semibold"
+                                      : ""
+                                  }
                                 >
                                   {word}{" "}
                                 </span>
@@ -51,8 +58,16 @@ const Testimonial6: React.FC = () => {
                       </div>
                       <div className="flex items-center gap-2 md:gap-4">
                         <Avatar className="w-12 h-12 md:w-16 md:h-16">
-                          <AvatarImage src={testimonial.avatar} alt={`${testimonial.name}'s avatar`} />
-                          <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                          <AvatarImage
+                            src={testimonial.avatar}
+                            alt={`${testimonial.name}'s avatar`}
+                          />
+                          <AvatarFallback>
+                            {testimonial.name
+                              .split(" ")
+                              .map((n) => n[0])
+                              .join("")}
+                          </AvatarFallback>
                         </Avatar>
                         <div className="text-left">
                           <p className="text-sm font-semibold md:text-xl text-orange-400">
@@ -77,4 +92,3 @@ const Testimonial6: React.FC = () => {
 };
 
 export default Testimonial6;
-

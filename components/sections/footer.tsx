@@ -10,7 +10,8 @@ export default function Footer() {
             <div className="space-y-2">
               <h2 className="text-2xl font-bold text-orange-400">Studio1</h2>
               <p className="text-muted-foreground sm:w-96">
-              Empowering tech companies with technical content and DevRel services. 
+                Empowering tech companies with technical content and DevRel
+                services.
               </p>
             </div>
             <div className="flex gap-4 ">
@@ -41,31 +42,31 @@ export default function Footer() {
             <div className="space-y-4">
               <h3 className="font-bold text-orange-400">Services</h3>
               <nav className="flex flex-col gap-2">
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Technical Content
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                DevRel Consulting
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Community Building
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Developer Marketing
-              </Link>
-            </nav>
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Technical Content
+                </Link>
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  DevRel Consulting
+                </Link>
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Community Building
+                </Link>
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Developer Marketing
+                </Link>
+              </nav>
             </div>
             <div className="space-y-4">
               <h3 className="font-bold text-orange-400">Company</h3>

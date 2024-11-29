@@ -105,11 +105,11 @@ const config = {
         },
         shimmer: {
           from: {
-            "backgroundPosition": "0 0"
+            backgroundPosition: "0 0",
           },
           to: {
-            "backgroundPosition": "-200% 0"
-          }
+            backgroundPosition: "-200% 0",
+          },
         },
       },
       animation: {
@@ -119,7 +119,7 @@ const config = {
         marquee: "marquee var(--duration, 30s) linear infinite",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         shine: "shine var(--duration) infinite linear",
-        shimmer: "shimmer 2s linear infinite"
+        shimmer: "shimmer 2s linear infinite",
       },
     },
   },

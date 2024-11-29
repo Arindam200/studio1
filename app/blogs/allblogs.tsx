@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react'
+import React from "react";
 import {
   MinimalCard,
   MinimalCardDescription,
@@ -101,7 +101,5 @@ export default function Allblogs({ query }: AllblogsProps) {
         )}
       </div>
     </div>
-  )
+  );
 }
-
-

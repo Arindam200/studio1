@@ -14,7 +14,7 @@ export default function Navbar5({ className }: { className?: string }) {
       )}
     >
       <Menu setActive={setActive}>
-      <Link href="/team">
+        <Link href="/team">
           <p className=" font-medium text-white">Team</p>
         </Link>
         <Link href="/blog-as-service">

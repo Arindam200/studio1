@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
 import { Input } from "@/components/ui/input";
-import { Search } from 'lucide-react';
+import { Search } from "lucide-react";
 
 export default function Searchbar() {
   const [search, setSearch] = useState<string>("");
@@ -41,4 +41,3 @@ export default function Searchbar() {
     </div>
   );
 }
-
