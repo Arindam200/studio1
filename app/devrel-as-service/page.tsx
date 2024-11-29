@@ -9,7 +9,7 @@ export default function DevRel() {
   return (
     <div className="bg-black">
       <Hero />
-      <Impact />
+      {/* <Impact /> */}
       <Services />
       <Process />
       <Team />

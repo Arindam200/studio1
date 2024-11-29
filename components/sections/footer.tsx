@@ -25,13 +25,6 @@ export default function Footer() {
                 href="#"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                <Facebook className="h-5 w-5 text-orange-400" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
                 <Twitter className="h-5 w-5 text-orange-400" />
                 <span className="sr-only">Twitter</span>
               </Link>
