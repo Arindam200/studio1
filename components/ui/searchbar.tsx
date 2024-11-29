@@ -29,7 +29,7 @@ export default function Searchbar() {
   }, 300);
 
   return (
-    <div className="flex w-full max-w-sm items-center space-x-2 relative">
+    <div className="flex w-full max-sm:px-4 max-w-sm items-center space-x-2 relative">
       <Input
         type="text"
         placeholder="Search blogs..."
@@ -37,7 +37,7 @@ export default function Searchbar() {
         onChange={(e) => handleSearch(e.target.value)}
         className="bg-black border-white/20 text-white placeholder-white/50 pr-10 py-5 pl-4 rounded-md w-full"
       />
-      <Search className="h-4 w-4 absolute right-3 top-1/2 transform -translate-y-1/2 text-white/50" />
+      <Search className="h-4 w-4 absolute right-3 max-sm:right-8 top-1/2 transform -translate-y-1/2 text-white/50" />
     </div>
   );
 }
