@@ -112,7 +112,7 @@ export function GridBackgroundDemo() {
 
       {/* <div className="text-md font-medium"> Quality Articles.</div> */}
       <div className=" flex gap-2 font-thin font-serif text-3xl align-center sm:pt-1.5 pt-0.5">
-        50+
+        15+
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-8 mt-2.5 max-sm:mt-3"
