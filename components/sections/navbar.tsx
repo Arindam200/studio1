@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar2 from "@/components/ui/acc-navbar";
 import Navbar3 from "./devrel-as-service/navbar3";
 import Navbar4 from "./blog-as-service/navbar4";
+import Navbar5 from "@/app/blogs/navbar";
 import { usePathname } from "next/navigation";
 import Logo from "@/public/assets/logo.png";
 
@@ -12,6 +13,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDevrel, setIsDevrel] = useState(false);
   const [isBlog, setIsBlog] = useState(false);
+  const [isAllBlog, setIsAllBlog] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -26,11 +28,13 @@ export default function Navbar() {
   useEffect(() => {
     setIsDevrel(pathname.includes("/devrel-as-service"));
     setIsBlog(pathname.includes("/blog-as-service"));
+    setIsAllBlog(pathname.includes("/blogs"));
   }, [pathname]);
 
   const renderNavbar = () => {
     if (isDevrel) return <Navbar3 />;
     if (isBlog) return <Navbar4 />;
+    if (isAllBlog) return <Navbar5 />;
     return <Navbar2 />;
   };
 

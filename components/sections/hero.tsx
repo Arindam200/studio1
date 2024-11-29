@@ -115,7 +115,7 @@ export function GridBackgroundDemo() {
         15+
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-8 mt-2.5 max-sm:mt-3"
+          className="h-8 mt-2.5 max-sm:mt-2"
           width="100%"
           height="100%"
           viewBox="0 0 196 50"

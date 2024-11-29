@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
+import { Newspaper, Twitter, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -10,17 +10,10 @@ export default function Footer() {
             <div className="space-y-2">
               <h2 className="text-2xl font-bold text-orange-400">Studio1</h2>
               <p className="text-muted-foreground sm:w-96">
-              Empowering tech companies with technical content and DevRel services. Driving engagement through quality content, trusted by leading software companies.
+              Empowering tech companies with technical content and DevRel services. 
               </p>
             </div>
             <div className="flex gap-4 ">
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Instagram className="h-5 w-5 text-orange-400" />
-                <span className="sr-only">Instagram</span>
-              </Link>
               <Link
                 href="#"
                 className="text-muted-foreground hover:text-foreground transition-colors"
@@ -35,37 +28,44 @@ export default function Footer() {
                 <Linkedin className="h-5 w-5 text-orange-400" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Newspaper className="h-5 w-5 text-orange-400" />
+                <span className="sr-only">Blogs</span>
+              </Link>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
             <div className="space-y-4">
-              <h3 className="font-bold text-orange-400">Product</h3>
+              <h3 className="font-bold text-orange-400">Services</h3>
               <nav className="flex flex-col gap-2">
-                <Link
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-colors "
-                >
-                  Overview
-                </Link>
-                <Link
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Pricing
-                </Link>
-                <Link
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Marketplace
-                </Link>
-                <Link
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Features
-                </Link>
-              </nav>
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Technical Content
+              </Link>
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                DevRel Consulting
+              </Link>
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Community Building
+              </Link>
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Developer Marketing
+              </Link>
+            </nav>
             </div>
             <div className="space-y-4">
               <h3 className="font-bold text-orange-400">Company</h3>
