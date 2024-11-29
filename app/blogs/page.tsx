@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { useSearchParams } from 'next/navigation';
 import Searchbar from '@/components/ui/searchbar';
 import Allblogs from './allblogs';
+import { Suspense } from 'react';
 
 export default function Page() {
     const searchParams = useSearchParams();
@@ -30,10 +31,11 @@ export default function Page() {
             Build and nurture your developer community with our expert DevRel
             strategies.
           </p>
-
+          <Suspense>
           <div className="flex justify-center text-lg">
             <Searchbar />    
           </div>
+          </Suspense>
         </div>     
     </div>
     <div className="sm:px-20 px-1.5">
