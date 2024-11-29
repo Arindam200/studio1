@@ -32,7 +32,9 @@ export default function Page() {
             strategies.
           </p>
           <div className="flex justify-center text-lg">
+          <Suspense fallback={<div>Loading...</div>}>
             <Searchbar />    
+          </Suspense>
           </div>
         </div>     
     </div>
