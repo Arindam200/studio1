@@ -31,15 +31,15 @@ export default function Page() {
             Build and nurture your developer community with our expert DevRel
             strategies.
           </p>
-          <Suspense>
           <div className="flex justify-center text-lg">
             <Searchbar />    
           </div>
-          </Suspense>
         </div>     
     </div>
     <div className="sm:px-20 px-1.5">
-    <Allblogs query={query || ""} />
+      <Suspense fallback={<div>Loading...</div>}>  
+        <Allblogs query={query || ""} />
+      </Suspense>
     </div>
     </>
   )
