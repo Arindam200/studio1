@@ -35,7 +35,7 @@ const reasons = [
   {
     title: "Results",
     description:
-      "Content published by us has reached over 600,000 developers so far. We deliver technical content that ranks and converts.",
+      "Content published by us has reached over 600,000 readers so far. We deliver technical content that ranks and converts.",
     icon: <Layers className="size-6" />,
   },
   {

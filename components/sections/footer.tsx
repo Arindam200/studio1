@@ -10,8 +10,7 @@ export default function Footer() {
             <div className="space-y-2">
               <h2 className="text-2xl font-bold text-orange-400">Studio1</h2>
               <p className="text-muted-foreground sm:w-96">
-                A collection of 100+ responsive HTML templates for your startup
-                business or side project.
+              Empowering tech companies with technical content and DevRel services. Driving engagement through quality content, trusted by leading software companies.
               </p>
             </div>
             <div className="flex gap-4 ">

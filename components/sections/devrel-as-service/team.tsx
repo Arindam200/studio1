@@ -17,7 +17,7 @@ const team = [
   {
     name: "Amitesh Anand",
     role: "Technical writer and DevRel",
-    image: "https://avatars.githubusercontent.com/u/73425223?v=4",
+    image: "/assets/amitesh.png",
     bio: "",
     social: {
       twitter: "https://mobile.twitter.com/astrodevil_",

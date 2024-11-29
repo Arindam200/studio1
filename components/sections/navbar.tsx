@@ -52,11 +52,11 @@ export default function Navbar() {
         {isScrolled && renderNavbar()}
         {!isScrolled && (
           <a
-            href="mailto:studioone.tech@gmail.com"
-            className="shadow-[0_4px_14px_0_rgb(0,0,0,10%)] flex text-lg max-md:text-sm font-semibold max-md:font-light hover:shadow-[0_6px_20px_rgba(93,93,93,23%)] px-8 py-2.5 max-md:px-4 max-md:py-1.5 bg-[#fff] text-orange-500 rounded-md transition duration-200 ease-linear"
-          >
-            Contact Us
-          </a>
+          href="mailto:studioone.tech@gmail.com"
+          className="shadow-[0_4px_14px_0_rgb(0,0,0,10%)] flex text-lg max-md:text-sm font-semibold px-8 py-2.5 max-md:px-4 max-md:py-1.5 bg-[#fff] text-orange-500 rounded-md transition duration-200 ease-linear hover:shadow-[0_6px_20px_rgba(93,93,93,23%)]"
+        >
+          Contact Us
+        </a>
         )}
       </div>
     </header>

@@ -15,7 +15,7 @@ const team = [
   {
     name: "Amitesh Anand",
     role: "Co-founder & Operations Lead",
-    image: "https://avatars.githubusercontent.com/u/73425223?v=4",
+    image: "/assets/amitesh.png",
     bio: "Technical writer and developer advocate with expertise in creating scalable content. Published 80k+ words reaching 250k+ readers across major tech platforms. HackerNoon award nominee focused on delivering high-impact technical content.",
     social: {
       twitter: "https://mobile.twitter.com/astrodevil_",

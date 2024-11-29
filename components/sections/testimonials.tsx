@@ -14,6 +14,7 @@ import JuliaImg from "../../public/assets/Julia.png";
 import DavidImg from "../../public/assets/David.png";
 import ColeImg from "../../public/assets/Cole.png";
 import FerranImg from "../../public/assets/Ferran.png";
+import AgitaImg from "../../public/assets/Agita.png";
 
 interface Testimonial {
   name: string;
@@ -45,6 +46,14 @@ const testimonials: Testimonial[] = [
     So far, 10/10 experience!`,
     highlights: ["Arindam", "content pieces", "network of writers", "scale the workload", "10/10 experience"],
   },
+  {
+    name: "Agita Jaunzeme",
+    role: "Community Manager, VDK(VMware)",
+    avatar: AgitaImg.src,
+    content: `Very fast, good-quality work, results! Nothing to add; I totally recommend working with Amitesh!`,
+    highlights: ["Amitesh", "good-quality"],
+  },
+  
   {
     name: "Julia Machado",
     role: "Founder & CEO, WebCrumbs",
