@@ -1,29 +1,7 @@
 import { Github, Linkedin, Twitter } from "lucide-react";
+import { Data } from "@/data";
 
-const team = [
-  {
-    name: "Arindam Majumder",
-    role: "Co-founder & Content Lead",
-    image: "https://avatars.githubusercontent.com/u/109217591?v=4",
-    bio: "Developer Advocate with expertise in technical writing and open-source. Has reached 270k+ developers through technical content, with notable contributions to Next.js and featured in their RC release blog. Specializes in creating developer-centric content that drives engagement and growth.",
-    social: {
-      twitter: "https://dub.sh/arindam-x",
-      linkedin: "https://dub.sh/arindam-linkedin",
-      github: "https://git.new/Arindam",
-    },
-  },
-  {
-    name: "Amitesh Anand",
-    role: "Co-founder & Operations Lead",
-    image: "/assets/amitesh.png",
-    bio: "Technical writer and developer advocate with expertise in creating scalable content. Published 80k+ words reaching 250k+ readers across major tech platforms. HackerNoon award nominee focused on delivering high-impact technical content.",
-    social: {
-      twitter: "https://mobile.twitter.com/astrodevil_",
-      linkedin: "https://www.linkedin.com/in/amitesh1208/",
-      github: "#",
-    },
-  },
-];
+const team = Data.BlogAsServiceTeam;
 
 export default function Team() {
   return (

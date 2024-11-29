@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Carousel,
@@ -8,99 +7,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import IvanImg from "../../public/assets/Ivan.jpg";
-import GabrielImg from "../../public/assets/Gabriel.png";
-import JuliaImg from "../../public/assets/Julia.png";
-import DavidImg from "../../public/assets/David.png";
-import ColeImg from "../../public/assets/Cole.png";
-import FerranImg from "../../public/assets/Ferran.png";
-import AgitaImg from "../../public/assets/Agita.png";
+import { Data } from '@/data';
 
-interface Testimonial {
-  name: string;
-  role: string;
-  avatar: string;
-  content: string;
-  highlights: string[];
-}
-
-const testimonials: Testimonial[] = [
-  {
-    name: "Ivan Cordoba",
-    role: "CEO & Founder Opire",
-    avatar: IvanImg.src,
-    content:
-      `Studio1 turned our ideas into clear and engaging content, helping us connect with our community and strengthen our identity.
-      
-      A key collaboration for Opire's growth.`,
-    highlights: ["Studio1", "Opire's growth"],
-  },
-  {
-    name: "Gabriel L. Manor",
-    role: "Director of DevRel, Permit.io",
-    avatar: GabrielImg.src,
-    content: `We've been working with Arindam on multiple content pieces for the last couple of months, and his work is astonishing.
-              
-    We also love his network of writers, where he can scale the workload when needed.
-
-    So far, 10/10 experience!`,
-    highlights: ["Arindam", "content pieces", "network of writers", "scale the workload", "10/10 experience"],
-  },
-  {
-    name: "Agita Jaunzeme",
-    role: "Community Manager, VDK(VMware)",
-    avatar: AgitaImg.src,
-    content: `Very fast, good-quality work, results! Nothing to add; I totally recommend working with Amitesh!`,
-    highlights: ["Amitesh", "good-quality"],
-  },
-  
-  {
-    name: "Julia Machado",
-    role: "Founder & CEO, WebCrumbs",
-    avatar: JuliaImg.src,
-    content:
-      `Arindam gave us a masterclass on how to launch on Product Hunt and I dare to say if it wasn't that we wouldn't have achieved 3rd in our first launch ever and with almost zero preparation.
-      
-      He write great technical texts that reach an impressive audience. 
-      
-      We'll definitely work with him again!`,
-    highlights: [ "Product Hunt", "technical texts", "impressive audience", "work with him again" ],
-  },
-  {
-    name: "David Mython",
-    role: "CEO, Arcjet",
-    avatar: DavidImg.src,
-    content:
-      `We worked with Arindam on a writeup of the Arcjet beta release.
-      
-      The goal was to introduce the SDK to developers and show off how you can use Arcjet to protect an interesting application. 
-      
-      Arindam was responsive to feedback and helped us achieve those goals`,
-    highlights: ["Arindam", "Arcjet beta release", "SDK", "developers and show off", "protect an interesting application"],
-  },
-  {
-    name: "Cole Stark",
-    role: "CMO, Pieces.app",
-    avatar: ColeImg.src,
-    content:
-      `Arindam has been an excellent addition to our DevRel team. 
-      
-      He brought a creative mindset and a hard work ethic to our team which helped us to scale our Discord presence and overall community growth efforts.`,
-    highlights: ["Arindam", "DevRel team", "creative mindset", "hard work ethic", "scale our Discord presence", "overall community growth efforts"],
-  },
-  {
-    name: "Ferran Rodríguez",
-    role: "Growth Manager, Latitude",
-    avatar: FerranImg.src,
-    content:
-      `Working with Arindam has been one of the best experiences that I had collaborating with a technical writer.
-
-        Execution and delivery was almost perfect, we just needed one small round of adjustments before publishing.
-
-        I can't recommend enough to work with Arindam and I'm looking forward to our next collaboration!`,
-    highlights: ["Arindam", "technical writer", "briefing process", "efficient", "topic ideas", "approach the content piece", "Execution and delivery", "perfect", "small round of adjustments", "publishing", "technical content", "recommend", "collaboration"],
-  },
-];
+const testimonials = Data.Testimonials;
 
 const Testimonial6: React.FC = () => {
   return (

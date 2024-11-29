@@ -1,22 +1,7 @@
 import React from "react";
 import { CardWithGridEllipsis, CardBody } from "@/components/ui/cards";
-const cardContent = [
-  {
-    title: "Blogs as Service",
-    description:
-      "We create high-quality, technical and promotional blogs tailored for devtool and software companies. Our team of expert writers specializes in crafting SEO-optimized content that drives engagement, educates developers, and helps your tools stand out in a competitive market.",
-  },
-  {
-    title: "DevRel as Service",
-    description:
-      "Accelerate your growth with targeted Developer Relations services. We help devtool and software companies connect authentically with developers, grow communities, and turn users into advocates.",
-  },
-  {
-    title: "More Services",
-    description:
-      "Coming soon. We are working to provide more services. Stay tuned for more updates.",
-  },
-];
+import { Data } from "@/data";
+const cardContent = Data.Services;
 
 function Service() {
   return (

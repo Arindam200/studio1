@@ -8,67 +8,10 @@ import {
   useMotionValue,
   useSpring,
 } from "framer-motion";
+import { Data } from "@/data";
 
-const people = [
-  {
-    id: 1,
-    name: "Latitude",
-    designation: "LLM development platform",
-    image:
-      "/assets/latitude.png",
-  },
-  {
-    id: 2,
-    name: "Encore",
-    designation: "TS Framework",
-    image:
-      "/assets/encore.png",
-  },
-  {
-    id: 3,
-    name: "CopilotKit",
-    designation: "Ai Agents",
-    image: "/assets/copilotkit.png",
-  },
-  {
-    id: 4,
-    name: "Permit.io",
-    designation: "Authorization as a Service",
-    image:
-      "/assets/permit.jpg",
-  },
-  {
-    id: 5,
-    name: "Crawlee",
-    designation: "Web Scraping framework",
-    image:
-      "/assets/crawlee.png",
-  },
-  {
-    id: 6,
-    name: "Tolgee",
-    designation: "i18n tool",
-    image:
-      "/assets/tolgee.png",
-  },
-  {
-    id: 7,
-    name: "Nebius",
-    designation: "AI Cloud",
-    image:
-      "/assets/nebius.jpg",
-  },
-];
-// {
-//   // items = people,
-// }: {
-//   // items: {
-//   //   id: number;
-//   //   name: string;
-//   //   designation: string;
-//   //   image: string;
-//   // }[];
-// }
+const people = Data.Companies;
+
 export const AnimatedTooltip = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const springConfig = { stiffness: 100, damping: 5 };

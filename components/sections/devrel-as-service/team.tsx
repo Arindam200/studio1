@@ -1,42 +1,7 @@
-"use client";
+import { Data } from "@/data";
 import { Github, Linkedin, Twitter, Mail, Calendar } from "lucide-react";
-import { useState } from "react";
 
-const team = [
-  {
-    name: "Arindam Majumder",
-    role: "Open source developer and DevRel",
-    image: "https://avatars.githubusercontent.com/u/109217591?v=4",
-    bio: "",
-    social: {
-      twitter: "https://dub.sh/arindam-x",
-      linkedin: "https://dub.sh/arindam-linkedin",
-      github: "https://git.new/Arindam",
-    },
-  },
-  {
-    name: "Amitesh Anand",
-    role: "Technical writer and DevRel",
-    image: "/assets/amitesh.png",
-    bio: "",
-    social: {
-      twitter: "https://mobile.twitter.com/astrodevil_",
-      linkedin: "https://www.linkedin.com/in/amitesh1208/",
-      github: "#",
-    },
-  },
-  {
-    name: "Shivay Lamba",
-    role: "ML Engineer and Open source advocate",
-    image: "https://avatars.githubusercontent.com/u/19529592?v=4",
-    bio: "",
-    social: {
-      twitter: "https://x.com/HowDevelop",
-      linkedin: "#",
-      github: "#",
-    },
-  },
-];
+const team = Data.DevRelAsServiceTeam;
 
 export default function Team() {
   return (

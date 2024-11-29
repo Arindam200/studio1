@@ -2,62 +2,10 @@ import React from "react";
 import {
   CheckCircle2,
   ArrowRight,
-  Search,
-  LightbulbIcon,
-  Rocket,
-  BarChart,
 } from "lucide-react";
+import { Data } from "@/data";
 
-const steps = [
-  {
-    name: "Discovery",
-    description:
-      "We analyze your current DevRel efforts and identify opportunities for improvement.",
-    icon: Search,
-    details: [
-      "Audit existing developer programs",
-      "Analyze community engagement",
-      "Identify growth opportunities",
-      "Assessment report",
-    ],
-  },
-  {
-    name: "Strategy",
-    description:
-      "Develop a customized roadmap aligned with your business goals and developer needs.",
-    icon: LightbulbIcon,
-    details: [
-      "Custom roadmap creation",
-      "Resource allocation",
-      "Timeline planning",
-      "KPI definition",
-    ],
-  },
-  {
-    name: "Implementation",
-    description:
-      "Execute the strategy with our experienced team of DevRel professionals.",
-    icon: Rocket,
-    details: [
-      "Content creation",
-      "Community building",
-      "Plan exciting campaigns",
-      "Developer engagement",
-    ],
-  },
-  {
-    name: "Measurement",
-    description:
-      "Track KPIs and adjust strategies based on data-driven insights.",
-    icon: BarChart,
-    details: [
-      "Performance tracking",
-      "Analytics review",
-      "Strategy adjustment",
-      "ROI measurement",
-    ],
-  },
-];
+const steps = Data.DevRelAsServiceProcess;
 export default function Process() {
   return (
     <div

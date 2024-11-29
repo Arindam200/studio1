@@ -105,12 +105,11 @@ export function GridBackgroundDemo() {
           <ArrowRight className="pt-1" />
         </a>
       </div>
-      {/* <Underline /> */}
+
       <div className="flex py-2">
         <AnimatedTooltip />
       </div>
 
-      {/* <div className="text-md font-medium"> Quality Articles.</div> */}
       <div className=" flex gap-2 font-thin font-serif text-3xl align-center sm:pt-1.5 pt-0.5">
         15+
         <svg

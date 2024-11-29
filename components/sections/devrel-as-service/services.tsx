@@ -1,50 +1,6 @@
-import {
-  Code2,
-  Users,
-  BookOpen,
-  MessageSquare,
-  Youtube,
-  GitBranch,
-} from "lucide-react";
+import { Data } from "@/data";
 
-const services = [
-  {
-    title: "Technical Content Creation",
-    description:
-      "High-quality tutorials, documentation, and technical blog posts that resonate with developers.",
-    icon: Code2,
-  },
-  {
-    title: "Community Management",
-    description:
-      "Build and nurture a thriving developer community around your product or platform.",
-    icon: Users,
-  },
-  {
-    title: "Developer Education",
-    description:
-      "Comprehensive training programs and workshops to help developers succeed with your tools.",
-    icon: BookOpen,
-  },
-  {
-    title: "Developer Support",
-    description:
-      "Building a responsive developer community where questions are answered and solutions are shared collaboratively.",
-    icon: MessageSquare,
-  },
-  {
-    title: "Video Content",
-    description:
-      "Engaging video tutorials, product demos, and technical livestreams.",
-    icon: Youtube,
-  },
-  {
-    title: "Tool Audit",
-    description:
-      "Strategic onboarding and developer experience assessment through comprehensive tool ecosystem analysis.",
-    icon: GitBranch,
-  },
-];
+const services = Data.DevRelAsServiceServices
 
 export default function Services() {
   return (

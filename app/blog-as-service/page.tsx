@@ -31,7 +31,6 @@ export default function Page() {
       <Hero />
       <Impact />
       <MinimalCardDemo />
-      {/* <AnimatedBeamDemo /> */}
       <Process />
       <Team />
     </div>

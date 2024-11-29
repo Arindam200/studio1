@@ -2,62 +2,10 @@ import React from "react";
 import {
   CheckCircle2,
   ArrowRight,
-  Search,
-  LightbulbIcon,
-  Rocket,
-  BarChart,
 } from "lucide-react";
+import { Data } from "@/data";
 
-const steps = [
-  {
-    name: "Discovery",
-    description:
-      "We analyze your current content strategy and identify opportunities for contribution and improvement.",
-    icon: Search,
-    details: [
-      "Knowing Tech stack",
-      "Analyze developer audience",
-      "Identify content scope",
-      "initial communication",
-    ],
-  },
-  {
-    name: "Strategy",
-    description:
-      "Develop a customized content plan aligned with your business goals and audience needs.",
-    icon: LightbulbIcon,
-    details: [
-      "Knowing content requirement",
-      "Topic ideation",
-      "Content format decision",
-      "Distribution channel selection",
-    ],
-  },
-  {
-    name: "Creation",
-    description:
-      "Our expert team of technical writers produces high-quality, engaging content.",
-    icon: Rocket,
-    details: [
-      "Technical content development",
-      "Custom code examples and demos",
-      "Technical review and validation",
-      "SEO optimization and formatting",
-    ],
-  },
-  {
-    name: "Distribution",
-    description:
-      "We publish and promote your content across multiple platforms to maximize reach.",
-    icon: BarChart,
-    details: [
-      "Multi-platform publishing",
-      "Analytics review",
-      "Social Media posts",
-      "Developer community sharing",
-    ],
-  },
-];
+const steps = Data.BlogAsServiceProcess;
 
 export default function Process() {
   return (
