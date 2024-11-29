@@ -5,6 +5,26 @@ import { cn } from "@/lib/utils";
 import Searchbar from '@/components/ui/searchbar';
 import { Suspense } from 'react';
 import Hero from './hero';
+import { baseUrl } from "@/app/sitemap";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Blog",
+    description: "All Blogs of Studio1.",
+    openGraph: {
+      title: "Blogs | Studio1",
+      description: "All Blogs of Studio1.",
+      url: baseUrl + "/blogs",
+      siteName: "Studio1",
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      title: "Blog | Studio1",
+      card: "summary_large_image",
+      description: "All Blogs of Studio1.",
+    },
+  };
 
 export default function Page({
   searchParams,

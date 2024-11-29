@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Cta from "@/components/sections/cta";
 import Foooter from "@/components/sections/footer";
+import { baseUrl } from "./sitemap";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -16,8 +18,36 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Studio1",
+  metadataBase: new URL(baseUrl),
+  title: {
+    default: "Studio1",
+    template: "%s | Studio1",
+  },
   description: "Empowering Your Voice in the Developer Community",
+  openGraph: {
+    title: "Studio1",
+    description: "Empowering Your Voice in the Developer Community",
+    url: baseUrl,
+    siteName: "Studio1",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    title: "Studio1",
+    card: "summary_large_image",
+    description: "Empowering Your Voice in the Developer Community",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
