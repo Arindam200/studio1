@@ -1,4 +1,4 @@
-export const baseUrl = "https://studio1-beta.vercel.app/";
+export const baseUrl = "https://studio1hq.com/";
 
 export default async function sitemap() {
   const routes = [
