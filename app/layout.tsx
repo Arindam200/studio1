@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Cta from "@/components/sections/cta";
 import Foooter from "@/components/sections/footer";
 import { baseUrl } from "./sitemap";
+import Script from "next/script";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -71,6 +72,11 @@ export default function RootLayout({
           <Foooter />
         </ThemeProvider>
       </body>
+      <Script
+        async
+        src="https://cloud.umami.is/script.js"
+        data-website-id="d2503074-d887-4016-9be5-90629ed32e70"
+      />
     </html>
   );
 }
