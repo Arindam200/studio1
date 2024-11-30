@@ -3,18 +3,25 @@
 import React from "react";
 import { Spotlight } from "@/components/ui/spotlight";
 import Navbar from "@/components/sections/navbar";
+import DotPattern from "@/components/ui/dot-pattern";
+import { cn } from "@/lib/utils";
 
 export default function Page() {
   return (
     <div className="bg-black">
-      <div className="h-[44rem] max-sm:h-[36rem] overflow-scroll w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex flex-col items-center justify-center cursor-all-scroll">
+      <div className="sm:h-[40rem] h-[28rem] max-sm:h-[36rem] overflow-scroll w-full dark:bg-black bg-white relative flex flex-col items-center justify-center">
         <Navbar />
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-        <Spotlight />
+        {/* <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div> */}
+        {/* <Spotlight /> */}
+        <DotPattern
+          className={cn(
+            "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
+          )}
+        />
         <button className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block">
-          <span className="absolute inset-0 overflow-hidden rounded-full">
+          {/* <span className="absolute inset-0 overflow-hidden rounded-full">
             <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-          </span>
+          </span> */}
           <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
             <span>Don't Miss this Chance!</span>
             <svg
