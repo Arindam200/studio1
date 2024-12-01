@@ -16,21 +16,21 @@ export default function Footer() {
             </div>
             <div className="flex gap-4 ">
               <Link
-                href="#"
+                href="https://x.com/Studio1HQ"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Twitter className="h-5 w-5 text-orange-400" />
                 <span className="sr-only">Twitter</span>
               </Link>
               <Link
-                href="#"
+                href="ttps://www.linkedin.com/company/studio1hq/"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Linkedin className="h-5 w-5 text-orange-400" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
               <Link
-                href="#"
+                href="https://dev.to/studio1hq"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Newspaper className="h-5 w-5 text-orange-400" />

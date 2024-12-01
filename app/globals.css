@@ -73,3 +73,37 @@
 html {
   scroll-behavior: smooth;
 }
+
+svg {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@supports (-webkit-touch-callout: none) {
+  svg {
+    /* Safari-specific fixes */
+    transform: translateZ(0);
+    -webkit-transform: translate3d(0,0,0);
+  }
+}
+
+/* Specific styles for the 15+ text */
+.number-text {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}
+
+/* Safari-specific fixes for the number text */
+@supports (-webkit-touch-callout: none) {
+  .number-text {
+    /* Improve text rendering on Safari/iOS */
+    transform: translateZ(0);
+    -webkit-transform: translate3d(0,0,0);
+    letter-spacing: -0.5px; /* Adjust letter spacing for Safari */
+    font-kerning: normal;
+  }
+}

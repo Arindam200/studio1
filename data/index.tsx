@@ -22,6 +22,9 @@ import {
   WandSparkles,
   Layers,
   BatteryCharging,
+  Globe,
+  Linkedin,
+  Twitter,
 } from "lucide-react";
 import React from "react";
 import PermitFull from "@/public/assets/Permit-full.png";
@@ -44,7 +47,7 @@ export const Data = {
     {
       id: 3,
       name: "CopilotKit",
-      designation: "Ai Agents",
+      designation: "AI Agents",
       image: "/assets/copilotkit.png",
     },
     {
@@ -154,12 +157,85 @@ export const Data = {
     },
     {
       title:
+        "Manage Permissions in a Langflow Chain for LLM Queries using Permit.io",
+      description:
+        "A Step-by-Step Guide to Secure and Scalable Permission Management for AI Models with Permit.io",
+      link: "https://astrodevil.medium.com/manage-permissions-in-a-langflow-chain-for-llm-queries-using-permit-io-7de8a0fb17b3",
+      image:
+        "https://miro.medium.com/v2/resize:fit:720/format:webp/1*bY1LzPkOXDXI_eRJ_V-y8w.png",
+    },
+    {
+      title:
         "I Found a Tool Even Better than v0 – You Won't Believe What It Can Do!",
       description:
         "As a front-end developer, you've probably heard all about Vercel v0 — the tool that seemed to revolutionize front-end development.But, is v0 as great as it sounds? I spent time comparing it with a new tool, Webcrumbs Frontend AI, to see if it really is a game-changer.",
       link: "https://dev.to/arindam_1729/i-found-a-tool-even-better-than-v0-you-wont-believe-what-it-can-do-igf",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F70kbai7v3r12dr860psw.gif",
+    },
+    {
+      title: "Make Prototyping Easier with Webcrumbs",
+      description: "Discover the Future of Prototyping with Webcrumbs AI",
+      link: "https://astrodevil.medium.com/make-prototyping-easier-with-webcrumbs-3668d8e880d2",
+      image:
+        "https://miro.medium.com/v2/resize:fit:720/format:webp/1*kirTT63OzhfJCcitLgDRqA.png",
+    },
+    {
+      title: "How to Add RBAC Authorization in Next.js",
+      description:
+        "A Comprehensive Guide to RBAC Authorization in Next.js using Permit.io",
+      link: "https://astrodevil.medium.com/how-to-add-rbac-authorization-in-next-js-1d5e50cbad29",
+      image:
+        "https://miro.medium.com/v2/resize:fit:720/format:webp/1*yWfXQWV_89Dg6MarsUhnvw.png",
+    },
+    {
+      title: "How to run Meta Llama 3.1 405B with Nebius AI Studio API",
+      description:
+        "Discover how Nebius AI Studio enables you to integrate the famous Llama 3.1 405B large language model in your applications.",
+      link: "https://nebius.com/blog/posts/run-meta-llama-405b-in-ai-studio",
+      image:
+        "https://storage.ai.nebius.cloud/www-gpu-assets/pages/blog/introducing-nebius-ai-studio/preview.jpg",
+    },
+    {
+      title: "Implementing GraphQL Authorization: A Practical Guide",
+      description:
+        "Learn how to implement scalable authorization in GraphQL. Simplify RBAC and Permissions management with step-by-step instructions.",
+      link: "https://www.permit.io/blog/implementing-graphql-authorization",
+      image:
+        "https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FYDN8Xi5vRQONu81cC1yw&w=1920&q=75",
+    },
+    {
+      title: "NestJS vs Encore.ts",
+      description:
+        "Choosing the Right Framework for Your TypeScript Microservices",
+      link: "https://dev.to/encore/nestjs-vs-encorets-choosing-the-right-framework-for-your-typescript-microservices-1g61",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+    },
+    {
+      title: "Make Open Source Contributions More Rewarding with Opire",
+      description:
+        "With all Open source fun and learnings we can add one more element to our open-source journey and that is Bounty",
+      link: "https://dev.to/opire/make-open-source-contributions-more-rewarding-with-opire-19o1",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fgvh9vgiz0v3i6evue4ip.gif",
+    },
+    {
+      title: "9 Open Source Libraries to Supercharge Your Next Project",
+      description:
+        "As a developer, we often get confused about which tools to use, so I'm covering 9 Open Source Libraries that will truly supercharge your future project!",
+      link: "https://dev.to/arindam_1729/9-open-source-libraries-to-supercharge-your-next-project-c71",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpfgp3ig8xjivkqz4bytl.gif",
+    },
+    {
+      title:
+        "10 AI Assistants for Frontend Developers That Will Change the Way You Code",
+      description:
+        "There are a ton of AI coding assistants, but only a few are very helpful and specific to frontend developers. This article will dive into 10 AI coding assistants to help you become a faster, more productive frontend developer.",
+      link: "https://astrodevil.medium.com/10-ai-assistants-for-frontend-developers-that-will-change-the-way-you-code-1d833541efb2",
+      image:
+        "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*0vebjXBoJ_iIVdrFapKosw.png",
     },
   ],
   Blogs: [
@@ -206,12 +282,12 @@ export const Data = {
     },
     {
       title:
-        "I Found a Tool Even Better than v0 – You Won't Believe What It Can Do!",
+        "Manage Permissions in a Langflow Chain for LLM Queries using Permit.io",
       description:
-        "As a front-end developer, you've probably heard all about Vercel v0 — the tool that seemed to revolutionize front-end development.But, is v0 as great as it sounds? I spent time comparing it with a new tool, Webcrumbs Frontend AI, to see if it really is a game-changer.",
-      link: "https://dev.to/arindam_1729/i-found-a-tool-even-better-than-v0-you-wont-believe-what-it-can-do-igf",
+        "A Step-by-Step Guide to Secure and Scalable Permission Management for AI Models with Permit.io",
+      link: "https://astrodevil.medium.com/manage-permissions-in-a-langflow-chain-for-llm-queries-using-permit-io-7de8a0fb17b3",
       image:
-        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F70kbai7v3r12dr860psw.gif",
+        "https://miro.medium.com/v2/resize:fit:720/format:webp/1*bY1LzPkOXDXI_eRJ_V-y8w.png",
     },
   ],
   Services: [
@@ -471,18 +547,18 @@ export const Data = {
       social: {
         twitter: "https://dub.sh/arindam-x",
         linkedin: "https://dub.sh/arindam-linkedin",
-        github: "https://git.new/Arindam",
+        website: "https://arindam-majumder.vercel.app",
       },
     },
     {
       name: "Amitesh Anand",
       role: "Co-founder & Operations Lead",
       image: "/assets/amitesh.png",
-      bio: "Technical writer and developer advocate with expertise in creating scalable content. Published 80k+ words reaching 250k+ readers across major tech platforms. HackerNoon award nominee focused on delivering high-impact technical content.",
+      bio: "Technical writer and developer advocate with expertise in creating scalable content. Published 80k+ words reaching thousands of readers across major tech platforms. Nominated for Noonies 2022 Tech Awards, focused on delivering high-impact technical content.",
       social: {
         twitter: "https://mobile.twitter.com/astrodevil_",
         linkedin: "https://www.linkedin.com/in/amitesh1208/",
-        github: "#",
+        website: "https://mranand.com/featured/",
       },
     },
   ],
@@ -584,7 +660,7 @@ export const Data = {
       social: {
         twitter: "https://dub.sh/arindam-x",
         linkedin: "https://dub.sh/arindam-linkedin",
-        github: "https://git.new/Arindam",
+        website: "https://arindam-majumder.vercel.app",
       },
     },
     {
@@ -595,7 +671,7 @@ export const Data = {
       social: {
         twitter: "https://mobile.twitter.com/astrodevil_",
         linkedin: "https://www.linkedin.com/in/amitesh1208/",
-        github: "#",
+        website: "https://mranand.com/featured/",
       },
     },
     {
@@ -606,7 +682,7 @@ export const Data = {
       social: {
         twitter: "https://x.com/HowDevelop",
         linkedin: "#",
-        github: "#",
+        website: "https://shivaylamba.me",
       },
     },
   ],
