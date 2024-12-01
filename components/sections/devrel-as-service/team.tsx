@@ -1,5 +1,5 @@
 import { Data } from "@/data";
-import { Github, Linkedin, Twitter, Mail, Calendar } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Calendar, Globe } from "lucide-react";
 
 const team = Data.DevRelAsServiceTeam;
 
@@ -58,11 +58,11 @@ export default function Team() {
                   </li>
                   <li>
                     <a
-                      href={member.social.github}
+                      href={member.social.website}
                       className="text-orange-400 hover:text-orange-500"
                     >
-                      <span className="sr-only">GitHub</span>
-                      <Github className="h-5 w-5" />
+                      <span className="sr-only">Website</span>
+                      <Globe className="h-5 w-5" />
                     </a>
                   </li>
                 </ul>
