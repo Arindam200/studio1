@@ -231,6 +231,12 @@ export const Data = {
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpfgp3ig8xjivkqz4bytl.gif",
     },
     {
+      title:"How to choose between large and small AI models: A cost-benefit analysis",
+      description:"This blog post will guide you through the differences, use cases and cost-benefit analysis of different AI models, especially in the context of inference.",
+      link:"https://nebius.com/blog/posts/choosing-between-large-and-small-models",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4eowvtjC0YUZgLG-2DMlGxBe69IBU-0XZQ&s"
+    },
+    {
       title:
         "10 AI Assistants for Frontend Developers That Will Change the Way You Code",
       description:
@@ -281,7 +287,14 @@ export const Data = {
       description:"In this article, we will discuss 5 tools that every developer should use in 2024.",
       link:"https://dev.to/studio1hq/5-tools-every-developer-must-use-in-2024-438",
       image:"https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnidw6e25vyfgn74ftsa6.png",
-    }
+    },
+    {
+      title:"How to Build a Request Access Approval System in Next.js",
+      description:"In this article, we will learn how to build a request access approval system in Next.js.",
+      link:"https://dev.to/arindam_1729/how-to-build-a-request-access-approval-system-using-nextjs-p3p",
+      image:"https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fy190e3vkf86c96c426ur.gif",
+    },
+    
   ],
   Blogs: [
     {
