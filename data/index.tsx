@@ -29,6 +29,8 @@ import {
 import React from "react";
 import PermitFull from "@/public/assets/Permit-full.png";
 import TolgeeFull from "@/public/assets/Tolgee-full.svg";
+import { title } from "process";
+import { link } from "fs";
 
 export const Data = {
   Companies: [
@@ -237,6 +239,49 @@ export const Data = {
       image:
         "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*0vebjXBoJ_iIVdrFapKosw.png",
     },
+    {
+      title:"Hiring in the Open - How Companies Can Discover Top Talent via Opire",
+      description:
+        "In this article, we’re going to discuss how Opire’s approach saves companies time and resources while giving developers an effective way to stand out.",
+        link:"https://dev.to/opire/hiring-in-the-open-how-companies-can-discover-top-talent-via-opire-k4h",
+        image:"https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fz9zn9tnxmbfwyhu7pm55.gif",
+    },
+    {
+      title:"8 Tools You Need to Build Your First SaaS",
+      description: "In this article, we will discuss the 8 tools you need to build your first SaaS product.",
+      link:"https://dev.to/arindam_1729/8-tools-you-need-to-build-your-first-saas-am5",
+      image: "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F71cb2kcoxbtxo721zcw6.gif",
+    },
+    {
+      title:"How to Add RBAC Authorization in Next.js",
+      description:"By the end of this tutorial, you'll have a clear understanding of how to secure your Next.js application with RBAC, giving you complete control over what each user can access based on their role.",
+      link:"https://dev.to/arindam_1729/how-to-add-rbac-authorization-in-nextjs-16m3",
+      image:"https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjdfvempfrzz376nh609l.png",
+    },
+    {
+      title:"11 Open Source Python Projects You Should Know in 2024",
+      description:"In this article, we will discuss 11 open-source Python projects that you should know in 2024.",
+      link:"https://dev.to/arindam_1729/11-open-source-python-projects-you-should-know-in-2024-583o",
+      image:"https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fdch857t54wnebiol8i3t.gif",
+    },
+    {
+      title:"How to Implement RBAC (Role-Based Access Control) in Supabase",
+      description:"In this article, we will learn how to implement RBAC (Role-Based Access Control) in Supabase.",
+      link:"https://www.permit.io/blog/how-to-implement-rbac-in-supabase",
+      image:"https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2F2H4tKg0FTfGFU3ciyTPa&w=3840&q=75"
+    },
+    {
+      title:"8 Developer Tools You Should Try in 2024",
+      description:"In this article, we will discuss 8 developer tools that you should try in 2024.",  
+      link:"https://dev.to/studio1hq/8-developer-tools-you-should-try-in-2024-b8c",
+      image:"https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fz21l3b031jaox5raxlp6.png",
+    },
+    {
+      title:"5 Tools Every Developer Should Use in 2024",
+      description:"In this article, we will discuss 5 tools that every developer should use in 2024.",
+      link:"https://dev.to/studio1hq/5-tools-every-developer-must-use-in-2024-438",
+      image:"https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnidw6e25vyfgn74ftsa6.png",
+    }
   ],
   Blogs: [
     {
@@ -289,6 +334,7 @@ export const Data = {
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*bY1LzPkOXDXI_eRJ_V-y8w.png",
     },
+    
   ],
   Services: [
     {
