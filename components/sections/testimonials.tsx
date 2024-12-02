@@ -1,4 +1,6 @@
-import React from "react";
+"use client"
+
+import React, { useState, useEffect } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Carousel,
@@ -8,10 +10,23 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Data } from "@/data";
+import { AnimatePresence, motion } from "framer-motion";
 
 const testimonials = Data.Testimonials;
 
 const Testimonial6: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const currentTestimonial = testimonials[currentIndex];
+
   return (
     <section className="py-16 sm:py-28" id="testimonials">
       <div className="px-2.5 sm:px-10">
@@ -25,64 +40,81 @@ const Testimonial6: React.FC = () => {
           </h2>
           <Carousel className="w-full">
             <div className="flex items-center space-x-2 justify-center">
-              <CarouselPrevious className="static translate-y-0" />
+              {/* <CarouselPrevious 
+                className="static translate-y-0" 
+                onClick={() => setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length)}
+              /> */}
               <CarouselContent>
-                {testimonials.map((testimonial, idx) => (
-                  <CarouselItem key={idx}>
-                    <div className="flex flex-col items-center text-center">
-                      <div className="sm:mb-16 mb-8 max-w-5xl sm:px-8 px-2 text-md sm:min-h-4xl sm:mt-20 mt-10 font-medium lg:text-3xl">
-                        {testimonial.content.split("\n").map((line, index) => (
-                          <p key={index} className="sm:mb-2.5 mb-1.5">
-                            {line.split(" ").map((word, wordIndex) => {
-                              const isHighlighted = testimonial.highlights.some(
-                                (highlight) =>
-                                  word
-                                    .toLowerCase()
-                                    .includes(highlight.toLowerCase()),
-                              );
-                              return (
-                                <span
-                                  key={`${index}-${wordIndex}`}
-                                  className={
-                                    isHighlighted
-                                      ? "text-orange-500 font-semibold"
-                                      : ""
-                                  }
-                                >
-                                  {word}{" "}
-                                </span>
-                              );
-                            })}
-                          </p>
-                        ))}
-                      </div>
-                      <div className="flex items-center gap-2 md:gap-4">
-                        <Avatar className="w-12 h-12 md:w-16 md:h-16">
-                          <AvatarImage
-                            src={testimonial.avatar}
-                            alt={`${testimonial.name}'s avatar`}
-                          />
-                          <AvatarFallback>
-                            {testimonial.name
-                              .split(" ")
-                              .map((n) => n[0])
-                              .join("")}
-                          </AvatarFallback>
-                        </Avatar>
-                        <div className="text-left">
-                          <p className="text-sm font-semibold md:text-xl text-orange-400">
-                            {testimonial.name}
-                          </p>
-                          <p className="text-sm text-muted-foreground md:text-base">
-                            {testimonial.role}
-                          </p>
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentIndex}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="w-full"
+                  >
+                    <CarouselItem>
+                      <div className="flex flex-col items-center justify-center text-center h-[500px] sm:h-[400px] px-4 sm:px-8">
+                        <div className="max-w-4xl mx-auto">
+                          <div className="mb-8 text-md sm:text-xl lg:text-3xl font-medium overflow-y-auto max-h-[300px] sm:max-h-[250px] scrollbar-hide">
+                            {currentTestimonial.content.split("\n").map((line, index) => (
+                              <p key={index} className="mb-2">
+                                {line.split(" ").map((word, wordIndex) => {
+                                  const isHighlighted = currentTestimonial.highlights.some(
+                                    (highlight) =>
+                                      word
+                                        .toLowerCase()
+                                        .includes(highlight.toLowerCase()),
+                                  );
+                                  return (
+                                    <span
+                                      key={`${index}-${wordIndex}`}
+                                      className={
+                                        isHighlighted
+                                          ? "text-orange-500 font-semibold"
+                                          : ""
+                                      }
+                                    >
+                                      {word}{" "}
+                                    </span>
+                                  );
+                                })}
+                              </p>
+                            ))}
+                          </div>
+                          <div className="flex items-center justify-center gap-2 md:gap-4">
+                            <Avatar className="w-12 h-12 md:w-16 md:h-16">
+                              <AvatarImage
+                                src={currentTestimonial.avatar}
+                                alt={`${currentTestimonial.name}'s avatar`}
+                              />
+                              <AvatarFallback>
+                                {currentTestimonial.name
+                                  .split(" ")
+                                  .map((n) => n[0])
+                                  .join("")}
+                              </AvatarFallback>
+                            </Avatar>
+                            <div className="text-left">
+                              <p className="text-sm font-semibold md:text-xl text-orange-400">
+                                {currentTestimonial.name}
+                              </p>
+                              <p className="text-sm text-muted-foreground md:text-base">
+                                {currentTestimonial.role}
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </CarouselItem>
-                ))}
+                    </CarouselItem>
+                  </motion.div>
+                </AnimatePresence>
               </CarouselContent>
-              <CarouselNext className="static translate-y-0" />
+              {/* <CarouselNext 
+                className="static translate-y-0" 
+                onClick={() => setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length)}
+              /> */}
             </div>
           </Carousel>
         </div>
@@ -92,3 +124,4 @@ const Testimonial6: React.FC = () => {
 };
 
 export default Testimonial6;
+
