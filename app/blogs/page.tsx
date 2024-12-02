@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page({
-  searchParams,
-}: {
+interface PageProps {
   searchParams?: {
     query?: string;
   };
-}) {
+}
+
+export default function Page({ searchParams }: PageProps) {
   const query = searchParams?.query || "";
   return (
     <>

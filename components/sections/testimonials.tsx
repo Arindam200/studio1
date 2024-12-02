@@ -28,10 +28,10 @@ const Testimonial6: React.FC = () => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-16 sm:py-28" id="testimonials">
+    <section className="py-10 sm:py-28" id="testimonials">
       <div className="px-2.5 sm:px-10">
         <div className="mb-8 flex-col px-1 lg:mb-12">
-          <h2 className="text-3xl text-center font-semibold lg:text-5xl mb-12">
+          <h2 className="text-3xl text-center font-semibold lg:text-5xl sm:mb-12 mb-4">
             Why{" "}
             <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600">
               Clients Love{" "}
@@ -55,7 +55,7 @@ const Testimonial6: React.FC = () => {
                     className="w-full"
                   >
                     <CarouselItem>
-                      <div className="flex flex-col items-center justify-center text-center h-[500px] sm:h-[400px] px-4 sm:px-8">
+                      <div className="flex flex-col items-center justify-center text-center h-[400px] sm:h-[400px] px-4 sm:px-8">
                         <div className="max-w-4xl mx-auto">
                           <div className="mb-8 text-md sm:text-xl lg:text-3xl font-medium overflow-y-auto max-h-[300px] sm:max-h-[250px] scrollbar-hide">
                             {currentTestimonial.content.split("\n").map((line, index) => (
