@@ -21,12 +21,12 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Studio1",
+    default: "Studio1 - Technical Content & DevRel Services",
     template: "%s | Studio1",
   },
   description: "Empowering Your Voice in the Developer Community",
   openGraph: {
-    title: "Studio1",
+    title: "Studio1 - Technical Content & DevRel Services",
     description: "Empowering Your Voice in the Developer Community",
     url: baseUrl,
     siteName: "Studio1",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    title: "Studio1",
+    title: "Studio1 - Technical Content & DevRel Services",
     card: "summary_large_image",
     description: "Empowering Your Voice in the Developer Community",
   },

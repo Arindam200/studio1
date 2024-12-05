@@ -13,7 +13,7 @@ export default function Team() {
             Leadership Team
           </span>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-            Crafting educational contents for developers and devtool companies
+            Helping devtool companies grow through educational content
           </p>
         </div>
 
