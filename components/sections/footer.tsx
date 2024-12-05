@@ -69,19 +69,13 @@ export default function Footer() {
               </nav>
             </div>
             <div className="space-y-4">
-              <h3 className="font-bold text-orange-400">Company</h3>
+              <h3 className="font-bold text-orange-400">Agency</h3>
               <nav className="flex flex-col gap-2">
                 <Link
                   href="/"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   About
-                </Link>
-                <Link
-                  href="/blog-as-service#team"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Team
                 </Link>
                 <Link
                   href="https://dev.to/studio1hq"
@@ -130,7 +124,7 @@ export default function Footer() {
         </div>
         <div className="mt-12 flex flex-col gap-4 border-t pt-8 md:flex-row md:items-center md:justify-between">
           <p className="text-sm text-muted-foreground">
-            2024 Studio1. All rights reserved.
+            ©2024 Studio1. All rights reserved.
           </p>
           <nav className="flex gap-4">
             <Link

@@ -379,8 +379,7 @@ export const Data = {
     },
     {
       title: "More Services",
-      description:
-        "New services coming soon. Stay tuned for updates.",
+      description: "New services coming soon. Stay tuned for updates.",
     },
   ],
   Testimonials: [
