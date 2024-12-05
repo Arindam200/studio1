@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -58,30 +58,33 @@ const Testimonial6: React.FC = () => {
                       <div className="flex flex-col items-center justify-center text-center h-[400px] sm:h-[400px] px-4 sm:px-8">
                         <div className="max-w-4xl mx-auto">
                           <div className="mb-8 text-md sm:text-xl lg:text-3xl font-medium overflow-y-auto max-h-[300px] sm:max-h-[250px] scrollbar-hide">
-                            {currentTestimonial.content.split("\n").map((line, index) => (
-                              <p key={index} className="mb-2">
-                                {line.split(" ").map((word, wordIndex) => {
-                                  const isHighlighted = currentTestimonial.highlights.some(
-                                    (highlight) =>
-                                      word
-                                        .toLowerCase()
-                                        .includes(highlight.toLowerCase()),
-                                  );
-                                  return (
-                                    <span
-                                      key={`${index}-${wordIndex}`}
-                                      className={
-                                        isHighlighted
-                                          ? "text-orange-500 font-semibold"
-                                          : ""
-                                      }
-                                    >
-                                      {word}{" "}
-                                    </span>
-                                  );
-                                })}
-                              </p>
-                            ))}
+                            {currentTestimonial.content
+                              .split("\n")
+                              .map((line, index) => (
+                                <p key={index} className="mb-2">
+                                  {line.split(" ").map((word, wordIndex) => {
+                                    const isHighlighted =
+                                      currentTestimonial.highlights.some(
+                                        (highlight) =>
+                                          word
+                                            .toLowerCase()
+                                            .includes(highlight.toLowerCase()),
+                                      );
+                                    return (
+                                      <span
+                                        key={`${index}-${wordIndex}`}
+                                        className={
+                                          isHighlighted
+                                            ? "text-orange-500 font-semibold"
+                                            : ""
+                                        }
+                                      >
+                                        {word}{" "}
+                                      </span>
+                                    );
+                                  })}
+                                </p>
+                              ))}
                           </div>
                           <div className="flex items-center justify-center gap-2 md:gap-4">
                             <Avatar className="w-12 h-12 md:w-16 md:h-16">
@@ -124,4 +127,3 @@ const Testimonial6: React.FC = () => {
 };
 
 export default Testimonial6;
-

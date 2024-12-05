@@ -84,7 +84,7 @@ svg {
   svg {
     /* Safari-specific fixes */
     transform: translateZ(0);
-    -webkit-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0, 0, 0);
   }
 }
 
@@ -102,7 +102,7 @@ svg {
   .number-text {
     /* Improve text rendering on Safari/iOS */
     transform: translateZ(0);
-    -webkit-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0, 0, 0);
     letter-spacing: -0.5px; /* Adjust letter spacing for Safari */
     font-kerning: normal;
   }

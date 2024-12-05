@@ -45,7 +45,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center space-x-2">
             <img
               src={Logo.src}
-              alt="Studio1HQ Logo"
+              alt="Studio1 - Technical Content and DevRel Services"
               className="h-14 w-14 max-md:h-10 max-md:w-10 fill-primary text-primary rounded-full"
             />
             <span className="text-xl font-bold max-sm:hidden sm:visible">

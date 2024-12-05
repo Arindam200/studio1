@@ -23,7 +23,7 @@ export default function Footer() {
                 <span className="sr-only">Twitter</span>
               </Link>
               <Link
-                href="ttps://www.linkedin.com/company/studio1hq/"
+                href="https://www.linkedin.com/company/studio1hq/"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Linkedin className="h-5 w-5 text-orange-400" />
@@ -43,25 +43,25 @@ export default function Footer() {
               <h3 className="font-bold text-orange-400">Services</h3>
               <nav className="flex flex-col gap-2">
                 <Link
-                  href="#"
+                  href="/blog-as-service"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Technical Content
                 </Link>
                 <Link
-                  href="#"
+                  href="/devrel-as-service"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   DevRel Consulting
                 </Link>
                 <Link
-                  href="#"
+                  href="/devrel-as-service"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Community Building
                 </Link>
                 <Link
-                  href="#"
+                  href="/blog-as-service"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Developer Marketing
@@ -72,28 +72,28 @@ export default function Footer() {
               <h3 className="font-bold text-orange-400">Company</h3>
               <nav className="flex flex-col gap-2">
                 <Link
-                  href="#"
+                  href="/"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   About
                 </Link>
                 <Link
-                  href="#"
+                  href="/blog-as-service#team"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Team
                 </Link>
                 <Link
-                  href="#"
+                  href="https://dev.to/studio1hq"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Blog
+                  Community Blog
                 </Link>
                 <Link
                   href="#"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Careers
+                  Careers (Coming soon)
                 </Link>
               </nav>
             </div>
@@ -130,7 +130,7 @@ export default function Footer() {
         </div>
         <div className="mt-12 flex flex-col gap-4 border-t pt-8 md:flex-row md:items-center md:justify-between">
           <p className="text-sm text-muted-foreground">
-            © 2024 Studio1. All rights reserved.
+            2024 Studio1. All rights reserved.
           </p>
           <nav className="flex gap-4">
             <Link
