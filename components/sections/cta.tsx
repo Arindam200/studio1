@@ -13,7 +13,8 @@ const Cta = () => {
                 Ready to Skyrocket Your Developer Community?
               </h3>
               <p className="text-muted-foreground lg:text-lg">
-                Schedule a call with our team to learn how we can help you grow your developer community.
+                Schedule a call with our team to learn how we can help you grow
+                your developer community.
               </p>
             </div>
             <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
