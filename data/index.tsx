@@ -176,6 +176,12 @@ export const Data = {
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F70kbai7v3r12dr860psw.gif",
     },
     {
+      title:"Building an AI-powered finance planner with full-stack Next.js and Nebius AI Studio",
+      description:"In this guide, we’ll build an AI-powered financial planner using the Meta Llama 3.1 70B model via Nebius AI Studio and a full-stack Next.js app. This solution works seamlessly whether you’re using the Pages Router or the App Router, as much of the customization relies on setting up a custom Next.js server.",
+      link:"https://nebius.com/blog/posts/building-ai-powered-finance-planner",
+      image:"https://storage.ai.nebius.cloud/www-gpu-assets/pages/blog/building-ai-powered-finance-planner/sharing1.jpg",
+    },
+    {
       title: "Make Prototyping Easier with Webcrumbs",
       description: "Discover the Future of Prototyping with Webcrumbs AI",
       link: "https://astrodevil.medium.com/make-prototyping-easier-with-webcrumbs-3668d8e880d2",
@@ -257,6 +263,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fz9zn9tnxmbfwyhu7pm55.gif",
     },
+    
     {
       title: "8 Tools You Need to Build Your First SaaS",
       description:
@@ -272,6 +279,12 @@ export const Data = {
       link: "https://dev.to/arindam_1729/how-to-add-rbac-authorization-in-nextjs-16m3",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjdfvempfrzz376nh609l.png",
+    },
+    {
+      title:"How to Build Dynamic Feature Toggling in React.js",
+      description:"A guide on how to build a React Feature Toggling system. Discover how to use CASL and Permit.io for relationship-based access control (ReBAC) to manage feature visibility dynamically",
+      link:"https://www.permit.io/blog/dynamic-react-feature-toggling-2024-guide",
+      image:"https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FmCpDaZarQmWinorWRJJM&w=3840&q=75",
     },
     {
       title: "11 Open Source Python Projects You Should Know in 2024",
@@ -304,7 +317,7 @@ export const Data = {
       link: "https://dev.to/studio1hq/5-tools-every-developer-must-use-in-2024-438",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnidw6e25vyfgn74ftsa6.png",
-    },
+    },   
     {
       title: "How to Build a Request Access Approval System in Next.js",
       description:
@@ -312,6 +325,36 @@ export const Data = {
       link: "https://dev.to/arindam_1729/how-to-build-a-request-access-approval-system-using-nextjs-p3p",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fy190e3vkf86c96c426ur.gif",
+    },
+    {
+      title:"Build a Secure Chat App with React, Firebase, and Permit.io",
+      description:"A step-by-step guide to building a secure, real-time chat app with React, Firebase, and Permit.io - learn how to handle user roles and set up Firebase for authentication and real-time messaging.",
+      link:"https://www.permit.io/blog/coding-tutorial-build-a-secure-chat-app-with-react-firebase-and-permitio",
+      image:"https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FGaBppnGURR2iCpdv8VFL&w=3840&q=75",
+    },
+    {
+      title:"7 Must-Try Open-Source Tools for Python and JavaScript Developers ",
+      description:"In this article, we will discuss 7 open-source tools that every Python and JavaScript developer should try.",
+      link:"https://dev.to/arindam_1729/7-must-try-open-source-tools-for-python-and-javascript-developers-4c56",
+      image:"https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F67vy07x7txqv3ipnqvtv.gif",
+    },
+    {
+      title:"Building and Deploying TypeScript Microservices to Kubernetes",
+      description:"In this tutorial, you’ll learn how to build a microservice with Encore.ts, and deploy it to a Kubernetes cluster in your AWS account. We’ll show you how to deploying your microservices.",
+      link:"https://dev.to/encore/building-and-deploying-typescript-microservices-to-kubernetes-3110",
+      image:"https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fq8jei5qtmeckkmdx7hfj.png"
+    },
+    {
+      title:"Top 5 Open Source Projects You Must Explore Before 2025",
+      description:"In this article, we will discuss the top 5 open-source projects that you must explore before 2025.",
+      link:"https://dev.to/arindam_1729/top-5-open-source-projects-you-must-explore-before-2025-3l6l",
+      image:"https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fneqgdcpodgseopbqimdg.gif",
+    },
+    {
+      title:"Creating your own AI-powered code generator and reviewer",
+      description:"In this hands-on tutorial, you’ll learn how to create a powerful code generation and review application that you can customize to your exact needs. We’ll use Nebius AI Studio and open-source models, making it both cost-effective and extensible.",
+      link:"https://nebius.com/blog/posts/building-ai-powered-code-generator",
+      image:"https://media.licdn.com/dms/image/v2/D4E22AQHXtGpgMsH-BA/feedshare-shrink_800/feedshare-shrink_800/0/1733485301047?e=2147483647&v=beta&t=ZEE4MK-HOS0rbxXkwGi7rqTA9GWxoON8u4L3EXp4tNo",
     },
   ],
   Blogs: [
