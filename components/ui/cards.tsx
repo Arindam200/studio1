@@ -5,6 +5,7 @@ import { ShineBorder } from "@/components/ui/shineborder";
 type CardContent = {
   title: string;
   description: string;
+  image: string;
 };
 
 export const CardBody = (content: CardContent) => (
@@ -14,11 +15,11 @@ export const CardBody = (content: CardContent) => (
     )}
   >
     <img
-      src="https://cdn.prod.website-files.com/66fc1a4b1a3399833cbb73ce/66fc1a4b1a3399833cbb7510_048579A7-9748-4357-A675-BF76610495E7.webp"
-      className="h-20 "
+      src={content.image}
+      className="h-20"
       alt=""
     />
-    <h3 className="text-lg font-bold mb-1 text-orange-400 max-sm:text-center">
+    <h3 className="text-lg font-bold mb-1 text-orange-400 max-sm:text-center min-h-32">
       {content.title}
       <p className="text-wrap text-zinc-500 text-sm">{content.description}</p>
     </h3>

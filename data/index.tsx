@@ -5,6 +5,7 @@ import DavidImg from "../public/assets/David.png";
 import ColeImg from "../public/assets/Cole.png";
 import FerranImg from "../public/assets/Ferran.png";
 import AgitaImg from "../public/assets/Agita.png";
+import SauravImg from "../public/assets/Saurav.png";
 import {
   Search,
   LightbulbIcon,
@@ -414,15 +415,20 @@ export const Data = {
       title: "Blogs as Service",
       description:
         "We create high-quality, technical and promotional blogs tailored for devtool and software companies. Our team of expert writers specializes in crafting SEO-optimized content that drives engagement, educates developers, and helps your tools stand out in a competitive market.",
+      image:"https://cdn.prod.website-files.com/66fc1a4b1a3399833cbb73ce/66fc1a4b1a3399833cbb750e_EFB6AC06-B22C-42F1-B402-CF24DEF2A34D.webp",
     },
     {
       title: "DevRel as Service",
       description:
         "Accelerate your growth with targeted Developer Relations services. We help devtool and software companies connect authentically with developers, grow communities, and turn users into advocates.",
+      image:"https://cdn.prod.website-files.com/66fc1a4b1a3399833cbb73ce/66fc1a4b1a3399833cbb7511_02073CC0-207B-4079-9DA5-BBFDA837CE50.webp",
+
     },
     {
       title: "More Services",
       description: "New services coming soon. Stay tuned for updates.",
+      image:"https://cdn.prod.website-files.com/66fc1a4b1a3399833cbb73ce/66fc1a4b1a3399833cbb750f_D579D1FF-97FE-42E0-803A-33634CB722AD.webp",
+
     },
   ],
   Testimonials: [
@@ -436,6 +442,15 @@ export const Data = {
       highlights: ["Studio1", "Opire's growth"],
     },
     {
+      name: "Saurav Jain",
+      role: "DevRel, Crawlee",
+      avatar: SauravImg.src,
+      content:`Arindam and Studio1 team work really great with technical posts, they are super quick and write deeply technical articles that reaches to the right devleoper audiences through their absolute fantastic distribution system. 
+      
+      Highly recommended. 💯`,
+      highlights: ["Arindam","Studio1", "technical","posts", "super", "quick", "deeply", "technical", "articles", "fantastic", "distribution", "system", "Highly", "recommended"],
+    },
+    {
       name: "Gabriel L. Manor",
       role: "Director of DevRel, Permit.io",
       avatar: GabrielImg.src,
@@ -447,6 +462,7 @@ export const Data = {
       highlights: [
         "Arindam",
         "content pieces",
+        "astonishing",
         "network of writers",
         "scale the workload",
         "10/10 experience",

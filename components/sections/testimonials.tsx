@@ -58,33 +58,28 @@ const Testimonial6: React.FC = () => {
                       <div className="flex flex-col items-center justify-center text-center h-[400px] sm:h-[400px] px-4 sm:px-8">
                         <div className="max-w-4xl mx-auto">
                           <div className="mb-8 text-md sm:text-xl lg:text-3xl font-medium overflow-y-auto max-h-[300px] sm:max-h-[250px] scrollbar-hide">
-                            {currentTestimonial.content
-                              .split("\n")
-                              .map((line, index) => (
-                                <p key={index} className="mb-2">
-                                  {line.split(" ").map((word, wordIndex) => {
-                                    const isHighlighted =
-                                      currentTestimonial.highlights.some(
-                                        (highlight) =>
-                                          word
-                                            .toLowerCase()
-                                            .includes(highlight.toLowerCase()),
-                                      );
-                                    return (
-                                      <span
-                                        key={`${index}-${wordIndex}`}
-                                        className={
-                                          isHighlighted
-                                            ? "text-orange-500 font-semibold"
-                                            : ""
-                                        }
-                                      >
-                                        {word}{" "}
-                                      </span>
-                                    );
-                                  })}
-                                </p>
-                              ))}
+                            {currentTestimonial.content.split("\n").map((line, lineIndex) => (
+                              <p key={lineIndex} className="mb-2">
+                                {currentTestimonial.highlights.reduce((acc, highlight) => {
+                                  const parts = acc.flatMap((part) =>
+                                    part.split(new RegExp(`(${highlight})`, "gi"))
+                                  );
+                                  return parts;
+                                }, [line]).map((part, partIndex) => {
+                                  const isHighlighted = currentTestimonial.highlights.some((highlight) =>
+                                    part.toLowerCase().includes(highlight.toLowerCase())
+                                  );
+                                  return (
+                                    <span
+                                      key={`${lineIndex}-${partIndex}`}
+                                      className={isHighlighted ? "text-orange-500 font-semibold" : ""}
+                                    >
+                                      {part}
+                                    </span>
+                                  );
+                                })}
+                              </p>
+                            ))}
                           </div>
                           <div className="flex items-center justify-center gap-2 md:gap-4">
                             <Avatar className="w-12 h-12 md:w-16 md:h-16">
