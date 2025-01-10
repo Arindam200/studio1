@@ -6,6 +6,8 @@ import ColeImg from "../public/assets/Cole.png";
 import FerranImg from "../public/assets/Ferran.png";
 import AgitaImg from "../public/assets/Agita.png";
 import SauravImg from "../public/assets/Saurav.png";
+import NathanImg from "../public/assets/Nathan.png";
+import MarketaImg from "../public/assets/Marketa.png";
 import {
   Search,
   LightbulbIcon,
@@ -23,15 +25,11 @@ import {
   WandSparkles,
   Layers,
   BatteryCharging,
-  Globe,
-  Linkedin,
-  Twitter,
 } from "lucide-react";
 import React from "react";
 import PermitFull from "@/public/assets/Permit-full.png";
 import TolgeeFull from "@/public/assets/Tolgee-full.svg";
 import { title } from "process";
-import { link } from "fs";
 
 export const Data = {
   Companies: [
@@ -177,10 +175,13 @@ export const Data = {
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F70kbai7v3r12dr860psw.gif",
     },
     {
-      title:"Building an AI-powered finance planner with full-stack Next.js and Nebius AI Studio",
-      description:"In this guide, we’ll build an AI-powered financial planner using the Meta Llama 3.1 70B model via Nebius AI Studio and a full-stack Next.js app. This solution works seamlessly whether you’re using the Pages Router or the App Router, as much of the customization relies on setting up a custom Next.js server.",
-      link:"https://nebius.com/blog/posts/building-ai-powered-finance-planner",
-      image:"https://storage.ai.nebius.cloud/www-gpu-assets/pages/blog/building-ai-powered-finance-planner/sharing1.jpg",
+      title:
+        "Building an AI-powered finance planner with full-stack Next.js and Nebius AI Studio",
+      description:
+        "In this guide, we’ll build an AI-powered financial planner using the Meta Llama 3.1 70B model via Nebius AI Studio and a full-stack Next.js app. This solution works seamlessly whether you’re using the Pages Router or the App Router, as much of the customization relies on setting up a custom Next.js server.",
+      link: "https://nebius.com/blog/posts/building-ai-powered-finance-planner",
+      image:
+        "https://storage.ai.nebius.cloud/www-gpu-assets/pages/blog/building-ai-powered-finance-planner/sharing1.jpg",
     },
     {
       title: "Make Prototyping Easier with Webcrumbs",
@@ -212,6 +213,31 @@ export const Data = {
       link: "https://www.permit.io/blog/implementing-graphql-authorization",
       image:
         "https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FYDN8Xi5vRQONu81cC1yw&w=1920&q=75",
+    },
+    {
+      title: "How to Build a Real-Time Dashboard with Encore.ts and React",
+      description:
+        "In this tutorial, you'll learn how to build a real-time dashboard with Encore.ts and React. We'll show you how to set up a real-time connection between your server and client, and how to display real-time data in your dashboard.",
+      link: "https://dev.to/encore/how-to-build-a-real-time-dashboard-with-encorets-and-react-ii9",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnd1e4rgk07yfo638ses9.png",
+    },
+    {
+      title: "Creating your own AI-powered code generator and reviewer",
+      description:
+        "In this hands-on tutorial, you’ll learn how to create a powerful code generation and review application that you can customize to your exact needs. We’ll use Nebius AI Studio and open-source models, making it both cost-effective and extensible.",
+      link: "https://nebius.com/blog/posts/building-ai-powered-code-generator",
+      image:
+        "https://media.licdn.com/dms/image/v2/D4E22AQHXtGpgMsH-BA/feedshare-shrink_800/feedshare-shrink_800/0/1733485301047?e=2147483647&v=beta&t=ZEE4MK-HOS0rbxXkwGi7rqTA9GWxoON8u4L3EXp4tNo",
+    },
+    {
+      title:
+        "Build Real-Time Presence Features Like Figma and Google Docs in Your App in Minutes🚀🔥🧑‍💻",
+      description:
+        "In this article, we will learn how to build real-time presence features like Figma and Google Docs in your app in minutes using Liveblocks.",
+      link: "https://dev.to/astrodevil/build-real-time-presence-features-like-figma-and-google-docs-in-your-app-in-minutes-1lae",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn4ktzy1anqot0vjselc6.png",
     },
     {
       title: "NestJS vs Encore.ts",
@@ -264,7 +290,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fz9zn9tnxmbfwyhu7pm55.gif",
     },
-    
+
     {
       title: "8 Tools You Need to Build Your First SaaS",
       description:
@@ -282,10 +308,12 @@ export const Data = {
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjdfvempfrzz376nh609l.png",
     },
     {
-      title:"How to Build Dynamic Feature Toggling in React.js",
-      description:"A guide on how to build a React Feature Toggling system. Discover how to use CASL and Permit.io for relationship-based access control (ReBAC) to manage feature visibility dynamically",
-      link:"https://www.permit.io/blog/dynamic-react-feature-toggling-2024-guide",
-      image:"https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FmCpDaZarQmWinorWRJJM&w=3840&q=75",
+      title: "How to Build Dynamic Feature Toggling in React.js",
+      description:
+        "A guide on how to build a React Feature Toggling system. Discover how to use CASL and Permit.io for relationship-based access control (ReBAC) to manage feature visibility dynamically",
+      link: "https://www.permit.io/blog/dynamic-react-feature-toggling-2024-guide",
+      image:
+        "https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FmCpDaZarQmWinorWRJJM&w=3840&q=75",
     },
     {
       title: "11 Open Source Python Projects You Should Know in 2024",
@@ -318,7 +346,7 @@ export const Data = {
       link: "https://dev.to/studio1hq/5-tools-every-developer-must-use-in-2024-438",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnidw6e25vyfgn74ftsa6.png",
-    },   
+    },
     {
       title: "How to Build a Request Access Approval System in Next.js",
       description:
@@ -328,34 +356,37 @@ export const Data = {
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fy190e3vkf86c96c426ur.gif",
     },
     {
-      title:"Build a Secure Chat App with React, Firebase, and Permit.io",
-      description:"A step-by-step guide to building a secure, real-time chat app with React, Firebase, and Permit.io - learn how to handle user roles and set up Firebase for authentication and real-time messaging.",
-      link:"https://www.permit.io/blog/coding-tutorial-build-a-secure-chat-app-with-react-firebase-and-permitio",
-      image:"https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FGaBppnGURR2iCpdv8VFL&w=3840&q=75",
+      title: "Build a Secure Chat App with React, Firebase, and Permit.io",
+      description:
+        "A step-by-step guide to building a secure, real-time chat app with React, Firebase, and Permit.io - learn how to handle user roles and set up Firebase for authentication and real-time messaging.",
+      link: "https://www.permit.io/blog/coding-tutorial-build-a-secure-chat-app-with-react-firebase-and-permitio",
+      image:
+        "https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FGaBppnGURR2iCpdv8VFL&w=3840&q=75",
     },
     {
-      title:"7 Must-Try Open-Source Tools for Python and JavaScript Developers ",
-      description:"In this article, we will discuss 7 open-source tools that every Python and JavaScript developer should try.",
-      link:"https://dev.to/arindam_1729/7-must-try-open-source-tools-for-python-and-javascript-developers-4c56",
-      image:"https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F67vy07x7txqv3ipnqvtv.gif",
+      title:
+        "7 Must-Try Open-Source Tools for Python and JavaScript Developers ",
+      description:
+        "In this article, we will discuss 7 open-source tools that every Python and JavaScript developer should try.",
+      link: "https://dev.to/arindam_1729/7-must-try-open-source-tools-for-python-and-javascript-developers-4c56",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F67vy07x7txqv3ipnqvtv.gif",
     },
     {
-      title:"Building and Deploying TypeScript Microservices to Kubernetes",
-      description:"In this tutorial, you’ll learn how to build a microservice with Encore.ts, and deploy it to a Kubernetes cluster in your AWS account. We’ll show you how to deploying your microservices.",
-      link:"https://dev.to/encore/building-and-deploying-typescript-microservices-to-kubernetes-3110",
-      image:"https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fq8jei5qtmeckkmdx7hfj.png"
+      title: "Building and Deploying TypeScript Microservices to Kubernetes",
+      description:
+        "In this tutorial, you’ll learn how to build a microservice with Encore.ts, and deploy it to a Kubernetes cluster in your AWS account. We’ll show you how to deploying your microservices.",
+      link: "https://dev.to/encore/building-and-deploying-typescript-microservices-to-kubernetes-3110",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fq8jei5qtmeckkmdx7hfj.png",
     },
     {
-      title:"Top 5 Open Source Projects You Must Explore Before 2025",
-      description:"In this article, we will discuss the top 5 open-source projects that you must explore before 2025.",
-      link:"https://dev.to/arindam_1729/top-5-open-source-projects-you-must-explore-before-2025-3l6l",
-      image:"https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fneqgdcpodgseopbqimdg.gif",
-    },
-    {
-      title:"Creating your own AI-powered code generator and reviewer",
-      description:"In this hands-on tutorial, you’ll learn how to create a powerful code generation and review application that you can customize to your exact needs. We’ll use Nebius AI Studio and open-source models, making it both cost-effective and extensible.",
-      link:"https://nebius.com/blog/posts/building-ai-powered-code-generator",
-      image:"https://media.licdn.com/dms/image/v2/D4E22AQHXtGpgMsH-BA/feedshare-shrink_800/feedshare-shrink_800/0/1733485301047?e=2147483647&v=beta&t=ZEE4MK-HOS0rbxXkwGi7rqTA9GWxoON8u4L3EXp4tNo",
+      title: "Top 5 Open Source Projects You Must Explore Before 2025",
+      description:
+        "In this article, we will discuss the top 5 open-source projects that you must explore before 2025.",
+      link: "https://dev.to/arindam_1729/top-5-open-source-projects-you-must-explore-before-2025-3l6l",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fneqgdcpodgseopbqimdg.gif",
     },
   ],
   Blogs: [
@@ -415,23 +446,68 @@ export const Data = {
       title: "Blogs as Service",
       description:
         "We create high-quality, technical and promotional blogs tailored for devtool and software companies. Our team of expert writers specializes in crafting SEO-optimized content that drives engagement, educates developers, and helps your tools stand out in a competitive market.",
-      image:"https://cdn.prod.website-files.com/66fc1a4b1a3399833cbb73ce/66fc1a4b1a3399833cbb750e_EFB6AC06-B22C-42F1-B402-CF24DEF2A34D.webp",
+      image:
+        "https://cdn.prod.website-files.com/66fc1a4b1a3399833cbb73ce/66fc1a4b1a3399833cbb750e_EFB6AC06-B22C-42F1-B402-CF24DEF2A34D.webp",
     },
     {
       title: "DevRel as Service",
       description:
         "Accelerate your growth with targeted Developer Relations services. We help devtool and software companies connect authentically with developers, grow communities, and turn users into advocates.",
-      image:"https://cdn.prod.website-files.com/66fc1a4b1a3399833cbb73ce/66fc1a4b1a3399833cbb7511_02073CC0-207B-4079-9DA5-BBFDA837CE50.webp",
-
+      image:
+        "https://cdn.prod.website-files.com/66fc1a4b1a3399833cbb73ce/66fc1a4b1a3399833cbb7511_02073CC0-207B-4079-9DA5-BBFDA837CE50.webp",
     },
     {
       title: "More Services",
       description: "New services coming soon. Stay tuned for updates.",
-      image:"https://cdn.prod.website-files.com/66fc1a4b1a3399833cbb73ce/66fc1a4b1a3399833cbb750f_D579D1FF-97FE-42E0-803A-33634CB722AD.webp",
-
+      image:
+        "https://cdn.prod.website-files.com/66fc1a4b1a3399833cbb73ce/66fc1a4b1a3399833cbb750f_D579D1FF-97FE-42E0-803A-33634CB722AD.webp",
     },
   ],
   Testimonials: [
+    {
+      name: "Saurav Jain",
+      role: "DevRel, Crawlee",
+      avatar: SauravImg.src,
+      content: `Arindam and Studio1 team work really great with technical posts, they are super quick and write deeply technical articles that reaches to the right devleoper audiences through their absolute fantastic distribution system. 
+      
+      Highly recommended. 💯`,
+      highlights: [
+        "Arindam",
+        "Studio1",
+        "technical",
+        "posts",
+        "super",
+        "quick",
+        "deeply",
+        "technical",
+        "articles",
+        "fantastic",
+        "distribution",
+        "system",
+        "Highly",
+        "recommended",
+      ],
+    },
+    {
+      name: "Nathan Telbert",
+      role: "DevRel, CopilotKit",
+      avatar: NathanImg.src,
+      content: `Working with Studio1 has been an excellent experience for us. The team delivered high-quality blogs focused on exciting projects that perfectly matched our content needs. 
+      
+      Their ability to create engaging content for developers has been a valuable addition to our educational content efforts. 
+      
+      We’re excited to continue collaborating on future projects!`,
+      highlights: [
+        "Studio1",
+        "high-quality blogs",
+        "engaging",
+        "educational content",
+        "continue",
+        "collaborating",
+        "future",
+        "projects",
+      ],
+    },
     {
       name: "Ivan Cordoba",
       role: "CEO & Founder Opire",
@@ -440,15 +516,6 @@ export const Data = {
             
             A key collaboration for Opire's growth.`,
       highlights: ["Studio1", "Opire's growth"],
-    },
-    {
-      name: "Saurav Jain",
-      role: "DevRel, Crawlee",
-      avatar: SauravImg.src,
-      content:`Arindam and Studio1 team work really great with technical posts, they are super quick and write deeply technical articles that reaches to the right devleoper audiences through their absolute fantastic distribution system. 
-      
-      Highly recommended. 💯`,
-      highlights: ["Arindam","Studio1", "technical","posts", "super", "quick", "deeply", "technical", "articles", "fantastic", "distribution", "system", "Highly", "recommended"],
     },
     {
       name: "Gabriel L. Manor",
@@ -472,10 +539,30 @@ export const Data = {
       name: "Agita Jaunzeme",
       role: "Community Manager, VDK(VMware)",
       avatar: AgitaImg.src,
-      content: `Very fast, good-quality work, results! Nothing to add; I totally recommend working with Amitesh!`,
+      content: `Very fast, good-quality work, results! Nothing to add; 
+      
+      I totally recommend working with Amitesh!`,
       highlights: ["Amitesh", "good-quality"],
     },
-
+    {
+      name: "Marketa Cizmar",
+      role: "C0O, Tolgee",
+      avatar: MarketaImg.src,
+      content: `Arindam wrote a technical article for us, and it was a pleasure working with him. He was friendly, responsive, and always quick to reply to any questions or feedback. 
+      
+      The whole process was smooth!`,
+      highlights: [
+        "Arindam",
+        "technical article",
+        "friendly",
+        "responsive",
+        "quick",
+        "reply",
+        "questions",
+        "feedback",
+        "smooth",
+      ],
+    },
     {
       name: "Julia Machado",
       role: "Founder & CEO, WebCrumbs",

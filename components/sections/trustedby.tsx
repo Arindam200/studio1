@@ -78,7 +78,10 @@ const TrustedbyLogo = [
 
 function Trustedby() {
   return (
-    <div id="trustedby" className="w-full overflow-hidden py-6 sm:py-8 md:py-10">
+    <div
+      id="trustedby"
+      className="w-full overflow-hidden py-6 sm:py-8 md:py-10"
+    >
       <Marquee>
         {TrustedbyLogo.map((Image, index) => (
           <div

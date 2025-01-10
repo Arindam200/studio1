@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function Team() {
-  return (
-    <div>Team</div>
-  )
+  return <div>Team</div>;
 }
