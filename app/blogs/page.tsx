@@ -7,6 +7,7 @@ import { Suspense } from "react";
 import Hero from "./hero";
 import { baseUrl } from "@/app/sitemap";
 import { Metadata } from "next";
+import { FloatingTags } from "@/components/ui/floating-tags";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -29,11 +30,14 @@ export const metadata: Metadata = {
 interface PageProps {
   searchParams?: {
     query?: string;
+    tags?: string;
   };
 }
 
 export default function Page({ searchParams }: PageProps) {
   const query = searchParams?.query || "";
+  const tags = searchParams?.tags?.split(",") || ["All"];
+
   return (
     <>
       <div className="sm:h-[35rem] h-[28rem] relative flex flex-col justify-center items-center">
@@ -58,10 +62,15 @@ export default function Page({ searchParams }: PageProps) {
               <Searchbar />
             </Suspense>
           </div>
+          <div className="flex mt-2 justify-center text-lg">
+            <Suspense fallback={<div>Loading...</div>}>
+              <FloatingTags />
+            </Suspense>
+          </div>
         </div>
       </div>
       <Suspense fallback={<div>Loading...</div>}>
-        <Hero query={query} />
+        <Hero query={query} tags={tags} />
       </Suspense>
     </>
   );

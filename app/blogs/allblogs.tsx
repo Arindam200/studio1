@@ -15,12 +15,16 @@ const cards = Data.Allblogs;
 
 interface AllblogsProps {
   query: string;
+  tags: string[];
 }
 
-export default function Allblogs({ query }: AllblogsProps) {
+export default function Allblogs({ query, tags }: AllblogsProps) {
   const filteredCards = cards.filter((card) => {
     const searchContent = `${card.title} ${card.description}`.toLowerCase();
-    return searchContent.includes(query.toLowerCase());
+    const matchesSearch = searchContent.includes(query.toLowerCase());
+    const matchesTags =
+      tags.includes("All") || tags.some((tag) => card.tags.includes(tag));
+    return matchesSearch && matchesTags;
   });
 
   return (

@@ -29,7 +29,6 @@ import {
 import React from "react";
 import PermitFull from "@/public/assets/Permit-full.png";
 import TolgeeFull from "@/public/assets/Tolgee-full.svg";
-import { title } from "process";
 
 export const Data = {
   Companies: [
@@ -122,6 +121,7 @@ export const Data = {
       link: "https://dev.to/tolgee_i18n/building-a-kanban-board-with-nextjsvercel-ai-and-tolgee-493g",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8se47yg59oimb4sl06eg.gif",
+      tags: ["project-building"],
     },
     {
       title: "How I Built the World's Best NextJS, AI Scheduling App",
@@ -130,6 +130,7 @@ export const Data = {
       link: "https://dev.to/tolgee_i18n/building-a-kanban-board-with-nextjsvercel-ai-and-tolgee-493g",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpvtqkii2tlp04p2cvlx9.gif",
+      tags: ["project-building"],
     },
     {
       title: "How to create a LinkedIn job scraper in Python with Crawlee",
@@ -138,6 +139,7 @@ export const Data = {
       link: "https://dev.to/crawlee/how-to-create-a-linkedin-job-scraper-in-python-with-crawlee-h9d",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fwsyjca1b8q6g9wapyhnp.jpg",
+      tags: ["project-building"],
     },
     {
       title:
@@ -147,6 +149,7 @@ export const Data = {
       link: "https://javascript.plainenglish.io/develop-a-real-time-collaborative-document-editor-with-next-js-appwrite-liveblocks-and-permit-io-699a865a7aeb",
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*Wan7SBxJfZf2HlOu9AIPLw.png",
+      tags: ["project-building"],
     },
     {
       title: "Building an AI-powered quiz application with Next.js and OpenAI",
@@ -155,6 +158,7 @@ export const Data = {
       link: "https://dev.to/latitude/building-an-ai-powered-quiz-application-with-nextjs-and-openai-2673",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ff04c0el5k9h0pee1pcpp.png",
+      tags: ["project-building"],
     },
     {
       title:
@@ -164,6 +168,7 @@ export const Data = {
       link: "https://astrodevil.medium.com/manage-permissions-in-a-langflow-chain-for-llm-queries-using-permit-io-7de8a0fb17b3",
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*bY1LzPkOXDXI_eRJ_V-y8w.png",
+      tags: ["project-building"],
     },
     {
       title:
@@ -173,6 +178,7 @@ export const Data = {
       link: "https://dev.to/arindam_1729/i-found-a-tool-even-better-than-v0-you-wont-believe-what-it-can-do-igf",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F70kbai7v3r12dr860psw.gif",
+      tags: ["project-building"],
     },
     {
       title:
@@ -182,6 +188,7 @@ export const Data = {
       link: "https://nebius.com/blog/posts/building-ai-powered-finance-planner",
       image:
         "https://storage.ai.nebius.cloud/www-gpu-assets/pages/blog/building-ai-powered-finance-planner/sharing1.jpg",
+      tags: ["project-building"],
     },
     {
       title: "Make Prototyping Easier with Webcrumbs",
@@ -189,6 +196,7 @@ export const Data = {
       link: "https://astrodevil.medium.com/make-prototyping-easier-with-webcrumbs-3668d8e880d2",
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*kirTT63OzhfJCcitLgDRqA.png",
+      tags: ["SEO"],
     },
     {
       title: "How to Add RBAC Authorization in Next.js",
@@ -197,6 +205,7 @@ export const Data = {
       link: "https://astrodevil.medium.com/how-to-add-rbac-authorization-in-next-js-1d5e50cbad29",
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*yWfXQWV_89Dg6MarsUhnvw.png",
+      tags: ["project-building"],
     },
     {
       title: "How to run Meta Llama 3.1 405B with Nebius AI Studio API",
@@ -205,6 +214,7 @@ export const Data = {
       link: "https://nebius.com/blog/posts/run-meta-llama-405b-in-ai-studio",
       image:
         "https://storage.ai.nebius.cloud/www-gpu-assets/pages/blog/introducing-nebius-ai-studio/preview.jpg",
+      tags: ["How-tos"],
     },
     {
       title: "Implementing GraphQL Authorization: A Practical Guide",
@@ -213,6 +223,7 @@ export const Data = {
       link: "https://www.permit.io/blog/implementing-graphql-authorization",
       image:
         "https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FYDN8Xi5vRQONu81cC1yw&w=1920&q=75",
+      tags: ["project-building"],
     },
     {
       title: "How to Build a Real-Time Dashboard with Encore.ts and React",
@@ -221,6 +232,7 @@ export const Data = {
       link: "https://dev.to/encore/how-to-build-a-real-time-dashboard-with-encorets-and-react-ii9",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnd1e4rgk07yfo638ses9.png",
+      tags: ["project-building"],
     },
     {
       title: "Creating your own AI-powered code generator and reviewer",
@@ -229,6 +241,7 @@ export const Data = {
       link: "https://nebius.com/blog/posts/building-ai-powered-code-generator",
       image:
         "https://media.licdn.com/dms/image/v2/D4E22AQHXtGpgMsH-BA/feedshare-shrink_800/feedshare-shrink_800/0/1733485301047?e=2147483647&v=beta&t=ZEE4MK-HOS0rbxXkwGi7rqTA9GWxoON8u4L3EXp4tNo",
+      tags: ["project-building"],
     },
     {
       title:
@@ -238,6 +251,8 @@ export const Data = {
       link: "https://dev.to/astrodevil/build-real-time-presence-features-like-figma-and-google-docs-in-your-app-in-minutes-1lae",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn4ktzy1anqot0vjselc6.png",
+
+      tags: ["project-building"],
     },
     {
       title: "NestJS vs Encore.ts",
@@ -246,6 +261,7 @@ export const Data = {
       link: "https://dev.to/encore/nestjs-vs-encorets-choosing-the-right-framework-for-your-typescript-microservices-1g61",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["general"],
     },
     {
       title: "Make Open Source Contributions More Rewarding with Opire",
@@ -254,6 +270,7 @@ export const Data = {
       link: "https://dev.to/opire/make-open-source-contributions-more-rewarding-with-opire-19o1",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fgvh9vgiz0v3i6evue4ip.gif",
+      tags: ["general"],
     },
     {
       title: "9 Open Source Libraries to Supercharge Your Next Project",
@@ -262,6 +279,7 @@ export const Data = {
       link: "https://dev.to/arindam_1729/9-open-source-libraries-to-supercharge-your-next-project-c71",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpfgp3ig8xjivkqz4bytl.gif",
+      tags: ["growth"],
     },
     {
       title:
@@ -271,6 +289,7 @@ export const Data = {
       link: "https://nebius.com/blog/posts/choosing-between-large-and-small-models",
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4eowvtjC0YUZgLG-2DMlGxBe69IBU-0XZQ&s",
+      tags: ["general"],
     },
     {
       title:
@@ -280,6 +299,7 @@ export const Data = {
       link: "https://astrodevil.medium.com/10-ai-assistants-for-frontend-developers-that-will-change-the-way-you-code-1d833541efb2",
       image:
         "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*0vebjXBoJ_iIVdrFapKosw.png",
+      tags: ["general"],
     },
     {
       title:
@@ -289,6 +309,7 @@ export const Data = {
       link: "https://dev.to/opire/hiring-in-the-open-how-companies-can-discover-top-talent-via-opire-k4h",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fz9zn9tnxmbfwyhu7pm55.gif",
+      tags: ["project-building"],
     },
 
     {
@@ -298,14 +319,16 @@ export const Data = {
       link: "https://dev.to/arindam_1729/8-tools-you-need-to-build-your-first-saas-am5",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F71cb2kcoxbtxo721zcw6.gif",
+      tags: ["project-building"],
     },
     {
-      title: "How to Add RBAC Authorization in Next.js",
+      title: "How to Add RBAC Authorization in Nextjs",
       description:
         "By the end of this tutorial, you'll have a clear understanding of how to secure your Next.js application with RBAC, giving you complete control over what each user can access based on their role.",
       link: "https://dev.to/arindam_1729/how-to-add-rbac-authorization-in-nextjs-16m3",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjdfvempfrzz376nh609l.png",
+      tags: ["project-building"],
     },
     {
       title: "How to Build Dynamic Feature Toggling in React.js",
@@ -314,6 +337,7 @@ export const Data = {
       link: "https://www.permit.io/blog/dynamic-react-feature-toggling-2024-guide",
       image:
         "https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FmCpDaZarQmWinorWRJJM&w=3840&q=75",
+      tags: ["project-building"],
     },
     {
       title: "11 Open Source Python Projects You Should Know in 2024",
@@ -322,6 +346,7 @@ export const Data = {
       link: "https://dev.to/arindam_1729/11-open-source-python-projects-you-should-know-in-2024-583o",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fdch857t54wnebiol8i3t.gif",
+      tags: ["growth"],
     },
     {
       title: "How to Implement RBAC (Role-Based Access Control) in Supabase",
@@ -330,6 +355,7 @@ export const Data = {
       link: "https://www.permit.io/blog/how-to-implement-rbac-in-supabase",
       image:
         "https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2F2H4tKg0FTfGFU3ciyTPa&w=3840&q=75",
+      tags: ["project-building"],
     },
     {
       title: "8 Developer Tools You Should Try in 2024",
@@ -338,6 +364,7 @@ export const Data = {
       link: "https://dev.to/studio1hq/8-developer-tools-you-should-try-in-2024-b8c",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fz21l3b031jaox5raxlp6.png",
+      tags: ["growth"],
     },
     {
       title: "5 Tools Every Developer Should Use in 2024",
@@ -346,6 +373,7 @@ export const Data = {
       link: "https://dev.to/studio1hq/5-tools-every-developer-must-use-in-2024-438",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnidw6e25vyfgn74ftsa6.png",
+      tags: ["growth"],
     },
     {
       title: "How to Build a Request Access Approval System in Next.js",
@@ -354,6 +382,7 @@ export const Data = {
       link: "https://dev.to/arindam_1729/how-to-build-a-request-access-approval-system-using-nextjs-p3p",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fy190e3vkf86c96c426ur.gif",
+      tags: ["project-building"],
     },
     {
       title: "Build a Secure Chat App with React, Firebase, and Permit.io",
@@ -362,6 +391,7 @@ export const Data = {
       link: "https://www.permit.io/blog/coding-tutorial-build-a-secure-chat-app-with-react-firebase-and-permitio",
       image:
         "https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FGaBppnGURR2iCpdv8VFL&w=3840&q=75",
+      tags: ["project-building"],
     },
     {
       title:
@@ -371,6 +401,7 @@ export const Data = {
       link: "https://dev.to/arindam_1729/7-must-try-open-source-tools-for-python-and-javascript-developers-4c56",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F67vy07x7txqv3ipnqvtv.gif",
+      tags: ["growth"],
     },
     {
       title: "Building and Deploying TypeScript Microservices to Kubernetes",
@@ -379,6 +410,7 @@ export const Data = {
       link: "https://dev.to/encore/building-and-deploying-typescript-microservices-to-kubernetes-3110",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fq8jei5qtmeckkmdx7hfj.png",
+      tags: ["project-building"],
     },
     {
       title: "Top 5 Open Source Projects You Must Explore Before 2025",
@@ -387,6 +419,7 @@ export const Data = {
       link: "https://dev.to/arindam_1729/top-5-open-source-projects-you-must-explore-before-2025-3l6l",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fneqgdcpodgseopbqimdg.gif",
+      tags: ["growth"],
     },
   ],
   Blogs: [
