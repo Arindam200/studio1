@@ -309,7 +309,7 @@ export const Data = {
       link: "https://dev.to/opire/hiring-in-the-open-how-companies-can-discover-top-talent-via-opire-k4h",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fz9zn9tnxmbfwyhu7pm55.gif",
-      tags: ["project-building"],
+      tags: ["general"],
     },
 
     {
@@ -319,7 +319,7 @@ export const Data = {
       link: "https://dev.to/arindam_1729/8-tools-you-need-to-build-your-first-saas-am5",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F71cb2kcoxbtxo721zcw6.gif",
-      tags: ["project-building"],
+      tags: ["general"],
     },
     {
       title: "How to Add RBAC Authorization in Nextjs",
