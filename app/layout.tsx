@@ -6,16 +6,28 @@ import Cta from "@/components/sections/cta";
 import Foooter from "@/components/sections/footer";
 import { baseUrl } from "./sitemap";
 import Script from "next/script";
+import { cn } from "@/lib/utils";
+import BottomNavbar from "@/components/bottom-navbar";
+import Navbar from "@/components/landing/navbar";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const aeonikRegular = localFont({
+  src: "./fonts/Aeonik-Regular.ttf",
+  variable: "--font-aeonik-regular",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const aeonikMedium = localFont({
+  src: "./fonts/Aeonik-Medium.ttf",
+  variable: "--font-aeonik-medium",
+});
+
+const aeonikBold = localFont({
+  src: "./fonts/Aeonik-Bold.ttf",
+  variable: "--font-aeonik-bold",
+});
+
+const aeonikLight = localFont({
+  src: "./fonts/Aeonik-Light.ttf",
+  variable: "--font-aeonik-light",
 });
 
 export const metadata: Metadata = {
@@ -59,17 +71,26 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-black antialiased overflow-x-hidden`}
+        className={cn(
+          aeonikRegular.variable,
+          aeonikMedium.variable,
+          aeonikBold.variable,
+          aeonikLight.variable,
+          "antialiased overflow-x-hidden font-sans"
+        )}
       >
         <ThemeProvider
           attribute="class"
-          forcedTheme="dark"
-          enableSystem={false}
+          defaultTheme="system"
+          enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
+
           {children}
-          <Cta />
-          <Foooter />
+          {/* <Cta />
+          <Foooter /> */}
+          <BottomNavbar />
         </ThemeProvider>
       </body>
       <Script

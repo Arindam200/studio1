@@ -7,6 +7,7 @@ import Process from "@/components/sections/devrel-as-service/process";
 import DevRelPricing from "@/components/sections/devrel-as-service/pricing";
 import { baseUrl } from "@/app/sitemap";
 import { Metadata } from "next";
+import BottomNavbar from "@/components/bottom-navbar";
 
 export const metadata: Metadata = {
   title: "Devrel as Service",
@@ -31,11 +32,12 @@ export const metadata: Metadata = {
 
 export default function DevRel() {
   return (
-    <div className="bg-black">
+    <div className="">
       <Hero />
       {/* <Impact /> */}
       <Services />
       <Process />
+
       <DevRelPricing />
       <Team />
     </div>
