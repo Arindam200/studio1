@@ -6,7 +6,7 @@ import HeroRightGrids from "../ui/hero-right-grids";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* <div className="">
+      <div className="">
         <HeroLeftGrids />
         <div className="absolute bottom-0 z-[100] w-[30%] h-[15rem] bg-gradient-to-t from-background to-transparent"></div>
         <div className="absolute bottom-0 z-[100] w-20 h-[40rem] bg-gradient-to-tr from-background/80 via-background/5 to-transparent"></div>
@@ -15,7 +15,7 @@ export default function Hero() {
         <HeroRightGrids />
         <div className="absolute bottom-0 right-0 z-[100] w-[30%] h-[15rem] bg-gradient-to-t from-background to-transparent"></div>
         <div className="absolute bottom-0 right-0 z-[100] w-20 h-[40rem] bg-gradient-to-tl from-background/80 via-background/5 to-transparent"></div>
-      </div> */}
+      </div>
 
       <div className="max-w-7xl relative mt-20 h-[40rem] py-20 mx-auto">
         <div className="px-4 flex flex-col items-center justify-center">

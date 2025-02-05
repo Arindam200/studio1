@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import Cta from "@/components/sections/cta";
-import Foooter from "@/components/sections/footer";
 import { baseUrl } from "./sitemap";
 import Script from "next/script";
 import { cn } from "@/lib/utils";
