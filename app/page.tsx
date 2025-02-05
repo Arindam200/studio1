@@ -1,9 +1,12 @@
 import Hero from "@/components/landing/hero";
-import Navbar from "@/components/landing/navbar";
+import Trustedby from "@/components/landing/trustedby";
+import Services from "@/components/landing/services";
 export default function Home() {
   return (
-    <div className="">
+    <div className="overflow-x-hidden ">
       <Hero />
+      <Trustedby />
+      <Services />
     </div>
   );
 }
