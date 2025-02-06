@@ -7,6 +7,8 @@ import Script from "next/script";
 import { cn } from "@/lib/utils";
 import BottomNavbar from "@/components/bottom-navbar";
 import Navbar from "@/components/landing/navbar";
+import Footer from "@/components/landing/footer";
+import CTA from "@/components/landing/cta";
 
 const aeonikRegular = localFont({
   src: "./fonts/Aeonik-Regular.ttf",
@@ -86,8 +88,8 @@ export default function RootLayout({
           <Navbar />
 
           {children}
-          {/* <Cta />
-          <Foooter /> */}
+          <CTA />
+          <Footer />
           <BottomNavbar />
         </ThemeProvider>
       </body>

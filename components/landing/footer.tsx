@@ -1,11 +1,10 @@
 import Link from "next/link";
-import { Newspaper, Twitter, Linkedin } from "lucide-react";
 import { IconBrandLinkedin, IconBrandX, IconNews } from "@tabler/icons-react";
 import Logo from "../ui/svgs/logo";
 
 export default function Footer() {
   return (
-    <footer className="border-t mt-44">
+    <footer className="border-t mt-44 pb-10">
       <div className="max-w-7xl mx-auto px-4 py-12 md:py-16">
         <div className="grid gap-8 lg:grid-cols-2 ">
           <div className="space-y-6 ">

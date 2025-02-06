@@ -4,7 +4,11 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { SelectTheme } from "../theme-toggler";
 import Image from "next/image";
-import { IconMailFilled, IconChevronDown, IconBook } from "@tabler/icons-react";
+import {
+  IconMailFilled,
+  IconChevronDown,
+  IconMenu2,
+} from "@tabler/icons-react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { navItems, serviceNavItems } from "@/constants/data";
@@ -14,13 +18,13 @@ import Logo from "../ui/svgs/logo";
 export default function Navbar() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [sublistHover, setSublistHover] = useState<number | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 py-2 z-50 border-b bg-background/80 backdrop-blur-2xl">
-        <nav className="flex max-w-7xl mx-auto h-16 px-4 rounded-2xl justify-between items-center">
+      <header className="fixed top-0 left-0 right-0 py-2 z-[150] border-b bg-background/80 backdrop-blur-2xl">
+        <nav className="flex z-20 max-w-7xl mx-auto h-16 px-4 rounded-2xl justify-between items-center">
           <div className="flex justify-between gap-2 items-center">
-            {/* <Logo className="size-8" /> */}
             <Image
               src="https://www.studio1hq.com/_next/static/media/logo.8f907c3e.png"
               className="rounded-sm"
@@ -30,7 +34,9 @@ export default function Navbar() {
             />
             <span className="text-2xl font-bold">Studio1</span>
           </div>
-          <div className="flex justify-between gap-8 font-medium items-center">
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex  justify-between gap-8 font-medium items-center">
             {navItems.map((item) => (
               <div
                 key={item.title}
@@ -43,7 +49,6 @@ export default function Navbar() {
                   className="flex items-center justify-center transition-all duration-300 hover:bg-accent rounded-sm px-2 py-1"
                 >
                   {item.title}
-
                   {item.children && (
                     <IconChevronDown className="ml-1 size-4 mt-1" />
                   )}
@@ -84,13 +89,78 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="flex justify-between gap-4 items-center">
+          <div className="hidden md:flex justify-between gap-4 items-center">
             <SelectTheme />
             <Button>
               Contact Us <IconMailFilled className="ml-2" />
             </Button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 hover:bg-accent rounded-md"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <IconMenu2 className="size-6" />
+          </button>
         </nav>
+
+        {/* Mobile Navigation */}
+        <div
+          className={cn(
+            "md:hidden bg-background border shadow-2xl pb-6 transition-all duration-300 overflow-hidden",
+            isMenuOpen ? "max-h-[1000px] block translate-y-4" : "hidden "
+          )}
+        >
+          <div className="px-4 py-2 space-y-2">
+            {navItems.map((item) => (
+              <div key={item.title} className="space-y-2">
+                <Link
+                  href={!item.children ? item.path : ""}
+                  className="flex items-center justify-between px-4 py-2 hover:bg-accent rounded-md"
+                  onClick={() =>
+                    item.children &&
+                    setHoveredItem(
+                      hoveredItem === item.title ? null : item.title
+                    )
+                  }
+                >
+                  {item.title}
+                  {item.children && (
+                    <IconChevronDown
+                      className={cn(
+                        "size-4 transition-transform duration-200",
+                        hoveredItem === item.title && "rotate-180"
+                      )}
+                    />
+                  )}
+                </Link>
+                {item.children && hoveredItem === item.title && (
+                  <div className="pl-4 space-y-2">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.title}
+                        href={child.path}
+                        className="flex items-center p-2 group hover:bg-accent rounded-md gap-3"
+                      >
+                        <div className="flex justify-center items-center w-10 h-10 border rounded-md group-hover:bg-primary">
+                          <child.icon className="size-5 group-hover:text-white" />
+                        </div>
+                        <span>{child.title}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            <div className="flex items-center justify-between p-2 bg-accent/50 pr-2 pl-4 rounded-3xl mt-4">
+              <SelectTheme />
+              <Button>
+                Contact Us <IconMailFilled className="ml-2" />
+              </Button>
+            </div>
+          </div>
+        </div>
       </header>
     </>
   );
