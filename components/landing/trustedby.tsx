@@ -13,8 +13,8 @@ export default function Trustedby() {
       <Marquee>
         {trustedbyLogo.map((item) => (
           <Image
-            key={item.name}
             src={item.image}
+            key={item.name}
             className="invert dark:invert-0 mx-10 w-fit h-28 aspect-square object-contain"
             alt={item.name}
             width={100}

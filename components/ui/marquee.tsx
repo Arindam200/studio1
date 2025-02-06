@@ -7,10 +7,7 @@ interface MarqueeProps extends ComponentPropsWithoutRef<"div"> {
    */
   className?: string;
   /**
-   * Duration of the animation
-   * @default 40
-   */
-  duration?: number;
+  
   /**
    * Whether to reverse the animation direction
    * @default false
@@ -44,14 +41,13 @@ export function Marquee({
   children,
   vertical = false,
   repeat = 4,
-  duration = 40,
   ...props
 }: MarqueeProps) {
   return (
     <div
       {...props}
       className={cn(
-        `group flex overflow-hidden p-2 [--duration:${duration}s] [--gap:1rem] [gap:var(--gap)]`,
+        `group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]`,
         {
           "flex-row": !vertical,
           "flex-col": vertical,

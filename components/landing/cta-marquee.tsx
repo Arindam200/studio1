@@ -17,7 +17,7 @@ export default function CTAmarquee({
           className
         )}
       >
-        <Marquee duration={140} reverse={reverse}>
+        <Marquee className="[--duration:140s]" reverse={reverse}>
           {[...Array(100)].map((_, i) => (
             <div key={i} className="flex items-center mx-4 gap-10">
               <div className="text-2xl font-bold">SCHEDULE CALL</div>
