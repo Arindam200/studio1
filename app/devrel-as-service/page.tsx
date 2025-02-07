@@ -1,5 +1,4 @@
 import React from "react";
-import Hero from "@/components/sections/devrel-as-service/hero";
 import Impact from "@/components/sections/devrel-as-service/impact";
 import Services from "@/components/sections/devrel-as-service/services";
 import Team from "@/components/sections/devrel-as-service/team";
@@ -7,7 +6,7 @@ import Process from "@/components/sections/devrel-as-service/process";
 import DevRelPricing from "@/components/sections/devrel-as-service/pricing";
 import { baseUrl } from "@/app/sitemap";
 import { Metadata } from "next";
-import BottomNavbar from "@/components/bottom-navbar";
+import Hero from "@/components/pages/devrel-as-a-service/hero";
 
 export const metadata: Metadata = {
   title: "Devrel as Service",
@@ -34,10 +33,8 @@ export default function DevRel() {
   return (
     <div className="">
       <Hero />
-      {/* <Impact /> */}
       <Services />
       <Process />
-
       <DevRelPricing />
       <Team />
     </div>

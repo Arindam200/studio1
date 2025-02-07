@@ -18,7 +18,7 @@ export default function Services() {
   const services = Data.Services;
   return (
     <>
-      <section className="max-w-7xl mx-auto my-44 px-4">
+      <section id="work" className="max-w-7xl mx-auto my-44 px-4">
         <div className="flex flex-col items-center gap-4 justify-center">
           <Badge className="text-sm font-medium pb-1 flex gap-2 items-center">
             <IconPackages className="size-4" /> Services

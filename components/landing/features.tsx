@@ -10,7 +10,10 @@ import SemiCircularGraph from "../ui/svgs/semi-circular-graph";
 export default function Features() {
   const features = Data.Features;
   return (
-    <div className="flex flex-col max-w-7xl px-4 mx-auto items-center mb-44">
+    <div
+      id="why-us"
+      className="flex flex-col max-w-7xl px-4 mx-auto items-center mb-44"
+    >
       <div className="flex flex-col items-center gap-4 justify-center">
         <Badge className="text-sm font-medium pb-1 flex gap-2 items-center">
           <IconCrown className="size-4" /> Features

@@ -7,7 +7,7 @@ export default function Process() {
   return (
     <div
       id="process"
-      className="bg-black text-white py-8 max-sm:px-5 sm:py-10 flex flex-col justify-center items-center"
+      className=" text-white py-8 max-sm:px-5 sm:py-10 flex flex-col justify-center items-center"
     >
       <div className="text-center font-semibold lg:text-5xl text-2xl sm:pb-4">
         How it{" "}

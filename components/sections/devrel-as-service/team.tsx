@@ -5,7 +5,7 @@ const team = Data.DevRelAsServiceTeam;
 
 export default function Team() {
   return (
-    <div id="team" className="py-10 sm:py-24 bg-black">
+    <div id="team" className="py-10 sm:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-6 font-semibold lg:text-5xl text-2xl pb-4">
           Meet Our{" "}
