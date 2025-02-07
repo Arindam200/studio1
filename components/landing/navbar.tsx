@@ -25,13 +25,9 @@ export default function Navbar() {
       <header className="fixed top-0 left-0 right-0 py-2 z-[150] border-b bg-background/80 backdrop-blur-2xl">
         <nav className="flex z-20 max-w-7xl mx-auto h-16 px-4 rounded-2xl justify-between items-center">
           <div className="flex justify-between gap-2 items-center">
-            <Image
-              src="https://www.studio1hq.com/_next/static/media/logo.8f907c3e.png"
-              className="rounded-sm"
-              alt="Studio1"
-              width={32}
-              height={32}
-            />
+            <Link href="/">
+              <Logo className="size-8" />
+            </Link>
             <span className="text-2xl font-bold">Studio1</span>
           </div>
 

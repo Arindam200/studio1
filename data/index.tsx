@@ -29,7 +29,18 @@ import {
 import React from "react";
 import PermitFull from "@/public/assets/Permit-full.png";
 import TolgeeFull from "@/public/assets/Tolgee-full.svg";
-import { IconPencil, IconPlus, IconUsers } from "@tabler/icons-react";
+import {
+  IconAugmentedReality,
+  IconBolt,
+  IconChartBarPopular,
+  IconHeadset,
+  IconHeartHandshake,
+  IconMessage,
+  IconPencil,
+  IconPlus,
+  IconSettingsCheck,
+  IconUsers,
+} from "@tabler/icons-react";
 
 export const Data = {
   Companies: [
@@ -81,37 +92,42 @@ export const Data = {
       title: "Quality",
       description:
         "We create project based tutorials, how-to guides, promotional pieces, list-based articles, and feature use cases, all crafted to engage and educate your developer audience.",
-      icon: <ZoomIn className="size-6" />,
+      icon: IconAugmentedReality,
     },
     {
       title: "Experience",
       description:
         "Our team includes developers who write and writers who build, ensuring technical content that is both accurate and engaging.",
-      icon: <BarChartHorizontal className="size-6" />,
-    },
-    {
-      title: "Support",
-      description:
-        "We work as an extension of your team, as a content partner. We ensure the work meets your requirements and expectations, collaborating closely until you're completely satisfied.",
-      icon: <CircleHelp className="size-6" />,
+      icon: IconBolt,
     },
     {
       title: "Expertise",
       description:
         "Team specializes in diverse tech like AI, ML, Python, Cloud, WebDev, DevOps, modern APIs and more.",
-      icon: <WandSparkles className="size-6" />,
+      icon: IconSettingsCheck,
+    },
+    {
+      title: "Support",
+      description:
+        "We work as an extension of your team, as a content partner. We ensure the work meets your requirements and expectations, collaborating closely until you're completely satisfied.",
+      icon: IconHeadset,
     },
     {
       title: "Results",
       description:
         "Content published by us has reached over 600,000 readers so far. We deliver technical content that ranks and converts.",
-      icon: <Layers className="size-6" />,
+      icon: IconChartBarPopular,
     },
     {
       title: "Collaboration",
       description:
         "15+ projects completed in just 4 month of our operations, We collaborated with leading software companies.",
-      icon: <BatteryCharging className="size-6" />,
+      icon: IconHeartHandshake,
+    },
+    {
+      title: "Testimonials",
+      description: "We have received 100+ positive reviews from our clients",
+      icon: IconMessage,
     },
   ],
   Allblogs: [

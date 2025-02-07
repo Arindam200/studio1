@@ -1,6 +1,7 @@
 import Hero from "@/components/landing/hero";
 import Trustedby from "@/components/landing/trustedby";
 import Services from "@/components/landing/services";
+import Features from "@/components/landing/features";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Trustedby />
       <Services />
+      <Features />
     </div>
   );
 }
