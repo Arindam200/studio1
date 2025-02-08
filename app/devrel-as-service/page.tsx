@@ -2,7 +2,7 @@ import React from "react";
 import Impact from "@/components/sections/devrel-as-service/impact";
 import Services from "@/components/sections/devrel-as-service/services";
 import Team from "@/components/sections/devrel-as-service/team";
-import Process from "@/components/sections/devrel-as-service/process";
+import Process from "@/components/pages/devrel-as-a-service/process";
 import DevRelPricing from "@/components/sections/devrel-as-service/pricing";
 import { baseUrl } from "@/app/sitemap";
 import { Metadata } from "next";

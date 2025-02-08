@@ -32,12 +32,20 @@ import TolgeeFull from "@/public/assets/Tolgee-full.svg";
 import {
   IconAugmentedReality,
   IconBolt,
+  IconBook,
+  IconBrandYoutube,
+  IconBulb,
+  IconChartBar,
   IconChartBarPopular,
+  IconCode,
+  IconGitBranch,
   IconHeadset,
   IconHeartHandshake,
   IconMessage,
   IconPencil,
   IconPlus,
+  IconRocket,
+  IconSearch,
   IconSettingsCheck,
   IconUsers,
 } from "@tabler/icons-react";
@@ -766,48 +774,85 @@ export const Data = {
       name: "Discovery",
       description:
         "We analyze your current content strategy and identify opportunities for contribution and improvement.",
-      icon: Search,
+      icon: IconSearch,
       details: [
-        "Knowing Tech stack",
-        "Analyze developer audience",
-        "Identify content scope",
-        "initial communication",
+        <p>
+          Knowing <br /> Tech stack
+        </p>,
+        <p>
+          Analyze <br /> developer audience
+        </p>,
+        <p>
+          Identify <br /> content scope
+        </p>,
+        <p>
+          Initial <br /> communication
+        </p>,
       ],
     },
     {
       name: "Strategy",
       description:
         "Develop a customized content plan aligned with your business goals and audience needs.",
-      icon: LightbulbIcon,
+      icon: IconBulb,
+
       details: [
-        "Knowing content requirement",
-        "Topic ideation",
-        "Content format decision",
-        "Distribution channel selection",
+        <p>
+          Knowing content <br /> requirement
+        </p>,
+        <p>
+          Topic <br /> ideation
+        </p>,
+        <p>
+          Content format <br /> decision
+        </p>,
+        <p>
+          Distribution <br /> channel selection
+        </p>,
       ],
     },
+
     {
       name: "Creation",
       description:
         "Our expert team of technical writers produces high-quality, engaging content.",
-      icon: Rocket,
+      icon: IconRocket,
+
       details: [
-        "Technical content development",
-        "Custom code examples and demos",
-        "Technical review and validation",
-        "SEO optimization and formatting",
+        <p>
+          Technical content <br /> development
+        </p>,
+        <p>
+          Custom code <br /> examples and demos
+        </p>,
+        <p>
+          Technical review and <br /> validation
+        </p>,
+
+        <p>
+          SEO optimization and <br /> formatting
+        </p>,
       ],
     },
+
     {
       name: "Distribution",
       description:
         "We publish and promote your content across multiple platforms to maximize reach.",
-      icon: BarChart,
+      icon: IconChartBar,
       details: [
-        "Multi-platform publishing",
-        "Analytics review",
-        "Social Media posts",
-        "Developer community sharing",
+        <p>
+          Multi-platform <br /> publishing
+        </p>,
+        <p>
+          Analytics <br /> review
+        </p>,
+        <p>
+          Social Media <br /> posts
+        </p>,
+        <p>
+          Developer community <br /> sharing
+        </p>,
       ],
     },
   ],
@@ -841,87 +886,122 @@ export const Data = {
       name: "Discovery",
       description:
         "We analyze your current DevRel efforts and identify opportunities for improvement.",
-      icon: Search,
+      icon: IconSearch,
       details: [
-        "Audit existing developer programs",
-        "Analyze community engagement",
-        "Identify growth opportunities",
-        "Assessment report",
+        <p>
+          Audit existing <br /> developer programs
+        </p>,
+        <p>
+          Analyze community <br /> engagement
+        </p>,
+        <p>
+          Identify growth <br /> opportunities
+        </p>,
+        <p>
+          Assessment <br /> report
+        </p>,
       ],
     },
     {
       name: "Strategy",
       description:
         "Develop a customized roadmap aligned with your business goals and developer needs.",
-      icon: LightbulbIcon,
+      icon: IconBulb,
       details: [
-        "Custom roadmap creation",
-        "Resource allocation",
-        "Timeline planning",
-        "KPI definition",
+        <p>
+          Custom roadmap <br /> creation
+        </p>,
+        <p>
+          Resource <br /> allocation
+        </p>,
+        <p>
+          Timeline <br /> planning
+        </p>,
+        <p>
+          KPI <br /> definition
+        </p>,
       ],
     },
+
     {
       name: "Implementation",
       description:
         "Execute the strategy with our experienced team of DevRel professionals.",
-      icon: Rocket,
+      icon: IconRocket,
       details: [
-        "Content creation",
-        "Community building",
-        "Plan exciting campaigns",
-        "Developer engagement",
+        <p>
+          Content <br /> creation
+        </p>,
+        <p>
+          Community <br /> building
+        </p>,
+        <p>
+          Plan exciting <br /> campaigns
+        </p>,
+        <p>
+          Developer <br /> engagement
+        </p>,
       ],
     },
+
     {
       name: "Measurement",
       description:
         "Track KPIs and adjust strategies based on data-driven insights.",
-      icon: BarChart,
+      icon: IconChartBar,
       details: [
-        "Performance tracking",
-        "Analytics review",
-        "Strategy adjustment",
-        "ROI measurement",
+        <p>
+          Performance <br /> tracking
+        </p>,
+        <p>
+          Analytics <br /> review
+        </p>,
+        <p>
+          Strategy <br /> adjustment
+        </p>,
+        <p>
+          ROI <br /> measurement
+        </p>,
       ],
     },
   ],
+
   DevRelAsServiceServices: [
     {
       title: "Technical Content Creation",
       description:
         "High-quality tutorials, documentation, and technical blog posts that resonate with developers.",
-      icon: Code2,
+      icon: IconCode,
     },
     {
       title: "Community Management",
       description:
         "Build and nurture a thriving developer community around your product or platform.",
-      icon: Users,
+      icon: IconUsers,
     },
     {
       title: "Developer Education",
       description:
         "Comprehensive training programs and workshops to help developers succeed with your tools.",
-      icon: BookOpen,
+      icon: IconBook,
     },
     {
       title: "Developer Support",
       description:
         "Building a responsive developer community where questions are answered and solutions are shared collaboratively.",
-      icon: MessageSquare,
+      icon: IconMessage,
     },
     {
       title: "Video Content",
       description:
         "Engaging video tutorials, product demos, and technical livestreams.",
-      icon: Youtube,
+      icon: IconBrandYoutube,
     },
     {
       title: "Tool Audit",
       description:
         "Strategic onboarding and developer experience assessment through comprehensive tool ecosystem analysis.",
-      icon: GitBranch,
+      icon: IconGitBranch,
     },
   ],
   DevRelAsServiceTeam: [

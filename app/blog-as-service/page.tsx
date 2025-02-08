@@ -1,6 +1,6 @@
 import React from "react";
 import Impact from "@/components/sections/blog-as-service/impact";
-import Process from "@/components/sections/blog-as-service/process";
+import Process from "@/components/pages/blogs-as-a-service/process";
 import MinimalCardDemo from "@/components/sections/blog-as-service/blogs";
 import Team from "@/components/sections/blog-as-service/team";
 import { baseUrl } from "@/app/sitemap";
