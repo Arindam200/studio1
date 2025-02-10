@@ -1,14 +1,15 @@
 import { Data } from "@/data";
 import { Badge } from "../ui/badge";
-import { IconCrown, IconSettings, IconSettings2 } from "@tabler/icons-react";
+import { IconCrown, IconSettings } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { Particles } from "../ui/particles";
 import UserAvatarCollection from "./user-avatar-collection";
 import Graph from "../ui/svgs/graph";
 import SemiCircularGraph from "../ui/svgs/semi-circular-graph";
-
+import { NumberTicker } from "../magicui/number-ticker";
+import CollaboarationIllustration from "../collaboaration-illustration";
+import SupportIllustration from "../support-illustration";
 export default function Features() {
-  const features = Data.Features;
   return (
     <div
       id="why-us"
@@ -28,20 +29,19 @@ export default function Features() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-4 mt-20">
         {Data.Features.map((feature, index) => (
           <div
             key={index}
             className={cn(
-              "bg-accent/50 rounded-[2rem] p-2 min-h-[25rem] group",
+              "bg-accent/50 hover:shadow-xl transition-all duration-700 rounded-[2rem] p-2 min-w-full min-h-[25rem] group",
               index === 0 && "md:col-span-2",
               index === 3 && "md:col-span-2"
             )}
           >
             <div
               className={cn(
-                "rounded-[1.5em] bg-background h-full transition-all duration-700 relative overflow-hidden w-full p-8 flex flex-col items-start",
-                index % 2 === 0 ? " justify-start" : "justify-between"
+                "rounded-[1.5em] bg-background h-full transition-all duration-700 relative overflow-hidden w-full p-8 flex flex-col items-start"
               )}
             >
               {feature.title.toLowerCase() === "testimonials" && (
@@ -55,6 +55,29 @@ export default function Features() {
               )}
               {feature.title.toLowerCase() === "quality" && (
                 <SemiCircularGraph className=" absolute bottom-[-5rem] md:bottom-[-10rem] left-1/2 -translate-x-1/2 size-[12rem] md:size-[22rem] " />
+              )}
+              {feature.title.toLowerCase() === "collaboration" && (
+                <CollaboarationIllustration className="absolute bottom-[0rem] md:bottom-[3rem] left-1/2 w-full -translate-x-1/2 " />
+              )}
+              {feature.title.toLowerCase() === "support" && (
+                <SupportIllustration className="absolute bottom-[0rem] md:bottom-[2rem] left-1/2 w-full -translate-x-1/2 " />
+              )}
+
+              {feature.title.toLowerCase() === "experience" && (
+                <div className="absolute flex flex-col items-center justify-center bottom-[2rem] left-1/2 -translate-x-1/2">
+                  <div className="flex items-center  gap-2">
+                    <NumberTicker
+                      value={1200}
+                      className="whitespace-pre-wrap text-8xl font-medium tracking-tighter text-primary dark:text-primary"
+                    />
+                    <p className="text-6xl font-medium tracking-tighter text-primary">
+                      +
+                    </p>
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Hours of Experience
+                  </div>
+                </div>
               )}
               <div
                 className={cn(
@@ -74,15 +97,19 @@ export default function Features() {
                 color={"#f97316"}
                 refresh
               />
-              <div className="flex items-centerrounded-2xl drop-shadow-lg">
-                <div className="bg-primary text-white rounded-l-2xl flex items-center justify-center py-3 px-3">
+              <div className="flex items-start flex-col gap-2 rounded-2xl drop-shadow-lg">
+                <div className="">
                   <feature.icon className="size-8" />
                 </div>
-                <div className="text-2xl md:text-3xl py-3 pl-3 bg-accent/80 rounded-r-2xl pr-4 font-extrabold">
+
+                <div className="text-xl md:text-2xl font-semibold">
                   {feature.title}
                 </div>
               </div>
-              <p className=" text-lg mt-4 text-left">{feature.description}</p>
+
+              <p className="text-muted-foreground text-sm mt-1 text-left">
+                {feature.description}
+              </p>
             </div>
           </div>
         ))}

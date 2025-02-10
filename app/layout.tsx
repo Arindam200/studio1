@@ -1,37 +1,29 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Raleway, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { baseUrl } from "./sitemap";
 import Script from "next/script";
 import { cn } from "@/lib/utils";
 import BottomNavbar from "@/components/bottom-navbar";
+
 import Navbar from "@/components/landing/navbar";
 import Footer from "@/components/landing/footer";
 import CTA from "@/components/landing/cta";
 
-const aeonikRegular = localFont({
-  src: "./fonts/Aeonik-Regular.ttf",
-  variable: "--font-aeonik-regular",
+const raleway = Raleway({
+  subsets: ["latin"],
+  variable: "--font-raleway",
 });
 
-const aeonikMedium = localFont({
-  src: "./fonts/Aeonik-Medium.ttf",
-  variable: "--font-aeonik-medium",
-});
-
-const aeonikBold = localFont({
-  src: "./fonts/Aeonik-Bold.ttf",
-  variable: "--font-aeonik-bold",
-});
-
-const aeonikLight = localFont({
-  src: "./fonts/Aeonik-Light.ttf",
-  variable: "--font-aeonik-light",
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
+
   title: {
     default: "Studio1 - Technical Content & DevRel Services",
     template: "%s | Studio1",
@@ -72,11 +64,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <body
         className={cn(
-          aeonikRegular.variable,
-          aeonikMedium.variable,
-          aeonikBold.variable,
-          aeonikLight.variable,
-          "antialiased overflow-x-hidden font-sans"
+          raleway.variable,
+          jakarta.variable,
+          "antialiased overflow-x-hidden font-secondary"
         )}
       >
         <ThemeProvider

@@ -3,17 +3,16 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { SelectTheme } from "../theme-toggler";
-import Image from "next/image";
 import {
   IconMailFilled,
   IconChevronDown,
   IconMenu2,
 } from "@tabler/icons-react";
 import { useState } from "react";
-import { usePathname } from "next/navigation";
-import { navItems, serviceNavItems } from "@/constants/data";
+import { navItems } from "@/constants/data";
 import { cn } from "@/lib/utils";
 import Logo from "../ui/svgs/logo";
+import { EnvelopeOpen } from "@phosphor-icons/react";
 
 export default function Navbar() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
@@ -88,7 +87,7 @@ export default function Navbar() {
           <div className="hidden md:flex justify-between gap-4 items-center">
             <SelectTheme />
             <Button>
-              Contact Us <IconMailFilled className="ml-2" />
+              Contact Us <EnvelopeOpen className="ml-2" />
             </Button>
           </div>
 
@@ -152,7 +151,7 @@ export default function Navbar() {
             <div className="flex items-center justify-between p-2 bg-accent/50 pr-2 pl-4 rounded-3xl mt-4">
               <SelectTheme />
               <Button>
-                Contact Us <IconMailFilled className="ml-2" />
+                Contact Us <EnvelopeOpen className="ml-2" />
               </Button>
             </div>
           </div>

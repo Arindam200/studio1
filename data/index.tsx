@@ -8,24 +8,6 @@ import AgitaImg from "../public/assets/Agita.png";
 import SauravImg from "../public/assets/Saurav.png";
 import NathanImg from "../public/assets/Nathan.png";
 import MarketaImg from "../public/assets/Marketa.png";
-import {
-  Search,
-  LightbulbIcon,
-  Rocket,
-  BarChart,
-  Code2,
-  Users,
-  BookOpen,
-  MessageSquare,
-  Youtube,
-  GitBranch,
-  ZoomIn,
-  BarChartHorizontal,
-  CircleHelp,
-  WandSparkles,
-  Layers,
-  BatteryCharging,
-} from "lucide-react";
 import React from "react";
 import PermitFull from "@/public/assets/Permit-full.png";
 import TolgeeFull from "@/public/assets/Tolgee-full.svg";
@@ -42,13 +24,24 @@ import {
   IconHeadset,
   IconHeartHandshake,
   IconMessage,
-  IconPencil,
   IconPlus,
   IconRocket,
   IconSearch,
   IconSettingsCheck,
   IconUsers,
 } from "@tabler/icons-react";
+import {
+  ChartBar,
+  ChatCentered,
+  ChatCenteredDots,
+  CubeFocus,
+  Handshake,
+  Headset,
+  Lightning,
+  Nut,
+  PencilLine,
+  Users as UsersTwo,
+} from "@phosphor-icons/react/dist/ssr";
 
 export const Data = {
   Companies: [
@@ -99,45 +92,46 @@ export const Data = {
     {
       title: "Quality",
       description:
-        "We create project based tutorials, how-to guides, promotional pieces, list-based articles, and feature use cases, all crafted to engage and educate your developer audience.",
-      icon: IconAugmentedReality,
+        "that ensures engaging project-based tutorials, guides, and use cases for developers.",
+      icon: CubeFocus,
     },
     {
       title: "Experience",
-      description:
-        "Our team includes developers who write and writers who build, ensuring technical content that is both accurate and engaging.",
-      icon: IconBolt,
+      description: "that helps in making content both accurate and engaging.",
+      icon: Lightning,
     },
     {
       title: "Expertise",
       description:
-        "Team specializes in diverse tech like AI, ML, Python, Cloud, WebDev, DevOps, modern APIs and more.",
-      icon: IconSettingsCheck,
+        "that covers AI, ML, Python, Cloud, WebDev, DevOps, modern APIs, and more.",
+      icon: Nut,
     },
     {
       title: "Support",
       description:
-        "We work as an extension of your team, as a content partner. We ensure the work meets your requirements and expectations, collaborating closely until you're completely satisfied.",
-      icon: IconHeadset,
+        "that makes us an extension of your team, collaborating until you're 100% satisfied.",
+      icon: Headset,
     },
     {
       title: "Results",
       description:
-        "Content published by us has reached over 600,000 readers so far. We deliver technical content that ranks and converts.",
-      icon: IconChartBarPopular,
+        "that have reached 600K+ readers, delivering content that ranks and converts.",
+      icon: ChartBar,
     },
     {
       title: "Collaboration",
       description:
-        "15+ projects completed in just 4 month of our operations, We collaborated with leading software companies.",
-      icon: IconHeartHandshake,
+        "that led to 15+ projects in just 4 months, partnering with top software companies.",
+      icon: Handshake,
     },
     {
       title: "Testimonials",
-      description: "We have received 100+ positive reviews from our clients",
-      icon: IconMessage,
+      description:
+        "that showcase 100+ positive client reviews, reflecting our impact and trust.",
+      icon: ChatCenteredDots,
     },
   ],
+
   Allblogs: [
     {
       title: "Building a Kanban Board with Next.js,Vercel AI and Tolgee",
@@ -504,8 +498,9 @@ export const Data = {
       title: "Blogs as Service",
       description:
         "We create high-quality, technical and promotional blogs tailored for devtool and software companies. Our team of expert writers specializes in crafting SEO-optimized content that drives engagement, educates developers",
-      icon: IconPencil,
+      icon: PencilLine,
     },
+
     {
       title: "More Services",
       description: (
@@ -520,7 +515,7 @@ export const Data = {
       title: "DevRel as Service",
       description:
         "Accelerate your growth with targeted Developer Relations services. We help devtool and software companies connect authentically with developers, grow communities, and turn users into advocates.",
-      icon: IconUsers,
+      icon: UsersTwo,
     },
   ],
   Testimonials: [

@@ -26,10 +26,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-aeonik-regular)", "sans-serif"],
-        medium: ["var(--font-aeonik-medium)", "sans-serif"],
-        bold: ["var(--font-aeonik-bold)", "sans-serif"],
-        light: ["var(--font-aeonik-light)", "sans-serif"],
+        primary: ["var(--font-raleway)", "sans-serif"],
+        secondary: ["var(--font-jakarta)", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
