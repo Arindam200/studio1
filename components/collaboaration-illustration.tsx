@@ -1,6 +1,4 @@
 import { cn } from "@/lib/utils";
-import Logo from "./ui/svgs/logo";
-import { NebiusFull } from "@/constants/image";
 import Image from "next/image";
 import { Marquee } from "./ui/marquee";
 import { trustedbyLogo } from "@/constants/data";
@@ -20,10 +18,12 @@ export default function CollaboarationIllustration({
       >
         <Marquee>
           {trustedbyLogo.map((item) => (
-            <div className="border-2 !w-1/3 h-20 flex px-4 bg-accent/80 backdrop-blur-xl rounded-md  items-center justify-center">
+            <div
+              key={item.name}
+              className="border-2 !w-1/3 h-20 flex px-4 bg-accent/80 backdrop-blur-xl rounded-md  items-center justify-center"
+            >
               <Image
                 src={item.image}
-                key={item.name}
                 className="invert dark:invert-0 h-fit object-contain"
                 alt={item.name}
                 width={100}

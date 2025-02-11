@@ -145,6 +145,10 @@ const config = {
             transform: "translate(-50%, -50%) scale(0.9)",
           },
         },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -156,6 +160,9 @@ const config = {
         shimmer: "shimmer 2s linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         ripple: "ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) forwards",
+        animation: {
+          "fade-in": "fade-in 0.5s ease-out",
+        },
       },
     },
   },

@@ -2,26 +2,36 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDownRight, Calendar } from "@phosphor-icons/react";
 import FloatingSvgs from "./floating-svgs";
-import HeroLeftGrids from "../ui/hero-left-grids";
 import HeroRightGrids from "../ui/hero-right-grids";
+import HeroLeftGrids from "../ui/hero-left-grids";
+import { Badge } from "@/components/ui/badge";
+import { Building, Buildings, Star } from "@phosphor-icons/react/dist/ssr";
+import { Data } from "@/data";
+import Image from "next/image";
+import { BuildingIcon } from "lucide-react";
+
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden">
-      {/* <div className="md:block hidden">
+    <section className="relative h-screen overflow-hidden">
+      {/* <div className="md:block opacity-30 hidden">
         <HeroLeftGrids />
         <div className="hidden lg:block absolute bottom-0 z-[100] w-[30%] h-[15rem] bg-gradient-to-t from-background to-transparent"></div>
         <div className="hidden lg:block absolute bottom-0 z-[100] w-20 h-[40rem] bg-gradient-to-tr from-background/80 via-background/5 to-transparent"></div>
       </div>
-      <div className=" md:block hidden">
+      <div className=" md:block opacity-50 hidden">
         <HeroRightGrids />
         <div className="lg:block hidden absolute bottom-0 right-0 z-[100] w-[30%] h-[15rem] bg-gradient-to-t from-background to-transparent"></div>
         <div className="lg:block hidden absolute bottom-0 right-0 z-[100] w-20 h-[40rem] bg-gradient-to-tl from-background/80 via-background/5 to-transparent"></div>
       </div> */}
 
-      <div className="max-w-7xl relative mt-20 h-[40rem] py-20 mx-auto">
+      <div className="max-w-7xl relative mt-[4rem] h-[40rem] py-20 mx-auto">
         <FloatingSvgs />
         <div className="px-4 flex flex-col items-center justify-center">
           <div className="flex flex-col items-center justify-center">
+            <Badge className="pb-1 shadow-md mb-2 bg-gradient-to-r from-primary via-primary1 to-primary1/20 text-white">
+              <Building weight="fill" className="size-5 mr-2" />
+              Trusted by Companies
+            </Badge>
             <div className="text-4xl font-semibold font-primary sm:text-5xl lg:text-[4rem] text-center md:font-medium">
               Empowering Your Voice <br className="hidden md:block" /> in the
               Developer Community
@@ -57,7 +67,67 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="bottom-[-18rem] md:bottom-[-25rem] z-[101] left-[50%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[7em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] size-[20rem] rotate-[0deg]"></div>
+        <div className="top-[-18rem] md:top-[-23rem] z-[120] left-[50%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[7em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[25rem] size-[20rem] rotate-[0deg]"></div>
+        <div className="border max-w-[18rem] p-4 bg-accent/50 backdrop-blur-xl z-[190] opacity-15 rounded-xl h-56 absolute -bottom-32 left-[40%] -translate-x-1/2 w-full">
+          <div className="flex items-center justify-center">
+            <Image
+              src={Data.Testimonials[4].avatar}
+              alt={Data.Testimonials[4].name}
+              width={140}
+              height={140}
+              className="rounded-full size-16"
+            />
+          </div>
+          <div className="flex flex-col text-center mt-2 text-sm items-center justify-center">
+            {Data.Testimonials[4].content}
+          </div>
+          <div className="flex px-3 py-2 rounded-md items-center gap-1 justify-center">
+            {[...Array(5)].map((_, index) => (
+              <Star key={index} className="size-4 text-primary" weight="fill" />
+            ))}
+          </div>
+        </div>
+        <div className="border max-w-[18rem] p-4 bg-accent/50 backdrop-blur-xl z-[201] rounded-xl h-56 absolute -bottom-[5.3rem] left-1/2 -translate-x-1/2 w-full">
+          <div className="flex items-center justify-center">
+            <Image
+              src={Data.Testimonials[4].avatar}
+              alt={Data.Testimonials[4].name}
+              width={140}
+              height={140}
+              className="rounded-full size-16"
+            />
+          </div>
+          <div className="flex flex-col text-center mt-2 text-sm items-center justify-center">
+            {Data.Testimonials[4].content}
+          </div>
+          <div className="flex px-3 py-2 rounded-md items-center gap-1 justify-center">
+            {[...Array(5)].map((_, index) => (
+              <Star key={index} className="size-4 text-primary" weight="fill" />
+            ))}
+          </div>
+          <div className="text-sm font-semibold  text-center">
+            -{Data.Testimonials[4].name}
+          </div>
+        </div>
+        <div className="border max-w-[18rem] p-4 bg-accent/50 backdrop-blur-xl z-[190] opacity-15 rounded-xl h-56 absolute -bottom-32 left-[60%] -translate-x-1/2 w-full">
+          <div className="flex items-center justify-center">
+            <Image
+              src={Data.Testimonials[4].avatar}
+              alt={Data.Testimonials[4].name}
+              width={140}
+              height={140}
+              className="rounded-full size-16"
+            />
+          </div>
+          <div className="flex flex-col text-center mt-2 text-sm items-center justify-center">
+            {Data.Testimonials[4].content}
+          </div>
+          <div className="flex px-3 py-2 rounded-md items-center gap-1 justify-center">
+            {[...Array(5)].map((_, index) => (
+              <Star key={index} className="size-4 text-primary" weight="fill" />
+            ))}
+          </div>
+        </div>
 
         {/* <div className="top-[-10rem] md:top-[-2rem] z-[-1] left-[20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[20rem] md:w-[10rem] rotate-[-40deg]"></div> */}
 

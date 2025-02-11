@@ -1,11 +1,11 @@
-import { IconPhone, IconPhoneFilled } from "@tabler/icons-react";
+import { IconPhoneFilled } from "@tabler/icons-react";
 import { Button } from "../ui/button";
 
 export default function CTA() {
   return (
     <>
-      <div className="max-w-4xl mx-auto px-4 my-28">
-        <div className="border shadow-xl relative flex flex-col overflow-hidden  items-center justify-center h-[20rem] rounded-3xl">
+      <div className="px-4 my-28">
+        <div className="border max-w-4xl mx-auto shadow-xl relative flex flex-col overflow-hidden  items-center justify-center h-[20rem] rounded-3xl">
           <div className="text-2xl md:text-4xl text-center font-bold">
             Ready to Skyrocket <br /> Your Developer Community?
           </div>

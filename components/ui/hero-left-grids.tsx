@@ -2,7 +2,7 @@ import SingleGrid from "../single-grid";
 
 export default function HeroLeftGrids() {
   return (
-    <div className="-rotate-[28deg] dark:opacity-70 md:dark:opacity-100 opacity-40 sm:opacity-70 h-[80vh] lg:h-[140vh] absolute -bottom-44 lg:-top-20 -left-36 lg:-left-20 w-fit">
+    <div className="-rotate-[18deg] dark:opacity-70 md:dark:opacity-100 opacity-40 sm:opacity-70 h-[80vh] lg:h-[140vh] absolute -bottom-44 lg:top-60 -left-36 lg:-left-0 w-fit">
       <div className="flex items-center gap-4 h-full w-full">
         <SingleGrid
           innerClassName="bg-gradient-to-br from-white/20 via-primary to-primary"

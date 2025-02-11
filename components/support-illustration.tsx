@@ -28,21 +28,21 @@ export default function SupportIllustration({
         >
           <div
             ref={sunRef}
-            className="size-20 border-2 bg-accent/50 backdrop-blur-xl rounded-md flex items-center justify-center"
+            className="size-20 border-2 bg-accent/50 backdrop-blur-xl rounded-3xl flex items-center justify-center"
           >
             <Sun className="size-8" />
           </div>
 
           <div
             ref={clockRef}
-            className="size-40 text-5xl bg-accent/50 backdrop-blur-xl flex items-center justify-center rounded-md border-2"
+            className="size-40 text-5xl bg-accent/50 backdrop-blur-xl flex items-center justify-center rounded-[2rem] border-2"
           >
             <ClockUser className="size-20" />
           </div>
 
           <div
             ref={moonRef}
-            className="size-20 border-2 bg-accent/50 backdrop-blur-xl rounded-md flex items-center justify-center"
+            className="size-20 border-2 bg-accent/50 backdrop-blur-xl rounded-3xl flex items-center justify-center"
           >
             <Moon className="size-8" />
           </div>
@@ -50,7 +50,6 @@ export default function SupportIllustration({
             containerRef={containerRef}
             fromRef={sunRef}
             toRef={clockRef}
-            duration={1}
             className="z-[-1]"
             gradientStartColor="#ff3131"
             gradientStopColor="#ff914d"
@@ -59,13 +58,14 @@ export default function SupportIllustration({
           />
 
           <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={moonRef}
+            toRef={clockRef}
             gradientStartColor="#ff3131"
             gradientStopColor="#ff914d"
             className="z-[-1]"
-            containerRef={containerRef}
             curvature={-75}
-            fromRef={moonRef}
-            toRef={clockRef}
+            endYOffset={-10}
           />
         </div>
       </div>
