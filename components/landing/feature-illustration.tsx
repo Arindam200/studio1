@@ -31,7 +31,7 @@ export function FeatureIllustration({ title }: FeatureIllustrationProps) {
       );
     case "collaboration":
       return (
-        <CollaboarationIllustration className="absolute bottom-[0rem] md:bottom-[3rem] left-1/2 w-full -translate-x-1/2" />
+        <CollaboarationIllustration className="absolute bottom-[3rem] left-1/2 w-full -translate-x-1/2" />
       );
     case "expertise":
       return theme === "dark" ? (
@@ -41,7 +41,7 @@ export function FeatureIllustration({ title }: FeatureIllustrationProps) {
       );
     case "support":
       return (
-        <SupportIllustration className="absolute bottom-[0rem] md:bottom-[2rem] left-1/2 w-full -translate-x-1/2" />
+        <SupportIllustration className="absolute bottom-[2rem] left-1/2 w-full -translate-x-1/2" />
       );
     case "experience":
       return (

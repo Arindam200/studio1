@@ -16,15 +16,22 @@ import {
   OpireFull,
   EncoreFull,
 } from "./image";
+import {
+  Briefcase,
+  CheckCircle,
+  Lightbulb,
+  Pen,
+  Star,
+} from "@phosphor-icons/react/dist/ssr";
 
 export const navItems = [
   {
     title: "Home",
     path: "/",
     children: [
-      { title: "Work", path: "/#work", icon: IconBriefcase2Filled },
-      { title: "Why Us", path: "/#why-us", icon: IconBulbFilled },
-      { title: "Testimonials", path: "/#testimonials", icon: IconStarFilled },
+      { title: "Work", path: "/#work", icon: Briefcase },
+      { title: "Why Us", path: "/#why-us", icon: Lightbulb },
+      { title: "Testimonials", path: "/#testimonials", icon: Star },
     ],
   },
 
@@ -35,12 +42,12 @@ export const navItems = [
       {
         title: "DevRel as a Service",
         path: "/devrel-as-service",
-        icon: IconCodeCircle2Filled,
+        icon: CheckCircle,
       },
       {
         title: "Blog as a Service",
         path: "/blog-as-service",
-        icon: IconWriting,
+        icon: Pen,
       },
     ],
   },

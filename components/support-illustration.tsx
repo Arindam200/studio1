@@ -28,23 +28,23 @@ export default function SupportIllustration({
         >
           <div
             ref={sunRef}
-            className="size-20 border-2 bg-accent/50 backdrop-blur-xl rounded-3xl flex items-center justify-center"
+            className="size-16 md:size-20 border-2 bg-accent/50 backdrop-blur-xl rounded-xl md:rounded-3xl flex items-center justify-center"
           >
-            <Sun className="size-8" />
+            <Sun className="size-6 md:size-8" />
           </div>
 
           <div
             ref={clockRef}
-            className="size-40 text-5xl bg-accent/50 backdrop-blur-xl flex items-center justify-center rounded-[2rem] border-2"
+            className="size-24 md:size-40 text-5xl bg-accent/50 backdrop-blur-xl flex items-center justify-center rounded-[1rem] md:rounded-[2rem] border-2"
           >
-            <ClockUser className="size-20" />
+            <ClockUser className="size-12 md:size-20" />
           </div>
 
           <div
             ref={moonRef}
-            className="size-20 border-2 bg-accent/50 backdrop-blur-xl rounded-3xl flex items-center justify-center"
+            className="size-16 md:size-20 border-2 bg-accent/50 backdrop-blur-xl rounded-xl md:rounded-3xl flex items-center justify-center"
           >
-            <Moon className="size-8" />
+            <Moon className="size-6 md:size-8" />
           </div>
           <AnimatedBeam
             containerRef={containerRef}

@@ -61,12 +61,14 @@ export default function Navbar() {
                         >
                           <div
                             className={cn(
-                              "flex group justify-center items-center w-14 h-14 border rounded-md",
-                              sublistHover === index && "bg-primary"
+                              "flex group justify-center  items-center w-14 h-14 border rounded-md",
+                              sublistHover === index &&
+                                "group-hover:bg-gradient-to-br group-hover:from-primary via-primary group-hover:to-primary1"
                             )}
                           >
                             {
                               <child.icon
+                                weight="fill"
                                 className={cn(
                                   "size-6 text-foreground",
                                   sublistHover === index && "text-white"
@@ -138,8 +140,11 @@ export default function Navbar() {
                         href={child.path}
                         className="flex items-center p-2 group hover:bg-accent rounded-md gap-3"
                       >
-                        <div className="flex justify-center items-center w-10 h-10 border rounded-md group-hover:bg-primary">
-                          <child.icon className="size-5 group-hover:text-white" />
+                        <div className="flex justify-center items-center w-10 h-10 border rounded-md group-hover:bg-gradient-to-r group-hover:from-primary/50 group-hover:to-primary/50">
+                          <child.icon
+                            weight="fill"
+                            className="size-5 group-hover:text-white"
+                          />
                         </div>
                         <span>{child.title}</span>
                       </Link>
