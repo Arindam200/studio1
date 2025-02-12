@@ -24,7 +24,7 @@ export default function CollaboarationIllustration({
             >
               <Image
                 src={item.image}
-                className="invert dark:invert-0 h-fit object-contain"
+                className="invert grayscale dark:invert-0 dark:grayscale h-fit object-contain"
                 alt={item.name}
                 width={100}
                 height={100}

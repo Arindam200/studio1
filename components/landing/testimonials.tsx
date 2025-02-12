@@ -16,8 +16,8 @@ export default function Testimonials() {
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="flex flex-col items-center gap-4 justify-center mb-16">
-          <Badge className="text-sm font-medium pb-1 flex gap-2 items-center">
-            <ChatCenteredDots className="size-4" /> Testimonials
+          <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 flex gap-2 items-center">
+            <ChatCenteredDots weight="fill" className="size-4" /> Testimonials
           </Badge>
           <h2 className="text-4xl md:text-5xl font-medium text-center">
             What Our Clients Say

@@ -594,7 +594,7 @@ export const Data = {
       name: "Agita Jaunzeme",
       role: "Community Manager, VDK(VMware)",
       avatar: AgitaImg.src,
-      content: `Very fast, good-quality work, results! Nothing to add; I totally recommend working with Studio1 !`,
+      content: `Very fast, good-quality work, results! Nothing to add; I totally recommend working with Amitesh !`,
       highlights: ["Amitesh", "good-quality"],
     },
     {

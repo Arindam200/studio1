@@ -3,6 +3,7 @@ import { IconCrown } from "@tabler/icons-react";
 import { Badge } from "../ui/badge";
 import { Data } from "@/data";
 import { FeatureCard } from "./feature-card";
+import { Sparkle } from "@phosphor-icons/react/dist/ssr";
 
 export default function Features() {
   return (
@@ -11,8 +12,8 @@ export default function Features() {
       className="flex flex-col max-w-7xl px-4 mx-auto items-center mb-44"
     >
       <div className="flex flex-col items-center gap-4 justify-center">
-        <Badge className="text-sm font-medium pb-1 flex gap-2 items-center">
-          <IconCrown className="size-4" /> Features
+        <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 flex gap-2 items-center">
+          <Sparkle weight="fill" className="size-4" /> Features
         </Badge>
         <div className="text-5xl font-medium text-center">
           Why Work with Us?

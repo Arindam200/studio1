@@ -21,7 +21,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 py-2 z-[150] border-b bg-background/80 backdrop-blur-2xl">
+      <header className="fixed top-0 left-0 right-0 py-2 z-[550] border-b bg-background/80 backdrop-blur-2xl">
         <nav className="flex z-20 max-w-7xl mx-auto h-16 px-4 rounded-2xl justify-between items-center">
           <div className="flex justify-between gap-2 items-center">
             <Link href="/">

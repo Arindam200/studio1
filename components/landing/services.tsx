@@ -9,7 +9,7 @@ import HeroLeftGrids from "../ui/hero-left-grids";
 export default function Services() {
   return (
     <>
-      <section id="work" className="overflow-hidden my-44 px-4 py-20 relative">
+      <section id="work" className="overflow-hidden mb-28 px-4 py-20 relative">
         <div className="md:block opacity-10 xl:opacity-50 z-[-1] hidden">
           <HeroLeftGrids />
           {/* <div className="hidden lg:block absolute bottom-0 z-[100] w-[30%] h-[15rem] bg-gradient-to-t from-background to-transparent"></div>
@@ -22,7 +22,7 @@ export default function Services() {
         </div>
         <div className="flex flex-col z-[20] items-center gap-4 justify-center">
           <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 text-white pb-1 flex gap-2 items-center">
-            <Cube className="size-4" /> Services
+            <Cube weight="fill" className="size-4" /> Services
           </Badge>
           <div className="text-5xl font-medium">What we do?</div>
           <p className="text-center text-base mt-2">
@@ -32,7 +32,7 @@ export default function Services() {
           </p>
         </div>
         <div className="flex flex-col max-w-7xl mx-auto">
-          <div className="flex relative items-center gap-[2%] w-full mt-20 justify-center md:-space-x-10 flex-col md:flex-row">
+          <div className="flex relative items-center gap-[2%] w-full mt-20 justify-center md:-space-x-20 flex-col md:flex-row">
             <div className="shadow-xl border-2 dark:border transition-all duration-700 hover:-translate-y-4 h-[30rem] relative w-full max-w-[23rem] group rounded-lg overflow-hidden flex flex-col items-start bg-background/80 backdrop-blur-md justify-start p-8 mb-8 md:mb-0">
               <div className="absolute top-[-23rem] z-[101] delay-100 rotate-45 left-[-2rem] group-hover:top-[15rem] group-hover:left-[20rem] transition-all blur-[3em] duration-700 rounded-md h-[40rem] bg-white/50 opacity-30 w-[5rem] backdrop-blur-md"></div>
 
@@ -40,7 +40,7 @@ export default function Services() {
 
               <div className="flex-1 flex items-start justify-between w-full">
                 <div className="flex items-center bg-accent dark:bg-accent/50 justify-center size-16 p-3 rounded-lg">
-                  <Users className="size-10" />
+                  <Pen className="size-10" />
                 </div>
               </div>
               <div className="flex flex-col gap-2">
@@ -49,7 +49,7 @@ export default function Services() {
                 </Badge>
                 <p className="text-4xl font-light text-left">
                   <span className="text-transparent bg-clip-text bg-gradient-to-br font-extrabold from-white via-primary/80 to-white">
-                    DevRel
+                    Blogs
                   </span>{" "}
                   as a<br /> Service
                 </p>
@@ -63,7 +63,7 @@ export default function Services() {
 
               <div className="flex-1 flex items-start justify-between w-full">
                 <div className="flex items-center bg-accent dark:bg-accent/50 justify-center size-16 p-3 rounded-lg">
-                  <Pen className="size-10" />
+                  <Users className="size-10" />
                 </div>
               </div>
               <div className="flex flex-col gap-2">
@@ -72,13 +72,13 @@ export default function Services() {
                 </Badge>
                 <p className="text-4xl font-light text-left">
                   <span className="text-transparent bg-clip-text bg-gradient-to-br font-extrabold from-white via-primary/80 to-white">
-                    Blogs
+                    DevRel
                   </span>{" "}
                   as a<br /> Service
                 </p>
               </div>
             </div>
-            <div className="top-1/2 -translate-y-1/2 z-[-1] left-[50%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[8em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[20rem] w-[20rem] h-[40rem] rotate-[0deg]"></div>
+            <div className="top-1/2 -translate-y-1/2 z-[-1] left-[50%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[8em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[25rem] w-[20rem] h-[40rem] rotate-[0deg]"></div>
           </div>
 
           <div className="border z-[20] rounded-lg flex md:flex-row flex-col items-start gap-3 md:items-end justify-between p-4 w-full mt-32 max-w-[45rem] mx-auto">
