@@ -26,7 +26,6 @@ export default function Hero() {
         <div className="lg:block hidden absolute bottom-0 right-0 z-[100] w-20 h-[40rem] bg-gradient-to-tl from-background/80 via-background/5 to-transparent"></div>
       </div> */}
       <div className="relative max-w-7xl mx-auto pb-44 md:pb-28 px-4 h-[50rem]">
-        <RotatingPeople className="absolute block md:hidden lg:block top-[25rem] left-0 w-full h-full" />
         <div className="max-w-7xl relative mt-[4rem] h-[40rem] py-20 mx-auto">
           <FloatingSvgs />
           <div className=" flex flex-col items-center justify-center">
@@ -79,7 +78,7 @@ export default function Hero() {
         <div className="top-[-18rem] md:top-[-23rem] z-[120] left-[50%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[7em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[25rem] size-[20rem] rotate-[0deg]"></div>
         <div className="top-[-10rem] md:top-[-18rem] z-[-1] right-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
 
-        <div className="border-2 dark:border md:block hidden max-w-[26rem] p-4 bg-white/10 backdrop-blur-xl z-[101] rounded-xl h-60 absolute -bottom-8 left-[25%] lg:left-[15%] -translate-x-1/2 w-full">
+        <div className="border-2 dark:border md:block hidden max-w-[26rem] p-4 bg-white/10 backdrop-blur-xl z-[101] rounded-xl h-60 absolute -bottom-8 left-[25%] lg:left-[30%] -translate-x-1/2 w-full">
           <div className="flex items-center justify-center">
             <Image
               src={Data.Testimonials[2].avatar}
@@ -101,7 +100,7 @@ export default function Hero() {
             -{Data.Testimonials[2].name}
           </div>
         </div>
-        <div className="border-2 dark:border md:flex hidden md:mt-0 md:max-w-[26rem] p-4 bg-white/10 backdrop-blur-xl z-[101] rounded-xl h-60 md:h-56 items-center justify-center flex-col absolute bottom-[-0.2rem] md:bottom-[5rem] left-1/2 -translate-x-1/2 md:translate-x-0  md:left-[70%] w-full">
+        <div className="border-2 dark:border flex md:mt-0 md:max-w-[26rem] p-4 bg-white/10 backdrop-blur-xl z-[101] rounded-xl h-60 md:h-56 items-center justify-center flex-col absolute bottom-[-0.2rem] md:bottom-[5rem] left-1/2 -translate-x-1/2 md:translate-x-0  md:left-[60%] w-full">
           <div className="flex items-center justify-center">
             <Image
               src={Data.Testimonials[4].avatar}
