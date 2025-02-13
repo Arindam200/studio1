@@ -15,6 +15,10 @@ import JuliaImg from "@/public/assets/Julia.png";
 import DavidImg from "@/public/assets/David.png";
 import ColeImg from "@/public/assets/Cole.png";
 import FerranImg from "@/public/assets/Ferran.png";
+import IvanImg from "../public/assets/Ivan.jpg";
+import GabrielImg from "../public/assets/Gabriel.png";
+import AgitaImg from "../public/assets/Agita.png";
+
 export {
   PermitFull,
   TolgeeFull,
@@ -33,4 +37,7 @@ export {
   DavidImg,
   ColeImg,
   FerranImg,
+  IvanImg,
+  GabrielImg,
+  AgitaImg,
 };

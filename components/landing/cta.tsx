@@ -1,11 +1,13 @@
 import { IconPhoneFilled } from "@tabler/icons-react";
 import { Button } from "../ui/button";
+import RotatingPeople from "./rotating-people";
 
 export default function CTA() {
   return (
     <>
-      <div className="px-4 my-28">
-        <div className="border max-w-4xl mx-auto shadow-xl relative flex flex-col overflow-hidden  items-center justify-center h-[20rem] rounded-3xl">
+      <div className="px-4 relative mt-20 mb-80">
+        {/* <RotatingPeople /> */}
+        <div className="border bg-background max-w-4xl z-[101] mx-auto shadow-xl relative flex flex-col overflow-hidden  items-center justify-center h-[20rem] rounded-3xl">
           <div className="text-2xl md:text-4xl text-center font-bold">
             Ready to Skyrocket <br /> Your Developer Community?
           </div>

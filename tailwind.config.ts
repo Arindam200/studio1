@@ -160,9 +160,9 @@ const config = {
         shimmer: "shimmer 2s linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         ripple: "ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) forwards",
-        animation: {
-          "fade-in": "fade-in 0.5s ease-out",
-        },
+        "fade-in": "fade-in 0.5s ease-out",
+        "spin-slow": "spin 60s linear infinite",
+        "spin-reverse-slow": "spin 60s linear infinite reverse",
       },
     },
   },

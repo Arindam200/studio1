@@ -3,9 +3,10 @@ import Trustedby from "@/components/landing/trustedby";
 import Services from "@/components/landing/services";
 import Features from "@/components/landing/features";
 import Testimonials from "@/components/landing/testimonials";
+import RotatingPeople from "@/components/landing/rotating-people";
 export default function Home() {
   return (
-    <div className="overflow-x-hidden ">
+    <div className="overflow-x-hidden">
       <Hero />
       <Trustedby />
       <Services />
