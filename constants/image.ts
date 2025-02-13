@@ -18,6 +18,8 @@ import FerranImg from "@/public/assets/Ferran.png";
 import IvanImg from "../public/assets/Ivan.jpg";
 import GabrielImg from "../public/assets/Gabriel.png";
 import AgitaImg from "../public/assets/Agita.png";
+import YC from "../public/assets/yc.png";
+import Devto from "../public/assets/devto.png";
 
 export {
   PermitFull,
@@ -40,4 +42,6 @@ export {
   IvanImg,
   GabrielImg,
   AgitaImg,
+  YC,
+  Devto,
 };

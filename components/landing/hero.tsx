@@ -12,9 +12,10 @@ import { BuildingIcon } from "lucide-react";
 import { Avatar } from "@radix-ui/react-avatar";
 import AvatarComponent from "./avatar-component";
 import RotatingPeople from "./rotating-people";
+import { Devto, YC } from "@/constants/image";
 export default function Hero() {
   return (
-    <section className="relative min-h-[50rem]  overflow-hidden">
+    <section className="relative h-fit">
       {/* <div className="md:block opacity-30 hidden">
         <HeroLeftGrids />
         <div className="hidden lg:block absolute bottom-0 z-[100] w-[30%] h-[15rem] bg-gradient-to-t from-background to-transparent"></div>
@@ -25,7 +26,7 @@ export default function Hero() {
         <div className="lg:block hidden absolute bottom-0 right-0 z-[100] w-[30%] h-[15rem] bg-gradient-to-t from-background to-transparent"></div>
         <div className="lg:block hidden absolute bottom-0 right-0 z-[100] w-20 h-[40rem] bg-gradient-to-tl from-background/80 via-background/5 to-transparent"></div>
       </div> */}
-      <div className="relative max-w-7xl mx-auto pb-44 md:pb-28 px-4 h-[50rem]">
+      <div className="relative max-w-7xl h-fit mx-auto pb-44 md:pb-28 px-4">
         <div className="max-w-7xl relative mt-[4rem] h-[40rem] py-20 mx-auto">
           <FloatingSvgs />
           <div className=" flex flex-col items-center justify-center">
@@ -64,15 +65,21 @@ export default function Hero() {
                   Learn More <ArrowDownRight className="size-4" />
                 </Button>
               </div>
-              <AvatarComponent className="mt-6" />
+              <AvatarComponent className="mt-6 md:mb-0" />
               {/* <div className="mt-4 ">15+ overall work</div> */}
             </div>
           </div>
         </div>
 
         <div className="bottom-[-10rem] md:bottom-[-2rem] z-[-1] left-[20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[20rem] md:w-[10rem] rotate-[-40deg]"></div>
-        <div className="bottom-[-10rem] md:bottom-[-20rem] z-[-1] right-[0%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[6em] rounded-md transition-all  duration-700 ease-out md:size-[20rem] size-[10rem] rotate-[-40deg]"></div>
-        <div className="bottom-[-10rem] md:bottom-[-20rem] z-[-1] left-[50%] translate-x-[-50%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[6em] rounded-full transition-all  duration-700 ease-out md:size-[25rem] size-[10rem] rotate-[-40deg]"></div>
+        <div className="bottom-[-10rem] md:bottom-[0rem] z-[-1] right-[0%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[6em] rounded-md transition-all  duration-700 ease-out md:size-[15rem] size-[10rem] rotate-[-40deg]"></div>
+
+        <div className="z-[120] lg:block hidden bottom-[8rem] left-[53%] translate-x-[-50%] absolute size-[2.5rem] bg-gradient-to-t from-primary/40 to-primary/60 p-1 rounded-md rotate-[25deg]">
+          <Image src={YC} alt="YC" width={100} height={100} />
+        </div>
+        <div className="z-[120] lg:block hidden bottom-[0rem] left-[63%] translate-x-[-50%] absolute size-[2.5rem] bg-gradient-to-t from-primary/40 to-primary/60 p-1 rounded-md -rotate-[25deg]">
+          <Image src={Devto} alt="YC" width={100} height={100} />
+        </div>
 
         <div className="top-[-10rem] md:top-[-18rem] z-[-1] left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] -rotate-[60deg]"></div>
         <div className="top-[-18rem] md:top-[-23rem] z-[120] left-[50%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[7em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[25rem] size-[20rem] rotate-[0deg]"></div>
@@ -100,7 +107,7 @@ export default function Hero() {
             -{Data.Testimonials[2].name}
           </div>
         </div>
-        <div className="border-2 dark:border flex md:mt-0 md:max-w-[26rem] p-4 bg-white/10 backdrop-blur-xl z-[101] rounded-xl h-60 md:h-56 items-center justify-center flex-col absolute bottom-[-0.2rem] md:bottom-[5rem] left-1/2 -translate-x-1/2 md:translate-x-0  md:left-[60%] w-full">
+        <div className="border-2 dark:border flex md:mt-0 md:max-w-[26rem] p-4 bg-white/10 backdrop-blur-xl z-[101] rounded-xl h-60 md:h-56 items-center justify-center flex-col absolute bottom-[-4rem] md:bottom-[5rem] left-1/2 -translate-x-1/2 md:translate-x-0  md:left-[60%] w-full">
           <div className="flex items-center justify-center">
             <Image
               src={Data.Testimonials[4].avatar}

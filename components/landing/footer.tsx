@@ -5,9 +5,9 @@ import RotatingPeople from "./rotating-people";
 
 export default function Footer() {
   return (
-    <section className="relative">
+    <section className="relative max-h-fit mt-44">
       <RotatingPeople />
-      <footer className="border-t z-[101] relative mt-44 pb-10">
+      <footer className="border-t z-[101] relative  pb-10">
         <div className="max-w-7xl  bg-background mx-auto px-4 py-12 md:py-16">
           <div className="grid gap-8 lg:grid-cols-2 ">
             <div className="space-y-6 ">
