@@ -5,21 +5,12 @@ import { Button } from "../ui/button";
 import { ArrowUpRight, Cube, Package, Pen, Users } from "@phosphor-icons/react";
 import HeroRightGrids from "../ui/hero-right-grids";
 import HeroLeftGrids from "../ui/hero-left-grids";
+import Link from "next/link";
 
 export default function Services() {
   return (
     <>
       <section id="work" className="overflow-hidden mb-28 px-4 py-20 relative">
-        <div className="md:block opacity-10 xl:opacity-50 z-[-1] hidden">
-          <HeroLeftGrids />
-          {/* <div className="hidden lg:block absolute bottom-0 z-[100] w-[30%] h-[15rem] bg-gradient-to-t from-background to-transparent"></div>
-          <div className="hidden lg:block absolute bottom-0 z-[100] w-20 h-[40rem] bg-gradient-to-tr from-background/80 via-background/5 to-transparent"></div> */}
-        </div>
-        <div className=" md:block opacity-10 xl:opacity-50 z-[-1] hidden">
-          <HeroRightGrids />
-          {/* <div className="lg:block hidden absolute bottom-0 right-0 z-[100] w-[30%] h-[15rem] bg-gradient-to-t from-background to-transparent"></div>
-          <div className="lg:block hidden absolute bottom-0 right-0 z-[100] w-20 h-[40rem] bg-gradient-to-tl from-background/80 via-background/5 to-transparent"></div> */}
-        </div>
         <div className="flex flex-col z-[20] items-center gap-4 justify-center">
           <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 text-white pb-1 flex gap-2 items-center">
             <Cube weight="fill" className="size-4" /> Services
@@ -33,7 +24,10 @@ export default function Services() {
         </div>
         <div className="flex flex-col max-w-7xl mx-auto">
           <div className="flex relative items-center gap-[2%] w-full mt-20 justify-center md:-space-x-20 flex-col md:flex-row">
-            <div className="shadow-xl border-2 dark:border transition-all duration-700 hover:-translate-y-4 h-[30rem] relative w-full max-w-[23rem] group rounded-lg overflow-hidden flex flex-col items-start bg-background/80 backdrop-blur-md justify-start p-8 mb-8 md:mb-0">
+            <Link
+              href={"/blog-as-a-service"}
+              className="shadow-xl border-2 dark:border transition-all duration-700 hover:-translate-y-4 h-[30rem] relative w-full max-w-[23rem] group rounded-lg overflow-hidden flex flex-col items-start bg-background/80 backdrop-blur-md justify-start p-8 mb-8 md:mb-0"
+            >
               <div className="absolute top-[-23rem] z-[101] delay-100 rotate-45 left-[-2rem] group-hover:top-[15rem] group-hover:left-[20rem] transition-all blur-[3em] duration-700 rounded-md h-[40rem] bg-white/50 opacity-30 w-[5rem] backdrop-blur-md"></div>
 
               <div className="-bottom-[18rem] -translate-y-1/2 z-[-1] left-1/2 absolute bg-gradient-to-t opacity-10 group-hover:opacity-100 from-primary/80 dark:to-primary/80 to-primary/20 blur-[4em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[15rem] size-[10rem] rotate-[0deg]"></div>
@@ -54,9 +48,12 @@ export default function Services() {
                   as a<br /> Service
                 </p>
               </div>
-            </div>
+            </Link>
 
-            <div className="shadow-xl border-2 dark:border transition-all duration-700 hover:translate-y-4 relative overflow-hidden group flex flex-col items-start p-8 bg-background/80 backdrop-blur-2xl h-[30rem] w-full  max-w-[23rem] md:translate-y-20 rounded-lg">
+            <Link
+              href={"/devrel-as-a-service"}
+              className="shadow-xl border-2 dark:border transition-all duration-700 hover:translate-y-4 relative overflow-hidden group flex flex-col items-start p-8 bg-background/80 backdrop-blur-2xl h-[30rem] w-full  max-w-[23rem] md:translate-y-20 rounded-lg"
+            >
               <div className="absolute top-[-23rem] z-[101] rotate-45 delay-100 left-[-2rem] group-hover:top-[15rem] group-hover:left-[20rem] transition-all blur-[3em] duration-700 rounded-md h-[40rem] bg-white/50 opacity-30 w-[5rem] backdrop-blur-md"></div>
 
               <div className="-bottom-[18rem] -translate-y-1/2 z-[-1] left-1/2 absolute bg-gradient-to-t opacity-10 group-hover:opacity-100 from-primary/80 dark:to-primary/80 to-primary/20 blur-[4em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[15rem] size-[10rem] rotate-[0deg]"></div>
@@ -77,7 +74,7 @@ export default function Services() {
                   as a<br /> Service
                 </p>
               </div>
-            </div>
+            </Link>
             <div className="top-1/2 -translate-y-1/2 z-[-1] left-[50%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[8em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[25rem] w-[20rem] h-[40rem] rotate-[0deg]"></div>
           </div>
 

@@ -25,16 +25,9 @@ export default function RotatingPeople({ className }: { className?: string }) {
   ];
 
   return (
-    <div className={cn("relative z-[50] mx-auto w-screen max-h-44", className)}>
+    <div className={cn("relative z-[50] mx-auto w-screen", className)}>
       {/* Center circle with pulse animation */}
-      <div className="absolute inset-0 m-auto size-56 shadow-[inset_2px_24px_20px_#ffffff20] rounded-full bg-gradient-to-r from-primary via-primary1 to-primary flex items-center justify-center ">
-        <div className="bg-white/90 backdrop-blur-lg rounded-full size-48 drop-shadow-2xl flex flex-col gap-1 items-center py-6 text-center">
-          <Logo className="size-8" />
-          <div className=" text-foreground dark:text-background">
-            <h1 className="text-sm font-semibold">Join the community</h1>
-          </div>
-        </div>
-      </div>
+   
 
       {/* Rotating container for avatars */}
       <div className="absolute inset-0 animate-spin-slow">

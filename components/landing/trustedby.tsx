@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Trustedby() {
   return (
-    <div className="max-w-7xl mt-32 mb-12 mx-auto">
+    <div className="max-w-7xl mt-40 mb-12 mx-auto">
       <div className="flex justify-center w-full items-center">
         <h2 className="text-xl font-medium">Trusted by companies</h2>
       </div>

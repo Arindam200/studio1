@@ -13,7 +13,7 @@ export default function Testimonials() {
   const remainingTestimonials = Data.Testimonials.slice(6);
 
   return (
-    <section className="py-20">
+    <section id="testimonials" className="py-20">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="flex flex-col items-center gap-4 justify-center mb-16">
           <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 flex gap-2 items-center">
