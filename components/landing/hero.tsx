@@ -75,15 +75,15 @@ export default function Hero() {
         {/* <div className="bottom-[-10rem] md:bottom-[0rem] z-[-1] right-[0%] absolute bg-gradient-to-t opacity-50 dark:opacity-70 from-primary dark:to-primary/80 to-primary/50 blur-[6em] rounded-md transition-all  duration-700 ease-out md:size-[15rem] size-[10rem] rotate-[-40deg]"></div> */}
 
         <div className="z-[120] lg:block hidden bottom-[8rem] left-[53%] translate-x-[-50%] absolute size-[2.5rem] bg-gradient-to-t from-primary/40 to-primary/60 p-1 rounded-md rotate-[25deg]">
-          <Image src={YC} alt="YC" width={100} height={100} />  
+          <Image src={YC} alt="YC" width={100} height={100} />
         </div>
         <div className="z-[120] lg:block hidden bottom-[-4rem] left-[63%] translate-x-[-50%] absolute size-[2.5rem] bg-gradient-to-t from-primary/40 to-primary/60 p-1 rounded-md -rotate-[25deg]">
           <Image src={Devto} alt="YC" width={100} height={100} />
         </div>
 
         <div className="top-[-10rem] md:top-[-18rem] z-[-1] left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] -rotate-[60deg]"></div>
-        {/* <div className="top-[-18rem] md:top-[-23rem] z-[120] left-[50%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[7em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[25rem] size-[20rem] rotate-[0deg]"></div> */}
         <div className="top-[-10rem] md:top-[-18rem] z-[-1] right-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
+        {/* <div className="top-[-18rem] md:top-[-23rem] z-[120] left-[50%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[7em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[25rem] size-[20rem] rotate-[0deg]"></div> */}
 
         <div className="border shadow-xl dark:shadow-none dark:border md:block hidden max-w-[26rem] p-4 bg-white/10 backdrop-blur-xl z-[101] rounded-xl h-60 absolute -bottom-16 left-[25%] lg:left-[30%] -translate-x-1/2 w-full">
           <div className="flex items-center justify-center">

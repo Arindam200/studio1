@@ -7,6 +7,7 @@ import DevRelPricing from "@/components/sections/devrel-as-service/pricing";
 import { baseUrl } from "@/app/sitemap";
 import { Metadata } from "next";
 import Hero from "@/components/pages/devrel-as-a-service/hero";
+import PricingSection from "@/components/pages/devrel-as-a-service/pricing";
 
 export const metadata: Metadata = {
   title: "Devrel as Service",
@@ -35,8 +36,9 @@ export default function DevRel() {
       <Hero />
       <Services />
       <Process />
-      <DevRelPricing />
-      <Team />
+      {/* <DevRelPricing /> */}
+      <PricingSection />
+      {/* <Team /> */}
     </div>
   );
 }

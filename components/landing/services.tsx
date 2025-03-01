@@ -10,7 +10,9 @@ import Link from "next/link";
 export default function Services() {
   return (
     <>
-      <section id="work" className="overflow-hidden mb-28 px-4 py-20 relative">
+      <section id="work" className=" mb-28 px-4 py-20 relative">
+        <div className="bottom-[-10rem] md:bottom-[-18rem] z-[-1] left-[-0%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
+        <div className="top-[-10rem] md:top-[-18rem] z-[-1] right-[-0%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
         <div className="flex flex-col z-[20] items-center gap-4 justify-center">
           <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 text-white pb-1 flex gap-2 items-center">
             <Cube weight="fill" className="size-4" /> Services

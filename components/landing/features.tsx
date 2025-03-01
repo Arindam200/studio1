@@ -9,8 +9,9 @@ export default function Features() {
   return (
     <div
       id="why-us"
-      className="flex flex-col max-w-7xl px-4 mx-auto items-center mb-44"
+      className="flex flex-col max-w-7xl px-4 mx-auto items-center relative mb-44"
     >
+      <div className="bottom-[-10rem] md:bottom-[-18rem] z-[-1] left-[-0%] absolute bg-gradient-to-t opacity-80 dark:opacity-100 from-primary dark:to-primary to-white  blur-[2.5em] dark:blur-[2.5em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
       <div className="flex flex-col items-center gap-4 justify-center">
         <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 flex gap-2 items-center">
           <Sparkle weight="fill" className="size-4" /> Features

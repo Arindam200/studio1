@@ -1,11 +1,4 @@
 import {
-  IconBriefcase2Filled,
-  IconBulbFilled,
-  IconCodeCircle2Filled,
-  IconStarFilled,
-  IconWriting,
-} from "@tabler/icons-react";
-import {
   CopilotkitFull,
   PermitFull,
   TolgeeFull,
@@ -15,6 +8,9 @@ import {
   CrawleeFull,
   OpireFull,
   EncoreFull,
+  amiteshNoBg,
+  shivayNoBg,
+  arindamNoBg,
 } from "./image";
 import {
   Briefcase,
@@ -34,7 +30,7 @@ export const navItems = [
       { title: "Testimonials", path: "/#testimonials", icon: Star },
     ],
   },
-
+  { title: "About Us", path: "/about-us" },
   {
     title: "Services",
     path: "/services",
@@ -52,14 +48,12 @@ export const navItems = [
     ],
   },
   { title: "Blogs", path: "/blogs" },
-  { title: "Pricing", path: "/pricing" },
 ];
 
 export const serviceNavItems = [
   { title: "Stats", path: "#stats" },
   { title: "Work", path: "#work" },
   { title: "Process", path: "#process" },
-  { title: "Team", path: "#team" },
 ];
 
 export const trustedbyLogo = [
@@ -131,5 +125,41 @@ export const trustedbyLogo = [
     className:
       "h-10 sm:h-12 md:h-16 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain",
     alt: "Webcrumbs",
+  },
+];
+
+export const teamMembers = [
+  {
+    name: "Arindam Majumder",
+    role: "Open source developer and DevRel",
+    image: arindamNoBg,
+    bio: "",
+    social: {
+      twitter: "https://dub.sh/arindam-x",
+      linkedin: "https://dub.sh/arindam-linkedin",
+      website: "https://arindam-majumder.vercel.app",
+    },
+  },
+  {
+    name: "Amitesh Anand",
+    role: "Technical writer and DevRel",
+    image: amiteshNoBg,
+    bio: "",
+    social: {
+      twitter: "https://mobile.twitter.com/astrodevil_",
+      linkedin: "https://www.linkedin.com/in/amitesh1208/",
+      website: "https://mranand.com/featured/",
+    },
+  },
+  {
+    name: "Shivay Lamba",
+    role: "ML Engineer and Open source advocate",
+    image: shivayNoBg,
+    bio: "",
+    social: {
+      twitter: "https://x.com/HowDevelop",
+      linkedin: "https://in.linkedin.com/in/shivaylamba",
+      website: "https://shivaylamba.me",
+    },
   },
 ];

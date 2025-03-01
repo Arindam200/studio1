@@ -3,11 +3,7 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { SelectTheme } from "../theme-toggler";
-import {
-  IconMailFilled,
-  IconChevronDown,
-  IconMenu2,
-} from "@tabler/icons-react";
+import { IconChevronDown, IconMenu2 } from "@tabler/icons-react";
 import { useState } from "react";
 import { navItems } from "@/constants/data";
 import { cn } from "@/lib/utils";
@@ -41,7 +37,7 @@ export default function Navbar() {
               >
                 <Link
                   href={item.path}
-                  className="flex items-center justify-center transition-all duration-300 hover:bg-accent rounded-sm px-2 py-1"
+                  className="flex items-center text-sm justify-center transition-all duration-300 hover:bg-accent rounded-sm px-2 py-1"
                 >
                   {item.title}
                   {item.children && (

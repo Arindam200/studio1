@@ -6,12 +6,12 @@ const services = Data.DevRelAsServiceServices;
 
 export default function Services() {
   return (
-    <div id="work" className="sm:py-24 mt-20 py-10">
+    <div id="work" className="mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center my-10">
           <div className="text-center  font-semibold lg:text-5xl text-4xl mb-4">
             Here are our <br />{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-primary via-primary/80 to-background ">
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
               offerings
             </span>
           </div>

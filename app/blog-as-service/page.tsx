@@ -6,6 +6,7 @@ import Team from "@/components/sections/blog-as-service/team";
 import { baseUrl } from "@/app/sitemap";
 import { Metadata } from "next";
 import Hero from "@/components/pages/blogs-as-a-service/hero";
+import PricingSection from "@/components/pages/blogs-as-a-service/pricing";
 
 export const metadata: Metadata = {
   title: "Blog as Service",
@@ -34,7 +35,8 @@ export default function Page() {
       <Hero />
       <MinimalCardDemo />
       <Process />
-      <Team />
+      {/* <Team /> */}
+      <PricingSection />
     </div>
   );
 }

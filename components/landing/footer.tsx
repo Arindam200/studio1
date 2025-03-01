@@ -5,8 +5,8 @@ import RotatingPeople from "./rotating-people";
 
 export default function Footer() {
   return (
-    <section className="relative max-h-fit">
-      <div className="overflow-hidden flex items-center !h-[30rem] justify-center w-full translate-y-[15rem]">
+    <section className="relative max-h-fit mt-20">
+      {/* <div className="overflow-hidden flex items-center !h-[30rem] justify-center w-full translate-y-[15rem]">
         <RotatingPeople />
         <div className="absolute inset-0 m-auto size-56 shadow-[inset_2px_24px_20px_#ffffff20] rounded-full bg-gradient-to-r from-primary via-primary1 to-primary flex items-center justify-center ">
           <div className="bg-white/90 backdrop-blur-lg rounded-full size-48 drop-shadow-2xl flex flex-col gap-1 items-center py-6 text-center">
@@ -16,12 +16,12 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="top-[-10rem] md:top-[-10rem] z-[-1] left-[0%] absolute bg-gradient-to-t opacity-50 dark:opacity-80 from-primary dark:to-primary/80 to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] -rotate-[60deg]"></div>
-      <div className="top-[-10rem] md:top-[-10rem] z-[-1] right-[0%] absolute bg-gradient-to-t opacity-50 dark:opacity-80 from-primary dark:to-primary/80 to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
+      </div> */}
+      <div className="top-[-10rem] md:top-[-30rem] z-[-1] left-[0%] absolute bg-gradient-to-t opacity-30 dark:opacity-80 from-primary dark:to-primary/80 to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] -rotate-[60deg]"></div>
+      <div className="top-[-10rem] md:top-[-30rem] z-[-1] right-[0%] absolute bg-gradient-to-t opacity-30 dark:opacity-80 from-primary dark:to-primary/80 to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
 
-      <footer className="border-t z-[101] relative  pb-10">
-        <div className="max-w-7xl  bg-background mx-auto px-4 py-12 md:py-16">
+      <footer className="border-t bg-background mt-44 z-[101] relative  pb-10">
+        <div className="max-w-7xl  mx-auto px-4 py-12 md:py-16">
           <div className="grid gap-8 lg:grid-cols-2 ">
             <div className="space-y-6 ">
               <div className="space-y-2">

@@ -3,11 +3,11 @@ import Image from "next/image";
 import { Marquee } from "./ui/marquee";
 import { trustedbyLogo } from "@/constants/data";
 
-export default function CollaboarationIllustration({
+export const CollaboarationIllustration = ({
   className,
 }: {
   className?: string;
-}) {
+}) => {
   return (
     <>
       <div
@@ -42,4 +42,4 @@ export default function CollaboarationIllustration({
       </div>
     </>
   );
-}
+};

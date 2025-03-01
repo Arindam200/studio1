@@ -20,6 +20,9 @@ import GabrielImg from "../public/assets/Gabriel.png";
 import AgitaImg from "../public/assets/Agita.png";
 import YC from "../public/assets/yc.png";
 import Devto from "../public/assets/devto.png";
+import arindamNoBg from "../public/assets/arindam-nobg.png";
+import amiteshNoBg from "../public/assets/amitesh-nobg.png";
+import shivayNoBg from "../public/assets/shivay-nobg.png";
 
 export {
   PermitFull,
@@ -44,4 +47,7 @@ export {
   AgitaImg,
   YC,
   Devto,
+  arindamNoBg,
+  amiteshNoBg,
+  shivayNoBg,
 };

@@ -1,10 +1,16 @@
 import { Badge } from "@/components/ui/badge";
 import { IconPackages, IconPhoneFilled } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
+import {
+  CalendarCheck,
+  GraduationCap,
+  Megaphone,
+  UsersFour,
+} from "@phosphor-icons/react/dist/ssr";
 export default function Hero() {
   return (
     <>
-      <div className="h-[42rem] overflow-hidden relative max-w-7xl mx-auto py-10 md:py-20 px-4 mt-24 w-full">
+      <div className="h-[42rem] relative max-w-7xl mx-auto py-10 md:py-20 px-4 mt-24 w-full">
         <div className="flex flex-col items-center justify-center gap-4">
           <Badge className="text-sm font-medium pb-1 flex gap-2 items-center">
             <IconPackages className="size-4" /> Services
@@ -26,14 +32,14 @@ export default function Hero() {
             </Button>
           </div>
 
-          <div className="flex items-center justify-center gap-10 md:mt-14 mt-10">
-            <div className="flex flex-col gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
+          <div className="grid grid-cols-2 gap-4 md:mt-14 mt-10">
+            <div className="flex bg-muted-foreground/10 w-40 flex-col gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
               <div className="text-4xl font-bold">15+</div>
               <div className="text-sm text-center">
                 Projects <br /> Completed
               </div>
             </div>
-            <div className="flex flex-col gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
+            <div className="flex flex-col bg-muted-foreground/10 w-40 gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
               <div className="text-4xl font-bold">10+</div>
               <div className="text-sm text-center">
                 Companies
@@ -42,7 +48,38 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="bottom-[-10rem] md:bottom-[-29rem] left-[50%] z-[-1] opacity-50 dark:opacity-100 absolute bg-gradient-to-t from-primary/10 dark:from-primary to-orange-200 dark:to-orange-900/90  blur-[8em] rounded-xl transition-all translate-x-[-50%] duration-700 ease-out w-[10rem] md:w-[30rem] h-[20rem] md:h-[30rem] rotate-[54deg]"></div>
+        <div className="top-[-15rem] left-[50%] z-[-1] opacity-50 dark:opacity-100 absolute bg-gradient-to-t from-primary/10 dark:from-primary to-orange-200 dark:to-orange-900/90  blur-[8em] rounded-xl transition-all translate-x-[-50%] duration-700 ease-out size-[20rem] rotate-[54deg]"></div>
+
+        <div className=" flex flex-wrap items-center mt-20 justify-center gap-4">
+          <div className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:-rotate-12 top-[15rem] left-[8rem]">
+            <Megaphone
+              weight="fill"
+              className="size-5 md:size-8 text-primary"
+            />
+            <span>Advocacy</span>
+          </div>
+          <div className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:rotate-12 top-[27rem] left-[15rem]">
+            <GraduationCap
+              weight="fill"
+              className="size-5 md:size-8 text-primary"
+            />
+            <span>Education</span>
+          </div>
+          <div className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:rotate-12 top-[15rem] right-[8rem]">
+            <CalendarCheck
+              weight="fill"
+              className="size-5 md:size-8 text-primary"
+            />
+            <span>Events</span>
+          </div>
+          <div className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:-rotate-12 top-[27rem] right-[15rem]">
+            <UsersFour
+              weight="fill"
+              className="size-5 md:size-8 text-primary"
+            />
+            <span>Community</span>
+          </div>
+        </div>
       </div>
     </>
   );

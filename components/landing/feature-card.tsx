@@ -16,7 +16,7 @@ export function FeatureCard({ feature, index }: FeatureCardProps) {
   return (
     <div
       className={cn(
-        "bg-accent/50 hover:shadow-xl transition-all duration-700 rounded-xl p-2 min-w-full min-h-[25rem] group",
+        "bg-accent dark:bg-accent/50 hover:shadow-xl transition-all duration-700 rounded-xl p-2 min-w-full min-h-[25rem] group",
         index === 0 && "md:col-span-2",
         index === 3 && "md:col-span-2"
       )}
