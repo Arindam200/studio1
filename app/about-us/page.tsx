@@ -12,7 +12,6 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Team } from "@/components/about-us/team";
 import { Companies } from "@/components/about-us/companies";
-import Threads from "@/components/landing/threads";
 
 const tags = [
   {
