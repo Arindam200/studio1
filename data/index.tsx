@@ -141,6 +141,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8se47yg59oimb4sl06eg.gif",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "How I Built the World's Best NextJS, AI Scheduling App",
@@ -150,6 +151,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpvtqkii2tlp04p2cvlx9.gif",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "How to create a LinkedIn job scraper in Python with Crawlee",
@@ -159,6 +161,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fwsyjca1b8q6g9wapyhnp.jpg",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title:
@@ -169,6 +172,7 @@ export const Data = {
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*Wan7SBxJfZf2HlOu9AIPLw.png",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "Building an AI-powered quiz application with Next.js and OpenAI",
@@ -178,6 +182,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ff04c0el5k9h0pee1pcpp.png",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title:
@@ -188,6 +193,7 @@ export const Data = {
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*bY1LzPkOXDXI_eRJ_V-y8w.png",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title:
@@ -198,6 +204,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F70kbai7v3r12dr860psw.gif",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title:
@@ -208,6 +215,7 @@ export const Data = {
       image:
         "https://storage.ai.nebius.cloud/www-gpu-assets/pages/blog/building-ai-powered-finance-planner/sharing1.jpg",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "Make Prototyping Easier with Webcrumbs",
@@ -216,6 +224,7 @@ export const Data = {
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*kirTT63OzhfJCcitLgDRqA.png",
       tags: ["SEO"],
+      version: 1,
     },
     {
       title: "How to Add RBAC Authorization in Next.js",
@@ -225,6 +234,7 @@ export const Data = {
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*yWfXQWV_89Dg6MarsUhnvw.png",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "How to run Meta Llama 3.1 405B with Nebius AI Studio API",
@@ -234,6 +244,7 @@ export const Data = {
       image:
         "https://storage.ai.nebius.cloud/www-gpu-assets/pages/blog/introducing-nebius-ai-studio/preview.jpg",
       tags: ["How-tos"],
+      version: 1,
     },
     {
       title: "Implementing GraphQL Authorization: A Practical Guide",
@@ -243,6 +254,7 @@ export const Data = {
       image:
         "https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FYDN8Xi5vRQONu81cC1yw&w=1920&q=75",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "How to Build a Real-Time Dashboard with Encore.ts and React",
@@ -252,6 +264,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnd1e4rgk07yfo638ses9.png",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "Creating your own AI-powered code generator and reviewer",
@@ -261,6 +274,7 @@ export const Data = {
       image:
         "https://media.licdn.com/dms/image/v2/D4E22AQHXtGpgMsH-BA/feedshare-shrink_800/feedshare-shrink_800/0/1733485301047?e=2147483647&v=beta&t=ZEE4MK-HOS0rbxXkwGi7rqTA9GWxoON8u4L3EXp4tNo",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title:
@@ -272,6 +286,7 @@ export const Data = {
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn4ktzy1anqot0vjselc6.png",
 
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "NestJS vs Encore.ts",
@@ -281,6 +296,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
       tags: ["general"],
+      version: 1,
     },
     {
       title: "Make Open Source Contributions More Rewarding with Opire",
@@ -290,6 +306,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fgvh9vgiz0v3i6evue4ip.gif",
       tags: ["general"],
+      version: 1,
     },
     {
       title: "9 Open Source Libraries to Supercharge Your Next Project",
@@ -299,6 +316,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpfgp3ig8xjivkqz4bytl.gif",
       tags: ["growth"],
+      version: 1,
     },
     {
       title:
@@ -309,6 +327,7 @@ export const Data = {
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4eowvtjC0YUZgLG-2DMlGxBe69IBU-0XZQ&s",
       tags: ["general"],
+      version: 1,
     },
     {
       title:
@@ -319,6 +338,7 @@ export const Data = {
       image:
         "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*0vebjXBoJ_iIVdrFapKosw.png",
       tags: ["general"],
+      version: 1,
     },
     {
       title:
@@ -329,6 +349,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fz9zn9tnxmbfwyhu7pm55.gif",
       tags: ["general"],
+      version: 1,
     },
 
     {
@@ -339,6 +360,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F71cb2kcoxbtxo721zcw6.gif",
       tags: ["general"],
+      version: 1,
     },
     {
       title: "How to Add RBAC Authorization in Nextjs",
@@ -348,6 +370,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjdfvempfrzz376nh609l.png",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "How to Build Dynamic Feature Toggling in React.js",
@@ -357,6 +380,7 @@ export const Data = {
       image:
         "https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FmCpDaZarQmWinorWRJJM&w=3840&q=75",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "11 Open Source Python Projects You Should Know in 2024",
@@ -366,6 +390,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fdch857t54wnebiol8i3t.gif",
       tags: ["growth"],
+      version: 1,
     },
     {
       title: "How to Implement RBAC (Role-Based Access Control) in Supabase",
@@ -375,6 +400,7 @@ export const Data = {
       image:
         "https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2F2H4tKg0FTfGFU3ciyTPa&w=3840&q=75",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "8 Developer Tools You Should Try in 2024",
@@ -384,6 +410,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fz21l3b031jaox5raxlp6.png",
       tags: ["growth"],
+      version: 1,
     },
     {
       title: "5 Tools Every Developer Should Use in 2024",
@@ -393,6 +420,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnidw6e25vyfgn74ftsa6.png",
       tags: ["growth"],
+      version: 1,
     },
     {
       title: "How to Build a Request Access Approval System in Next.js",
@@ -402,6 +430,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fy190e3vkf86c96c426ur.gif",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "Build a Secure Chat App with React, Firebase, and Permit.io",
@@ -411,6 +440,7 @@ export const Data = {
       image:
         "https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FGaBppnGURR2iCpdv8VFL&w=3840&q=75",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title:
@@ -421,6 +451,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F67vy07x7txqv3ipnqvtv.gif",
       tags: ["growth"],
+      version: 1,
     },
     {
       title: "Building and Deploying TypeScript Microservices to Kubernetes",
@@ -430,6 +461,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fq8jei5qtmeckkmdx7hfj.png",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "Top 5 Open Source Projects You Must Explore Before 2025",
@@ -439,6 +471,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fneqgdcpodgseopbqimdg.gif",
       tags: ["growth"],
+      version: 1,
     },
   ],
   Blogs: [
@@ -449,6 +482,8 @@ export const Data = {
       link: "https://dev.to/tolgee_i18n/building-a-kanban-board-with-nextjsvercel-ai-and-tolgee-493g",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8se47yg59oimb4sl06eg.gif",
+      tags: ["growth", "personal"],
+      version: 1,
     },
     {
       title: "How I Built the World's Best NextJS, AI Scheduling App",
@@ -457,6 +492,8 @@ export const Data = {
       link: "https://dev.to/tolgee_i18n/building-a-kanban-board-with-nextjsvercel-ai-and-tolgee-493g",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpvtqkii2tlp04p2cvlx9.gif",
+      tags: ["growth"],
+      version: 1,
     },
     {
       title: "How to create a LinkedIn job scraper in Python with Crawlee",
@@ -465,6 +502,8 @@ export const Data = {
       link: "https://dev.to/crawlee/how-to-create-a-linkedin-job-scraper-in-python-with-crawlee-h9d",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fwsyjca1b8q6g9wapyhnp.jpg",
+      tags: ["growth"],
+      version: 1,
     },
     {
       title:
@@ -474,6 +513,8 @@ export const Data = {
       link: "https://javascript.plainenglish.io/develop-a-real-time-collaborative-document-editor-with-next-js-appwrite-liveblocks-and-permit-io-699a865a7aeb",
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*Wan7SBxJfZf2HlOu9AIPLw.png",
+      tags: ["growth"],
+      version: 1,
     },
     {
       title: "Building an AI-powered quiz application with Next.js and OpenAI",
@@ -482,6 +523,8 @@ export const Data = {
       link: "https://dev.to/latitude/building-an-ai-powered-quiz-application-with-nextjs-and-openai-2673",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ff04c0el5k9h0pee1pcpp.png",
+      tags: ["growth"],
+      version: 1,
     },
     {
       title:
@@ -491,6 +534,8 @@ export const Data = {
       link: "https://astrodevil.medium.com/manage-permissions-in-a-langflow-chain-for-llm-queries-using-permit-io-7de8a0fb17b3",
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*bY1LzPkOXDXI_eRJ_V-y8w.png",
+      tags: ["growth"],
+      version: 1,
     },
   ],
   Services: [
@@ -544,23 +589,22 @@ export const Data = {
       ],
     },
     {
-      name: "Nathan Telbert",
-      role: "DevRel, CopilotKit",
-      avatar: NathanImg.src,
-      content: `Working with Studio1 has been an excellent experience for us. The team delivered high-quality blogs focused on exciting projects that perfectly matched our content needs. 
+      name: "Marketa Cizmar",
+      role: "C0O, Tolgee",
+      avatar: MarketaImg.src,
+      content: `Arindam wrote a technical article for us, and it was a pleasure working with him. He was friendly, responsive, and always quick to reply to any questions or feedback. 
       
-      Their ability to create engaging content for developers has been a valuable addition to our educational content efforts. 
-      
-      We’re excited to continue collaborating on future projects!`,
+      The whole process was smooth!`,
       highlights: [
-        "Studio1",
-        "high-quality blogs",
-        "engaging",
-        "educational content",
-        "continue",
-        "collaborating",
-        "future",
-        "projects",
+        "Arindam",
+        "technical article",
+        "friendly",
+        "responsive",
+        "quick",
+        "reply",
+        "questions",
+        "feedback",
+        "smooth",
       ],
     },
     {
@@ -598,24 +642,26 @@ export const Data = {
       highlights: ["Amitesh", "good-quality"],
     },
     {
-      name: "Marketa Cizmar",
-      role: "C0O, Tolgee",
-      avatar: MarketaImg.src,
-      content: `Arindam wrote a technical article for us, and it was a pleasure working with him. He was friendly, responsive, and always quick to reply to any questions or feedback. 
+      name: "Nathan Telbert",
+      role: "DevRel, CopilotKit",
+      avatar: NathanImg.src,
+      content: `Working with Studio1 has been an excellent experience for us. The team delivered high-quality blogs focused on exciting projects that perfectly matched our content needs. 
       
-      The whole process was smooth!`,
+      Their ability to create engaging content for developers has been a valuable addition to our educational content efforts. 
+      
+      We’re excited to continue collaborating on future projects!`,
       highlights: [
-        "Arindam",
-        "technical article",
-        "friendly",
-        "responsive",
-        "quick",
-        "reply",
-        "questions",
-        "feedback",
-        "smooth",
+        "Studio1",
+        "high-quality blogs",
+        "engaging",
+        "educational content",
+        "continue",
+        "collaborating",
+        "future",
+        "projects",
       ],
     },
+
     {
       name: "Julia Machado",
       role: "Founder & CEO, WebCrumbs",

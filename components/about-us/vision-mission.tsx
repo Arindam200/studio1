@@ -91,7 +91,7 @@ const ContentCard = ({
         </span>
       </div>
 
-      <div className="flex bg-accent dark:bg-accent/50 rounded-b-xl flex-col gap-4 p-6 h-full">
+      <div className="flex bg-background sm:bg-accent dark:bg-background/70 backdrop-blur-xl dark:sm:bg-accent/50 rounded-b-xl flex-col gap-4 p-6 h-full">
         {data.points.map((point, index) => {
           const PointIcon = point.icon;
           return (
@@ -108,7 +108,9 @@ const ContentCard = ({
 
 export const VisionMission = () => {
   return (
-    <div className="w-full mx-auto px-4 py-8">
+    <div className="w- relative mx-auto px-4 py-8">
+      <div className="top-[-10rem] md:top-[-18rem] z-[-1] left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out h-[60rem] w-[10rem] -rotate-[60deg]"></div>
+      <div className="top-[-10rem] md:top-[-18rem] z-[-1] right-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out h-[60rem] w-[10rem] rotate-[40deg]"></div>
       <div className="text-2xl mb-4 font-primary font-semibold text-center leading-tight">
         What Fuels Us?
       </div>

@@ -5,6 +5,8 @@ import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import { Tag } from "@phosphor-icons/react";
+import { cn } from "@/lib/utils";
 
 const tags = ["All", "general", "project-building", "growth"];
 
@@ -64,7 +66,7 @@ export function FloatingTags() {
   };
 
   return (
-    <div className="flex flex-wrap justify-center gap-2 mt-4">
+    <div className="grid grid-cols-2 gap-2 mt-4">
       <AnimatePresence>
         {tags.map((tag) => (
           <motion.div
@@ -73,28 +75,32 @@ export function FloatingTags() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.2 }}
+            onClick={() => handleTagClick(tag)}
+            className={`rounded-md relative flex gap-2 text-foreground items-center justify-center h-14 px-6 w-44 md:w-52 ${
+              selectedTags.includes(tag)
+                ? "bg-primary text-white"
+                : "bg-accent text-foreground"
+            }`}
           >
-            <Button
-              variant={selectedTags.includes(tag) ? "default" : "outline"}
-              size="sm"
-              onClick={() => handleTagClick(tag)}
-              className={`rounded-md min-w-7 ${
-                selectedTags.includes(tag)
-                  ? "bg-orange-500 text-white border-orange-500 hover:bg-orange-600 hover:border-orange-600"
-                  : "bg-black text-white border-white/20 hover:bg-orange-500 hover:text-white hover:border-orange-500"
-              }`}
-            >
+            <Tag
+              weight="fill"
+              className={cn(
+                "size-6 ",
+                selectedTags.includes(tag) ? "text-white" : "text-foreground"
+              )}
+            />
+            <div className="bg-transparent text-xs md:text-sm w-fit">
               {tag}
               {selectedTags.includes(tag) && tag !== "All" && (
                 <X
-                  className="ml-2 h-4 w-4 cursor-pointer"
+                  className="ml-2 absolute top-1 right-1 h-4 w-4 cursor-pointer"
                   onClick={(e) => {
                     e.stopPropagation();
                     removeTag(tag);
                   }}
                 />
               )}
-            </Button>
+            </div>
           </motion.div>
         ))}
       </AnimatePresence>

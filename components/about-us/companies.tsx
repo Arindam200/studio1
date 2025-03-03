@@ -1,5 +1,6 @@
 import { Data } from "@/data";
 import Image from "next/image";
+import { Spotlight, SpotLightItem } from "../ui/spotlight-card";
 
 export const Companies = () => {
   return (
@@ -14,11 +15,11 @@ export const Companies = () => {
               <>
                 <div
                   key={index}
-                  className="border-2 flex-col aspect-square rounded-xl flex items-center justify-center"
+                  className="border-2 bg-accent dark:bg-muted-foreground/5 flex-col aspect-square rounded-xl flex items-center justify-center"
                 >
-                  <div className="">
+                  <div className="w-32">
                     <Image
-                      className="rounded-t-lg"
+                      className="rounded-lg"
                       src={item.image}
                       width={1000}
                       height={1000}

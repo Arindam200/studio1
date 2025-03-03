@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/minimal-cards";
 import Link from "next/link";
 import { Data } from "@/data";
+import { Version1 } from "@/components/sections/blog-as-service/blog-thubmnail-version/version-1";
 
 const cards = Data.Allblogs;
 
@@ -36,21 +37,20 @@ export default function Allblogs({ query, tags }: AllblogsProps) {
           </div>
         ) : (
           <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredCards.map((card) => (
-              <MinimalCard key={card.title}>
-                <Link href={card.link}>
-                  <MinimalCardImage
-                    src={card.image || "default-image-url"}
-                    alt={card.title}
-                  />
-                  <MinimalCardTitle>{card.title}</MinimalCardTitle>
-                  <MinimalCardDescription>
-                    {card.description}
-                  </MinimalCardDescription>
-                  <MinimalCardFooter></MinimalCardFooter>
-                </Link>
-              </MinimalCard>
-            ))}
+            {filteredCards.map((item, index) => {
+              switch (item.version) {
+                case 1:
+                  return (
+                    <Version1
+                      key={index}
+                      title={item.title}
+                      description={item.description}
+                      hrefLink={item.link}
+                      tags={item.tags}
+                    />
+                  );
+              }
+            })}
           </div>
         )}
       </div>

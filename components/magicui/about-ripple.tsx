@@ -33,7 +33,7 @@ export const AboutRipple = React.memo(function Ripple({
         return (
           <div
             key={i}
-            className={`[--i: absolute group-hover:animate-ripple rounded-full border border-primary bg-muted-foreground/60 transition-all duration-300 group-hover:bg-primary/15 dark:group-hover:bg-primary/30 dark:bg-muted-foreground/40 shadow-xl${i}]`}
+            className={`[--i: absolute animate-ripple rounded-full border bg-foreground/25 shadow-xl${i}]`}
             style={
               {
                 width: `${size}px`,
@@ -55,4 +55,4 @@ export const AboutRipple = React.memo(function Ripple({
   );
 });
 
-AboutRipple.displayName = "AboutRipple";
+AboutRipple.displayName = "Ripple";
