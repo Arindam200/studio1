@@ -1,40 +1,56 @@
+"use client";
 import { Data } from "@/data";
 import Image from "next/image";
-import { Spotlight, SpotLightItem } from "../ui/spotlight-card";
+import { motion } from "motion/react";
 
 export const Companies = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="mb-20">
-        <div className="text-2xl mb-10 font-primary font-semibold text-center leading-tight">
+        <motion.div
+          className="text-2xl mb-10 font-primary font-semibold text-center leading-tight"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           Partnered Companies
-        </div>
+        </motion.div>
+
         <div className="grid max-w-4xl mx-auto grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
           {Data.Companies.map((item, index) => {
             return (
-              <>
-                <div
-                  key={index}
-                  className="border-2 bg-accent dark:bg-muted-foreground/5 flex-col aspect-square rounded-xl flex items-center justify-center"
-                >
-                  <div className="w-32">
-                    <Image
-                      className="rounded-lg"
-                      src={item.image}
-                      width={1000}
-                      height={1000}
-                      alt={item.name}
-                    />
-                  </div>
-                  <div className="h-16 flex items-center justify-center text-lg font-semibold">
-                    {item.name}
-                  </div>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40, filter: "blur(5px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 * (index % 3), duration: 0.7 }}
+                whileHover={{ y: -5, transition: { duration: 0.3 } }}
+                className="border-2 bg-accent dark:bg-muted-foreground/5 flex-col aspect-square rounded-xl flex items-center justify-center"
+              >
+                <div className="w-32">
+                  <Image
+                    className="rounded-lg"
+                    src={item.image}
+                    width={1000}
+                    height={1000}
+                    alt={item.name}
+                  />
                 </div>
-              </>
+                <div className="h-16 flex items-center justify-center text-lg font-semibold">
+                  {item.name}
+                </div>
+              </motion.div>
             );
           })}
         </div>
       </div>
-    </>
+    </motion.div>
   );
 };
