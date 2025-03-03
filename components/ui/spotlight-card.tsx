@@ -90,7 +90,7 @@ export function SpotLightItem({ children, className }: SpotlightItemProps) {
   const handleMouemove = (event: React.MouseEvent<HTMLDivElement>) => {
     const { currentTarget, clientX, clientY } = event;
 
-    let { left, top } = currentTarget.getBoundingClientRect();
+    const { left, top } = currentTarget.getBoundingClientRect();
 
     const x = clientX - left;
     const y = clientY - top;

@@ -3,17 +3,46 @@ import { Badge } from "../ui/badge";
 import { Data } from "@/data";
 import { Button } from "../ui/button";
 import { ArrowUpRight, Cube, Package, Pen, Users } from "@phosphor-icons/react";
-import HeroRightGrids from "../ui/hero-right-grids";
-import HeroLeftGrids from "../ui/hero-left-grids";
 import Link from "next/link";
+import { motion } from "motion/react";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.5 },
+  },
+};
 
 export default function Services() {
   return (
     <>
-      <section id="work" className=" mb-28 px-4 py-20 relative">
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+        id="work"
+        className=" mb-28 px-4 py-20 relative"
+      >
         <div className="bottom-[-10rem] md:bottom-[-18rem] z-[-1] left-[-0%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
         <div className="top-[-10rem] md:top-[-18rem] z-[-1] right-[-0%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
-        <div className="flex flex-col z-[20] items-center gap-4 justify-center">
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col z-[20] items-center gap-4 justify-center"
+        >
           <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 text-white pb-1 flex gap-2 items-center">
             <Cube weight="fill" className="size-4" /> Services
           </Badge>
@@ -23,9 +52,12 @@ export default function Services() {
             <br />
             Explore and make a call directly to our HQ.
           </p>
-        </div>
+        </motion.div>
         <div className="flex flex-col max-w-7xl mx-auto">
-          <div className="flex relative items-center gap-[2%] w-full mt-20 justify-center md:-space-x-20 flex-col md:flex-row">
+          <motion.div
+            variants={itemVariants}
+            className="flex relative items-center gap-[2%] w-full mt-20 justify-center md:-space-x-20 flex-col md:flex-row"
+          >
             <Link
               href={"/blog-as-a-service"}
               className="shadow-xl border-2 dark:border transition-all duration-700 hover:-translate-y-4 h-[30rem] relative w-full max-w-[23rem] group rounded-lg overflow-hidden flex flex-col items-start bg-background/80 backdrop-blur-md justify-start p-8 mb-8 md:mb-0"
@@ -78,9 +110,12 @@ export default function Services() {
               </div>
             </Link>
             <div className="top-1/2 -translate-y-1/2 z-[-1] left-[50%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[8em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[25rem] w-[20rem] h-[40rem] rotate-[0deg]"></div>
-          </div>
+          </motion.div>
 
-          <div className="border z-[20] rounded-lg flex md:flex-row flex-col items-start gap-3 md:items-end justify-between p-4 w-full mt-32 max-w-[45rem] mx-auto">
+          <motion.div
+            variants={itemVariants}
+            className="border z-[20] rounded-lg flex md:flex-row flex-col items-start gap-3 md:items-end justify-between p-4 w-full mt-32 max-w-[45rem] mx-auto"
+          >
             <div className="flex flex-col items-start">
               <div className="flex flex-col items-start gap-2">
                 <Package className="size-6 text-primary" />
@@ -97,9 +132,9 @@ export default function Services() {
             <Button className="w-fit group-hover:bg-primary text-foreground hover:text-white bg-accent">
               Learn More <ArrowUpRight className="size-4 ml-2" />
             </Button>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }
