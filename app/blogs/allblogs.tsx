@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 import { Data } from "@/data";
 import { Version1 } from "@/components/sections/blog-as-service/blog-thubmnail-version/version-1";
+import { motion } from "framer-motion";
 
 const cards = Data.Allblogs;
 
@@ -36,7 +37,13 @@ export default function Allblogs({ query, tags }: AllblogsProps) {
             No articles found matching your search.
           </div>
         ) : (
-          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
             {filteredCards.map((item, index) => {
               switch (item.version) {
                 case 1:
@@ -47,11 +54,12 @@ export default function Allblogs({ query, tags }: AllblogsProps) {
                       description={item.description}
                       hrefLink={item.link}
                       tags={item.tags}
+                      animationDelay={(index * 150).toString()}
                     />
                   );
               }
             })}
-          </div>
+          </motion.div>
         )}
       </div>
     </div>

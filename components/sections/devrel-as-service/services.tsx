@@ -25,9 +25,9 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="relative group bg-muted h-[20rem] flex flex-col justify-between items-start p-1 rounded-[2rem] transition-all"
+              className="relative group bg-muted h-[20rem] flex flex-col justify-between items-start p-1 rounded-xl transition-all"
             >
-              <div className="relative w-full h-full overflow-hidden bg-background border flex flex-col justify-between rounded-[1.8rem] p-6 items-start">
+              <div className="relative w-full h-full overflow-hidden bg-background border flex flex-col justify-between rounded-lg p-6 items-start">
                 {/* <div
                 className={cn(
                   "top-[-10rem] md:top-[-29rem] group-hover:opacity-100 opacity-0 z-[10] absolute bg-gradient-to-t from-primary/10 dark:from-primary to-orange-200 dark:to-orange-900/90  blur-[8em] rounded-xl transition-all duration-700 ease-out w-[10rem] md:w-[30rem] h-[20rem] md:h-[25rem] rotate-[54deg]",
@@ -48,16 +48,16 @@ export default function Services() {
                   <Ripple className="top-1/2 left-1/2 opacity-40 group-hover:opacity-70 -translate-x-1/2 -translate-y-1/2 w-full h-full" />
                 </div>
                 <div className="mt-4 flex-1 flex items-start justify-end flex-col">
-                  <h3 className="text-lg font-semibold">
+                  <h3 className="text-lg">
                     <a
                       href="#"
-                      className="focus:outline-none text-2xl text-primary"
+                      className="focus:outline-none font-semibold text-2xl "
                     >
                       <span className="absolute inset-0 " aria-hidden="true" />
                       {service.title}
                     </a>
                   </h3>
-                  <p className="mt-1 text-sm tracking-wide">
+                  <p className="mt-1 text-sm text-neutral-600 font-medium dark:text-neutral-400 tracking-wide">
                     {service.description}
                   </p>
                 </div>
