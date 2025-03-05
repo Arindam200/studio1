@@ -79,7 +79,7 @@ export default function AboutUs() {
         viewport={{ once: true, margin: "-100px" }}
         variants={sectionAnimation}
       >
-        <div className="text-5xl font-primary font-semibold text-center leading-tight">
+        <div className="text-5xl font-semibold text-center leading-tight">
           We amplify your technical voice <br /> in the digital landscape
         </div>
         <div className="text-center text-neutral-600 dark:text-neutral-400 font-semibold">

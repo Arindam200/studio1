@@ -13,13 +13,22 @@ export const Companies = () => {
     >
       <div className="mb-20">
         <motion.div
-          className="text-2xl mb-10 font-primary font-semibold text-center leading-tight"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          Partnered Companies
+          <h2 className="text-4xl font-bold mb-4 md:text-5xl">
+            Partnered{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
+              Companies
+            </span>{" "}
+          </h2>
+          <p className="text-muted-foreground ">
+            We empower tech brands to build thriving <br /> developer
+            communities through DevRel and high-impact content.
+          </p>
         </motion.div>
 
         <div className="grid max-w-4xl mx-auto grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">

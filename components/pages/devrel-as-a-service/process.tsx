@@ -13,7 +13,7 @@ export default function Process() {
     >
       <div className="flex flex-col gap-4 mb-8">
         <div className="text-center font-semibold lg:text-5xl text-4xl sm:pb-4">
-          Here's how we structure <br />{" "}
+          This is how we structure <br />{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
             our process
           </span>

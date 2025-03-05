@@ -13,12 +13,17 @@ export default function Process() {
       id="process"
       className="max-w-7xl mx-auto text-white py-16 max-sm:px-5 sm:py-10 flex flex-col justify-center items-center"
     >
-      <div className="text-center font-semibold lg:text-5xl text-2xl pb-4">
-        How it{" "}
-        <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600">
-          Works
-        </span>{" "}
-        ?
+      <div className="text-center mb-16">
+        <h2 className="text-4xl font-bold mb-4 md:text-5xl">
+          This is how we structure <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
+            our process
+          </span>
+        </h2>
+        <p className="text-muted-foreground ">
+          Our transparent pricing makes it easy to find
+          <br /> a plan that works within your financial constraints.
+        </p>
       </div>
 
       {/* <div className="sm:mt-16 mt-8">

@@ -41,12 +41,10 @@ export default function Navbar() {
         )}
       >
         <nav className="flex z-20 max-w-7xl mx-auto h-16 px-4 rounded-2xl justify-between items-center">
-          <div className="flex justify-between gap-2 items-center">
-            <Link href="/">
-              <Logo className="size-8" />
-            </Link>
+          <Link href={"/"} className="flex justify-between gap-2 items-center">
+            <Logo className="size-8" />
             <span className="text-2xl font-bold">Studio1</span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex  justify-between gap-8 font-medium items-center">

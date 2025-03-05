@@ -19,13 +19,19 @@ export default function BlogSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.1 }}
       >
-        <div className="text-center font-semibold lg:text-5xl text-4xl mb-4">
-          Our <span className="text-primary">Blogs</span>
+        <p className="mx-auto text-foreground/80 text-sm md:text-base"></p>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4 md:text-5xl">
+            Our{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
+              Blogs
+            </span>
+          </h2>
+          <p className="text-muted-foreground ">
+            Everything you need to build and maintain a successful{" "}
+            <br className="hidden md:block" /> developer relations program.
+          </p>
         </div>
-        <p className="mx-auto text-foreground/80 text-sm md:text-base">
-          Everything you need to build and maintain a successful{" "}
-          <br className="hidden md:block" /> developer relations program.
-        </p>
       </motion.div>
       <div className="min-h-[600px] p-4 flex flex-col justify-center rounded-md space-y-4">
         <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

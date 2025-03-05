@@ -133,13 +133,20 @@ export const VisionMission = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="text-2xl mb-4 font-primary font-semibold text-center leading-tight">
-          What Fuels Us?
+        <p className="text-center text-sm font-semibold text-neutral-600 dark:text-neutral-400 mx-auto mb-12"></p>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4 md:text-5xl">
+            What{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
+              Fuels
+            </span>{" "}
+            Us?
+          </h2>
+          <p className="text-muted-foreground ">
+            We empower tech brands to build thriving <br /> developer
+            communities through DevRel and high-impact content.
+          </p>
         </div>
-        <p className="text-center text-sm font-semibold text-neutral-600 dark:text-neutral-400 mx-auto mb-12">
-          We empower tech brands to build thriving <br /> developer communities
-          through DevRel and high-impact content.
-        </p>
       </motion.div>
 
       <div className="grid grid-cols-1 place-items-center sm:place-items-start sm:grid-cols-2 gap-6 max-w-3xl mx-auto">

@@ -168,10 +168,10 @@ export default function Footer() {
                     Community Blog
                   </Link>
                   <Link
-                    href="#"
+                    href="/careers"
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    Careers (Coming soon)
+                    Careers
                   </Link>
                 </nav>
               </motion.div>
