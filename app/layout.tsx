@@ -76,7 +76,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-
           {children}
           <CTA />
           <Footer />

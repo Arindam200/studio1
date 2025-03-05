@@ -815,18 +815,10 @@ export const Data = {
         "We analyze your current content strategy and identify opportunities for contribution and improvement.",
       icon: IconSearch,
       details: [
-        <p>
-          Knowing <br /> Tech stack
-        </p>,
-        <p>
-          Analyze <br /> developer audience
-        </p>,
-        <p>
-          Identify <br /> content scope
-        </p>,
-        <p>
-          Initial <br /> communication
-        </p>,
+        <p>Knowing Tech stack</p>,
+        <p>Analyze developer audience</p>,
+        <p>Identify content scope</p>,
+        <p>Initial communication</p>,
       ],
     },
     {
@@ -836,18 +828,10 @@ export const Data = {
       icon: IconBulb,
 
       details: [
-        <p>
-          Knowing content <br /> requirement
-        </p>,
-        <p>
-          Topic <br /> ideation
-        </p>,
-        <p>
-          Content format <br /> decision
-        </p>,
-        <p>
-          Distribution <br /> channel selection
-        </p>,
+        <p>Knowing content requirement</p>,
+        <p>Topic ideation</p>,
+        <p>Content format decision</p>,
+        <p>Distribution channel selection</p>,
       ],
     },
 
@@ -858,19 +842,10 @@ export const Data = {
       icon: IconRocket,
 
       details: [
-        <p>
-          Technical content <br /> development
-        </p>,
-        <p>
-          Custom code <br /> examples and demos
-        </p>,
-        <p>
-          Technical review and <br /> validation
-        </p>,
-
-        <p>
-          SEO optimization and <br /> formatting
-        </p>,
+        <p>Technical content development</p>,
+        <p>Custom code examples and demos</p>,
+        <p>Technical review and validation</p>,
+        <p>SEO optimization and formatting</p>,
       ],
     },
 
@@ -880,21 +855,14 @@ export const Data = {
         "We publish and promote your content across multiple platforms to maximize reach.",
       icon: IconChartBar,
       details: [
-        <p>
-          Multi-platform <br /> publishing
-        </p>,
-        <p>
-          Analytics <br /> review
-        </p>,
-        <p>
-          Social Media <br /> posts
-        </p>,
-        <p>
-          Developer community <br /> sharing
-        </p>,
+        <p>Multi-platform publishing</p>,
+        <p>Analytics review</p>,
+        <p>Social Media posts</p>,
+        <p>Developer community sharing</p>,
       ],
     },
   ],
+
   BlogAsServiceTeam: [
     {
       name: "Arindam Majumder",
@@ -927,18 +895,10 @@ export const Data = {
         "We analyze your current DevRel efforts and identify opportunities for improvement.",
       icon: IconSearch,
       details: [
-        <p>
-          Audit existing <br /> developer programs
-        </p>,
-        <p>
-          Analyze community <br /> engagement
-        </p>,
-        <p>
-          Identify growth <br /> opportunities
-        </p>,
-        <p>
-          Assessment <br /> report
-        </p>,
+        <p>Audit existing developer programs</p>,
+        <p>Analyze community engagement</p>,
+        <p>Identify growth opportunities</p>,
+        <p>Assessment report</p>,
       ],
     },
     {
@@ -947,18 +907,10 @@ export const Data = {
         "Develop a customized roadmap aligned with your business goals and developer needs.",
       icon: IconBulb,
       details: [
-        <p>
-          Custom roadmap <br /> creation
-        </p>,
-        <p>
-          Resource <br /> allocation
-        </p>,
-        <p>
-          Timeline <br /> planning
-        </p>,
-        <p>
-          KPI <br /> definition
-        </p>,
+        <p>Custom roadmap creation</p>,
+        <p>Resource allocation</p>,
+        <p>Timeline planning</p>,
+        <p>KPI definition</p>,
       ],
     },
 
@@ -968,18 +920,10 @@ export const Data = {
         "Execute the strategy with our experienced team of DevRel professionals.",
       icon: IconRocket,
       details: [
-        <p>
-          Content <br /> creation
-        </p>,
-        <p>
-          Community <br /> building
-        </p>,
-        <p>
-          Plan exciting <br /> campaigns
-        </p>,
-        <p>
-          Developer <br /> engagement
-        </p>,
+        <p>Content creation</p>,
+        <p>Community building</p>,
+        <p>Plan exciting campaigns</p>,
+        <p>Developer engagement</p>,
       ],
     },
 
@@ -989,18 +933,10 @@ export const Data = {
         "Track KPIs and adjust strategies based on data-driven insights.",
       icon: IconChartBar,
       details: [
-        <p>
-          Performance <br /> tracking
-        </p>,
-        <p>
-          Analytics <br /> review
-        </p>,
-        <p>
-          Strategy <br /> adjustment
-        </p>,
-        <p>
-          ROI <br /> measurement
-        </p>,
+        <p>Performance tracking</p>,
+        <p>Analytics review</p>,
+        <p>Strategy adjustment</p>,
+        <p>ROI measurement</p>,
       ],
     },
   ],

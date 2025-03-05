@@ -1,10 +1,10 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { SelectTheme } from "../theme-toggler";
 import { IconChevronDown, IconMenu2 } from "@tabler/icons-react";
-import { useState } from "react";
 import { navItems } from "@/constants/data";
 import { cn } from "@/lib/utils";
 import Logo from "../ui/svgs/logo";
@@ -14,10 +14,32 @@ export default function Navbar() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [sublistHover, setSublistHover] = useState<number | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      if (window.scrollY < lastScrollY) {
+        setIsVisible(true); // Show navbar when scrolling up
+      } else {
+        setIsVisible(false); // Hide navbar when scrolling down
+      }
+      lastScrollY = window.scrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 py-2 z-[550] border-b bg-background/80 backdrop-blur-2xl">
+      <header
+        className={cn(
+          "fixed left-0 right-0 top-0 py-2 z-[550] border-b bg-background/80 backdrop-blur-2xl transition-transform duration-300",
+          isVisible ? "translate-y-0" : "-translate-y-full"
+        )}
+      >
         <nav className="flex z-20 max-w-7xl mx-auto h-16 px-4 rounded-2xl justify-between items-center">
           <div className="flex justify-between gap-2 items-center">
             <Link href="/">

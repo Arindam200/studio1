@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
-import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Data } from "@/data";
 import ProcessSection from "@/components/process-section";
+import { Timeline } from "@/components/sections/timeline";
+import { TimelineItem } from "@/components/sections/timeline-item";
 
 const steps = Data.BlogAsServiceProcess;
 
@@ -19,10 +21,20 @@ export default function Process() {
         ?
       </div>
 
-      <div className="sm:mt-16 mt-8">
+      {/* <div className="sm:mt-16 mt-8">
         <div className="space-y-12">
           <ProcessSection steps={steps} />
         </div>
+      </div> */}
+
+      <div className="w-full hidden lg:block">
+        <Timeline type="Blog" />
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 relative gap-4 lg:hidden">
+        {steps.map((item, index) => {
+          return <TimelineItem key={item.name} index={index} item={item} />;
+        })}
       </div>
     </div>
   );

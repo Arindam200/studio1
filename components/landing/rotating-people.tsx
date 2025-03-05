@@ -27,7 +27,6 @@ export default function RotatingPeople({ className }: { className?: string }) {
   return (
     <div className={cn("relative z-[50] mx-auto w-screen", className)}>
       {/* Center circle with pulse animation */}
-   
 
       {/* Rotating container for avatars */}
       <div className="absolute inset-0 animate-spin-slow">

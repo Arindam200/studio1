@@ -6,7 +6,7 @@ import Testimonials from "@/components/landing/testimonials";
 import RotatingPeople from "@/components/landing/rotating-people";
 export default function Home() {
   return (
-    <div className="overflow-hidden h-fit !max-h-fit">
+    <div className="overflow-x-hidden h-fit !max-h-fit">
       <Hero />
       <Trustedby />
       <Services />

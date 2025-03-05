@@ -23,6 +23,7 @@ import Devto from "../public/assets/devto.png";
 import arindamNoBg from "../public/assets/arindam-nobg.png";
 import amiteshNoBg from "../public/assets/amitesh-nobg.png";
 import shivayNoBg from "../public/assets/shivay-nobg.png";
+import amitesh from "../public/assets/amitesh.png";
 
 export {
   PermitFull,
@@ -50,4 +51,5 @@ export {
   arindamNoBg,
   amiteshNoBg,
   shivayNoBg,
+  amitesh,
 };
