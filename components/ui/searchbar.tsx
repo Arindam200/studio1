@@ -29,15 +29,17 @@ export default function Searchbar() {
   }, 300);
 
   return (
-    <div className="flex max-w-2xl w-full max-sm:px-4 border-2 py-1 pl-2 pr-4 rounded-lg items-center space-x-2 relative">
+    <div className="flex max-w-2xl w-full max-sm:px-4 py-1 pl-2 pr-4 rounded-lg items-center space-x-2 relative">
       <Input
         type="text"
         placeholder="Search blogs..."
         defaultValue={searchParams.get("query")?.toString()}
         onChange={(e) => handleSearch(e.target.value)}
-        className="border-transparent font-medium outline-transparent bg-transparent outline-none ring-0 text-foreground focus-visible:outline-transparent focus-visible:ring-transparent "
+        className="border-transparent font-medium bg-transparent ring-1 ring-primary text-foreground focus:outline-none"
       />
-      <MagnifyingGlass className="size-6 text-foreground" />
+      <div className="bg-primary h-full w-12 ring-1 ring-primary py-2 flex items-center justify-center rounded-lg">
+        <MagnifyingGlass className="size-6 text-foreground" />
+      </div>
     </div>
   );
 }
