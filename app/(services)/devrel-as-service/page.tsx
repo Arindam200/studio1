@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function DevRel() {
   return (
-    <div className="">
+    <div className=" overflow-x-hidden">
       <Hero />
       <Services />
       <Process />

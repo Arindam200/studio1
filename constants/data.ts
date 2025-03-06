@@ -33,7 +33,7 @@ export const navItems = [
   { title: "About Us", path: "/about-us" },
   {
     title: "Services",
-    path: "/services",
+    path: "#",
     children: [
       {
         title: "DevRel as a Service",

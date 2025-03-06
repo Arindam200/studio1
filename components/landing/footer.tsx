@@ -67,53 +67,99 @@ export default function Footer() {
       />
 
       <motion.footer
-        className="border-t bg-background mt-44 z-[101] relative pb-10"
+        className="border-t max-h-fit overflow-hidden bg-background mt-44 z-[101] relative pb-10"
         variants={itemVariants}
       >
-        <div className="max-w-7xl mx-auto px-4 py-12 md:py-16">
-          <div className="grid gap-8 lg:grid-cols-2">
-            <motion.div className="space-y-6" variants={itemVariants}>
-              <motion.div className="space-y-2" variants={itemVariants}>
+        <div className="bg-gradient-to-b from-foreground/20 via-accent/80 to-transparent dark:from-accent/80 dark:via-accent/60 bg-clip-text text-transparent text-[6rem] sm:text-[8rem] md:text-[12rem] lg:text-[17rem] leading-tight absolute left-1/2 -translate-x-1/2 bottom-[8rem] md:bottom-[5rem] z-20 font-extrabold">
+          STUDIO1
+        </div>
+
+        {/* bottom-logo */}
+
+        <div className="absolute hover:border-primary duration-500 drop-shadow-[0_0px_25px_hsl(var(--primary))] bottom-[6rem] md:bottom-[5rem] backdrop-blur-sm z-[30] rounded-3xl bg-background/60 left-1/2 border-2 border-accent/40 flex items-center justify-center p-3 -translate-x-1/2">
+          <Logo className="size-12 sm:size-16 md:size-24" />
+        </div>
+
+        {/* bottom-line */}
+        <div className="absolute bottom-[8rem] sm:bottom-[8.5rem] backdrop-blur-sm z-[25] h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent w-full left-1/2 -translate-x-1/2"></div>
+
+        {/* bottom shadow */}
+        <div className="bg-gradient-to-t from-background via-backgroun/80 blur-[1em] to-background/40 absolute bottom-[7rem] z-[22] w-full h-24"></div>
+
+        <div className="max-w-7xl flex flex-col justify-between mx-auto h-[30rem] sm:h-[35rem] md:h-[40rem] z-[30] p-4 pt-10">
+          <div className="flex flex-col mb-12 sm:mb-20 md:mb-0 w-full">
+            <motion.div
+              className="w-full flex flex-col items-center"
+              variants={itemVariants}
+            >
+              <motion.div
+                className="space-y-2 flex flex-col items-center flex-1"
+                variants={itemVariants}
+              >
                 <motion.div
                   className="flex items-center gap-2"
                   variants={itemVariants}
                 >
-                  <Logo className="size-8" />
-                  <h2 className="text-2xl font-bold">Studio1</h2>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary text-3xl font-bold">
+                    Studio1
+                  </span>
                 </motion.div>
                 <motion.p
-                  className="text-muted-foreground sm:w-96"
+                  className="text-foreground/90 font-semibold text-center sm:w-96"
                   variants={itemVariants}
                 >
                   Empowering tech companies with technical content and DevRel
                   services.
                 </motion.p>
               </motion.div>
-              <motion.div className="flex gap-4" variants={itemVariants}>
+              <motion.div
+                className="flex mb-8 mt-3 gap-4"
+                variants={itemVariants}
+              >
                 <Link
                   href="https://x.com/Studio1HQ"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  <IconBrandX className="size-6 text-primary" />
+                  <IconBrandX className="size-6 hover:text-primary duration-300" />
                   <span className="sr-only">Twitter</span>
                 </Link>
                 <Link
                   href="https://www.linkedin.com/company/studio1hq/"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  <IconBrandLinkedin className="size-6 text-primary" />
+                  <IconBrandLinkedin className="size-6 hover:text-primary duration-300" />
                   <span className="sr-only">LinkedIn</span>
                 </Link>
                 <Link
                   href="https://dev.to/studio1hq"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  <IconNews className="size-6 text-primary" />
+                  <IconNews className="size-6 hover:text-primary duration-300" />
                   <span className="sr-only">Blogs</span>
                 </Link>
               </motion.div>
+              <motion.div className="flex flex-wrap gap-4 text-sm font-medium text-neutral-500 dark:text-neutral-400 max-w-full">
+                <Link
+                  className="hover:text-foreground duration-300 hover:font-semibold"
+                  href={"/devrel-as-a-service"}
+                >
+                  DevRel
+                </Link>
+                <Link
+                  className="hover:text-foreground duration-300 hover:font-semibold"
+                  href={"/careers"}
+                >
+                  Careers
+                </Link>
+                <Link
+                  className="hover:text-foreground duration-300 hover:font-semibold"
+                  href={"/blog-as-service"}
+                >
+                  Blogs
+                </Link>
+              </motion.div>
             </motion.div>
-            <motion.div
+            {/* <motion.div
               className="grid grid-cols-1 gap-8 md:grid-cols-2"
               variants={containerVariants}
             >
@@ -175,10 +221,10 @@ export default function Footer() {
                   </Link>
                 </nav>
               </motion.div>
-            </motion.div>
+            </motion.div> */}
           </div>
           <motion.div
-            className="mt-12 flex flex-col gap-4 pt-8 md:flex-row md:items-center md:justify-between"
+            className="mt-44 md:mt-12 z-[25] flex flex-col gap-1 items-center justify-center md:flex-row md:items-center md:justify-between"
             variants={itemVariants}
           >
             <p className="text-base text-muted-foreground">

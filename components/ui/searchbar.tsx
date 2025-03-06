@@ -38,7 +38,7 @@ export default function Searchbar() {
         className="border-transparent font-medium bg-transparent ring-1 ring-primary text-foreground focus:outline-none"
       />
       <div className="bg-primary h-full w-12 ring-1 ring-primary py-2 flex items-center justify-center rounded-lg">
-        <MagnifyingGlass className="size-6 text-foreground" />
+        <MagnifyingGlass className="size-6 text-white" />
       </div>
     </div>
   );

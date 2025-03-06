@@ -8,7 +8,7 @@ import CircularGallery from "@/components/ui/circular-gallery";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { amitesh } from "@/constants/image";
+import { arindamNoBg, amiteshNoBg, shivayNoBg } from "@/constants/image";
 import { cn } from "@/lib/utils";
 
 const jobOpenings = [
@@ -167,24 +167,24 @@ const Careers = () => {
         >
           <motion.img
             variants={itemVariants}
-            className="w-36 md:!w-60 aspect-[3/4] translate-y-4 translate-x-8 transition-all duration-200 ease-linear group-hover:translate-x-10 !-rotate-6 group-hover:-rotate-[5deg]  drop-shadow-2xl border-2 border-white/50 object-cover rounded-lg"
-            src={amitesh.src}
+            className="w-36 md:!w-60 aspect-[3/4] bg-accent/20 backdrop-blur-md translate-y-4 translate-x-8 transition-all duration-200 ease-linear group-hover:translate-x-10 !-rotate-6 group-hover:-rotate-[5deg]  drop-shadow-2xl border-[3px] border-orange-200/40 object-cover rounded-lg"
+            src={amiteshNoBg.src}
             width={1000}
             height={1000}
             alt="img-1"
           />
           <motion.img
             variants={itemVariants}
-            className="w-44 md:!w-72 aspect-[3/4]  z-10 shadow-3xl shadow-black border-2 drop-shadow-2xl  border-white/50 object-cover rounded-lg"
-            src={"https://avatars.githubusercontent.com/u/109217591"}
+            className="w-44 md:!w-72 aspect-[3/4] bg-accent/20 backdrop-blur-md  z-10 shadow-3xl shadow-black border-[3px] drop-shadow-2xl  border-orange-200/40 object-cover rounded-lg"
+            src={arindamNoBg.src}
             width={1000}
             height={1000}
             alt="img-1"
           />
           <motion.img
             variants={itemVariants}
-            className="w-36 md:!w-60 aspect-[3/4] translate-y-4 -translate-x-8 transition-all duration-200 ease-linear group-hover:-translate-x-10 !rotate-6 group-hover:rotate-[5deg] drop-shadow-2xl shadow-3xl shadow-black border-2 border-white/50 object-cover rounded-lg"
-            src={"https://avatars.githubusercontent.com/u/19529592"}
+            className="w-36 md:!w-60 aspect-[3/4] bg-accent/20 backdrop-blur-md translate-y-4 -translate-x-8 transition-all duration-200 ease-linear group-hover:-translate-x-10 !rotate-6 group-hover:rotate-[5deg] drop-shadow-2xl shadow-3xl shadow-black border-[3px] border-orange-200/40 object-cover rounded-lg"
+            src={shivayNoBg.src}
             width={1000}
             height={1000}
             alt="img-1"

@@ -10,7 +10,10 @@ export const Companies = () => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
+      className="relative"
     >
+      <div className="top-[-10rem] md:top-[-8rem] z-[-1] left-[-80%] md:left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-80 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] -rotate-[60deg]"></div>
+      <div className="top-[-10rem] md:top-[-8rem] z-[-1] right-[-80%] md:right-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-80 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] rotate-[40deg]"></div>
       <div className="mb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,7 +34,7 @@ export const Companies = () => {
           </p>
         </motion.div>
 
-        <div className="grid max-w-4xl mx-auto grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid max-w-4xl z-20 mx-auto grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
           {Data.Companies.map((item, index) => {
             return (
               <motion.div
@@ -41,7 +44,7 @@ export const Companies = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * (index % 3), duration: 0.7 }}
                 whileHover={{ y: -5, transition: { duration: 0.3 } }}
-                className="border-2 bg-accent dark:bg-muted-foreground/5 flex-col aspect-square rounded-xl flex items-center justify-center"
+                className="border-2 bg-accent z-20 backdrop-blur-2xl dark:bg-muted-foreground/5 flex-col w-full h-fit py-10 md:aspect-square rounded-xl flex items-center justify-center"
               >
                 <div className="w-32">
                   <Image

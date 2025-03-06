@@ -66,7 +66,7 @@ export function FloatingTags() {
   };
 
   return (
-    <div className="grid grid-cols-2 gap-2 mt-4">
+    <div className="grid grid-cols-2 md:flex w-full mx-auto sm:justify-center sm:items-center gap-2 mt-4">
       <AnimatePresence>
         {tags.map((tag) => (
           <motion.div
@@ -76,7 +76,7 @@ export function FloatingTags() {
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.2 }}
             onClick={() => handleTagClick(tag)}
-            className={`rounded-md relative flex gap-2 text-foreground items-center justify-center h-14 px-6 w-44 md:w-52 ${
+            className={`rounded-md relative flex gap-2 text-foreground items-center justify-center h-10 px-8 w-full md:w-fit ${
               selectedTags.includes(tag)
                 ? "bg-primary text-white"
                 : "bg-accent text-foreground"

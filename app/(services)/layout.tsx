@@ -3,9 +3,5 @@ export default function ServicesLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <div className="border-2 overflow-hidden md:overflow-visible">
-      {children}
-    </div>
-  );
+  return <div className="overflow-hidden md:overflow-visible">{children}</div>;
 }
