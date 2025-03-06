@@ -59,7 +59,7 @@ export default function Services() {
             className="flex relative items-center gap-[2%] w-full mt-20 justify-center md:-space-x-20 flex-col md:flex-row"
           >
             <Link
-              href={"/blog-as-a-service"}
+              href={"/blog-as-service"}
               className="shadow-xl border-2 dark:border transition-all duration-700 hover:-translate-y-4 h-[30rem] relative w-full max-w-[23rem] group rounded-lg overflow-hidden flex flex-col items-start bg-background/80 backdrop-blur-md justify-start p-8 mb-8 md:mb-0"
             >
               <div className="absolute top-[-23rem] z-[101] delay-100 rotate-45 left-[-2rem] group-hover:top-[15rem] group-hover:left-[20rem] transition-all blur-[3em] duration-700 rounded-md h-[40rem] bg-white/50 opacity-30 w-[5rem] backdrop-blur-md"></div>
@@ -85,7 +85,7 @@ export default function Services() {
             </Link>
 
             <Link
-              href={"/devrel-as-a-service"}
+              href={"/devrel-as-service"}
               className="shadow-xl border-2 dark:border transition-all duration-700 hover:translate-y-4 relative overflow-hidden group flex flex-col items-start p-8 bg-background/80 backdrop-blur-2xl h-[30rem] w-full  max-w-[23rem] md:translate-y-20 rounded-lg"
             >
               <div className="absolute top-[-23rem] z-[101] rotate-45 delay-100 left-[-2rem] group-hover:top-[15rem] group-hover:left-[20rem] transition-all blur-[3em] duration-700 rounded-md h-[40rem] bg-white/50 opacity-30 w-[5rem] backdrop-blur-md"></div>
@@ -114,8 +114,9 @@ export default function Services() {
 
           <motion.div
             variants={itemVariants}
-            className="border z-[20] rounded-lg flex md:flex-row flex-col items-start gap-3 md:items-end justify-between p-4 w-full mt-32 max-w-[45rem] mx-auto"
+            className="border relative group overflow-hidden hover:border-primary translate-y-0 duration-200 hover:translate-y-20 z-[20] rounded-lg flex md:flex-row flex-col items-start gap-3 md:items-end justify-between p-4 w-full mt-32 max-w-[45rem] mx-auto"
           >
+            <div className="h-44 w-16 absolute bg-accent/30 duration-700 -top-10 rotate-[10deg] -left-20 group-hover:left-[40rem]"></div>
             <div className="flex flex-col items-start">
               <div className="flex flex-col items-start gap-2">
                 <Package className="size-6 text-primary" />
@@ -129,7 +130,7 @@ export default function Services() {
                 </div>
               </div>
             </div>
-            <Button className="w-fit group-hover:bg-primary text-foreground hover:text-white bg-accent">
+            <Button className="w-fit z-20 group-hover:bg-primary text-foreground hover:text-white bg-accent">
               Learn More <ArrowUpRight className="size-4 ml-2" />
             </Button>
           </motion.div>
