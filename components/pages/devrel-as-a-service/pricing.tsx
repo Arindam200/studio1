@@ -102,11 +102,10 @@ export default function PricingSection() {
   };
 
   return (
-    <div className="w-full py-24 max-w-7xl mx-auto relative overflow-hidden">
+    <div className="w-full py-24 max-w-7xl mx-auto relative">
       {/* Decorative shapes */}
-      <div className="absolute top-20 right-20 w-32 h-32 bg-primary/10 rounded-xl rotate-12 blur-sm" />
-      <div className="absolute bottom-20 left-20 w-24 h-24 bg-primary/10 rounded-xl -rotate-12 blur-sm" />
-
+      <div className="absolute top-20 right-20 w-32 h-32 bg-primary blur-[4em] rounded-full rotate-12 " />
+      <div className="absolute bottom-0 left-20 w-24 h-24 bg-primary blur-[4em] rounded-full -rotate-12 " />
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-16"

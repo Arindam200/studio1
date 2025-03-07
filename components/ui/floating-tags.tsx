@@ -83,9 +83,9 @@ export function FloatingTags() {
             }`}
           >
             <Tag
-              weight="fill"
+              weight="duotone"
               className={cn(
-                "size-6 ",
+                "size-4",
                 selectedTags.includes(tag) ? "text-white" : "text-foreground"
               )}
             />

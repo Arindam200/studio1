@@ -66,7 +66,7 @@ export default function RootLayout({
         className={cn(
           raleway.variable,
           jakarta.variable,
-          "antialiased overflow-x-hidden font-secondary"
+          "antialiased font-secondary"
         )}
       >
         <ThemeProvider

@@ -6,12 +6,14 @@ import { motion } from "motion/react";
 export const Team = () => {
   return (
     <motion.div
-      className="mt-28 mb-32"
+      className="mt-28 mb-32 relative"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
     >
+      <div className="top-[-2rem] left-[65%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-50 from-primary dark:to-primary to-primary blur-[5em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out size-[12rem] -rotate-[60deg]"></div>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

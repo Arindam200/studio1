@@ -21,7 +21,7 @@ export const TeamCard = ({
     <div className="flex relative hover:-translate-y-1 transition-all duration-700 border-2 dark:border-accent/80 bg-muted/20 group rounded-lg overflow-hidden h-[25rem] flex-col items-center justify-center">
       <div className="bottom-[-6rem] group-hover:opacity-100 opacity-0 z-[-1] left-1/2 -translate-x-1/2 absolute bg-gradient-to-t from-primary via-primary/30 to-primary/50 blur-[3.5em] rounded-full transition-all duration-1000 ease-out h-[90%] w-full"></div>
       <Particles
-        className="absolute h-screen opacity-0 group-hover:opacity-100 transition-all duration-700 inset-0 z-0"
+        className="absolute h-screen opacity-60 group-hover:opacity-100 transition-all duration-700 inset-0 z-0"
         quantity={100}
         ease={80}
         color="#f97316"

@@ -11,8 +11,10 @@ export default function Process() {
   return (
     <div
       id="process"
-      className="max-w-7xl mx-auto text-white py-16 max-sm:px-5 sm:py-10 flex flex-col justify-center items-center"
+      className="max-w-7xl relative mx-auto text-white py-16 max-sm:px-5 sm:py-10 flex flex-col justify-center items-center"
     >
+      <div className="top-[-10rem] md:top-[-8rem] z-[-1] left-[-80%] md:left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[42rem] w-[10rem] -rotate-[60deg]"></div>
+
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold mb-4 md:text-5xl">
           This is how we structure <br />

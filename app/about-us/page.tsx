@@ -54,7 +54,9 @@ const sectionAnimation = {
 export default function AboutUs() {
   return (
     <section className="overflow-x-hidden">
-      <div className="max-w-7xl mx-auto h-fit">
+      <div className="max-w-7xl mx-auto h-fit relative">
+        <div className="top-[-10rem] md:top-[-8rem] z-[-1] left-[-80%] md:left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-80 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] -rotate-[60deg]"></div>
+        <div className="top-[-10rem] md:top-[-8rem] z-[-1] right-[-80%] md:right-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-80 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] rotate-[40deg]"></div>
         <motion.div
           className="flex flex-col w-full h-[40rem] max-h-fit mt-20"
           initial="hidden"
@@ -67,7 +69,9 @@ export default function AboutUs() {
               <div className="text-xs mb-4 tracking-widest text-center leading-tight">
                 ABOUT
               </div>
-              <Logo className="size-32 " />
+              <div className="drop-shadow-[0_0px_25px_hsl(var(--primary))] bottom-[6rem] md:bottom-[5rem] backdrop-blur-sm z-[30] rounded-3xl bg-background/60 border-2 border-accent/40 flex items-center justify-center p-3">
+                <Logo className="size-12 sm:size-16 md:size-24" />
+              </div>
               <span className="text-2xl font-bold">Studio1</span>
             </div>
           </div>

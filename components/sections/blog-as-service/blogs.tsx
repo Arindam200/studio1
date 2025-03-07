@@ -11,7 +11,12 @@ const cards = Data.Blogs;
 
 export default function BlogSection() {
   return (
-    <div id="work" className="sm:px-20 px-2.5 py-10 sm:py-20">
+    <div
+      id="work"
+      className="relative overflow-hidden sm:px-20 px-2.5 py-10 sm:py-20"
+    >
+      <div className="top-[-10rem] md:top-[-8rem] z-[-1] right-[-80%] md:right-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[42rem] w-[10rem] rotate-[40deg]"></div>
+
       <motion.div
         className="text-center my-10"
         initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}

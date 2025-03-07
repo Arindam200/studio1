@@ -28,7 +28,7 @@ export default function Footer() {
       y: 0,
       filter: "blur(0px)",
       transition: {
-        duration: 0.6,
+        duration: 0.3,
         ease: [0.22, 1, 0.36, 1],
       },
     },
@@ -43,7 +43,7 @@ export default function Footer() {
       opacity: 0.3,
       scale: 1,
       transition: {
-        duration: 1.2,
+        duration: 0.5,
         ease: "easeOut",
       },
     },
@@ -51,14 +51,14 @@ export default function Footer() {
 
   return (
     <motion.section
-      className="relative max-h-fit mt-20"
+      className="relative max-h-fit  mt-0"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
       variants={containerVariants}
     >
       <motion.div
-        className="top-[-10rem] md:top-[-30rem] z-[-1] left-[0%] absolute bg-gradient-to-t opacity-30 dark:opacity-80 from-primary dark:to-primary/80 to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] -rotate-[60deg]"
+        className="top-[-10rem] md:top-[-30rem] z-[-1] left-[0%] absolute bg-gradient-to-t opacity-30 dark:opacity-100 from-primary dark:to-primary/80 to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] -rotate-[60deg]"
         variants={gradientVariants}
       />
       <motion.div
@@ -150,6 +150,12 @@ export default function Footer() {
                   href={"/careers"}
                 >
                   Careers
+                </Link>
+                <Link
+                  className="hover:text-foreground duration-300 hover:font-semibold"
+                  href={"/case-studies"}
+                >
+                  Case Studies
                 </Link>
                 <Link
                   className="hover:text-foreground duration-300 hover:font-semibold"

@@ -9,8 +9,10 @@ export default function Process() {
   return (
     <div
       id="process"
-      className="py-8 max-w-7xl mt-44 mx-auto px-4 max-sm:px-5 sm:py-10 flex flex-col justify-center items-center"
+      className="py-8 relative max-w-7xl mt-44 mx-auto px-4 max-sm:px-5 sm:py-10 flex flex-col justify-center items-center"
     >
+      <div className="top-[-10rem] md:top-[-8rem] z-[-1] left-[-80%] md:left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[42rem] w-[10rem] -rotate-[60deg]"></div>
+
       <div className="flex flex-col gap-4 mb-8">
         <div className="text-center font-semibold lg:text-5xl text-4xl sm:pb-4">
           This is how we structure <br />{" "}

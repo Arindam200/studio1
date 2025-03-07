@@ -17,10 +17,9 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
+  hidden: { opacity: 0, filter: "blur(10px)" },
   visible: {
     opacity: 1,
-    y: 0,
     filter: "blur(0px)",
     transition: { duration: 0.5 },
   },
@@ -114,7 +113,7 @@ export default function Services() {
 
           <motion.div
             variants={itemVariants}
-            className="border relative group overflow-hidden hover:border-primary translate-y-0 duration-200 hover:translate-y-20 z-[20] rounded-lg flex md:flex-row flex-col items-start gap-3 md:items-end justify-between p-4 w-full mt-32 max-w-[45rem] mx-auto"
+            className="border relative group overflow-hidden hover:border-primary hover:-translate-y-2 duration-500 z-[20] rounded-lg flex md:flex-row flex-col items-start gap-3 md:items-end justify-between p-4 w-full mt-32 max-w-[45rem] mx-auto"
           >
             <div className="h-44 w-16 absolute bg-accent/30 duration-700 -top-10 rotate-[10deg] -left-20 group-hover:left-[40rem]"></div>
             <div className="flex flex-col items-start">
@@ -130,7 +129,7 @@ export default function Services() {
                 </div>
               </div>
             </div>
-            <Button className="w-fit z-20 group-hover:bg-primary text-foreground hover:text-white bg-accent">
+            <Button className="w-fit z-20 group-hover:bg-primary text-foreground group-hover:text-white bg-accent">
               Learn More <ArrowUpRight className="size-4 ml-2" />
             </Button>
           </motion.div>

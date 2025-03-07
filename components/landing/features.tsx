@@ -12,8 +12,8 @@ export default function Features() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
       },
     },
   };
@@ -29,7 +29,7 @@ export default function Features() {
       y: 0,
       filter: "blur(0px)",
       transition: {
-        duration: 0.8,
+        duration: 0.3,
         ease: [0.22, 1, 0.36, 1],
       },
     },
@@ -45,6 +45,7 @@ export default function Features() {
       variants={containerVariants}
     >
       <div className="bottom-[-10rem] md:bottom-[-18rem] z-[-1] left-[-0%] absolute bg-gradient-to-t opacity-80 dark:opacity-100 from-primary dark:to-primary to-white  blur-[2.5em] dark:blur-[2.5em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
+      <div className="bottom-[-10rem] md:bottom-1/2 md:translate-y-[50%] z-[-1] right-[-0%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary blur-[4em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
 
       <motion.div
         className="flex flex-col items-center gap-4 justify-center"
