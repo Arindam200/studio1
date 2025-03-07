@@ -65,8 +65,8 @@ export function Timeline({ items }: TimelineProps) {
 
             {/* Content */}
             <div className="ml-0 bg pb-20 md:ml-24 flex-1">
-              <div className="border-2  rounded-lg">
-                <div className="px-6 bg-muted-foreground/5 pt-6">
+              <div className="border-2 rounded-lg">
+                <div className="px-6 bg-muted-foreground/5 py-6">
                   <h3 className="text-2xl font-semibold mb-4 text-card-foreground">
                     {item.title}
                   </h3>
@@ -91,7 +91,7 @@ export function Timeline({ items }: TimelineProps) {
                     />
                   </div>
 
-                  <p className="text-neutral-600 dark:text-neutral-300 mb-4">
+                  <p className="text-neutral-600 dark:text-neutral-300">
                     {item.description}
                   </p>
                 </div>
