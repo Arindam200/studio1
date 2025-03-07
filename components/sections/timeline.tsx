@@ -1,8 +1,7 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { TimelineItem } from "./timeline-item";
-import { title } from "process";
 import { cn } from "@/lib/utils";
 import { Data } from "@/data";
 

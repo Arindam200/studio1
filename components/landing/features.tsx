@@ -4,7 +4,7 @@ import { Badge } from "../ui/badge";
 import { Data } from "@/data";
 import { FeatureCard } from "./feature-card";
 import { Sparkle } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 export default function Features() {
   const containerVariants = {

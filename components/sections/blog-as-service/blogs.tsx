@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Data } from "@/data";
 import { Version1 } from "./blog-thubmnail-version/version-1";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Link from "next/link";
 
 const cards = Data.Blogs;

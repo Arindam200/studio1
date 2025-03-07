@@ -2,7 +2,7 @@
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { Pencil, Tag } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Link from "next/link";
 
 export const Version1 = ({

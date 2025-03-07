@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import {
   Accordion,
   AccordionContent,
@@ -66,7 +66,7 @@ export function Timeline({ items }: TimelineProps) {
             {/* Content */}
             <div className="ml-0 bg pb-20 md:ml-24 flex-1">
               <div className="border-2 rounded-lg">
-                <div className="px-6 bg-muted-foreground/5 py-6">
+                <div className="px-6 bg-muted-foreground/5 p-6">
                   <h3 className="text-2xl font-semibold mb-4 text-card-foreground">
                     {item.title}
                   </h3>

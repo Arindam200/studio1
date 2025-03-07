@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Icon, IconProps } from "@tabler/icons-react";
 import { Badge } from "../ui/badge";
 import { CheckSquare } from "@phosphor-icons/react";

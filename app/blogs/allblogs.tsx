@@ -1,17 +1,9 @@
 "use client";
 
 import React from "react";
-import {
-  MinimalCard,
-  MinimalCardDescription,
-  MinimalCardFooter,
-  MinimalCardImage,
-  MinimalCardTitle,
-} from "@/components/ui/minimal-cards";
-import Link from "next/link";
 import { Data } from "@/data";
 import { Version1 } from "@/components/sections/blog-as-service/blog-thubmnail-version/version-1";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const cards = Data.Allblogs;
 

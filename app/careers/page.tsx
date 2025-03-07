@@ -4,10 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Briefcase, ArrowRight } from "lucide-react";
-import CircularGallery from "@/components/ui/circular-gallery";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Link from "next/link";
-import Image from "next/image";
 import { arindamNoBg, amiteshNoBg, shivayNoBg } from "@/constants/image";
 import { cn } from "@/lib/utils";
 

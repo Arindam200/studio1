@@ -3,7 +3,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { Particles } from "../ui/particles";
 import { FeatureIllustration } from "./feature-illustration";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 interface FeatureCardProps {
   feature: {

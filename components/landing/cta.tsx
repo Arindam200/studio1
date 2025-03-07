@@ -2,7 +2,7 @@
 import React from "react";
 import { IconPhoneFilled } from "@tabler/icons-react";
 import { Button } from "../ui/button";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 export default function CTA() {
   const containerVariants = {

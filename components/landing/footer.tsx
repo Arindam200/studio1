@@ -2,7 +2,7 @@
 import React from "react";
 import { IconBrandLinkedin, IconBrandX, IconNews } from "@tabler/icons-react";
 import Logo from "../ui/svgs/logo";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Link from "next/link";
 
 export default function Footer() {

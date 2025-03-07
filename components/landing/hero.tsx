@@ -8,12 +8,9 @@ import { Badge } from "@/components/ui/badge";
 import { Building, Buildings, Star } from "@phosphor-icons/react/dist/ssr";
 import { Data } from "@/data";
 import Image from "next/image";
-import { BuildingIcon } from "lucide-react";
-import { Avatar } from "@radix-ui/react-avatar";
 import AvatarComponent from "./avatar-component";
-import RotatingPeople from "./rotating-people";
 import { Devto, YC } from "@/constants/image";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 export default function Hero() {
   const iconVariants = {
