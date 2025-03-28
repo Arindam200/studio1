@@ -1,7 +1,7 @@
 "use client";
 // import { CheckIcon } from '@heroicons/react/20/solid'
 import Navbar from "@/components/sections/navbar";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Check } from "lucide-react";
 
 const blogPlans = [

@@ -12,7 +12,7 @@ interface AllblogsProps {
 
 export default function Hero({ query, tags }: AllblogsProps) {
   return (
-    <div className="sm:px-20 px-1.5">
+    <div className="mt-20 px-1.5 max-w-7xl mx-auto">
       <Suspense fallback={<div>Loading...</div>}>
         <Allblogs query={query || ""} tags={tags || "All"} />
       </Suspense>

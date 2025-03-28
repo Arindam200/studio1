@@ -34,13 +34,13 @@ export default function Navbar() {
     setIsPricing(pathname.includes("/pricing"));
   }, [pathname]);
 
-  const renderNavbar = () => {
-    if (isDevrel) return <Navbar3 />;
-    if (isBlog) return <Navbar4 />;
-    if (isAllBlog) return <Navbar5 />;
-    if (isPricing) return <Navbar6 />;
-    return <Navbar2 />;
-  };
+  // const renderNavbar = () => {
+  //   if (isDevrel) return <Navbar3 />;
+  //   if (isBlog) return <Navbar4 />;
+  //   if (isAllBlog) return <Navbar5 />;
+  //   if (isPricing) return <Navbar6 />;
+  //   return <Navbar2 />;
+  // };
 
   return (
     <header className="fixed top-2 z-50 w-full overflow-x-hidden">
@@ -57,7 +57,7 @@ export default function Navbar() {
             </span>
           </Link>
         )}
-        <div className="hidden md:flex">{renderNavbar()}</div>
+        {/* <div className="hidden md:flex">{renderNavbar()}</div>
         {isScrolled && renderNavbar()}
         {!isScrolled && (
           <a
@@ -66,7 +66,7 @@ export default function Navbar() {
           >
             Contact Us
           </a>
-        )}
+        )} */}
       </div>
     </header>
   );

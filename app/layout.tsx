@@ -1,25 +1,29 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Raleway, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import Cta from "@/components/sections/cta";
-import Foooter from "@/components/sections/footer";
 import { baseUrl } from "./sitemap";
 import Script from "next/script";
+import { cn } from "@/lib/utils";
+import BottomNavbar from "@/components/bottom-navbar";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+import Navbar from "@/components/landing/navbar";
+import Footer from "@/components/landing/footer";
+import CTA from "@/components/landing/cta";
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  variable: "--font-raleway",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
+
   title: {
     default: "Studio1 - Technical Content & DevRel Services",
     template: "%s | Studio1",
@@ -57,19 +61,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-black antialiased overflow-x-hidden`}
+        className={cn(
+          raleway.variable,
+          jakarta.variable,
+          "antialiased font-secondary"
+        )}
       >
         <ThemeProvider
           attribute="class"
-          forcedTheme="dark"
-          enableSystem={false}
+          defaultTheme="system"
+          enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
           {children}
-          <Cta />
-          <Foooter />
+          <CTA />
+          <Footer />
+          <BottomNavbar />
         </ThemeProvider>
       </body>
       <Script

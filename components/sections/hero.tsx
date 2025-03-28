@@ -5,8 +5,8 @@ import { Spotlight } from "@/components/ui/spotlight";
 import { ArrowRight } from "lucide-react";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import Navbar from "@/components/sections/navbar";
-import type { Variants } from "framer-motion";
-import { motion, useAnimation } from "framer-motion";
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
 
 const gVariants: Variants = {
   normal: { rotate: 0 },

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
 import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
+import { MagnifyingGlass } from "@phosphor-icons/react";
 
 export default function Searchbar() {
   const [search, setSearch] = useState<string>("");
@@ -29,15 +29,17 @@ export default function Searchbar() {
   }, 300);
 
   return (
-    <div className="flex w-full max-sm:px-4 max-w-sm items-center space-x-2 relative">
+    <div className="flex max-w-2xl w-full max-sm:px-4 py-1 pl-2 pr-4 rounded-lg items-center space-x-2 relative">
       <Input
         type="text"
         placeholder="Search blogs..."
         defaultValue={searchParams.get("query")?.toString()}
         onChange={(e) => handleSearch(e.target.value)}
-        className="bg-black border-white/20 text-white placeholder-white/50 pr-10 py-5 pl-4 rounded-md w-full"
+        className="border-transparent font-medium bg-transparent ring-1 ring-primary text-foreground focus:outline-none"
       />
-      <Search className="h-4 w-4 absolute right-3 max-sm:right-8 top-1/2 transform -translate-y-1/2 text-white/50" />
+      <div className="bg-primary h-full w-12 ring-1 ring-primary py-2 flex items-center justify-center rounded-lg">
+        <MagnifyingGlass className="size-6 text-white" />
+      </div>
     </div>
   );
 }

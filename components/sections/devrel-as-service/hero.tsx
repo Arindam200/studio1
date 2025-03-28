@@ -1,20 +1,18 @@
 "use client";
 
 import React from "react";
-import { Spotlight } from "@/components/ui/spotlight";
-import Navbar from "@/components/sections/navbar";
 import DotPattern from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
 
 export default function Page() {
   return (
-    <div className="bg-black">
+    <div className="">
       <div className="sm:h-[40rem] h-[28rem] max-sm:h-[36rem] overflow-scroll overflow-x-hidden w-full dark:bg-black bg-white relative flex flex-col items-center justify-center cursor-all-scroll">
-        <Navbar />
+        {/* <Navbar /> */}
         {/* <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div> */}
         <DotPattern
           className={cn(
-            "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
+            "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
           )}
         />
         {/* <Spotlight /> */}

@@ -1,7 +1,7 @@
 import { Data } from "@/data";
 
 interface Reason {
-  icon: JSX.Element;
+  icon: JSX.Element | any;
   title: string;
   description: string;
 }

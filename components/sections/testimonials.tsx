@@ -10,7 +10,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Data } from "@/data";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 
 const testimonials = Data.Testimonials;
 
@@ -67,12 +67,12 @@ const Testimonial6: React.FC = () => {
                                       (acc, highlight) => {
                                         const parts = acc.flatMap((part) =>
                                           part.split(
-                                            new RegExp(`(${highlight})`, "gi"),
-                                          ),
+                                            new RegExp(`(${highlight})`, "gi")
+                                          )
                                         );
                                         return parts;
                                       },
-                                      [line],
+                                      [line]
                                     )
                                     .map((part, partIndex) => {
                                       const isHighlighted =
@@ -80,9 +80,7 @@ const Testimonial6: React.FC = () => {
                                           (highlight) =>
                                             part
                                               .toLowerCase()
-                                              .includes(
-                                                highlight.toLowerCase(),
-                                              ),
+                                              .includes(highlight.toLowerCase())
                                         );
                                       return (
                                         <span
