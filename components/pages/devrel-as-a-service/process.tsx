@@ -15,14 +15,14 @@ export default function Process() {
 
       <div className="flex flex-col gap-4 mb-8">
         <div className="text-center font-semibold lg:text-5xl text-4xl sm:pb-4">
-          This is how we structure <br />{" "}
+        How We Deliver <br />{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
-            our process
+          Developer-First DevRel
           </span>
         </div>
         <p className="text-center mx-auto text-foreground/80 dark:text-neutral-400 text-sm md:text-base ">
-          Everything you need to build and maintain a successful{" "}
-          <br className="hidden md:block" /> developer relations program.
+        A proven process designed for fast-moving{" "}
+          <br className="hidden md:block" /> product teams and developer-focused startups. 
         </p>
       </div>
       {/* <div className="sm:mt-16 mt-8 w-full flex justify-center items-center">

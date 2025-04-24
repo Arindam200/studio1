@@ -11,11 +11,11 @@ import PricingSection from "@/components/pages/blogs-as-a-service/pricing";
 export const metadata: Metadata = {
   title: "Blog as Service",
   description:
-    "Creating developer-focused content that builds trust and drives technical adoption",
+    "We create developer-focused content that builds trust, boosts product visibility and drives technical adoption.",
   openGraph: {
     title: "Blogs | Studio1",
     description:
-      "Creating developer-focused content that builds trust and drives technical adoption",
+      "We create developer-focused content that builds trust, boosts product visibility and drives technical adoption.",
     url: baseUrl + "/blog-as-service",
     siteName: "Studio1",
     locale: "en_US",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: "Blog as Service | Studio1",
     card: "summary_large_image",
     description:
-      "Creating developer-focused content that builds trust and drives technical adoption",
+      "We create developer-focused content that builds trust, boosts product visibility and drives technical adoption.",
   },
 };
 

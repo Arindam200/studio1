@@ -92,42 +92,42 @@ export const Data = {
     {
       title: "Quality",
       description:
-        "that ensures engaging project-based tutorials, guides, and use cases for developers.",
+        "Premium developer content at 50% less cost than other technical agencies.",
       icon: CubeFocus,
     },
     {
       title: "Experience",
-      description: "that helps in making content both accurate and engaging.",
+      description: "From seed-stage startups to NASDAQ-listed companies, we've supported launches, crafted dev-friendly contents and scaled developer adoption.",
       icon: Lightning,
     },
     {
       title: "Expertise",
       description:
-        "that covers AI, ML, Python, Cloud, WebDev, DevOps, modern APIs, and more.",
+        "AI, ML, DevOps, Python, Cloud, WebDev and API integrations - our team knows tech.",
       icon: Nut,
     },
     {
       title: "Support",
       description:
-        "that makes us an extension of your team, collaborating until you're 100% satisfied.",
+        "We operate as an embedded team — fast iterations, no hand-holding required.",
       icon: Headset,
     },
     {
       title: "Results",
       description:
-        "that have reached 600K+ readers, delivering content that ranks and converts.",
+        "1M+ content views across blogs, tutorials and videos, driving visibility, credibility and product growth.",
       icon: ChartBar,
     },
     {
       title: "Collaboration",
       description:
-        "that led to 15+ projects in just 4 months, partnering with top software companies.",
+        "20+ successful partnerships in last 8 months, fast-moving teams trust us to deliver.",
       icon: Handshake,
     },
     {
       title: "Testimonials",
       description:
-        "that showcase 100+ positive client reviews, reflecting our impact and trust.",
+        "Trusted by founders, CMOs and DevRel teams to create content that drives real developer impact.",
       icon: ChatCenteredDots,
     },
   ],
@@ -210,7 +210,7 @@ export const Data = {
       title:
         "Building an AI-powered finance planner with full-stack Next.js and Nebius AI Studio",
       description:
-        "In this guide, we’ll build an AI-powered financial planner using the Meta Llama 3.1 70B model via Nebius AI Studio and a full-stack Next.js app. This solution works seamlessly whether you’re using the Pages Router or the App Router, as much of the customization relies on setting up a custom Next.js server.",
+        "In this guide, we'll build an AI-powered financial planner using the Meta Llama 3.1 70B model via Nebius AI Studio and a full-stack Next.js app. This solution works seamlessly whether you're using the Pages Router or the App Router, as much of the customization relies on setting up a custom Next.js server.",
       link: "https://nebius.com/blog/posts/building-ai-powered-finance-planner",
       image:
         "https://storage.ai.nebius.cloud/www-gpu-assets/pages/blog/building-ai-powered-finance-planner/sharing1.jpg",
@@ -269,7 +269,7 @@ export const Data = {
     {
       title: "Creating your own AI-powered code generator and reviewer",
       description:
-        "In this hands-on tutorial, you’ll learn how to create a powerful code generation and review application that you can customize to your exact needs. We’ll use Nebius AI Studio and open-source models, making it both cost-effective and extensible.",
+        "In this hands-on tutorial, you'll learn how to create a powerful code generation and review application that you can customize to your exact needs. We'll use Nebius AI Studio and open-source models, making it both cost-effective and extensible.",
       link: "https://nebius.com/blog/posts/building-ai-powered-code-generator",
       image:
         "https://media.licdn.com/dms/image/v2/D4E22AQHXtGpgMsH-BA/feedshare-shrink_800/feedshare-shrink_800/0/1733485301047?e=2147483647&v=beta&t=ZEE4MK-HOS0rbxXkwGi7rqTA9GWxoON8u4L3EXp4tNo",
@@ -344,7 +344,7 @@ export const Data = {
       title:
         "Hiring in the Open - How Companies Can Discover Top Talent via Opire",
       description:
-        "In this article, we’re going to discuss how Opire’s approach saves companies time and resources while giving developers an effective way to stand out.",
+        "In this article, we're going to discuss how Opire's approach saves companies time and resources while giving developers an effective way to stand out.",
       link: "https://dev.to/opire/hiring-in-the-open-how-companies-can-discover-top-talent-via-opire-k4h",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fz9zn9tnxmbfwyhu7pm55.gif",
@@ -456,7 +456,7 @@ export const Data = {
     {
       title: "Building and Deploying TypeScript Microservices to Kubernetes",
       description:
-        "In this tutorial, you’ll learn how to build a microservice with Encore.ts, and deploy it to a Kubernetes cluster in your AWS account. We’ll show you how to deploying your microservices.",
+        "In this tutorial, you'll learn how to build a microservice with Encore.ts, and deploy it to a Kubernetes cluster in your AWS account. We'll show you how to deploying your microservices.",
       link: "https://dev.to/encore/building-and-deploying-typescript-microservices-to-kubernetes-3110",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fq8jei5qtmeckkmdx7hfj.png",
@@ -649,7 +649,7 @@ export const Data = {
       
       Their ability to create engaging content for developers has been a valuable addition to our educational content efforts. 
       
-      We’re excited to continue collaborating on future projects!`,
+      We're excited to continue collaborating on future projects!`,
       highlights: [
         "Studio1",
         "high-quality blogs",
@@ -812,53 +812,47 @@ export const Data = {
     {
       name: "Discovery",
       description:
-        "We analyze your current content strategy and identify opportunities for contribution and improvement.",
+        "We align with your product, team, and goals to shape a content strategy that makes sense.",
       icon: IconSearch,
       details: [
-        <p>Knowing Tech stack</p>,
-        <p>Analyze developer audience</p>,
-        <p>Identify content scope</p>,
-        <p>Initial communication</p>,
+        <p>Tech stack deep-dive</p>,
+        <p>Developer audience analysis</p>,
+        <p>Scope definition</p>,
+        <p>First sync</p>,
+      ],
+    },
+    {
+      name: "Creation",
+      description:
+        "Technical writers and engineers collaborate to produce high-quality, relevant content.",
+      icon: IconRocket,
+      details: [
+        <p>Code-rich, accurate technical writing</p>,
+        <p>Custom examples and use cases</p>,
+        <p>Technical validation + peer review</p>,
+        <p>SEO formatting and readability pass</p>,
       ],
     },
     {
       name: "Strategy",
       description:
-        "Develop a customized content plan aligned with your business goals and audience needs.",
+        "We build a repeatable content engine tailored to your goals.",
       icon: IconBulb,
-
       details: [
-        <p>Knowing content requirement</p>,
-        <p>Topic ideation</p>,
-        <p>Content format decision</p>,
-        <p>Distribution channel selection</p>,
+        <p>Topic ideation and prioritization</p>,
+        <p>Format selection (blog, guide, tutorial, etc.)</p>,
+        <p>Channel planning</p>,
       ],
     },
-
-    {
-      name: "Creation",
-      description:
-        "Our expert team of technical writers produces high-quality, engaging content.",
-      icon: IconRocket,
-
-      details: [
-        <p>Technical content development</p>,
-        <p>Custom code examples and demos</p>,
-        <p>Technical review and validation</p>,
-        <p>SEO optimization and formatting</p>,
-      ],
-    },
-
     {
       name: "Distribution",
       description:
-        "We publish and promote your content across multiple platforms to maximize reach.",
+        "We help push your content where devs actually see it.",
       icon: IconChartBar,
       details: [
-        <p>Multi-platform publishing</p>,
-        <p>Analytics review</p>,
-        <p>Social Media posts</p>,
-        <p>Developer community sharing</p>,
+        <p>Dev.to, Medium, company blogs</p>,
+        <p>Social sharing and analytics</p>,
+        <p>Developer community amplification</p>,
       ],
     },
   ],
@@ -892,51 +886,51 @@ export const Data = {
     {
       name: "Discovery",
       description:
-        "We analyze your current DevRel efforts and identify opportunities for improvement.",
+        "We assess your product, DevRel touchpoints, and community to uncover quick wins and long-term opportunities.",
       icon: IconSearch,
       details: [
         <p>Audit existing developer programs</p>,
         <p>Analyze community engagement</p>,
         <p>Identify growth opportunities</p>,
-        <p>Assessment report</p>,
+        <p>Provide an actionable assessment report</p>,
       ],
     },
     {
       name: "Strategy",
       description:
-        "Develop a customized roadmap aligned with your business goals and developer needs.",
+        "We craft a tailored DevRel roadmap aligned with your goals — across content, community, education, and advocacy.",
       icon: IconBulb,
       details: [
         <p>Custom roadmap creation</p>,
-        <p>Resource allocation</p>,
-        <p>Timeline planning</p>,
-        <p>KPI definition</p>,
+        <p>Resource and role planning</p>,
+        <p>Timeline and campaign mapping</p>,
+        <p>KPI and success metrics definition</p>,
       ],
     },
 
     {
-      name: "Implementation",
+      name: "Creation",
       description:
-        "Execute the strategy with our experienced team of DevRel professionals.",
+        "Our writers and DevRel engineers produce content and campaigns that drive trust, clarity, and developer engagement.",
       icon: IconRocket,
       details: [
-        <p>Content creation</p>,
-        <p>Community building</p>,
-        <p>Plan exciting campaigns</p>,
-        <p>Developer engagement</p>,
+        <p>Technical content creation</p>,
+        <p>Community activation initiatives</p>,
+        <p>Campaign planning and execution</p>,
+        <p>Developer engagement strategies</p>,
       ],
     },
 
     {
-      name: "Measurement",
+      name: "Distribution",
       description:
-        "Track KPIs and adjust strategies based on data-driven insights.",
+        "We publish and amplify your content across the right developer channels — and iterate based on performance.",
       icon: IconChartBar,
       details: [
-        <p>Performance tracking</p>,
-        <p>Analytics review</p>,
-        <p>Strategy adjustment</p>,
-        <p>ROI measurement</p>,
+        <p>Community-based promotion</p>,
+        <p>Analytics and performance reviews</p>,
+        <p>Strategic iteration</p>,
+        <p>ROI and impact tracking</p>,
       ],
     },
   ],
@@ -945,37 +939,37 @@ export const Data = {
     {
       title: "Technical Content Creation",
       description:
-        "High-quality tutorials, documentation, and technical blog posts that resonate with developers.",
+        "Developer-focused blogs, docs, and tutorials that drive clarity and adoption.",
       icon: IconCode,
     },
     {
       title: "Community Management",
       description:
-        "Build and nurture a thriving developer community around your product or platform.",
+        "Build and manage active developer communities around your product or ecosystem.",
       icon: IconUsers,
     },
     {
       title: "Developer Education",
       description:
-        "Comprehensive training programs and workshops to help developers succeed with your tools.",
+        "Live workshops, tutorials, and onboarding flows to help devs succeed with your tool.",
       icon: IconBook,
     },
     {
       title: "Developer Support",
       description:
-        "Building a responsive developer community where questions are answered and solutions are shared collaboratively.",
+        "Responsive help channels and community-driven answers that developers can count on.",
       icon: IconMessage,
     },
     {
       title: "Video Content",
       description:
-        "Engaging video tutorials, product demos, and technical livestreams.",
+        "Engaging demos, product explainers and dev-focused livestreams.",
       icon: IconBrandYoutube,
     },
     {
       title: "Tool Audit",
       description:
-        "Strategic onboarding and developer experience assessment through comprehensive tool ecosystem analysis.",
+        "Developer experience audits and onboarding gap analysis to optimize your DX.",
       icon: IconGitBranch,
     },
   ],

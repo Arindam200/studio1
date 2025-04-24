@@ -9,6 +9,7 @@ import { navItems } from "@/constants/data";
 import { cn } from "@/lib/utils";
 import Logo from "../ui/svgs/logo";
 import { EnvelopeOpen } from "@phosphor-icons/react";
+import { ArrowRight } from "@phosphor-icons/react";
 
 export default function Navbar() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
@@ -104,8 +105,10 @@ export default function Navbar() {
 
           <div className="hidden md:flex justify-between gap-4 items-center">
             <SelectTheme />
-            <Button>
-              Contact Us <EnvelopeOpen className="ml-2" />
+            <Button asChild>
+              <a href="mailto:studioone.tech@gmail.com">
+                Contact Us <EnvelopeOpen className="ml-2" />
+              </a>
             </Button>
           </div>
 
@@ -171,8 +174,10 @@ export default function Navbar() {
             ))}
             <div className="flex items-center justify-between p-2 bg-accent/50 pr-2 pl-4 rounded-3xl mt-4">
               <SelectTheme />
-              <Button>
-                Contact Us <EnvelopeOpen className="ml-2" />
+              <Button asChild>
+                <a href="mailto:studioone.tech@gmail.com">
+                  Contact Us <EnvelopeOpen className="ml-2" />
+                </a>
               </Button>
             </div>
           </div>

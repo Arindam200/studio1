@@ -84,8 +84,7 @@ export default function Hero() {
             variants={itemVariants}
             className="md:text-xl text-base font-medium text-center"
           >
-            Build and nurture your developer <br /> community with our expert
-            DevRel strategies.
+            We help you build and grow developer communities with <br /> DevRel strategies tailored to your product and audience.
           </motion.p>
 
           <motion.div
@@ -105,13 +104,13 @@ export default function Hero() {
             className="grid grid-cols-2 gap-4 md:mt-14 mt-10"
           >
             <div className="flex bg-muted-foreground/10 w-40 flex-col gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">15+</div>
+              <div className="text-4xl font-bold">3</div>
               <div className="text-sm text-center">
                 Projects <br /> Completed
               </div>
             </div>
             <div className="flex flex-col bg-muted-foreground/10 w-40 gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">10+</div>
+              <div className="text-4xl font-bold">3</div>
               <div className="text-sm text-center">
                 Companies
                 <br /> Collaborated

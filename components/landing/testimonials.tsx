@@ -89,8 +89,7 @@ export default function Testimonials() {
             variants={headerVariants}
             className="text-center text-base mt-2 max-w-2xl"
           >
-            Here you will see what our clients say about us. Explore and make a
-            call directly to our HQ.
+            Hear from the founders, CEOs and team leads who trust Studio1 to tell their product story.
           </motion.p>
         </motion.div>
 

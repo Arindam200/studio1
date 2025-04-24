@@ -55,12 +55,12 @@ export default function Features() {
           <Sparkle className="size-4" /> Features
         </Badge>
         <div className="text-5xl font-medium text-center">
-          Why Work with Us?
+        Why Tech Companies Choose Studio1
         </div>
         <p className="text-center text-base mt-2">
-          Here you will see what we do and what we have to offer to you.
+        Studio1 delivers high-quality technical content and DevRel support
           <br />
-          Explore and make a call directly to our HQ.
+          that drives adoption and developer trust.
         </p>
       </motion.div>
 

@@ -85,12 +85,10 @@ export default function AboutUs() {
           variants={sectionAnimation}
         >
           <div className="text-3xl md:text-5xl font-semibold text-center leading-tight">
-            We amplify your technical voice <br /> in the digital landscape
+          Amplifying Your Product Story for Developers <br /> One Blog, Video and Initiatives at a Time
           </div>
           <div className="text-center text-sm md:text-base text-neutral-600 dark:text-neutral-400 font-semibold">
-            We help tech companies grow developer communities and boost
-            engagement <br className="hidden md:block" /> through DevRel
-            andtechnical content as a service. 🚀
+          We help tech companies grow developer communities and boost engagement <br className="hidden md:block" /> through DevRel and technical content that resonates.🚀
           </div>
 
           <div className="flex flex-wrap max-w-lg items-center justify-center gap-4 mt-14">

@@ -17,9 +17,9 @@ export default function Process() {
 
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold mb-4 md:text-5xl">
-          This is how we structure <br />
+        How We Deliver <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
-            our process
+          Developer-First DevRel
           </span>
         </h2>
         <p className="text-muted-foreground ">

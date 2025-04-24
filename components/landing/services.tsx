@@ -47,9 +47,9 @@ export default function Services() {
           </Badge>
           <div className="text-5xl font-medium">What we do?</div>
           <p className="text-center text-base mt-2">
-            Here you will see what we do and what we have to offer to you.
+          We craft technical blogs and DevRel programs that educate, convert and grow developer adoption.
             <br />
-            Explore and make a call directly to our HQ.
+            Here’s what we offer:
           </p>
         </motion.div>
         <div className="flex flex-col max-w-7xl mx-auto">
@@ -72,7 +72,7 @@ export default function Services() {
               </div>
               <div className="flex flex-col gap-2">
                 <Badge className="w-fit bg-accent text-foreground">
-                  14+ projects
+                  20+ projects delivered
                 </Badge>
                 <p className="text-4xl font-light text-left">
                   <span className="text-transparent bg-clip-text bg-gradient-to-br font-extrabold from-white via-primary/80 to-white">
@@ -98,7 +98,7 @@ export default function Services() {
               </div>
               <div className="flex flex-col gap-2">
                 <Badge className="w-fit bg-accent text-foreground">
-                  5+ projects
+                  3 projects completed
                 </Badge>
                 <p className="text-4xl font-light text-left">
                   <span className="text-transparent bg-clip-text bg-gradient-to-br font-extrabold from-white via-primary/80 to-white">
@@ -124,8 +124,8 @@ export default function Services() {
 
               <div className="flex flex-col items-start">
                 <div className="text-sm text-muted-foreground">
-                  We offer a wide range of services to help you grow your
-                  business.
+                  We offer a wide range of fractional devrel and content services to help you grow your
+                  product.
                 </div>
               </div>
             </div>

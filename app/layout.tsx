@@ -25,22 +25,34 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
 
   title: {
-    default: "Studio1 - Technical Content & DevRel Services",
+    default: "Studio1 – Technical Content & DevRel Agency for Developer Products",
     template: "%s | Studio1",
   },
-  description: "Empowering Your Voice in the Developer Community",
+  description: "Specialized technical content creation and DevRel services for developer-focused products. Boost developer engagement and drive product adoption.",
+  keywords: ["technical content", "developer relations", "DevRel", "developer marketing", "technical writing", "API documentation", "technical blog", "developer community"],
+  authors: [{ name: "Studio1" }],
   openGraph: {
-    title: "Studio1 - Technical Content & DevRel Services",
-    description: "Empowering Your Voice in the Developer Community",
+    title: "Studio1 - Technical Content & DevRel Agency for Developer Products",
+    description: "Specialized technical content creation and DevRel services for developer-focused products. Boost developer engagement and drive product adoption.",
     url: baseUrl,
     siteName: "Studio1",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: `${baseUrl}/opengraph-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Studio1 - Technical Content & DevRel Services"
+      }
+    ]
   },
   twitter: {
-    title: "Studio1 - Technical Content & DevRel Services",
+    title: "Studio1 - Technical Content & DevRel Agency for Developer Products",
     card: "summary_large_image",
-    description: "Empowering Your Voice in the Developer Community",
+    description: "Specialized technical content creation and DevRel services for developer-focused products. Boost developer engagement and drive product adoption.",
+    images: [`${baseUrl}/opengraph-image.png`],
+    creator: "@Studio1HQ"
   },
   robots: {
     index: true,
@@ -53,6 +65,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  alternates: {
+    canonical: baseUrl
+  }
 };
 
 export default function RootLayout({
@@ -81,12 +96,32 @@ export default function RootLayout({
           <Footer />
           <BottomNavbar />
         </ThemeProvider>
+        
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Studio1",
+              "url": baseUrl,
+              "logo": `${baseUrl}/logo.png`,
+              "description": "Specialized technical content creation and DevRel services for developer-focused products.",
+              "sameAs": [
+                "https://twitter.com/Studio1HQ",
+                "https://linkedin.com/company/studio1hq"
+                // Add other social profiles
+              ]
+            })
+          }}
+        />
+        
+        <Script
+          async
+          src="https://cloud.umami.is/script.js"
+          data-website-id="d2503074-d887-4016-9be5-90629ed32e70"
+        />
       </body>
-      <Script
-        async
-        src="https://cloud.umami.is/script.js"
-        data-website-id="d2503074-d887-4016-9be5-90629ed32e70"
-      />
     </html>
   );
 }

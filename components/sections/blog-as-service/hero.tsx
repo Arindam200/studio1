@@ -49,8 +49,7 @@ export default function Page() {
           </span>
 
           <p className="text-lg sm:w-[60rem] max-sm:mx-2.5 sm:text-2xl font-semibold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4 text-center">
-            Creating developer-focused content that builds trust and drives
-            technical adoption
+          We create developer-focused content that builds trust, boosts product visibility and drives technical adoption.
           </p>
 
           <div className="flex justify-center sm:py-8">

@@ -67,16 +67,17 @@ export default function Hero() {
             variants={itemVariants}
             className="md:text-xl text-base font-medium text-center"
           >
-            Creating developer-focused content that builds trust and <br />
-            drives technical adoption
+            We create developer-focused content that builds trust, boosts product visibility and drives technical adoption.
           </motion.p>
 
           <motion.div
             variants={itemVariants}
             className="flex md:flex-row mt-10 w-full gap-4 flex-col justify-center"
           >
-            <Button className=" h-14 w-full md:w-44">
-              Book a Call <IconPhoneFilled className="size-10" />
+            <Button className=" h-14 w-full md:w-44" asChild>
+              <a href="https://cal.com/studio1/collab" target="_blank" rel="noopener noreferrer">
+                Book a Call <IconPhoneFilled className="size-10" />
+              </a>
             </Button>
             <Button variant="secondary" className=" h-14 md:w-44 w-full">
               Explore Services <IconPackages className="size-10" />
@@ -88,22 +89,22 @@ export default function Hero() {
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:mt-14 mt-10"
           >
             <div className="flex bg-muted-foreground/10 w-40 flex-col gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">600K+</div>
+              <div className="text-4xl font-bold">1M+</div>
               <div className="text-sm text-center">
-                Blogs <br /> Views
+                blogs <br /> views
               </div>
             </div>
             <div className="flex flex-col bg-muted-foreground/10 w-40 gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">15+</div>
+              <div className="text-4xl font-bold">20+</div>
               <div className="text-sm text-center">
-                Projects <br /> Completed
+                projects <br /> delivered
               </div>
             </div>
             <div className="flex flex-col bg-muted-foreground/10 w-40 gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">10+</div>
+              <div className="text-4xl font-bold">18+</div>
               <div className="text-sm text-center">
-                Companies
-                <br /> Collaborated
+                companies
+                <br /> served
               </div>
             </div>
           </motion.div>

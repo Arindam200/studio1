@@ -21,23 +21,23 @@ const contentData = {
     points: [
       {
         icon: Target,
-        text: "Deliver exceptional value through innovation",
+        text: "Deliver clear, technical content that developers value",
       },
       {
         icon: Lightbulb,
-        text: "Foster creativity and continuous learning",
+        text: "Encourage creativity and constant learning",
       },
       {
         icon: TrendUp,
-        text: "Drive sustainable growth with measurable impact",
+        text: "Drive measurable growth with every project",
       },
       {
         icon: Users,
-        text: "Build partnerships based on trust and transparency",
+        text: "Build transparent, long-term partnerships",
       },
       {
         icon: Globe,
-        text: "Set industry standards through leadership",
+        text: "Lead with quality and developer-first thinking",
       },
     ],
   },
@@ -47,23 +47,23 @@ const contentData = {
     points: [
       {
         icon: Rocket,
-        text: "Transform challenges into elegant solutions",
+        text: "Turn technical complexity into developer-friendly storytelling",
       },
       {
         icon: HandHeart,
-        text: "Empower clients to achieve strategic objectives",
+        text: "Help clients hit growth goals through strategic content",
       },
       {
         icon: Heart,
-        text: "Cultivate an inclusive workplace for talent",
+        text: "Foster a collaborative and inclusive team culture",
       },
       {
         icon: Globe,
-        text: "Operate with commitment to sustainability",
+        text: "Commit to sustainable, long-term results",
       },
       {
         icon: Users,
-        text: "Create value for stakeholders and communities",
+        text: "Create meaningful impact for both SaaS teams and developer communities",
       },
     ],
   },
@@ -143,8 +143,7 @@ export const VisionMission = () => {
             Us?
           </h2>
           <p className="text-muted-foreground ">
-            We empower tech brands to build thriving <br /> developer
-            communities through DevRel and high-impact content.
+          We help SaaS teams build developer trust through <br /> high-impact content and DevRel strategy that scales with their product.
           </p>
         </div>
       </motion.div>

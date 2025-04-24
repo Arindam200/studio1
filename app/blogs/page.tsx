@@ -50,8 +50,7 @@ export default function Page({ searchParams }: PageProps) {
           </Badge>
           <span className="font-bold"> All Blogs </span>
           <p className="text-base font-semibold relative z-20 text-foreground py-4 text-center">
-            Build and nurture your developer <br /> community with our expert
-            DevRel strategies.
+          We help you build and grow developer communities with <br /> DevRel strategies tailored to your product and audience.
           </p>
           <div className="flex justify-center text-lg px-4 w-full">
             <Suspense fallback={<div>Loading...</div>}>

@@ -13,19 +13,19 @@ export default function Impact() {
       <div className="container flex max-sm:flex-col max-sm:px-5 justify-center gap-6 ">
         <CardWithGrid>
           <div className="w-full h-40 border font-bold border-orange-400 rounded-md p-3 flex flex-col justify-center items-center space-y-2">
-            <div className="text-center sm:text-5xl text-3xl">600k+</div>
+            <div className="text-center sm:text-5xl text-3xl">1M+</div>
             <div className="text-center text-2xl ">Total Blog Views</div>
           </div>
         </CardWithGrid>
         <CardWithGrid>
           <div className="w-full h-40 border font-bold border-orange-400 rounded-md p-3 flex flex-col justify-center items-center space-y-2">
-            <div className="text-center sm:text-5xl text-3xl">15+</div>
+            <div className="text-center sm:text-5xl text-3xl">3</div>
             <div className="text-center text-2xl ">Projects Delivered</div>
           </div>
         </CardWithGrid>
         <CardWithGrid>
           <div className="w-full h-40 border font-bold border-orange-400 rounded-md p-3 flex flex-col justify-center items-center space-y-2">
-            <div className="text-center sm:text-5xl text-3xl">10+</div>
+            <div className="text-center sm:text-5xl text-3xl">3</div>
             <div className="text-center text-2xl ">Tech Companies Served</div>
           </div>
         </CardWithGrid>

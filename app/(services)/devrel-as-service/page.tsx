@@ -12,11 +12,11 @@ import PricingSection from "@/components/pages/devrel-as-a-service/pricing";
 export const metadata: Metadata = {
   title: "Devrel as Service",
   description:
-    "Build and nurture your developer community with our expert DevRel strategies.",
+    "We help you build and grow developer communities with DevRel strategies tailored to your product and audience.",
   openGraph: {
     title: "DevRel as Service | Studio1",
     description:
-      "Build and nurture your developer community with our expert DevRel strategies.",
+      "We help you build and grow developer communities with DevRel strategies tailored to your product and audience.",
     url: baseUrl + "/devrel-as-service",
     siteName: "Studio1",
     locale: "en_US",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Devrel as Service | Studio1",
     card: "summary_large_image",
     description:
-      "Build and nurture your developer community with our expert DevRel strategies.",
+      "We help you build and grow developer communities with DevRel strategies tailored to your product and audience.",
   },
 };
 

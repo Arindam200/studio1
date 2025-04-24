@@ -84,7 +84,7 @@ export default function Footer() {
         <div className="absolute bottom-[8rem] sm:bottom-[8.5rem] backdrop-blur-sm z-[25] h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent w-full left-1/2 -translate-x-1/2"></div>
 
         {/* bottom shadow */}
-        <div className="bg-gradient-to-t from-background via-backgroun/80 blur-[1em] to-background/40 absolute bottom-[7rem] z-[22] w-full h-24"></div>
+        <div className="bg-gradient-to-t from-background via-background/80 blur-[1em] to-background/40 absolute bottom-[7rem] z-[22] w-full h-24"></div>
 
         <div className="max-w-7xl flex flex-col justify-between mx-auto h-[30rem] sm:h-[35rem] md:h-[40rem] z-[30] p-4 pt-10">
           <div className="flex flex-col mb-12 sm:mb-20 md:mb-0 w-full">

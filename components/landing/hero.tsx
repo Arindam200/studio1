@@ -122,40 +122,56 @@ export default function Hero() {
                 className="text-4xl font-semibold font-primary sm:text-5xl lg:text-[4rem] text-center md:font-medium"
                 variants={fadeInUp}
               >
-                Empowering Your Voice <br className="hidden md:block" /> in the
-                Developer Community
+                Amplify Your Voice <br className="hidden md:block" /> in the Developer Ecosystem
               </motion.div>
 
               <motion.div
                 className="sm:text-xl text-base mt-8 text-neutral-600 dark:text-neutral-500 text-center"
                 variants={fadeInUp}
               >
-                {/* make technical , drive result a span */}
-                Technical
+                Studio1 helps 
                 <span className="font-semibold text-foreground">
                   {" "}
-                  content
+                  devtool and SaaS teams
                 </span>{" "}
-                and DevRel{" "}
-                <span className="font-semibold text-foreground">
-                  strategies
-                </span>{" "}
-                <br /> that drive
+                create 
                 <span className="font-semibold text-foreground">
                   {" "}
-                  results
+                  technical content
                 </span>{" "}
+                <br />
+                and 
+                <span className="font-semibold text-foreground">
+                  {" "}
+                  DevRel strategies
+                </span>{" "}
+                that boost 
+                <span className="font-semibold text-foreground">
+                  {" "}
+                  growth
+                </span>{" "}
+                <br />
+                and 
+                <span className="font-semibold text-foreground">
+                  {" "}
+                  developer adoption
+                </span>
+                .
               </motion.div>
 
               <motion.div
                 className="mt-8 flex sm:flex-row flex-col sm:justify-center w-full gap-4 items-center"
                 variants={fadeInUp}
               >
-                <Button className=" w-full sm:w-44  h-12">
-                  Book a Call <Calendar className="size-14" />
+                <Button className=" w-full sm:w-44  h-12" asChild>
+                  <a href="https://cal.com/studio1/collab" target="_blank" rel="noopener noreferrer">
+                    Book a Call <Calendar className="size-14" />
+                  </a>
                 </Button>
-                <Button variant="secondary" className=" w-full sm:w-44 h-12">
-                  Learn More <ArrowDownRight className="size-4" />
+                <Button variant="secondary" className=" w-full sm:w-44 h-12" asChild>
+                  <a href="#why-us">
+                    Learn More <ArrowDownRight className="size-4" />
+                  </a>
                 </Button>
               </motion.div>
 

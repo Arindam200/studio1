@@ -24,12 +24,11 @@ export const Team = () => {
         <h2 className="text-4xl font-bold mb-4 md:text-5xl">
           Meet Our{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
-            Team
+            Leadership Team
           </span>{" "}
         </h2>
         <p className="text-muted-foreground ">
-          We empower tech brands to build thriving <br /> developer communities
-          through DevRel and high-impact content.
+        We’re a team of writers, engineers and DevRels <br /> who care about clarity, craft and developer outcomes.
         </p>
       </motion.div>
 

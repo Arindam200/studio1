@@ -21,7 +21,7 @@ const defaultCards = [
   {
     icon: <BarChart className="size-4 text-primary" />, // Analytics & growth
     title: "Community Growth",
-    description: "10K+ developers engaged through our initiatives",
+    description: "500+ developers engaged through our initiatives",
     date: "Updated Weekly",
     iconClassName: "text-primary",
     titleClassName:
@@ -32,8 +32,8 @@ const defaultCards = [
   {
     icon: <PenTool className="size-4 text-primary" />, // Content & writing
     title: "Content Impact",
-    description: "500K+ blog views and growing",
-    date: "Monthly Insights",
+    description: "1M+ content views and growing",
+    date: "Quick Insights",
     iconClassName: "text-primary",
     titleClassName:
       "text-primary transition-colors duration-300 hover:text-primary",
@@ -43,8 +43,8 @@ const defaultCards = [
   {
     icon: <Users className="size-4 text-primary" />, // DevRel success
     title: "DevRel Success",
-    description: "50+ partnerships & collaborations",
-    date: "Last Updated: Today",
+    description: "20+ partnerships & collaborations",
+    date: "Last Updated: April 2025",
     iconClassName: "text-primary",
     titleClassName:
       "text-primary transition-colors duration-300 hover:text-primary",
@@ -68,15 +68,15 @@ export function FeatureIllustration({ title }: FeatureIllustrationProps) {
         <div className="absolute flex flex-col items-center justify-center bottom-[2rem] left-1/2 -translate-x-1/2">
           <div className="flex items-center gap-2">
             <NumberTicker
-              value={1200}
+              value={1000}
               className="whitespace-pre-wrap text-8xl font-medium tracking-tighter text-primary dark:text-primary"
             />
             <p className="text-6xl font-medium tracking-tighter text-primary">
-              +
+              k+
             </p>
           </div>
           <div className="text-sm text-muted-foreground">
-            Hours of Experience
+            Total content views
           </div>
         </div>
       );

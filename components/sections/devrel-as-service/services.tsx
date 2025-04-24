@@ -12,14 +12,14 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center my-10">
           <div className="text-center  font-semibold lg:text-5xl text-4xl mb-4">
-            Here are our <br />{" "}
+          What We <br />{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
-              offerings
+              Offer
             </span>
           </div>
           <p className=" mx-auto text-foreground/80 dark:text-neutral-400 text-sm md:text-base ">
-            Everything you need to build and maintain a successful{" "}
-            <br className="hidden md:block" /> developer relations program.
+          End-to-end support for building a strong developer relations program {" "}
+            <br className="hidden md:block" /> from content to community.
           </p>
         </div>
 
