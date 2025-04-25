@@ -122,36 +122,37 @@ export default function Hero() {
                 className="text-4xl font-semibold font-primary sm:text-5xl lg:text-[4rem] text-center md:font-medium"
                 variants={fadeInUp}
               >
-                Amplify Your Voice <br className="hidden md:block" /> in the Developer Ecosystem
+                Amplify Your Voice <br className="hidden md:block" /> in the
+                Developer Ecosystem
               </motion.div>
 
               <motion.div
-                className="sm:text-xl text-base mt-8 text-neutral-600 dark:text-neutral-500 text-center"
+                className="sm:text-xl text-base text-balance mt-8 text-neutral-600 dark:text-neutral-400 text-center"
                 variants={fadeInUp}
               >
-                Studio1 helps 
+                Studio1 helps
                 <span className="font-semibold text-foreground">
                   {" "}
                   devtool and SaaS teams
                 </span>{" "}
-                create 
+                create
                 <span className="font-semibold text-foreground">
                   {" "}
                   technical content
                 </span>{" "}
                 <br />
-                and 
+                and
                 <span className="font-semibold text-foreground">
                   {" "}
                   DevRel strategies
                 </span>{" "}
-                that boost 
+                that boost
                 <span className="font-semibold text-foreground">
                   {" "}
                   growth
                 </span>{" "}
                 <br />
-                and 
+                and
                 <span className="font-semibold text-foreground">
                   {" "}
                   developer adoption
@@ -164,11 +165,19 @@ export default function Hero() {
                 variants={fadeInUp}
               >
                 <Button className=" w-full sm:w-44  h-12" asChild>
-                  <a href="https://cal.com/studio1/collab" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://cal.com/studio1/collab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Book a Call <Calendar className="size-14" />
                   </a>
                 </Button>
-                <Button variant="secondary" className=" w-full sm:w-44 h-12" asChild>
+                <Button
+                  variant="secondary"
+                  className=" w-full sm:w-44 h-12"
+                  asChild
+                >
                   <a href="#why-us">
                     Learn More <ArrowDownRight className="size-4" />
                   </a>

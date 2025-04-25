@@ -38,7 +38,7 @@ export default function BlogSection() {
           </p>
         </div>
       </motion.div>
-      <div className="min-h-[600px] p-4 flex flex-col justify-center rounded-md space-y-4">
+      <div className="min-h-[600px] max-w-7xl mx-auto p-4 flex flex-col justify-center rounded-md space-y-4">
         <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {cards.map((item, index) => {
             switch (item.version) {
