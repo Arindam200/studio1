@@ -10,6 +10,7 @@ import {
   Megaphone,
   UsersFour,
 } from "@phosphor-icons/react";
+import Link from "next/link";
 
 export default function Hero() {
   // Animation variants
@@ -84,18 +85,27 @@ export default function Hero() {
             variants={itemVariants}
             className="md:text-xl text-base font-medium text-center"
           >
-            We help you build and grow developer communities with <br /> DevRel strategies tailored to your product and audience.
+            We help you build and grow developer communities with <br /> DevRel
+            strategies tailored to your product and audience.
           </motion.p>
 
           <motion.div
             variants={itemVariants}
             className="flex md:flex-row mt-10 w-full gap-4 flex-col justify-center"
           >
-            <Button className=" h-14 w-full md:w-44">
-              Book a Call <IconPhoneFilled className="size-10" />
+            <Button asChild className=" h-14 w-full md:w-44">
+              <Link href="https://cal.com/studio1/collab">
+                Book a Call <IconPhoneFilled className="size-10" />
+              </Link>
             </Button>
-            <Button variant="secondary" className=" h-14 md:w-44 w-full">
-              Explore Services <IconPackages className="size-10" />
+            <Button
+              asChild
+              variant="secondary"
+              className=" h-14 md:w-44 w-full"
+            >
+              <Link href="#work">
+                Explore Services <IconPackages className="size-10" />
+              </Link>
             </Button>
           </motion.div>
 

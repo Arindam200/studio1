@@ -253,7 +253,7 @@ export default function Hero() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={testimonialVariant}
-          className="border shadow-xl dark:shadow-none dark:border flex md:mt-0 md:max-w-[26rem] p-4 bg-white/10 backdrop-blur-xl z-[101] rounded-xl h-60 md:h-56 items-center justify-center flex-col absolute bottom-[-4rem] md:bottom-[2rem] left-1/2 -translate-x-1/2 md:translate-x-0  md:left-[60%] w-full"
+          className="border shadow-xl dark:shadow-none dark:border flex md:mt-0 md:max-w-[26rem] p-4 bg-white/10 backdrop-blur-xl z-[101] rounded-xl h-60 md:h-56 items-center justify-center flex-col absolute bottom-[-4rem] md:bottom-[0rem] left-1/2 -translate-x-1/2 md:translate-x-0 md:left-[50%]  lg:left-[60%] w-full"
         >
           <div className="flex items-center justify-center">
             <Image

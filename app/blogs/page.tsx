@@ -26,16 +26,24 @@ export const metadata: Metadata = {
   },
 };
 
-interface PageProps {
-  searchParams?: {
-    query?: string;
-    tags?: string;
-  };
-}
+export default async function Page(props: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const searchParams = await props.searchParams;
 
-export default function Page({ searchParams }: PageProps) {
-  const query = searchParams?.query || "";
-  const tags = searchParams?.tags?.split(",") || ["All"];
+  // Handle query param
+  const query =
+    typeof searchParams?.query === "string" ? searchParams.query : "";
+
+  // Handle tags param (can be string, array, or undefined)
+  let tags: string[] = ["All"];
+  if (searchParams?.tags) {
+    if (Array.isArray(searchParams.tags)) {
+      tags = searchParams.tags.flatMap((t) => t.split(","));
+    } else {
+      tags = searchParams.tags.split(",");
+    }
+  }
 
   return (
     <section className="overflow-x-hidden">
@@ -50,7 +58,8 @@ export default function Page({ searchParams }: PageProps) {
           </Badge>
           <span className="font-bold"> All Blogs </span>
           <p className="text-base font-semibold relative z-20 text-foreground py-4 text-center">
-          We help you build and grow developer communities with <br /> DevRel strategies tailored to your product and audience.
+            We help you build and grow developer communities with <br /> DevRel
+            strategies tailored to your product and audience.
           </p>
           <div className="flex justify-center text-lg px-4 w-full">
             <Suspense fallback={<div>Loading...</div>}>

@@ -31,7 +31,7 @@ export const Version1 = ({
     >
       <Link
         href={hrefLink}
-        className="border-2 group hover:-translate-y-1 transition-all duration-500 flex items-center overflow-hidden relative flex-col justify-center px-8 bg-accent/20 h-[16rem] rounded-lg"
+        className="border-2 group py-6 hover:-translate-y-1 transition-all duration-500 flex items-center overflow-hidden relative flex-col justify-center px-8 bg-accent/20 h-[16rem] rounded-lg"
       >
         <div
           className={cn(
@@ -44,6 +44,9 @@ export const Version1 = ({
           Blog
         </Badge>
         <div className="text-center font-semibold text-base">{title}</div>
+        <div className="text-center mt-2 flex-1 font-semibold text-xs text-muted-foreground">
+          {description?.slice(0, 100)}...
+        </div>
 
         <div className="flex flex-wrap-gap-2 mt-4 gap-2">
           {tags.map((item) => {

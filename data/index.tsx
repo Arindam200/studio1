@@ -50,42 +50,63 @@ export const Data = {
       name: "Latitude",
       designation: "LLM development platform",
       image: "/assets/latitude.png",
+      href: "",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     },
     {
       id: 2,
       name: "Encore",
       designation: "TS Framework",
       image: "/assets/encore.png",
+      href: "",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     },
     {
       id: 3,
       name: "CopilotKit",
       designation: "AI Agents",
       image: "/assets/copilotkit.png",
+      href: "",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     },
     {
       id: 4,
       name: "Permit.io",
       designation: "Authorization as a Service",
       image: "/assets/permit.jpg",
+      href: "",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     },
     {
       id: 5,
       name: "Crawlee",
       designation: "Web Scraping framework",
       image: "/assets/crawlee.png",
+      href: "",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     },
     {
       id: 6,
       name: "Tolgee",
       designation: "i18n tool",
       image: "/assets/tolgee.png",
+      href: "",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     },
     {
       id: 7,
       name: "Nebius",
       designation: "AI Cloud",
       image: "/assets/nebius.jpg",
+      href: "",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     },
   ],
   Features: [
@@ -97,7 +118,8 @@ export const Data = {
     },
     {
       title: "Experience",
-      description: "From seed-stage startups to NASDAQ-listed companies, we've supported launches, crafted dev-friendly contents and scaled developer adoption.",
+      description:
+        "From seed-stage startups to NASDAQ-listed companies, we've supported launches, crafted dev-friendly contents and scaled developer adoption.",
       icon: Lightning,
     },
     {
@@ -846,8 +868,7 @@ export const Data = {
     },
     {
       name: "Distribution",
-      description:
-        "We help push your content where devs actually see it.",
+      description: "We help push your content where devs actually see it.",
       icon: IconChartBar,
       details: [
         <p>Dev.to, Medium, company blogs</p>,

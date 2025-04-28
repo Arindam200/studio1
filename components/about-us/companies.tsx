@@ -44,7 +44,7 @@ export const Companies = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * (index % 3), duration: 0.7 }}
                 whileHover={{ y: -5, transition: { duration: 0.3 } }}
-                className="border-2 bg-accent z-20 backdrop-blur-2xl dark:bg-muted-foreground/5 flex-col w-full h-fit py-10 md:aspect-square rounded-xl flex items-center justify-center"
+                className="border-2 bg-accent px-3 z-20 backdrop-blur-2xl dark:bg-muted-foreground/5 flex-col w-full h-fit py-10 md:aspect-square rounded-xl flex items-center justify-center"
               >
                 <div className="w-32">
                   <Image
@@ -57,6 +57,9 @@ export const Companies = () => {
                 </div>
                 <div className="h-16 flex items-center justify-center text-lg font-semibold">
                   {item.name}
+                </div>
+                <div className="text-sm text-balance text-center text-muted-foreground">
+                  {item.description}
                 </div>
               </motion.div>
             );
