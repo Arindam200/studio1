@@ -13,6 +13,8 @@ const jobOpenings = [
   {
     id: 1,
     title: "Senior Product Designer",
+    description:
+      "We're looking for a Senior Product Designer to join our team. You'll be responsible for designing and iterating on our product's user interface and experience.",
     department: "Design",
     location: "San Francisco, CA",
     type: "Full-time",
@@ -22,6 +24,8 @@ const jobOpenings = [
   {
     id: 2,
     title: "Frontend Developer",
+    description:
+      "We're looking for a Frontend Developer to join our team. You'll be responsible for building and iterating on our product's user interface and experience.",
     department: "Engineering",
     location: "New York, NY",
     type: "Full-time",
@@ -31,6 +35,8 @@ const jobOpenings = [
   {
     id: 3,
     title: "Marketing Specialist",
+    description:
+      "We're looking for a Marketing Specialist to join our team. You'll be responsible for marketing and iterating on our product's user interface and experience.",
     department: "Marketing",
     location: "Austin, TX",
     type: "Full-time",
@@ -40,6 +46,8 @@ const jobOpenings = [
   {
     id: 4,
     title: "UX Researcher",
+    description:
+      "We're looking for a UX Researcher to join our team. You'll be responsible for researching and iterating on our product's user interface and experience.",
     department: "Design",
     location: "Seattle, WA",
     type: "Full-time",
@@ -49,6 +57,8 @@ const jobOpenings = [
   {
     id: 5,
     title: "Backend Engineer",
+    description:
+      "We're looking for a Backend Engineer to join our team. You'll be responsible for building and iterating on our product's user interface and experience.",
     department: "Engineering",
     location: "Remote",
     type: "Full-time",
@@ -58,6 +68,8 @@ const jobOpenings = [
   {
     id: 6,
     title: "Product Manager",
+    description:
+      "We're looking for a Product Manager to join our team. You'll be responsible for managing and iterating on our product's user interface and experience.",
     department: "Product",
     location: "Chicago, IL",
     type: "Full-time",
@@ -249,7 +261,10 @@ const Careers = () => {
                     )}
                   />
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-4">{job.title}</h3>
+                    <h3 className="text-xl font-semibold mb-1">{job.title}</h3>
+                    <p className="text-sm mb-6 text-muted-foreground">
+                      {job.description.slice(0, 100)}...
+                    </p>
 
                     <div className="space-y-2 mb-5">
                       <div className="flex items-center text-neutral-500 dark:text-neutral-300 font-semibold text-xs">

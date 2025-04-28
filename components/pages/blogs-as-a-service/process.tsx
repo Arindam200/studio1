@@ -19,7 +19,7 @@ export default function Process() {
         <h2 className="text-4xl text-foreground font-bold mb-4 text- md:text-5xl">
           How We Deliver <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
-            Developer-First DevRel
+            Developer-First Content
           </span>
         </h2>
         <p className="text-muted-foreground ">

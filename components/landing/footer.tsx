@@ -151,12 +151,12 @@ export default function Footer() {
                 >
                   Careers
                 </Link>
-                <Link
+                {/* <Link
                   className="hover:text-foreground duration-300 hover:font-semibold"
                   href={"/case-studies"}
                 >
                   Case Studies
-                </Link>
+                </Link> */}
                 <Link
                   className="hover:text-foreground duration-300 hover:font-semibold"
                   href={"/blog-as-service"}
