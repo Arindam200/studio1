@@ -127,37 +127,47 @@ export default function Hero() {
               </motion.div>
 
               <motion.div
-                className="sm:text-xl text-base text-balance mt-8 text-neutral-600 dark:text-neutral-400 text-center"
+                className="sm:text-xl text-base text-balance mt-8 text-neutral-600 dark:text-neutral-300 text-center"
                 variants={fadeInUp}
               >
-                Studio1 helps
-                <span className="font-semibold text-foreground">
-                  {" "}
-                  devtool and SaaS teams
-                </span>{" "}
-                create
-                <span className="font-semibold text-foreground">
-                  {" "}
-                  technical content
-                </span>{" "}
-                <br />
-                and
-                <span className="font-semibold text-foreground">
-                  {" "}
-                  DevRel strategies
-                </span>{" "}
-                that boost
-                <span className="font-semibold text-foreground">
-                  {" "}
-                  growth
-                </span>{" "}
-                <br />
-                and
-                <span className="font-semibold text-foreground">
-                  {" "}
-                  developer adoption
-                </span>
-                .
+                {/* For mobile screens - no spans */}
+                <div className="sm:hidden">
+                  Studio1 helps devtool and SaaS teams create technical content
+                  and DevRel strategies that boost growth and developer
+                  adoption.
+                </div>
+
+                {/* For larger screens - with spans */}
+                <div className="hidden sm:block">
+                  Studio1 helps
+                  <span className="font-semibold text-foreground">
+                    {" "}
+                    devtool and SaaS teams
+                  </span>{" "}
+                  create
+                  <span className="font-semibold text-foreground">
+                    {" "}
+                    technical content
+                  </span>{" "}
+                  <br />
+                  and
+                  <span className="font-semibold text-foreground">
+                    {" "}
+                    DevRel strategies
+                  </span>{" "}
+                  that boost
+                  <span className="font-semibold text-foreground">
+                    {" "}
+                    growth
+                  </span>{" "}
+                  <br />
+                  and
+                  <span className="font-semibold text-foreground">
+                    {" "}
+                    developer adoption
+                  </span>
+                  .
+                </div>
               </motion.div>
 
               <motion.div
