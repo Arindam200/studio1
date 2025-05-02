@@ -54,11 +54,11 @@ export default function Features() {
         <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 flex gap-2 items-center">
           <Sparkle className="size-4" /> Features
         </Badge>
-        <div className="text-5xl font-medium text-center">
-        Why Tech Companies Choose Studio1
+        <div className="text-5xl max-sm:text-4xl font-medium text-center">
+          Why Tech Companies Choose Studio1
         </div>
-        <p className="text-center text-base mt-2">
-        Studio1 delivers high-quality technical content and DevRel support
+        <p className="text-center text-base max-sm:text-sm mt-2">
+          Studio1 delivers high-quality technical content and DevRel support
           <br />
           that drives adoption and developer trust.
         </p>

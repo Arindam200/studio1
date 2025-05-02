@@ -46,7 +46,7 @@ export default function Services() {
             <Cube weight="fill" className="size-4" /> Services
           </Badge>
           <div className="text-5xl font-medium">What we do?</div>
-          <p className="text-center text-base mt-2">
+          <p className="text-center text-base max-sm:text-sm mt-2">
           We craft technical blogs and DevRel programs that educate, convert and grow developer adoption.
             <br />
             Here’s what we offer:

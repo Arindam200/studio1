@@ -43,10 +43,10 @@ export const Version1 = ({
           <Pencil className="size-4" />
           Blog
         </Badge>
-        <div className="text-center font-semibold text-base">{title}</div>
-        <div className="text-center mt-2 flex-1 font-semibold text-xs text-muted-foreground">
+        <div className="text-center font-bold text-lg">{title}</div>
+        {/* <div className="text-center mt-2 flex-1 font-semibold text-xs text-muted-foreground">
           {description?.slice(0, 100)}...
-        </div>
+        </div> */}
 
         <div className="flex flex-wrap-gap-2 mt-4 gap-2">
           {tags.map((item) => {

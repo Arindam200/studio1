@@ -11,6 +11,7 @@ import MarketaImg from "../public/assets/Marketa.png";
 import React from "react";
 import PermitFull from "@/public/assets/Permit-full.png";
 import TolgeeFull from "@/public/assets/Tolgee-full.svg";
+import JesseImg from "@/public/assets/Jesse.png";
 import {
   IconAugmentedReality,
   IconBolt,
@@ -587,28 +588,11 @@ export const Data = {
   ],
   Testimonials: [
     {
-      name: "Saurav Jain",
-      role: "DevRel, Crawlee",
-      avatar: SauravImg.src,
-      content: `Arindam and Studio1 team work really great with technical posts, they are super quick and write deeply technical articles that reaches to the right devleoper audiences through their absolute fantastic distribution system. 
-      
-      Highly recommended. 💯`,
-      highlights: [
-        "Arindam",
-        "Studio1",
-        "technical",
-        "posts",
-        "super",
-        "quick",
-        "deeply",
-        "technical",
-        "articles",
-        "fantastic",
-        "distribution",
-        "system",
-        "Highly",
-        "recommended",
-      ],
+      name: "Jesse Williams",
+      role: "Founder, Jozu",
+      avatar: JesseImg.src,
+      content: `We've used Studio1 to lead our open source and closed source community building and developer awareness work for just over a year. Their contributions and work has helped us drive adoption and awareness with our audience. Their team has deep experience in our space, interfacing with our team perfectly, and going above to help us grow.`,
+      highlights: []
     },
     {
       name: "Marketa Cizmar",
@@ -662,6 +646,30 @@ export const Data = {
       avatar: AgitaImg.src,
       content: `Very fast, good-quality work, results! Nothing to add; I totally recommend working with Amitesh !`,
       highlights: ["Amitesh", "good-quality"],
+    },
+    {
+      name: "Saurav Jain",
+      role: "DevRel, Crawlee",
+      avatar: SauravImg.src,
+      content: `Arindam and Studio1 team work really great with technical posts, they are super quick and write deeply technical articles that reaches to the right devleoper audiences through their absolute fantastic distribution system. 
+      
+      Highly recommended. 💯`,
+      highlights: [
+        "Arindam",
+        "Studio1",
+        "technical",
+        "posts",
+        "super",
+        "quick",
+        "deeply",
+        "technical",
+        "articles",
+        "fantastic",
+        "distribution",
+        "system",
+        "Highly",
+        "recommended",
+      ],
     },
     {
       name: "Nathan Telbert",

@@ -53,12 +53,10 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
           <div className="flex flex-col z-[50] mt-4 w-full gap-2">
             {item.details.map((element, index) => {
               return (
-                <>
-                  <div className="text-sm flex text-foreground font-semibold items-center gap-2 w-full">
-                    <CheckSquare className="size-6 text-primary" />
-                    {element}
-                  </div>
-                </>
+                <div key={index} className="text-sm flex text-foreground font-semibold items-center gap-2 w-full">
+                  <CheckSquare className="size-6 text-primary" />
+                  {element}
+                </div>
               );
             })}
           </div>
