@@ -122,41 +122,52 @@ export default function Hero() {
                 className="text-4xl font-semibold font-primary sm:text-5xl lg:text-[4rem] text-center md:font-medium"
                 variants={fadeInUp}
               >
-                Amplify Your Voice <br className="hidden md:block" /> in the Developer Ecosystem
+                Amplify Your Voice <br className="hidden md:block" /> in the
+                Developer Ecosystem
               </motion.div>
 
               <motion.div
-                className="sm:text-xl text-base mt-8 text-neutral-600 dark:text-neutral-500 text-center"
+                className="sm:text-xl text-base text-balance mt-8 text-neutral-600 dark:text-neutral-300 text-center"
                 variants={fadeInUp}
               >
-                Studio1 helps 
-                <span className="font-semibold text-foreground">
-                  {" "}
-                  devtool and SaaS teams
-                </span>{" "}
-                create 
-                <span className="font-semibold text-foreground">
-                  {" "}
-                  technical content
-                </span>{" "}
-                <br />
-                and 
-                <span className="font-semibold text-foreground">
-                  {" "}
-                  DevRel strategies
-                </span>{" "}
-                that boost 
-                <span className="font-semibold text-foreground">
-                  {" "}
-                  growth
-                </span>{" "}
-                <br />
-                and 
-                <span className="font-semibold text-foreground">
-                  {" "}
-                  developer adoption
-                </span>
-                .
+                {/* For mobile screens - no spans */}
+                <div className="sm:hidden">
+                  Studio1 helps devtool and SaaS teams create technical content
+                  and DevRel strategies that boost growth and developer
+                  adoption.
+                </div>
+
+                {/* For larger screens - with spans */}
+                <div className="hidden sm:block">
+                  Studio1 helps
+                  <span className="font-semibold text-foreground">
+                    {" "}
+                    devtool and SaaS teams
+                  </span>{" "}
+                  create
+                  <span className="font-semibold text-foreground">
+                    {" "}
+                    technical content
+                  </span>{" "}
+                  <br />
+                  and
+                  <span className="font-semibold text-foreground">
+                    {" "}
+                    DevRel strategies
+                  </span>{" "}
+                  that boost
+                  <span className="font-semibold text-foreground">
+                    {" "}
+                    growth
+                  </span>{" "}
+                  <br />
+                  and
+                  <span className="font-semibold text-foreground">
+                    {" "}
+                    developer adoption
+                  </span>
+                  .
+                </div>
               </motion.div>
 
               <motion.div
@@ -164,11 +175,19 @@ export default function Hero() {
                 variants={fadeInUp}
               >
                 <Button className=" w-full sm:w-44  h-12" asChild>
-                  <a href="https://cal.com/studio1/collab" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://cal.com/studio1/collab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Book a Call <Calendar className="size-14" />
                   </a>
                 </Button>
-                <Button variant="secondary" className=" w-full sm:w-44 h-12" asChild>
+                <Button
+                  variant="secondary"
+                  className=" w-full sm:w-44 h-12"
+                  asChild
+                >
                   <a href="#why-us">
                     Learn More <ArrowDownRight className="size-4" />
                   </a>
@@ -244,7 +263,7 @@ export default function Hero() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={testimonialVariant}
-          className="border shadow-xl dark:shadow-none dark:border flex md:mt-0 md:max-w-[26rem] p-4 bg-white/10 backdrop-blur-xl z-[101] rounded-xl h-60 md:h-56 items-center justify-center flex-col absolute bottom-[-4rem] md:bottom-[2rem] left-1/2 -translate-x-1/2 md:translate-x-0  md:left-[60%] w-full"
+          className="border shadow-xl dark:shadow-none dark:border flex md:mt-0 md:max-w-[26rem] p-4 bg-white/10 backdrop-blur-xl z-[101] rounded-xl h-60 md:h-56 items-center justify-center flex-col absolute bottom-[-4rem] md:bottom-[0rem] left-1/2 -translate-x-1/2 md:translate-x-0 md:left-[50%]  lg:left-[60%] w-full"
         >
           <div className="flex items-center justify-center">
             <Image

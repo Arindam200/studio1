@@ -29,8 +29,8 @@ export default function LightExpertiseIllustration({
         rx="42.5"
         transform="matrix(0.699579 0.714555 -0.715101 0.699021 762.621 498.091)"
         stroke="#C5C5D1"
-        stroke-opacity="0.66"
-        stroke-width="5"
+        strokeOpacity="0.66"
+        strokeWidth="5"
       />
       <rect
         width="339.954"
@@ -47,8 +47,8 @@ export default function LightExpertiseIllustration({
         rx="42.5"
         transform="matrix(0.699579 0.714555 -0.715101 0.699021 777.758 1.09137)"
         stroke="#C5C5D1"
-        stroke-opacity="0.66"
-        stroke-width="5"
+        strokeOpacity="0.66"
+        strokeWidth="5"
       />
       <rect
         width="339.954"
@@ -65,8 +65,8 @@ export default function LightExpertiseIllustration({
         rx="42.5"
         transform="matrix(0.699579 0.714555 -0.715101 0.699021 504.823 241.369)"
         stroke="#C5C5D1"
-        stroke-opacity="0.66"
-        stroke-width="5"
+        strokeOpacity="0.66"
+        strokeWidth="5"
       />
       <path
         d="M891.741 714.701C891.013 714.123 884.218 708.992 869.888 708.992C866.104 709.009 862.328 709.333 858.597 709.963C855.823 690.953 840.106 681.684 839.401 681.268L835.553 679.049L833.023 682.701C829.853 687.607 827.539 693.015 826.181 698.695C823.615 709.547 825.176 719.74 830.688 728.453C824.032 732.163 813.353 733.076 811.193 733.157H634.401C629.784 733.163 626.036 736.895 626.011 741.512C625.805 757 628.429 772.396 633.754 786.941C639.844 802.912 648.905 814.676 660.692 821.876C673.901 829.966 695.362 834.588 719.688 834.588C730.678 834.623 741.647 833.628 752.451 831.618C767.47 828.86 781.922 823.611 795.21 816.086C806.159 809.746 816.012 801.68 824.39 792.199C838.397 776.343 846.741 758.685 852.946 742.991H855.419C870.755 742.991 880.185 736.855 885.385 731.712C888.841 728.432 891.539 724.437 893.29 720.006L894.388 716.793L891.741 714.701Z"
@@ -123,8 +123,8 @@ export default function LightExpertiseIllustration({
         rx="42.5"
         transform="matrix(0.699579 0.714555 -0.715101 0.699021 1046.25 255.369)"
         stroke="#C5C5D1"
-        stroke-opacity="0.66"
-        stroke-width="5"
+        strokeOpacity="0.66"
+        strokeWidth="5"
       />
       <rect
         width="339.954"
@@ -141,8 +141,8 @@ export default function LightExpertiseIllustration({
         rx="42.5"
         transform="matrix(0.699579 0.714555 -0.715101 0.699021 245.621 524.369)"
         stroke="#C5C5D1"
-        stroke-opacity="0.66"
-        stroke-width="5"
+        strokeOpacity="0.66"
+        strokeWidth="5"
       />
       <rect
         x="1303.92"
@@ -161,8 +161,8 @@ export default function LightExpertiseIllustration({
         rx="42.5"
         transform="rotate(45.6291 1303.88 524.535)"
         stroke="#C5C5D1"
-        stroke-opacity="0.66"
-        stroke-width="5"
+        strokeOpacity="0.66"
+        strokeWidth="5"
       />
       <rect
         width="339.954"
@@ -179,8 +179,8 @@ export default function LightExpertiseIllustration({
         rx="42.5"
         transform="matrix(0.699579 0.714555 -0.715101 0.699021 1020.62 765.091)"
         stroke="#C5C5D1"
-        stroke-opacity="0.66"
-        stroke-width="5"
+        strokeOpacity="0.66"
+        strokeWidth="5"
       />
       <rect
         width="339.954"
@@ -197,8 +197,8 @@ export default function LightExpertiseIllustration({
         rx="42.5"
         transform="matrix(0.699579 0.714555 -0.715101 0.699021 504.823 785.369)"
         stroke="#C5C5D1"
-        stroke-opacity="0.66"
-        stroke-width="5"
+        strokeOpacity="0.66"
+        strokeWidth="5"
       />
       <path
         d="M772.5 126C707.615 126 655 178.331 655 242.886C655 294.53 688.667 338.343 735.354 353.799C741.226 354.881 743.383 351.264 743.383 348.176C743.383 345.389 743.273 336.181 743.223 326.414C710.534 333.485 703.636 312.623 703.636 312.623C698.291 299.113 690.59 295.521 690.59 295.521C679.929 288.266 691.393 288.414 691.393 288.414C703.193 289.24 709.406 300.46 709.406 300.46C719.885 318.33 736.893 313.163 743.598 310.177C744.653 302.622 747.698 297.466 751.058 294.547C724.96 291.591 697.524 281.568 697.524 236.781C697.524 224.021 702.114 213.593 709.631 205.408C708.411 202.463 704.39 190.575 710.77 174.475C710.77 174.475 720.636 171.333 743.091 186.456C752.463 183.866 762.515 182.568 772.5 182.524C782.486 182.568 792.546 183.866 801.936 186.456C824.364 171.333 834.217 174.475 834.217 174.475C840.612 190.575 836.589 202.463 835.369 205.408C842.902 213.593 847.461 224.02 847.461 236.781C847.461 281.675 819.973 291.561 793.809 294.454C798.023 298.081 801.779 305.195 801.779 316.099C801.779 331.738 801.642 344.326 801.642 348.176C801.642 351.287 803.757 354.931 809.714 353.784C856.375 338.31 890 294.512 890 242.886C890 178.331 837.392 126 772.5 126Z"
@@ -233,14 +233,14 @@ export default function LightExpertiseIllustration({
         fill="#1B1816"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M336.885 805.621C310.756 824.813 272.794 835.001 240.153 835.001C194.408 835.001 153.19 818.179 122.058 790.22C119.596 788.009 121.82 785.008 124.758 786.745C158.432 806.174 199.967 817.942 242.933 817.942C271.921 817.942 303.767 811.939 333.073 799.619C337.441 797.644 341.173 802.462 336.885 805.621V805.621Z"
         fill="#FF9900"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M347.769 793.301C344.433 789.036 325.691 791.247 317.193 792.274C314.652 792.59 314.255 790.379 316.558 788.72C331.488 778.295 356.028 781.296 358.887 784.771C361.746 788.325 358.093 812.729 344.116 824.418C341.971 826.234 339.907 825.287 340.86 822.917C344.036 815.098 351.104 797.487 347.769 793.301V793.301Z"
         fill="#FF9900"
       />
@@ -273,8 +273,8 @@ export default function LightExpertiseIllustration({
           y2="491.894"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#387EB8" />
-          <stop offset="1" stop-color="#366994" />
+          <stop stopColor="#387EB8" />
+          <stop offset="1" stopColor="#366994" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1515_123"
@@ -284,8 +284,8 @@ export default function LightExpertiseIllustration({
           y2="569.425"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFE052" />
-          <stop offset="1" stop-color="#FFC331" />
+          <stop stopColor="#FFE052" />
+          <stop offset="1" stopColor="#FFC331" />
         </linearGradient>
       </defs>
     </svg>

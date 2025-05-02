@@ -65,9 +65,10 @@ export default function Hero() {
 
           <motion.p
             variants={itemVariants}
-            className="md:text-xl text-base font-medium text-center"
+            className="md:text-xl text-balance w-full md:w-[50%] text-base font-medium text-center"
           >
-            We create developer-focused content that builds trust, boosts product visibility and drives technical adoption.
+            We create developer-focused content that builds trust, boosts
+            product visibility and drives technical adoption.
           </motion.p>
 
           <motion.div
@@ -75,7 +76,11 @@ export default function Hero() {
             className="flex md:flex-row mt-10 w-full gap-4 flex-col justify-center"
           >
             <Button className=" h-14 w-full md:w-44" asChild>
-              <a href="https://cal.com/studio1/collab" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://cal.com/studio1/collab"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Book a Call <IconPhoneFilled className="size-10" />
               </a>
             </Button>

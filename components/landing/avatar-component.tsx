@@ -1,6 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { SauravImg, NathanImg, MarketaImg, JuliaImg } from "@/constants/image";
+import Image from "next/image";
 
 export default function AvatarComponent({ className }: { className?: string }) {
   return (
@@ -11,33 +13,33 @@ export default function AvatarComponent({ className }: { className?: string }) {
       )}
     >
       <div className="flex -space-x-1.5">
-        <img
+        <Image
           className="rounded-full ring-1 ring-background"
-          src="https://originui.com/avatar-80-03.jpg"
+          src={SauravImg}
           width={30}
           height={30}
-          alt="Avatar 01"
+          alt="Saurav"
         />
-        <img
+        <Image
           className="rounded-full ring-1 ring-background"
-          src="https://originui.com/avatar-80-04.jpg"
+          src={NathanImg}
           width={30}
           height={30}
-          alt="Avatar 02"
+          alt="Nathan"
         />
-        <img
+        <Image
           className="rounded-full ring-1 ring-background"
-          src="https://originui.com/avatar-80-05.jpg"
+          src={MarketaImg}
           width={30}
           height={30}
-          alt="Avatar 03"
+          alt="Marketa"
         />
-        <img
+        <Image
           className="rounded-full ring-1 ring-background"
-          src="https://originui.com/avatar-80-06.jpg"
+          src={JuliaImg}
           width={30}
           height={30}
-          alt="Avatar 04"
+          alt="Julia"
         />
       </div>
       <p className="px-2 text-xs text-muted-foreground">

@@ -36,7 +36,7 @@ export default function Page() {
       <MinimalCardDemo />
       <Process />
       {/* <Team /> */}
-      <PricingSection />
+      {/* <PricingSection /> */}
     </div>
   );
 }

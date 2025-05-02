@@ -12,13 +12,13 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center my-10">
           <div className="text-center  font-semibold lg:text-5xl text-4xl mb-4">
-          What We <br />{" "}
+            What We <br />{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
               Offer
             </span>
           </div>
           <p className=" mx-auto text-foreground/80 dark:text-neutral-400 text-sm md:text-base ">
-          End-to-end support for building a strong developer relations program {" "}
+            End-to-end support for building a strong developer relations program{" "}
             <br className="hidden md:block" /> from content to community.
           </p>
         </div>
@@ -51,10 +51,7 @@ export default function Services() {
                 </div>
                 <div className="mt-4 flex-1 flex items-start justify-end flex-col">
                   <h3 className="text-lg">
-                    <a
-                      href="#"
-                      className="focus:outline-none font-semibold text-2xl "
-                    >
+                    <a className="focus:outline-none font-semibold text-2xl ">
                       <span className="absolute inset-0 " aria-hidden="true" />
                       {service.title}
                     </a>
