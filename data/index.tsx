@@ -921,7 +921,7 @@ export const Data = {
     },
     {
       name: "Marketa Cizmar",
-      role: "C0O, Tolgee",
+      role: "COO, Tolgee",
       avatar: MarketaImg.src,
       content: `Arindam wrote a technical article for us, and it was a pleasure working with him. He was friendly, responsive, and always quick to reply to any questions or feedback. 
       
