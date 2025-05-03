@@ -36,7 +36,7 @@ export const Version1 = ({
         <div
           className={cn(
             "bottom-[-29rem] group-hover:opacity-100 opacity-0 z-[-1] absolute bg-gradient-to-t from-primary/10 dark:from-primary to-orange-200 dark:to-primary/90 blur-[4em] rounded-3xl transition-all duration-700 ease-out w-[10rem] md:w-[30rem] h-[20rem] md:h-[30rem] rotate-[54deg]",
-            "left-[50%] translate-x-[-50%]"
+            "left-[50%] translate-x-[-50%]",
           )}
         />
         <Badge className="flex items-center gap-1 mb-4 py-1 rounded-md">

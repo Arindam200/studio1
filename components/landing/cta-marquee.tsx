@@ -14,7 +14,7 @@ export default function CTAmarquee({
       <div
         className={cn(
           "flex flex-col rotate-[2deg] gap-4 mb-20 border ",
-          className
+          className,
         )}
       >
         <Marquee className="[--duration:140s]" reverse={reverse}>

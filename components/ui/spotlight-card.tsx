@@ -32,7 +32,7 @@ interface SpotLightContextType {
 }
 
 const SpotLightContext = createContext<SpotLightContextType | undefined>(
-  undefined
+  undefined,
 );
 export const useSpotlight = () => {
   const context = useContext(SpotLightContext);
@@ -59,7 +59,7 @@ export const Spotlight = ({
       <div
         className={cn(
           className,
-          "group relative z-10 rounded-md  grid grid-cols-4 gap-2 "
+          "group relative z-10 rounded-md  grid grid-cols-4 gap-2 ",
         )}
       >
         {children}
@@ -107,7 +107,7 @@ export function SpotLightItem({ children, className }: SpotlightItemProps) {
       ref={boxWrapper}
       className={cn(
         className,
-        " relative rounded-lg justify-center items-center p-[2px] bg-[#ffffff15] overflow-hidden"
+        " relative rounded-lg justify-center items-center p-[2px] bg-[#ffffff15] overflow-hidden",
       )}
     >
       {isHovered && (

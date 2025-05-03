@@ -10,7 +10,7 @@ export const ComparisionMetric = ({ className }: { className?: string }) => {
       <div
         className={cn(
           "flex items-center justify-center relative gap-14",
-          className
+          className,
         )}
       >
         <div className="flex translate-y-10 flex-col -rotate-12 items-center gap-4 px-2 justify-center aspect-square rounded-xl h-[11rem] bg-accent/50 border dark:bg-accent/40">
@@ -22,10 +22,8 @@ export const ComparisionMetric = ({ className }: { className?: string }) => {
           </div>
           <div className="text-xs text-center">
             Build Better <br />
-            <span className="text-primary font-semibold mr-1">
-            Developer
-            </span>
-             Experiences
+            <span className="text-primary font-semibold mr-1">Developer</span>
+            Experiences
           </div>
         </div>
         <div className="flex flex-col items-center gap-4 px-2 justify-center aspect-square rounded-xl h-[11rem] scale-110 bg-accent/50 border dark:bg-accent/40">
@@ -50,7 +48,9 @@ export const ComparisionMetric = ({ className }: { className?: string }) => {
           </div>
           <div className="text-xs text-center">
             Blogs that <br />
-            <span className="text-primary font-semibold mr-1">Developers Love</span>
+            <span className="text-primary font-semibold mr-1">
+              Developers Love
+            </span>
             to read
           </div>
         </div>

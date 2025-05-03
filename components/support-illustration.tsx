@@ -19,7 +19,7 @@ export default function SupportIllustration({
       <div
         className={cn(
           "w-full min-h-[1rem] flex items-center justify-center px-4 gap-4",
-          className
+          className,
         )}
       >
         <div

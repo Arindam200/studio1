@@ -109,7 +109,7 @@ const itemVariants = {
 
 const Careers = () => {
   const [selectedDepartment, setSelectedDepartment] = useState<string | null>(
-    null
+    null,
   );
 
   const filteredJobs = selectedDepartment
@@ -117,7 +117,7 @@ const Careers = () => {
     : jobOpenings;
 
   const departments = Array.from(
-    new Set(jobOpenings.map((job) => job.department))
+    new Set(jobOpenings.map((job) => job.department)),
   );
 
   return (
@@ -259,7 +259,7 @@ const Careers = () => {
                   <div
                     className={cn(
                       "right-[-29rem] group-hover:opacity-100 opacity-0 z-[-1] absolute bg-gradient-to-t from-primary/10 dark:from-primary to-orange-200 dark:to-primary/90 blur-[4em] rounded-3xl transition-all duration-700 ease-out w-[10rem] md:w-[30rem] h-[20rem] md:h-[30rem] rotate-[54deg]",
-                      "left-[50%] translate-x-[30%]"
+                      "left-[50%] translate-x-[30%]",
                     )}
                   />
                   <div className="flex-1">
@@ -283,7 +283,9 @@ const Careers = () => {
                     </div>
                   </div>
                   <Button className="w-fit flex items-center gap-2 group">
-                    <Link href={"#"}>Apply now</Link>
+                    <Link href={"mailto:studioone.tech@gmail.com"}>
+                      Apply now
+                    </Link>
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Button>
                 </Card>

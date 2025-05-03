@@ -51,7 +51,7 @@ const RoadmapCard: React.FC<CardProps> = ({
   const rotate = useTransform(
     scrollYProgress,
     [0, 1],
-    [40, -index * 4] // Start with 20 degrees rotation, end with -i * 4 degrees
+    [40, -index * 4], // Start with 20 degrees rotation, end with -i * 4 degrees
   );
 
   return (

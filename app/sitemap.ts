@@ -10,12 +10,12 @@ export default async function sitemap() {
     "/about-us",
     "/case-studies",
     "/team",
-    "/pricing"
+    "/pricing",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString().split("T")[0],
     priority: route === "" ? 1.0 : 0.8,
-    changeFrequency: "weekly"
+    changeFrequency: "weekly",
   }));
 
   return [...routes];

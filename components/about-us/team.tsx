@@ -28,7 +28,8 @@ export const Team = () => {
           </span>{" "}
         </h2>
         <p className="text-muted-foreground ">
-        We’re a team of writers, engineers and DevRels <br /> who care about clarity, craft and developer outcomes.
+          We’re a team of writers, engineers and DevRels <br /> who care about
+          clarity, craft and developer outcomes.
         </p>
       </motion.div>
 
