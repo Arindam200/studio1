@@ -115,36 +115,54 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        <div className=" flex flex-wrap items-center mt-20 justify-center gap-4">
-          <div className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:-rotate-12 top-[15rem] left-[5rem]">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className=" flex flex-wrap items-center mt-20 justify-center gap-4"
+        >
+          <motion.div
+            variants={containerVariants}
+            className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:-rotate-12 top-[15rem] left-[5rem]"
+          >
             <Megaphone
               weight="fill"
               className="size-5 md:size-8 text-primary"
             />
             <span>Advocacy</span>
-          </div>
-          <div className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:rotate-12 top-[27rem] left-[10rem]">
+          </motion.div>
+          <motion.div
+            variants={containerVariants}
+            className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:rotate-12 top-[27rem] left-[10rem]"
+          >
             <GraduationCap
               weight="fill"
               className="size-5 md:size-8 text-primary"
             />
             <span>Education</span>
-          </div>
-          <div className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:rotate-12 top-[15rem] right-[5rem]">
+          </motion.div>
+          <motion.div
+            variants={containerVariants}
+            className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:rotate-12 top-[15rem] right-[5rem]"
+          >
             <CalendarCheck
               weight="fill"
               className="size-5 md:size-8 text-primary"
             />
             <span>Events</span>
-          </div>
-          <div className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:-rotate-12 top-[27rem] right-[10rem]">
+          </motion.div>
+          <motion.div
+            variants={containerVariants}
+            className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:-rotate-12 top-[27rem] right-[10rem]"
+          >
             <UsersFour
               weight="fill"
               className="size-5 md:size-8 text-primary"
             />
             <span>Community</span>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </>
   );

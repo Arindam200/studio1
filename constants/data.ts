@@ -19,7 +19,7 @@ import {
   StreamFull,
   SwytchcodeFull,
   StackqlFull,
-  Eachlab,
+  EachlabFull,
 } from "./image";
 import {
   Briefcase,
@@ -69,6 +69,7 @@ export const trustedbyLogo = [
   {
     name: "Nebius",
     image: NebiusFull,
+    isWhite: true,
     className:
       "h-5 sm:h-6 md:h-6 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200",
     alt: "Nebius",
@@ -76,6 +77,7 @@ export const trustedbyLogo = [
   {
     name: "Velt",
     image: VeltFull,
+    isWhite: true,
     className:
       "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
     alt: "Velt",
@@ -83,6 +85,7 @@ export const trustedbyLogo = [
   {
     name: "Stream",
     image: StreamFull,
+    isWhite: true,
     className:
       "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
     alt: "Stream",
@@ -90,20 +93,23 @@ export const trustedbyLogo = [
   {
     name: "Permit",
     image: PermitFull,
+    isWhite: true,
     className:
       "h-10 sm:h-12 md:h-16 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain dark:brightness-200",
     alt: "Permit",
   },
-  // {
-  //   name: "Eachlabs",
-  //   image: Eachlab,
-  //   className:
-  //     "h-6 sm:h-7 md:h-36 w-auto max-w-[80px] sm:max-w-[120px] md:max-w-[140px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
-  //   alt: "Eachlabs",
-  // },
+  {
+    name: "Eachlabs",
+    image: EachlabFull,
+    isWhite: true,
+    className:
+      "h-6 sm:h-7 md:h-8 w-auto max-w-[80px] sm:max-w-[120px] md:max-w-[140px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    alt: "Eachlabs",
+  },
   {
     name: "Latitude",
     image: LatitudeFull,
+    isWhite: true,
     className:
       "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain dark:brightness-200",
     alt: "Latitude",
@@ -111,20 +117,23 @@ export const trustedbyLogo = [
   {
     name: "Encore",
     image: EncoreFull,
+    isWhite: true,
     className:
       "h-10 sm:h-12 md:h-14 w-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] object-contain dark:brightness-200",
     alt: "Encore",
   },
-  // {
-  //   name: "ReadySet",
-  //   image: ReadySetFull,
-  //   className:
-  //     "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
-  //   alt: "ReadySet",
-  // },
+  {
+    name: "ReadySet",
+    image: ReadySetFull,
+    isWhite: false,
+    className:
+      "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
+    alt: "ReadySet",
+  },
   {
     name: "CopilotKit",
     image: CopilotkitFull,
+    isWhite: true,
     className:
       "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain dark:brightness-200",
     alt: "CopilotKit",
@@ -132,6 +141,7 @@ export const trustedbyLogo = [
   {
     name: "Crawlee",
     image: CrawleeFull,
+    isWhite: true,
     className:
       "h-10 sm:h-12 md:h-14 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200",
     alt: "Crawlee",
@@ -139,20 +149,23 @@ export const trustedbyLogo = [
   {
     name: "Tolgee",
     image: TolgeeFull,
+    isWhite: true,
     className:
       "h-8 sm:h-10 md:h-12 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200",
     alt: "Tolgee",
   },
-  // {
-  //   name: "Nitric",
-  //   image: NitricFull,
-  //   className:
-  //     "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
-  //   alt: "Nitric",
-  // },
+  {
+    name: "Nitric",
+    image: NitricFull,
+    isWhite: false,
+    className:
+      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    alt: "Nitric",
+  },
   {
     name: "WebCrumbs",
     image: WebcrumbsFull,
+    isWhite: true,
     className:
       "h-10 sm:h-12 md:h-16 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain dark:brightness-200",
     alt: "WebCrumbs",
@@ -160,6 +173,7 @@ export const trustedbyLogo = [
   {
     name: "KitOps",
     image: KitOpsFull,
+    isWhite: true,
     className:
       "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 [&>rect]:hidden",
     alt: "KitOps",
@@ -167,20 +181,23 @@ export const trustedbyLogo = [
   {
     name: "CodeRabbit",
     image: CodeRabbitFull,
+    isWhite: true,
     className:
       "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
     alt: "CodeRabbit",
   },
-  // {
-  //   name: "SwytchCode",
-  //   image: SwytchcodeFull,
-  //   className:
-  //     "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
-  //   alt: "Swytchcode",
-  // },
+  {
+    name: "SwytchCode",
+    image: SwytchcodeFull,
+    isWhite: false,
+    className:
+      "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
+    alt: "Swytchcode",
+  },
   {
     name: "StackQL",
     image: StackqlFull,
+    isWhite: false,
     className:
       "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
     alt: "Stackql",
@@ -188,6 +205,7 @@ export const trustedbyLogo = [
   {
     name: "Opire",
     image: OpireFull,
+    isWhite: true,
     className:
       "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
     alt: "Opire",

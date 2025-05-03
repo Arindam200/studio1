@@ -43,14 +43,15 @@ export default function Trustedby() {
       <motion.div variants={itemVariants}>
         <Marquee>
           {trustedbyLogo.map((item) => (
-            <Image
-              src={item.image}
-              key={item.name}
-              className="invert grayscale dark:invert-0 opacity-70 dark:opacity-50 mx-10 w-fit h-28 aspect-square object-contain"
-              alt={item.name}
-              width={100}
-              height={100}
-            />
+            <div className="flex items-center justify-center" key={item.name}>
+              <Image
+                src={item.image}
+                className={`${item.isWhite ? "grayscale invert dark:invert-0" : "invert-0 grayscale dark:invert"} ${item.alt === "Eachlabs" ? "h-14" : "h-24"} opactiy-70 mx-10 w-fit  aspect-square object-contain`}
+                alt={item.name}
+                width={1000}
+                height={1000}
+              />
+            </div>
           ))}
         </Marquee>
       </motion.div>

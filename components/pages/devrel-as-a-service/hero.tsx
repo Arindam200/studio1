@@ -131,11 +131,16 @@ export default function Hero() {
 
         <div className="top-[-15rem] left-[50%] z-[-1] opacity-50 dark:opacity-100 absolute bg-gradient-to-t from-primary/10 dark:from-primary to-orange-200 dark:to-orange-900/90 blur-[8em] rounded-xl transition-all translate-x-[-50%] duration-700 ease-out size-[20rem] rotate-[54deg]"></div>
 
-        <div className=" flex flex-wrap items-center mt-20 justify-center gap-4">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={containerVariants}
+          className=" flex flex-wrap items-center mt-20 justify-center gap-4"
+        >
           <motion.div
             initial="hidden"
             whileInView="visible"
-            variants={floatingTagVariants}
+            variants={containerVariants}
             className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:-rotate-12 top-[15rem] left-[8rem]"
           >
             <Megaphone
@@ -147,7 +152,7 @@ export default function Hero() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            variants={floatingTagVariants}
+            variants={containerVariants}
             className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:rotate-12 top-[27rem] left-[15rem]"
           >
             <GraduationCap
@@ -159,7 +164,7 @@ export default function Hero() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            variants={floatingTagVariants}
+            variants={containerVariants}
             className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:rotate-12 top-[15rem] right-[8rem]"
           >
             <CalendarCheck
@@ -171,7 +176,7 @@ export default function Hero() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            variants={floatingTagVariants}
+            variants={containerVariants}
             className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:-rotate-12 top-[27rem] right-[15rem]"
           >
             <UsersFour
@@ -180,7 +185,7 @@ export default function Hero() {
             />
             <span>Community</span>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
