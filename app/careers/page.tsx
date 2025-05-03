@@ -12,70 +12,72 @@ import { cn } from "@/lib/utils";
 const jobOpenings = [
   {
     id: 1,
-    title: "Senior Product Designer",
+    title: "Technical Writer (AI/ML)",
     description:
-      "We're looking for a Senior Product Designer to join our team. You'll be responsible for designing and iterating on our product's user interface and experience.",
-    department: "Design",
-    location: "San Francisco, CA",
-    type: "Full-time",
+      "We're looking for a Technical Writer (AI/ML) to join our team.The ideal candidate will have a strong understanding of AI/ML and be able to write about new trends in a way that is both technical and engaging.",
+    department: "AI/ML",
+    location: "Remote",
+    type: "Full-time ",
     isRemote: true,
     postedDate: "2 days ago",
+    isActive: true,
   },
   {
     id: 2,
-    title: "Frontend Developer",
+    title: "Technical Writer (MLOPs/DevOps)",
     description:
-      "We're looking for a Frontend Developer to join our team. You'll be responsible for building and iterating on our product's user interface and experience.",
-    department: "Engineering",
-    location: "New York, NY",
-    type: "Full-time",
+      "We're looking for a Technical Writer (MLOPs/DevOps) to join our team. The ideal candidate will have a strong understanding of MLOPs/DevOps and be able to write and explain complex concepts in a way that is both technical and engaging.",
+    department: "DevOps",
+    location: "Remote",
+    type: "Full-time / Part-time",
     isRemote: true,
     postedDate: "1 week ago",
+    isActive: true,
   },
-  {
-    id: 3,
-    title: "Marketing Specialist",
-    description:
-      "We're looking for a Marketing Specialist to join our team. You'll be responsible for marketing and iterating on our product's user interface and experience.",
-    department: "Marketing",
-    location: "Austin, TX",
-    type: "Full-time",
-    isRemote: false,
-    postedDate: "3 days ago",
-  },
-  {
-    id: 4,
-    title: "UX Researcher",
-    description:
-      "We're looking for a UX Researcher to join our team. You'll be responsible for researching and iterating on our product's user interface and experience.",
-    department: "Design",
-    location: "Seattle, WA",
-    type: "Full-time",
-    isRemote: true,
-    postedDate: "4 days ago",
-  },
-  {
-    id: 5,
-    title: "Backend Engineer",
-    description:
-      "We're looking for a Backend Engineer to join our team. You'll be responsible for building and iterating on our product's user interface and experience.",
-    department: "Engineering",
-    location: "Remote",
-    type: "Full-time",
-    isRemote: true,
-    postedDate: "Just now",
-  },
-  {
-    id: 6,
-    title: "Product Manager",
-    description:
-      "We're looking for a Product Manager to join our team. You'll be responsible for managing and iterating on our product's user interface and experience.",
-    department: "Product",
-    location: "Chicago, IL",
-    type: "Full-time",
-    isRemote: true,
-    postedDate: "2 weeks ago",
-  },
+  // {
+  //   id: 3,
+  //   title: "Marketing Specialist",
+  //   description:
+  //     "We're looking for a Marketing Specialist to join our team. You'll be responsible for marketing and iterating on our product's user interface and experience.",
+  //   department: "Marketing",
+  //   location: "Austin, TX",
+  //   type: "Full-time",
+  //   isRemote: false,
+  //   postedDate: "3 days ago",
+  // },
+  // {
+  //   id: 4,
+  //   title: "UX Researcher",
+  //   description:
+  //     "We're looking for a UX Researcher to join our team. You'll be responsible for researching and iterating on our product's user interface and experience.",
+  //   department: "Design",
+  //   location: "Seattle, WA",
+  //   type: "Full-time",
+  //   isRemote: true,
+  //   postedDate: "4 days ago",
+  // },
+  // {
+  //   id: 5,
+  //   title: "Backend Engineer",
+  //   description:
+  //     "We're looking for a Backend Engineer to join our team. You'll be responsible for building and iterating on our product's user interface and experience.",
+  //   department: "Engineering",
+  //   location: "Remote",
+  //   type: "Full-time",
+  //   isRemote: true,
+  //   postedDate: "Just now",
+  // },
+  // {
+  //   id: 6,
+  //   title: "Product Manager",
+  //   description:
+  //     "We're looking for a Product Manager to join our team. You'll be responsible for managing and iterating on our product's user interface and experience.",
+  //   department: "Product",
+  //   location: "Chicago, IL",
+  //   type: "Full-time",
+  //   isRemote: true,
+  //   postedDate: "2 weeks ago",
+  // },
 ];
 
 const containerVariants = {
@@ -275,7 +277,7 @@ const Careers = () => {
                         <Briefcase className="w-4 h-4 mr-2" />
                         <span>
                           {job.type}
-                          {job.isRemote && " • Remote"}
+                          {/* {job.isRemote && " • Remote"} */}
                         </span>
                       </div>
                     </div>
