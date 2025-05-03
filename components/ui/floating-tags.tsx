@@ -85,7 +85,7 @@ export function FloatingTags() {
               weight="duotone"
               className={cn(
                 "size-4",
-                selectedTags.includes(tag) ? "text-white" : "text-foreground"
+                selectedTags.includes(tag) ? "text-white" : "text-foreground",
               )}
             />
             <div className="bg-transparent text-xs md:text-sm w-fit">

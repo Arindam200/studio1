@@ -13,7 +13,7 @@ export const CollaboarationIllustration = ({
       <div
         className={cn(
           "w-full min-h-[1rem] flex items-center justify-center gap-4",
-          className
+          className,
         )}
       >
         <Marquee>

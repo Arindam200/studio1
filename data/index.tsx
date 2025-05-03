@@ -84,7 +84,8 @@ export const Data = {
       designation: "AI Cloud",
       image: Nebius,
       href: "https://nebius.com/",
-      description: "AI-centric cloud platform offering infrastructure for intensive AI workloads.",
+      description:
+        "AI-centric cloud platform offering infrastructure for intensive AI workloads.",
     },
     {
       id: 2,
@@ -92,7 +93,8 @@ export const Data = {
       designation: "Real-time Collaboration",
       image: Velt,
       href: "https://velt.dev/",
-      description: "Offers real-time collaboration tools for web applications, enabling features like live cursors and co-editing.",
+      description:
+        "Offers real-time collaboration tools for web applications, enabling features like live cursors and co-editing.",
     },
     {
       id: 3,
@@ -100,7 +102,8 @@ export const Data = {
       designation: "Authorization as a Service",
       image: Permit,
       href: "https://www.permit.io/",
-      description: "Provides a full-stack authorization framework, simplifying access control integration for developers.",
+      description:
+        "Provides a full-stack authorization framework, simplifying access control integration for developers.",
     },
     {
       id: 4,
@@ -108,7 +111,8 @@ export const Data = {
       designation: "LLM Development Platform",
       image: Latitude,
       href: "https://latitude.so/",
-      description: "Building LLM apps with advanced agentic reasoning and memory.",
+      description:
+        "Building LLM apps with advanced agentic reasoning and memory.",
     },
     {
       id: 5,
@@ -116,7 +120,8 @@ export const Data = {
       designation: "AI Search Engine",
       image: Encore,
       href: "https://encore.ai/",
-      description: "TypeScript-based framework for building backend applications.",
+      description:
+        "TypeScript-based framework for building backend applications.",
     },
     {
       id: 6,
@@ -124,7 +129,8 @@ export const Data = {
       designation: "AI Agents",
       image: Copilotkit,
       href: "https://www.copilotkit.ai/",
-      description: "Open-source platform to embed custom AI copilots in web apps.",
+      description:
+        "Open-source platform to embed custom AI copilots in web apps.",
     },
     {
       id: 7,
@@ -132,7 +138,8 @@ export const Data = {
       designation: "Web Scraping Framework",
       image: Crawlee,
       href: "https://crawlee.dev/",
-      description: "Web scraping and browser automation library for JavaScript and Python.",
+      description:
+        "Web scraping and browser automation library for JavaScript and Python.",
     },
     {
       id: 8,
@@ -140,7 +147,8 @@ export const Data = {
       designation: "i18n Tool",
       image: Tolgee,
       href: "https://tolgee.io/",
-      description: "Localization platform with in-context translation for web apps.",
+      description:
+        "Localization platform with in-context translation for web apps.",
     },
     {
       id: 9,
@@ -148,7 +156,8 @@ export const Data = {
       designation: "Database Caching",
       image: ReadySet,
       href: "https://readyset.io/",
-      description: "Caching layer for databases to speed up queries without code changes.",
+      description:
+        "Caching layer for databases to speed up queries without code changes.",
     },
     {
       id: 10,
@@ -164,7 +173,8 @@ export const Data = {
       designation: "AI Web Development",
       image: Webcrumbs,
       href: "https://www.webcrumbs.ai/",
-      description: "AI platform that automates frontend web development workflows.",
+      description:
+        "AI platform that automates frontend web development workflows.",
     },
     {
       id: 12,
@@ -172,7 +182,8 @@ export const Data = {
       designation: "MLOps Tools",
       image: KitOps,
       href: "https://kitops.org/",
-      description: "Open-source tool for packaging and versioning AI/ML models.",
+      description:
+        "Open-source tool for packaging and versioning AI/ML models.",
     },
     {
       id: 13,
@@ -196,7 +207,8 @@ export const Data = {
       designation: "Video-to-Anime AI",
       image: Eachlab,
       href: "https://eachlabs.com/",
-      description: "AI tool that transforms videos into anime-style animations.",
+      description:
+        "AI tool that transforms videos into anime-style animations.",
     },
     {
       id: 16,
@@ -212,7 +224,8 @@ export const Data = {
       designation: "Cloud Resource Query",
       image: Stackql,
       href: "https://stackql.io/",
-      description: "Query cloud infrastructure using SQL, like querying a database.",
+      description:
+        "Query cloud infrastructure using SQL, like querying a database.",
     },
     {
       id: 18,
@@ -455,7 +468,8 @@ export const Data = {
       version: 1,
     },
     {
-      title: "Stop Vibe Coding: Make Your AI SaaS Production-Ready with These 7 Tools",
+      title:
+        "Stop Vibe Coding: Make Your AI SaaS Production-Ready with These 7 Tools",
       description:
         "In this article, we will learn how to make your AI SaaS production-ready with these 7 tools.",
       link: "https://dev.to/arindam_1729/stop-vibe-coding-make-your-ai-saas-production-ready-with-these-7-tools-2pam/",
@@ -465,7 +479,8 @@ export const Data = {
       version: 1,
     },
     {
-      title: "How to Build a Ghibli-Style AI Video App Using Pixverse and Eachlabs",
+      title:
+        "How to Build a Ghibli-Style AI Video App Using Pixverse and Eachlabs",
       description:
         "In this article, we will learn how to build a Ghibli-Style AI Video App Using Pixverse and Eachlabs.",
       link: "https://dev.to/astrodevil/how-to-build-a-ghibli-style-ai-video-app-using-pixverse-and-eachlab-fhc",
@@ -485,7 +500,8 @@ export const Data = {
       version: 1,
     },
     {
-      title: "Build Google Sheets-Style Collaborative Comments in Your Web App Using TanStack Tables and Velt SDK",
+      title:
+        "Build Google Sheets-Style Collaborative Comments in Your Web App Using TanStack Tables and Velt SDK",
       description:
         "In this article, we will learn how to build a Google Sheets-Style Collaborative Comments in Your Web App Using TanStack Tables and Velt SDK.",
       link: "https://dev.to/astrodevil/build-google-sheets-style-collaborative-comments-in-your-web-app-using-tanstack-tables-and-velt-sdk-53lf",
@@ -495,7 +511,8 @@ export const Data = {
       version: 1,
     },
     {
-      title: "Build a React File Sharing App with Granular Access Controls (ReBAC)",
+      title:
+        "Build a React File Sharing App with Granular Access Controls (ReBAC)",
       description:
         "In this article, we will learn how to build a React File Sharing App with Granular Access Controls (ReBAC).",
       link: "https://dev.to/astrodevil/build-a-react-file-sharing-app-with-granular-access-controls-rebac-ka4",
@@ -515,7 +532,8 @@ export const Data = {
       version: 1,
     },
     {
-      title: "How to Make Your Postgres Database 100x Faster and 50% Cheaper with Readyset Cloud",
+      title:
+        "How to Make Your Postgres Database 100x Faster and 50% Cheaper with Readyset Cloud",
       description:
         "In this article, we will learn how to make your Postgres database 100x faster and 50% cheaper with Readyset Cloud.",
       link: "https://dev.to/astrodevil/how-to-make-your-postgres-database-100x-faster-and-50-cheaper-with-readyset-cloud-2n7j",
@@ -525,7 +543,8 @@ export const Data = {
       version: 1,
     },
     {
-      title: "Build Real-Time Presence Features Like Figma and Google Docs in Your App in Minutes",
+      title:
+        "Build Real-Time Presence Features Like Figma and Google Docs in Your App in Minutes",
       description:
         "In this article, we will learn how to build a real-time presence features like Figma and Google Docs in your app in minutes.",
       link: "https://dev.to/astrodevil/build-real-time-presence-features-like-figma-and-google-docs-in-your-app-in-minutes-1lae",
@@ -565,7 +584,8 @@ export const Data = {
       version: 1,
     },
     {
-      title: "Build an AI Travel Planner with CopilotKit, LangGraph & Google Maps API",
+      title:
+        "Build an AI Travel Planner with CopilotKit, LangGraph & Google Maps API",
       description:
         "In this article, we will learn how to build an AI Travel Planner with CopilotKit, LangGraph & Google Maps API.",
       link: "https://dev.to/copilotkit/build-an-ai-travel-planner-with-copilotkit-langgraph-google-maps-api-32fm",
@@ -595,7 +615,8 @@ export const Data = {
       version: 1,
     },
     {
-      title: "Fine-Grained Permissions and Bulk Messaging Made Simple with Permit.io and Resend",
+      title:
+        "Fine-Grained Permissions and Bulk Messaging Made Simple with Permit.io and Resend",
       description:
         "In this article, we will learn how to build a fine-grained permissions and bulk messaging made simple with Permit.io and Resend.",
       link: "https://dev.to/arindam_1729/fine-grained-permissions-and-bulk-messaging-made-simple-with-permitio-and-resend-1mm5",
@@ -780,7 +801,8 @@ export const Data = {
       version: 1,
     },
     {
-      title: "The Ultimate Stack for Serverless & Cloud-Native Developers in 2025",
+      title:
+        "The Ultimate Stack for Serverless & Cloud-Native Developers in 2025",
       description:
         "In this article, we will discuss the ultimate stack for serverless & cloud-native developers in 2025.",
       link: "https://dev.to/arindam_1729/the-ultimate-stack-for-serverless-cloud-native-developers-in-2025-38dc",
@@ -895,7 +917,7 @@ export const Data = {
       role: "Founder, Jozu",
       avatar: JesseImg.src,
       content: `We've used Studio1 to lead our open source and closed source community building and developer awareness work for just over a year. Their contributions and work has helped us drive adoption and awareness with our audience. Their team has deep experience in our space, interfacing with our team perfectly, and going above to help us grow.`,
-      highlights: []
+      highlights: [],
     },
     {
       name: "Marketa Cizmar",

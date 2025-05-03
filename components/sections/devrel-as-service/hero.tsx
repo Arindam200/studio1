@@ -12,7 +12,7 @@ export default function Page() {
         {/* <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div> */}
         <DotPattern
           className={cn(
-            "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+            "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]",
           )}
         />
         {/* <Spotlight /> */}
@@ -47,7 +47,8 @@ export default function Page() {
           </span>
 
           <p className="text-lg sm:w-[60rem] max-sm:mx-2.5 sm:text-2xl font-semibold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4 text-center">
-          We help you build and grow developer communities with <br /> DevRel strategies tailored to your product and audience.
+            We help you build and grow developer communities with <br /> DevRel
+            strategies tailored to your product and audience.
           </p>
 
           <div className="flex justify-center sm:py-8">

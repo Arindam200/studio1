@@ -38,7 +38,7 @@ export default function Navbar() {
       <header
         className={cn(
           "fixed left-0 right-0 top-0 py-2 z-[550] border-b bg-background/80 backdrop-blur-2xl transition-transform duration-300",
-          isVisible ? "translate-y-0" : "-translate-y-full"
+          isVisible ? "translate-y-0" : "-translate-y-full",
         )}
       >
         <nav className="flex z-20 max-w-7xl mx-auto h-16 px-4 rounded-2xl justify-between items-center">
@@ -80,7 +80,7 @@ export default function Navbar() {
                             className={cn(
                               "flex group justify-center  items-center w-14 h-14 border rounded-md",
                               sublistHover === index &&
-                                "group-hover:bg-gradient-to-br group-hover:from-primary via-primary group-hover:to-primary1"
+                                "group-hover:bg-gradient-to-br group-hover:from-primary via-primary group-hover:to-primary1",
                             )}
                           >
                             {
@@ -88,7 +88,7 @@ export default function Navbar() {
                                 weight="fill"
                                 className={cn(
                                   "size-6 text-foreground",
-                                  sublistHover === index && "text-white"
+                                  sublistHover === index && "text-white",
                                 )}
                               />
                             }
@@ -125,7 +125,7 @@ export default function Navbar() {
         <div
           className={cn(
             "md:hidden bg-background border shadow-2xl pb-6 transition-all duration-300 overflow-hidden",
-            isMenuOpen ? "max-h-[1000px] block translate-y-4" : "hidden "
+            isMenuOpen ? "max-h-[1000px] block translate-y-4" : "hidden ",
           )}
         >
           <div className="px-4 py-2 space-y-2">
@@ -137,7 +137,7 @@ export default function Navbar() {
                   onClick={() =>
                     item.children &&
                     setHoveredItem(
-                      hoveredItem === item.title ? null : item.title
+                      hoveredItem === item.title ? null : item.title,
                     )
                   }
                 >
@@ -146,7 +146,7 @@ export default function Navbar() {
                     <IconChevronDown
                       className={cn(
                         "size-4 transition-transform duration-200",
-                        hoveredItem === item.title && "rotate-180"
+                        hoveredItem === item.title && "rotate-180",
                       )}
                     />
                   )}

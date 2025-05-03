@@ -38,7 +38,12 @@ export const Companies = () => {
         <div className="grid max-w-4xl z-20 mx-auto grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
           {Data.Companies.map((item, index) => {
             return (
-              <Link href={item.href} key={index} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={item.href}
+                key={index}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <motion.div
                   initial={{ opacity: 0, y: 40, filter: "blur(5px)" }}
                   whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}

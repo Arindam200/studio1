@@ -9,7 +9,7 @@ export default function AvatarComponent({ className }: { className?: string }) {
     <div
       className={cn(
         "flex items-center rounded-full border border-border bg-background p-1 shadow shadow-black/5",
-        className
+        className,
       )}
     >
       <div className="flex -space-x-1.5">

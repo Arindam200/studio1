@@ -143,7 +143,8 @@ export const VisionMission = () => {
             Us?
           </h2>
           <p className="text-muted-foreground ">
-          We help SaaS teams build developer trust through <br /> high-impact content and DevRel strategy that scales with their product.
+            We help SaaS teams build developer trust through <br /> high-impact
+            content and DevRel strategy that scales with their product.
           </p>
         </div>
       </motion.div>

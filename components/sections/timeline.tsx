@@ -58,7 +58,7 @@ export const Timeline: React.FC<{ type: "Blog" | "Devrel" }> = ({ type }) => {
   const translateX = useTransform(
     scrollYProgress,
     [0.2, 0.8], // Adjust scroll range to complete before reaching the end
-    ["0%", `${-(totalWidth - 100)}%`] // Ensure full width is scrolled
+    ["0%", `${-(totalWidth - 100)}%`], // Ensure full width is scrolled
   );
 
   const finalData = type === "Blog" ? blogsProcess : devrelProcess;
@@ -100,7 +100,7 @@ export const Timeline: React.FC<{ type: "Blog" | "Devrel" }> = ({ type }) => {
                   key={index}
                   className={cn(
                     `absolute`,
-                    index >= 4 ? "invisible" : "visible"
+                    index >= 4 ? "invisible" : "visible",
                   )}
                   style={{
                     left: `${index * (100 / timelineData.length) + 100 / timelineData.length / 2}%`,

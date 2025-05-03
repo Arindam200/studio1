@@ -38,7 +38,7 @@ export function FeatureCard({ feature, index }: FeatureCardProps) {
       className={cn(
         "bg-accent dark:bg-accent/50 hover:shadow-xl transition-all duration-700 rounded-xl p-2 min-w-full min-h-[25rem] group",
         index === 0 && "md:col-span-2",
-        index === 3 && "md:col-span-2"
+        index === 3 && "md:col-span-2",
       )}
       variants={cardVariants}
       initial="hidden"
@@ -55,7 +55,7 @@ export function FeatureCard({ feature, index }: FeatureCardProps) {
               ? "right-[-20%] md:right-[-50%]"
               : "left-[0%] translate-x-[-50%]",
             index === 0 && "left-[50%] translate-x-[-50%]",
-            index === 3 && "left-[50%] translate-x-[-50%]"
+            index === 3 && "left-[50%] translate-x-[-50%]",
           )}
         />
 

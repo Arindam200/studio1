@@ -47,7 +47,8 @@ export default function Services() {
           </Badge>
           <div className="text-5xl font-medium">What we do?</div>
           <p className="text-center text-base max-sm:text-sm mt-2">
-          We craft technical blogs and DevRel programs that educate, convert and grow developer adoption.
+            We craft technical blogs and DevRel programs that educate, convert
+            and grow developer adoption.
             <br />
             Here’s what we offer:
           </p>
@@ -124,8 +125,8 @@ export default function Services() {
 
               <div className="flex flex-col items-start">
                 <div className="text-sm text-muted-foreground">
-                  We offer a wide range of fractional devrel and content services to help you grow your
-                  product.
+                  We offer a wide range of fractional devrel and content
+                  services to help you grow your product.
                 </div>
               </div>
             </div>
