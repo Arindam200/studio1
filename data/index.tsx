@@ -157,6 +157,16 @@ export const Data = {
 
   Allblogs: [
     {
+      title: "Understanding the Model Context Protocol: Architecture",
+      description:
+        "Model Context Protocol (MCP) offers a clean, open standard for connecting language models to real-world systems through a modular, plug-and-play interface. In this article, we explore how MCP works..",
+      link: "https://nebius.com/blog/posts/understanding-model-context-protocol-mcp-architecture",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8se47yg59oimb4sl06eg.gif",
+      tags: ["SEO"],
+      version: 1,
+    },
+    {
       title: "Building a Kanban Board with Next.js,Vercel AI and Tolgee",
       description:
         "In this article, we will build a real-time Kanban board in Next.js using WebSockets, with database support, AI support through the Vercel AI SDK and localization via Tolgee.",
@@ -235,8 +245,8 @@ export const Data = {
       description:
         "In this guide, we'll build an AI-powered financial planner using the Meta Llama 3.1 70B model via Nebius AI Studio and a full-stack Next.js app. This solution works seamlessly whether you're using the Pages Router or the App Router, as much of the customization relies on setting up a custom Next.js server.",
       link: "https://nebius.com/blog/posts/building-ai-powered-finance-planner",
-      image:
-        "https://storage.ai.nebius.cloud/www-gpu-assets/pages/blog/building-ai-powered-finance-planner/sharing1.jpg",
+      // image:
+      //   "https://storage.ai.nebius.cloud/www-gpu-assets/pages/blog/building-ai-powered-finance-planner/sharing1.jpg",
       tags: ["project-building"],
       version: 1,
     },
@@ -301,13 +311,53 @@ export const Data = {
     },
     {
       title:
-        "Build Real-Time Presence Features Like Figma and Google Docs in Your App in Minutes🚀🔥🧑‍💻",
+        "Build Real-Time Presence Features Like Figma and Google Docs in Your App in Minutes",
       description:
         "In this article, we will learn how to build real-time presence features like Figma and Google Docs in your app in minutes using Liveblocks.",
       link: "https://dev.to/astrodevil/build-real-time-presence-features-like-figma-and-google-docs-in-your-app-in-minutes-1lae",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn4ktzy1anqot0vjselc6.png",
 
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "Build a Real-Time Bidding System With Next.js and Stream",
+      description:
+        "Stream’s React Chat SDK with the JavaScript client will help us build a bidding app with support for rich messages, image uploads, videos and more.",
+      link: "https://thenewstack.io/build-a-real-time-bidding-system-with-next-js-and-stream/",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "Vibe Coding with Cursor AI: How to Build Figma-Style Comments",
+      description:
+        "In this article, we will learn how to build a Figma-Style Comments with Cursor and Velt.",
+      link: "https://dev.to/arindam_1729/vibe-coding-with-cursor-ai-how-to-build-figma-style-comments-556m",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "Stop Vibe Coding: Make Your AI SaaS Production-Ready with These 7 Tools",
+      description:
+        "In this article, we will learn how to make your AI SaaS production-ready with these 7 tools.",
+      link: "https://dev.to/arindam_1729/stop-vibe-coding-make-your-ai-saas-production-ready-with-these-7-tools-2pam/",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["general"],
+      version: 1,
+    },
+    {
+      title: "How to Build a Ghibli-Style AI Video App Using Pixverse and Eachlabs",
+      description:
+        "In this article, we will learn how to build a Ghibli-Style AI Video App Using Pixverse and Eachlabs.",
+      link: "https://dev.to/astrodevil/how-to-build-a-ghibli-style-ai-video-app-using-pixverse-and-eachlab-fhc",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
       tags: ["project-building"],
       version: 1,
     },
@@ -319,6 +369,126 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
       tags: ["general"],
+      version: 1,
+    },
+    {
+      title: "Build Google Sheets-Style Collaborative Comments in Your Web App Using TanStack Tables and Velt SDK",
+      description:
+        "In this article, we will learn how to build a Google Sheets-Style Collaborative Comments in Your Web App Using TanStack Tables and Velt SDK.",
+      link: "https://dev.to/astrodevil/build-google-sheets-style-collaborative-comments-in-your-web-app-using-tanstack-tables-and-velt-sdk-53lf",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "Build a React File Sharing App with Granular Access Controls (ReBAC)",
+      description:
+        "In this article, we will learn how to build a React File Sharing App with Granular Access Controls (ReBAC).",
+      link: "https://dev.to/astrodevil/build-a-react-file-sharing-app-with-granular-access-controls-rebac-ka4",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "Git, diffs, patches - thinking in changes, not just code",
+      description:
+        "In this article, we will learn how to think in changes, not just code.",
+      link: "https://dev.to/coderabbitai/git-diffs-patches-thinking-in-changes-not-just-code-2f0p",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["general"],
+      version: 1,
+    },
+    {
+      title: "How to Make Your Postgres Database 100x Faster and 50% Cheaper with Readyset Cloud",
+      description:
+        "In this article, we will learn how to make your Postgres database 100x faster and 50% cheaper with Readyset Cloud.",
+      link: "https://dev.to/astrodevil/how-to-make-your-postgres-database-100x-faster-and-50-cheaper-with-readyset-cloud-2n7j",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "Build Real-Time Presence Features Like Figma and Google Docs in Your App in Minutes",
+      description:
+        "In this article, we will learn how to build a real-time presence features like Figma and Google Docs in your app in minutes.",
+      link: "https://dev.to/astrodevil/build-real-time-presence-features-like-figma-and-google-docs-in-your-app-in-minutes-1lae",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "I Built a Social Media App in Minutes with Webcrumbs & Lovable!",
+      description:
+        "In this article, we will learn how to build a social media app in minutes with Webcrumbs and Lovable.",
+      link: "https://dev.to/arindam_1729/i-built-a-social-media-app-in-minutes-with-webcrumbs-lovable-4h7e",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "Authentication and Authorization with Firebase",
+      description:
+        "A step-by-step guide to building a secure, multi-tenant app using Firebase for authentication and storage, and Permit.io for fine-grained authorization—learn how to manage permissions, enforce access control, and debug policies with audit logs..",
+      link: "https://www.permit.io/blog/authentication-and-authorization-with-firebase",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["SEO"],
+      version: 1,
+    },
+    {
+      title: "Implementing Role Based Access Control (RABC) in React",
+      description:
+        "In this article, we will learn how to implement Role Based Access Control (RABC) in React.",
+      link: "https://www.permit.io/blog/implementing-react-rbac-authorization",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "Build an AI Travel Planner with CopilotKit, LangGraph & Google Maps API",
+      description:
+        "In this article, we will learn how to build an AI Travel Planner with CopilotKit, LangGraph & Google Maps API.",
+      link: "https://dev.to/copilotkit/build-an-ai-travel-planner-with-copilotkit-langgraph-google-maps-api-32fm",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "Build an AI-Powered, Open-Source Notion",
+      description:
+        "In this article, we will learn how to build an AI-Powered, Open-Source Notion.",
+      link: "https://dev.to/copilotkit/work-smarter-in-notion-add-a-copilot-with-copilotkit-50be",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "I built a Photo Editing App with Webcrumbs and GitHub Copilot",
+      description:
+        "In this article, we will learn how to build a photo editing app with Webcrumbs and GitHub Copilot.",
+      link: "https://dev.to/arindam_1729/how-webcrumbs-github-copilot-built-my-ui-without-me-writing-a-single-line-of-css-987",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "Fine-Grained Permissions and Bulk Messaging Made Simple with Permit.io and Resend",
+      description:
+        "In this article, we will learn how to build a fine-grained permissions and bulk messaging made simple with Permit.io and Resend.",
+      link: "https://dev.to/arindam_1729/fine-grained-permissions-and-bulk-messaging-made-simple-with-permitio-and-resend-1mm5",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
       version: 1,
     },
     {
@@ -496,8 +666,28 @@ export const Data = {
       tags: ["growth"],
       version: 1,
     },
+    {
+      title: "The Ultimate Stack for Serverless & Cloud-Native Developers in 2025",
+      description:
+        "In this article, we will discuss the ultimate stack for serverless & cloud-native developers in 2025.",
+      link: "https://dev.to/arindam_1729/the-ultimate-stack-for-serverless-cloud-native-developers-in-2025-38dc",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["growth"],
+      version: 1,
+    },
   ],
   Blogs: [
+    {
+      title: "Understanding the Model Context Protocol: Architecture",
+      description:
+        "Model Context Protocol (MCP) offers a clean, open standard for connecting language models to real-world systems through a modular, plug-and-play interface. In this article, we explore how MCP works..",
+      link: "https://nebius.com/blog/posts/understanding-model-context-protocol-mcp-architecture",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8se47yg59oimb4sl06eg.gif",
+      tags: ["seo"],
+      version: 1,
+    },
     {
       title: "Building a Kanban Board with Next.js,Vercel AI and Tolgee",
       description:
