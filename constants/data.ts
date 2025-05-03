@@ -8,9 +8,18 @@ import {
   CrawleeFull,
   OpireFull,
   EncoreFull,
+  VeltFull,
+  ReadySetFull,
+  NitricFull,
+  KitOpsFull,
+  CodeRabbitFull,
   amiteshNoBg,
   shivayNoBg,
   arindamNoBg,
+  StreamFull,
+  SwytchcodeFull,
+  StackqlFull,
+  EachlabFull,
 } from "./image";
 import {
   Briefcase,
@@ -58,73 +67,130 @@ export const serviceNavItems = [
 
 export const trustedbyLogo = [
   {
+    name: "Nebius",
+    image: NebiusFull,
+    className:
+      "h-5 sm:h-6 md:h-6 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200",
+    alt: "Nebius",
+  },
+  {
+    name: "Velt",
+    image: VeltFull,
+    className:
+      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    alt: "Velt",
+  },
+  {
+    name: "Stream",
+    image: StreamFull,
+    className:
+      "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
+    alt: "Stream",
+  },
+  {
     name: "Permit",
     image: PermitFull,
     className:
-      "h-10 sm:h-12 md:h-16 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain",
+      "h-10 sm:h-12 md:h-16 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain dark:brightness-200",
     alt: "Permit",
   },
   {
-    name: "Tolgee",
-    image: TolgeeFull,
+    name: "Eachlabs",
+    image: EachlabFull,
     className:
-      "h-8 sm:h-10 md:h-12 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain",
-    alt: "Tolgee",
+      "h-6 sm:h-7 md:h-8 w-auto max-w-[80px] sm:max-w-[120px] md:max-w-[140px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    alt: "Eachlabs",
+  },
+  {
+    name: "Latitude",
+    image: LatitudeFull,
+    className:
+      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain dark:brightness-200",
+    alt: "Latitude",
+  },
+  {
+    name: "Encore",
+    image: EncoreFull,
+    className:
+      "h-10 sm:h-12 md:h-14 w-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] object-contain dark:brightness-200",
+    alt: "Encore",
+  },
+  {
+    name: "ReadySet",
+    image: ReadySetFull,
+    className:
+      "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
+    alt: "ReadySet",
   },
   {
     name: "CopilotKit",
     image: CopilotkitFull,
     className:
-      "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain",
+      "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain dark:brightness-200",
     alt: "CopilotKit",
   },
-
-  {
-    name: "Nebius",
-    image: NebiusFull,
-    className:
-      "h-5 sm:h-6 md:h-6 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain",
-    alt: "Nebius",
-  },
-
-  {
-    name: "Latitude",
-    image: LatitudeFull,
-    className:
-      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain",
-    alt: "Latitude",
-  },
-
-  {
-    name: "Opire",
-    image: OpireFull,
-    className:
-      "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain",
-    alt: "Opire",
-  },
-
   {
     name: "Crawlee",
     image: CrawleeFull,
     className:
-      "h-10 sm:h-12 md:h-14 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain",
+      "h-10 sm:h-12 md:h-14 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200",
     alt: "Crawlee",
   },
-
   {
-    name: "Encore",
-    image: EncoreFull,
+    name: "Tolgee",
+    image: TolgeeFull,
     className:
-      "h-10 sm:h-12 md:h-14 w-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] object-contain",
-    alt: "Encore",
+      "h-8 sm:h-10 md:h-12 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200",
+    alt: "Tolgee",
   },
-
   {
-    name: "Webcrumbs",
+    name: "Nitric",
+    image: NitricFull,
+    className:
+      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    alt: "Nitric",
+  },
+  {
+    name: "WebCrumbs",
     image: WebcrumbsFull,
     className:
-      "h-10 sm:h-12 md:h-16 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain",
-    alt: "Webcrumbs",
+      "h-10 sm:h-12 md:h-16 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain dark:brightness-200",
+    alt: "WebCrumbs",
+  },
+  {
+    name: "KitOps",
+    image: KitOpsFull,
+    className:
+      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 [&>rect]:hidden",
+    alt: "KitOps",
+  },
+  {
+    name: "CodeRabbit",
+    image: CodeRabbitFull,
+    className:
+      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    alt: "CodeRabbit",
+  },
+  {
+    name: "SwytchCode",
+    image: SwytchcodeFull,
+    className:
+      "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
+    alt: "Swytchcode",
+  },
+  {
+    name: "StackQL",
+    image: StackqlFull,
+    className:
+      "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
+    alt: "Stackql",
+  },
+  {
+    name: "Opire",
+    image: OpireFull,
+    className:
+      "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
+    alt: "Opire",
   },
 ];
 

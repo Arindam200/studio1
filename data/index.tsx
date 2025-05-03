@@ -8,10 +8,42 @@ import AgitaImg from "../public/assets/Agita.png";
 import SauravImg from "../public/assets/Saurav.png";
 import NathanImg from "../public/assets/Nathan.png";
 import MarketaImg from "../public/assets/Marketa.png";
-import React from "react";
-import PermitFull from "@/public/assets/Permit-full.png";
-import TolgeeFull from "@/public/assets/Tolgee-full.svg";
 import JesseImg from "@/public/assets/Jesse.png";
+import React from "react";
+import {
+  Permit,
+  Tolgee,
+  Copilotkit,
+  Nebius,
+  Latitude,
+  Webcrumbs,
+  Crawlee,
+  Opire,
+  Eachlab,
+  Stream,
+  Swytchcode,
+  Stackql,
+  Encore,
+  Velt,
+  ReadySet,
+  Nitric,
+  KitOps,
+  CodeRabbit,
+  PermitFull,
+  TolgeeFull,
+  CopilotkitFull,
+  NebiusFull,
+  LatitudeFull,
+  WebcrumbsFull,
+  CrawleeFull,
+  OpireFull,
+  EncoreFull,
+  VeltFull,
+  ReadySetFull,
+  NitricFull,
+  KitOpsFull,
+  CodeRabbitFull,
+} from "@/constants/image";
 import {
   IconAugmentedReality,
   IconBolt,
@@ -48,66 +80,147 @@ export const Data = {
   Companies: [
     {
       id: 1,
-      name: "Latitude",
-      designation: "LLM development platform",
-      image: "/assets/latitude.png",
-      href: "",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+      name: "Nebius",
+      designation: "AI Cloud",
+      image: Nebius,
+      href: "https://nebius.com/",
+      description: "AI-centric cloud platform offering infrastructure for intensive AI workloads.",
     },
     {
       id: 2,
-      name: "Encore",
-      designation: "TS Framework",
-      image: "/assets/encore.png",
-      href: "",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+      name: "Velt",
+      designation: "Real-time Collaboration",
+      image: Velt,
+      href: "https://velt.dev/",
+      description: "Offers real-time collaboration tools for web applications, enabling features like live cursors and co-editing.",
     },
     {
       id: 3,
-      name: "CopilotKit",
-      designation: "AI Agents",
-      image: "/assets/copilotkit.png",
-      href: "",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+      name: "Permit.io",
+      designation: "Authorization as a Service",
+      image: Permit,
+      href: "https://www.permit.io/",
+      description: "Provides a full-stack authorization framework, simplifying access control integration for developers.",
     },
     {
       id: 4,
-      name: "Permit.io",
-      designation: "Authorization as a Service",
-      image: "/assets/permit.jpg",
-      href: "",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+      name: "Latitude",
+      designation: "LLM Development Platform",
+      image: Latitude,
+      href: "https://latitude.so/",
+      description: "Building LLM apps with advanced agentic reasoning and memory.",
     },
     {
       id: 5,
-      name: "Crawlee",
-      designation: "Web Scraping framework",
-      image: "/assets/crawlee.png",
-      href: "",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+      name: "Encore",
+      designation: "AI Search Engine",
+      image: Encore,
+      href: "https://encore.ai/",
+      description: "AI-powered search engine for secondhand items with refined search experiences.",
     },
     {
       id: 6,
-      name: "Tolgee",
-      designation: "i18n tool",
-      image: "/assets/tolgee.png",
-      href: "",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+      name: "CopilotKit",
+      designation: "AI Agents",
+      image: Copilotkit,
+      href: "https://www.copilotkit.ai/",
+      description: "Open-source platform to embed custom AI copilots in web apps.",
     },
     {
       id: 7,
-      name: "Nebius",
-      designation: "AI Cloud",
-      image: "/assets/nebius.jpg",
-      href: "",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+      name: "Crawlee",
+      designation: "Web Scraping Framework",
+      image: Crawlee,
+      href: "https://crawlee.dev/",
+      description: "Web scraping and browser automation library for JavaScript and Python.",
+    },
+    {
+      id: 8,
+      name: "Tolgee",
+      designation: "i18n Tool",
+      image: Tolgee,
+      href: "https://tolgee.io/",
+      description: "Localization platform with in-context translation for web apps.",
+    },
+    {
+      id: 9,
+      name: "ReadySet",
+      designation: "Database Caching",
+      image: ReadySet,
+      href: "https://readyset.io/",
+      description: "Caching layer for databases to speed up queries without code changes.",
+    },
+    {
+      id: 10,
+      name: "Nitric",
+      designation: "Cloud Framework",
+      image: Nitric,
+      href: "https://nitric.io/",
+      description: "Cloud-native backend framework with infra-as-code support.",
+    },
+    {
+      id: 11,
+      name: "WebCrumbs",
+      designation: "AI Web Development",
+      image: Webcrumbs,
+      href: "https://www.webcrumbs.ai/",
+      description: "AI platform that automates frontend web development workflows.",
+    },
+    {
+      id: 12,
+      name: "KitOps",
+      designation: "MLOps Tools",
+      image: KitOps,
+      href: "https://kitops.org/",
+      description: "Open-source tool for packaging and versioning AI/ML models.",
+    },
+    {
+      id: 13,
+      name: "CodeRabbit",
+      designation: "AI Code Review",
+      image: CodeRabbit,
+      href: "https://coderabbit.ai/",
+      description: "Context-aware, AI-powered platform for code reviews.",
+    },
+    {
+      id: 14,
+      name: "Opire",
+      designation: "Open Source Platform",
+      image: Opire,
+      href: "https://opire.dev/",
+      description: "Community platform for open-source project management.",
+    },
+    {
+      id: 15,
+      name: "Eachlabs",
+      designation: "Video-to-Anime AI",
+      image: Eachlab,
+      href: "https://eachlabs.com/",
+      description: "AI tool that transforms videos into anime-style animations.",
+    },
+    {
+      id: 16,
+      name: "SwytchCode",
+      designation: "Dev Environment Sync",
+      image: Swytchcode,
+      href: "https://swytchcode.com/",
+      description: "Keeps developer environments in sync across teams.",
+    },
+    {
+      id: 17,
+      name: "StackQL",
+      designation: "Cloud Resource Query",
+      image: Stackql,
+      href: "https://stackql.io/",
+      description: "Query cloud infrastructure using SQL, like querying a database.",
+    },
+    {
+      id: 18,
+      name: "Stream",
+      designation: "Chat & Activity APIs",
+      image: Stream,
+      href: "https://getstream.io/",
+      description: "APIs for scalable in-app chat and activity feeds.",
     },
   ],
   Features: [
@@ -784,55 +897,49 @@ export const Data = {
     },
     {
       name: "CopilotKit",
-      image:
-        "https://github.com/RecursivelyAI/CopilotKit/assets/746397/5890217b-524e-49c5-a89e-b8743d2acd51",
+      image: CopilotkitFull.src,
       className:
         "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain",
       alt: "CopilotKit",
     },
     {
       name: "Nebius",
-      image:
-        "https://companieslogo.com/img/orig/NBIS_BIG.D-f866f771.png?t=1729269594",
+      image: NebiusFull.src,
       className:
         "h-5 sm:h-6 md:h-6 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain",
       alt: "Nebius",
     },
     {
       name: "Latitude",
-      image:
-        "https://github.com/latitude-dev/latitude/assets/5465249/4783e122-7150-4bcc-96e0-a3c9c4c1c53b",
+      image: LatitudeFull.src,
       className:
         "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain",
       alt: "Latitude",
     },
     {
       name: "Opire",
-      image:
-        "https://opire.dev/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbig_logo.fa525053.svg&w=3840&q=75",
+      image: OpireFull.src,
       className:
         "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain",
       alt: "Opire",
     },
     {
       name: "Crawlee",
-      image: "https://crawlee.dev/img/crawlee-dark.svg",
+      image: CrawleeFull.src,
       className:
         "h-10 sm:h-12 md:h-14 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain",
       alt: "Crawlee",
     },
     {
       name: "Encore",
-      image:
-        "https://camo.githubusercontent.com/77d11bfd37de0bb015849c0305a4cd653bee5f656570ba78899594a67eb08a8c/68747470733a2f2f656e636f72652e6465762f6173736574732f696d672f6c6f676f2e737667",
+      image: EncoreFull.src,
       className:
         "h-10 sm:h-12 md:h-14 w-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] object-contain",
       alt: "Encore",
     },
     {
       name: "Webcrumbs",
-      image:
-        "https://camo.githubusercontent.com/9350767c2dd34b635f3e63e8e61798502bc4eee59df80accb9dc145af0d778c9/68747470733a2f2f63646e2e7765626372756d62732e6f72672f6173736574732f696d616765732f6272616e642f6c6f676f5f7265642e737667",
+      image: WebcrumbsFull.src,
       className:
         "h-10 sm:h-12 md:h-16 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain",
       alt: "Webcrumbs",

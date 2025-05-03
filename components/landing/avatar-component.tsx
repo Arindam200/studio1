@@ -43,7 +43,7 @@ export default function AvatarComponent({ className }: { className?: string }) {
         />
       </div>
       <p className="px-2 text-xs text-muted-foreground">
-        Trusted by <strong className="font-medium text-foreground">50+</strong>{" "}
+        Trusted by <strong className="font-medium text-foreground">cool</strong>{" "}
         founders.
       </p>
     </div>
