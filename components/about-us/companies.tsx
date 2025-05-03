@@ -2,6 +2,7 @@
 import { Data } from "@/data";
 import Image from "next/image";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 export const Companies = () => {
   return (
@@ -37,31 +38,32 @@ export const Companies = () => {
         <div className="grid max-w-4xl z-20 mx-auto grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
           {Data.Companies.map((item, index) => {
             return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40, filter: "blur(5px)" }}
-                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 * (index % 3), duration: 0.7 }}
-                whileHover={{ y: -5, transition: { duration: 0.3 } }}
-                className="border-2 bg-accent px-3 z-20 backdrop-blur-2xl dark:bg-muted-foreground/5 flex-col w-full h-fit py-10 md:aspect-square rounded-xl flex items-center justify-center"
-              >
-                <div className="w-32">
-                  <Image
-                    className="rounded-lg"
-                    src={item.image}
-                    width={1000}
-                    height={1000}
-                    alt={item.name}
-                  />
-                </div>
-                <div className="h-16 flex items-center justify-center text-lg font-semibold">
-                  {item.name}
-                </div>
-                <div className="text-sm text-balance text-center text-muted-foreground">
-                  {item.description}
-                </div>
-              </motion.div>
+              <Link href={item.href} key={index} target="_blank" rel="noopener noreferrer">
+                <motion.div
+                  initial={{ opacity: 0, y: 40, filter: "blur(5px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * (index % 3), duration: 0.7 }}
+                  whileHover={{ y: -5, transition: { duration: 0.3 } }}
+                  className="border-2 bg-accent px-3 z-20 backdrop-blur-2xl dark:bg-muted-foreground/5 flex-col w-full h-fit py-10 md:aspect-square rounded-xl flex items-center justify-center cursor-pointer"
+                >
+                  <div className="w-32">
+                    <Image
+                      className="rounded-lg"
+                      src={item.image}
+                      width={1000}
+                      height={1000}
+                      alt={item.name}
+                    />
+                  </div>
+                  <div className="h-16 flex items-center justify-center text-lg font-semibold">
+                    {item.name}
+                  </div>
+                  <div className="text-sm text-balance text-center text-muted-foreground">
+                    {item.description}
+                  </div>
+                </motion.div>
+              </Link>
             );
           })}
         </div>
