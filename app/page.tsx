@@ -1,15 +1,15 @@
-import { GridBackgroundDemo } from "@/components/sections/hero";
-import Trustedby from "@/components/sections/trustedby";
-import Service from "@/components/sections/services";
-import Features from "@/components/sections/features";
-import Testimonials from "@/components/sections/testimonials";
-
+import Hero from "@/components/landing/hero";
+import Trustedby from "@/components/landing/trustedby";
+import Services from "@/components/landing/services";
+import Features from "@/components/landing/features";
+import Testimonials from "@/components/landing/testimonials";
+import RotatingPeople from "@/components/landing/rotating-people";
 export default function Home() {
   return (
-    <div className="bg-black">
-      <GridBackgroundDemo />
+    <div className="overflow-x-hidden h-fit !max-h-fit">
+      <Hero />
       <Trustedby />
-      <Service />
+      <Services />
       <Features />
       <Testimonials />
     </div>

@@ -8,112 +8,290 @@ import AgitaImg from "../public/assets/Agita.png";
 import SauravImg from "../public/assets/Saurav.png";
 import NathanImg from "../public/assets/Nathan.png";
 import MarketaImg from "../public/assets/Marketa.png";
-import {
-  Search,
-  LightbulbIcon,
-  Rocket,
-  BarChart,
-  Code2,
-  Users,
-  BookOpen,
-  MessageSquare,
-  Youtube,
-  GitBranch,
-  ZoomIn,
-  BarChartHorizontal,
-  CircleHelp,
-  WandSparkles,
-  Layers,
-  BatteryCharging,
-} from "lucide-react";
+import JesseImg from "@/public/assets/Jesse.png";
 import React from "react";
-import PermitFull from "@/public/assets/Permit-full.png";
-import TolgeeFull from "@/public/assets/Tolgee-full.svg";
+import {
+  Permit,
+  Tolgee,
+  Copilotkit,
+  Nebius,
+  Latitude,
+  Webcrumbs,
+  Crawlee,
+  Opire,
+  Eachlab,
+  Stream,
+  Swytchcode,
+  Stackql,
+  Encore,
+  Velt,
+  ReadySet,
+  Nitric,
+  KitOps,
+  CodeRabbit,
+  PermitFull,
+  TolgeeFull,
+  CopilotkitFull,
+  NebiusFull,
+  LatitudeFull,
+  WebcrumbsFull,
+  CrawleeFull,
+  OpireFull,
+  EncoreFull,
+  VeltFull,
+  ReadySetFull,
+  NitricFull,
+  KitOpsFull,
+  CodeRabbitFull,
+} from "@/constants/image";
+import {
+  IconAugmentedReality,
+  IconBolt,
+  IconBook,
+  IconBrandYoutube,
+  IconBulb,
+  IconChartBar,
+  IconChartBarPopular,
+  IconCode,
+  IconGitBranch,
+  IconHeadset,
+  IconHeartHandshake,
+  IconMessage,
+  IconPlus,
+  IconRocket,
+  IconSearch,
+  IconSettingsCheck,
+  IconUsers,
+} from "@tabler/icons-react";
+import {
+  ChartBar,
+  ChatCentered,
+  ChatCenteredDots,
+  CubeFocus,
+  Handshake,
+  Headset,
+  Lightning,
+  Nut,
+  PencilLine,
+  Users as UsersTwo,
+} from "@phosphor-icons/react/dist/ssr";
 
 export const Data = {
   Companies: [
     {
       id: 1,
-      name: "Latitude",
-      designation: "LLM development platform",
-      image: "/assets/latitude.png",
+      name: "Nebius",
+      designation: "AI Cloud",
+      image: Nebius,
+      href: "https://nebius.com/",
+      description:
+        "AI-centric cloud platform offering infrastructure for intensive AI workloads.",
     },
     {
       id: 2,
-      name: "Encore",
-      designation: "TS Framework",
-      image: "/assets/encore.png",
+      name: "Velt",
+      designation: "Real-time Collaboration",
+      image: Velt,
+      href: "https://velt.dev/",
+      description:
+        "Offers real-time collaboration tools for web applications, enabling features like live cursors and co-editing.",
     },
     {
       id: 3,
-      name: "CopilotKit",
-      designation: "AI Agents",
-      image: "/assets/copilotkit.png",
+      name: "Permit.io",
+      designation: "Authorization as a Service",
+      image: Permit,
+      href: "https://www.permit.io/",
+      description:
+        "Provides a full-stack authorization framework, simplifying access control integration for developers.",
     },
     {
       id: 4,
-      name: "Permit.io",
-      designation: "Authorization as a Service",
-      image: "/assets/permit.jpg",
+      name: "Latitude",
+      designation: "LLM Development Platform",
+      image: Latitude,
+      href: "https://latitude.so/",
+      description:
+        "Building LLM apps with advanced agentic reasoning and memory.",
     },
     {
       id: 5,
-      name: "Crawlee",
-      designation: "Web Scraping framework",
-      image: "/assets/crawlee.png",
+      name: "Encore",
+      designation: "AI Search Engine",
+      image: Encore,
+      href: "https://encore.ai/",
+      description:
+        "TypeScript-based framework for building backend applications.",
     },
     {
       id: 6,
-      name: "Tolgee",
-      designation: "i18n tool",
-      image: "/assets/tolgee.png",
+      name: "CopilotKit",
+      designation: "AI Agents",
+      image: Copilotkit,
+      href: "https://www.copilotkit.ai/",
+      description:
+        "Open-source platform to embed custom AI copilots in web apps.",
     },
     {
       id: 7,
-      name: "Nebius",
-      designation: "AI Cloud",
-      image: "/assets/nebius.jpg",
+      name: "Crawlee",
+      designation: "Web Scraping Framework",
+      image: Crawlee,
+      href: "https://crawlee.dev/",
+      description:
+        "Web scraping and browser automation library for JavaScript and Python.",
+    },
+    {
+      id: 8,
+      name: "Tolgee",
+      designation: "i18n Tool",
+      image: Tolgee,
+      href: "https://tolgee.io/",
+      description:
+        "Localization platform with in-context translation for web apps.",
+    },
+    {
+      id: 9,
+      name: "ReadySet",
+      designation: "Database Caching",
+      image: ReadySet,
+      href: "https://readyset.io/",
+      description:
+        "Caching layer for databases to speed up queries without code changes.",
+    },
+    {
+      id: 10,
+      name: "Nitric",
+      designation: "Cloud Framework",
+      image: Nitric,
+      href: "https://nitric.io/",
+      description: "Cloud-native backend framework with infra-as-code support.",
+    },
+    {
+      id: 11,
+      name: "WebCrumbs",
+      designation: "AI Web Development",
+      image: Webcrumbs,
+      href: "https://www.webcrumbs.ai/",
+      description:
+        "AI platform that automates frontend web development workflows.",
+    },
+    {
+      id: 12,
+      name: "KitOps",
+      designation: "MLOps Tools",
+      image: KitOps,
+      href: "https://kitops.org/",
+      description:
+        "Open-source tool for packaging and versioning AI/ML models.",
+    },
+    {
+      id: 13,
+      name: "CodeRabbit",
+      designation: "AI Code Review",
+      image: CodeRabbit,
+      href: "https://coderabbit.ai/",
+      description: "Context-aware, AI-powered platform for code reviews.",
+    },
+    {
+      id: 14,
+      name: "Opire",
+      designation: "Open Source Platform",
+      image: Opire,
+      href: "https://opire.dev/",
+      description: "Community platform for open-source project management.",
+    },
+    {
+      id: 15,
+      name: "Eachlabs",
+      designation: "Video-to-Anime AI",
+      image: Eachlab,
+      href: "https://eachlabs.com/",
+      description:
+        "AI tool that transforms videos into anime-style animations.",
+    },
+    {
+      id: 16,
+      name: "SwytchCode",
+      designation: "Dev Environment Sync",
+      image: Swytchcode,
+      href: "https://swytchcode.com/",
+      description: "Keeps developer environments in sync across teams.",
+    },
+    {
+      id: 17,
+      name: "StackQL",
+      designation: "Cloud Resource Query",
+      image: Stackql,
+      href: "https://stackql.io/",
+      description:
+        "Query cloud infrastructure using SQL, like querying a database.",
+    },
+    {
+      id: 18,
+      name: "Stream",
+      designation: "Chat & Activity APIs",
+      image: Stream,
+      href: "https://getstream.io/",
+      description: "APIs for scalable in-app chat and activity feeds.",
     },
   ],
   Features: [
     {
       title: "Quality",
       description:
-        "We create project based tutorials, how-to guides, promotional pieces, list-based articles, and feature use cases, all crafted to engage and educate your developer audience.",
-      icon: <ZoomIn className="size-6" />,
+        "Premium developer content at 50% less cost than other technical agencies.",
+      icon: CubeFocus,
     },
     {
       title: "Experience",
       description:
-        "Our team includes developers who write and writers who build, ensuring technical content that is both accurate and engaging.",
-      icon: <BarChartHorizontal className="size-6" />,
-    },
-    {
-      title: "Support",
-      description:
-        "We work as an extension of your team, as a content partner. We ensure the work meets your requirements and expectations, collaborating closely until you're completely satisfied.",
-      icon: <CircleHelp className="size-6" />,
+        "From seed-stage startups to NASDAQ-listed companies, we've supported launches, crafted dev-friendly contents and scaled developer adoption.",
+      icon: Lightning,
     },
     {
       title: "Expertise",
       description:
-        "Team specializes in diverse tech like AI, ML, Python, Cloud, WebDev, DevOps, modern APIs and more.",
-      icon: <WandSparkles className="size-6" />,
+        "AI, ML, DevOps, Python, Cloud, WebDev and API integrations - our team knows tech.",
+      icon: Nut,
+    },
+    {
+      title: "Support",
+      description:
+        "We operate as an embedded team — fast iterations, no hand-holding required.",
+      icon: Headset,
     },
     {
       title: "Results",
       description:
-        "Content published by us has reached over 600,000 readers so far. We deliver technical content that ranks and converts.",
-      icon: <Layers className="size-6" />,
+        "1M+ content views across blogs, tutorials and videos, driving visibility, credibility and product growth.",
+      icon: ChartBar,
     },
     {
       title: "Collaboration",
       description:
-        "15+ projects completed in just 4 month of our operations, We collaborated with leading software companies.",
-      icon: <BatteryCharging className="size-6" />,
+        "20+ successful partnerships in last 8 months, fast-moving teams trust us to deliver.",
+      icon: Handshake,
+    },
+    {
+      title: "Testimonials",
+      description:
+        "Trusted by founders, CMOs and DevRel teams to create content that drives real developer impact.",
+      icon: ChatCenteredDots,
     },
   ],
+
   Allblogs: [
+    {
+      title: "Understanding the Model Context Protocol: Architecture",
+      description:
+        "Model Context Protocol (MCP) offers a clean, open standard for connecting language models to real-world systems through a modular, plug-and-play interface. In this article, we explore how MCP works..",
+      link: "https://nebius.com/blog/posts/understanding-model-context-protocol-mcp-architecture",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8se47yg59oimb4sl06eg.gif",
+      tags: ["SEO"],
+      version: 1,
+    },
     {
       title: "Building a Kanban Board with Next.js,Vercel AI and Tolgee",
       description:
@@ -122,6 +300,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8se47yg59oimb4sl06eg.gif",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "How I Built the World's Best NextJS, AI Scheduling App",
@@ -131,6 +310,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpvtqkii2tlp04p2cvlx9.gif",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "How to create a LinkedIn job scraper in Python with Crawlee",
@@ -140,6 +320,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fwsyjca1b8q6g9wapyhnp.jpg",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title:
@@ -150,6 +331,7 @@ export const Data = {
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*Wan7SBxJfZf2HlOu9AIPLw.png",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "Building an AI-powered quiz application with Next.js and OpenAI",
@@ -159,6 +341,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ff04c0el5k9h0pee1pcpp.png",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title:
@@ -169,6 +352,7 @@ export const Data = {
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*bY1LzPkOXDXI_eRJ_V-y8w.png",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title:
@@ -179,16 +363,18 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F70kbai7v3r12dr860psw.gif",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title:
         "Building an AI-powered finance planner with full-stack Next.js and Nebius AI Studio",
       description:
-        "In this guide, we’ll build an AI-powered financial planner using the Meta Llama 3.1 70B model via Nebius AI Studio and a full-stack Next.js app. This solution works seamlessly whether you’re using the Pages Router or the App Router, as much of the customization relies on setting up a custom Next.js server.",
+        "In this guide, we'll build an AI-powered financial planner using the Meta Llama 3.1 70B model via Nebius AI Studio and a full-stack Next.js app. This solution works seamlessly whether you're using the Pages Router or the App Router, as much of the customization relies on setting up a custom Next.js server.",
       link: "https://nebius.com/blog/posts/building-ai-powered-finance-planner",
-      image:
-        "https://storage.ai.nebius.cloud/www-gpu-assets/pages/blog/building-ai-powered-finance-planner/sharing1.jpg",
+      // image:
+      //   "https://storage.ai.nebius.cloud/www-gpu-assets/pages/blog/building-ai-powered-finance-planner/sharing1.jpg",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "Make Prototyping Easier with Webcrumbs",
@@ -197,6 +383,7 @@ export const Data = {
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*kirTT63OzhfJCcitLgDRqA.png",
       tags: ["SEO"],
+      version: 1,
     },
     {
       title: "How to Add RBAC Authorization in Next.js",
@@ -206,6 +393,7 @@ export const Data = {
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*yWfXQWV_89Dg6MarsUhnvw.png",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "How to run Meta Llama 3.1 405B with Nebius AI Studio API",
@@ -215,6 +403,7 @@ export const Data = {
       image:
         "https://storage.ai.nebius.cloud/www-gpu-assets/pages/blog/introducing-nebius-ai-studio/preview.jpg",
       tags: ["How-tos"],
+      version: 1,
     },
     {
       title: "Implementing GraphQL Authorization: A Practical Guide",
@@ -224,6 +413,7 @@ export const Data = {
       image:
         "https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FYDN8Xi5vRQONu81cC1yw&w=1920&q=75",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "How to Build a Real-Time Dashboard with Encore.ts and React",
@@ -233,19 +423,21 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnd1e4rgk07yfo638ses9.png",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "Creating your own AI-powered code generator and reviewer",
       description:
-        "In this hands-on tutorial, you’ll learn how to create a powerful code generation and review application that you can customize to your exact needs. We’ll use Nebius AI Studio and open-source models, making it both cost-effective and extensible.",
+        "In this hands-on tutorial, you'll learn how to create a powerful code generation and review application that you can customize to your exact needs. We'll use Nebius AI Studio and open-source models, making it both cost-effective and extensible.",
       link: "https://nebius.com/blog/posts/building-ai-powered-code-generator",
       image:
         "https://media.licdn.com/dms/image/v2/D4E22AQHXtGpgMsH-BA/feedshare-shrink_800/feedshare-shrink_800/0/1733485301047?e=2147483647&v=beta&t=ZEE4MK-HOS0rbxXkwGi7rqTA9GWxoON8u4L3EXp4tNo",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title:
-        "Build Real-Time Presence Features Like Figma and Google Docs in Your App in Minutes🚀🔥🧑‍💻",
+        "Build Real-Time Presence Features Like Figma and Google Docs in Your App in Minutes",
       description:
         "In this article, we will learn how to build real-time presence features like Figma and Google Docs in your app in minutes using Liveblocks.",
       link: "https://dev.to/astrodevil/build-real-time-presence-features-like-figma-and-google-docs-in-your-app-in-minutes-1lae",
@@ -253,6 +445,49 @@ export const Data = {
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fn4ktzy1anqot0vjselc6.png",
 
       tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "Build a Real-Time Bidding System With Next.js and Stream",
+      description:
+        "Stream’s React Chat SDK with the JavaScript client will help us build a bidding app with support for rich messages, image uploads, videos and more.",
+      link: "https://thenewstack.io/build-a-real-time-bidding-system-with-next-js-and-stream/",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "Vibe Coding with Cursor AI: How to Build Figma-Style Comments",
+      description:
+        "In this article, we will learn how to build a Figma-Style Comments with Cursor and Velt.",
+      link: "https://dev.to/arindam_1729/vibe-coding-with-cursor-ai-how-to-build-figma-style-comments-556m",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title:
+        "Stop Vibe Coding: Make Your AI SaaS Production-Ready with These 7 Tools",
+      description:
+        "In this article, we will learn how to make your AI SaaS production-ready with these 7 tools.",
+      link: "https://dev.to/arindam_1729/stop-vibe-coding-make-your-ai-saas-production-ready-with-these-7-tools-2pam/",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["general"],
+      version: 1,
+    },
+    {
+      title:
+        "How to Build a Ghibli-Style AI Video App Using Pixverse and Eachlabs",
+      description:
+        "In this article, we will learn how to build a Ghibli-Style AI Video App Using Pixverse and Eachlabs.",
+      link: "https://dev.to/astrodevil/how-to-build-a-ghibli-style-ai-video-app-using-pixverse-and-eachlab-fhc",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
     },
     {
       title: "NestJS vs Encore.ts",
@@ -262,6 +497,133 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
       tags: ["general"],
+      version: 1,
+    },
+    {
+      title:
+        "Build Google Sheets-Style Collaborative Comments in Your Web App Using TanStack Tables and Velt SDK",
+      description:
+        "In this article, we will learn how to build a Google Sheets-Style Collaborative Comments in Your Web App Using TanStack Tables and Velt SDK.",
+      link: "https://dev.to/astrodevil/build-google-sheets-style-collaborative-comments-in-your-web-app-using-tanstack-tables-and-velt-sdk-53lf",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title:
+        "Build a React File Sharing App with Granular Access Controls (ReBAC)",
+      description:
+        "In this article, we will learn how to build a React File Sharing App with Granular Access Controls (ReBAC).",
+      link: "https://dev.to/astrodevil/build-a-react-file-sharing-app-with-granular-access-controls-rebac-ka4",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "Git, diffs, patches - thinking in changes, not just code",
+      description:
+        "In this article, we will learn how to think in changes, not just code.",
+      link: "https://dev.to/coderabbitai/git-diffs-patches-thinking-in-changes-not-just-code-2f0p",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["general"],
+      version: 1,
+    },
+    {
+      title:
+        "How to Make Your Postgres Database 100x Faster and 50% Cheaper with Readyset Cloud",
+      description:
+        "In this article, we will learn how to make your Postgres database 100x faster and 50% cheaper with Readyset Cloud.",
+      link: "https://dev.to/astrodevil/how-to-make-your-postgres-database-100x-faster-and-50-cheaper-with-readyset-cloud-2n7j",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title:
+        "Build Real-Time Presence Features Like Figma and Google Docs in Your App in Minutes",
+      description:
+        "In this article, we will learn how to build a real-time presence features like Figma and Google Docs in your app in minutes.",
+      link: "https://dev.to/astrodevil/build-real-time-presence-features-like-figma-and-google-docs-in-your-app-in-minutes-1lae",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "I Built a Social Media App in Minutes with Webcrumbs & Lovable!",
+      description:
+        "In this article, we will learn how to build a social media app in minutes with Webcrumbs and Lovable.",
+      link: "https://dev.to/arindam_1729/i-built-a-social-media-app-in-minutes-with-webcrumbs-lovable-4h7e",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "Authentication and Authorization with Firebase",
+      description:
+        "A step-by-step guide to building a secure, multi-tenant app using Firebase for authentication and storage, and Permit.io for fine-grained authorization—learn how to manage permissions, enforce access control, and debug policies with audit logs..",
+      link: "https://www.permit.io/blog/authentication-and-authorization-with-firebase",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["SEO"],
+      version: 1,
+    },
+    {
+      title: "Implementing Role Based Access Control (RABC) in React",
+      description:
+        "In this article, we will learn how to implement Role Based Access Control (RABC) in React.",
+      link: "https://www.permit.io/blog/implementing-react-rbac-authorization",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title:
+        "Build an AI Travel Planner with CopilotKit, LangGraph & Google Maps API",
+      description:
+        "In this article, we will learn how to build an AI Travel Planner with CopilotKit, LangGraph & Google Maps API.",
+      link: "https://dev.to/copilotkit/build-an-ai-travel-planner-with-copilotkit-langgraph-google-maps-api-32fm",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "Build an AI-Powered, Open-Source Notion",
+      description:
+        "In this article, we will learn how to build an AI-Powered, Open-Source Notion.",
+      link: "https://dev.to/copilotkit/work-smarter-in-notion-add-a-copilot-with-copilotkit-50be",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title: "I built a Photo Editing App with Webcrumbs and GitHub Copilot",
+      description:
+        "In this article, we will learn how to build a photo editing app with Webcrumbs and GitHub Copilot.",
+      link: "https://dev.to/arindam_1729/how-webcrumbs-github-copilot-built-my-ui-without-me-writing-a-single-line-of-css-987",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
+    },
+    {
+      title:
+        "Fine-Grained Permissions and Bulk Messaging Made Simple with Permit.io and Resend",
+      description:
+        "In this article, we will learn how to build a fine-grained permissions and bulk messaging made simple with Permit.io and Resend.",
+      link: "https://dev.to/arindam_1729/fine-grained-permissions-and-bulk-messaging-made-simple-with-permitio-and-resend-1mm5",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["project-building"],
+      version: 1,
     },
     {
       title: "Make Open Source Contributions More Rewarding with Opire",
@@ -271,6 +633,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fgvh9vgiz0v3i6evue4ip.gif",
       tags: ["general"],
+      version: 1,
     },
     {
       title: "9 Open Source Libraries to Supercharge Your Next Project",
@@ -280,6 +643,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpfgp3ig8xjivkqz4bytl.gif",
       tags: ["growth"],
+      version: 1,
     },
     {
       title:
@@ -290,6 +654,7 @@ export const Data = {
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK4eowvtjC0YUZgLG-2DMlGxBe69IBU-0XZQ&s",
       tags: ["general"],
+      version: 1,
     },
     {
       title:
@@ -300,16 +665,18 @@ export const Data = {
       image:
         "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*0vebjXBoJ_iIVdrFapKosw.png",
       tags: ["general"],
+      version: 1,
     },
     {
       title:
         "Hiring in the Open - How Companies Can Discover Top Talent via Opire",
       description:
-        "In this article, we’re going to discuss how Opire’s approach saves companies time and resources while giving developers an effective way to stand out.",
+        "In this article, we're going to discuss how Opire's approach saves companies time and resources while giving developers an effective way to stand out.",
       link: "https://dev.to/opire/hiring-in-the-open-how-companies-can-discover-top-talent-via-opire-k4h",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fz9zn9tnxmbfwyhu7pm55.gif",
       tags: ["general"],
+      version: 1,
     },
 
     {
@@ -320,6 +687,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F71cb2kcoxbtxo721zcw6.gif",
       tags: ["general"],
+      version: 1,
     },
     {
       title: "How to Add RBAC Authorization in Nextjs",
@@ -329,6 +697,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjdfvempfrzz376nh609l.png",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "How to Build Dynamic Feature Toggling in React.js",
@@ -338,6 +707,7 @@ export const Data = {
       image:
         "https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FmCpDaZarQmWinorWRJJM&w=3840&q=75",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "11 Open Source Python Projects You Should Know in 2024",
@@ -347,6 +717,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fdch857t54wnebiol8i3t.gif",
       tags: ["growth"],
+      version: 1,
     },
     {
       title: "How to Implement RBAC (Role-Based Access Control) in Supabase",
@@ -356,6 +727,7 @@ export const Data = {
       image:
         "https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2F2H4tKg0FTfGFU3ciyTPa&w=3840&q=75",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "8 Developer Tools You Should Try in 2024",
@@ -365,6 +737,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fz21l3b031jaox5raxlp6.png",
       tags: ["growth"],
+      version: 1,
     },
     {
       title: "5 Tools Every Developer Should Use in 2024",
@@ -374,6 +747,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnidw6e25vyfgn74ftsa6.png",
       tags: ["growth"],
+      version: 1,
     },
     {
       title: "How to Build a Request Access Approval System in Next.js",
@@ -383,6 +757,7 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fy190e3vkf86c96c426ur.gif",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "Build a Secure Chat App with React, Firebase, and Permit.io",
@@ -392,6 +767,7 @@ export const Data = {
       image:
         "https://www.permit.io/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FGaBppnGURR2iCpdv8VFL&w=3840&q=75",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title:
@@ -402,15 +778,17 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F67vy07x7txqv3ipnqvtv.gif",
       tags: ["growth"],
+      version: 1,
     },
     {
       title: "Building and Deploying TypeScript Microservices to Kubernetes",
       description:
-        "In this tutorial, you’ll learn how to build a microservice with Encore.ts, and deploy it to a Kubernetes cluster in your AWS account. We’ll show you how to deploying your microservices.",
+        "In this tutorial, you'll learn how to build a microservice with Encore.ts, and deploy it to a Kubernetes cluster in your AWS account. We'll show you how to deploying your microservices.",
       link: "https://dev.to/encore/building-and-deploying-typescript-microservices-to-kubernetes-3110",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fq8jei5qtmeckkmdx7hfj.png",
       tags: ["project-building"],
+      version: 1,
     },
     {
       title: "Top 5 Open Source Projects You Must Explore Before 2025",
@@ -420,9 +798,31 @@ export const Data = {
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fneqgdcpodgseopbqimdg.gif",
       tags: ["growth"],
+      version: 1,
+    },
+    {
+      title:
+        "The Ultimate Stack for Serverless & Cloud-Native Developers in 2025",
+      description:
+        "In this article, we will discuss the ultimate stack for serverless & cloud-native developers in 2025.",
+      link: "https://dev.to/arindam_1729/the-ultimate-stack-for-serverless-cloud-native-developers-in-2025-38dc",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
+      tags: ["growth"],
+      version: 1,
     },
   ],
   Blogs: [
+    {
+      title: "Understanding the Model Context Protocol: Architecture",
+      description:
+        "Model Context Protocol (MCP) offers a clean, open standard for connecting language models to real-world systems through a modular, plug-and-play interface. In this article, we explore how MCP works..",
+      link: "https://nebius.com/blog/posts/understanding-model-context-protocol-mcp-architecture",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8se47yg59oimb4sl06eg.gif",
+      tags: ["seo"],
+      version: 1,
+    },
     {
       title: "Building a Kanban Board with Next.js,Vercel AI and Tolgee",
       description:
@@ -430,6 +830,8 @@ export const Data = {
       link: "https://dev.to/tolgee_i18n/building-a-kanban-board-with-nextjsvercel-ai-and-tolgee-493g",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F8se47yg59oimb4sl06eg.gif",
+      tags: ["growth", "personal"],
+      version: 1,
     },
     {
       title: "How I Built the World's Best NextJS, AI Scheduling App",
@@ -438,6 +840,8 @@ export const Data = {
       link: "https://dev.to/tolgee_i18n/building-a-kanban-board-with-nextjsvercel-ai-and-tolgee-493g",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpvtqkii2tlp04p2cvlx9.gif",
+      tags: ["growth"],
+      version: 1,
     },
     {
       title: "How to create a LinkedIn job scraper in Python with Crawlee",
@@ -446,6 +850,8 @@ export const Data = {
       link: "https://dev.to/crawlee/how-to-create-a-linkedin-job-scraper-in-python-with-crawlee-h9d",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fwsyjca1b8q6g9wapyhnp.jpg",
+      tags: ["growth"],
+      version: 1,
     },
     {
       title:
@@ -455,6 +861,8 @@ export const Data = {
       link: "https://javascript.plainenglish.io/develop-a-real-time-collaborative-document-editor-with-next-js-appwrite-liveblocks-and-permit-io-699a865a7aeb",
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*Wan7SBxJfZf2HlOu9AIPLw.png",
+      tags: ["growth"],
+      version: 1,
     },
     {
       title: "Building an AI-powered quiz application with Next.js and OpenAI",
@@ -463,6 +871,8 @@ export const Data = {
       link: "https://dev.to/latitude/building-an-ai-powered-quiz-application-with-nextjs-and-openai-2673",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ff04c0el5k9h0pee1pcpp.png",
+      tags: ["growth"],
+      version: 1,
     },
     {
       title:
@@ -472,73 +882,60 @@ export const Data = {
       link: "https://astrodevil.medium.com/manage-permissions-in-a-langflow-chain-for-llm-queries-using-permit-io-7de8a0fb17b3",
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*bY1LzPkOXDXI_eRJ_V-y8w.png",
+      tags: ["growth"],
+      version: 1,
     },
   ],
   Services: [
     {
       title: "Blogs as Service",
       description:
-        "We create high-quality, technical and promotional blogs tailored for devtool and software companies. Our team of expert writers specializes in crafting SEO-optimized content that drives engagement, educates developers, and helps your tools stand out in a competitive market.",
-      image:
-        "https://cdn.prod.website-files.com/66fc1a4b1a3399833cbb73ce/66fc1a4b1a3399833cbb750e_EFB6AC06-B22C-42F1-B402-CF24DEF2A34D.webp",
+        "We create high-quality, technical and promotional blogs tailored for devtool and software companies. Our team of expert writers specializes in crafting SEO-optimized content that drives engagement, educates developers",
+      icon: PencilLine,
+    },
+
+    {
+      title: "More Services",
+      description: (
+        <p>
+          New services <span className="font-extrabold">coming soon</span>.
+          <br /> Stay tuned for updates.
+        </p>
+      ),
+      icon: IconPlus,
     },
     {
       title: "DevRel as Service",
       description:
         "Accelerate your growth with targeted Developer Relations services. We help devtool and software companies connect authentically with developers, grow communities, and turn users into advocates.",
-      image:
-        "https://cdn.prod.website-files.com/66fc1a4b1a3399833cbb73ce/66fc1a4b1a3399833cbb7511_02073CC0-207B-4079-9DA5-BBFDA837CE50.webp",
-    },
-    {
-      title: "More Services",
-      description: "New services coming soon. Stay tuned for updates.",
-      image:
-        "https://cdn.prod.website-files.com/66fc1a4b1a3399833cbb73ce/66fc1a4b1a3399833cbb750f_D579D1FF-97FE-42E0-803A-33634CB722AD.webp",
+      icon: UsersTwo,
     },
   ],
   Testimonials: [
     {
-      name: "Saurav Jain",
-      role: "DevRel, Crawlee",
-      avatar: SauravImg.src,
-      content: `Arindam and Studio1 team work really great with technical posts, they are super quick and write deeply technical articles that reaches to the right devleoper audiences through their absolute fantastic distribution system. 
-      
-      Highly recommended. 💯`,
-      highlights: [
-        "Arindam",
-        "Studio1",
-        "technical",
-        "posts",
-        "super",
-        "quick",
-        "deeply",
-        "technical",
-        "articles",
-        "fantastic",
-        "distribution",
-        "system",
-        "Highly",
-        "recommended",
-      ],
+      name: "Jesse Williams",
+      role: "Founder, Jozu",
+      avatar: JesseImg.src,
+      content: `We've used Studio1 to lead our open source and closed source community building and developer awareness work for just over a year. Their contributions and work has helped us drive adoption and awareness with our audience. Their team has deep experience in our space, interfacing with our team perfectly, and going above to help us grow.`,
+      highlights: [],
     },
     {
-      name: "Nathan Telbert",
-      role: "DevRel, CopilotKit",
-      avatar: NathanImg.src,
-      content: `Working with Studio1 has been an excellent experience for us. The team delivered high-quality blogs focused on exciting projects that perfectly matched our content needs. 
+      name: "Marketa Cizmar",
+      role: "C0O, Tolgee",
+      avatar: MarketaImg.src,
+      content: `Arindam wrote a technical article for us, and it was a pleasure working with him. He was friendly, responsive, and always quick to reply to any questions or feedback. 
       
-      Their ability to create engaging content for developers has been a valuable addition to our educational content efforts. 
-      
-      We’re excited to continue collaborating on future projects!`,
+      The whole process was smooth!`,
       highlights: [
-        "Studio1",
-        "high-quality blogs",
-        "engaging",
-        "educational content",
-        "continue",
-        "collaborating",
-        "future",
-        "projects",
+        "Arindam",
+        "technical article",
+        "friendly",
+        "responsive",
+        "quick",
+        "reply",
+        "questions",
+        "feedback",
+        "smooth",
       ],
     },
     {
@@ -572,30 +969,54 @@ export const Data = {
       name: "Agita Jaunzeme",
       role: "Community Manager, VDK(VMware)",
       avatar: AgitaImg.src,
-      content: `Very fast, good-quality work, results! Nothing to add; 
-      
-      I totally recommend working with Amitesh!`,
+      content: `Very fast, good-quality work, results! Nothing to add; I totally recommend working with Amitesh !`,
       highlights: ["Amitesh", "good-quality"],
     },
     {
-      name: "Marketa Cizmar",
-      role: "C0O, Tolgee",
-      avatar: MarketaImg.src,
-      content: `Arindam wrote a technical article for us, and it was a pleasure working with him. He was friendly, responsive, and always quick to reply to any questions or feedback. 
+      name: "Saurav Jain",
+      role: "DevRel, Crawlee",
+      avatar: SauravImg.src,
+      content: `Arindam and Studio1 team work really great with technical posts, they are super quick and write deeply technical articles that reaches to the right devleoper audiences through their absolute fantastic distribution system. 
       
-      The whole process was smooth!`,
+      Highly recommended. 💯`,
       highlights: [
         "Arindam",
-        "technical article",
-        "friendly",
-        "responsive",
+        "Studio1",
+        "technical",
+        "posts",
+        "super",
         "quick",
-        "reply",
-        "questions",
-        "feedback",
-        "smooth",
+        "deeply",
+        "technical",
+        "articles",
+        "fantastic",
+        "distribution",
+        "system",
+        "Highly",
+        "recommended",
       ],
     },
+    {
+      name: "Nathan Telbert",
+      role: "DevRel, CopilotKit",
+      avatar: NathanImg.src,
+      content: `Working with Studio1 has been an excellent experience for us. The team delivered high-quality blogs focused on exciting projects that perfectly matched our content needs. 
+      
+      Their ability to create engaging content for developers has been a valuable addition to our educational content efforts. 
+      
+      We're excited to continue collaborating on future projects!`,
+      highlights: [
+        "Studio1",
+        "high-quality blogs",
+        "engaging",
+        "educational content",
+        "continue",
+        "collaborating",
+        "future",
+        "projects",
+      ],
+    },
+
     {
       name: "Julia Machado",
       role: "Founder & CEO, WebCrumbs",
@@ -688,55 +1109,49 @@ export const Data = {
     },
     {
       name: "CopilotKit",
-      image:
-        "https://github.com/RecursivelyAI/CopilotKit/assets/746397/5890217b-524e-49c5-a89e-b8743d2acd51",
+      image: CopilotkitFull.src,
       className:
         "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain",
       alt: "CopilotKit",
     },
     {
       name: "Nebius",
-      image:
-        "https://companieslogo.com/img/orig/NBIS_BIG.D-f866f771.png?t=1729269594",
+      image: NebiusFull.src,
       className:
         "h-5 sm:h-6 md:h-6 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain",
       alt: "Nebius",
     },
     {
       name: "Latitude",
-      image:
-        "https://github.com/latitude-dev/latitude/assets/5465249/4783e122-7150-4bcc-96e0-a3c9c4c1c53b",
+      image: LatitudeFull.src,
       className:
         "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain",
       alt: "Latitude",
     },
     {
       name: "Opire",
-      image:
-        "https://opire.dev/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbig_logo.fa525053.svg&w=3840&q=75",
+      image: OpireFull.src,
       className:
         "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain",
       alt: "Opire",
     },
     {
       name: "Crawlee",
-      image: "https://crawlee.dev/img/crawlee-dark.svg",
+      image: CrawleeFull.src,
       className:
         "h-10 sm:h-12 md:h-14 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain",
       alt: "Crawlee",
     },
     {
       name: "Encore",
-      image:
-        "https://camo.githubusercontent.com/77d11bfd37de0bb015849c0305a4cd653bee5f656570ba78899594a67eb08a8c/68747470733a2f2f656e636f72652e6465762f6173736574732f696d672f6c6f676f2e737667",
+      image: EncoreFull.src,
       className:
         "h-10 sm:h-12 md:h-14 w-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] object-contain",
       alt: "Encore",
     },
     {
       name: "Webcrumbs",
-      image:
-        "https://camo.githubusercontent.com/9350767c2dd34b635f3e63e8e61798502bc4eee59df80accb9dc145af0d778c9/68747470733a2f2f63646e2e7765626372756d62732e6f72672f6173736574732f696d616765732f6272616e642f6c6f676f5f7265642e737667",
+      image: WebcrumbsFull.src,
       className:
         "h-10 sm:h-12 md:h-16 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain",
       alt: "Webcrumbs",
@@ -746,52 +1161,50 @@ export const Data = {
     {
       name: "Discovery",
       description:
-        "We analyze your current content strategy and identify opportunities for contribution and improvement.",
-      icon: Search,
+        "We align with your product, team, and goals to shape a content strategy that makes sense.",
+      icon: IconSearch,
       details: [
-        "Knowing Tech stack",
-        "Analyze developer audience",
-        "Identify content scope",
-        "initial communication",
-      ],
-    },
-    {
-      name: "Strategy",
-      description:
-        "Develop a customized content plan aligned with your business goals and audience needs.",
-      icon: LightbulbIcon,
-      details: [
-        "Knowing content requirement",
-        "Topic ideation",
-        "Content format decision",
-        "Distribution channel selection",
+        <p>Tech stack deep-dive</p>,
+        <p>Developer audience analysis</p>,
+        <p>Scope definition</p>,
+        <p>First sync</p>,
       ],
     },
     {
       name: "Creation",
       description:
-        "Our expert team of technical writers produces high-quality, engaging content.",
-      icon: Rocket,
+        "Technical writers and engineers collaborate to produce high-quality, relevant content.",
+      icon: IconRocket,
       details: [
-        "Technical content development",
-        "Custom code examples and demos",
-        "Technical review and validation",
-        "SEO optimization and formatting",
+        <p>Code-rich, accurate technical writing</p>,
+        <p>Custom examples and use cases</p>,
+        <p>Technical validation + peer review</p>,
+        <p>SEO formatting and readability pass</p>,
+      ],
+    },
+    {
+      name: "Strategy",
+      description:
+        "We build a repeatable content engine tailored to your goals.",
+      icon: IconBulb,
+      details: [
+        <p>Topic ideation and prioritization</p>,
+        <p>Format selection (blog, guide, tutorial, etc.)</p>,
+        <p>Channel planning</p>,
       ],
     },
     {
       name: "Distribution",
-      description:
-        "We publish and promote your content across multiple platforms to maximize reach.",
-      icon: BarChart,
+      description: "We help push your content where devs actually see it.",
+      icon: IconChartBar,
       details: [
-        "Multi-platform publishing",
-        "Analytics review",
-        "Social Media posts",
-        "Developer community sharing",
+        <p>Dev.to, Medium, company blogs</p>,
+        <p>Social sharing and analytics</p>,
+        <p>Developer community amplification</p>,
       ],
     },
   ],
+
   BlogAsServiceTeam: [
     {
       name: "Arindam Majumder",
@@ -821,88 +1234,91 @@ export const Data = {
     {
       name: "Discovery",
       description:
-        "We analyze your current DevRel efforts and identify opportunities for improvement.",
-      icon: Search,
+        "We assess your product, DevRel touchpoints, and community to uncover quick wins and long-term opportunities.",
+      icon: IconSearch,
       details: [
-        "Audit existing developer programs",
-        "Analyze community engagement",
-        "Identify growth opportunities",
-        "Assessment report",
+        <p>Audit existing developer programs</p>,
+        <p>Analyze community engagement</p>,
+        <p>Identify growth opportunities</p>,
+        <p>Provide an actionable assessment report</p>,
       ],
     },
     {
       name: "Strategy",
       description:
-        "Develop a customized roadmap aligned with your business goals and developer needs.",
-      icon: LightbulbIcon,
+        "We craft a tailored DevRel roadmap aligned with your goals — across content, community, education, and advocacy.",
+      icon: IconBulb,
       details: [
-        "Custom roadmap creation",
-        "Resource allocation",
-        "Timeline planning",
-        "KPI definition",
+        <p>Custom roadmap creation</p>,
+        <p>Resource and role planning</p>,
+        <p>Timeline and campaign mapping</p>,
+        <p>KPI and success metrics definition</p>,
       ],
     },
+
     {
-      name: "Implementation",
+      name: "Creation",
       description:
-        "Execute the strategy with our experienced team of DevRel professionals.",
-      icon: Rocket,
+        "Our writers and DevRel engineers produce content and campaigns that drive trust, clarity, and developer engagement.",
+      icon: IconRocket,
       details: [
-        "Content creation",
-        "Community building",
-        "Plan exciting campaigns",
-        "Developer engagement",
+        <p>Technical content creation</p>,
+        <p>Community activation initiatives</p>,
+        <p>Campaign planning and execution</p>,
+        <p>Developer engagement strategies</p>,
       ],
     },
+
     {
-      name: "Measurement",
+      name: "Distribution",
       description:
-        "Track KPIs and adjust strategies based on data-driven insights.",
-      icon: BarChart,
+        "We publish and amplify your content across the right developer channels — and iterate based on performance.",
+      icon: IconChartBar,
       details: [
-        "Performance tracking",
-        "Analytics review",
-        "Strategy adjustment",
-        "ROI measurement",
+        <p>Community-based promotion</p>,
+        <p>Analytics and performance reviews</p>,
+        <p>Strategic iteration</p>,
+        <p>ROI and impact tracking</p>,
       ],
     },
   ],
+
   DevRelAsServiceServices: [
     {
       title: "Technical Content Creation",
       description:
-        "High-quality tutorials, documentation, and technical blog posts that resonate with developers.",
-      icon: Code2,
+        "Developer-focused blogs, docs, and tutorials that drive clarity and adoption.",
+      icon: IconCode,
     },
     {
       title: "Community Management",
       description:
-        "Build and nurture a thriving developer community around your product or platform.",
-      icon: Users,
+        "Build and manage active developer communities around your product or ecosystem.",
+      icon: IconUsers,
     },
     {
       title: "Developer Education",
       description:
-        "Comprehensive training programs and workshops to help developers succeed with your tools.",
-      icon: BookOpen,
+        "Live workshops, tutorials, and onboarding flows to help devs succeed with your tool.",
+      icon: IconBook,
     },
     {
       title: "Developer Support",
       description:
-        "Building a responsive developer community where questions are answered and solutions are shared collaboratively.",
-      icon: MessageSquare,
+        "Responsive help channels and community-driven answers that developers can count on.",
+      icon: IconMessage,
     },
     {
       title: "Video Content",
       description:
-        "Engaging video tutorials, product demos, and technical livestreams.",
-      icon: Youtube,
+        "Engaging demos, product explainers and dev-focused livestreams.",
+      icon: IconBrandYoutube,
     },
     {
       title: "Tool Audit",
       description:
-        "Strategic onboarding and developer experience assessment through comprehensive tool ecosystem analysis.",
-      icon: GitBranch,
+        "Developer experience audits and onboarding gap analysis to optimize your DX.",
+      icon: IconGitBranch,
     },
   ],
   DevRelAsServiceTeam: [

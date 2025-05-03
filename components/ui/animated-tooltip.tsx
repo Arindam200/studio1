@@ -7,7 +7,7 @@ import {
   AnimatePresence,
   useMotionValue,
   useSpring,
-} from "framer-motion";
+} from "motion/react";
 import { Data } from "@/data";
 
 const people = Data.Companies;

@@ -25,8 +25,13 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        primary: ["var(--font-raleway)", "sans-serif"],
+        secondary: ["var(--font-jakarta)", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
+        primary1: "hsl(var(--primary1))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
@@ -67,12 +72,20 @@ const config = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
         },
         "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
         },
         spotlight: {
           "0%": {
@@ -85,7 +98,12 @@ const config = {
           },
         },
         marquee: {
-          to: { transform: "translateX(-50%)" },
+          to: {
+            transform: "translateX(calc(-100% - var(--gap)))",
+          },
+          from: {
+            transform: "translateX(0)",
+          },
         },
         "border-beam": {
           "100%": {
@@ -111,20 +129,53 @@ const config = {
             backgroundPosition: "-200% 0",
           },
         },
+        "marquee-vertical": {
+          from: {
+            transform: "translateY(0)",
+          },
+          to: {
+            transform: "translateY(calc(-100% - var(--gap)))",
+          },
+        },
+        ripple: {
+          "0%, 100%": {
+            transform: "translate(-50%, -50%) scale(1)",
+          },
+          "50%": {
+            transform: "translate(-50%, -50%) scale(0.9)",
+          },
+        },
+        "fade-in": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(10px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         spotlight: "spotlight 2s ease .75s 1 forwards",
-        marquee: "marquee var(--duration, 30s) linear infinite",
+        marquee: "marquee var(--duration) infinite linear",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         shine: "shine var(--duration) infinite linear",
         shimmer: "shimmer 2s linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+        ripple:
+          "ripple var(--duration,2s) infinite ease calc(var(--i, 0)*.2s) forwards",
+        "fade-in": "fade-in 0.5s ease-out",
+        "spin-slow": "spin 60s linear infinite",
+        "spin-reverse-slow": "spin 60s linear infinite reverse",
       },
     },
   },
   plugins: [
     require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
     function ({ matchUtilities, theme }: any) {
       matchUtilities(
         {

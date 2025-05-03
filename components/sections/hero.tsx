@@ -5,8 +5,8 @@ import { Spotlight } from "@/components/ui/spotlight";
 import { ArrowRight } from "lucide-react";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import Navbar from "@/components/sections/navbar";
-import type { Variants } from "framer-motion";
-import { motion, useAnimation } from "framer-motion";
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
 
 const gVariants: Variants = {
   normal: { rotate: 0 },
@@ -116,7 +116,7 @@ export function GridBackgroundDemo() {
       </div>
 
       <div className="flex gap-2 font-thin font-serif text-3xl align-center sm:pt-1.5 pt-0.5">
-        <span className="number-text">15+</span>
+        <span className="number-text">3</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-8 w-auto mt-2.5 max-sm:mt-2"

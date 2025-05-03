@@ -1,16 +1,14 @@
 "use client";
 
 import React from "react";
-import { Spotlight } from "@/components/ui/spotlight";
-import Navbar from "@/components/sections/navbar";
 import DotPattern from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
 
 export default function Page() {
   return (
-    <div className="bg-black">
+    <div className="">
       <div className="sm:h-[40rem] h-[28rem] max-sm:h-[36rem] overflow-scroll overflow-x-hidden w-full dark:bg-black bg-white relative flex flex-col items-center justify-center cursor-all-scroll">
-        <Navbar />
+        {/* <Navbar /> */}
         {/* <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div> */}
         <DotPattern
           className={cn(
@@ -49,8 +47,8 @@ export default function Page() {
           </span>
 
           <p className="text-lg sm:w-[60rem] max-sm:mx-2.5 sm:text-2xl font-semibold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4 text-center">
-            Build and nurture your developer community with our expert DevRel
-            strategies.
+            We help you build and grow developer communities with <br /> DevRel
+            strategies tailored to your product and audience.
           </p>
 
           <div className="flex justify-center sm:py-8">

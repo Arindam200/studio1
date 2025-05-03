@@ -10,7 +10,7 @@ const Cta = () => {
           <div className="flex w-full flex-col gap-16 max-sm:gap-8 overflow-hidden rounded-lg border border-orange-400 p-8 md:rounded-xl lg:flex-row lg:items-center lg:p-16">
             <div className="flex-1">
               <h3 className="mb-3 text-2xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
-                Ready to Skyrocket Your Developer Community?
+                Ready to Grow Your Developer Community?
               </h3>
               <p className="text-muted-foreground lg:text-lg">
                 Schedule a call with our team to learn how we can help you grow
