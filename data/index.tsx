@@ -116,7 +116,7 @@ export const Data = {
       designation: "AI Search Engine",
       image: Encore,
       href: "https://encore.ai/",
-      description: "AI-powered search engine for secondhand items with refined search experiences.",
+      description: "TypeScript-based framework for building backend applications.",
     },
     {
       id: 6,
