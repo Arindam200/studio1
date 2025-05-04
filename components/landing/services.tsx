@@ -21,7 +21,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     filter: "blur(0px)",
-    transition: { duration: 0.5 },
+    transition: { duration: 0.3 },
   },
 };
 
@@ -130,8 +130,13 @@ export default function Services() {
                 </div>
               </div>
             </div>
-            <Button className="w-fit z-20 group-hover:bg-primary text-foreground group-hover:text-white bg-accent">
-              Learn More <ArrowUpRight className="size-4 ml-2" />
+            <Button
+              asChild
+              className="w-fit z-20 group-hover:bg-primary text-foreground group-hover:text-white bg-accent"
+            >
+              <Link href={"/devrel-as-service"}>
+                Learn More <ArrowUpRight className="size-4 ml-2" />
+              </Link>
             </Button>
           </motion.div>
         </div>
