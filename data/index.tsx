@@ -901,7 +901,7 @@ export const Data = {
   Testimonials: [
     {
       name: "Jesse Williams",
-      role: "Founder, Jozu",
+      role: "Co-Founder & COO, Jozu",
       avatar: JesseImg.src,
       content: `We've used Studio1 to lead our open source and closed source community building and developer awareness work for just over a year. Their contributions and work has helped us drive adoption and awareness with our audience. Their team has deep experience in our space, interfacing with our team perfectly, and going above to help us grow.`,
       highlights: [],
