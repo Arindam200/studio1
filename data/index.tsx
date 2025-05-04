@@ -84,8 +84,7 @@ export const Data = {
       designation: "AI Cloud",
       image: Nebius,
       href: "https://nebius.com/",
-      description:
-        "AI-centric cloud platform offering infrastructure for intensive AI workloads.",
+      description: "AI-centric cloud platform offering infrastructure for intensive AI workloads.",
     },
     {
       id: 2,
@@ -93,8 +92,7 @@ export const Data = {
       designation: "Real-time Collaboration",
       image: Velt,
       href: "https://velt.dev/",
-      description:
-        "Offers real-time collaboration tools for web applications, enabling features like live cursors and co-editing.",
+      description: "Offers real-time collaboration tools for web applications, enabling features like live cursors and co-editing.",
     },
     {
       id: 3,
@@ -102,91 +100,18 @@ export const Data = {
       designation: "Authorization as a Service",
       image: Permit,
       href: "https://www.permit.io/",
-      description:
-        "Provides a full-stack authorization framework, simplifying access control integration for developers.",
+      description: "Provides a full-stack authorization framework, simplifying access control integration for developers.",
     },
     {
       id: 4,
-      name: "Latitude",
-      designation: "LLM Development Platform",
-      image: Latitude,
-      href: "https://latitude.so/",
-      description:
-        "Building LLM apps with advanced agentic reasoning and memory.",
+      name: "Stream",
+      designation: "Chat & Activity APIs",
+      image: Stream,
+      href: "https://getstream.io/",
+      description: "APIs and SDKs for real-time chat, video, and activity feeds at scale.​",
     },
     {
       id: 5,
-      name: "Encore",
-      designation: "AI Search Engine",
-      image: Encore,
-      href: "https://encore.ai/",
-      description:
-        "TypeScript-based framework for building backend applications.",
-    },
-    {
-      id: 6,
-      name: "CopilotKit",
-      designation: "AI Agents",
-      image: Copilotkit,
-      href: "https://www.copilotkit.ai/",
-      description:
-        "Open-source platform to embed custom AI copilots in web apps.",
-    },
-    {
-      id: 7,
-      name: "Crawlee",
-      designation: "Web Scraping Framework",
-      image: Crawlee,
-      href: "https://crawlee.dev/",
-      description:
-        "Web scraping and browser automation library for JavaScript and Python.",
-    },
-    {
-      id: 8,
-      name: "Tolgee",
-      designation: "i18n Tool",
-      image: Tolgee,
-      href: "https://tolgee.io/",
-      description:
-        "Localization platform with in-context translation for web apps.",
-    },
-    {
-      id: 9,
-      name: "ReadySet",
-      designation: "Database Caching",
-      image: ReadySet,
-      href: "https://readyset.io/",
-      description:
-        "Caching layer for databases to speed up queries without code changes.",
-    },
-    {
-      id: 10,
-      name: "Nitric",
-      designation: "Cloud Framework",
-      image: Nitric,
-      href: "https://nitric.io/",
-      description: "Cloud-native backend framework with infra-as-code support.",
-    },
-    {
-      id: 11,
-      name: "WebCrumbs",
-      designation: "AI Web Development",
-      image: Webcrumbs,
-      href: "https://www.webcrumbs.ai/",
-      description:
-        "AI platform that automates frontend web development workflows.",
-    },
-    {
-      id: 12,
-      name: "KitOps",
-      designation: "MLOps Tools",
-      image: KitOps,
-      href: "https://kitops.org/",
-      description:
-        "Open-source tool for packaging and versioning AI/ML models.",
-    },
-    {
-      id: 13,
       name: "CodeRabbit",
       designation: "AI Code Review",
       image: CodeRabbit,
@@ -194,47 +119,109 @@ export const Data = {
       description: "Context-aware, AI-powered platform for code reviews.",
     },
     {
+      id: 6,
+      name: "Eachlabs",
+      designation: "Video-to-Anime AI",
+      image: Eachlab,
+      href: "https://eachlabs.com/",
+      description: "AI tool that transforms videos into anime-style animations.",
+    },
+    {
+      id: 7,
+      name: "KitOps",
+      designation: "MLOps Tools",
+      image: KitOps,
+      href: "https://kitops.org/",
+      description: "Open-source tool for packaging and versioning AI/ML models.",
+    },
+    {
+      id: 8,
+      name: "Nitric",
+      designation: "Cloud Framework",
+      image: Nitric,
+      href: "https://nitric.io/",
+      description: "Cloud-native backend framework with infra-as-code support.",
+    },
+    {
+      id: 9,
+      name: "Encore",
+      designation: "AI Search Engine",
+      image: Encore,
+      href: "https://encore.ai/",
+      description: "TypeScript-based framework for building backend applications.",
+    },
+    {
+      id: 10,
+      name: "CopilotKit",
+      designation: "AI Agents",
+      image: Copilotkit,
+      href: "https://www.copilotkit.ai/",
+      description: "Open-source platform to embed custom AI copilots in web apps.",
+    },
+    {
+      id: 11,
+      name: "Crawlee",
+      designation: "Web Scraping Framework",
+      image: Crawlee,
+      href: "https://crawlee.dev/",
+      description: "Web scraping and browser automation library for JavaScript and Python.",
+    },
+    {
+      id: 12,
+      name: "Tolgee",
+      designation: "i18n Tool",
+      image: Tolgee,
+      href: "https://tolgee.io/",
+      description: "Localization platform with in-context translation for web apps.",
+    },
+    {
+      id: 13,
+      name: "ReadySet",
+      designation: "Database Caching",
+      image: ReadySet,
+      href: "https://readyset.io/",
+      description: "Caching layer for databases to speed up queries without code changes.",
+    },
+    {
       id: 14,
+      name: "WebCrumbs",
+      designation: "AI Web Development",
+      image: Webcrumbs,
+      href: "https://www.webcrumbs.ai/",
+      description: "AI platform that automates frontend web development workflows.",
+    },
+    {
+      id: 15,
+      name: "SwytchCode",
+      designation: "Dev Environment Sync",
+      image: Swytchcode,
+      href: "https://swytchcode.com/",
+      description: "AI-powered tool that generates ready-to-use integration code for APIs.",
+    },
+    {
+      id: 16,
+      name: "StackQL",
+      designation: "Cloud Resource Query",
+      image: Stackql,
+      href: "https://stackql.io/",
+      description: "Query cloud infrastructure using SQL, like querying a database.",
+    },
+    {
+      id: 17,
+      name: "Latitude",
+      designation: "LLM Development Platform",
+      image: Latitude,
+      href: "https://latitude.so/",
+      description: "Open-source tool for teams to design and refine LLM prompts collaboratively.",
+    },
+    {
+      id: 18,
       name: "Opire",
       designation: "Open Source Platform",
       image: Opire,
       href: "https://opire.dev/",
       description: "Community platform for open-source project management.",
-    },
-    {
-      id: 15,
-      name: "Eachlabs",
-      designation: "Video-to-Anime AI",
-      image: Eachlab,
-      href: "https://eachlabs.com/",
-      description:
-        "AI tool that transforms videos into anime-style animations.",
-    },
-    {
-      id: 16,
-      name: "SwytchCode",
-      designation: "Dev Environment Sync",
-      image: Swytchcode,
-      href: "https://swytchcode.com/",
-      description: "Keeps developer environments in sync across teams.",
-    },
-    {
-      id: 17,
-      name: "StackQL",
-      designation: "Cloud Resource Query",
-      image: Stackql,
-      href: "https://stackql.io/",
-      description:
-        "Query cloud infrastructure using SQL, like querying a database.",
-    },
-    {
-      id: 18,
-      name: "Stream",
-      designation: "Chat & Activity APIs",
-      image: Stream,
-      href: "https://getstream.io/",
-      description: "APIs for scalable in-app chat and activity feeds.",
-    },
+    }    
   ],
   Features: [
     {
@@ -921,7 +908,7 @@ export const Data = {
     },
     {
       name: "Marketa Cizmar",
-      role: "C0O, Tolgee",
+      role: "COO, Tolgee",
       avatar: MarketaImg.src,
       content: `Arindam wrote a technical article for us, and it was a pleasure working with him. He was friendly, responsive, and always quick to reply to any questions or feedback. 
       
@@ -1171,6 +1158,17 @@ export const Data = {
       ],
     },
     {
+      name: "Strategy",
+      description:
+        "We build a repeatable content engine tailored to your goals.",
+      icon: IconBulb,
+      details: [
+        <p>Topic ideation and prioritization</p>,
+        <p>Format selection (blog, guide, tutorial, etc.)</p>,
+        <p>Channel planning</p>,
+      ],
+    },
+    {
       name: "Creation",
       description:
         "Technical writers and engineers collaborate to produce high-quality, relevant content.",
@@ -1180,17 +1178,6 @@ export const Data = {
         <p>Custom examples and use cases</p>,
         <p>Technical validation + peer review</p>,
         <p>SEO formatting and readability pass</p>,
-      ],
-    },
-    {
-      name: "Strategy",
-      description:
-        "We build a repeatable content engine tailored to your goals.",
-      icon: IconBulb,
-      details: [
-        <p>Topic ideation and prioritization</p>,
-        <p>Format selection (blog, guide, tutorial, etc.)</p>,
-        <p>Channel planning</p>,
       ],
     },
     {

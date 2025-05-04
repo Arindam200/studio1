@@ -31,7 +31,7 @@ export default function Process() {
       </div> */}
 
       <div className="w-full hidden lg:block">
-        <Timeline type="Blog" />
+        <Timeline type="Devrel" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 relative gap-4 lg:hidden">
