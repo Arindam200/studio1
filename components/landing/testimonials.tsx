@@ -89,7 +89,7 @@ export default function Testimonials() {
             variants={headerVariants}
             className="text-center text-base mt-2 max-w-2xl"
           >
-            Hear from the founders, CEOs and team leads who trust Studio1 to
+            Hear from the founders, CEOs and builders who trust our team to
             tell their product story.
           </motion.p>
         </motion.div>

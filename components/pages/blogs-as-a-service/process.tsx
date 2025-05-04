@@ -23,8 +23,8 @@ export default function Process() {
           </span>
         </h2>
         <p className="text-muted-foreground ">
-          Our transparent pricing makes it easy to find
-          <br /> a plan that works within your financial constraints.
+        A transparent, collaborative content process
+          <br /> built for fast-moving SaaS and devtool teams.
         </p>
       </div>
 
