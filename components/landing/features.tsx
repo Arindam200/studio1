@@ -13,7 +13,7 @@ export default function Features() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2,
+        delayChildren: 0.1,
       },
     },
   };
@@ -29,7 +29,7 @@ export default function Features() {
       y: 0,
       filter: "blur(0px)",
       transition: {
-        duration: 0.3,
+        duration: 0.2,
         ease: [0.22, 1, 0.36, 1],
       },
     },
