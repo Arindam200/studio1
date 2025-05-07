@@ -38,7 +38,7 @@ import StackqlFull from "@/public/assets/Stackql-full.png";
 
 import abstractBg from "@/public/assets/abstract-bg.png";
 import SauravImg from "@/public/assets/Saurav.png";
-import NathanImg from "@/public/assets/Nathan.png";
+import JesseImg from "@/public/assets/Jesse.png";
 import MarketaImg from "@/public/assets/Marketa.png";
 import JuliaImg from "@/public/assets/Julia.png";
 import DavidImg from "@/public/assets/David.png";
@@ -93,7 +93,7 @@ export {
   StackqlFull,
   abstractBg,
   SauravImg,
-  NathanImg,
+  JesseImg,
   MarketaImg,
   JuliaImg,
   DavidImg,
