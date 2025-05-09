@@ -227,7 +227,7 @@ export const Data = {
     {
       title: "Quality",
       description:
-        "Premium developer content at 50% less cost than other technical agencies.",
+        "Premium developer content at 50% less cost than other technical agencies. More than 65% of our clients choose to work with us again.",
       icon: CubeFocus,
     },
     {

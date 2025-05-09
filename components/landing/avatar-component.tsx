@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { SauravImg, NathanImg, MarketaImg, JuliaImg } from "@/constants/image";
+import { SauravImg, JesseImg, MarketaImg, JuliaImg } from "@/constants/image";
 import Image from "next/image";
 
 export default function AvatarComponent({ className }: { className?: string }) {
@@ -22,10 +22,10 @@ export default function AvatarComponent({ className }: { className?: string }) {
         />
         <Image
           className="rounded-full ring-1 ring-background"
-          src={NathanImg}
+          src={JesseImg}
           width={30}
           height={30}
-          alt="Nathan"
+          alt="Jesse"
         />
         <Image
           className="rounded-full ring-1 ring-background"
