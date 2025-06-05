@@ -9,6 +9,7 @@ import SauravImg from "../public/assets/Saurav.png";
 import NathanImg from "../public/assets/Nathan.png";
 import MarketaImg from "../public/assets/Marketa.png";
 import JesseImg from "@/public/assets/Jesse.png";
+import TanmayImg from "../public/assets/Tanmay.jpeg";
 import React from "react";
 import {
   Permit,
@@ -263,7 +264,7 @@ export const Data = {
     {
       title: "Testimonials",
       description:
-        "Trusted by founders, CMOs and DevRel teams to create content that drives real developer impact.",
+        "Trusted by Founders, CMOs and DevRel teams to create content that drives real developer impact.",
       icon: ChatCenteredDots,
     },
   ],
@@ -437,7 +438,7 @@ export const Data = {
     {
       title: "Build a Real-Time Bidding System With Next.js and Stream",
       description:
-        "Stream’s React Chat SDK with the JavaScript client will help us build a bidding app with support for rich messages, image uploads, videos and more.",
+        "Stream's React Chat SDK with the JavaScript client will help us build a bidding app with support for rich messages, image uploads, videos and more.",
       link: "https://thenewstack.io/build-a-real-time-bidding-system-with-next-js-and-stream/",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
@@ -907,23 +908,11 @@ export const Data = {
       highlights: [],
     },
     {
-      name: "Marketa Cizmar",
-      role: "COO, Tolgee",
-      avatar: MarketaImg.src,
-      content: `Arindam wrote a technical article for us, and it was a pleasure working with him. He was friendly, responsive, and always quick to reply to any questions or feedback. 
-      
-      The whole process was smooth!`,
-      highlights: [
-        "Arindam",
-        "technical article",
-        "friendly",
-        "responsive",
-        "quick",
-        "reply",
-        "questions",
-        "feedback",
-        "smooth",
-      ],
+      name: "Tanmay Sinha",
+      role: "VP Product, Readyset.io",
+      avatar: TanmayImg.src,
+      content: `We worked with Studio1HQ team for technical content creation and were really happy with the results. Amitesh and team were extremely easy to work with and captured the core values of our product in the write up. Strongly recommended for anyone looking to grow their digital footprint with quality content.`,
+      highlights: ["Studio1HQ", "technical content", "Amitesh", "core values", "quality content"],
     },
     {
       name: "Ivan Cordoba",
@@ -958,6 +947,25 @@ export const Data = {
       avatar: AgitaImg.src,
       content: `Very fast, good-quality work, results! Nothing to add; I totally recommend working with Amitesh !`,
       highlights: ["Amitesh", "good-quality"],
+    },
+    {
+      name: "Marketa Cizmar",
+      role: "COO, Tolgee",
+      avatar: MarketaImg.src,
+      content: `Arindam wrote a technical article for us, and it was a pleasure working with him. He was friendly, responsive, and always quick to reply to any questions or feedback. 
+      
+      The whole process was smooth!`,
+      highlights: [
+        "Arindam",
+        "technical article",
+        "friendly",
+        "responsive",
+        "quick",
+        "reply",
+        "questions",
+        "feedback",
+        "smooth",
+      ],
     },
     {
       name: "Saurav Jain",
