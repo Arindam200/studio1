@@ -4,31 +4,26 @@ import { Timeline } from "@/components/case-studies/timeline";
 import caseStudy1 from "@/components/case-studies/case-study-1/page.mdx";
 import caseStudy2 from "@/components/case-studies/case-study-2/page.mdx";
 import caseStudy3 from "@/components/case-studies/case-study-3/page.mdx";
+import KitOpsBanner from "@/public/assets/kitops_casestudy.png";
+import NebiusBanner from "@/public/assets/nebius_casestudy.png";
 import { motion } from "motion/react";
 
 const timelineItems = [
   {
     title:
-      "New steps component and improved accessibility on Hashnode's blog and docs product.",
+      "Scaling Developer Relations: Content Strategy & Market Growth",
     date: "2024-01-01",
     description:
-      "At Hashnode, we want to help you build docs and blogs that are highly customizable, follow accessibility standards, and offer a great developer experience. We have been adding features and enhancements every week that focus on helping you build effective docs and blogs.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+      "We helped them grow their developer community by creating a series of open-source demos and tutorials for their platform.",
+    image: NebiusBanner,
     mdxContent: caseStudy1,
   },
   {
-    title: "Development Phase",
+    title: "Developer Community Growth and Engagement",
     date: "2024-01-01",
-    description: "Building the foundation and core features",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c",
+    description: "Developed strategic open-source demos and tutorials for KitOps platform, leading to substantial developer growth and community engagement.",
+    image: KitOpsBanner,
     mdxContent: caseStudy2,
-  },
-  {
-    title: "Launch and Beyond",
-    date: "2024-01-01",
-    description: "Taking the product to market and future plans",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-    mdxContent: caseStudy3,
   },
 ];
 

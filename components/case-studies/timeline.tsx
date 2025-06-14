@@ -8,7 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Calendar, Note } from "@phosphor-icons/react";
 import Logo from "../ui/svgs/logo";
 import { Badge } from "../ui/badge";
@@ -16,7 +16,7 @@ import { Badge } from "../ui/badge";
 interface TimelineItem {
   title: string;
   description: string;
-  image: string;
+  image: string | StaticImageData;
   mdxContent: any;
   date: string;
 }
