@@ -221,7 +221,7 @@ export const teamMembers = [
     social: {
       twitter: "https://dub.sh/arindam-x",
       linkedin: "https://dub.sh/arindam-linkedin",
-      website: "https://arindam-majumder.vercel.app",
+      website: "https://www.arindammajumder.com",
     },
   },
   {

@@ -11,12 +11,22 @@ import Velt from "@/public/assets/velt.png";
 import ReadySet from "@/public/assets/readyset.png";
 import Nitric from "@/public/assets/nitric.svg";
 import KitOps from "@/public/assets/kitops.png";
+import Gibson from "@/public/assets/gibson.png";
 import CodeRabbit from "@/public/assets/coderabbit.png";
 import Eachlab from "@/public/assets/eachlab.png";
 import Stream from "@/public/assets/stream.png";
 import Stackql from "@/public/assets/stackql.png";
 import Swytchcode from "@/public/assets/swytchcode.png";
+import Enteligence from "@/public/assets/enteligence.png";
+import Motia from "@/public/assets/motia.png";
+import Graphite from "@/public/assets/graphite.png";
+import Ragie from "@/public/assets/ragie.png";
+import Brightdata from "@/public/assets/brightdata.png";
+import ForgeCode from "@/public/assets/forgecode.png";
+import ScrapeGraph from "@/public/assets/scrapegraph.png";
+import Dualite from "@/public/assets/dualite.png";
 
+import MotiaFull from "@/public/assets/motia-full.png";
 import PermitFull from "@/public/assets/Permit-full.png";
 import TolgeeFull from "@/public/assets/Tolgee-full.svg";
 import CopilotkitFull from "@/public/assets/Copilotkit-full.png";
@@ -50,7 +60,7 @@ import GabrielImg from "../public/assets/Gabriel.png";
 import AgitaImg from "../public/assets/Agita.png";
 import YC from "../public/assets/yc.png";
 import Devto from "../public/assets/devto.png";
-import arindamNoBg from "../public/assets/arindam-nobg.png";
+import arindamNoBg from "../public/assets/arindam_nobg.png";
 import amiteshNoBg from "../public/assets/amitesh-nobg.png";
 import shivayNoBg from "../public/assets/shivay-nobg.png";
 import amitesh from "../public/assets/amitesh.png";
@@ -66,11 +76,21 @@ export {
   Stackql,
   Latitude,
   Webcrumbs,
+  Gibson,
   Crawlee,
   Opire,
   Encore,
+  Dualite,
+  Enteligence,
   Velt,
   ReadySet,
+  Ragie,
+  Brightdata,
+  ForgeCode,
+  ScrapeGraph,
+  Graphite,
+  Motia,
+  MotiaFull,
   Nitric,
   KitOps,
   CodeRabbit,

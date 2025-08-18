@@ -88,7 +88,7 @@ export default function AboutUs() {
           <div className="text-center text-sm md:text-base text-neutral-600 dark:text-neutral-400 font-semibold">
             We help tech companies grow developer communities and boost
             engagement <br className="hidden md:block" /> through DevRel and
-            technical content that resonates.🚀
+            technical content that resonates.
           </div>
 
           <div className="flex flex-wrap max-w-lg items-center justify-center gap-4 mt-14">
