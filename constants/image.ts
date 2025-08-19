@@ -25,8 +25,14 @@ import Brightdata from "@/public/assets/brightdata.png";
 import ForgeCode from "@/public/assets/forgecode.png";
 import ScrapeGraph from "@/public/assets/scrapegraph.png";
 import Dualite from "@/public/assets/dualite.png";
+import Lambdatest from "@/public/assets/lambdatest.png";
 
+import LambdatestFull from "@/public/assets/lambdatest-full.png";
+import RagieFull from "@/public/assets/ragie-full.png";
+import EntelligenceFull from "@/public/assets/entelligence-full.png";
+import GibsonFull from "@/public/assets/gibson-full.svg";
 import MotiaFull from "@/public/assets/motia-full.png";
+import GraphiteFull from "@/public/assets/graphite-full.svg";
 import PermitFull from "@/public/assets/Permit-full.png";
 import TolgeeFull from "@/public/assets/Tolgee-full.svg";
 import CopilotkitFull from "@/public/assets/Copilotkit-full.png";
@@ -93,6 +99,9 @@ export {
   MotiaFull,
   Nitric,
   KitOps,
+  Lambdatest,
+  LambdatestFull,
+  GraphiteFull,
   CodeRabbit,
   PermitFull,
   TolgeeFull,
@@ -105,6 +114,9 @@ export {
   EncoreFull,
   VeltFull,
   ReadySetFull,
+  GibsonFull,
+  EntelligenceFull,
+  RagieFull,
   NitricFull,
   KitOpsFull,
   CodeRabbitFull,

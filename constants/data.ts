@@ -20,6 +20,12 @@ import {
   SwytchcodeFull,
   StackqlFull,
   EachlabFull,
+  MotiaFull,
+  GraphiteFull,
+  LambdatestFull,
+  GibsonFull,
+  EntelligenceFull,
+  RagieFull
 } from "./image";
 import {
   Briefcase,
@@ -79,7 +85,7 @@ export const trustedbyLogo = [
     image: VeltFull,
     isWhite: true,
     className:
-      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+      "h-7 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
     alt: "Velt",
   },
   {
@@ -99,6 +105,38 @@ export const trustedbyLogo = [
     alt: "Permit",
   },
   {
+    name: "Lambdatest",
+    image: LambdatestFull,
+    isWhite: true,
+    className:
+      "h-10 sm:h-12 md:h-16 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain dark:brightness-200",
+    alt: "Lambdatest",
+  },
+  {
+    name: "Gibson",
+    image: GibsonFull,
+    isWhite: true,
+    className:
+      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    alt: "Gibson",
+  },
+  {
+    name: "Motia",
+    image: MotiaFull,
+    isWhite: true,
+    className:
+      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    alt: "Motia",
+  },
+  {
+    name: "Graphite",
+    image: GraphiteFull,
+    isWhite: true,
+    className:
+      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    alt: "Graphite",
+  },
+  {
     name: "Eachlabs",
     image: EachlabFull,
     isWhite: true,
@@ -107,12 +145,28 @@ export const trustedbyLogo = [
     alt: "Eachlabs",
   },
   {
+    name: "Entelligence",
+    image: EntelligenceFull,
+    isWhite: true,
+    className:
+      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    alt: "Entelligence",
+  },
+  {
     name: "Latitude",
     image: LatitudeFull,
     isWhite: true,
     className:
       "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain dark:brightness-200",
     alt: "Latitude",
+  },
+  {
+    name: "Ragie",
+    image: RagieFull,
+    isWhite: true,
+    className:
+      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    alt: "Ragie",
   },
   {
     name: "Encore",
