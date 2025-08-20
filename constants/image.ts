@@ -26,6 +26,17 @@ import ForgeCode from "@/public/assets/forgecode.png";
 import ScrapeGraph from "@/public/assets/scrapegraph.png";
 import Dualite from "@/public/assets/dualite.png";
 import Lambdatest from "@/public/assets/lambdatest.png";
+import Pieces from "@/public/assets/pieces.png";
+import Amazon from "@/public/assets/amazon.png";
+import Fabric from "@/public/assets/fabric.png";
+import Flyte from "@/public/assets/flyte.png";
+import Keploy from "@/public/assets/keploy.png";
+import Meilisearch from "@/public/assets/meilisearch.png";
+import Scaler from "@/public/assets/scaler.png";
+import TryCua from "@/public/assets/trycua.png";
+import Unacademy from "@/public/assets/unacademy.png";
+import Uploadcare from "@/public/assets/uploadcare.png";
+import Apilayer from "@/public/assets/apilayer.png";
 
 import LambdatestFull from "@/public/assets/lambdatest-full.png";
 import RagieFull from "@/public/assets/ragie-full.png";
@@ -51,6 +62,7 @@ import NitricFull from "@/public/assets/Nitric-full.png";
 import KitOpsFull from "@/public/assets/Kitops-full.png";
 import CodeRabbitFull from "@/public/assets/Coderabbit-full.png";
 import StackqlFull from "@/public/assets/Stackql-full.png";
+import Vmware from "@/public/assets/vmware.png";
 
 import abstractBg from "@/public/assets/abstract-bg.png";
 import SauravImg from "@/public/assets/Saurav.png";
@@ -77,10 +89,12 @@ export {
   Copilotkit,
   Nebius,
   Eachlab,
+  Amazon,
   Stream,
   Swytchcode,
   Stackql,
   Latitude,
+  Vmware,
   Webcrumbs,
   Gibson,
   Crawlee,
@@ -96,6 +110,15 @@ export {
   ScrapeGraph,
   Graphite,
   Motia,
+  Fabric,
+  Flyte,
+  Keploy,
+  Meilisearch,
+  Scaler,
+  TryCua,
+  Apilayer,
+  Unacademy,
+  Uploadcare,
   MotiaFull,
   Nitric,
   KitOps,
@@ -113,6 +136,7 @@ export {
   OpireFull,
   EncoreFull,
   VeltFull,
+  Pieces,
   ReadySetFull,
   GibsonFull,
   EntelligenceFull,

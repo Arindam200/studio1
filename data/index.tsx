@@ -53,6 +53,19 @@ import {
   KitOpsFull,
   CodeRabbitFull,
   Motia,
+  Amazon,
+  Pieces,
+  Fabric,
+  Flyte,
+  Keploy,
+  Meilisearch,
+  Scaler,
+  TryCua,
+  Unacademy,
+  Uploadcare,
+  Apilayer,
+  Lambdatest,
+  Vmware
 } from "@/constants/image";
 import {
   IconAugmentedReality,
@@ -89,6 +102,14 @@ import {
 export const Data = {
   Companies: [
     {
+      id: 0,
+      name: "Amazon (Alexa)",
+      designation: "E-commerce",
+      image: Amazon,
+      href: "https://www.amazon.com/",
+      description: "Amazon's cloud-based voice service."
+    },
+    {
       id: 1,
       name: "Nebius",
       designation: "AI Cloud",
@@ -96,6 +117,14 @@ export const Data = {
       href: "https://nebius.com/",
   description: "AI-centric scalable cloud platform.",
     },
+    {
+      id: 2,
+      name: "Vmware",
+      designation: "Virtualization",
+      image: Vmware,
+      href: "https://www.vmware.com/",
+      description: "Cloud computing for Enterprises."
+    },  
     {
       id: 2,
       name: "Bright data",
@@ -121,6 +150,22 @@ export const Data = {
   description: "Full-stack authorization framework.",
     },
     {
+      id: 7,
+      name: "CodeRabbit",
+      designation: "AI Code Review",
+      image: CodeRabbit,
+      href: "https://coderabbit.ai/",
+      description: "AI-powered code review platform.",
+    },
+    {
+      id: 37,
+      name: "Lambdatest",
+      designation: "Cross Browser Testing",
+      image: Lambdatest,
+      href: "https://www.lambdatest.com/",
+      description: "Cross browser testing platform."  
+    },
+    {
       id: 5,
       name: "Stream",
       designation: "Chat & Activity APIs",
@@ -137,14 +182,6 @@ export const Data = {
       description: "Unified backend for AI Agents.",
     },
     {
-      id: 7,
-      name: "CodeRabbit",
-      designation: "AI Code Review",
-      image: CodeRabbit,
-      href: "https://coderabbit.ai/",
-      description: "AI-powered code review platform.",
-    },
-    {
       id: 8,
       name: "Enteligence",
       designation: "AI Code Review",
@@ -159,6 +196,22 @@ export const Data = {
       image: Graphite,
       href: "https://graphite.dev/",
   description: "AI developer productivity platform.",
+    },
+    {
+      id: 32,
+      name: "Scaler",
+      designation: "Tech learning platform",
+      image: Scaler,
+      href: "https://www.scaler.com/",
+      description: "Tech learning platform."
+    },
+    {
+      id: 33,
+      name: "TryCua",
+      designation: "Containers for Computer-Use AI Agents",
+      image: TryCua,
+      href: "https://trycua.com/",
+      description: "Cloud Containers for Agents"
     },
     {
       id: 10,
@@ -201,6 +254,14 @@ export const Data = {
   description: "TypeScript backend, AI search tools.",
     },
     {
+      id: 14,
+      name: "Pieces for Developers",
+      designation: "Long term memory for your whole workstream",
+      image: Pieces,
+      href: "https://pieces.dev/",
+      description: "Long term memory.",
+    },
+    {
       id: 15,
       name: "CopilotKit",
       designation: "AI Agents",
@@ -241,6 +302,62 @@ export const Data = {
   description: "Automates UI Dev workflows.",
     },
     {
+      id: 28,
+      name: "Fabric",
+      designation: "AI-Powered Design-to-Code",
+      image: Fabric,
+      href: "https://fabric.ai/",
+      description: "Headless E-commerce platform.",
+    },
+    {
+      id: 29,
+      name: "Flyte",
+      designation: "Dynamic, crash-proof AI orchestration",
+      image: Flyte,
+      href: "https://flyte.org/",
+      description: "Dynamic, crash-proof AI orchestration."
+    },
+    {
+      id: 30,
+      name: "Keploy",
+      designation: "API Testing",
+      image: Keploy,
+      href: "https://keploy.io/",
+      description: "Automated testing for APIs."
+    },
+    {
+      id: 31,
+      name: "Meilisearch",
+      designation: "Open-source AI search engine",
+      image: Meilisearch,
+      href: "https://www.meilisearch.com/",
+      description: "Open-source AI search engine."
+    },
+    {
+      id: 34,
+      name: "Unacademy",
+      designation: "India's largest learning platform",
+      image: Unacademy,
+      href: "https://unacademy.com/",
+      description: "India's largest learning platform"
+    },
+    {
+      id: 35,
+      name: "Uploadcare",
+      designation: "Build file handling in minutes",
+      image: Uploadcare,
+      href: "https://uploadcare.com/",
+      description: "Build file handling in minutes."
+    },
+    {
+      id: 36,
+      name: "Apilayer",
+      designation: "Discover, Integrate, and Build APIs",
+      image: Apilayer,
+      href: "https://apilayer.com/",
+      description: "Discover, Integrate, and Build APIs"
+    },
+     {
       id: 20,
       name: "SwytchCode",
       designation: "Dev Environment Sync",
@@ -303,7 +420,7 @@ export const Data = {
       image: Opire,
       href: "https://opire.dev/",
   description: "Project management platform."
-    },
+    }
   ],
   Features: [
     {
