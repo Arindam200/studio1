@@ -50,7 +50,9 @@
           {
             "group": "Company Case Studies",
             "pages": [
-              "case-studies/overview"
+              "case-studies/overview",
+              "case-studies/nebius",
+              "case-studies/jozu"
             ]
           }
         ]
