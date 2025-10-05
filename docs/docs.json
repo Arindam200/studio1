@@ -57,33 +57,38 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "anchor": "Home",
+          "href": "https://www.studio1hq.com",
+          "icon": "house"
+        },
+        {
+          "anchor": "About Us",
+          "href": "https://www.studio1hq.com/about-us",
           "icon": "book-open-cover"
         },
         {
           "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
+          "href": "https://www.studio1hq.com/blogs",
           "icon": "newspaper"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
+    "light": "/logo/studio1-logo.svg",
     "dark": "/logo/studio1-logo.svg"
   },
   "navbar": {
     "links": [
       {
         "label": "Contact",
-        "href": "mailto:hello@studio1.dev"
+        "href": "mailto:studioone.tech@gmail.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Get Started",
-      "href": "https://studio1.dev"
+      "label": "Book a Call",
+      "href": "https://cal.com/studio1/collab"
     }
   },
   "contextual": {
@@ -100,9 +105,9 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/studio1dev",
-      "github": "https://github.com/studio1dev",
-      "linkedin": "https://linkedin.com/company/studio1dev"
+      "x": "http://x.com/Studio1Hq",
+      "github": "https://github.com/studio1hq",
+      "linkedin": "https://www.linkedin.com/company/studio1hq/"
     }
   }
 }
