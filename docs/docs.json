@@ -1,0 +1,108 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Studio1 Documentation",
+  "colors": {
+    "primary": "#f97316",
+    "light": "#ff914d",
+    "dark": "#f97316"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Services",
+
+        "groups": [
+        {
+            "group": "Getting started",
+            "pages": [
+              "index"
+            ]
+          },
+          {
+            "group": "Our Services",
+            "pages": [
+              "services/blog-as-a-service",
+              "services/devrel-as-a-service",
+              "services/organic-campaign"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Resources",
+        "groups": [
+          {
+            "group": "Blogs & Insights",
+            "pages": [
+              "resources/blogs",
+              "resources/insights"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Case Studies",
+        "groups": [
+          {
+            "group": "Company Case Studies",
+            "pages": [
+              "case-studies/overview"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Documentation",
+          "href": "https://mintlify.com/docs",
+          "icon": "book-open-cover"
+        },
+        {
+          "anchor": "Blog",
+          "href": "https://mintlify.com/blog",
+          "icon": "newspaper"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/studio1-logo.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Contact",
+        "href": "mailto:hello@studio1.dev"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Get Started",
+      "href": "https://studio1.dev"
+    }
+  },
+  "contextual": {
+    "options": [
+     "copy",
+     "view",
+     "chatgpt",
+     "claude",
+     "perplexity",
+     "mcp",
+     "cursor",
+     "vscode"
+   ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/studio1dev",
+      "github": "https://github.com/studio1dev",
+      "linkedin": "https://linkedin.com/company/studio1dev"
+    }
+  }
+}
