@@ -18,7 +18,8 @@
             "group": "Getting started",
             "pages": [
               "index",
-              "about-us"
+              "about-us",
+              "faq"
             ]
           },
           {
@@ -27,7 +28,7 @@
               "services/blog-as-a-service",
               "services/devrel-as-a-service",
               "services/organic-campaign",
-              "services/product-hunt-launch"
+              "services/product-launch"
             ]
           }
         ]
