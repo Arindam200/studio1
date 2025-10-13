@@ -28,7 +28,9 @@
               "services/blog-as-a-service",
               "services/devrel-as-a-service",
               "services/organic-campaign",
-              "services/product-launch"
+              "services/product-launch",
+              "services/influencer-management",
+              "services/tech-video-production"
             ]
           }
         ]
