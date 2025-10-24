@@ -12,9 +12,8 @@
     "tabs": [
       {
         "tab": "Services",
-
         "groups": [
-        {
+          {
             "group": "Getting started",
             "pages": [
               "index",
@@ -25,12 +24,13 @@
           {
             "group": "Our Services",
             "pages": [
-              "services/blog-as-a-service",
-              "services/devrel-as-a-service",
+              "services/technical-content",
+              "services/developer-advocacy",
+              "services/tech-video-production",
+              "services/audit-services",
               "services/organic-campaign",
               "services/product-launch",
-              "services/influencer-management",
-              "services/tech-video-production"
+              "services/influencer-management"
             ]
           }
         ]
@@ -56,6 +56,18 @@
               "case-studies/overview",
               "case-studies/nebius",
               "case-studies/jozu"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Legal",
+        "groups": [
+          {
+            "group": "Legal Documents",
+            "pages": [
+              "terms-of-use",
+              "privacy-policy"
             ]
           }
         ]
@@ -100,15 +112,15 @@
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
