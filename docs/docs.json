@@ -36,31 +36,6 @@
         ]
       },
       {
-        "tab": "Resources",
-        "groups": [
-          {
-            "group": "Blogs & Insights",
-            "pages": [
-              "resources/blogs",
-              "resources/insights"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Case Studies",
-        "groups": [
-          {
-            "group": "Company Case Studies",
-            "pages": [
-              "case-studies/overview",
-              "case-studies/nebius",
-              "case-studies/jozu"
-            ]
-          }
-        ]
-      },
-      {
         "tab": "Legal",
         "groups": [
           {
