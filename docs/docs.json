@@ -36,6 +36,19 @@
         ]
       },
       {
+        "tab": "Case Studies",
+        "groups": [
+          {
+            "group": "Case Studies",
+            "pages": [
+              "case-studies/overview",
+              "case-studies/permit",
+              "case-studies/webcrumbs"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Legal",
         "groups": [
           {
