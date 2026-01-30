@@ -11,51 +11,9 @@ import {
   UsersFour,
 } from "@phosphor-icons/react";
 import Link from "next/link";
+import { staggerChildren, itemVariants } from "@/lib/animations";
 
 export default function Hero() {
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const floatingTagVariants = {
-    hidden: {
-      opacity: 0,
-      filter: "blur(4px)",
-    },
-    visible: {
-      opacity: 1,
-      filter: "blur(0px)",
-      transition: {
-        duration: 0.8,
-        ease: "easeOut" as const,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-      filter: "blur(10px)",
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      transition: {
-        duration: 0.6,
-        ease: "easeOut" as const,
-      },
-    },
-  };
-
   return (
     <section className="overflow-x-hidden max-h-fit">
       <div className="h-fit relative max-w-7xl mx-auto py-10 md:py-20 px-4 mt-24 w-full">
@@ -63,7 +21,7 @@ export default function Hero() {
         <div className="top-[-10rem] md:top-[-8rem] z-[-1] right-[-80%] md:right-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[42rem] w-[10rem] rotate-[40deg]"></div>
         <motion.div
           className="flex flex-col items-center justify-center gap-4"
-          variants={containerVariants}
+          variants={staggerChildren}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -134,13 +92,13 @@ export default function Hero() {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          variants={containerVariants}
+          variants={staggerChildren}
           className=" flex flex-wrap items-center mt-20 justify-center gap-4"
         >
           <motion.div
             initial="hidden"
             whileInView="visible"
-            variants={containerVariants}
+            variants={staggerChildren}
             className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:-rotate-12 top-[15rem] left-[8rem]"
           >
             <Megaphone
@@ -152,7 +110,7 @@ export default function Hero() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            variants={containerVariants}
+            variants={staggerChildren}
             className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:rotate-12 top-[27rem] left-[15rem]"
           >
             <GraduationCap
@@ -164,7 +122,7 @@ export default function Hero() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            variants={containerVariants}
+            variants={staggerChildren}
             className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:rotate-12 top-[15rem] right-[8rem]"
           >
             <CalendarCheck
@@ -176,7 +134,7 @@ export default function Hero() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            variants={containerVariants}
+            variants={staggerChildren}
             className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:-rotate-12 top-[27rem] right-[15rem]"
           >
             <UsersFour

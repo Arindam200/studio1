@@ -4,26 +4,7 @@ import { Marquee } from "../ui/marquee";
 import { trustedbyLogo } from "@/constants/data";
 import Image from "next/image";
 import { motion } from "motion/react";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.5 },
-  },
-};
+import { staggerChildren, fadeInUp } from "@/lib/animations";
 
 export default function Trustedby() {
   return (
@@ -31,16 +12,16 @@ export default function Trustedby() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
-      variants={containerVariants}
+      variants={staggerChildren}
       className="max-w-7xl mt-40 mb-12 mx-auto"
     >
       <motion.div
-        variants={itemVariants}
+        variants={fadeInUp}
         className="flex justify-center w-full items-center"
       >
         <h2 className="text-xl font-medium">Trusted by companies</h2>
       </motion.div>
-      <motion.div variants={itemVariants}>
+      <motion.div variants={fadeInUp}>
         <Marquee>
           {trustedbyLogo.map((item) => (
             <div className="flex items-center justify-center" key={item.name}>

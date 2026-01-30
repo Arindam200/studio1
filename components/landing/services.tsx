@@ -5,25 +5,7 @@ import { Button } from "../ui/button";
 import { ArrowUpRight, Cube, Package, Pen, Users } from "@phosphor-icons/react";
 import Link from "next/link";
 import { motion } from "motion/react";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, filter: "blur(10px)" },
-  visible: {
-    opacity: 1,
-    filter: "blur(0px)",
-    transition: { duration: 0.3 },
-  },
-};
+import { staggerChildren, serviceItemVariants } from "@/lib/animations";
 
 export default function Services() {
   return (
@@ -32,14 +14,14 @@ export default function Services() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        variants={containerVariants}
+        variants={staggerChildren}
         id="work"
         className=" mb-28 px-4 py-20 relative"
       >
         <div className="bottom-[-10rem] md:bottom-[-18rem] z-[-1] left-[-0%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
         <div className="top-[-10rem] md:top-[-18rem] z-[-1] right-[-0%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
         <motion.div
-          variants={itemVariants}
+          variants={serviceItemVariants}
           className="flex flex-col z-[20] items-center gap-4 justify-center"
         >
           <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 text-white pb-1 flex gap-2 items-center">
@@ -55,7 +37,7 @@ export default function Services() {
         </motion.div>
         <div className="flex flex-col max-w-7xl mx-auto">
           <motion.div
-            variants={itemVariants}
+            variants={serviceItemVariants}
             className="flex relative items-center gap-[2%] w-full mt-20 justify-center md:-space-x-20 flex-col md:flex-row"
           >
             <Link
@@ -113,7 +95,7 @@ export default function Services() {
           </motion.div>
 
           <motion.div
-            variants={itemVariants}
+            variants={serviceItemVariants}
             className="border relative group overflow-hidden hover:border-primary hover:-translate-y-2 duration-500 z-[20] rounded-lg flex md:flex-row flex-col items-start gap-3 md:items-end justify-between p-4 w-full mt-32 max-w-[45rem] mx-auto"
           >
             <div className="h-44 w-16 absolute bg-accent/30 duration-700 -top-10 rotate-[10deg] -left-20 group-hover:left-[40rem]"></div>

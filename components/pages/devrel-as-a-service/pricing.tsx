@@ -11,6 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { staggerChildren, itemVariants } from "@/lib/animations";
 
 const pricingPlans = [
   {
@@ -73,34 +74,6 @@ const pricingPlans = [
 ];
 
 export default function PricingSection() {
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-      filter: "blur(10px)",
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      transition: {
-        duration: 0.6,
-        ease: "easeOut" as const,
-      },
-    },
-  };
-
   return (
     <div className="w-full py-24 max-w-7xl mx-auto relative">
       {/* Decorative shapes */}
@@ -128,7 +101,7 @@ export default function PricingSection() {
 
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-          variants={containerVariants}
+          variants={staggerChildren}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}

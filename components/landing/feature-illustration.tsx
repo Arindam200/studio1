@@ -1,17 +1,15 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import UserAvatarCollection from "./user-avatar-collection";
-// import Graph from "../ui/svgs/graph";
-import SemiCircularGraph from "../ui/svgs/semi-circular-graph";
 import { NumberTicker } from "../magicui/number-ticker";
-import { CollaboarationIllustration } from "../collaboaration-illustration";
+import { CollaborationIllustration } from "../collaboration-illustration";
 import SupportIllustration from "../support-illustration";
 import DarkExpertiseIllustration from "../ui/svgs/dark-expertise-illustration";
 import LightExpertiseIllustration from "../ui/svgs/light-expertise-illustration";
 import DisplayCards from "./display-cards";
 import { BarChart, PenTool, Users } from "lucide-react";
-import { ComparisionMetric } from "../comparision-metric";
+import { ComparisonMetric } from "../comparison-metric";
 
 interface FeatureIllustrationProps {
   title: string;
@@ -79,7 +77,7 @@ export function FeatureIllustration({ title }: FeatureIllustrationProps) {
   switch (normalizedTitle) {
     case "quality":
       return (
-        <ComparisionMetric className="absolute bottom-[0rem] md:bottom-[-3rem] left-1/2 -translate-x-1/2 size-[12rem] md:size-[22rem]" />
+        <ComparisonMetric className="absolute bottom-[0rem] md:bottom-[-3rem] left-1/2 -translate-x-1/2 size-[12rem] md:size-[22rem]" />
         // <SemiCircularGraph className="absolute bottom-[-5rem] md:bottom-[-5rem] left-1/2 -translate-x-1/2 size-[12rem] md:size-[22rem]" />
       );
     case "experience":
@@ -116,7 +114,7 @@ export function FeatureIllustration({ title }: FeatureIllustrationProps) {
       );
     case "collaboration":
       return (
-        <CollaboarationIllustration className="absolute bottom-[3rem] left-1/2 w-full -translate-x-1/2" />
+        <CollaborationIllustration className="absolute bottom-[3rem] left-1/2 w-full -translate-x-1/2" />
       );
     case "testimonials":
       return <UserAvatarCollection />;

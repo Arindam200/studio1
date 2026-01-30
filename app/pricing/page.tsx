@@ -1,8 +1,9 @@
 "use client";
-// import { CheckIcon } from '@heroicons/react/20/solid'
 import Navbar from "@/components/sections/navbar";
 import { motion } from "motion/react";
 import { Check } from "lucide-react";
+import { fadeInUp, createCardVariantsWithDelay } from "@/lib/animations";
+import type { PricingPlan } from "@/types";
 
 const blogPlans = [
   {
@@ -118,12 +119,12 @@ const customSolutions = [
   },
 ];
 
-const PricingSection = ({ title, plans }: { title: string; plans: any[] }) => (
+const PricingSection = ({ title, plans }: { title: string; plans: PricingPlan[] }) => (
   <div className="py-16">
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+      initial="hidden"
+      animate="visible"
+      variants={fadeInUp}
       className="max-w-3xl mx-auto text-center mb-16"
     >
       <h2 className="text-3xl font-bold mb-4">{title}</h2>
@@ -133,9 +134,9 @@ const PricingSection = ({ title, plans }: { title: string; plans: any[] }) => (
       {plans.map((plan, index) => (
         <motion.div
           key={plan.name}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: index * 0.1 }}
+          initial="hidden"
+          animate="visible"
+          variants={createCardVariantsWithDelay(index, 0.1)}
           className="relative bg-[#1a1f2c]/80 backdrop-blur-lg border border-white/10 rounded-2xl p-8 hover:border-orange-500/50 transition-colors"
         >
           <div className="mb-8">

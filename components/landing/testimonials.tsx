@@ -7,60 +7,13 @@ import { Button } from "../ui/button";
 import { Data } from "@/data";
 import TestimonialCard from "./testimonial-card";
 import { motion, AnimatePresence } from "motion/react";
+import { staggerContainer, itemVariants, headerVariants } from "@/lib/animations";
 
 export default function Testimonials() {
   const [showAll, setShowAll] = useState(false);
   const initialTestimonials = Data.Testimonials.slice(0, 6);
   const remainingTestimonials = Data.Testimonials.slice(6);
   const containerRef = useRef(null);
-
-  // Animation variants
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      y: 50,
-      opacity: 0,
-      filter: "blur(10px)",
-    },
-    visible: {
-      y: 0,
-      opacity: 1,
-      filter: "blur(0px)",
-      transition: {
-        type: "spring" as const,
-        damping: 15,
-        stiffness: 100,
-        duration: 0.6,
-      },
-    },
-  };
-
-  const headerVariants = {
-    hidden: {
-      y: 30,
-      opacity: 0,
-      filter: "blur(5px)",
-    },
-    visible: {
-      y: 0,
-      opacity: 1,
-      filter: "blur(0px)",
-      transition: {
-        type: "spring" as const,
-        damping: 20,
-        stiffness: 100,
-        duration: 0.5,
-      },
-    },
-  };
 
   return (
     <section id="testimonials" className="py-20 relative overflow-hidden">
@@ -72,7 +25,7 @@ export default function Testimonials() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
+          variants={staggerContainer}
         >
           <motion.div variants={headerVariants}>
             <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 flex gap-2 items-center">
@@ -100,7 +53,7 @@ export default function Testimonials() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          variants={containerVariants}
+          variants={staggerContainer}
         >
           {initialTestimonials.map((testimonial, index) => (
             <motion.div

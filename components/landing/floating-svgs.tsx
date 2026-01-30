@@ -1,35 +1,8 @@
 "use client";
 import { Code, Pen } from "@phosphor-icons/react";
 import { motion } from "motion/react";
-const iconVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 1,
-      ease: "easeOut" as const,
-    },
-  },
-};
+import { iconVariants, createFloatingAnimation } from "@/lib/animations";
 
-const createFloatingAnimation = (delay: number, rotate: number) => ({
-  y: [0, -10, 0],
-  // Include the rotation in the animation
-  rotate: rotate,
-  transition: {
-    y: {
-      duration: 3,
-      repeat: Number.POSITIVE_INFINITY,
-      ease: "easeInOut" as const,
-      delay: delay,
-    },
-    // Make rotation static (not animated)
-    rotate: {
-      duration: 0,
-    },
-  },
-});
 export default function FloatingSvgs() {
   return (
     <>

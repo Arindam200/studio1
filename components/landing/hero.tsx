@@ -2,89 +2,23 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDownRight, Calendar } from "@phosphor-icons/react";
 import FloatingSvgs from "./floating-svgs";
-import HeroRightGrids from "../ui/hero-right-grids";
-import HeroLeftGrids from "../ui/hero-left-grids";
 import { Badge } from "@/components/ui/badge";
-import { Building, Buildings, Star } from "@phosphor-icons/react/dist/ssr";
+import { Building, Star } from "@phosphor-icons/react/dist/ssr";
 import { Data } from "@/data";
 import Image from "next/image";
 import AvatarComponent from "./avatar-component";
 import { Devto, YC } from "@/constants/image";
 import { motion } from "motion/react";
+import {
+  fadeInUp,
+  fadeIn,
+  staggerChildren,
+  iconVariants,
+  createFloatingAnimation,
+} from "@/lib/animations";
 
 export default function Hero() {
-  const iconVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 1,
-        ease: "easeOut" as const,
-      },
-    },
-  };
-
-  // Animation variants
-  const fadeInUp = {
-    hidden: {
-      opacity: 0,
-      y: 20,
-      filter: "blur(4px)",
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      transition: {
-        duration: 0.6,
-        ease: "easeOut" as const,
-      },
-    },
-  };
-
-  const testimonialVariant = {
-    hidden: {
-      opacity: 0,
-      filter: "blur(4px)",
-    },
-    visible: {
-      opacity: 1,
-      filter: "blur(0px)",
-      transition: {
-        duration: 0.8,
-        ease: "easeOut" as const,
-      },
-    },
-  };
-
-  const staggerChildren = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const createFloatingAnimation = (delay: number, rotate: number) => ({
-    y: [0, -10, 0],
-    // Include the rotation in the animation
-    rotate: rotate,
-    transition: {
-      y: {
-        duration: 3,
-        repeat: Number.POSITIVE_INFINITY,
-        ease: "easeInOut" as const,
-        delay: delay,
-      },
-      // Make rotation static (not animated)
-      rotate: {
-        duration: 0,
-      },
-    },
-  });
+  const testimonialVariant = fadeIn;
 
   return (
     <section id="hero" className="relative h-fit">

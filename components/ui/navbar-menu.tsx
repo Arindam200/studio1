@@ -2,6 +2,8 @@
 import React from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
+import { springTransition } from "@/lib/animations";
+import type { HoveredLinkProps } from "@/types";
 
 export const Menu = ({
   setActive,
@@ -17,14 +19,6 @@ export const Menu = ({
   );
 };
 
-const transition = {
-  type: "spring" as const,
-  mass: 0.5,
-  damping: 11.5,
-  stiffness: 100,
-  restDelta: 0.001,
-  restSpeed: 0.001,
-};
 
 export const MenuItem = ({
   setActive,
@@ -83,12 +77,12 @@ export const MenuItem = ({
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={transition}
+          transition={springTransition}
         >
           {active === item && (
             <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-2">
               <motion.div
-                transition={transition}
+                transition={springTransition}
                 layoutId="active" // layoutId ensures smooth animation
                 className="bg-white dark:bg-black backdrop-blur-sm rounded-md overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
               >
@@ -107,11 +101,11 @@ export const MenuItem = ({
   );
 };
 
-export const HoveredLink = ({ children, ...rest }: any) => {
+export const HoveredLink = ({ children, href, className }: HoveredLinkProps) => {
   return (
     <Link
-      {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-black "
+      href={href}
+      className={className || "text-neutral-700 dark:text-neutral-200 hover:text-black"}
     >
       {children}
     </Link>

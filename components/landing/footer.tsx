@@ -4,51 +4,9 @@ import { IconBrandLinkedin, IconBrandX, IconNews } from "@tabler/icons-react";
 import Logo from "../ui/svgs/logo";
 import { motion } from "motion/react";
 import Link from "next/link";
+import { containerVariants, headerVariants, gradientVariants } from "@/lib/animations";
 
 export default function Footer() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 30,
-      filter: "blur(5px)",
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      transition: {
-        duration: 0.3,
-        ease: [0.22, 1, 0.36, 1] as const,
-      },
-    },
-  };
-
-  const gradientVariants = {
-    hidden: {
-      opacity: 0,
-      scale: 0.8,
-    },
-    visible: {
-      opacity: 0.3,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut" as const,
-      },
-    },
-  };
-
   return (
     <motion.section
       className="relative max-h-fit  mt-0"
@@ -68,7 +26,7 @@ export default function Footer() {
 
       <motion.footer
         className="border-t max-h-fit overflow-hidden bg-background mt-44 z-[101] relative pb-10"
-        variants={itemVariants}
+        variants={headerVariants}
       >
         <div className="bg-gradient-to-b from-foreground/20 via-accent/80 to-transparent dark:from-accent/80 dark:via-accent/60 bg-clip-text text-transparent text-[6rem] sm:text-[8rem] md:text-[12rem] lg:text-[17rem] leading-tight absolute left-1/2 -translate-x-1/2 bottom-[8rem] md:bottom-[5rem] z-20 font-extrabold">
           STUDIO1
@@ -90,15 +48,15 @@ export default function Footer() {
           <div className="flex flex-col mb-12 sm:mb-20 md:mb-0 w-full">
             <motion.div
               className="w-full flex flex-col items-center"
-              variants={itemVariants}
+              variants={headerVariants}
             >
               <motion.div
                 className="space-y-2 flex flex-col items-center flex-1"
-                variants={itemVariants}
+                variants={headerVariants}
               >
                 <motion.div
                   className="flex items-center gap-2"
-                  variants={itemVariants}
+                  variants={headerVariants}
                 >
                   <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary text-3xl font-bold">
                     Studio1
@@ -106,7 +64,7 @@ export default function Footer() {
                 </motion.div>
                 <motion.p
                   className="text-foreground/90 font-semibold text-center sm:w-96"
-                  variants={itemVariants}
+                  variants={headerVariants}
                 >
                   Empowering tech companies with technical content and DevRel
                   services.
@@ -114,7 +72,7 @@ export default function Footer() {
               </motion.div>
               <motion.div
                 className="flex mb-8 mt-3 gap-4"
-                variants={itemVariants}
+                variants={headerVariants}
               >
                 <Link
                   href="https://x.com/Studio1HQ"
@@ -171,7 +129,7 @@ export default function Footer() {
             >
               <motion.div
                 className="space-y-4 py-4 px-4 rounded-xl bg-accent/40"
-                variants={itemVariants}
+                variants={headerVariants}
               >
                 <h3 className="font-bold text-primary">Services</h3>
                 <nav className="flex flex-col gap-2">
@@ -203,7 +161,7 @@ export default function Footer() {
               </motion.div>
               <motion.div
                 className="space-y-4 py-4 px-4 rounded-xl bg-accent/40"
-                variants={itemVariants}
+                variants={headerVariants}
               >
                 <h3 className="font-bold text-primary">Agency</h3>
                 <nav className="flex flex-col gap-2">
@@ -231,7 +189,7 @@ export default function Footer() {
           </div>
           <motion.div
             className="mt-44 md:mt-12 z-[25] flex flex-col gap-1 items-center justify-center md:flex-row md:items-center md:justify-between"
-            variants={itemVariants}
+            variants={headerVariants}
           >
             <p className="text-base text-muted-foreground">
               ©{new Date().getFullYear()} Studio1. All rights reserved.

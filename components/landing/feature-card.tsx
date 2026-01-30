@@ -4,34 +4,16 @@ import { cn } from "@/lib/utils";
 import { Particles } from "../ui/particles";
 import { FeatureIllustration } from "./feature-illustration";
 import { motion } from "motion/react";
+import { createCardVariantsWithDelay } from "@/lib/animations";
+import type { Feature } from "@/types";
 
 interface FeatureCardProps {
-  feature: {
-    title: string;
-    description: string;
-    icon: React.ComponentType<{ className?: string }>;
-  };
+  feature: Feature;
   index: number;
 }
 
 export function FeatureCard({ feature, index }: FeatureCardProps) {
-  const cardVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-      filter: "blur(10px)",
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      transition: {
-        duration: 0.2,
-        ease: [0.22, 1, 0.36, 1] as const,
-        delay: index * 0.15,
-      },
-    },
-  };
+  const cardVariants = createCardVariantsWithDelay(index);
 
   return (
     <motion.div
