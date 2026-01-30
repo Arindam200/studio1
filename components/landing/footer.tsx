@@ -29,7 +29,7 @@ export default function Footer() {
       filter: "blur(0px)",
       transition: {
         duration: 0.3,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as const,
       },
     },
   };
@@ -44,7 +44,7 @@ export default function Footer() {
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -238,13 +238,13 @@ export default function Footer() {
             </p>
             <nav className="flex gap-4">
               <Link
-                href="#"
+                href="/terms"
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 Terms and Conditions
               </Link>
               <Link
-                href="#"
+                href="/privacy"
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 Privacy Policy

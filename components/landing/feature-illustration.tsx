@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import UserAvatarCollection from "./user-avatar-collection";
 // import Graph from "../ui/svgs/graph";
@@ -15,6 +15,26 @@ import { ComparisionMetric } from "../comparision-metric";
 
 interface FeatureIllustrationProps {
   title: string;
+}
+
+function ExpertiseIllustration({ className }: { className: string }) {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Render a placeholder with the same dimensions during SSR to avoid layout shift
+  if (!mounted) {
+    return <div className={className} />;
+  }
+
+  return resolvedTheme === "dark" ? (
+    <DarkExpertiseIllustration className={className} />
+  ) : (
+    <LightExpertiseIllustration className={className} />
+  );
 }
 
 const defaultCards = [
@@ -54,7 +74,6 @@ const defaultCards = [
 ];
 
 export function FeatureIllustration({ title }: FeatureIllustrationProps) {
-  const { theme } = useTheme();
   const normalizedTitle = title.toLowerCase();
 
   switch (normalizedTitle) {
@@ -81,10 +100,8 @@ export function FeatureIllustration({ title }: FeatureIllustrationProps) {
         </div>
       );
     case "expertise":
-      return theme === "dark" ? (
-        <DarkExpertiseIllustration className="absolute bottom-[-5rem] md:-bottom-[5rem] left-1/2 size-80 -translate-x-1/2" />
-      ) : (
-        <LightExpertiseIllustration className="absolute bottom-[-5rem] md:-bottom-[5rem] left-1/2 size-80 -translate-x-1/2" />
+      return (
+        <ExpertiseIllustration className="absolute bottom-[-5rem] md:-bottom-[5rem] left-1/2 size-80 -translate-x-1/2" />
       );
     case "support":
       return (

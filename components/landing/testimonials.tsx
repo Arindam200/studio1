@@ -35,7 +35,7 @@ export default function Testimonials() {
       opacity: 1,
       filter: "blur(0px)",
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 15,
         stiffness: 100,
         duration: 0.6,
@@ -54,7 +54,7 @@ export default function Testimonials() {
       opacity: 1,
       filter: "blur(0px)",
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 20,
         stiffness: 100,
         duration: 0.5,
@@ -123,7 +123,7 @@ export default function Testimonials() {
                     animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                     exit={{ y: 50, opacity: 0, filter: "blur(10px)" }}
                     transition={{
-                      type: "spring",
+                      type: "spring" as const,
                       damping: 15,
                       stiffness: 100,
                       delay: index * 0.05,

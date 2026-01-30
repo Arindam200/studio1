@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { Icon, IconProps } from "@tabler/icons-react";
 import { Badge } from "../ui/badge";
 import { CheckSquare } from "@phosphor-icons/react";
 import { FlickeringGrid } from "../magicui/flickering-grid";
@@ -11,9 +10,7 @@ interface TimelineItemProps {
   item: {
     name: string;
     description: string;
-    icon: React.ForwardRefExoticComponent<
-      IconProps & React.RefAttributes<Icon>
-    >;
+    icon: React.ComponentType<{ className?: string }>;
     details: React.JSX.Element[];
   };
   index: number;

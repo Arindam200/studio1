@@ -83,7 +83,7 @@ export function GridBackgroundDemo() {
             <path d="M3 10h18" />
             <path d="M8 2v4" />
             <motion.g
-              transition={{ type: "spring", stiffness: 50, damping: 10 }}
+              transition={{ type: "spring" as const, stiffness: 50, damping: 10 }}
               variants={gVariants}
               animate={controls}
             >

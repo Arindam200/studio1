@@ -27,7 +27,7 @@ export function FeatureCard({ feature, index }: FeatureCardProps) {
       filter: "blur(0px)",
       transition: {
         duration: 0.2,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as const,
         delay: index * 0.15,
       },
     },

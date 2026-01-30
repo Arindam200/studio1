@@ -30,8 +30,28 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Blog as Service",
+    description:
+      "We create developer-focused content that builds trust, boosts product visibility and drives technical adoption.",
+    provider: {
+      "@type": "Organization",
+      name: "Studio1",
+      url: "https://studio1hq.com",
+    },
+    serviceType: "Technical Content Writing",
+    areaServed: "Worldwide",
+    url: "https://studio1hq.com/blog-as-service",
+  };
+
   return (
     <div className="">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Hero />
       <MinimalCardDemo />
       <Process />

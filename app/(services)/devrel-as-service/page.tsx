@@ -31,8 +31,28 @@ export const metadata: Metadata = {
 };
 
 export default function DevRel() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "DevRel as Service",
+    description:
+      "We help you build and grow developer communities with DevRel strategies tailored to your product and audience.",
+    provider: {
+      "@type": "Organization",
+      name: "Studio1",
+      url: "https://studio1hq.com",
+    },
+    serviceType: "Developer Relations Consulting",
+    areaServed: "Worldwide",
+    url: "https://studio1hq.com/devrel-as-service",
+  };
+
   return (
     <div className="">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Hero />
       <Services />
       <Process />

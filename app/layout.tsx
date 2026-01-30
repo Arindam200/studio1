@@ -96,6 +96,7 @@ export default function RootLayout({
           jakarta.variable,
           "antialiased font-secondary",
         )}
+        suppressHydrationWarning
       >
         <ThemeProvider
           attribute="class"

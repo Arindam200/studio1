@@ -8,7 +8,7 @@ const iconVariants = {
     scale: 1,
     transition: {
       duration: 1,
-      ease: "easeOut",
+      ease: "easeOut" as const,
     },
   },
 };
@@ -21,7 +21,7 @@ const createFloatingAnimation = (delay: number, rotate: number) => ({
     y: {
       duration: 3,
       repeat: Number.POSITIVE_INFINITY,
-      ease: "easeInOut",
+      ease: "easeInOut" as const,
       delay: delay,
     },
     // Make rotation static (not animated)

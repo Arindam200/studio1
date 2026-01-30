@@ -20,7 +20,7 @@ export default function Hero() {
       scale: 1,
       transition: {
         duration: 1,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -38,7 +38,7 @@ export default function Hero() {
       filter: "blur(0px)",
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -53,7 +53,7 @@ export default function Hero() {
       filter: "blur(0px)",
       transition: {
         duration: 0.8,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -76,7 +76,7 @@ export default function Hero() {
       y: {
         duration: 3,
         repeat: Number.POSITIVE_INFINITY,
-        ease: "easeInOut",
+        ease: "easeInOut" as const,
         delay: delay,
       },
       // Make rotation static (not animated)
@@ -118,13 +118,13 @@ export default function Hero() {
                 </Badge>
               </motion.div>
 
-              <motion.div
+              <motion.h1
                 className="text-4xl font-semibold font-primary sm:text-5xl lg:text-[4rem] text-center md:font-medium"
                 variants={fadeInUp}
               >
                 Amplify Your Voice <br className="hidden md:block" /> in the
                 Developer Ecosystem
-              </motion.div>
+              </motion.h1>
 
               <motion.div
                 className="sm:text-xl text-base text-balance mt-8 text-neutral-600 dark:text-neutral-300 text-center"

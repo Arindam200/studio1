@@ -26,7 +26,7 @@ export const Version1 = ({
       transition={{
         duration: 0.8,
         delay: parseInt(animationDelay) / 1000,
-        ease: [0.25, 0.1, 0.25, 1],
+        ease: [0.25, 0.1, 0.25, 1] as const,
       }}
     >
       <Link

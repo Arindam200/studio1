@@ -34,7 +34,7 @@ export default function Hero() {
       filter: "blur(0px)",
       transition: {
         duration: 0.8,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -51,7 +51,7 @@ export default function Hero() {
       filter: "blur(0px)",
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
