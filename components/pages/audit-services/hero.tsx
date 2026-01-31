@@ -7,7 +7,7 @@ import {
   FileSearch,
   Lightbulb,
   ClipboardText,
-} from "@phosphor-icons/react";
+} from "@phosphor-icons/react/dist/ssr";
 import { motion } from "motion/react";
 import { staggerChildren, itemVariants } from "@/lib/animations";
 
