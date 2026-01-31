@@ -66,8 +66,9 @@ export default function Hero() {
               >
                 {/* For mobile screens - no spans */}
                 <div className="sm:hidden">
-                  Studio1 helps devtool and SaaS companies amplify their presence
-                  through strategic technical content and DevRel services.
+                  Studio1 helps devtool and SaaS teams create technical content
+                  and DevRel strategies that boost growth and developer
+                  adoption.
                 </div>
 
                 {/* For larger screens - with spans */}
@@ -75,25 +76,29 @@ export default function Hero() {
                   Studio1 helps
                   <span className="font-semibold text-foreground">
                     {" "}
-                    devtool and SaaS companies
+                    devtool and SaaS teams
                   </span>{" "}
-                  amplify their presence
-                  <br />
-                  through
+                  create
                   <span className="font-semibold text-foreground">
                     {" "}
-                    strategic technical content
-                  </span>{" "}
+                    technical content
+                  </span>
+                  <br />
                   and
                   <span className="font-semibold text-foreground">
                     {" "}
-                    DevRel services
-                  </span>
-                  <br />
-                  that drive
+                    DevRel strategies
+                  </span>{" "}
+                  that boost
                   <span className="font-semibold text-foreground">
                     {" "}
-                    visibility, adoption, and growth
+                    growth
+                  </span>
+                  <br />
+                  and
+                  <span className="font-semibold text-foreground">
+                    {" "}
+                    developer adoption
                   </span>
                   .
                 </div>

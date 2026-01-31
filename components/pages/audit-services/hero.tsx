@@ -4,7 +4,7 @@ import { IconPackages, IconPhoneFilled } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
 import {
   MagnifyingGlass,
-  FileSearch,
+  FileMagnifyingGlass,
   Lightbulb,
   ClipboardText,
 } from "@phosphor-icons/react/dist/ssr";
@@ -115,7 +115,7 @@ export default function Hero() {
             variants={staggerChildren}
             className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:rotate-12 top-[27rem] left-[10rem]"
           >
-            <FileSearch
+            <FileMagnifyingGlass
               weight="fill"
               className="size-5 md:size-8 text-primary"
             />
