@@ -1,40 +1,12 @@
 "use client";
-import React from "react";
 import { Badge } from "../ui/badge";
 import { Data } from "@/data";
 import { FeatureCard } from "./feature-card";
 import { Sparkle } from "lucide-react";
 import { motion } from "motion/react";
+import { containerVariants, headerVariants } from "@/lib/animations";
 
 export default function Features() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const headerVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-      filter: "blur(10px)",
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      transition: {
-        duration: 0.2,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    },
-  };
-
   return (
     <motion.div
       id="why-us"

@@ -88,7 +88,7 @@ export const Timeline: React.FC<{ type: "Blog" | "Devrel" }> = ({ type }) => {
                 className="absolute inset-0 bg-primary origin-left w-[200vw]"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
+                transition={{ duration: 1.5, ease: "easeInOut" as const }}
               />
             </div>
 

@@ -1,7 +1,8 @@
+import React from "react";
 import { Data } from "@/data";
 
 interface Reason {
-  icon: JSX.Element | any;
+  icon: React.ComponentType<{ className?: string }>;
   title: string;
   description: string;
 }
@@ -22,11 +23,13 @@ const Features = () => {
           </h2>
         </div>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-          {reasons.map((reason, i) => (
+          {reasons.map((reason, i) => {
+            const IconComponent = reason.icon;
+            return (
             <div key={i} className="flex flex-col">
               <div className="flex max-sm:justify-center">
                 <div className="mb-5 flex size-16 items-center justify-center rounded-lg bg-zinc-900">
-                  {reason?.icon}
+                  <IconComponent className="size-8 text-orange-400" />
                 </div>
               </div>
 
@@ -37,7 +40,8 @@ const Features = () => {
                 {reason?.description}
               </p>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,0 +1,120 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Studio1 Documentation",
+  "colors": {
+    "primary": "#f97316",
+    "light": "#ff914d",
+    "dark": "#f97316"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Services",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "index",
+              "about-us",
+              "faq"
+            ]
+          },
+          {
+            "group": "Our Services",
+            "pages": [
+              "services/technical-content",
+              "services/developer-advocacy",
+              "services/tech-video-production",
+              "services/audit-services",
+              "services/organic-campaign",
+              "services/product-launch",
+              "services/influencer-management"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Case Studies",
+        "groups": [
+          {
+            "group": "Case Studies",
+            "pages": [
+              "case-studies/overview",
+              "case-studies/permit",
+              "case-studies/webcrumbs"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Legal",
+        "groups": [
+          {
+            "group": "Legal Documents",
+            "pages": [
+              "terms-of-use",
+              "privacy-policy"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Home",
+          "href": "https://www.studio1hq.com",
+          "icon": "house"
+        },
+        {
+          "anchor": "About Us",
+          "href": "https://www.studio1hq.com/about-us",
+          "icon": "book-open-cover"
+        },
+        {
+          "anchor": "Blog",
+          "href": "https://www.studio1hq.com/blogs",
+          "icon": "newspaper"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/studio1-logo.svg",
+    "dark": "/logo/studio1-logo.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Contact",
+        "href": "mailto:studioone.tech@gmail.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Book a Call",
+      "href": "https://cal.com/studio1/collab"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "footer": {
+    "socials": {
+      "x": "http://x.com/Studio1Hq",
+      "github": "https://github.com/studio1hq",
+      "linkedin": "https://www.linkedin.com/company/studio1hq/"
+    }
+  }
+}

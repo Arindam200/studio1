@@ -8,6 +8,7 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { arindamNoBg, amiteshNoBg, shivayNoBg } from "@/constants/image";
 import { cn } from "@/lib/utils";
+import { staggerChildren, itemVariants } from "@/lib/animations";
 
 const jobOpenings = [
   {
@@ -80,33 +81,6 @@ const jobOpenings = [
   // },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-    filter: "blur(10px)",
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
-};
-
 const Careers = () => {
   const [selectedDepartment, setSelectedDepartment] = useState<string | null>(
     null,
@@ -132,7 +106,7 @@ const Careers = () => {
               className="text-center"
               initial="hidden"
               animate="visible"
-              variants={containerVariants}
+              variants={staggerChildren}
             >
               <motion.div variants={itemVariants}>
                 <Badge className="mb-4 bg-primary/10 text-primary border-0 px-3 py-1 text-sm font-medium">
@@ -175,7 +149,7 @@ const Careers = () => {
           <motion.div
             initial="hidden"
             animate="visible"
-            variants={containerVariants}
+            variants={staggerChildren}
             className="relative flex items-center group w-fit mx-auto justify-center gap-2"
           >
             <div className="bottom-[-3rem] md:bottom-[-5rem] translate-y-[-50%] left-1/2 absolute bg-gradient-to-t opacity-70 dark:opacity-100 dark:lg:opacity-100 from-primary dark:to-primary to-primary blur-[2em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out w-[20rem] h-[5rem] md:h-[10rem] md:w-[40rem] "></div>
@@ -213,7 +187,7 @@ const Careers = () => {
           className="px-6 lg:px-8 mt-20 pb-24 max-w-6xl mx-auto"
           initial="hidden"
           animate="visible"
-          variants={containerVariants}
+          variants={staggerChildren}
         >
           <motion.div className="mb-12" variants={itemVariants}>
             <h2 className="text-3xl font-bold mb-8 text-center">
@@ -251,7 +225,7 @@ const Careers = () => {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             initial="hidden"
             animate="visible"
-            variants={containerVariants}
+            variants={staggerChildren}
           >
             {filteredJobs.map((job) => (
               <motion.div key={job.id} variants={itemVariants}>

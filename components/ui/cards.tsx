@@ -14,7 +14,7 @@ export const CardBody = (content: CardContent) => (
       "text-left space-y-4 p-4 md:p-6 max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-center",
     )}
   >
-    <img src={content.image} className="h-20" alt="" />
+    <img src={content.image} className="h-20" alt={content.title} />
     <h3 className="text-lg font-bold mb-1 text-orange-400 max-sm:text-center min-h-32">
       {content.title}
       <p className="text-wrap text-zinc-500 text-sm">{content.description}</p>

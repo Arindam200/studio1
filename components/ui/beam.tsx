@@ -168,7 +168,7 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
           transition={{
             delay,
             duration,
-            ease: [0.16, 1, 0.3, 1], // https://easings.net/#easeOutExpo
+            ease: [0.16, 1, 0.3, 1] as const, // https://easings.net/#easeOutExpo
             repeat: Infinity,
             repeatDelay: 0,
           }}

@@ -1,14 +1,13 @@
-/** @type {import('next').NextConfig} */
+import type { NextConfig } from "next";
 import nextMDX from "@next/mdx";
 
 const withMDX = nextMDX();
-const nextConfig = {
+const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   images: {
-    // Disable remotePatterns and allow fetching images from any host
-    unoptimized: true,
     remotePatterns: [
       {
+        protocol: "https" as const,
         hostname: "**",
       },
     ],

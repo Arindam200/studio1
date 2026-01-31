@@ -9,33 +9,7 @@ import {
   UsersFour,
 } from "@phosphor-icons/react";
 import { motion } from "motion/react";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: {
-    opacity: 0,
-    y: 50,
-    filter: "blur(10px)",
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
-};
+import { staggerChildren, itemVariants } from "@/lib/animations";
 
 export default function Hero() {
   return (
@@ -44,7 +18,7 @@ export default function Hero() {
         <div className="top-[-15rem] left-[50%] z-[-1] opacity-50 dark:opacity-100 absolute bg-gradient-to-t from-primary/10 dark:from-primary to-orange-200 dark:to-orange-900/90  blur-[8em] rounded-xl transition-all translate-x-[-50%] duration-700 ease-out size-[20rem] rotate-[54deg]"></div>
         <div className="top-[-10rem] md:top-[-8rem] z-[-1] left-[-80%] md:left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[42rem] w-[10rem] -rotate-[60deg]"></div>
         <motion.div
-          variants={containerVariants}
+          variants={staggerChildren}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -116,14 +90,14 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          variants={containerVariants}
+          variants={staggerChildren}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           className=" flex flex-wrap items-center mt-20 justify-center gap-4"
         >
           <motion.div
-            variants={containerVariants}
+            variants={staggerChildren}
             className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:-rotate-12 top-[15rem] left-[5rem]"
           >
             <Megaphone
@@ -133,7 +107,7 @@ export default function Hero() {
             <span>Advocacy</span>
           </motion.div>
           <motion.div
-            variants={containerVariants}
+            variants={staggerChildren}
             className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:rotate-12 top-[27rem] left-[10rem]"
           >
             <GraduationCap
@@ -143,7 +117,7 @@ export default function Hero() {
             <span>Education</span>
           </motion.div>
           <motion.div
-            variants={containerVariants}
+            variants={staggerChildren}
             className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:rotate-12 top-[15rem] right-[5rem]"
           >
             <CalendarCheck
@@ -153,7 +127,7 @@ export default function Hero() {
             <span>Events</span>
           </motion.div>
           <motion.div
-            variants={containerVariants}
+            variants={staggerChildren}
             className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:-rotate-12 top-[27rem] right-[10rem]"
           >
             <UsersFour

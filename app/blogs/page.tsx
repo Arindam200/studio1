@@ -10,10 +10,12 @@ import { Users } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "All Blogs of Studio1.",
+  description:
+    "Technical tutorials, DevRel insights, and developer content from Studio1. Explore AI, cloud, DevOps, and web development guides written by experienced developers.",
   openGraph: {
     title: "Blogs | Studio1",
-    description: "All Blogs of Studio1.",
+    description:
+      "Technical tutorials, DevRel insights, and developer content from Studio1. Explore AI, cloud, DevOps, and web development guides written by experienced developers.",
     url: baseUrl + "/blogs",
     siteName: "Studio1",
     locale: "en_US",
@@ -22,7 +24,8 @@ export const metadata: Metadata = {
   twitter: {
     title: "Blog | Studio1",
     card: "summary_large_image",
-    description: "All Blogs of Studio1.",
+    description:
+      "Technical tutorials, DevRel insights, and developer content from Studio1. Explore AI, cloud, DevOps, and web development guides written by experienced developers.",
   },
 };
 
