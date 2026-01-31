@@ -48,7 +48,7 @@ export default function Hero() {
               <motion.div variants={fadeInUp}>
                 <Badge className="pb-1 shadow-md mb-2 bg-gradient-to-r from-primary via-primary1 to-primary1/20 text-white">
                   <Building weight="fill" className="size-5 mr-2" />
-                  Trusted by Companies
+                  Trusted by 35+ Companies
                 </Badge>
               </motion.div>
 
@@ -82,7 +82,7 @@ export default function Hero() {
                   <span className="font-semibold text-foreground">
                     {" "}
                     technical content
-                  </span>{" "}
+                  </span>
                   <br />
                   and
                   <span className="font-semibold text-foreground">
@@ -93,7 +93,7 @@ export default function Hero() {
                   <span className="font-semibold text-foreground">
                     {" "}
                     growth
-                  </span>{" "}
+                  </span>
                   <br />
                   and
                   <span className="font-semibold text-foreground">

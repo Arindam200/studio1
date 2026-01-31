@@ -65,25 +65,30 @@ export default function Hero() {
 
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:mt-14 mt-10"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:mt-14 mt-10"
           >
             <div className="flex bg-muted-foreground/10 w-40 flex-col gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
               <div className="text-4xl font-bold">1M+</div>
               <div className="text-sm text-center">
-                blogs <br /> views
+                content <br /> views
               </div>
             </div>
             <div className="flex flex-col bg-muted-foreground/10 w-40 gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">20+</div>
+              <div className="text-4xl font-bold">30+</div>
               <div className="text-sm text-center">
-                projects <br /> delivered
+                fast-moving <br /> teams helped
               </div>
             </div>
             <div className="flex flex-col bg-muted-foreground/10 w-40 gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">18+</div>
+              <div className="text-4xl font-bold">50%</div>
               <div className="text-sm text-center">
-                companies
-                <br /> served
+                cost savings <br /> vs agencies
+              </div>
+            </div>
+            <div className="flex flex-col bg-muted-foreground/10 w-40 gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
+              <div className="text-4xl font-bold">70%+</div>
+              <div className="text-sm text-center">
+                client <br /> retention
               </div>
             </div>
           </motion.div>

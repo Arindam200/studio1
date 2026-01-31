@@ -426,43 +426,43 @@ export const Data = {
     {
       title: "Quality",
       description:
-        "Premium developer content at 50% less cost than other technical agencies. More than 65% of our clients choose to work with us again.",
+        "Premium developer content at 50% less cost than other technical agencies. 70%+ of our clients choose to work with us again.",
       icon: CubeFocus,
     },
     {
       title: "Experience",
       description:
-        "From seed-stage startups to NASDAQ-listed companies, we've supported launches, crafted dev-friendly contents and scaled developer adoption.",
+        "From seed-stage startups to NASDAQ-listed enterprises like Amazon and VMware, we've scaled developer adoption for 35+ companies.",
       icon: Lightning,
     },
     {
       title: "Expertise",
       description:
-        "AI, ML, DevOps, Python, Cloud, WebDev and API integrations - our team knows tech.",
+        "AI, ML, DevOps, Python, Cloud, WebDev and API integrations - our team brings deep technical expertise across the stack.",
       icon: Nut,
     },
     {
       title: "Support",
       description:
-        "We operate as an embedded team — fast iterations, no hand-holding required.",
+        "We operate as an embedded team — fast iterations, minimal oversight required. Your success is our priority.",
       icon: Headset,
     },
     {
       title: "Results",
       description:
-        "1M+ content views across blogs, tutorials and videos, driving visibility, credibility and product growth.",
+        "1M+ content views, 10+ high-impact developer events, and Product Hunt #1 launches driving real product growth.",
       icon: ChartBar,
     },
     {
       title: "Collaboration",
       description:
-        "20+ successful partnerships in last 8 months, fast-moving teams trust us to deliver.",
+        "30+ successful partnerships with fast-moving teams. Trusted by industry leaders like Permit.io, Nebius, and CopilotKit.",
       icon: Handshake,
     },
     {
       title: "Testimonials",
       description:
-        "Trusted by Founders, CMOs and DevRel teams to create content that drives real developer impact.",
+        "Trusted by Founders, CMOs and DevRel teams at companies like Pieces, WebCrumbs, and Latitude to drive developer impact.",
       icon: ChatCenteredDots,
     },
   ],

@@ -33,6 +33,11 @@ import {
   Lightbulb,
   Pen,
   Star,
+  VideoCamera,
+  Rocket,
+  MagnifyingGlass,
+  TrendUp,
+  UsersThree,
 } from "@phosphor-icons/react/dist/ssr";
 
 export const navItems = [
@@ -51,14 +56,39 @@ export const navItems = [
     path: "#",
     children: [
       {
+        title: "Blog as a Service",
+        path: "/blog-as-service",
+        icon: Pen,
+      },
+      {
         title: "DevRel as a Service",
         path: "/devrel-as-service",
         icon: CheckCircle,
       },
       {
-        title: "Blog as a Service",
-        path: "/blog-as-service",
-        icon: Pen,
+        title: "Video Production",
+        path: "/video-production",
+        icon: VideoCamera,
+      },
+      {
+        title: "Organic Campaign",
+        path: "/organic-campaign",
+        icon: TrendUp,
+      },
+      {
+        title: "Product Launch",
+        path: "/product-launch",
+        icon: Rocket,
+      },
+      {
+        title: "Audit Services",
+        path: "/audit-services",
+        icon: MagnifyingGlass,
+      },
+      {
+        title: "Influencer Management",
+        path: "/influencer-management",
+        icon: UsersThree,
       },
     ],
   },
