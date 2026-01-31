@@ -48,7 +48,7 @@ export default function Hero() {
               <motion.div variants={fadeInUp}>
                 <Badge className="pb-1 shadow-md mb-2 bg-gradient-to-r from-primary via-primary1 to-primary1/20 text-white">
                   <Building weight="fill" className="size-5 mr-2" />
-                  Trusted by Companies
+                  Trusted by 35+ Companies
                 </Badge>
               </motion.div>
 
@@ -66,9 +66,8 @@ export default function Hero() {
               >
                 {/* For mobile screens - no spans */}
                 <div className="sm:hidden">
-                  Studio1 helps devtool and SaaS teams create technical content
-                  and DevRel strategies that boost growth and developer
-                  adoption.
+                  Studio1 helps devtool and SaaS companies amplify their presence
+                  through strategic technical content and DevRel services.
                 </div>
 
                 {/* For larger screens - with spans */}
@@ -76,29 +75,25 @@ export default function Hero() {
                   Studio1 helps
                   <span className="font-semibold text-foreground">
                     {" "}
-                    devtool and SaaS teams
+                    devtool and SaaS companies
                   </span>{" "}
-                  create
+                  amplify their presence
+                  <br />
+                  through
                   <span className="font-semibold text-foreground">
                     {" "}
-                    technical content
+                    strategic technical content
                   </span>{" "}
-                  <br />
                   and
                   <span className="font-semibold text-foreground">
                     {" "}
-                    DevRel strategies
-                  </span>{" "}
-                  that boost
-                  <span className="font-semibold text-foreground">
-                    {" "}
-                    growth
-                  </span>{" "}
+                    DevRel services
+                  </span>
                   <br />
-                  and
+                  that drive
                   <span className="font-semibold text-foreground">
                     {" "}
-                    developer adoption
+                    visibility, adoption, and growth
                   </span>
                   .
                 </div>
