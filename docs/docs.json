@@ -43,6 +43,7 @@
             "pages": [
               "case-studies/overview",
               "case-studies/permit",
+              "case-studies/scrapegraph",
               "case-studies/webcrumbs"
             ]
           }
@@ -112,7 +113,7 @@
   },
   "footer": {
     "socials": {
-      "x": "http://x.com/Studio1Hq",
+      "x": "https://x.com/Studio1Hq",
       "github": "https://github.com/studio1hq",
       "linkedin": "https://www.linkedin.com/company/studio1hq/"
     }
