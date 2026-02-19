@@ -1,46 +1,10 @@
 "use client";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
-import {
-  ArrowUpRight,
-  Cube,
-  Pen,
-  Users,
-  VideoCamera,
-  Rocket,
-  TrendUp,
-  MagnifyingGlass,
-} from "@phosphor-icons/react";
+import { Cube, Pen, Users } from "@phosphor-icons/react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { staggerChildren, serviceItemVariants } from "@/lib/animations";
-
-const moreServices = [
-  {
-    title: "Video Production",
-    description: "High-quality demos, tutorials, and explainer videos",
-    href: "/video-production",
-    icon: VideoCamera,
-  },
-  {
-    title: "Organic Campaign",
-    description: "Viral content across X, LinkedIn, Reddit & Dev.to",
-    href: "/organic-campaign",
-    icon: TrendUp,
-  },
-  {
-    title: "Product Launch",
-    description: "End-to-end launch strategy and execution",
-    href: "/product-launch",
-    icon: Rocket,
-  },
-  {
-    title: "Audit Services",
-    description: "DX audits, docs review, and API usability",
-    href: "/audit-services",
-    icon: MagnifyingGlass,
-  },
-];
 
 export default function Services() {
   return (
@@ -141,42 +105,6 @@ export default function Services() {
               </div>
             </Link>
             <div className="top-1/2 -translate-y-1/2 z-[-1] left-[50%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[8em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[25rem] w-[20rem] h-[40rem] rotate-[0deg]"></div>
-          </motion.div>
-
-          {/* More Services Grid */}
-          <motion.div
-            variants={serviceItemVariants}
-            className="mt-24 z-[20]"
-          >
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-semibold mb-2">More Services</h3>
-              <p className="text-muted-foreground text-sm">
-                Comprehensive solutions for developer growth and engagement
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-              {moreServices.map((service, index) => (
-                <Link
-                  key={index}
-                  href={service.href}
-                  className="border relative group overflow-hidden hover:border-primary hover:-translate-y-2 duration-500 rounded-lg flex flex-col items-start gap-3 p-4 bg-background/80 backdrop-blur-md"
-                >
-                  <div className="h-32 w-12 absolute bg-accent/20 duration-700 -top-8 rotate-[10deg] -left-16 group-hover:left-[12rem]"></div>
-                  <div className="flex items-center gap-3">
-                    <div className="flex items-center bg-accent dark:bg-accent/50 justify-center size-10 p-2 rounded-lg">
-                      <service.icon className="size-6 text-primary" weight="fill" />
-                    </div>
-                    <div className="text-base font-semibold">{service.title}</div>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    {service.description}
-                  </p>
-                  <div className="flex items-center text-sm text-primary font-medium mt-auto">
-                    Learn more <ArrowUpRight className="size-4 ml-1" />
-                  </div>
-                </Link>
-              ))}
-            </div>
           </motion.div>
 
           {/* Stats Banner */}

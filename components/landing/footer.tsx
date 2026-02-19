@@ -99,7 +99,7 @@ export default function Footer() {
               <motion.div className="flex flex-wrap gap-4 text-sm font-medium text-neutral-500 dark:text-neutral-400 max-w-full">
                 <Link
                   className="hover:text-foreground duration-300 hover:font-semibold"
-                  href={"/devrel-as-a-service"}
+                  href={"/devrel-as-service"}
                 >
                   DevRel
                 </Link>
