@@ -43,6 +43,7 @@
             "pages": [
               "case-studies/overview",
               "case-studies/litellm",
+              "case-studies/memorilabs",
               "case-studies/permit",
               "case-studies/scrapegraph",
               "case-studies/webcrumbs"
