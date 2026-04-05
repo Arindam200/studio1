@@ -7,7 +7,7 @@
     "light": "#ff914d",
     "dark": "#f97316"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "navigation": {
     "tabs": [
       {
@@ -75,7 +75,7 @@
         },
         {
           "anchor": "Blog",
-          "href": "https://www.studio1hq.com/blogs",
+          "href": "https://www.studio1hq.com/blog",
           "icon": "newspaper"
         }
       ]
@@ -89,7 +89,7 @@
     "links": [
       {
         "label": "Contact",
-        "href": "mailto:studioone.tech@gmail.com"
+        "href": "mailto:contact@studio1hq.com"
       }
     ],
     "primary": {

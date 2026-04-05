@@ -23,7 +23,7 @@ export default function Navbar5({ className }: { className?: string }) {
         <Link href="/devrel-as-service">
           <p className=" font-medium text-white">DevRel Service</p>
         </Link>
-        <Link href="mailto:studioone.tech@gmail.com">
+        <Link href="mailto:contact@studio1hq.com">
           <p className=" font-medium text-white">Contact Us</p>
         </Link>
       </Menu>

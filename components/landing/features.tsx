@@ -30,9 +30,9 @@ export default function Features() {
           Why Tech Companies Choose Studio1
         </div>
         <p className="text-center text-base max-sm:text-sm mt-2">
-          Studio1 delivers high-quality technical content and DevRel support
+          High-quality technical tutorials, documentation, and DevRel execution
           <br />
-          that drives adoption and developer trust.
+          that drives developer adoption and trust.
         </p>
       </motion.div>
 

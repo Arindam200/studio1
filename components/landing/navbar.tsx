@@ -106,7 +106,7 @@ export default function Navbar() {
           <div className="hidden md:flex justify-between gap-4 items-center">
             <SelectTheme />
             <Button asChild>
-              <a href="mailto:studioone.tech@gmail.com">
+              <a href="mailto:contact@studio1hq.com">
                 Contact Us <EnvelopeOpen className="ml-2" />
               </a>
             </Button>
@@ -175,7 +175,7 @@ export default function Navbar() {
             <div className="flex items-center justify-between p-2 bg-accent/50 pr-2 pl-4 rounded-3xl mt-4">
               <SelectTheme />
               <Button asChild>
-                <a href="mailto:studioone.tech@gmail.com">
+                <a href="mailto:contact@studio1hq.com">
                   Contact Us <EnvelopeOpen className="ml-2" />
                 </a>
               </Button>

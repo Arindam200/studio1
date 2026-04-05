@@ -257,7 +257,7 @@ const Careers = () => {
                     </div>
                   </div>
                   <Button className="w-fit flex items-center gap-2 group">
-                    <Link href={"mailto:studioone.tech@gmail.com"}>
+                    <Link href={"mailto:contact@studio1hq.com"}>
                       Apply now
                     </Link>
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

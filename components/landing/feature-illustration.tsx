@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTheme } from "next-themes";
 import UserAvatarCollection from "./user-avatar-collection";
 import { NumberTicker } from "../magicui/number-ticker";
@@ -39,7 +39,7 @@ const defaultCards = [
   {
     icon: <BarChart className="size-4 text-primary" />, // Analytics & growth
     title: "Community Growth",
-    description: "500+ developers engaged through our initiatives",
+    description: "1500+ developers engaged through our initiatives",
     date: "Updated Weekly",
     iconClassName: "text-primary",
     titleClassName:
@@ -50,7 +50,7 @@ const defaultCards = [
   {
     icon: <PenTool className="size-4 text-primary" />, // Content & writing
     title: "Content Impact",
-    description: "1M+ content views and growing",
+    description: "2M+ content views and growing",
     date: "Quick Insights",
     iconClassName: "text-primary",
     titleClassName:
@@ -61,8 +61,8 @@ const defaultCards = [
   {
     icon: <Users className="size-4 text-primary" />, // DevRel success
     title: "DevRel Success",
-    description: "20+ partnerships & collaborations",
-    date: "Last Updated: April 2025",
+    description: "35+ partnerships & collaborations",
+    date: "Updated", // replaced with month/year in ResultsFeatureCards
     iconClassName: "text-primary",
     titleClassName:
       "text-primary transition-colors duration-300 hover:text-primary",
@@ -70,6 +70,22 @@ const defaultCards = [
       "[grid-area:stack] translate-x-24 translate-y-20 hover:translate-y-10",
   },
 ];
+
+function ResultsFeatureCards() {
+  const cards = useMemo(() => {
+    const monthYear = new Date().toLocaleString("en-US", {
+      month: "long",
+      year: "numeric",
+    });
+    return defaultCards.map((card, index) =>
+      index === 2
+        ? { ...card, date: `Updated ${monthYear}` }
+        : card,
+    );
+  }, []);
+
+  return <DisplayCards cards={cards} />;
+}
 
 export function FeatureIllustration({ title }: FeatureIllustrationProps) {
   const normalizedTitle = title.toLowerCase();
@@ -85,7 +101,7 @@ export function FeatureIllustration({ title }: FeatureIllustrationProps) {
         <div className="absolute flex flex-col items-center justify-center bottom-[2rem] left-1/2 -translate-x-1/2">
           <div className="flex items-center gap-2">
             <NumberTicker
-              value={1000}
+              value={2000}
               className="whitespace-pre-wrap text-8xl font-medium tracking-tighter text-primary dark:text-primary"
             />
             <p className="text-6xl font-medium tracking-tighter text-primary">
@@ -109,7 +125,7 @@ export function FeatureIllustration({ title }: FeatureIllustrationProps) {
       return (
         // <Graph className="absolute bottom-[-3rem] left-1/2 -translate-x-1/2 size-60" />
         <div className="absolute bottom-[-3rem] left-1/2 -translate-x-1/2 size-60 max-w-3xl">
-          <DisplayCards cards={defaultCards} />
+          <ResultsFeatureCards />
         </div>
       );
     case "collaboration":

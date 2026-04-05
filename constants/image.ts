@@ -10,8 +10,8 @@ import Encore from "@/public/assets/encore.png";
 import Velt from "@/public/assets/velt.png";
 import ReadySet from "@/public/assets/readyset.png";
 import Nitric from "@/public/assets/nitric.svg";
-import KitOps from "@/public/assets/kitops.png";
-import Gibson from "@/public/assets/gibson.png";
+import Jozu from "@/public/assets/jozu.png";
+import Memori from "@/public/assets/memori.png";
 import CodeRabbit from "@/public/assets/coderabbit.png";
 import Eachlab from "@/public/assets/eachlab.png";
 import Stream from "@/public/assets/stream.png";
@@ -41,12 +41,14 @@ import Apilayer from "@/public/assets/apilayer.png";
 import LambdatestFull from "@/public/assets/lambdatest-full.png";
 import RagieFull from "@/public/assets/ragie-full.png";
 import EntelligenceFull from "@/public/assets/entelligence-full.png";
-import GibsonFull from "@/public/assets/gibson-full.svg";
+import MemoriFull from "@/public/assets/Memori-full.png";
 import MotiaFull from "@/public/assets/motia-full.png";
 import GraphiteFull from "@/public/assets/graphite-full.svg";
 import PermitFull from "@/public/assets/Permit-full.png";
 import TolgeeFull from "@/public/assets/Tolgee-full.svg";
 import CopilotkitFull from "@/public/assets/Copilotkit-full.png";
+import LiteLLM from "@/public/assets/litellm.png";
+import LiteLLMFull from "@/public/assets/litellm-full.png";
 import NebiusFull from "@/public/assets/Nebius-full.png";
 import LatitudeFull from "@/public/assets/Latitude-full.png";
 import WebcrumbsFull from "@/public/assets/Webcrumbs-full.svg";
@@ -59,13 +61,17 @@ import EachlabFull from "@/public/assets/Eachlab-full.png";
 import StreamFull from "@/public/assets/Stream-full.png";
 import ReadySetFull from "@/public/assets/Readyset-full.svg";
 import NitricFull from "@/public/assets/Nitric-full.png";
-import KitOpsFull from "@/public/assets/Kitops-full.png";
+import JozuFull from "@/public/assets/Jozu-full.png";
 import CodeRabbitFull from "@/public/assets/Coderabbit-full.png";
 import StackqlFull from "@/public/assets/Stackql-full.png";
+import Ittybit from "@/public/assets/ittybit.png";
+import IttybitFull from "@/public/assets/Ittybit-full.png";
+import PaulImg from "@/public/assets/Paul.png";
 import Vmware from "@/public/assets/vmware.png";
 
 import abstractBg from "@/public/assets/abstract-bg.png";
 import SauravImg from "@/public/assets/Saurav.png";
+import DylanImg from "@/public/assets/Dylan.png";
 import JesseImg from "@/public/assets/Jesse.png";
 import NathanImg from "@/public/assets/Nathan.png";
 import MarketaImg from "@/public/assets/Marketa.png";
@@ -96,7 +102,7 @@ export {
   Latitude,
   Vmware,
   Webcrumbs,
-  Gibson,
+  Memori,
   Crawlee,
   Opire,
   Encore,
@@ -121,7 +127,7 @@ export {
   Uploadcare,
   MotiaFull,
   Nitric,
-  KitOps,
+  Jozu,
   Lambdatest,
   LambdatestFull,
   GraphiteFull,
@@ -129,6 +135,8 @@ export {
   PermitFull,
   TolgeeFull,
   CopilotkitFull,
+  LiteLLM,
+  LiteLLMFull,
   NebiusFull,
   LatitudeFull,
   WebcrumbsFull,
@@ -138,18 +146,22 @@ export {
   VeltFull,
   Pieces,
   ReadySetFull,
-  GibsonFull,
+  MemoriFull,
   EntelligenceFull,
   RagieFull,
   NitricFull,
-  KitOpsFull,
+  JozuFull,
   CodeRabbitFull,
   EachlabFull,
   StreamFull,
   SwytchcodeFull,
   StackqlFull,
+  Ittybit,
+  IttybitFull,
+  PaulImg,
   abstractBg,
   SauravImg,
+  DylanImg,
   JesseImg,
   MarketaImg,
   NathanImg,

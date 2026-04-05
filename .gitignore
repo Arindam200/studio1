@@ -35,7 +35,12 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.
+# IDE / local tooling
+.cursor/
+
+# pnpm is the package manager (see AGENTS.md); do not commit npm lockfile
+package-lock.json
+
 # claude
 .claude
 .agents

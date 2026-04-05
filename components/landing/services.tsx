@@ -1,6 +1,5 @@
 "use client";
 import { Badge } from "../ui/badge";
-import { Button } from "../ui/button";
 import { Cube, Pen, Users } from "@phosphor-icons/react";
 import Link from "next/link";
 import { motion } from "motion/react";
@@ -26,16 +25,16 @@ export default function Services() {
           <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 text-white pb-1 flex gap-2 items-center">
             <Cube weight="fill" className="size-4" /> Services
           </Badge>
-          <div className="text-5xl max-sm:text-4xl font-medium text-center">What we do?</div>
+          <div className="text-5xl max-sm:text-4xl font-medium text-center">What We Do</div>
           <p className="text-center text-base max-sm:text-sm mt-2 max-w-2xl">
-            We craft technical content, DevRel programs, and growth campaigns
-            that educate developers, build trust, and drive product adoption.
+            We create technical tutorials, documentation, and DevRel programs
+            that help developers succeed with your product and drive adoption.
           </p>
         </motion.div>
         <div className="flex flex-col max-w-7xl mx-auto">
           <motion.div
             variants={serviceItemVariants}
-            className="flex relative items-center gap-[2%] w-full mt-20 justify-center md:-space-x-20 flex-col md:flex-row"
+            className="flex relative items-center gap-[2%] w-full mt-20 justify-center md:-space-x-20 flex-col md:flex-row md:pb-20"
           >
             <Link
               href={"/blog-as-service"}
@@ -53,7 +52,7 @@ export default function Services() {
               <div className="flex flex-col gap-2">
                 <div className="flex gap-2 flex-wrap">
                   <Badge className="w-fit bg-accent text-foreground">
-                    1M+ views
+                    2M+ views
                   </Badge>
                   <Badge className="w-fit bg-accent text-foreground">
                     30+ teams
@@ -66,7 +65,8 @@ export default function Services() {
                   as a<br /> Service
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Developer-focused technical content that builds trust and drives adoption.
+                  Developer tutorials, guides, and documentation that rank and
+                  drive product adoption.
                 </p>
               </div>
             </Link>
@@ -100,7 +100,8 @@ export default function Services() {
                   as a<br /> Service
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
-                  End-to-end DevRel programs from content to community management.
+                  End-to-end developer relations programs—from strategy and
+                  content to community and events.
                 </p>
               </div>
             </Link>
@@ -112,9 +113,12 @@ export default function Services() {
             variants={serviceItemVariants}
             className="mt-16 z-[20] border rounded-xl p-6 md:p-8 bg-gradient-to-br from-primary/5 to-primary/10 max-w-5xl mx-auto w-full"
           >
+            <p className="text-center text-sm text-muted-foreground mb-6">
+              Results from our technical content and DevRel work
+            </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-primary">1M+</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary">2M+</div>
                 <div className="text-sm text-muted-foreground mt-1">Content Views</div>
               </div>
               <div>
@@ -126,7 +130,7 @@ export default function Services() {
                 <div className="text-sm text-muted-foreground mt-1">Cost Savings</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-primary">70%+</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary">65%+</div>
                 <div className="text-sm text-muted-foreground mt-1">Client Retention</div>
               </div>
             </div>

@@ -1,5 +1,6 @@
 import {
   CopilotkitFull,
+  LiteLLMFull,
   PermitFull,
   TolgeeFull,
   NebiusFull,
@@ -11,7 +12,7 @@ import {
   VeltFull,
   ReadySetFull,
   NitricFull,
-  KitOpsFull,
+  JozuFull,
   CodeRabbitFull,
   amiteshNoBg,
   shivayNoBg,
@@ -23,9 +24,10 @@ import {
   MotiaFull,
   GraphiteFull,
   LambdatestFull,
-  GibsonFull,
+  MemoriFull,
   EntelligenceFull,
-  RagieFull
+  RagieFull,
+  IttybitFull,
 } from "./image";
 import {
   Briefcase,
@@ -62,7 +64,8 @@ export const navItems = [
       },
     ],
   },
-  { title: "Blogs", path: "/blogs" },
+  { title: "Work", path: "/work" },
+  { title: "Blog", path: "/blog" },
 ];
 
 export const serviceNavItems = [
@@ -113,12 +116,12 @@ export const trustedbyLogo = [
     alt: "Lambdatest",
   },
   {
-    name: "Gibson",
-    image: GibsonFull,
-    isWhite: true,
+    name: "Memori",
+    image: MemoriFull,
+    isWhite: false,
     className:
-      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
-    alt: "Gibson",
+      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain",
+    alt: "Memori",
   },
   {
     name: "Motia",
@@ -193,6 +196,14 @@ export const trustedbyLogo = [
     alt: "CopilotKit",
   },
   {
+    name: "LiteLLM",
+    image: LiteLLMFull,
+    isWhite: false,
+    className:
+      "h-8 sm:h-9 md:h-10 w-auto max-w-[140px] sm:max-w-[200px] md:max-w-[220px] object-contain",
+    alt: "LiteLLM",
+  },
+  {
     name: "Crawlee",
     image: CrawleeFull,
     isWhite: true,
@@ -225,12 +236,12 @@ export const trustedbyLogo = [
     alt: "WebCrumbs",
   },
   {
-    name: "KitOps",
-    image: KitOpsFull,
-    isWhite: true,
+    name: "Jozu",
+    image: JozuFull,
+    isWhite: false,
     className:
-      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 [&>rect]:hidden",
-    alt: "KitOps",
+      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain",
+    alt: "Jozu",
   },
   {
     name: "CodeRabbit",
@@ -263,6 +274,14 @@ export const trustedbyLogo = [
     className:
       "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
     alt: "Opire",
+  },
+  {
+    name: "Ittybit",
+    image: IttybitFull,
+    isWhite: true,
+    className:
+      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    alt: "Ittybit",
   },
 ];
 

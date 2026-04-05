@@ -23,13 +23,13 @@ export default function CTA() {
             className="text-2xl md:text-4xl text-center font-bold"
             variants={cardVariants}
           >
-            Ready to Grow <br /> Your Developer Community?
+            Ready to Scale <br /> Developer Adoption?
           </motion.div>
           <motion.div
             className="text-center text-sm md:text-base w-[80%] md:w-full text-muted-foreground leading-tight mb-8 mt-4"
             variants={cardVariants}
           >
-            Let’s chat about how we can help you{" "}
+            Let’s talk about how we can help you{" "}
             <br className="hidden md:block" /> reach more developers and
             accelerate adoption.
           </motion.div>

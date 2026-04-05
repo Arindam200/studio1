@@ -9,7 +9,7 @@ type ListItemProps = ComponentPropsWithoutRef<"li">;
 type AnchorProps = ComponentPropsWithoutRef<"a">;
 type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
 
-const components = {
+export const mdxComponents = {
   h1: (props: HeadingProps) => (
     <h1 className="font-medium pt-12 mb-0 text-foreground" {...props} />
   ),
@@ -69,30 +69,43 @@ const components = {
       </a>
     );
   },
+  pre: (props: ComponentPropsWithoutRef<"pre">) => (
+    <pre
+      className="overflow-x-auto rounded-lg border border-border bg-muted/50 p-4 text-sm my-4"
+      {...props}
+    />
+  ),
   code: ({ children, ...props }: ComponentPropsWithoutRef<"code">) => {
-    const codeHTML = highlight(children as string);
+    const codeHTML = highlight(String(children ?? ""));
     return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
   },
-  Table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
-    <table className="text-foreground">
-      <thead>
-        <tr>
-          {data.headers.map((header, index) => (
-            <th key={index}>{header}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {data.rows.map((row, index) => (
-          <tr key={index}>
-            {row.map((cell, cellIndex) => (
-              <td key={cellIndex}>{cell}</td>
+  Table: ({ data }: { data?: { headers: string[]; rows: string[][] } }) => {
+    if (!data?.headers?.length) return null;
+    return (
+      <table className="w-full my-4 border-collapse text-sm text-foreground">
+        <thead>
+          <tr className="border-b border-border">
+            {data.headers.map((header, index) => (
+              <th key={index} className="p-2 text-left font-medium">
+                {header}
+              </th>
             ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
-  ),
+        </thead>
+        <tbody>
+          {data.rows.map((row, index) => (
+            <tr key={index} className="border-b border-border/60">
+              {row.map((cell, cellIndex) => (
+                <td key={cellIndex} className="p-2">
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  },
   blockquote: (props: BlockquoteProps) => (
     <blockquote
       className="ml-[0.075em] border-l-3 border-gray-300 pl-4 text-foreground dark:border-zinc-600"
@@ -102,9 +115,9 @@ const components = {
 };
 
 declare global {
-  type MDXProvidedComponents = typeof components;
+  type MDXProvidedComponents = typeof mdxComponents;
 }
 
 export function useMDXComponents(): MDXProvidedComponents {
-  return components;
+  return mdxComponents;
 }

@@ -4,7 +4,11 @@ import { IconBrandLinkedin, IconBrandX, IconNews } from "@tabler/icons-react";
 import Logo from "../ui/svgs/logo";
 import { motion } from "motion/react";
 import Link from "next/link";
-import { containerVariants, headerVariants, gradientVariants } from "@/lib/animations";
+import {
+  containerVariants,
+  headerVariants,
+  gradientVariants,
+} from "@/lib/animations";
 
 export default function Footer() {
   return (
@@ -66,8 +70,8 @@ export default function Footer() {
                   className="text-foreground/90 font-semibold text-center sm:w-96"
                   variants={headerVariants}
                 >
-                  Empowering tech companies with technical content and DevRel
-                  services.
+                  Technical content and DevRel partner for devtool and SaaS
+                  teams.
                 </motion.p>
               </motion.div>
               <motion.div
@@ -105,87 +109,18 @@ export default function Footer() {
                 </Link>
                 <Link
                   className="hover:text-foreground duration-300 hover:font-semibold"
-                  href={"/careers"}
+                  href={"/work"}
                 >
-                  Careers
+                  Work
                 </Link>
-                {/* <Link
-                  className="hover:text-foreground duration-300 hover:font-semibold"
-                  href={"/case-studies"}
-                >
-                  Case Studies
-                </Link> */}
                 <Link
                   className="hover:text-foreground duration-300 hover:font-semibold"
-                  href={"/blog-as-service"}
+                  href={"/blog"}
                 >
-                  Blogs
+                  Blog
                 </Link>
               </motion.div>
             </motion.div>
-            {/* <motion.div
-              className="grid grid-cols-1 gap-8 md:grid-cols-2"
-              variants={containerVariants}
-            >
-              <motion.div
-                className="space-y-4 py-4 px-4 rounded-xl bg-accent/40"
-                variants={headerVariants}
-              >
-                <h3 className="font-bold text-primary">Services</h3>
-                <nav className="flex flex-col gap-2">
-                  <Link
-                    href="/blog-as-service"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Technical Content
-                  </Link>
-                  <Link
-                    href="/devrel-as-service"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    DevRel Consulting
-                  </Link>
-                  <Link
-                    href="/devrel-as-service"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Community Building
-                  </Link>
-                  <Link
-                    href="/blog-as-service"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Developer Marketing
-                  </Link>
-                </nav>
-              </motion.div>
-              <motion.div
-                className="space-y-4 py-4 px-4 rounded-xl bg-accent/40"
-                variants={headerVariants}
-              >
-                <h3 className="font-bold text-primary">Agency</h3>
-                <nav className="flex flex-col gap-2">
-                  <Link
-                    href="/"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    About
-                  </Link>
-                  <Link
-                    href="https://dev.to/studio1hq"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Community Blog
-                  </Link>
-                  <Link
-                    href="/careers"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Careers
-                  </Link>
-                </nav>
-              </motion.div>
-            </motion.div> */}
           </div>
           <motion.div
             className="mt-44 md:mt-12 z-[25] flex flex-col gap-1 items-center justify-center md:flex-row md:items-center md:justify-between"

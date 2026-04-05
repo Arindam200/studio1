@@ -24,13 +24,22 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
 
+  applicationName: "Studio1",
+  appleWebApp: {
+    title: "Studio1",
+  },
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/icon.png", type: "image/png" }],
+  },
+
   title: {
     default:
-      "Studio1 – Technical Content & DevRel Agency for Developer Products",
+      "Technical Content & DevRel Agency for DevTools | Studio1",
     template: "%s | Studio1",
   },
   description:
-    "Specialized technical content creation and DevRel services for developer-focused products. Boost developer engagement and drive product adoption.",
+    "Studio1 is a technical content and DevRel partner for SaaS and devtool teams. We produce tutorials, docs, and developer programs that drive adoption. Book a call.",
   keywords: [
     "technical content",
     "developer relations",
@@ -40,12 +49,19 @@ export const metadata: Metadata = {
     "API documentation",
     "technical blog",
     "developer community",
+    "technical content agency",
+    "devrel agency",
+    "developer tutorials",
+    "developer documentation",
+    "developer advocacy",
+    "technical tutorial writing",
+    "content marketing for devtools",
   ],
   authors: [{ name: "Studio1" }],
   openGraph: {
-    title: "Studio1 - Technical Content & DevRel Agency for Developer Products",
+    title: "Technical Content & DevRel Agency for DevTools | Studio1",
     description:
-      "Specialized technical content creation and DevRel services for developer-focused products. Boost developer engagement and drive product adoption.",
+      "Studio1 is a technical content and DevRel partner for SaaS and devtool teams. We produce tutorials, docs, and developer programs that drive adoption. Book a call.",
     url: baseUrl,
     siteName: "Studio1",
     locale: "en_US",
@@ -60,10 +76,10 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: "Studio1 - Technical Content & DevRel Agency for Developer Products",
+    title: "Technical Content & DevRel Agency for DevTools | Studio1",
     card: "summary_large_image",
     description:
-      "Specialized technical content creation and DevRel services for developer-focused products. Boost developer engagement and drive product adoption.",
+      "Studio1 is a technical content and DevRel partner for SaaS and devtool teams. We produce tutorials, docs, and developer programs that drive adoption. Book a call.",
     images: [`${baseUrl}/opengraph-image.png`],
     creator: "@Studio1HQ",
   },
@@ -119,9 +135,9 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Studio1",
               url: baseUrl,
-              logo: `${baseUrl}/logo.png`,
+              logo: `${baseUrl}/icon.png`,
               description:
-                "Specialized technical content creation and DevRel services for developer-focused products.",
+                "Studio1 is a technical content and DevRel partner for SaaS and devtool teams. We produce tutorials, docs, and developer programs that drive adoption.",
               sameAs: [
                 "https://twitter.com/Studio1HQ",
                 "https://linkedin.com/company/studio1hq",

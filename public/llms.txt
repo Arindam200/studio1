@@ -1,0 +1,44 @@
+# Studio1
+
+> Technical content and DevRel partner for devtool and SaaS teams.
+
+Studio1 helps developer-focused companies publish tutorials, documentation, and DevRel programs that rank in search, activate developers, and build long-term trust. We have worked with 40+ companies including Amazon, Nebius AI, Bright Data, Permit.io, CopilotKit, LambdaTest, LiteLLM, and Stream.
+
+## Services
+
+- [Blog as a Service](https://studio1hq.com/blog-as-service): Developer tutorials, guides, and technical blog posts written by engineers.
+- [DevRel as a Service](https://studio1hq.com/devrel-as-service): End-to-end developer relations programs -- strategy, content, community, and events.
+- [Audit Services](https://studio1hq.com/audit-services): Developer experience and documentation audits.
+- [Tech Video Production](https://studio1hq.com/video-production): Technical video content for developer audiences.
+- [Product Launch Support](https://studio1hq.com/product-launch): Launch campaigns targeting developer communities.
+- [Organic Campaign](https://studio1hq.com/organic-campaign): SEO and organic growth campaigns for developer products.
+- [Influencer Management](https://studio1hq.com/influencer-management): Developer influencer outreach and management.
+
+## Key Pages
+
+- [Homepage](https://studio1hq.com/)
+- [Our Work](https://studio1hq.com/work)
+- [Blog](https://studio1hq.com/blog)
+- [Pricing](https://studio1hq.com/pricing)
+- [About Us](https://studio1hq.com/about-us)
+- [Case Studies](https://studio1hq.com/case-studies)
+- [Careers](https://studio1hq.com/careers)
+- [Terms of Use](https://studio1hq.com/terms)
+- [Privacy Policy](https://studio1hq.com/privacy)
+
+## Team
+
+- **Arindam Majumder** -- Co-founder & Content Lead. Developer advocate, open-source contributor, and technical writer who has reached 270k+ developers.
+- **Amitesh Anand** -- Co-founder & Operations Lead. Technical writer and developer advocate with 80k+ published words across major tech platforms.
+- **Shivay Lamba** -- ML Engineer and open-source advocate.
+
+## Contact
+
+- Email: contact@studio1hq.com
+- Book a call: https://cal.com/studio1/collab
+- Twitter: https://x.com/Studio1HQ
+- LinkedIn: https://www.linkedin.com/company/studio1hq/
+
+## Documentation
+
+- [Docs](https://docs.studio1hq.com/)

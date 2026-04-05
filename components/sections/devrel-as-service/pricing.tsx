@@ -28,7 +28,7 @@ const DevRelPricing = () => {
 
             <div className="mt-auto">
               <a
-                href="mailto:studioone.tech@gmail.com"
+                href="mailto:contact@studio1hq.com"
                 className="flex items-center justify-center gap-2 w-full px-6 py-3 text-center text-lg font-semibold rounded-md bg-gradient-to-b from-orange-500 to-orange-600 text-white hover:shadow-xl transition duration-200"
               >
                 Get Custom Quote <ArrowRight className="w-5 h-5" />

@@ -9,20 +9,20 @@ import { Badge } from "@/components/ui/badge";
 import { Users } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Work",
   description:
     "Technical tutorials, DevRel insights, and developer content from Studio1. Explore AI, cloud, DevOps, and web development guides written by experienced developers.",
   openGraph: {
-    title: "Blogs | Studio1",
+    title: "Work | Studio1",
     description:
       "Technical tutorials, DevRel insights, and developer content from Studio1. Explore AI, cloud, DevOps, and web development guides written by experienced developers.",
-    url: baseUrl + "/blogs",
+    url: baseUrl + "/work",
     siteName: "Studio1",
     locale: "en_US",
     type: "website",
   },
   twitter: {
-    title: "Blog | Studio1",
+    title: "Work | Studio1",
     card: "summary_large_image",
     description:
       "Technical tutorials, DevRel insights, and developer content from Studio1. Explore AI, cloud, DevOps, and web development guides written by experienced developers.",
@@ -59,7 +59,7 @@ export default async function Page(props: {
             <Users className="size-6 inline-block mr-2" />
             Written by top experienced developers
           </Badge>
-          <span className="font-bold"> All Blogs </span>
+          <span className="font-bold"> Our Work </span>
           <p className="text-base font-semibold relative z-20 text-foreground py-4 text-center">
             We help you build and grow developer communities with <br /> DevRel
             strategies tailored to your product and audience.

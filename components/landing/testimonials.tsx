@@ -55,9 +55,9 @@ export default function Testimonials() {
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
         >
-          {initialTestimonials.map((testimonial, index) => (
+          {initialTestimonials.map((testimonial) => (
             <motion.div
-              key={index}
+              key={testimonial.name}
               className="break-inside-avoid"
               variants={itemVariants}
             >
@@ -70,7 +70,7 @@ export default function Testimonials() {
               <>
                 {remainingTestimonials.map((testimonial, index) => (
                   <motion.div
-                    key={index + 6}
+                    key={testimonial.name}
                     className="break-inside-avoid"
                     initial={{ y: 50, opacity: 0, filter: "blur(10px)" }}
                     animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}

@@ -9,6 +9,8 @@ import SauravImg from "../public/assets/Saurav.png";
 import NathanImg from "../public/assets/Nathan.png";
 import MarketaImg from "../public/assets/Marketa.png";
 import JesseImg from "@/public/assets/Jesse.png";
+import PaulImg from "@/public/assets/Paul.png";
+import DylanImg from "@/public/assets/Dylan.png";
 import TanmayImg from "../public/assets/Tanmay.jpeg";
 import React from "react";
 import {
@@ -33,12 +35,14 @@ import {
   ForgeCode,
   ScrapeGraph,
   Enteligence,
-  KitOps,
+  Jozu,
   Dualite,
   CodeRabbit,
   PermitFull,
   TolgeeFull,
   CopilotkitFull,
+  LiteLLM,
+  LiteLLMFull,
   NebiusFull,
   LatitudeFull,
   WebcrumbsFull,
@@ -46,11 +50,10 @@ import {
   OpireFull,
   EncoreFull,
   Graphite,
-  Gibson,
+  Memori,
   VeltFull,
   ReadySetFull,
   NitricFull,
-  KitOpsFull,
   CodeRabbitFull,
   Motia,
   Amazon,
@@ -65,7 +68,9 @@ import {
   Uploadcare,
   Apilayer,
   Lambdatest,
-  Vmware
+  Vmware,
+  Ittybit,
+  IttybitFull,
 } from "@/constants/image";
 import {
   IconAugmentedReality,
@@ -124,7 +129,15 @@ export const Data = {
       image: Vmware,
       href: "https://www.vmware.com/",
       description: "Cloud computing for Enterprises."
-    },  
+    },
+    {
+      id: 39,
+      name: "LiteLLM",
+      designation: "AI Gateway",
+      image: LiteLLM,
+      href: "https://www.litellm.ai/",
+      description: "AI Gateway to access 100+ LLMs.",
+    },
     {
       id: 2,
       name: "Bright data",
@@ -215,11 +228,11 @@ export const Data = {
     },
     {
       id: 10,
-      name: "Gibson AI",
-      designation: "AI-powered Cloud Database",
-      image: Gibson,
-      href: "https://www.gibsonai.com/",
-  description: "AI-powered cloud database solution.",
+      name: "Memori",
+      designation: "AI Memory",
+      image: Memori,
+      href: "https://memorilabs.ai/",
+      description: "The memory fabric for enterprise AI.",
     },
     {
       id: 11,
@@ -231,11 +244,11 @@ export const Data = {
     },
     {
       id: 12,
-      name: "KitOps",
-      designation: "MLOps Tools",
-      image: KitOps,
-      href: "https://kitops.org/",
-  description: "Open-source AI/ML model packaging.",
+      name: "Jozu",
+      designation: "AI Security",
+      image: Jozu,
+      href: "https://jozu.com/",
+      description: "Security and Governance for AI.",
     },
     {
       id: 13,
@@ -420,13 +433,21 @@ export const Data = {
       image: Opire,
       href: "https://opire.dev/",
   description: "Project management platform."
-    }
+    },
+    {
+      id: 38,
+      name: "Ittybit",
+      designation: "Media APIs",
+      image: Ittybit,
+      href: "https://ittybit.com/",
+      description: "Media APIs for developers and AI.",
+    },
   ],
   Features: [
     {
       title: "Quality",
       description:
-        "Premium developer content at 50% less cost than other technical agencies. 70%+ of our clients choose to work with us again.",
+        "Premium tutorials, API docs, and developer onboarding content at 50% less cost than other technical agencies. 65%+ of our clients choose to work with us again.",
       icon: CubeFocus,
     },
     {
@@ -438,31 +459,31 @@ export const Data = {
     {
       title: "Expertise",
       description:
-        "AI, ML, DevOps, Python, Cloud, WebDev and API integrations - our team brings deep technical expertise across the stack.",
+        "AI, ML, DevOps, Python, cloud, web, and API integrations—our team brings deep technical expertise for tutorials, docs, and DevRel programs.",
       icon: Nut,
     },
     {
       title: "Support",
       description:
-        "We operate as an embedded team — fast iterations, minimal oversight required. Your success is our priority.",
+        "We operate as an embedded team—fast iterations, minimal oversight. Your success is our priority.",
       icon: Headset,
     },
     {
       title: "Results",
       description:
-        "1M+ content views, 10+ high-impact developer events, and Product Hunt #1 launches driving real product growth.",
+        "2M+ content views, 10+ high-impact developer events, and Product Hunt #1 launches driving real product growth.",
       icon: ChartBar,
     },
     {
       title: "Collaboration",
       description:
-        "30+ successful partnerships with fast-moving teams. Trusted by industry leaders like Permit.io, Nebius, and CopilotKit.",
+        "30+ successful partnerships with fast-moving teams. Trusted by industry leaders like Permit.io, Bright Data, and CopilotKit.",
       icon: Handshake,
     },
     {
       title: "Testimonials",
       description:
-        "Trusted by Founders, CMOs and DevRel teams at companies like Pieces, WebCrumbs, and Latitude to drive developer impact.",
+        "Trusted by founders, CMOs, and DevRel teams at companies like Jozu, Nebius, and Velt to drive developer impact.",
       icon: ChatCenteredDots,
     },
   ],
@@ -1113,6 +1134,76 @@ export const Data = {
       highlights: ["Studio1HQ", "technical content", "Amitesh", "core values", "quality content"],
     },
     {
+      name: "Paul Anthony Williams",
+      role: "Founder, Ittybit",
+      avatar: PaulImg.src,
+      content: `Studio1 team helped us with technical documentation, internal cookbooks and integration guides. They were easy to work with, got the core value of our product quickly, and iterated well whenever we had feedback. Most importantly they're great guys :)`,
+      highlights: [
+        "Studio1",
+        "technical documentation",
+        "internal cookbooks",
+        "integration guides",
+        "core value",
+        "iterated well",
+      ],
+    },
+    {
+      name: "Saurav Jain",
+      role: "DevRel, Crawlee",
+      avatar: SauravImg.src,
+      content: `Arindam and Studio1 team work really great with technical posts, they are super quick and write deeply technical articles that reaches to the right devleoper audiences through their absolute fantastic distribution system. 
+      
+      Highly recommended. 💯`,
+      highlights: [
+        "Arindam",
+        "Studio1",
+        "technical",
+        "posts",
+        "super",
+        "quick",
+        "deeply",
+        "technical",
+        "articles",
+        "fantastic",
+        "distribution",
+        "system",
+        "Highly",
+        "recommended",
+      ],
+    },
+    {
+      name: "Dylan Bristot",
+      role: "Lead AI Product Marketing Manager, Nebius AI",
+      avatar: DylanImg.src,
+      content: `Studio1 has been an exceptional partner: fast-moving, creative, and highly aligned with our goals. They brought energy and expertise to every launch, turning rough ideas into polished, developer-facing content and demos. Their ability to deliver technical storytelling, forge partnerships, and drive traction across GitHub, YouTube, and Product Hunt made a real impact. They're more than just contractors, they're an extension of our team.`,
+      highlights: [
+        "Studio1",
+        "exceptional partner",
+        "technical storytelling",
+        "extension of our team",
+      ],
+    },
+    {
+      name: "Nathan Telbert",
+      role: "DevRel, CopilotKit",
+      avatar: NathanImg.src,
+      content: `Working with Studio1 has been an excellent experience for us. The team delivered high-quality blogs focused on exciting projects that perfectly matched our content needs. 
+      
+      Their ability to create engaging content for developers has been a valuable addition to our educational content efforts. 
+      
+      We're excited to continue collaborating on future projects!`,
+      highlights: [
+        "Studio1",
+        "high-quality blogs",
+        "engaging",
+        "educational content",
+        "continue",
+        "collaborating",
+        "future",
+        "projects",
+      ],
+    },
+    {
       name: "Ivan Cordoba",
       role: "CEO & Founder Opire",
       avatar: IvanImg.src,
@@ -1165,51 +1256,6 @@ export const Data = {
         "smooth",
       ],
     },
-    {
-      name: "Saurav Jain",
-      role: "DevRel, Crawlee",
-      avatar: SauravImg.src,
-      content: `Arindam and Studio1 team work really great with technical posts, they are super quick and write deeply technical articles that reaches to the right devleoper audiences through their absolute fantastic distribution system. 
-      
-      Highly recommended. 💯`,
-      highlights: [
-        "Arindam",
-        "Studio1",
-        "technical",
-        "posts",
-        "super",
-        "quick",
-        "deeply",
-        "technical",
-        "articles",
-        "fantastic",
-        "distribution",
-        "system",
-        "Highly",
-        "recommended",
-      ],
-    },
-    {
-      name: "Nathan Telbert",
-      role: "DevRel, CopilotKit",
-      avatar: NathanImg.src,
-      content: `Working with Studio1 has been an excellent experience for us. The team delivered high-quality blogs focused on exciting projects that perfectly matched our content needs. 
-      
-      Their ability to create engaging content for developers has been a valuable addition to our educational content efforts. 
-      
-      We're excited to continue collaborating on future projects!`,
-      highlights: [
-        "Studio1",
-        "high-quality blogs",
-        "engaging",
-        "educational content",
-        "continue",
-        "collaborating",
-        "future",
-        "projects",
-      ],
-    },
-
     {
       name: "Julia Machado",
       role: "Founder & CEO, WebCrumbs",
@@ -1306,6 +1352,13 @@ export const Data = {
       className:
         "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain",
       alt: "CopilotKit",
+    },
+    {
+      name: "LiteLLM",
+      image: LiteLLMFull.src,
+      className:
+        "h-8 sm:h-9 md:h-10 w-auto max-w-[140px] sm:max-w-[200px] md:max-w-[220px] object-contain",
+      alt: "LiteLLM",
     },
     {
       name: "Nebius",

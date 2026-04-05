@@ -35,8 +35,11 @@ export const ComparisonMetric = ({ className }: { className?: string }) => {
           </div>
           <div className="text-xs text-center">
             Content that <br />
-            <span className="text-primary font-semibold mr-1">Rank Higher</span>
-            on Google
+            <span className="text-primary font-semibold mr-1">
+              ranks for developer
+            </span>
+            <br />
+            search intent
           </div>
         </div>
         <div className="flex translate-y-10 rotate-12 flex-col items-center gap-4 px-2 justify-center aspect-square rounded-xl h-[11rem] bg-accent/50 border dark:bg-accent/40">
@@ -47,11 +50,10 @@ export const ComparisonMetric = ({ className }: { className?: string }) => {
             <SealCheck className="size-14 fill-primary drop-shadow-xl" />
           </div>
           <div className="text-xs text-center">
-            Blogs that <br />
+            Tutorials and guides <br />
             <span className="text-primary font-semibold mr-1">
-              Developers Love
+              developers trust
             </span>
-            to read
           </div>
         </div>
       </div>

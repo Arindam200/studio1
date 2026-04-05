@@ -68,13 +68,13 @@ export default function Hero() {
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:mt-14 mt-10"
           >
             <div className="flex bg-muted-foreground/10 w-40 flex-col gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">1M+</div>
+              <div className="text-4xl font-bold">2M+</div>
               <div className="text-sm text-center">
                 content <br /> views
               </div>
             </div>
             <div className="flex flex-col bg-muted-foreground/10 w-40 gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">30+</div>
+              <div className="text-4xl font-bold">25+</div>
               <div className="text-sm text-center">
                 fast-moving <br /> teams helped
               </div>
@@ -86,7 +86,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="flex flex-col bg-muted-foreground/10 w-40 gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">70%+</div>
+              <div className="text-4xl font-bold">65%+</div>
               <div className="text-sm text-center">
                 client <br /> retention
               </div>

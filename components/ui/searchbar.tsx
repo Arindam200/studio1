@@ -32,7 +32,7 @@ export default function Searchbar() {
     <div className="flex max-w-2xl w-full max-sm:px-4 py-1 pl-2 pr-4 rounded-lg items-center space-x-2 relative">
       <Input
         type="text"
-        placeholder="Search blogs..."
+        placeholder="Search work..."
         defaultValue={searchParams.get("query")?.toString()}
         onChange={(e) => handleSearch(e.target.value)}
         className="border-transparent font-medium bg-transparent ring-1 ring-primary text-foreground focus:outline-none"

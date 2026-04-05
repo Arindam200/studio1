@@ -33,7 +33,7 @@ export default function Hero() {
         <div className="lg:block hidden absolute bottom-0 right-0 z-[100] w-20 h-[40rem] bg-gradient-to-tl from-background/80 via-background/5 to-transparent"></div>
       </div> */}
       <div className="relative max-w-7xl h-fit mx-auto pb-44 md:pb-28 px-4">
-        <div className="max-w-7xl relative mt-[4rem] h-[40rem] py-20 mx-auto">
+        <div className="max-w-7xl relative mt-[4rem] h-[44rem] py-20 mx-auto">
           <FloatingSvgs />
           <motion.div
             className="flex flex-col items-center justify-center"
@@ -48,7 +48,7 @@ export default function Hero() {
               <motion.div variants={fadeInUp}>
                 <Badge className="pb-1 shadow-md mb-2 bg-gradient-to-r from-primary via-primary1 to-primary1/20 text-white">
                   <Building weight="fill" className="size-5 mr-2" />
-                  Trusted by 35+ Companies
+                  Trusted by 35+ DevTool and SaaS Teams
                 </Badge>
               </motion.div>
 
@@ -56,8 +56,8 @@ export default function Hero() {
                 className="text-4xl font-semibold font-primary sm:text-5xl lg:text-[4rem] text-center md:font-medium"
                 variants={fadeInUp}
               >
-                Amplify Your Voice <br className="hidden md:block" /> in the
-                Developer Ecosystem
+                Technical Content and DevRel Partner <br className="hidden md:block" />
+                for DevTools
               </motion.h1>
 
               <motion.div
@@ -66,39 +66,33 @@ export default function Hero() {
               >
                 {/* For mobile screens - no spans */}
                 <div className="sm:hidden">
-                  Studio1 helps devtool and SaaS teams create technical content
-                  and DevRel strategies that boost growth and developer
-                  adoption.
+                  We help SaaS and devtool teams publish tutorials, docs, and
+                  DevRel programs that rank in search, activate developers, and
+                  build long-term trust.
                 </div>
 
                 {/* For larger screens - with spans */}
                 <div className="hidden sm:block">
-                  Studio1 helps
+                  We help
                   <span className="font-semibold text-foreground">
                     {" "}
-                    devtool and SaaS teams
+                    SaaS and devtool teams
                   </span>{" "}
-                  create
+                  publish
                   <span className="font-semibold text-foreground">
                     {" "}
-                    technical content
+                    tutorials, docs, and DevRel programs
                   </span>
                   <br />
-                  and
+                  that rank in search, activate
                   <span className="font-semibold text-foreground">
                     {" "}
-                    DevRel strategies
-                  </span>{" "}
-                  that boost
-                  <span className="font-semibold text-foreground">
-                    {" "}
-                    growth
+                    developers
                   </span>
-                  <br />
-                  and
+                  , and build
                   <span className="font-semibold text-foreground">
                     {" "}
-                    developer adoption
+                    long-term trust
                   </span>
                   .
                 </div>
@@ -114,7 +108,7 @@ export default function Hero() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Book a Call <Calendar className="size-14" />
+                    Book a Strategy Call <Calendar className="size-14" />
                   </a>
                 </Button>
                 <Button
@@ -122,8 +116,8 @@ export default function Hero() {
                   className=" w-full sm:w-44 h-12"
                   asChild
                 >
-                  <a href="#why-us">
-                    Learn More <ArrowDownRight className="size-4" />
+                  <a href="/blog-as-service">
+                    See Our Services <ArrowDownRight className="size-4" />
                   </a>
                 </Button>
               </motion.div>
@@ -173,15 +167,15 @@ export default function Hero() {
         >
           <div className="flex items-center justify-center">
             <Image
-              src={Data.Testimonials[2].avatar}
-              alt={Data.Testimonials[2].name}
+              src={Data.Testimonials[6].avatar}
+              alt={Data.Testimonials[6].name}
               width={140}
               height={140}
               className="rounded-full size-16"
             />
           </div>
           <div className="flex flex-col text-center mt-2 text-sm items-center justify-center">
-            {Data.Testimonials[2].content}
+            {Data.Testimonials[6].content}
           </div>
           <div className="flex px-3 py-2 rounded-md items-center gap-1 justify-center">
             {[...Array(5)].map((_, index) => (
@@ -189,7 +183,7 @@ export default function Hero() {
             ))}
           </div>
           <div className="text-sm font-semibold  text-center">
-            -{Data.Testimonials[2].name}
+            -{Data.Testimonials[6].name}
           </div>
         </motion.div>
         <motion.div
@@ -201,15 +195,15 @@ export default function Hero() {
         >
           <div className="flex items-center justify-center">
             <Image
-              src={Data.Testimonials[4].avatar}
-              alt={Data.Testimonials[4].name}
+              src={Data.Testimonials[8].avatar}
+              alt={Data.Testimonials[8].name}
               width={140}
               height={140}
               className="rounded-full size-16"
             />
           </div>
           <div className="flex flex-col text-center mt-2 text-sm items-center justify-center">
-            {Data.Testimonials[4].content}
+            {Data.Testimonials[8].content}
           </div>
           <div className="flex px-3 py-2 rounded-md items-center gap-1 justify-center">
             {[...Array(5)].map((_, index) => (
@@ -217,7 +211,7 @@ export default function Hero() {
             ))}
           </div>
           <div className="text-sm font-semibold  text-center">
-            -{Data.Testimonials[4].name}
+            -{Data.Testimonials[8].name}
           </div>
         </motion.div>
       </div>

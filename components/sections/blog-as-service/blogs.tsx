@@ -69,7 +69,7 @@ export default function BlogSection() {
           variant={"secondary"}
           className="flex w-fit mx-auto justify-center py-4"
         >
-          <Link href="/blogs">
+          <Link href="/work">
             Read More Blogs <ArrowRight className="ml-2" size={24} />
           </Link>
         </Button>

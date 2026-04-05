@@ -78,7 +78,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="flex flex-col bg-muted-foreground/10 w-40 gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">30+</div>
+              <div className="text-4xl font-bold">5+</div>
               <div className="text-sm text-center">
                 Teams
                 <br /> Helped
@@ -125,7 +125,7 @@ export default function Hero() {
             initial="hidden"
             whileInView="visible"
             variants={staggerChildren}
-            className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:rotate-12 top-[27rem] left-[15rem]"
+            className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:rotate-12 top-[36rem] left-[15rem]"
           >
             <GraduationCap
               weight="fill"
@@ -149,7 +149,7 @@ export default function Hero() {
             initial="hidden"
             whileInView="visible"
             variants={staggerChildren}
-            className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:-rotate-12 top-[27rem] right-[15rem]"
+            className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:-rotate-12 top-[36rem] right-[15rem]"
           >
             <UsersFour
               weight="fill"
