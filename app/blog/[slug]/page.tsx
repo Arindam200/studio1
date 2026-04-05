@@ -110,6 +110,7 @@ export default async function BlogPostPage({ params }: Props) {
         tags={post.tags}
         coverImage={post.image}
         readingTimeMinutes={post.readingTimeMinutes}
+        shareUrl={`${baseUrl}/blog/${slug}`}
       >
         <MDXRemote source={post.content} components={mdxComponents} />
       </PostLayout>

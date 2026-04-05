@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { PostShare } from "@/components/blog/post-share";
 
 type PostLayoutProps = {
   title: string;
@@ -11,6 +12,7 @@ type PostLayoutProps = {
   tags: string[];
   coverImage?: string;
   readingTimeMinutes?: number;
+  shareUrl: string;
   children: ReactNode;
 };
 
@@ -21,6 +23,7 @@ export function PostLayout({
   tags,
   coverImage,
   readingTimeMinutes,
+  shareUrl,
   children,
 }: PostLayoutProps) {
   return (
@@ -67,6 +70,7 @@ export function PostLayout({
       <div className="prose prose-neutral dark:prose-invert max-w-none prose-headings:scroll-mt-24">
         {children}
       </div>
+      <PostShare url={shareUrl} title={title} />
     </article>
   );
 }
