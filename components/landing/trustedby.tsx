@@ -27,27 +27,57 @@ export default function Trustedby() {
       <motion.div variants={fadeInUp}>
         <Marquee>
           {trustedbyLogo.map((item) => (
-            <div className="flex items-center justify-center" key={item.name}>
-              <Image
-                src={item.image}
-                className={cn(
-                  item.isWhite
-                    ? "grayscale invert dark:invert-0"
-                    : "invert-0 grayscale dark:invert",
-                  "opacity-70 mx-10 w-auto object-contain",
-                  item.alt === "Eachlabs" && "h-14 aspect-square",
-                  item.alt === "Memori" && "h-20 w-auto aspect-square",
-                  item.alt === "LiteLLM" &&
-                    "h-20 sm:h-24 md:h-24 w-auto max-w-[min(100vw-2rem,400px)] sm:max-w-[440px]",
-                  item.alt !== "Eachlabs" &&
-                    item.alt !== "Memori" &&
-                    item.alt !== "LiteLLM" &&
-                    "h-24 w-fit aspect-square",
-                )}
-                alt={item.name}
-                width={1000}
-                height={1000}
-              />
+            <div
+              className={cn(
+                "flex items-center justify-center",
+                item.showNameBeside && "gap-3 mx-8",
+              )}
+              key={item.name}
+            >
+              {item.showNameBeside ? (
+                <>
+                  <Image
+                    src={item.image}
+                    className={cn(
+                      item.isWhite
+                        ? "grayscale invert dark:invert-0"
+                        : "invert-0 grayscale dark:invert",
+                      "opacity-80 w-auto object-contain",
+                      item.className,
+                    )}
+                    alt=""
+                    width={56}
+                    height={56}
+                  />
+                  <span className="text-base sm:text-lg font-semibold tracking-tight opacity-90 whitespace-nowrap">
+                    {item.name}
+                  </span>
+                </>
+              ) : (
+                <Image
+                  src={item.image}
+                  className={cn(
+                    item.isWhite
+                      ? "grayscale invert dark:invert-0"
+                      : "invert-0 grayscale dark:invert",
+                    "opacity-70 mx-10 w-auto object-contain",
+                    item.alt === "Eachlabs" && "h-14 aspect-square",
+                    item.alt === "Memori" && "h-20 w-auto aspect-square",
+                    item.alt === "LiteLLM" &&
+                      "h-20 sm:h-24 md:h-24 w-auto max-w-[min(100vw-2rem,400px)] sm:max-w-[440px]",
+                    item.alt === "InsForge" &&
+                      "h-8 sm:h-10 md:h-11 w-auto max-w-[200px] sm:max-w-[260px] md:max-w-[280px] object-contain",
+                    item.alt !== "Eachlabs" &&
+                      item.alt !== "Memori" &&
+                      item.alt !== "LiteLLM" &&
+                      item.alt !== "InsForge" &&
+                      "h-24 w-fit aspect-square",
+                  )}
+                  alt={item.name}
+                  width={1000}
+                  height={1000}
+                />
+              )}
             </div>
           ))}
         </Marquee>

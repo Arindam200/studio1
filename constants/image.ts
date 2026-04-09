@@ -66,6 +66,10 @@ import CodeRabbitFull from "@/public/assets/Coderabbit-full.png";
 import StackqlFull from "@/public/assets/Stackql-full.png";
 import Ittybit from "@/public/assets/ittybit.png";
 import IttybitFull from "@/public/assets/Ittybit-full.png";
+import InsForge from "@/public/assets/insforge.png";
+import InsForgeFull from "@/public/assets/insforge-full.png";
+import ByteRover from "@/public/assets/byterover.png";
+import ByteRoverFull from "@/public/assets/byterover-full.png";
 import PaulImg from "@/public/assets/Paul.png";
 import Vmware from "@/public/assets/vmware.png";
 
@@ -158,6 +162,10 @@ export {
   StackqlFull,
   Ittybit,
   IttybitFull,
+  InsForge,
+  InsForgeFull,
+  ByteRover,
+  ByteRoverFull,
   PaulImg,
   abstractBg,
   SauravImg,

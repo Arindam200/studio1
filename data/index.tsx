@@ -71,6 +71,10 @@ import {
   Vmware,
   Ittybit,
   IttybitFull,
+  InsForge,
+  InsForgeFull,
+  ByteRover,
+  ByteRoverFull,
 } from "@/constants/image";
 import {
   IconAugmentedReality,
@@ -185,6 +189,22 @@ export const Data = {
       image: Stream,
       href: "https://getstream.io/",
   description: "APIs for real-time chat, video.",
+    },
+    {
+      id: 40,
+      name: "InsForge",
+      designation: "AI-native backend",
+      image: InsForge,
+      href: "https://insforge.dev/",
+      description: "AI-native backend.",
+    },
+    {
+      id: 41,
+      name: "ByteRover",
+      designation: "Shared memory across agents",
+      image: ByteRover,
+      href: "https://www.byterover.dev/",
+      description: "Shared memory across agents.",
     },
     {
       id: 6,
@@ -1332,6 +1352,20 @@ export const Data = {
     },
   ],
   TrustedbyLogos: [
+    {
+      name: "InsForge",
+      image: InsForgeFull.src,
+      className:
+        "h-8 sm:h-9 md:h-10 w-auto max-w-[200px] object-contain",
+      alt: "InsForge",
+    },
+    {
+      name: "ByteRover",
+      image: ByteRoverFull.src,
+      className:
+        "h-7 sm:h-8 md:h-9 w-auto max-w-[220px] object-contain",
+      alt: "ByteRover",
+    },
     {
       name: "Permit",
       image: PermitFull.src,

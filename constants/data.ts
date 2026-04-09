@@ -28,6 +28,8 @@ import {
   EntelligenceFull,
   RagieFull,
   IttybitFull,
+  InsForgeFull,
+  ByteRover,
 } from "./image";
 import {
   Briefcase,
@@ -75,6 +77,21 @@ export const serviceNavItems = [
 ];
 
 export const trustedbyLogo = [
+  {
+    name: "InsForge",
+    image: InsForgeFull,
+    isWhite: false,
+    alt: "InsForge",
+  },
+  {
+    name: "ByteRover",
+    image: ByteRover,
+    isWhite: true,
+    showNameBeside: true,
+    className:
+      "h-11 w-11 sm:h-12 sm:w-12 object-contain shrink-0 dark:brightness-200",
+    alt: "ByteRover",
+  },
   {
     name: "Nebius",
     image: NebiusFull,
