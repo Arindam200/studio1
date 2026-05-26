@@ -152,6 +152,13 @@ export default function RootLayout({
           src="https://cloud.umami.is/script.js"
           data-website-id="d2503074-d887-4016-9be5-90629ed32e70"
         />
+
+        <Script
+          src="https://t.raah.dev/script.js"
+          data-pid="proj_i4sdfxphddg1s97u"
+          data-domain="studio1hq.com"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
