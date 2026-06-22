@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-const DEFAULT_AUTHOR = "Studio1";
+const DEFAULT_AUTHOR = "Amitesh Anand";
 const DEFAULT_POST_IMAGE = "/opengraph-image.png";
 const postsDirectory = path.join(process.cwd(), "content/blog");
 

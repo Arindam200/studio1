@@ -71,13 +71,19 @@ export const mdxComponents = {
   },
   pre: (props: ComponentPropsWithoutRef<"pre">) => (
     <pre
-      className="overflow-x-auto rounded-lg border border-border bg-muted/50 p-4 text-sm my-4"
+      className="overflow-x-auto rounded-lg border border-border bg-zinc-950 dark:bg-zinc-900 p-4 text-sm my-4 text-zinc-100"
       {...props}
     />
   ),
   code: ({ children, ...props }: ComponentPropsWithoutRef<"code">) => {
     const codeHTML = highlight(String(children ?? ""));
-    return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
+    return (
+      <code
+        dangerouslySetInnerHTML={{ __html: codeHTML }}
+        className="text-zinc-100"
+        {...props}
+      />
+    );
   },
   Table: ({ data }: { data?: { headers: string[]; rows: string[][] } }) => {
     if (!data?.headers?.length) return null;
@@ -111,6 +117,32 @@ export const mdxComponents = {
       className="ml-[0.075em] border-l-3 border-gray-300 pl-4 text-foreground dark:border-zinc-600"
       {...props}
     />
+  ),
+  table: (props: ComponentPropsWithoutRef<"table">) => (
+    <div className="my-6 overflow-x-auto">
+      <table
+        className="w-full border-collapse text-sm text-foreground"
+        {...props}
+      />
+    </div>
+  ),
+  thead: (props: ComponentPropsWithoutRef<"thead">) => (
+    <thead className="border-b border-border" {...props} />
+  ),
+  tbody: (props: ComponentPropsWithoutRef<"tbody">) => (
+    <tbody {...props} />
+  ),
+  tr: (props: ComponentPropsWithoutRef<"tr">) => (
+    <tr className="border-b border-border/60" {...props} />
+  ),
+  th: (props: ComponentPropsWithoutRef<"th">) => (
+    <th
+      className="border border-border bg-muted/50 p-3 text-left font-medium"
+      {...props}
+    />
+  ),
+  td: (props: ComponentPropsWithoutRef<"td">) => (
+    <td className="border border-border/60 p-3 align-top" {...props} />
   ),
 };
 
