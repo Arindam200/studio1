@@ -17,6 +17,7 @@ export default async function sitemap() {
     "/careers",
     "/about-us",
     "/case-studies",
+    "/product",
     "/pricing",
     "/terms",
     "/privacy",

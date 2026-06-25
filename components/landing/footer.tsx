@@ -109,6 +109,12 @@ export default function Footer() {
                 </Link>
                 <Link
                   className="hover:text-foreground duration-300 hover:font-semibold"
+                  href={"/product"}
+                >
+                  Products
+                </Link>
+                <Link
+                  className="hover:text-foreground duration-300 hover:font-semibold"
                   href={"/work"}
                 >
                   Work
