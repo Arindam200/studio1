@@ -73,6 +73,14 @@
   body {
     @apply bg-background text-foreground;
   }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-primary font-normal;
+  }
 }
 
 html {
@@ -93,13 +101,14 @@ svg {
   }
 }
 
-/* Specific styles for the 15+ text */
+/* Numeric display text (Space Grotesk) */
 .number-text {
+  font-family: var(--font-numeric), sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "tnum";
-  font-variant-numeric: tabular-nums;
 }
 
 /* Safari-specific fixes for the number text */

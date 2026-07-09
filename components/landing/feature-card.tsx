@@ -3,8 +3,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { Particles } from "../ui/particles";
 import { FeatureIllustration } from "./feature-illustration";
-import { motion } from "motion/react";
-import { createCardVariantsWithDelay } from "@/lib/animations";
+import { NumericText } from "@/components/ui/num";
 import type { Feature } from "@/types";
 
 interface FeatureCardProps {
@@ -13,19 +12,13 @@ interface FeatureCardProps {
 }
 
 export function FeatureCard({ feature, index }: FeatureCardProps) {
-  const cardVariants = createCardVariantsWithDelay(index);
-
   return (
-    <motion.div
+    <div
       className={cn(
         "bg-accent dark:bg-accent/50 hover:shadow-xl transition-all duration-700 rounded-xl p-2 min-w-full min-h-[25rem] group",
         index === 0 && "md:col-span-2",
         index === 3 && "md:col-span-2"
       )}
-      variants={cardVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
     >
       <div className="rounded-xl bg-background h-full transition-all duration-700 relative overflow-hidden w-full p-8 flex flex-col items-start">
         <FeatureIllustration title={feature.title} />
@@ -53,15 +46,15 @@ export function FeatureCard({ feature, index }: FeatureCardProps) {
           <div>
             <feature.icon className="size-8" />
           </div>
-          <div className="text-xl md:text-2xl font-semibold">
+          <div className="text-xl md:text-2xl font-medium">
             {feature.title}
           </div>
         </div>
 
         <p className="text-muted-foreground text-sm mt-1 text-left">
-          {feature.description}
+          <NumericText>{feature.description}</NumericText>
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 }

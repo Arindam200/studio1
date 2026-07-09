@@ -68,13 +68,13 @@ export default function Hero() {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 md:mt-14 mt-10"
           >
             <div className="flex bg-muted-foreground/10 w-40 flex-col gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">4K</div>
+              <div className="text-4xl font-bold font-numeric tabular-nums">4K</div>
               <div className="text-sm text-center">
                 Video <br /> Quality
               </div>
             </div>
             <div className="flex flex-col bg-muted-foreground/10 w-40 gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">1K+</div>
+              <div className="text-4xl font-bold font-numeric tabular-nums">1K+</div>
               <div className="text-sm text-center">
                 Average <br /> Views
               </div>

@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { Sparkles } from "lucide-react";
+import { NumericText } from "@/components/ui/num";
 
 interface DisplayCardProps {
   className?: string;
@@ -33,7 +34,9 @@ function DisplayCard({
         <span className="relative inline-block rounded-full p-1">{icon}</span>
         <p className={cn("text-lg font-medium", titleClassName)}>{title}</p>
       </div>
-      <p className="whitespace-nowrap text-lg">{description}</p>
+      <p className="whitespace-nowrap text-lg">
+        <NumericText>{description}</NumericText>
+      </p>
       <p className="text-muted-foreground">{date}</p>
     </div>
   );

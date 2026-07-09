@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { PostShare } from "@/components/blog/post-share";
+import { Num } from "@/components/ui/num";
 
 type PostLayoutProps = {
   title: string;
@@ -41,7 +42,9 @@ export function PostLayout({
           {readingTimeMinutes != null ? (
             <>
               <span aria-hidden>·</span>
-              <span>{readingTimeMinutes} min read</span>
+              <span>
+                <Num>{readingTimeMinutes}</Num> min read
+              </span>
             </>
           ) : null}
         </div>

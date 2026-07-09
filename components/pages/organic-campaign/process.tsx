@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "motion/react";
 import { containerVariants, itemVariants } from "@/lib/animations";
+import { Num } from "@/components/ui/num";
 import {
   IconVideo,
   IconShare,
@@ -94,7 +95,7 @@ export default function Process() {
                     <step.icon className="size-6 text-primary" />
                   </div>
                   <span className="text-sm font-medium text-muted-foreground">
-                    Week {index + 1}
+                    Week <Num>{index + 1}</Num>
                   </span>
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{step.name}</h3>

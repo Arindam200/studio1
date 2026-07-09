@@ -4,47 +4,51 @@ import { cn } from "@/lib/utils";
 import { SauravImg, JesseImg, MarketaImg, JuliaImg } from "@/constants/image";
 import Image from "next/image";
 
+const TRUSTED_AVATARS = [
+  { src: SauravImg, alt: "Saurav" },
+  { src: JesseImg, alt: "Jesse" },
+  { src: MarketaImg, alt: "Marketa" },
+  { src: JuliaImg, alt: "Julia" },
+] as const;
+
 export default function AvatarComponent({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "flex items-center rounded-full border border-border bg-background p-1 shadow shadow-black/5",
+        "flex flex-col items-center gap-3 sm:flex-row sm:gap-5",
         className,
       )}
+      aria-label="Trusted by 35+ devtool teams"
     >
-      <div className="flex -space-x-1.5">
-        <Image
-          className="rounded-full ring-1 ring-background"
-          src={SauravImg}
-          width={30}
-          height={30}
-          alt="Saurav"
-        />
-        <Image
-          className="rounded-full ring-1 ring-background"
-          src={JesseImg}
-          width={30}
-          height={30}
-          alt="Jesse"
-        />
-        <Image
-          className="rounded-full ring-1 ring-background"
-          src={MarketaImg}
-          width={30}
-          height={30}
-          alt="Marketa"
-        />
-        <Image
-          className="rounded-full ring-1 ring-background"
-          src={JuliaImg}
-          width={30}
-          height={30}
-          alt="Julia"
-        />
+      <div className="flex items-center -space-x-2.5 sm:-space-x-3" aria-hidden>
+        {TRUSTED_AVATARS.map((avatar, index) => (
+          <div
+            key={avatar.alt}
+            className="relative shrink-0"
+            style={{ zIndex: TRUSTED_AVATARS.length - index }}
+          >
+            <Image
+              className="size-8 rounded-full object-cover ring-2 ring-background sm:size-9"
+              src={avatar.src}
+              width={36}
+              height={36}
+              alt=""
+            />
+          </div>
+        ))}
       </div>
-      <p className="px-2 text-xs text-muted-foreground">
-        Trusted by <strong className="font-medium text-foreground">35+</strong>{" "}
-        devtool teams.
+
+      <span
+        className="hidden h-4 w-px shrink-0 bg-border/70 sm:block"
+        aria-hidden
+      />
+
+      <p className="text-center text-sm leading-snug sm:text-left">
+        <span className="font-secondary text-muted-foreground">Trusted by</span>{" "}
+        <span className="font-numeric text-[1.15em] font-semibold text-primary">
+          35+
+        </span>{" "}
+        <span className="font-secondary text-foreground/85">devtool teams</span>
       </p>
     </div>
   );

@@ -68,25 +68,25 @@ export default function Hero() {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 md:mt-14 mt-10"
           >
             <div className="flex bg-muted-foreground/10 w-40 flex-col gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">10K+</div>
+              <div className="text-4xl font-bold font-numeric tabular-nums">10K+</div>
               <div className="text-sm text-center">
                 X/Twitter <br /> Engagement
               </div>
             </div>
             <div className="flex flex-col bg-muted-foreground/10 w-40 gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">20K+</div>
+              <div className="text-4xl font-bold font-numeric tabular-nums">20K+</div>
               <div className="text-sm text-center">
                 Reddit <br /> Views
               </div>
             </div>
             <div className="flex flex-col bg-muted-foreground/10 w-40 gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">900K+</div>
+              <div className="text-4xl font-bold font-numeric tabular-nums">900K+</div>
               <div className="text-sm text-center">
                 Dev.to <br /> Reads
               </div>
             </div>
             <div className="flex flex-col bg-muted-foreground/10 w-40 gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">6K+</div>
+              <div className="text-4xl font-bold font-numeric tabular-nums">6K+</div>
               <div className="text-sm text-center">
                 GitHub <br /> Stars
               </div>

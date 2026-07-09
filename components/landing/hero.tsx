@@ -1,24 +1,38 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { ArrowDownRight, Calendar } from "@phosphor-icons/react";
-import FloatingSvgs from "./floating-svgs";
+import { ArrowDownRight } from "@phosphor-icons/react";
+import { IconPhoneFilled } from "@tabler/icons-react";
+import FloatingSvgs, { floatingTileSurface } from "./floating-svgs";
+import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Building, Star } from "@phosphor-icons/react/dist/ssr";
 import { Data } from "@/data";
 import Image from "next/image";
 import AvatarComponent from "./avatar-component";
+import { Num, NumericText } from "@/components/ui/num";
 import { Devto, YC } from "@/constants/image";
 import { motion } from "motion/react";
 import {
   fadeInUp,
-  fadeIn,
   staggerChildren,
   iconVariants,
   createFloatingAnimation,
 } from "@/lib/animations";
 
+const testimonialStagger = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 1.0,
+    },
+  },
+};
+
 export default function Hero() {
-  const testimonialVariant = fadeIn;
+  const testimonialGlass =
+    "border border-white/10 dark:border-white/[0.08] bg-gradient-to-br from-white/[0.06] to-white/[0.02] dark:from-white/[0.04] dark:to-white/[0.01] backdrop-blur-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] ring-1 ring-white/[0.04] text-foreground/90";
 
   return (
     <section id="hero" className="relative h-fit">
@@ -36,7 +50,7 @@ export default function Hero() {
         <div className="max-w-7xl relative mt-[4rem] h-[44rem] py-20 mx-auto">
           <FloatingSvgs />
           <motion.div
-            className="flex flex-col items-center justify-center"
+            className="flex flex-col items-center justify-center mt-10"
             initial="hidden"
             animate="visible"
             variants={staggerChildren}
@@ -46,18 +60,25 @@ export default function Hero() {
               variants={staggerChildren}
             >
               <motion.div variants={fadeInUp}>
-                <Badge className="pb-1 shadow-md mb-2 bg-gradient-to-r from-primary via-primary1 to-primary1/20 text-white">
+                <Badge className="pb-1 shadow-md mb-2 bg-gradient-to-r from-primary via-primary1 to-primary1/20 text-white font-normal">
                   <Building weight="fill" className="size-5 mr-2" />
-                  Trusted by 35+ DevTool and SaaS Teams
+                  Trusted by <Num>35+</Num> DevTool and SaaS Teams
                 </Badge>
               </motion.div>
 
               <motion.h1
-                className="text-4xl font-semibold font-primary sm:text-5xl lg:text-[4rem] text-center md:font-medium"
+                className="text-4xl font-normal font-primary tracking-tight sm:text-5xl lg:text-[4rem] text-center text-foreground/90 leading-[1.1]"
                 variants={fadeInUp}
               >
-                Technical Content and DevRel Partner <br className="hidden md:block" />
-                for DevTools
+                Technical Content and{" "}
+                <span className="font-accent italic font-normal text-primary/75 text-[0.92em]">
+                  DevRel
+                </span>
+                <br />
+                Partner for{" "}
+                <span className="font-accent italic font-normal text-primary/75 text-[0.92em]">
+                  DevTools
+                </span>
               </motion.h1>
 
               <motion.div
@@ -74,23 +95,23 @@ export default function Hero() {
                 {/* For larger screens - with spans */}
                 <div className="hidden sm:block">
                   We help
-                  <span className="font-semibold text-foreground">
+                  <span className="font-medium text-foreground">
                     {" "}
                     SaaS and devtool teams
                   </span>{" "}
                   publish
-                  <span className="font-semibold text-foreground">
+                  <span className="font-medium text-foreground">
                     {" "}
                     tutorials, docs, and DevRel programs
                   </span>
                   <br />
                   that rank in search, activate
-                  <span className="font-semibold text-foreground">
+                  <span className="font-medium text-foreground">
                     {" "}
                     developers
                   </span>
                   , and build
-                  <span className="font-semibold text-foreground">
+                  <span className="font-medium text-foreground">
                     {" "}
                     long-term trust
                   </span>
@@ -99,31 +120,37 @@ export default function Hero() {
               </motion.div>
 
               <motion.div
-                className="mt-8 flex sm:flex-row flex-col sm:justify-center w-full gap-4 items-center"
+                className="mt-8 flex w-full flex-col items-center justify-center gap-4 sm:flex-row"
                 variants={fadeInUp}
               >
-                <Button className=" w-full sm:w-44  h-12" asChild>
+                <Button
+                  variant="gradient"
+                  size="cta"
+                  className="w-full sm:w-auto"
+                  asChild
+                >
                   <a
                     href="https://cal.com/studio1/collab"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Book a Strategy Call <Calendar className="size-14" />
+                    Book a Strategy Call <IconPhoneFilled />
                   </a>
                 </Button>
                 <Button
-                  variant="secondary"
-                  className=" w-full sm:w-44 h-12"
+                  variant="outline-subtle"
+                  size="cta"
+                  className="w-full sm:w-auto"
                   asChild
                 >
                   <a href="/blog-as-service">
-                    See Our Services <ArrowDownRight className="size-4" />
+                    See Our Services <ArrowDownRight />
                   </a>
                 </Button>
               </motion.div>
 
-              <motion.div variants={fadeInUp}>
-                <AvatarComponent className="mt-6 md:mb-0" />
+              <motion.div variants={fadeInUp} className="mt-10">
+                <AvatarComponent />
               </motion.div>
               {/* <div className="mt-4 ">15+ overall work</div> */}
             </motion.div>
@@ -137,21 +164,39 @@ export default function Hero() {
           variants={iconVariants}
           initial="hidden"
           whileInView="visible"
-          animate={createFloatingAnimation(0, -25)} // Combining floating animation
+          animate={createFloatingAnimation(0, -12)}
           viewport={{ once: false, amount: 0.2 }}
-          className="z-[120] lg:block hidden bottom-[8rem] left-[53%] translate-x-[-50%] absolute size-[2.5rem] bg-gradient-to-t from-primary/40 to-primary/60 p-1 rounded-md rotate-[25deg]"
+          className={cn(
+            floatingTileSurface,
+            "absolute z-[120] hidden size-[2.5rem] translate-x-[-50%] items-center justify-center overflow-hidden rounded-xl p-1 lg:bottom-[13rem] lg:left-[20%] lg:block"
+          )}
         >
-          <Image src={YC} alt="YC" width={100} height={100} />
+          <Image
+            src={YC}
+            alt="Y Combinator"
+            width={100}
+            height={100}
+            className="size-full object-contain"
+          />
         </motion.div>
         <motion.div
           variants={iconVariants}
           initial="hidden"
           whileInView="visible"
-          animate={createFloatingAnimation(1, 25)} // Combining floating animation
+          animate={createFloatingAnimation(1, 12)}
           viewport={{ once: false, amount: 0.2 }}
-          className="z-[120] lg:block hidden bottom-[-4rem] left-[63%] translate-x-[-50%] absolute size-[2.5rem] bg-gradient-to-t from-primary/40 to-primary/60 p-1 rounded-md -rotate-[25deg]"
+          className={cn(
+            floatingTileSurface,
+            "absolute z-[120] hidden size-[2.5rem] translate-x-[-50%] items-center justify-center overflow-hidden rounded-xl p-1 lg:bottom-[13rem] lg:left-[80%] lg:block"
+          )}
         >
-          <Image src={Devto} alt="YC" width={100} height={100} />
+          <Image
+            src={Devto}
+            alt="Dev.to"
+            width={100}
+            height={100}
+            className="size-full object-contain"
+          />
         </motion.div>
 
         <div className="top-[-10rem] md:top-[-18rem] z-[-1] left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] -rotate-[60deg]"></div>
@@ -159,12 +204,15 @@ export default function Hero() {
         {/* <div className="top-[-18rem] md:top-[-23rem] z-[120] left-[50%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[7em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[25rem] size-[20rem] rotate-[0deg]"></div> */}
 
         <motion.div
-          className="border shadow-xl dark:shadow-none dark:border md:block hidden max-w-[26rem] p-4 bg-white/10 backdrop-blur-xl z-[101] rounded-xl h-60 absolute -bottom-16 left-[25%] lg:left-[30%] -translate-x-1/2 w-full"
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={testimonialVariant}
+          animate="visible"
+          variants={testimonialStagger}
+          className="contents"
         >
+          <motion.div
+            variants={fadeInUp}
+            className={`${testimonialGlass} md:block hidden max-w-[26rem] p-4 z-[101] rounded-xl h-60 absolute -bottom-12 md:-bottom-8 left-[20%] md:left-[14%] lg:left-[16%] -translate-x-1/2 w-full`}
+          >
           <div className="flex items-center justify-center">
             <Image
               src={Data.Testimonials[6].avatar}
@@ -175,24 +223,21 @@ export default function Hero() {
             />
           </div>
           <div className="flex flex-col text-center mt-2 text-sm items-center justify-center">
-            {Data.Testimonials[6].content}
+            <NumericText>{Data.Testimonials[6].content}</NumericText>
           </div>
           <div className="flex px-3 py-2 rounded-md items-center gap-1 justify-center">
             {[...Array(5)].map((_, index) => (
               <Star key={index} className="size-4 text-primary" weight="fill" />
             ))}
           </div>
-          <div className="text-sm font-semibold  text-center">
+          <div className="text-sm font-medium text-center">
             -{Data.Testimonials[6].name}
           </div>
-        </motion.div>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={testimonialVariant}
-          className="border shadow-xl dark:shadow-none dark:border flex md:mt-0 max-sm:w-[90%] md:max-w-[26rem] p-4 bg-white/10 backdrop-blur-xl z-[101] rounded-xl h-60 md:h-56 items-center justify-center flex-col absolute bottom-[-4rem] md:bottom-[0rem] left-1/2 -translate-x-1/2 md:translate-x-0 md:left-[50%]  lg:left-[60%] w-full"
-        >
+          </motion.div>
+          <motion.div
+            variants={fadeInUp}
+            className={`${testimonialGlass} flex md:mt-0 max-sm:w-[90%] md:max-w-[26rem] p-4 z-[101] rounded-xl h-60 md:h-56 items-center justify-center flex-col absolute bottom-[-4rem] md:bottom-0 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-[10%] lg:right-[14%] w-full`}
+          >
           <div className="flex items-center justify-center">
             <Image
               src={Data.Testimonials[8].avatar}
@@ -203,16 +248,17 @@ export default function Hero() {
             />
           </div>
           <div className="flex flex-col text-center mt-2 text-sm items-center justify-center">
-            {Data.Testimonials[8].content}
+            <NumericText>{Data.Testimonials[8].content}</NumericText>
           </div>
           <div className="flex px-3 py-2 rounded-md items-center gap-1 justify-center">
             {[...Array(5)].map((_, index) => (
               <Star key={index} className="size-4 text-primary" weight="fill" />
             ))}
           </div>
-          <div className="text-sm font-semibold  text-center">
+          <div className="text-sm font-medium text-center">
             -{Data.Testimonials[8].name}
           </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

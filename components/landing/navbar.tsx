@@ -37,14 +37,14 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          "fixed left-0 right-0 top-0 py-2 z-[550] border-b bg-background/80 backdrop-blur-2xl transition-transform duration-300",
+          "fixed left-0 right-0 top-0 py-2 z-[550] border-b border-border/50 bg-background/40 backdrop-blur-2xl transition-transform duration-300",
           isVisible ? "translate-y-0" : "-translate-y-full",
         )}
       >
         <nav className="flex z-20 max-w-7xl mx-auto h-16 px-4 rounded-2xl justify-between items-center">
           <Link href={"/"} className="flex justify-between gap-2 items-center">
             <Logo className="size-8" />
-            <span className="text-2xl font-bold">Studio1</span>
+            <span className="text-2xl font-medium">Studio1</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -105,7 +105,7 @@ export default function Navbar() {
 
           <div className="hidden md:flex justify-between gap-4 items-center">
             <SelectTheme />
-            <Button asChild>
+            <Button variant="gradient" asChild>
               <a href="mailto:contact@studio1hq.com">
                 Contact Us <EnvelopeOpen className="ml-2" />
               </a>
@@ -174,7 +174,7 @@ export default function Navbar() {
             ))}
             <div className="flex items-center justify-between p-2 bg-accent/50 pr-2 pl-4 rounded-3xl mt-4">
               <SelectTheme />
-              <Button asChild>
+              <Button variant="gradient" asChild>
                 <a href="mailto:contact@studio1hq.com">
                   Contact Us <EnvelopeOpen className="ml-2" />
                 </a>

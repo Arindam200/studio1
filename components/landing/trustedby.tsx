@@ -6,6 +6,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import { staggerChildren, fadeInUp } from "@/lib/animations";
+import { Num } from "@/components/ui/num";
 
 export default function Trustedby() {
   return (
@@ -21,11 +22,11 @@ export default function Trustedby() {
         className="flex justify-center w-full items-center"
       >
         <h2 className="text-xl font-medium">
-          Trusted by 35+ devtool and SaaS teams
+          Trusted by <Num>35+</Num> devtool and SaaS teams
         </h2>
       </motion.div>
       <motion.div variants={fadeInUp}>
-        <Marquee>
+        <Marquee fade={false}>
           {trustedbyLogo.map((item) => (
             <div
               className={cn(
@@ -49,7 +50,7 @@ export default function Trustedby() {
                     width={56}
                     height={56}
                   />
-                  <span className="text-base sm:text-lg font-semibold tracking-tight opacity-90 whitespace-nowrap">
+                  <span className="text-base sm:text-lg font-medium tracking-tight opacity-90 whitespace-nowrap">
                     {item.name}
                   </span>
                 </>

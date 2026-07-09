@@ -4,6 +4,7 @@ import { Cube, Pen, Users } from "@phosphor-icons/react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { staggerChildren, serviceItemVariants } from "@/lib/animations";
+import { Num } from "@/components/ui/num";
 
 export default function Services() {
   return (
@@ -25,7 +26,7 @@ export default function Services() {
           <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 text-white pb-1 flex gap-2 items-center">
             <Cube weight="fill" className="size-4" /> Services
           </Badge>
-          <div className="text-5xl max-sm:text-4xl font-medium text-center">What We Do</div>
+          <div className="text-5xl max-sm:text-4xl font-normal text-center">What We Do</div>
           <p className="text-center text-base max-sm:text-sm mt-2 max-w-2xl">
             We create technical tutorials, documentation, and DevRel programs
             that help developers succeed with your product and drive adoption.
@@ -52,10 +53,10 @@ export default function Services() {
               <div className="flex flex-col gap-2">
                 <div className="flex gap-2 flex-wrap">
                   <Badge className="w-fit bg-accent text-foreground">
-                    2M+ views
+                    <Num>2M+</Num> views
                   </Badge>
                   <Badge className="w-fit bg-accent text-foreground">
-                    30+ teams
+                    <Num>30+</Num> teams
                   </Badge>
                 </div>
                 <p className="text-4xl font-light text-left">
@@ -87,10 +88,10 @@ export default function Services() {
               <div className="flex flex-col gap-2">
                 <div className="flex gap-2 flex-wrap">
                   <Badge className="w-fit bg-accent text-foreground">
-                    10+ events
+                    <Num>10+</Num> events
                   </Badge>
                   <Badge className="w-fit bg-accent text-foreground">
-                    #1 PH Launch
+                    <Num>#1</Num> PH Launch
                   </Badge>
                 </div>
                 <p className="text-4xl font-light text-left">
@@ -111,26 +112,42 @@ export default function Services() {
           {/* Stats Banner */}
           <motion.div
             variants={serviceItemVariants}
-            className="mt-16 z-[20] border rounded-xl p-6 md:p-8 bg-gradient-to-br from-primary/5 to-primary/10 max-w-5xl mx-auto w-full"
+            className="mt-16 z-[20] border bg-background shadow-xl relative overflow-hidden rounded-xl p-6 md:p-8 max-w-5xl mx-auto w-full"
           >
+            <div
+              aria-hidden
+              className="bottom-[-10rem] md:bottom-[-18rem] rotate-[65deg] right-[-14%] opacity-20 dark:opacity-40 z-[-1] absolute bg-gradient-to-t from-primary/40 to-primary/20 blur-[4em] rounded-xl transition-all translate-x-[-50%] w-[10rem] md:w-[10rem] h-[10rem] md:h-[30rem]"
+            />
+            <div
+              aria-hidden
+              className="bottom-[-10rem] md:bottom-[-17rem] rotate-[-65deg] left-[-8%] opacity-20 dark:opacity-40 z-[-1] absolute bg-gradient-to-t from-primary/40 to-primary/20 blur-[4em] rounded-xl transition-all translate-x-[-50%] w-[10rem] md:w-[10rem] h-[10rem] md:h-[30rem]"
+            />
             <p className="text-center text-sm text-muted-foreground mb-6">
               Results from our technical content and DevRel work
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-primary">2M+</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary">
+                  <Num>2M+</Num>
+                </div>
                 <div className="text-sm text-muted-foreground mt-1">Content Views</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-primary">35+</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary">
+                  <Num>35+</Num>
+                </div>
                 <div className="text-sm text-muted-foreground mt-1">Partner Companies</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-primary">50%</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary">
+                  <Num>50%</Num>
+                </div>
                 <div className="text-sm text-muted-foreground mt-1">Cost Savings</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-primary">65%+</div>
+                <div className="text-3xl md:text-4xl font-bold text-primary">
+                  <Num>65%+</Num>
+                </div>
                 <div className="text-sm text-muted-foreground mt-1">Client Retention</div>
               </div>
             </div>

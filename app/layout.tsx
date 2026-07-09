@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Raleway, Plus_Jakarta_Sans } from "next/font/google";
+import {
+  DM_Sans,
+  Instrument_Serif,
+  Space_Grotesk,
+  Syne,
+} from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { baseUrl } from "./sitemap";
@@ -11,14 +16,33 @@ import Navbar from "@/components/landing/navbar";
 import Footer from "@/components/landing/footer";
 import CTA from "@/components/landing/cta";
 
-const raleway = Raleway({
+const syne = Syne({
   subsets: ["latin"],
-  variable: "--font-raleway",
+  variable: "--font-syne",
+  display: "swap",
+  weight: ["400", "500", "600"],
 });
 
-const jakarta = Plus_Jakarta_Sans({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-jakarta",
+  variable: "--font-dm-sans",
+  display: "swap",
+  weight: ["300", "400", "500"],
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  variable: "--font-instrument-serif",
+  weight: "400",
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-numeric",
+  display: "swap",
+  weight: ["500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -108,8 +132,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          raleway.variable,
-          jakarta.variable,
+          syne.variable,
+          dmSans.variable,
+          instrumentSerif.variable,
+          spaceGrotesk.variable,
           "antialiased font-secondary",
         )}
         suppressHydrationWarning

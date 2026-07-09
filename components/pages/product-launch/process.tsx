@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "motion/react";
 import { containerVariants, itemVariants } from "@/lib/animations";
+import { Num } from "@/components/ui/num";
 import {
   IconMap,
   IconRocket,
@@ -81,7 +82,7 @@ export default function Process() {
                     <step.icon className="size-6 text-primary" />
                   </div>
                   <span className="text-sm font-medium text-muted-foreground">
-                    Phase {index + 1}
+                    Phase <Num>{index + 1}</Num>
                   </span>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{step.name}</h3>
@@ -114,7 +115,7 @@ export default function Process() {
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             <div className="bg-background border rounded-lg px-6 py-4 text-center">
-              <div className="text-2xl font-bold text-primary">#1</div>
+              <div className="text-2xl font-bold font-numeric tabular-nums text-primary">#1</div>
               <div className="text-sm text-muted-foreground">Product of the Day</div>
             </div>
             <div className="bg-background border rounded-lg px-6 py-4 text-center">

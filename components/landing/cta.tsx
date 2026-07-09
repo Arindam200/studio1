@@ -20,7 +20,7 @@ export default function CTA() {
           variants={cardVariants}
         >
           <motion.div
-            className="text-2xl md:text-4xl text-center font-bold"
+            className="text-2xl md:text-4xl text-center font-medium"
             variants={cardVariants}
           >
             Ready to Scale <br /> Developer Adoption?
@@ -37,7 +37,7 @@ export default function CTA() {
           <div className="bottom-[-10rem] md:bottom-[-17rem] rotate-[-65deg] left-[-8%] opacity-50 dark:opacity-100 z-[-1] absolute bg-gradient-to-t from-primary to-primary/90 blur-[4em] rounded-xl transition-all translate-x-[-50%] w-[10rem] md:w-[10rem] h-[10rem] md:h-[30rem]" />
 
           <motion.div variants={cardVariants}>
-            <Button className="h-12 min-w-32 px-4" asChild>
+            <Button variant="gradient" size="cta" className="min-w-32" asChild>
               <a
                 href="https://cal.com/studio1/collab"
                 target="_blank"

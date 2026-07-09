@@ -1,6 +1,7 @@
 import { Icon, IconCircleCheck } from "@tabler/icons-react";
 
 import { IconProps } from "@tabler/icons-react";
+import { Num } from "@/components/ui/num";
 
 export default function ProcessCard({
   step,
@@ -33,7 +34,7 @@ export default function ProcessCard({
             <div className="flex items-center gap-4">
               <div className="flex flex-col items-start">
                 <h3 className="text-xl font-bold">
-                  ({index + 1}) {step.name.toUpperCase()}
+                  (<Num>{index + 1}</Num>) {step.name.toUpperCase()}
                 </h3>
 
                 <p className="text-base text-muted-foreground leading-tight">

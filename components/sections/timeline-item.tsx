@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { Badge } from "../ui/badge";
 import { CheckSquare } from "@phosphor-icons/react";
 import { FlickeringGrid } from "../magicui/flickering-grid";
+import { Num } from "../ui/num";
 
 interface TimelineItemProps {
   item: {
@@ -24,8 +25,8 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
 
         <div className="absolute top-0 left-0 blur-[1em] z-[2] w-full h-[70%] bg-gradient-to-r from-background via-background/60"></div>
 
-        <div className="text-[18rem] z-[30] font-extrabold font-primary bg-gradient-to-b from-foreground/60 via-foreground/20 dark:from-white/80 dark:via-white/15 to-transparent bg-clip-text text-transparent absolute bottom-[-8rem] opacity-25 right-[0rem]">
-          {index + 1}
+        <div className="text-[18rem] z-[30] font-extrabold font-numeric tabular-nums bg-gradient-to-b from-foreground/60 via-foreground/20 dark:from-white/80 dark:via-white/15 to-transparent bg-clip-text text-transparent absolute bottom-[-8rem] opacity-25 right-[0rem]">
+          <Num>{index + 1}</Num>
         </div>
         <FlickeringGrid
           className="absolute group-hover:opacity-60 opacity-10 transition-all duration-300 inset-0 rounded-xl z-[-1] size-full"

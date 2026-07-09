@@ -34,7 +34,7 @@ export default function Testimonials() {
           </motion.div>
           <motion.h2
             variants={headerVariants}
-            className="text-4xl md:text-5xl font-medium text-center"
+            className="text-4xl md:text-5xl font-normal text-center"
           >
             What Our Clients Say
           </motion.h2>
@@ -98,7 +98,9 @@ export default function Testimonials() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.5 }}
           >
-            <Button onClick={() => setShowAll(true)}>See More</Button>
+            <Button variant="gradient" size="cta" onClick={() => setShowAll(true)}>
+              See More
+            </Button>
           </motion.div>
         )}
       </div>

@@ -14,37 +14,37 @@ export default function Reach() {
       <div className="container flex flex-wrap max-sm:flex-col max-sm:px-5 justify-center gap-6 ">
         <CardWithGrid>
           <div className="w-full h-40 border font-bold border-orange-400 rounded-md p-3 flex flex-col justify-center items-center space-y-2">
-            <div className="text-center sm:text-4xl text-2xl">10K+</div>
+            <div className="text-center sm:text-4xl text-2xl font-numeric tabular-nums">10K+</div>
             <div className="text-center text-lg ">X/Twitter Engagement</div>
           </div>
         </CardWithGrid>
         <CardWithGrid>
           <div className="w-full h-40 border font-bold border-orange-400 rounded-md p-3 flex flex-col justify-center items-center space-y-2">
-            <div className="text-center sm:text-4xl text-2xl">4-5K</div>
+            <div className="text-center sm:text-4xl text-2xl font-numeric tabular-nums">4-5K</div>
             <div className="text-center text-lg ">LinkedIn Reach</div>
           </div>
         </CardWithGrid>
         <CardWithGrid>
           <div className="w-full h-40 border font-bold border-orange-400 rounded-md p-3 flex flex-col justify-center items-center space-y-2">
-            <div className="text-center sm:text-4xl text-2xl">20K+</div>
+            <div className="text-center sm:text-4xl text-2xl font-numeric tabular-nums">20K+</div>
             <div className="text-center text-lg ">Reddit Views</div>
           </div>
         </CardWithGrid>
         <CardWithGrid>
           <div className="w-full h-40 border font-bold border-orange-400 rounded-md p-3 flex flex-col justify-center items-center space-y-2">
-            <div className="text-center sm:text-4xl text-2xl">1K+</div>
+            <div className="text-center sm:text-4xl text-2xl font-numeric tabular-nums">1K+</div>
             <div className="text-center text-lg ">YouTube Views</div>
           </div>
         </CardWithGrid>
         <CardWithGrid>
           <div className="w-full h-40 border font-bold border-orange-400 rounded-md p-3 flex flex-col justify-center items-center space-y-2">
-            <div className="text-center sm:text-4xl text-2xl">900K+</div>
+            <div className="text-center sm:text-4xl text-2xl font-numeric tabular-nums">900K+</div>
             <div className="text-center text-lg ">Dev Platform Reads</div>
           </div>
         </CardWithGrid>
         <CardWithGrid>
           <div className="w-full h-40 border font-bold border-orange-400 rounded-md p-3 flex flex-col justify-center items-center space-y-2">
-            <div className="text-center sm:text-4xl text-2xl">6K+</div>
+            <div className="text-center sm:text-4xl text-2xl font-numeric tabular-nums">6K+</div>
             <div className="text-center text-lg ">GitHub Stars</div>
           </div>
         </CardWithGrid>

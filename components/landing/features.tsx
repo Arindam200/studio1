@@ -4,7 +4,7 @@ import { Data } from "@/data";
 import { FeatureCard } from "./feature-card";
 import { Sparkle } from "lucide-react";
 import { motion } from "motion/react";
-import { containerVariants, headerVariants } from "@/lib/animations";
+import { containerVariants, fadeInUp, headerVariants } from "@/lib/animations";
 
 export default function Features() {
   return (
@@ -26,7 +26,7 @@ export default function Features() {
         <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 flex gap-2 items-center">
           <Sparkle className="size-4" /> Features
         </Badge>
-        <div className="text-5xl max-sm:text-4xl font-medium text-center">
+        <div className="text-5xl max-sm:text-4xl font-normal text-center">
           Why Tech Companies Choose Studio1
         </div>
         <p className="text-center text-base max-sm:text-sm mt-2">
@@ -38,7 +38,7 @@ export default function Features() {
 
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-4 mt-20"
-        variants={containerVariants}
+        variants={fadeInUp}
       >
         {Data.Features.map((feature, index) => (
           <FeatureCard key={index} feature={feature} index={index} />

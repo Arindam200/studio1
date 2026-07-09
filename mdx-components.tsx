@@ -1,6 +1,7 @@
 import React, { ComponentPropsWithoutRef } from "react";
 import Link from "next/link";
 import { highlight } from "sugar-high";
+import { withNumericText } from "@/components/ui/num";
 
 type HeadingProps = ComponentPropsWithoutRef<"h1">;
 type ParagraphProps = ComponentPropsWithoutRef<"p">;
@@ -23,7 +24,9 @@ export const mdxComponents = {
     <h4 className="font-medium text-foreground" {...props} />
   ),
   p: (props: ParagraphProps) => (
-    <p className="leading-snug text-foreground" {...props} />
+    <p className="leading-snug text-foreground" {...props}>
+      {withNumericText(props.children)}
+    </p>
   ),
   ol: (props: ListProps) => (
     <ol className="list-decimal pl-5 space-y-2 text-foreground" {...props} />
@@ -32,7 +35,9 @@ export const mdxComponents = {
     <ul className="list-disc pl-5 space-y-1 text-foreground" {...props} />
   ),
   li: (props: ListItemProps) => (
-    <li className="pl-1 text-foreground" {...props} />
+    <li className="pl-1 text-foreground" {...props}>
+      {withNumericText(props.children)}
+    </li>
   ),
   em: (props: ComponentPropsWithoutRef<"em">) => (
     <em className="font-medium text-foreground" {...props} />
@@ -103,7 +108,7 @@ export const mdxComponents = {
             <tr key={index} className="border-b border-border/60">
               {row.map((cell, cellIndex) => (
                 <td key={cellIndex} className="p-2">
-                  {cell}
+                  {withNumericText(cell)}
                 </td>
               ))}
             </tr>
@@ -142,7 +147,9 @@ export const mdxComponents = {
     />
   ),
   td: (props: ComponentPropsWithoutRef<"td">) => (
-    <td className="border border-border/60 p-3 align-top" {...props} />
+    <td className="border border-border/60 p-3 align-top" {...props}>
+      {withNumericText(props.children)}
+    </td>
   ),
 };
 

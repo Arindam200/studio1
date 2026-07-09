@@ -185,13 +185,13 @@ export const staggerChildren = {
 
 // Helper function to create floating animation
 export const createFloatingAnimation = (delay: number, rotate: number) => ({
-  y: [0, -10, 0],
+  y: [0, -6, 0],
   rotate: rotate,
   transition: {
     y: {
-      duration: 3,
+      duration: 5,
       repeat: Number.POSITIVE_INFINITY,
-      ease: "easeInOut" as const,
+      ease: [0.45, 0, 0.55, 1] as const,
       delay: delay,
     },
     rotate: {

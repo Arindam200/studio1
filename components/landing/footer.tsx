@@ -9,6 +9,7 @@ import {
   headerVariants,
   gradientVariants,
 } from "@/lib/animations";
+import { Num } from "@/components/ui/num";
 
 export default function Footer() {
   return (
@@ -133,7 +134,7 @@ export default function Footer() {
             variants={headerVariants}
           >
             <p className="text-base text-muted-foreground">
-              ©{new Date().getFullYear()} Studio1. All rights reserved.
+              ©<Num>{new Date().getFullYear()}</Num> Studio1. All rights reserved.
             </p>
             <nav className="flex gap-4">
               <Link

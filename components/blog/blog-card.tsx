@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import type { BlogPostMeta } from "@/lib/blog";
+import { Num } from "@/components/ui/num";
 
 export function BlogCard({ post }: { post: BlogPostMeta }) {
   return (
@@ -22,7 +23,9 @@ export function BlogCard({ post }: { post: BlogPostMeta }) {
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground font-medium">
           <time dateTime={post.date}>{post.date}</time>
           <span aria-hidden>·</span>
-          <span>{post.readingTimeMinutes} min read</span>
+          <span>
+            <Num>{post.readingTimeMinutes}</Num> min read
+          </span>
         </div>
         <h2 className="text-xl font-semibold group-hover:text-primary transition-colors">
           {post.title}

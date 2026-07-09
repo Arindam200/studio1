@@ -11,6 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { NumericText } from "@/components/ui/num";
 
 // Define pricing data structure
 const pricingPlans = [
@@ -105,7 +106,9 @@ export default function PricingSection() {
                 <CardTitle className="flex flex-col items-start">
                   <span className="text-lg font-bold mb-2">{plan.name}</span>
                   <div className="flex items-end gap-1">
-                    <span className="text-4xl font-bold">{plan.price}</span>
+                    <span className="text-4xl font-bold font-numeric tabular-nums">
+                      {plan.price}
+                    </span>
                     {plan.price !== "Custom" && (
                       <span className="text-muted-foreground mb-1">/mo</span>
                     )}
@@ -118,7 +121,9 @@ export default function PricingSection() {
                   {plan.features.map((feature, index) => (
                     <li key={index} className="flex items-start">
                       <Check className="h-5 w-5 text-green-400 mr-2 shrink-0" />
-                      <span>{feature}</span>
+                      <span>
+                        <NumericText>{feature}</NumericText>
+                      </span>
                     </li>
                   ))}
                 </ul>

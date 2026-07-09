@@ -1,5 +1,6 @@
 import { Star } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import { NumericText } from "@/components/ui/num";
 
 export default function TestimonialCard({
   testimonial,
@@ -23,13 +24,15 @@ export default function TestimonialCard({
           className="rounded-full"
         />
       </div>
-      <div className="text-sm text-center mb-4">{testimonial.content}</div>
+      <div className="text-sm text-center mb-4">
+        <NumericText>{testimonial.content}</NumericText>
+      </div>
       <div className="flex items-center justify-center gap-1 mb-4">
         {[...Array(5)].map((_, index) => (
           <Star key={index} className="size-4 text-primary" weight="fill" />
         ))}
       </div>
-      <div className="text-base font-semibold text-center mb-1">
+      <div className="text-base font-medium text-center mb-1">
         {testimonial.name}
       </div>
       <div className="text-sm text-neutral-500 dark:text-neutral-400 text-center">

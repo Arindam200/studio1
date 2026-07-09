@@ -1,84 +1,94 @@
 "use client";
 
-import { motion } from "motion/react";
 import { ArrowUpRight } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { createCardVariantsWithDelay } from "@/lib/animations";
-import type { Product } from "@/constants/products";
-
-const statusStyles: Record<
-  Product["status"],
-  { badge: "default" | "secondary" | "outline"; dot: string }
-> = {
-  launched: { badge: "default", dot: "bg-green-500" },
-  live: { badge: "secondary", dot: "bg-blue-500" },
-  upcoming: { badge: "outline", dot: "bg-amber-500" },
+export type ProductCardData = {
+  name: string;
+  tagline: string;
+  description: string;
+  highlights: string[];
+  url: string;
+  category: string;
+  statusLabel: string;
 };
+import { motion } from "motion/react";
+import { cardVariants } from "@/lib/animations";
+import { cn } from "@/lib/utils";
 
-export default function ProductCard({
-  product,
-  index,
-}: {
-  product: Product;
-  index: number;
-}) {
-  const style = statusStyles[product.status];
+const productCardSurface = cn(
+  "relative overflow-hidden rounded-xl border bg-background p-6 sm:p-8 shadow-xl transition-colors duration-300",
+);
 
+const productCardGlowRight =
+  "bottom-[-10rem] md:bottom-[-18rem] rotate-[65deg] right-[-14%] opacity-20 dark:opacity-40 z-[-1] absolute bg-gradient-to-t from-primary/40 to-primary/20 blur-[4em] rounded-xl transition-all translate-x-[-50%] w-[10rem] md:w-[10rem] h-[10rem] md:h-[30rem]";
+
+const productCardGlowLeft =
+  "bottom-[-10rem] md:bottom-[-17rem] rotate-[-65deg] left-[-8%] opacity-20 dark:opacity-40 z-[-1] absolute bg-gradient-to-t from-primary/40 to-primary/20 blur-[4em] rounded-xl transition-all translate-x-[-50%] w-[10rem] md:w-[10rem] h-[10rem] md:h-[30rem]";
+
+function isLiveStatus(statusLabel: string) {
+  const normalized = statusLabel.trim().toLowerCase();
+  return normalized === "live" || normalized === "launched";
+}
+
+export default function ProductCard({ product }: { product: ProductCardData }) {
   return (
-    <motion.div
-      variants={createCardVariantsWithDelay(index)}
-      className="group relative flex flex-col justify-between rounded-2xl border border-border bg-background/60 backdrop-blur-sm p-6 sm:p-8 transition-colors hover:border-primary/40"
+    <motion.article
+      variants={cardVariants}
+      className={productCardSurface}
     >
-      <div>
-        <div className="flex items-center justify-between mb-4">
-          <Badge variant="secondary" className="text-xs">
-            {product.category}
-          </Badge>
-          <Badge variant={style.badge} className="text-xs flex items-center gap-1.5">
-            <span className={`size-2 rounded-full ${style.dot}`} />
-            {product.statusLabel}
-          </Badge>
-        </div>
+      <div aria-hidden className={productCardGlowRight} />
+      <div aria-hidden className={productCardGlowLeft} />
 
-        <h3 className="text-2xl font-bold tracking-tight mb-1">
-          {product.name}
-        </h3>
-        <p className="text-sm text-muted-foreground font-medium mb-4">
+      <div className="flex items-center gap-2 font-secondary text-xs text-muted-foreground">
+        <span>{product.category}</span>
+        <span aria-hidden>·</span>
+        <span className="inline-flex items-center gap-1.5">
+          {isLiveStatus(product.statusLabel) ? (
+            <span aria-hidden className="relative flex h-1.5 w-1.5 shrink-0">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75 motion-reduce:animate-none" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            </span>
+          ) : null}
+          {product.statusLabel}
+        </span>
+      </div>
+
+      <h2 className="mt-3 font-accent text-2xl font-medium italic tracking-tight text-foreground sm:text-3xl">
+        {product.name}
+      </h2>
+
+      {product.tagline ? (
+        <p className="mt-1 font-secondary text-lg text-primary/75 sm:text-xl">
           {product.tagline}
         </p>
-        <p className="text-foreground/80 leading-relaxed mb-6">
-          {product.longDescription}
-        </p>
+      ) : null}
 
-        <ul className="space-y-4 mb-8">
-          {product.features.map((f) => (
-            <li key={f.label} className="flex gap-3 text-sm">
-              <f.icon
-                className="size-5 shrink-0 text-primary mt-0.5"
-                weight="duotone"
+      <p className="mt-4 max-w-2xl font-secondary text-base leading-relaxed text-muted-foreground">
+        {product.description}
+      </p>
+
+      {product.highlights.length > 0 ? (
+        <ul className="mt-4 max-w-2xl space-y-1.5 font-secondary text-sm leading-relaxed text-muted-foreground/90">
+          {product.highlights.map((highlight) => (
+            <li key={highlight} className="flex gap-2.5">
+              <span
+                aria-hidden
+                className="mt-[0.45em] size-1 shrink-0 rounded-full bg-primary/50"
               />
-              <div>
-                <span className="font-medium">{f.label}</span>
-                <p className="text-muted-foreground mt-0.5">{f.detail}</p>
-              </div>
+              <span>{highlight}</span>
             </li>
           ))}
         </ul>
-      </div>
+      ) : null}
 
-      {product.status === "upcoming" ? (
-        <p className="text-sm text-muted-foreground font-medium">
-          Currently in development. Stay tuned.
-        </p>
-      ) : (
-        <Button asChild className="w-fit">
+      <div className="mt-6">
+        <Button variant="gradient" size="cta" asChild>
           <a href={product.url} target="_blank" rel="noopener noreferrer">
             Visit {product.name}
             <ArrowUpRight className="size-4" weight="bold" />
           </a>
         </Button>
-      )}
-    </motion.div>
+      </div>
+    </motion.article>
   );
 }

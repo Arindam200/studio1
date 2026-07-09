@@ -26,8 +26,10 @@ const config = {
     },
     extend: {
       fontFamily: {
-        primary: ["var(--font-raleway)", "sans-serif"],
-        secondary: ["var(--font-jakarta)", "sans-serif"],
+        primary: ["var(--font-syne)", "sans-serif"],
+        secondary: ["var(--font-dm-sans)", "sans-serif"],
+        accent: ["var(--font-instrument-serif)", "serif"],
+        numeric: ["var(--font-numeric)", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
