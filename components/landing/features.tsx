@@ -5,6 +5,7 @@ import { FeatureCard } from "./feature-card";
 import { Sparkle } from "lucide-react";
 import { motion } from "motion/react";
 import { containerVariants, fadeInUp, headerVariants } from "@/lib/animations";
+import { featuresGlowLeft, featuresGlowRight } from "@/lib/shadows";
 
 export default function Features() {
   return (
@@ -16,8 +17,8 @@ export default function Features() {
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
-      <div className="bottom-[-10rem] md:bottom-[-18rem] z-[-1] left-[-0%] absolute bg-gradient-to-t opacity-80 dark:opacity-100 from-primary dark:to-primary to-white  blur-[2.5em] dark:blur-[2.5em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
-      <div className="bottom-[-10rem] md:bottom-1/2 md:translate-y-[50%] z-[-1] right-[-0%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary blur-[4em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
+      <div className={featuresGlowLeft}></div>
+      <div className={featuresGlowRight}></div>
 
       <motion.div
         className="flex flex-col items-center gap-4 justify-center"
@@ -27,7 +28,10 @@ export default function Features() {
           <Sparkle className="size-4" /> Features
         </Badge>
         <div className="text-5xl max-sm:text-4xl font-normal text-center">
-          Why Tech Companies Choose Studio1
+          Why Tech Companies Choose{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
+            Studio1
+          </span>
         </div>
         <p className="text-center text-base max-sm:text-sm mt-2">
           High-quality technical tutorials, documentation, and DevRel execution

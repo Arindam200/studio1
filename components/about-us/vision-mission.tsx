@@ -13,6 +13,8 @@ import {
   HandHeart,
 } from "@phosphor-icons/react/dist/ssr";
 import { motion } from "motion/react";
+import { sideBeamGlowLeftTall, sideBeamGlowRightTall } from "@/lib/shadows";
+import { cn } from "@/lib/utils";
 
 const contentData = {
   vision: {
@@ -69,9 +71,9 @@ const contentData = {
   },
 };
 
-// Create a reusable card component
-const ContentCard = ({
+const ContentBlock = ({
   data,
+  index,
 }: {
   data: {
     title: string;
@@ -81,81 +83,101 @@ const ContentCard = ({
       text: string;
     }[];
   };
+  index: number;
 }) => {
   const HeaderIcon = data.icon;
 
   return (
-    <motion.div
-      className="flex flex-col w-full rounded-xl h-full"
-      initial={{ opacity: 0, y: 30, filter: "blur(5px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+    <motion.article
+      className={cn(
+        "group/card relative flex h-full flex-col gap-7 overflow-hidden rounded-xl border-2 p-6 sm:p-8",
+        "bg-accent dark:bg-muted-foreground/5",
+        "transition-transform duration-300 hover:-translate-y-1"
+      )}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.7 }}
+      transition={{ duration: 0.55, delay: 0.08 * index, ease: "easeOut" }}
     >
-      <div className="flex items-center h-20 px-4 rounded-t-xl bg-gradient-to-r from-primary to-primary1 text-white gap-2">
-        <HeaderIcon className="size-8" />
-        <span className="text-2xl font-primary font-semibold text-center leading-tight">
-          {data.title}
+      <header className="flex items-center gap-3.5">
+        <span
+          className={cn(
+            "flex size-12 shrink-0 items-center justify-center rounded-lg",
+            "bg-background text-foreground",
+            "dark:bg-background/80"
+          )}
+          aria-hidden
+        >
+          <HeaderIcon weight="regular" className="size-6" />
         </span>
-      </div>
+        <h3 className="font-primary text-2xl font-semibold tracking-tight text-foreground sm:text-[1.65rem]">
+          {data.title}
+        </h3>
+      </header>
 
-      <div className="flex bg-background sm:bg-accent dark:bg-background/70 backdrop-blur-xl dark:sm:bg-accent/50 rounded-b-xl flex-col gap-4 p-6 h-full">
-        {data.points.map((point, index) => {
+      <div className="h-px w-full bg-border/80" />
+
+      <ul className="flex flex-col gap-4">
+        {data.points.map((point, pointIndex) => {
           const PointIcon = point.icon;
           return (
-            <motion.div
-              key={index}
-              className="flex items-start gap-4"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+            <motion.li
+              key={point.text}
+              className="flex items-start gap-3"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 * index, duration: 0.5 }}
+              transition={{
+                delay: 0.1 + pointIndex * 0.04,
+                duration: 0.35,
+                ease: "easeOut",
+              }}
             >
-              <PointIcon className="size-6 text-primary flex-shrink-0" />
-              <p className="text-sm">{point.text}</p>
-            </motion.div>
+              <PointIcon
+                weight="regular"
+                className="mt-0.5 size-[1.125rem] shrink-0 text-primary"
+                aria-hidden
+              />
+              <p className="font-secondary text-[0.9375rem] leading-relaxed text-foreground/80">
+                {point.text}
+              </p>
+            </motion.li>
           );
         })}
-      </div>
-    </motion.div>
+      </ul>
+    </motion.article>
   );
 };
 
 export const VisionMission = () => {
   return (
-    <div className="w-full mt-44 relative mx-auto px-4 py-8">
-      <div className="top-[-10rem] md:top-[-18rem] z-[-1] left-[-80%] md:left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] -rotate-[60deg]"></div>
-      <div className="top-[-10rem] md:top-[-18rem] z-[-1] right-[-80%] md:right-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] rotate-[40deg]"></div>
+    <div className="relative mx-auto mt-44 w-full px-4 py-8">
+      <div className={sideBeamGlowLeftTall}></div>
+      <div className={sideBeamGlowRightTall}></div>
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
+        className="mb-14 text-center md:mb-16"
       >
-        <p className="text-center text-sm font-semibold text-neutral-600 dark:text-neutral-400 mx-auto mb-12"></p>
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 md:text-5xl">
-            What{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
-              Fuels
-            </span>{" "}
-            Us?
-          </h2>
-          <p className="text-muted-foreground ">
-            We help SaaS teams build developer trust through <br /> high-impact
-            content and DevRel strategy that scales with their product.
-          </p>
-        </div>
+        <h2 className="mb-4 font-primary text-4xl font-normal tracking-tight md:text-5xl">
+          What{" "}
+          <span className="bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent italic font-bold text-transparent">
+            Fuels
+          </span>{" "}
+          Us?
+        </h2>
+        <p className="text-muted-foreground">
+          We help SaaS teams build developer trust through <br /> high-impact
+          content and DevRel strategy that scales with their product.
+        </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 place-items-center sm:place-items-start sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-        <div className="flex justify-center h-full max-w-[23rem]">
-          <ContentCard data={contentData.vision} />
-        </div>
-        <div className="flex justify-center h-full max-w-[23rem]">
-          <ContentCard data={contentData.mission} />
-        </div>
+      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-2">
+        <ContentBlock data={contentData.vision} index={0} />
+        <ContentBlock data={contentData.mission} index={1} />
       </div>
     </div>
   );

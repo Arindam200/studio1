@@ -37,13 +37,11 @@ const services = [
 export default function Services() {
   return (
     <div id="work" className="mt-20 relative overflow-x-hidden ">
-      <div className="top-[-10rem] md:top-[-8rem] z-[-1] left-[-80%] md:left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] -rotate-[60deg]"></div>
-      <div className="top-[-10rem] md:top-[-8rem] z-[-1] right-[-80%] md:right-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] rotate-[40deg]"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center my-10">
           <div className="text-center  font-semibold lg:text-5xl text-4xl mb-4">
             What We{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
+            <span className="font-accent italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
               Offer
             </span>
           </div>
@@ -62,7 +60,7 @@ export default function Services() {
                 <div className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
                   <div className="absolute border-[3px] group-hover:border-primary/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full z-[90] inline-flex p-6 ">
                     <service.icon
-                      className="size-10 text-muted-foreground"
+                      className="size-10 text-primary"
                       aria-hidden="true"
                     />
                   </div>

@@ -1,30 +1,16 @@
 import React from "react";
-import { baseUrl } from "@/app/sitemap";
 import { Metadata } from "next";
 import Hero from "@/components/pages/video-production/hero";
 import Services from "@/components/pages/video-production/services";
 import Process from "@/components/pages/video-production/process";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Tech Video Production",
   description:
     "We create high-quality videos for AI & DevTool startups, including product demos, how-to guides, integration videos, and tutorials.",
-  openGraph: {
-    title: "Tech Video Production | Studio1",
-    description:
-      "We create high-quality videos for AI & DevTool startups, including product demos, how-to guides, integration videos, and tutorials.",
-    url: baseUrl + "/video-production",
-    siteName: "Studio1",
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    title: "Tech Video Production | Studio1",
-    card: "summary_large_image",
-    description:
-      "We create high-quality videos for AI & DevTool startups, including product demos, how-to guides, integration videos, and tutorials.",
-  },
-};
+  path: "/video-production",
+});
 
 export default function Page() {
   const serviceSchema = {
@@ -38,7 +24,7 @@ export default function Page() {
       name: "Studio1",
       url: "https://studio1hq.com",
     },
-    serviceType: "Video Production",
+    serviceType: "Technical Video Production",
     areaServed: "Worldwide",
     url: "https://studio1hq.com/video-production",
   };
@@ -48,6 +34,17 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Tech Video Production", path: "/video-production" },
+            ]),
+          ),
+        }}
       />
       <Hero />
       <Services />

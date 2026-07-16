@@ -2,32 +2,19 @@ import React from "react";
 import Searchbar from "@/components/ui/searchbar";
 import { Suspense } from "react";
 import Hero from "./hero";
-import { baseUrl } from "@/app/sitemap";
 import { Metadata } from "next";
 import { FloatingTags } from "@/components/ui/floating-tags";
 import { Badge } from "@/components/ui/badge";
 import { Users } from "@phosphor-icons/react/dist/ssr";
+import { sideBeamGlowLeftFixed, sideBeamGlowRightFixed } from "@/lib/shadows";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Work",
   description:
     "Technical tutorials, DevRel insights, and developer content from Studio1. Explore AI, cloud, DevOps, and web development guides written by experienced developers.",
-  openGraph: {
-    title: "Work | Studio1",
-    description:
-      "Technical tutorials, DevRel insights, and developer content from Studio1. Explore AI, cloud, DevOps, and web development guides written by experienced developers.",
-    url: baseUrl + "/work",
-    siteName: "Studio1",
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    title: "Work | Studio1",
-    card: "summary_large_image",
-    description:
-      "Technical tutorials, DevRel insights, and developer content from Studio1. Explore AI, cloud, DevOps, and web development guides written by experienced developers.",
-  },
-};
+  path: "/work",
+});
 
 export default async function Page(props: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
@@ -51,15 +38,15 @@ export default async function Page(props: {
   return (
     <section className="overflow-x-hidden">
       <div className=" max-h-fit w-full relative max-w-7xl mx-auto flex flex-col mt-24">
-        <div className="top-[-10rem] md:top-[-18rem] z-[-1] left-[-80%] md:left-[-20%] fixed bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] -rotate-[60deg]"></div>
-        <div className="top-[-10rem] md:top-[-18rem] z-[-1] right-[-80%] md:right-[-20%] fixed bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] rotate-[40deg]"></div>
+        <div className={sideBeamGlowLeftFixed}></div>
+        <div className={sideBeamGlowRightFixed}></div>
         {/* <Navbar /> */}
         <div className="text-4xl w-full sm:text-7xl font-bold relative z-20 pt-8 py-4 text-center">
-          <Badge className="w-fit mx-auto mb-10 flex items-center pb-1">
+          <Badge className="w-fit mx-auto mb-10 flex items-center pb-1 text-sm font-medium shadow-md bg-gradient-to-r from-primary via-primary1 to-primary1/20 text-white">
             <Users className="size-6 inline-block mr-2" />
             Written by top experienced developers
           </Badge>
-          <span className="font-bold"> Our Work </span>
+          <h1 className="font-bold">Our Work</h1>
           <p className="text-base font-semibold relative z-20 text-foreground py-4 text-center">
             We help you build and grow developer communities with <br /> DevRel
             strategies tailored to your product and audience.

@@ -48,7 +48,7 @@ export default function Benefits() {
         <div className="text-center mb-16">
           <div className="text-center font-semibold lg:text-5xl text-4xl mb-4">
             Why It{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
+            <span className="font-accent italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
               Works
             </span>
           </div>

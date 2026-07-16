@@ -9,6 +9,12 @@ import Link from "next/link";
 import { arindamNoBg, amiteshNoBg, shivayNoBg } from "@/constants/image";
 import { cn } from "@/lib/utils";
 import { staggerChildren, itemVariants } from "@/lib/animations";
+import {
+  cardHoverAccentGlow,
+  floorGlow,
+  sideBeamGlowLeftTall,
+  sideBeamGlowRightTall,
+} from "@/lib/shadows";
 
 const jobOpenings = [
   {
@@ -97,8 +103,8 @@ const Careers = () => {
   return (
     <section className=" overflow-x-hidden">
       <div className="relative max-w-7xl overflow-x-hidden md:overflow-visible mx-auto">
-        <div className="top-[-10rem] md:top-[-18rem] z-[-1] left-[-80%] md:left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] -rotate-[60deg]"></div>
-        <div className="top-[-10rem] md:top-[-18rem] z-[-1] right-[-80%] md:right-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] rotate-[40deg]"></div>
+        <div className={sideBeamGlowLeftTall}></div>
+        <div className={sideBeamGlowRightTall}></div>
         {/* Hero Section */}
         <section className="relative px-6 py-20 md:py-0 h-[60rem] max-h-fit flex flex-col lg:px-8">
           <div className="max-w-6xl mx-auto pt-20 pb-16 sm:pt-32 sm:pb-24">
@@ -152,7 +158,7 @@ const Careers = () => {
             variants={staggerChildren}
             className="relative flex items-center group w-fit mx-auto justify-center gap-2"
           >
-            <div className="bottom-[-3rem] md:bottom-[-5rem] translate-y-[-50%] left-1/2 absolute bg-gradient-to-t opacity-70 dark:opacity-100 dark:lg:opacity-100 from-primary dark:to-primary to-primary blur-[2em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out w-[20rem] h-[5rem] md:h-[10rem] md:w-[40rem] "></div>
+            <div className={floorGlow}></div>
 
             <motion.img
               variants={itemVariants}
@@ -232,8 +238,8 @@ const Careers = () => {
                 <Card className="bg-opacity-70 relative group flex p-6 flex-col h-[20rem] overflow-hidden backdrop-blur-sm hover:shadow-lg transition-all duration-300">
                   <div
                     className={cn(
-                      "right-[-29rem] group-hover:opacity-100 opacity-0 z-[-1] absolute bg-gradient-to-t from-primary/10 dark:from-primary to-orange-200 dark:to-primary/90 blur-[4em] rounded-3xl transition-all duration-700 ease-out w-[10rem] md:w-[30rem] h-[20rem] md:h-[30rem] rotate-[54deg]",
-                      "left-[50%] translate-x-[30%]",
+                      cardHoverAccentGlow,
+                      "left-[50%] translate-x-[30%] rounded-3xl",
                     )}
                   />
                   <div className="flex-1">

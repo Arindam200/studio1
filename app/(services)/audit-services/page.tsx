@@ -1,30 +1,16 @@
 import React from "react";
-import { baseUrl } from "@/app/sitemap";
 import { Metadata } from "next";
 import Hero from "@/components/pages/audit-services/hero";
 import Services from "@/components/pages/audit-services/services";
 import Process from "@/components/pages/audit-services/process";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Audit Services",
   description:
     "Transform your processes with data-driven insights and enhance developer experience across all your processes.",
-  openGraph: {
-    title: "Audit Services | Studio1",
-    description:
-      "Transform your processes with data-driven insights and enhance developer experience across all your processes.",
-    url: baseUrl + "/audit-services",
-    siteName: "Studio1",
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    title: "Audit Services | Studio1",
-    card: "summary_large_image",
-    description:
-      "Transform your processes with data-driven insights and enhance developer experience across all your processes.",
-  },
-};
+  path: "/audit-services",
+});
 
 export default function Page() {
   const serviceSchema = {
@@ -48,6 +34,17 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Audit Services", path: "/audit-services" },
+            ]),
+          ),
+        }}
       />
       <Hero />
       <Services />

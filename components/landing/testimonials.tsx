@@ -8,6 +8,7 @@ import { Data } from "@/data";
 import TestimonialCard from "./testimonial-card";
 import { motion, AnimatePresence } from "motion/react";
 import { staggerContainer, itemVariants, headerVariants } from "@/lib/animations";
+import { sideBeamGlowLeft, sideBeamGlowRight } from "@/lib/shadows";
 
 export default function Testimonials() {
   const [showAll, setShowAll] = useState(false);
@@ -17,8 +18,8 @@ export default function Testimonials() {
 
   return (
     <section id="testimonials" className="py-20 relative overflow-hidden">
-      <div className="top-[-10rem] md:top-[-8rem] z-[-1] left-[-80%] md:left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-100 from-primary dark:to-primary to-primary blur-[7em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] -rotate-[60deg]"></div>
-      <div className="top-[-10rem] md:top-[-8rem] z-[-1] right-[-80%] md:right-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-100 from-primary dark:to-primary to-primary blur-[7em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] rotate-[40deg]"></div>
+      <div className={sideBeamGlowLeft}></div>
+      <div className={sideBeamGlowRight}></div>
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <motion.div
           className="flex flex-col items-center gap-4 justify-center mb-16"
@@ -49,7 +50,7 @@ export default function Testimonials() {
 
         <motion.div
           ref={containerRef}
-          className="columns-1 sm:columns-2 lg:columns-3 gap-6 mt-20 space-y-6"
+          className="mt-12 columns-1 gap-6 space-y-6 sm:columns-2 lg:columns-3"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}

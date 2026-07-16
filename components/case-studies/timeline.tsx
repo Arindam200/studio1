@@ -74,7 +74,7 @@ export function Timeline({ items }: TimelineProps) {
                   <div className="flex flex-wrap items-center gap-2 mb-4">
                     <Badge className="flex bg-border hover:bg-border py-1 text-foreground rounded-md items-center gap-2">
                       <Logo className="size-5" />
-                      Studio1
+                      <span className="font-primary">Studio1</span>
                     </Badge>
                     <Badge className="flex bg-border hover:bg-border text-foreground rounded-md items-center gap-2">
                       <Calendar className="size-5" />

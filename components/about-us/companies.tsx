@@ -3,6 +3,11 @@ import { Data } from "@/data";
 import Image from "next/image";
 import { motion } from "motion/react";
 import Link from "next/link";
+import { sideBeamGlowLeftMuted, sideBeamGlowRightMuted } from "@/lib/shadows";
+
+/** Studio1 inset edge highlight — same values as button / floating-tile inset pair. */
+const companyCardInsetShadow =
+  "shadow-[inset_0_1px_0_0_rgba(255,255,255,0.22),inset_0_-1px_0_0_rgba(0,0,0,0.12)] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1),inset_0_-1px_0_0_rgba(0,0,0,0.2)]";
 
 export const Companies = () => {
   return (
@@ -10,64 +15,51 @@ export const Companies = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.35 }}
       className="relative"
     >
-      <div className="top-[-10rem] md:top-[-8rem] z-[-1] left-[-80%] md:left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-80 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] -rotate-[60deg]"></div>
-      <div className="top-[-10rem] md:top-[-8rem] z-[-1] right-[-80%] md:right-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-80 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] rotate-[40deg]"></div>
-      <div className="mb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold mb-4 md:text-5xl">
+      <div className={sideBeamGlowLeftMuted}></div>
+      <div className={sideBeamGlowRightMuted}></div>
+      <div className="mb-12">
+        <div className="text-center mb-10">
+          <h2 className="mb-3 font-primary text-4xl font-normal tracking-tight md:text-5xl">
             Partnered{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
+            <span className="font-accent italic font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
               Companies
             </span>{" "}
           </h2>
-          <p className="text-muted-foreground ">
-            We empower tech brands to build thriving <br /> developer
-            communities through DevRel and high-impact content.
+          <p className="text-muted-foreground text-sm md:text-base max-w-xl mx-auto">
+            We empower tech brands to build thriving developer communities
+            through DevRel and high-impact content.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid max-w-4xl z-20 mx-auto grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid max-w-5xl z-20 mx-auto grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
           {Data.Companies.map((item, index) => {
             return (
               <Link
                 href={item.href}
-                key={index}
+                key={`${item.name}-${index}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="group"
               >
-                <motion.div
-                  initial={{ opacity: 0, y: 40, filter: "blur(5px)" }}
-                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 * (index % 3), duration: 0.7 }}
-                  whileHover={{ y: -5, transition: { duration: 0.3 } }}
-                  className="border-2 bg-accent px-3 z-20 backdrop-blur-2xl dark:bg-muted-foreground/5 flex-col w-full h-fit py-10 md:aspect-square rounded-xl flex items-center justify-center cursor-pointer"
+                <div
+                  className={`border-2 bg-accent z-20 backdrop-blur-2xl dark:bg-muted-foreground/5 w-full h-full rounded-xl flex flex-col items-center justify-center gap-2.5 px-3 py-5 sm:py-6 cursor-pointer transition-transform duration-300 group-hover:-translate-y-1 ${companyCardInsetShadow}`}
                 >
-                  <div className="w-32">
+                  <div className="relative size-12 sm:size-14 shrink-0">
                     <Image
-                      className="rounded-lg"
+                      className="rounded-lg object-contain"
                       src={item.image}
-                      width={1000}
-                      height={1000}
+                      fill
+                      sizes="56px"
                       alt={item.name}
                     />
                   </div>
-                  <div className="h-16 flex items-center justify-center text-lg font-semibold">
+                  <div className="text-center text-sm font-semibold leading-snug line-clamp-2">
                     {item.name}
                   </div>
-                  <div className="text-sm text-balance text-center text-muted-foreground">
-                    {item.description}
-                  </div>
-                </motion.div>
+                </div>
               </Link>
             );
           })}

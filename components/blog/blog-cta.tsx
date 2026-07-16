@@ -16,7 +16,7 @@ export function BlogCta() {
       </h2>
       <p className="text-muted-foreground text-sm md:text-base mb-6 max-w-xl">
         Studio1 helps devtool and SaaS teams ship documentation, blogs, and
-        DevRel programs that convert developers. Tell us about your product—we
+        DevRel programs that convert developers. Tell us about your product, and we
         will suggest a practical plan.
       </p>
       <div className="flex flex-col sm:flex-row gap-3 sm:items-center">

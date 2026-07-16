@@ -229,14 +229,14 @@ export default function Pricing() {
         />
       </div>
       <div className="mx-auto max-w-4xl text-center">
-        <h2 className="text-base/7 font-semibold text-orange-400">Pricing</h2>
-        <p className="mt-2 text-balance text-5xl font-semibold tracking-tight text-white sm:text-6xl">
+        <p className="text-base/7 font-semibold text-orange-400">Pricing</p>
+        <h1 className="mt-2 text-balance text-5xl font-semibold tracking-tight text-white sm:text-6xl">
           Choose the{" "}
-          <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 from">
+          <span className="font-accent italic font-normal text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600">
             Right plan{" "}
           </span>{" "}
           for you
-        </p>
+        </h1>
       </div>
       <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-300 sm:text-xl/8">
         Choose an affordable plan that's packed with the best features for

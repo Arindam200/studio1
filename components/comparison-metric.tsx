@@ -22,20 +22,23 @@ export const ComparisonMetric = ({ className }: { className?: string }) => {
           </div>
           <div className="text-xs text-center">
             Build Better <br />
-            <span className="text-primary font-semibold mr-1">Developer</span>
+            <span className="font-accent italic font-normal text-primary/75 mr-1">
+              Developer
+            </span>
             Experiences
           </div>
         </div>
         <div className="flex flex-col items-center gap-4 px-2 justify-center aspect-square rounded-xl h-[11rem] scale-110 bg-accent/50 border dark:bg-accent/40">
           <Badge className="flex items-center gap-2 bg-primary/10 text-foreground py-2 px-4">
-            <Logo className="size-4" /> Studio1
+            <Logo className="size-4" />{" "}
+            <span className="font-primary">Studio1</span>
           </Badge>
           <div className="">
             <SealCheck className="size-14 fill-primary drop-shadow-xl" />
           </div>
           <div className="text-xs text-center">
             Content that <br />
-            <span className="text-primary font-semibold mr-1">
+            <span className="font-accent italic font-normal text-primary/75 mr-1">
               ranks for developer
             </span>
             <br />
@@ -51,7 +54,7 @@ export const ComparisonMetric = ({ className }: { className?: string }) => {
           </div>
           <div className="text-xs text-center">
             Tutorials and guides <br />
-            <span className="text-primary font-semibold mr-1">
+            <span className="font-accent italic font-normal text-primary/75 mr-1">
               developers trust
             </span>
           </div>

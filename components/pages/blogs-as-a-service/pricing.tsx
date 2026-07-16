@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { NumericText } from "@/components/ui/num";
+import { pricingDecorGlow } from "@/lib/shadows";
 
 // Define pricing data structure
 const pricingPlans = [
@@ -68,14 +69,14 @@ export default function PricingSection() {
   return (
     <div className="w-full py-24 max-w-7xl mx-auto relative">
       {/* Decorative shapes */}
-      <div className="absolute top-20 right-20 w-32 h-32 bg-primary blur-[4em] rounded-full rotate-12 " />
-      <div className="absolute bottom-0 left-20 w-24 h-24 bg-primary blur-[4em] rounded-full -rotate-12 " />
+      <div className={`absolute top-20 right-20 w-32 h-32 rounded-full rotate-12 ${pricingDecorGlow}`} />
+      <div className={`absolute bottom-0 left-20 w-24 h-24 rounded-full -rotate-12 ${pricingDecorGlow}`} />
 
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 md:text-5xl">
             The Perfect Plan for <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
+            <span className="font-accent italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
               Your Needs
             </span>
           </h2>

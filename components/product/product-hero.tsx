@@ -3,14 +3,20 @@
 import { Badge } from "@/components/ui/badge";
 import { Cube } from "@phosphor-icons/react";
 import { motion } from "motion/react";
-import { containerVariants, headerVariants } from "@/lib/animations";
+import {
+  containerVariants,
+  headerVariants,
+  productHeroGlowAmbient,
+} from "@/lib/animations";
+import { productHeroGlow } from "@/lib/shadows";
 
 export default function ProductHero() {
   return (
-    <section className="relative px-4 pb-16 pt-24 sm:pt-28 md:pb-20">
-      <div
+    <section className="relative overflow-x-hidden px-4 pb-12 pt-20 sm:pb-16 sm:pt-24 md:pb-20 md:pt-28">
+      <motion.div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-[-6rem] z-[-1] h-[18rem] w-[14rem] -translate-x-1/2 rotate-[-20deg] rounded-md bg-gradient-to-t from-primary to-primary/50 opacity-50 blur-[8em] transition-all duration-700 ease-out dark:opacity-80 md:h-[22rem] md:w-[22rem]"
+        className={productHeroGlow}
+        animate={productHeroGlowAmbient}
       />
 
       <motion.div
@@ -23,13 +29,13 @@ export default function ProductHero() {
         <motion.div variants={headerVariants}>
           <Badge className="flex items-center gap-2 bg-gradient-to-r from-primary via-primary1 to-primary1/20 pb-1 text-sm font-medium text-white shadow-md">
             <Cube weight="fill" className="size-4" />
-            Built by Studio1
+            Built by <span className="font-primary">Studio1</span>
           </Badge>
         </motion.div>
 
         <motion.h1
           variants={headerVariants}
-          className="font-primary text-4xl font-normal leading-[1.1] tracking-tight text-foreground/90 sm:text-5xl lg:text-[3.5rem]"
+          className="font-primary text-3xl font-normal leading-[1.12] tracking-tight text-foreground/90 sm:text-4xl md:text-5xl lg:text-[3.5rem]"
         >
           Our{" "}
           <span className="font-accent text-[1.08em] font-normal italic text-primary/75">
@@ -39,10 +45,9 @@ export default function ProductHero() {
 
         <motion.p
           variants={headerVariants}
-          className="mt-1 max-w-2xl text-balance font-secondary text-base text-muted-foreground sm:text-lg"
+          className="mt-1 max-w-2xl px-1 text-balance font-secondary text-sm text-muted-foreground sm:px-0 sm:text-base md:text-lg"
         >
-          Tools we build for developers, designers, and SaaS teams—shipped by
-          the same studio behind our DevRel work.
+          Tools we build and ship for developers, designers, and teams.
         </motion.p>
       </motion.div>
     </section>

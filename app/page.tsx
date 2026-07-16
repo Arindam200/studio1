@@ -3,15 +3,31 @@ import Trustedby from "@/components/landing/trustedby";
 import Services from "@/components/landing/services";
 import Features from "@/components/landing/features";
 import Testimonials from "@/components/landing/testimonials";
+import CaseStudyCards from "@/components/landing/case-study-cards";
+import DeveloperJourney from "@/components/landing/developer-journey";
+import TechnicalDomains from "@/components/landing/domains";
 import RotatingPeople from "@/components/landing/rotating-people";
+import { homePageMetadata, websiteJsonLd } from "@/lib/seo";
+
+export const metadata = homePageMetadata();
+
 export default function Home() {
   return (
-    <div className="overflow-x-hidden h-fit !max-h-fit">
-      <Hero />
-      <Trustedby />
-      <Services />
-      <Features />
-      <Testimonials />
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }}
+      />
+      <div className="overflow-x-hidden h-fit !max-h-fit">
+        <Hero />
+        <Trustedby />
+        <TechnicalDomains />
+        <Services />
+        <CaseStudyCards />
+        <DeveloperJourney />
+        <Features />
+        <Testimonials />
+      </div>
+    </>
   );
 }

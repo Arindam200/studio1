@@ -1,4 +1,5 @@
 import { getAllPosts } from "@/lib/blog";
+import { getAllCaseStudies } from "@/lib/case-studies";
 
 export const baseUrl = "https://studio1hq.com";
 
@@ -36,5 +37,13 @@ export default async function sitemap() {
     changeFrequency: "weekly" as const,
   }));
 
-  return [...routes, ...blogPostRoutes];
+  const caseStudies = getAllCaseStudies();
+  const caseStudyRoutes = caseStudies.map((study) => ({
+    url: `${baseUrl}/case-studies/${study.slug}`,
+    lastModified: study.date,
+    priority: 0.7,
+    changeFrequency: "weekly" as const,
+  }));
+
+  return [...routes, ...blogPostRoutes, ...caseStudyRoutes];
 }

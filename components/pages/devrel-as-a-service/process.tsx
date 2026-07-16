@@ -1,45 +1,35 @@
 "use client";
 import React from "react";
-import { Timeline } from "@/components/sections/timeline";
+import { ProcessScroller } from "@/components/sections/process-scroller";
 import { Data } from "@/data";
-import { TimelineItem } from "@/components/sections/timeline-item";
+import {
+  serviceProcessInnerClassName,
+  serviceProcessOuterClassName,
+} from "@/components/pages/shared/service-hero-layout";
 
 export default function Process() {
-  const steps = Data.DevRelAsServiceProcess;
   return (
     <div
       id="process"
-      className="py-8 relative max-w-7xl mt-44 mx-auto px-4 max-sm:px-5 sm:py-10 flex flex-col justify-center items-center"
+      className={`${serviceProcessOuterClassName} pt-16 pb-20 sm:pt-10 sm:pb-24`}
     >
-      <div className="top-[-10rem] md:top-[-8rem] z-[-1] left-[-80%] md:left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[42rem] w-[10rem] -rotate-[60deg]"></div>
-
-      <div className="flex flex-col gap-4 mb-8">
-        <div className="text-center font-semibold lg:text-5xl text-4xl sm:pb-4">
-          How We Deliver <br />{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
-            Developer-First DevRel
-          </span>
+      <div
+        className={`${serviceProcessInnerClassName} flex flex-col items-center`}
+      >
+        <div className="text-center mb-12 md:mb-16 w-full">
+          <h2 className="text-4xl text-foreground font-medium mb-4 md:text-5xl">
+            How We Deliver <br />
+            <span className="font-accent italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
+              Developer-First DevRel
+            </span>
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            A proven process designed for fast-moving
+            <br /> product teams and developer-focused startups.
+          </p>
         </div>
-        <p className="text-center mx-auto text-foreground/80 dark:text-neutral-400 text-sm md:text-base ">
-          A proven process designed for fast-moving{" "}
-          <br className="hidden md:block" /> product teams and developer-focused
-          startups.
-        </p>
-      </div>
-      {/* <div className="sm:mt-16 mt-8 w-full flex justify-center items-center">
-        <ProcessSection />
-      </div> */}
 
-      <div className="w-full hidden lg:block">
-        <Timeline type="Devrel" />
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 relative gap-4 lg:hidden">
-        {steps.map((item, index) => {
-          return (
-            <TimelineItem key={item.name + index} index={index} item={item} />
-          );
-        })}
+        <ProcessScroller steps={Data.DevRelAsServiceProcess} />
       </div>
     </div>
   );

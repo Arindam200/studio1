@@ -37,7 +37,7 @@ export default function Searchbar() {
         onChange={(e) => handleSearch(e.target.value)}
         className="border-transparent font-medium bg-transparent ring-1 ring-primary text-foreground focus:outline-none"
       />
-      <div className="bg-primary h-full w-12 ring-1 ring-primary py-2 flex items-center justify-center rounded-lg">
+      <div className="bg-gradient-to-b from-primary via-primary to-primary1 dark:from-primary/90 dark:via-primary/75 dark:to-primary1/60 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.22),inset_0_-1px_0_0_rgba(0,0,0,0.12)] h-full w-12 py-2 flex items-center justify-center rounded-lg cursor-pointer transition-all hover:brightness-[1.03]">
         <MagnifyingGlass className="size-6 text-white" />
       </div>
     </div>

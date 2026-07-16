@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { cn } from "@/lib/utils";
+import { featureCardHoverShadow, featureCardHoverGlow } from "@/lib/shadows";
 import { Particles } from "../ui/particles";
 import { FeatureIllustration } from "./feature-illustration";
 import { NumericText } from "@/components/ui/num";
@@ -15,7 +16,8 @@ export function FeatureCard({ feature, index }: FeatureCardProps) {
   return (
     <div
       className={cn(
-        "bg-accent dark:bg-accent/50 hover:shadow-xl transition-all duration-700 rounded-xl p-2 min-w-full min-h-[25rem] group",
+        "bg-accent dark:bg-accent/50 transition-all duration-700 rounded-xl p-2 min-w-full min-h-[25rem] group",
+        featureCardHoverShadow,
         index === 0 && "md:col-span-2",
         index === 3 && "md:col-span-2"
       )}
@@ -25,7 +27,7 @@ export function FeatureCard({ feature, index }: FeatureCardProps) {
 
         <div
           className={cn(
-            "bottom-[-10rem] md:bottom-[-29rem] group-hover:opacity-100 opacity-0 z-[10] absolute bg-gradient-to-t from-primary/10 dark:from-primary to-orange-200 dark:to-orange-900/90 blur-[6em] rounded-xl transition-all duration-700 ease-out w-[10rem] md:w-[30rem] h-[20rem] md:h-[30rem] rotate-[54deg]",
+            featureCardHoverGlow,
             index % 2 === 0
               ? "right-[-20%] md:right-[-50%]"
               : "left-[0%] translate-x-[-50%]",

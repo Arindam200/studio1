@@ -9,10 +9,10 @@ import {
   FileText,
   Link as LinkIcon,
 } from "@phosphor-icons/react";
-import { Badge } from "@/components/ui/badge";
 import { Team } from "@/components/about-us/team";
 import { Companies } from "@/components/about-us/companies";
 import { motion } from "motion/react";
+import { sideBeamGlowLeftMuted, sideBeamGlowRightMuted } from "@/lib/shadows";
 
 const tags = [
   {
@@ -37,6 +37,10 @@ const tags = [
   },
 ];
 
+/** Frosted glass pills — translucent fill, primary-tinted border + soft orange shadow. */
+const capsuleClassName =
+  "rounded-full px-3 py-1.5 sm:px-3.5 inline-flex gap-2 items-center text-xs sm:text-sm font-medium text-foreground border border-border/40 dark:border-white/15 bg-white/55 dark:bg-white/[0.08] backdrop-blur-md shadow-[0_6px_18px_-4px_hsl(var(--primary)/0.32)] dark:shadow-[0_6px_18px_-4px_hsl(var(--primary)/0.22)]";
+
 // Animation variants that can be reused across components
 const sectionAnimation = {
   hidden: { opacity: 0, y: 50, filter: "blur(10px)" },
@@ -55,8 +59,8 @@ export default function AboutUs() {
   return (
     <section className="overflow-x-hidden">
       <div className="max-w-7xl mx-auto h-fit relative">
-        <div className="top-[-10rem] md:top-[-8rem] z-[-1] left-[-80%] md:left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-80 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] -rotate-[60deg]"></div>
-        <div className="top-[-10rem] md:top-[-8rem] z-[-1] right-[-80%] md:right-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-80 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] rotate-[40deg]"></div>
+        <div className={sideBeamGlowLeftMuted}></div>
+        <div className={sideBeamGlowRightMuted}></div>
         <motion.div
           className="flex flex-col w-full h-[40rem] max-h-fit mt-20"
           initial="hidden"
@@ -69,7 +73,9 @@ export default function AboutUs() {
               <div className="drop-shadow-[0_0px_25px_hsl(var(--primary))] bottom-[6rem] md:bottom-[5rem] backdrop-blur-sm z-[30] rounded-3xl bg-background/60 border-2 border-accent/40 flex items-center justify-center p-3">
                 <Logo className="size-12 sm:size-16 md:size-24" />
               </div>
-              <span className="text-2xl font-bold">Studio1</span>
+              <span className="font-primary text-2xl font-semibold tracking-tight">
+                Studio1
+              </span>
             </div>
           </div>
         </motion.div>
@@ -81,17 +87,24 @@ export default function AboutUs() {
           viewport={{ once: true, margin: "-100px" }}
           variants={sectionAnimation}
         >
-          <div className="text-3xl md:text-5xl font-semibold text-center leading-tight">
-            Amplifying Your Product Story for Developers <br /> One Blog, Video
-            and Initiatives at a Time
-          </div>
+          <h1 className="text-3xl md:text-5xl font-primary font-normal tracking-tight text-center leading-tight">
+            Amplifying Your{" "}
+            <span className="font-accent italic font-bold text-primary/75 text-[1.08em]">
+              Product Story
+            </span>{" "}
+            for{" "}
+            <span className="font-accent italic font-bold text-primary/75 text-[1.08em]">
+              Developers
+            </span>{" "}
+            <br /> One Blog, Video and Initiatives at a Time
+          </h1>
           <div className="text-center text-sm md:text-base text-neutral-600 dark:text-neutral-400 font-semibold">
             We help tech companies grow developer communities and boost
             engagement <br className="hidden md:block" /> through DevRel and
             technical content that resonates.
           </div>
 
-          <div className="flex flex-wrap max-w-lg items-center justify-center gap-4 mt-14">
+          <div className="flex flex-wrap max-w-md sm:max-w-xl items-center justify-center gap-2.5 sm:gap-3 mt-10">
             {tags.map((tag, index) => (
               <motion.div
                 key={tag.name}
@@ -99,10 +112,13 @@ export default function AboutUs() {
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ delay: 0.1 * index, duration: 0.5 }}
               >
-                <Badge className="flex h-6 bg-muted-foreground/30 text-foreground rounded-md hover:bg-muted-foreground/50 items-center gap-2">
-                  <tag.icon className="size-4" />
+                <span className={capsuleClassName}>
+                  <tag.icon
+                    weight="fill"
+                    className="size-4 shrink-0 text-primary"
+                  />
                   {tag.name}
-                </Badge>
+                </span>
               </motion.div>
             ))}
           </div>

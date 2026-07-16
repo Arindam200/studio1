@@ -183,6 +183,19 @@ export const staggerChildren = {
   },
 };
 
+/** Slow ambient drift for decorative hero glow orbs (product page). */
+export const productHeroGlowAmbient = {
+  y: [0, -14, 6, 0],
+  x: [0, 12, -8, 0],
+  opacity: [0.82, 0.98, 0.88, 0.82],
+  scale: [1, 1.05, 0.98, 1],
+  transition: {
+    duration: 14,
+    repeat: Number.POSITIVE_INFINITY,
+    ease: "easeInOut" as const,
+  },
+};
+
 // Helper function to create floating animation
 export const createFloatingAnimation = (delay: number, rotate: number) => ({
   y: [0, -6, 0],

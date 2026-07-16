@@ -2,10 +2,10 @@
 import { Code, Pen } from "@phosphor-icons/react";
 import { motion } from "motion/react";
 import { iconVariants, createFloatingAnimation } from "@/lib/animations";
+import { floatingTileSurface } from "@/lib/shadows";
 import { cn } from "@/lib/utils";
 
-export const floatingTileSurface =
-  "border border-white/25 dark:border-white/15 bg-gradient-to-b from-primary via-primary to-primary1 text-white shadow-[inset_0_1px_0_0_rgba(255,255,255,0.28),inset_0_-1px_0_0_rgba(0,0,0,0.12),0_10px_28px_-6px_hsl(var(--primary)/0.35)]";
+export { floatingTileSurface };
 
 export default function FloatingSvgs() {
   return (

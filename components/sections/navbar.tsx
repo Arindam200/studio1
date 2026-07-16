@@ -26,7 +26,7 @@ export default function Navbar() {
               alt="Studio1 - Technical Content and DevRel Services"
               className="h-14 w-14 max-md:h-10 max-md:w-10 fill-primary text-primary rounded-full"
             />
-            <span className="text-xl font-bold max-sm:hidden sm:visible">
+            <span className="font-primary text-xl font-bold max-sm:hidden sm:visible">
               Studio1HQ
             </span>
           </Link>

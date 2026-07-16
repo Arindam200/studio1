@@ -13,7 +13,6 @@ import { ArrowRight } from "@phosphor-icons/react";
 
 export default function Navbar() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const [sublistHover, setSublistHover] = useState<number | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
 
@@ -50,50 +49,42 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex  justify-between gap-8 font-medium items-center">
             {navItems.map((item) => (
-              <div
-                key={item.title}
-                className="relative group"
-                onMouseEnter={() => setHoveredItem(item.title)}
-                onMouseLeave={() => setHoveredItem(null)}
-              >
+              <div key={item.title} className="relative group/nav">
                 <Link
                   href={item.path}
-                  className="flex items-center text-sm justify-center transition-all duration-300 hover:bg-accent rounded-sm px-2 py-1"
+                  className={cn(
+                    "relative flex items-center text-sm justify-center px-2 py-1 transition-colors duration-200 hover:text-primary group-hover/nav:text-primary",
+                    "after:absolute after:-bottom-0.5 after:left-2 after:right-2 after:h-0.5 after:rounded-full after:origin-left after:scale-x-0 after:bg-gradient-to-r after:from-primary after:to-primary1 after:transition-transform after:duration-300 hover:after:scale-x-100 group-hover/nav:after:scale-x-100",
+                  )}
                 >
                   {item.title}
                   {item.children && (
-                    <IconChevronDown className="ml-1 size-4 mt-1" />
+                    <IconChevronDown className="ml-1 size-4 mt-0.5 transition-transform duration-300 group-hover/nav:rotate-180" />
                   )}
                 </Link>
-                {item.children && hoveredItem === item.title && (
-                  <div className="pt-8 absolute top-full left-0">
-                    <div className="bg-background shadow-xl border rounded-md p-2 min-w-[12rem] max-w-[30rem] z-10">
-                      {item.children.map((child, index) => (
+                {item.children && (
+                  <div
+                    className={cn(
+                      "absolute top-full left-0 pt-4 origin-top",
+                      "opacity-0 -translate-y-1 scale-95 pointer-events-none",
+                      "transition-all duration-300 ease-out",
+                      "group-hover/nav:opacity-100 group-hover/nav:translate-y-0 group-hover/nav:scale-100 group-hover/nav:pointer-events-auto",
+                    )}
+                  >
+                    <div className="bg-background/95 backdrop-blur-xl shadow-lg border rounded-lg py-1.5 px-1 min-w-[14rem]">
+                      {item.children.map((child) => (
                         <Link
                           key={child.title}
                           href={child.path}
-                          className="flex group items-center p-2 w-fit hover:bg-accent rounded-md gap-3"
-                          onMouseEnter={() => setSublistHover(index)}
-                          onMouseLeave={() => setSublistHover(null)}
+                          className="flex group/item items-center px-3 py-2 w-full gap-2 text-muted-foreground transition-colors duration-200 hover:text-foreground"
                         >
-                          <div
-                            className={cn(
-                              "flex group justify-center  items-center w-14 h-14 border rounded-md",
-                              sublistHover === index &&
-                                "group-hover:bg-gradient-to-br group-hover:from-primary via-primary group-hover:to-primary1",
-                            )}
-                          >
-                            {
-                              <child.icon
-                                weight="fill"
-                                className={cn(
-                                  "size-6 text-foreground",
-                                  sublistHover === index && "text-white",
-                                )}
-                              />
-                            }
-                          </div>
-                          <div className="w-44">{child.title}</div>
+                          <child.icon
+                            weight="duotone"
+                            className="size-5 shrink-0 transition-colors duration-200 group-hover/item:text-primary"
+                          />
+                          <span className="text-sm font-medium">
+                            {child.title}
+                          </span>
                         </Link>
                       ))}
                     </div>
@@ -152,20 +143,20 @@ export default function Navbar() {
                   )}
                 </Link>
                 {item.children && hoveredItem === item.title && (
-                  <div className="pl-4 space-y-2">
+                  <div className="pl-4 space-y-0.5">
                     {item.children.map((child) => (
                       <Link
                         key={child.title}
                         href={child.path}
-                        className="flex items-center p-2 group hover:bg-accent rounded-md gap-3"
+                        className="flex items-center px-3 py-2 group gap-2 text-muted-foreground transition-colors duration-200 hover:text-foreground"
                       >
-                        <div className="flex justify-center items-center w-10 h-10 border rounded-md group-hover:bg-gradient-to-r group-hover:from-primary/50 group-hover:to-primary/50">
-                          <child.icon
-                            weight="fill"
-                            className="size-5 group-hover:text-white"
-                          />
-                        </div>
-                        <span>{child.title}</span>
+                        <child.icon
+                          weight="duotone"
+                          className="size-5 shrink-0 transition-colors duration-200 group-hover:text-primary"
+                        />
+                        <span className="text-sm font-medium">
+                          {child.title}
+                        </span>
                       </Link>
                     ))}
                   </div>

@@ -5,6 +5,15 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { staggerChildren, serviceItemVariants } from "@/lib/animations";
 import { Num } from "@/components/ui/num";
+import {
+  elevatedCardShadow,
+  servicesCenterGlow,
+  servicesSectionGlowBottom,
+  servicesSectionGlowTop,
+  serviceCardHoverGlow,
+} from "@/lib/shadows";
+import { HeroStatsStrip } from "@/components/ui/hero-stats-strip";
+import { cn } from "@/lib/utils";
 
 export default function Services() {
   return (
@@ -17,8 +26,8 @@ export default function Services() {
         id="work"
         className=" mb-28 px-4 py-20 relative"
       >
-        <div className="bottom-[-10rem] md:bottom-[-18rem] z-[-1] left-[-0%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
-        <div className="top-[-10rem] md:top-[-18rem] z-[-1] right-[-0%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
+        <div className={servicesSectionGlowBottom}></div>
+        <div className={servicesSectionGlowTop}></div>
         <motion.div
           variants={serviceItemVariants}
           className="flex flex-col z-[20] items-center gap-4 justify-center"
@@ -39,11 +48,14 @@ export default function Services() {
           >
             <Link
               href={"/blog-as-service"}
-              className="shadow-xl border-2 dark:border transition-all duration-700 hover:-translate-y-4 h-[30rem] relative w-full max-w-[23rem] group rounded-lg overflow-hidden flex flex-col items-start bg-background/80 backdrop-blur-md justify-start p-8 mb-8 md:mb-0"
+              className={cn(
+                "border-2 dark:border transition-all duration-700 hover:-translate-y-4 h-[30rem] relative w-full max-w-[23rem] group rounded-lg overflow-hidden flex flex-col items-start bg-background/80 backdrop-blur-md justify-start p-8 mb-8 md:mb-0",
+                elevatedCardShadow,
+              )}
             >
               <div className="absolute top-[-23rem] z-[101] delay-100 rotate-45 left-[-2rem] group-hover:top-[15rem] group-hover:left-[20rem] transition-all blur-[3em] duration-700 rounded-md h-[40rem] bg-white/50 opacity-30 w-[5rem] backdrop-blur-md"></div>
 
-              <div className="-bottom-[18rem] -translate-y-1/2 z-[-1] left-1/2 absolute bg-gradient-to-t opacity-10 group-hover:opacity-100 from-primary/80 dark:to-primary/80 to-primary/20 blur-[4em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[15rem] size-[10rem] rotate-[0deg]"></div>
+              <div className={serviceCardHoverGlow}></div>
 
               <div className="flex-1 flex items-start justify-between w-full">
                 <div className="flex items-center bg-accent dark:bg-accent/50 justify-center size-16 p-3 rounded-lg">
@@ -74,11 +86,14 @@ export default function Services() {
 
             <Link
               href={"/devrel-as-service"}
-              className="shadow-xl border-2 dark:border transition-all duration-700 hover:translate-y-4 relative overflow-hidden group flex flex-col items-start p-8 bg-background/80 backdrop-blur-2xl h-[30rem] w-full  max-w-[23rem] md:translate-y-20 rounded-lg"
+              className={cn(
+                "border-2 dark:border transition-all duration-700 hover:translate-y-4 relative overflow-hidden group flex flex-col items-start p-8 bg-background/80 backdrop-blur-2xl h-[30rem] w-full  max-w-[23rem] md:translate-y-20 rounded-lg",
+                elevatedCardShadow,
+              )}
             >
               <div className="absolute top-[-23rem] z-[101] rotate-45 delay-100 left-[-2rem] group-hover:top-[15rem] group-hover:left-[20rem] transition-all blur-[3em] duration-700 rounded-md h-[40rem] bg-white/50 opacity-30 w-[5rem] backdrop-blur-md"></div>
 
-              <div className="-bottom-[18rem] -translate-y-1/2 z-[-1] left-1/2 absolute bg-gradient-to-t opacity-10 group-hover:opacity-100 from-primary/80 dark:to-primary/80 to-primary/20 blur-[4em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[15rem] size-[10rem] rotate-[0deg]"></div>
+              <div className={serviceCardHoverGlow}></div>
 
               <div className="flex-1 flex items-start justify-between w-full">
                 <div className="flex items-center bg-accent dark:bg-accent/50 justify-center size-16 p-3 rounded-lg">
@@ -101,56 +116,25 @@ export default function Services() {
                   as a<br /> Service
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
-                  End-to-end developer relations programs—from strategy and
+                  End-to-end developer relations programs, from strategy and
                   content to community and events.
                 </p>
               </div>
             </Link>
-            <div className="top-1/2 -translate-y-1/2 z-[-1] left-[50%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[8em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[25rem] w-[20rem] h-[40rem] rotate-[0deg]"></div>
+            <div className={servicesCenterGlow}></div>
           </motion.div>
 
-          {/* Stats Banner */}
-          <motion.div
-            variants={serviceItemVariants}
-            className="mt-16 z-[20] border bg-background shadow-xl relative overflow-hidden rounded-xl p-6 md:p-8 max-w-5xl mx-auto w-full"
-          >
-            <div
-              aria-hidden
-              className="bottom-[-10rem] md:bottom-[-18rem] rotate-[65deg] right-[-14%] opacity-20 dark:opacity-40 z-[-1] absolute bg-gradient-to-t from-primary/40 to-primary/20 blur-[4em] rounded-xl transition-all translate-x-[-50%] w-[10rem] md:w-[10rem] h-[10rem] md:h-[30rem]"
+          <motion.div variants={serviceItemVariants} className="w-full z-[20]">
+            <HeroStatsStrip
+              highlightValues
+              className="mt-16 md:mt-16 max-w-5xl"
+              stats={[
+                { value: "2M+", label: "content views" },
+                { value: "35+", label: "partner companies" },
+                { value: "50%", label: "cost savings" },
+                { value: "65%+", label: "client retention" },
+              ]}
             />
-            <div
-              aria-hidden
-              className="bottom-[-10rem] md:bottom-[-17rem] rotate-[-65deg] left-[-8%] opacity-20 dark:opacity-40 z-[-1] absolute bg-gradient-to-t from-primary/40 to-primary/20 blur-[4em] rounded-xl transition-all translate-x-[-50%] w-[10rem] md:w-[10rem] h-[10rem] md:h-[30rem]"
-            />
-            <p className="text-center text-sm text-muted-foreground mb-6">
-              Results from our technical content and DevRel work
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-primary">
-                  <Num>2M+</Num>
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">Content Views</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-primary">
-                  <Num>35+</Num>
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">Partner Companies</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-primary">
-                  <Num>50%</Num>
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">Cost Savings</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-primary">
-                  <Num>65%+</Num>
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">Client Retention</div>
-              </div>
-            </div>
           </motion.div>
         </div>
       </motion.section>

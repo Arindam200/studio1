@@ -1,26 +1,14 @@
 import { Metadata } from "next";
-import { baseUrl } from "@/app/sitemap";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+const LAST_UPDATED = "January 15, 2025";
+
+export const metadata: Metadata = pageMetadata({
   title: "Terms and Conditions",
   description:
-    "Terms and conditions for STUDI01HQ PRIVATE LIMITED (Studio1) — technical content, DevRel, and related services.",
-  openGraph: {
-    title: "Terms and Conditions | Studio1",
-    description:
-      "Terms and conditions for STUDI01HQ PRIVATE LIMITED (Studio1) — technical content, DevRel, and related services.",
-    url: baseUrl + "/terms",
-    siteName: "Studio1",
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    title: "Terms and Conditions | Studio1",
-    card: "summary_large_image",
-    description:
-      "Terms and conditions for STUDI01HQ PRIVATE LIMITED (Studio1) — technical content, DevRel, and related services.",
-  },
-};
+    "Terms and conditions for STUDI01HQ PRIVATE LIMITED (Studio1): technical content, DevRel, and related services.",
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (
@@ -28,14 +16,7 @@ export default function TermsPage() {
       <h1 className="text-4xl font-bold mb-8">Terms and Conditions</h1>
 
       <div className="prose prose-neutral dark:prose-invert max-w-none">
-        <p className="text-muted-foreground mb-8">
-          Last updated:{" "}
-          {new Date().toLocaleDateString("en-US", {
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          })}
-        </p>
+        <p className="text-muted-foreground mb-8">Last updated: {LAST_UPDATED}</p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">1. Introduction</h2>
         <p className="text-muted-foreground mb-4">

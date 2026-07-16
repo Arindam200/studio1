@@ -75,10 +75,10 @@ export function FloatingTags() {
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.2 }}
             onClick={() => handleTagClick(tag)}
-            className={`rounded-md relative flex gap-2 text-foreground items-center justify-center h-10 px-8 w-full md:w-fit ${
+            className={`rounded-lg relative flex gap-2 items-center justify-center h-10 px-8 w-full md:w-fit border cursor-pointer transition-all duration-200 ${
               selectedTags.includes(tag)
-                ? "bg-primary text-white"
-                : "bg-accent text-foreground"
+                ? "border-transparent bg-gradient-to-b from-primary via-primary to-primary1 text-white shadow-[inset_0_1px_0_0_rgba(255,255,255,0.22),inset_0_-1px_0_0_rgba(0,0,0,0.12)] dark:from-primary/90 dark:via-primary/75 dark:to-primary1/60"
+                : "border-border bg-secondary text-foreground hover:bg-secondary/70 dark:border-white/[0.08] dark:bg-white/[0.03] dark:hover:bg-white/[0.06]"
             }`}
           >
             <Tag

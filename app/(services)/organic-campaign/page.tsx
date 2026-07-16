@@ -1,31 +1,17 @@
 import React from "react";
-import { baseUrl } from "@/app/sitemap";
 import { Metadata } from "next";
 import Hero from "@/components/pages/organic-campaign/hero";
 import Deliverables from "@/components/pages/organic-campaign/deliverables";
 import Process from "@/components/pages/organic-campaign/process";
 import Reach from "@/components/pages/organic-campaign/reach";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Organic Growth Campaign",
   description:
     "Comprehensive viral marketing campaign that creates buzz, drives adoption, and establishes your product in the developer community.",
-  openGraph: {
-    title: "Organic Growth Campaign | Studio1",
-    description:
-      "Comprehensive viral marketing campaign that creates buzz, drives adoption, and establishes your product in the developer community.",
-    url: baseUrl + "/organic-campaign",
-    siteName: "Studio1",
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    title: "Organic Growth Campaign | Studio1",
-    card: "summary_large_image",
-    description:
-      "Comprehensive viral marketing campaign that creates buzz, drives adoption, and establishes your product in the developer community.",
-  },
-};
+  path: "/organic-campaign",
+});
 
 export default function Page() {
   const serviceSchema = {
@@ -39,7 +25,7 @@ export default function Page() {
       name: "Studio1",
       url: "https://studio1hq.com",
     },
-    serviceType: "Developer Marketing",
+    serviceType: "Organic Developer Marketing",
     areaServed: "Worldwide",
     url: "https://studio1hq.com/organic-campaign",
   };
@@ -50,10 +36,21 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Home", path: "/" },
+              { name: "Organic Growth Campaign", path: "/organic-campaign" },
+            ]),
+          ),
+        }}
+      />
       <Hero />
       <Deliverables />
-      <Reach />
       <Process />
+      <Reach />
     </div>
   );
 }

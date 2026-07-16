@@ -3,6 +3,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowDownRight } from "@phosphor-icons/react";
 import { IconPhoneFilled } from "@tabler/icons-react";
 import FloatingSvgs, { floatingTileSurface } from "./floating-svgs";
+import {
+  landingHeroGlowBottom,
+  landingHeroGlowLeft,
+  landingHeroGlowRight,
+} from "@/lib/shadows";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Building, Star } from "@phosphor-icons/react/dist/ssr";
@@ -31,8 +36,15 @@ const testimonialStagger = {
 };
 
 export default function Hero() {
-  const testimonialGlass =
-    "border border-white/10 dark:border-white/[0.08] bg-gradient-to-br from-white/[0.06] to-white/[0.02] dark:from-white/[0.04] dark:to-white/[0.01] backdrop-blur-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] ring-1 ring-white/[0.04] text-foreground/90";
+  const testimonialGlass = cn(
+    "border border-border/50 dark:border-white/[0.08]",
+    "bg-gradient-to-br from-background/95 via-background/90 to-primary/[0.06]",
+    "dark:from-white/[0.04] dark:to-white/[0.01]",
+    "backdrop-blur-xl",
+    "shadow-elevated-card dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]",
+    "ring-1 ring-primary/10 dark:ring-white/[0.04]",
+    "text-foreground",
+  );
 
   return (
     <section id="hero" className="relative h-fit">
@@ -157,7 +169,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="bottom-[-10rem] md:bottom-[-2rem] z-[-1] left-[20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[20rem] md:w-[10rem] rotate-[-40deg]"></div>
+        <div className={landingHeroGlowBottom}></div>
         {/* <div className="bottom-[-10rem] md:bottom-[0rem] z-[-1] right-[0%] absolute bg-gradient-to-t opacity-50 dark:opacity-70 from-primary dark:to-primary/80 to-primary/50 blur-[6em] rounded-md transition-all  duration-700 ease-out md:size-[15rem] size-[10rem] rotate-[-40deg]"></div> */}
 
         <motion.div
@@ -199,8 +211,8 @@ export default function Hero() {
           />
         </motion.div>
 
-        <div className="top-[-10rem] md:top-[-18rem] z-[-1] left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] -rotate-[60deg]"></div>
-        <div className="top-[-10rem] md:top-[-18rem] z-[-1] right-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
+        <div className={landingHeroGlowLeft}></div>
+        <div className={landingHeroGlowRight}></div>
         {/* <div className="top-[-18rem] md:top-[-23rem] z-[120] left-[50%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[7em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[25rem] size-[20rem] rotate-[0deg]"></div> */}
 
         <motion.div

@@ -479,13 +479,13 @@ export const Data = {
     {
       title: "Expertise",
       description:
-        "AI, ML, DevOps, Python, cloud, web, and API integrations—our team brings deep technical expertise for tutorials, docs, and DevRel programs.",
+        "AI, ML, DevOps, Python, cloud, web, and API integrations. Our team brings deep technical expertise for tutorials, docs, and DevRel programs.",
       icon: Nut,
     },
     {
       title: "Support",
       description:
-        "We operate as an embedded team—fast iterations, minimal oversight. Your success is our priority.",
+        "We operate as an embedded team with fast iterations and minimal oversight. Your success is our priority.",
       icon: Headset,
     },
     {
@@ -585,7 +585,7 @@ export const Data = {
       title:
         "I Found a Tool Even Better than v0 – You Won't Believe What It Can Do!",
       description:
-        "As a front-end developer, you've probably heard all about Vercel v0 — the tool that seemed to revolutionize front-end development.But, is v0 as great as it sounds? I spent time comparing it with a new tool, Webcrumbs Frontend AI, to see if it really is a game-changer.",
+        "As a front-end developer, you've probably heard all about Vercel v0, the tool that seemed to revolutionize front-end development. But is v0 as great as it sounds? I spent time comparing it with a new tool, Webcrumbs Frontend AI, to see if it really is a game-changer.",
       link: "https://dev.to/arindam_1729/i-found-a-tool-even-better-than-v0-you-wont-believe-what-it-can-do-igf",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F70kbai7v3r12dr860psw.gif",
@@ -793,7 +793,7 @@ export const Data = {
     {
       title: "Authentication and Authorization with Firebase",
       description:
-        "A step-by-step guide to building a secure, multi-tenant app using Firebase for authentication and storage, and Permit.io for fine-grained authorization—learn how to manage permissions, enforce access control, and debug policies with audit logs..",
+        "A step-by-step guide to building a secure, multi-tenant app using Firebase for authentication and storage, and Permit.io for fine-grained authorization. Learn how to manage permissions, enforce access control, and debug policies with audit logs.",
       link: "https://www.permit.io/blog/authentication-and-authorization-with-firebase",
       image:
         "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9bvci4yohqc5r2o65eda.png",
@@ -1109,6 +1109,26 @@ export const Data = {
       link: "https://astrodevil.medium.com/manage-permissions-in-a-langflow-chain-for-llm-queries-using-permit-io-7de8a0fb17b3",
       image:
         "https://miro.medium.com/v2/resize:fit:720/format:webp/1*bY1LzPkOXDXI_eRJ_V-y8w.png",
+      tags: ["growth"],
+      version: 1,
+    },
+    {
+      title:
+        "I Found a Tool Even Better than v0 – You Won't Believe What It Can Do!",
+      description:
+        "As a front-end developer, you've probably heard all about Vercel v0, the tool that seemed to revolutionize front-end development. But is v0 as great as it sounds? I spent time comparing it with a new tool, Webcrumbs Frontend AI, to see if it really is a game-changer.",
+      link: "https://dev.to/arindam_1729/i-found-a-tool-even-better-than-v0-you-wont-believe-what-it-can-do-igf",
+      image:
+        "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F70kbai7v3r12dr860psw.gif",
+      tags: ["growth"],
+      version: 1,
+    },
+    {
+      title:
+        "Building an AI-powered finance planner with full-stack Next.js and Nebius AI Studio",
+      description:
+        "In this guide, we'll build an AI-powered financial planner using the Meta Llama 3.1 70B model via Nebius AI Studio and a full-stack Next.js app. This solution works seamlessly whether you're using the Pages Router or the App Router, as much of the customization relies on setting up a custom Next.js server.",
+      link: "https://nebius.com/blog/posts/building-ai-powered-finance-planner",
       tags: ["growth"],
       version: 1,
     },
@@ -1526,7 +1546,7 @@ export const Data = {
     {
       name: "Strategy",
       description:
-        "We craft a tailored DevRel roadmap aligned with your goals — across content, community, education, and advocacy.",
+        "We craft a tailored DevRel roadmap aligned with your goals across content, community, education, and advocacy.",
       icon: IconBulb,
       details: [
         <p>Custom roadmap creation</p>,
@@ -1552,7 +1572,7 @@ export const Data = {
     {
       name: "Distribution",
       description:
-        "We publish and amplify your content across the right developer channels — and iterate based on performance.",
+        "We publish and amplify your content across the right developer channels, and iterate based on performance.",
       icon: IconChartBar,
       details: [
         <p>Community-based promotion</p>,

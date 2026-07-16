@@ -1,26 +1,14 @@
 import { Metadata } from "next";
-import { baseUrl } from "@/app/sitemap";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+const LAST_UPDATED = "January 15, 2025";
+
+export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy",
   description:
     "How STUDI01HQ PRIVATE LIMITED (Studio1) collects, uses, and protects personal information.",
-  openGraph: {
-    title: "Privacy Policy | Studio1",
-    description:
-      "How STUDI01HQ PRIVATE LIMITED (Studio1) collects, uses, and protects personal information.",
-    url: baseUrl + "/privacy",
-    siteName: "Studio1",
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    title: "Privacy Policy | Studio1",
-    card: "summary_large_image",
-    description:
-      "How STUDI01HQ PRIVATE LIMITED (Studio1) collects, uses, and protects personal information.",
-  },
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (
@@ -28,14 +16,7 @@ export default function PrivacyPage() {
       <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
 
       <div className="prose prose-neutral dark:prose-invert max-w-none">
-        <p className="text-muted-foreground mb-8">
-          Last updated:{" "}
-          {new Date().toLocaleDateString("en-US", {
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          })}
-        </p>
+        <p className="text-muted-foreground mb-8">Last updated: {LAST_UPDATED}</p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">1. Introduction</h2>
         <p className="text-muted-foreground mb-4">

@@ -1,26 +1,12 @@
 import { Metadata } from "next";
-import { baseUrl } from "@/app/sitemap";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Careers",
   description:
     "Join Studio1 and help devtool companies grow through technical content and DevRel strategies. Explore open positions for technical writers, DevRel specialists, and content strategists.",
-  openGraph: {
-    title: "Careers | Studio1",
-    description:
-      "Join Studio1 and help devtool companies grow through technical content and DevRel strategies. Explore open positions for technical writers, DevRel specialists, and content strategists.",
-    url: baseUrl + "/careers",
-    siteName: "Studio1",
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    title: "Careers | Studio1",
-    card: "summary_large_image",
-    description:
-      "Join Studio1 and help devtool companies grow through technical content and DevRel strategies. Explore open positions for technical writers, DevRel specialists, and content strategists.",
-  },
-};
+  path: "/careers",
+});
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return children;
