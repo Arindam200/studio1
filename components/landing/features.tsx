@@ -1,8 +1,7 @@
 "use client";
-import { Badge } from "../ui/badge";
 import { Data } from "@/data";
 import { FeatureCard } from "./feature-card";
-import { Sparkle } from "lucide-react";
+import { SectionEyebrow } from "./section-eyebrow";
 import { motion } from "motion/react";
 import { containerVariants, fadeInUp, headerVariants } from "@/lib/animations";
 import { featuresGlowLeft, featuresGlowRight } from "@/lib/shadows";
@@ -24,9 +23,7 @@ export default function Features() {
         className="flex flex-col items-center gap-4 justify-center"
         variants={headerVariants}
       >
-        <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 flex gap-2 items-center">
-          <Sparkle className="size-4" /> Features
-        </Badge>
+        <SectionEyebrow>Features</SectionEyebrow>
         <div className="text-5xl max-sm:text-4xl font-normal text-center">
           Why Tech Companies Choose{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">

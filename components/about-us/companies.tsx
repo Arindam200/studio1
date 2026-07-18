@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { sideBeamGlowLeftMuted, sideBeamGlowRightMuted } from "@/lib/shadows";
 
-/** Studio1 inset edge highlight — same values as button / floating-tile inset pair. */
+/** Studio1 inset edge highlight, same values as button / floating-tile inset pair. */
 const companyCardInsetShadow =
   "shadow-[inset_0_1px_0_0_rgba(255,255,255,0.22),inset_0_-1px_0_0_rgba(0,0,0,0.12)] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1),inset_0_-1px_0_0_rgba(0,0,0,0.2)]";
 

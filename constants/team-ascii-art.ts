@@ -1,4 +1,4 @@
-/** Stylized ASCII portraits for About Us team cards — keyed by member name. */
+/** Stylized ASCII portraits for About Us team cards: keyed by member name. */
 export const teamAsciiArt: Record<string, string> = {
   "Arindam Majumder": String.raw`
       ╭──────────────╮

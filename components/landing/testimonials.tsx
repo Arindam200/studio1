@@ -1,11 +1,10 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { ChatCenteredDots } from "@phosphor-icons/react/dist/ssr";
-import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Data } from "@/data";
 import TestimonialCard from "./testimonial-card";
+import { SectionEyebrow } from "./section-eyebrow";
 import { motion, AnimatePresence } from "motion/react";
 import { staggerContainer, itemVariants, headerVariants } from "@/lib/animations";
 import { sideBeamGlowLeft, sideBeamGlowRight } from "@/lib/shadows";
@@ -29,9 +28,7 @@ export default function Testimonials() {
           variants={staggerContainer}
         >
           <motion.div variants={headerVariants}>
-            <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 flex gap-2 items-center">
-              <ChatCenteredDots weight="fill" className="size-4" /> Testimonials
-            </Badge>
+            <SectionEyebrow>Testimonials</SectionEyebrow>
           </motion.div>
           <motion.h2
             variants={headerVariants}

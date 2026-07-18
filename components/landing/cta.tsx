@@ -33,7 +33,7 @@ export default function CTA() {
         <div aria-hidden className={ctaCornerGlowRight} />
         <div aria-hidden className={ctaCornerGlowLeft} />
 
-        {/* Previous CTA copy — left on desktop, first on mobile */}
+        {/* Previous CTA copy: left on desktop, first on mobile */}
         <div className="relative z-20 flex min-w-0 flex-col items-center text-center md:items-start md:text-left">
           <div className="text-3xl md:text-5xl font-medium tracking-tight text-foreground">
             Ready to Scale <br /> Developer Adoption?
@@ -71,7 +71,7 @@ export default function CTA() {
           </div>
         </div>
 
-        {/* Globe — right on desktop, below on mobile */}
+        {/* Globe: right on desktop, below on mobile */}
         <div className="relative z-10 flex items-center justify-center md:justify-end">
           <div
             aria-hidden

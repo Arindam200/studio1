@@ -13,7 +13,7 @@ type GlobeProps = {
 
 /**
  * Lightweight, dependency-free animated globe.
- * Renders a rotating dotted sphere on a 2D canvas — points are distributed with
+ * Renders a rotating dotted sphere on a 2D canvas: points are distributed with
  * a Fibonacci spiral and shaded by depth so the front reads brighter than the
  * back. Respects `prefers-reduced-motion`.
  */

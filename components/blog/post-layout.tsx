@@ -91,13 +91,13 @@ export function PostLayout({
 
         <aside className="hidden xl:block">
           <div className="sticky top-20 flex flex-col gap-10">
-            <TableOfContents sticky={false} />
+            <TableOfContents variant="inline" />
             <PostShare url={shareUrl} title={title} variant="sidebar" />
           </div>
         </aside>
       </div>
 
-      {/* CTA footer — outside the grid so the sticky ToC ends here */}
+      {/* CTA footer: outside the grid so the sticky ToC ends here */}
       <div className="max-w-3xl">
         <BlogCta />
       </div>

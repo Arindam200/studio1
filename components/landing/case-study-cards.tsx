@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { ArrowRight, TrendUp } from "@phosphor-icons/react";
-import { Badge } from "../ui/badge";
+import { ArrowRight } from "@phosphor-icons/react";
 import { Button } from "../ui/button";
+import { SectionEyebrow } from "./section-eyebrow";
 import {
   CaseStudyResult,
   type CaseStudyResultData,
@@ -66,9 +66,7 @@ export default function CaseStudyCards() {
         className="mb-14 flex flex-col items-center justify-center gap-4"
         variants={headerVariants}
       >
-        <Badge className="flex items-center gap-2 bg-gradient-to-r from-primary to-primary1 text-sm font-medium">
-          <TrendUp weight="fill" className="size-4" /> Proof
-        </Badge>
+        <SectionEyebrow>Case Studies</SectionEyebrow>
         <h2 className="max-sm:text-4xl text-center font-primary text-5xl font-normal tracking-tight">
           We Show{" "}
           <span className="bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">

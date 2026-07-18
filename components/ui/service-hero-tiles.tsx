@@ -17,7 +17,7 @@ type ServiceHeroTilesProps = {
 };
 
 /**
- * Orange glowing floating tiles that flank the headline — the same
+ * Orange glowing floating tiles that flank the headline, the same
  * `floatingTileSurface` treatment used on the landing hero, adapted to the
  * shared service-hero layout. Positioned inside a centered max-w-7xl overlay
  * so they hug the content on wide screens instead of the raw viewport edges.

@@ -37,7 +37,7 @@ export type CaseStudyMeta = {
   order: number;
   cover: string;
   tags: string[];
-  /** Verified outcome numbers only — never invented. Max 3 rendered. */
+  /** Verified outcome numbers only: never invented. Max 3 rendered. */
   metrics: CaseStudyMetric[];
   /** Qualitative outcomes for impact lists and metric-light studies. */
   outcomes: string[];

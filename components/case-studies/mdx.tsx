@@ -45,7 +45,7 @@ function CaseStudyH2({ children, ...props }: ComponentPropsWithoutRef<"h2">) {
   return (
     <h2
       id={id}
-      className="font-primary font-semibold mt-12 mb-4 text-xl md:text-2xl text-foreground scroll-mt-24"
+      className="font-inter font-semibold mt-12 mb-4 text-xl md:text-2xl text-foreground scroll-mt-24"
       {...props}
     >
       {children}
@@ -58,7 +58,7 @@ function CaseStudyH3({ children, ...props }: ComponentPropsWithoutRef<"h3">) {
   return (
     <h3
       id={id}
-      className="font-primary font-medium mt-8 mb-3 text-lg text-foreground scroll-mt-24"
+      className="font-inter font-medium mt-8 mb-3 text-lg text-foreground scroll-mt-24"
       {...props}
     >
       {children}

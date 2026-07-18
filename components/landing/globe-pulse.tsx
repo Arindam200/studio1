@@ -24,7 +24,7 @@ export type GlobePulseProps = {
   interactive?: boolean
 }
 
-/** Studio1 primary orange as RGB 0–1 for COBE. */
+/** Studio1 primary orange as RGB 0 to 1 for COBE. */
 const MARKER_COLOR: [number, number, number] = [0.98, 0.45, 0.09]
 const MARKER_HEX = "#f97316"
 
@@ -59,7 +59,7 @@ const defaultMarkers: PulseMarker[] = [
   { id: "pulse-4", location: [-33.87, 151.21], delay: 1.5 },
 ]
 
-/** CTA markers — capitals / major hubs for Studio1's global reach. */
+/** CTA markers: capitals / major hubs for Studio1's global reach. */
 export const CTA_GLOBE_MARKERS: PulseMarker[] = [
   { id: "australia", location: [-33.87, 151.21], delay: 0 },
   { id: "india", location: [12.97, 77.59], delay: 0.35 },

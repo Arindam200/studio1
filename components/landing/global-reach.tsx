@@ -1,10 +1,9 @@
 "use client";
 
-import { GlobeHemisphereWest } from "@phosphor-icons/react";
 import { motion } from "motion/react";
-import { Badge } from "@/components/ui/badge";
 import { WorldMap, type WorldMapDot } from "@/components/ui/world-map";
 import { CTA_GLOBE_MARKERS } from "@/components/landing/globe-pulse";
+import { SectionEyebrow } from "@/components/landing/section-eyebrow";
 import {
   containerVariants,
   fadeInUp,
@@ -62,9 +61,7 @@ export default function GlobalReach() {
         className="mb-14 flex flex-col items-center justify-center gap-4"
         variants={headerVariants}
       >
-        <Badge className="flex items-center gap-2 bg-gradient-to-r from-primary to-primary1 text-sm font-medium">
-          <GlobeHemisphereWest weight="fill" className="size-4" /> Global Reach
-        </Badge>
+        <SectionEyebrow>Global Reach</SectionEyebrow>
         <h2 className="max-sm:text-4xl text-center font-inter text-5xl font-normal tracking-tight">
           Building With Teams{" "}
           <span className="bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text pr-2 font-accent font-bold italic text-transparent">

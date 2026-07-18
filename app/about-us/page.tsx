@@ -37,7 +37,7 @@ const tags = [
   },
 ];
 
-/** Frosted glass pills — translucent fill, primary-tinted border + soft orange shadow. */
+/** Frosted glass pills: translucent fill, primary-tinted border + soft orange shadow. */
 const capsuleClassName =
   "rounded-full px-3 py-1.5 sm:px-3.5 inline-flex gap-2 items-center text-xs sm:text-sm font-medium text-foreground border border-border/40 dark:border-white/15 bg-white/55 dark:bg-white/[0.08] backdrop-blur-md shadow-[0_6px_18px_-4px_hsl(var(--primary)/0.32)] dark:shadow-[0_6px_18px_-4px_hsl(var(--primary)/0.22)]";
 

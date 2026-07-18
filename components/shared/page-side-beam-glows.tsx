@@ -3,7 +3,7 @@ import {
   sideBeamGlowRightFixed,
 } from "@/lib/shadows";
 
-/** Fixed left/right orange ambient beams — used on full-page layouts (blog, services). */
+/** Fixed left/right orange ambient beams, used on full-page layouts (blog, services). */
 export function PageSideBeamGlows() {
   return (
     <>

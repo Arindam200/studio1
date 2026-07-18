@@ -58,7 +58,7 @@ export function CaseStudyResult({
             <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
               {study.category}
             </p>
-            <p className="mt-3 font-primary text-xl font-medium tracking-tight md:text-2xl">
+            <p className="mt-3 font-inter text-xl font-medium tracking-tight md:text-2xl">
               {study.company}
             </p>
           </div>
@@ -75,7 +75,7 @@ export function CaseStudyResult({
 
         <div className="relative z-[1] flex flex-1 flex-col justify-between gap-8 p-6 md:p-8 lg:p-10">
           <div>
-            <p className="max-w-xl font-primary text-xl font-normal leading-snug tracking-tight text-foreground md:text-2xl lg:text-[1.65rem] lg:leading-snug">
+            <p className="max-w-xl font-inter text-xl font-normal leading-snug tracking-tight text-foreground md:text-2xl lg:text-[1.65rem] lg:leading-snug">
               {study.proof}
             </p>
 
@@ -121,7 +121,7 @@ export function CaseStudyResult({
 
       <div className="relative z-[1] mb-5 flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <p className="truncate font-primary text-base font-medium tracking-tight">
+          <p className="truncate font-inter text-base font-medium tracking-tight">
             {study.company}
           </p>
           <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.12em] text-muted-foreground">

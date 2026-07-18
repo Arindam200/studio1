@@ -1,88 +1,74 @@
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowUpRight, CheckCircle } from "@phosphor-icons/react/dist/ssr";
-import { Badge } from "@/components/ui/badge";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "@/components/ui/button";
 import { NumericText } from "@/components/ui/num";
-import { getClientLogo } from "@/components/case-studies/client-logos";
+import {
+  CardMedia,
+  ClientMark,
+  cardFrame,
+} from "@/components/case-studies/case-study-card";
+import { glassCardEdgeHighlight, glassCardHoverWash } from "@/lib/shadows";
 import { getFeaturedCaseStudy } from "@/lib/case-studies";
 
+/**
+ * Featured case study, the largest size in the card system.
+ *
+ * Content left, artwork right. Carries a short metric row because it has the
+ * room; the standard cards do not, since their headlines already state the
+ * number. No summary paragraph and no tag row: this is an index, not a page.
+ */
 export function FeaturedCaseStudy() {
   const study = getFeaturedCaseStudy();
   if (!study) return null;
 
-  const logo = getClientLogo(study.slug);
   const metrics = study.metrics.slice(0, 3);
-  const outcomes = study.outcomes.slice(0, 3);
 
   return (
     <Link
       href={`/case-studies/${study.slug}`}
-      className="group relative grid min-w-0 grid-cols-1 overflow-hidden rounded-2xl border bg-background/80 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 md:grid-cols-2"
+      className={cardFrame("flex-col p-3 md:flex-row md:items-stretch")}
     >
-      <div className="flex min-w-0 flex-col justify-between gap-8 p-6 sm:p-8 lg:p-10">
-        <div>
-          <div className="flex items-center gap-2.5">
-            {logo ? (
-              <Image
-                src={logo.icon}
-                alt=""
-                width={28}
-                height={28}
-                className="size-7 shrink-0 rounded object-contain"
-              />
-            ) : null}
-            <span className="text-sm font-medium text-foreground">
+      <div aria-hidden className={glassCardEdgeHighlight} />
+      <div aria-hidden className={glassCardHoverWash} />
+
+      {/* Narrative */}
+      <div className="relative z-[1] flex min-w-0 flex-1 flex-col gap-6 p-5 sm:p-7 lg:p-8">
+        <div className="flex min-w-0 items-center gap-3">
+          <ClientMark study={study} size="lg" />
+          <div className="min-w-0">
+            <p className="truncate text-sm font-medium text-foreground">
               {study.client}
-            </span>
-            <Badge variant="secondary" className="text-[11px] uppercase tracking-wide">
+            </p>
+            <span className="mt-0.5 block truncate text-[11px] font-medium uppercase tracking-wider text-primary">
               {study.category}
-            </Badge>
+            </span>
           </div>
-
-          <h2 className="mt-5 text-2xl font-semibold leading-tight tracking-tight md:text-3xl">
-            <NumericText>{study.title}</NumericText>
-          </h2>
-
-          <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground md:text-base">
-            {study.summary}
-          </p>
         </div>
 
+        <h2 className="font-inter text-2xl font-semibold leading-tight tracking-tight transition-colors duration-300 group-hover:text-primary md:text-3xl">
+          <NumericText>{study.title}</NumericText>
+        </h2>
+
         {metrics.length > 0 ? (
-          <dl className="grid grid-cols-3 gap-4 border-t border-border/60 pt-6">
+          <dl className="flex flex-wrap gap-x-10 gap-y-6 border-t border-border/50 pt-6">
             {metrics.map((metric) => (
-              <div key={metric.label} className="min-w-0">
+              <div key={metric.label} className="min-w-0 max-w-[9rem]">
                 <dt className="sr-only">{metric.label}</dt>
-                <dd className="font-numeric text-2xl font-semibold tabular-nums leading-none text-primary md:text-3xl">
+                <dd className="font-numeric text-2xl font-bold leading-none tracking-tight tabular-nums text-primary transition-colors duration-300 group-hover:text-primary1 md:text-3xl">
                   <NumericText>{metric.value}</NumericText>
                 </dd>
-                <span className="mt-1.5 block text-[11px] leading-snug text-muted-foreground">
+                <p className="mt-2 line-clamp-2 text-[11px] leading-snug text-muted-foreground">
                   {metric.label}
-                </span>
+                </p>
               </div>
             ))}
           </dl>
-        ) : outcomes.length > 0 ? (
-          <ul className="space-y-2.5 border-t border-border/60 pt-6">
-            {outcomes.map((outcome) => (
-              <li key={outcome} className="flex items-start gap-2">
-                <CheckCircle
-                  weight="fill"
-                  className="mt-0.5 size-4 shrink-0 text-primary"
-                />
-                <span className="text-sm leading-snug text-muted-foreground">
-                  {outcome}
-                </span>
-              </li>
-            ))}
-          </ul>
         ) : null}
 
         <Button
           variant="gradient"
           size="cta"
-          className="w-fit"
+          className="mt-auto w-fit"
           tabIndex={-1}
           asChild
         >
@@ -90,23 +76,15 @@ export function FeaturedCaseStudy() {
             Read the case study
             <ArrowUpRight
               weight="bold"
-              className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none"
             />
           </span>
         </Button>
       </div>
 
-      <div className="min-w-0 border-t p-6 sm:p-8 md:border-l md:border-t-0 md:p-8 lg:p-10">
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border bg-muted md:aspect-auto md:h-full md:min-h-[16rem]">
-          <Image
-            src={study.cover}
-            alt={`${study.client} case study`}
-            fill
-            className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
-            sizes="(max-width: 768px) 100vw, 40rem"
-            priority
-          />
-        </div>
+      {/* Artwork: remote cover from MDX, sized as a compact plate (not stretched to card height) */}
+      <div className="relative z-[1] flex min-w-0 items-center justify-center p-2 md:w-[min(38%,28rem)] md:shrink-0 lg:w-[min(40%,30rem)]">
+        <CardMedia study={study} variant="featured" priority />
       </div>
     </Link>
   );

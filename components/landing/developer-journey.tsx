@@ -1,16 +1,16 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Badge } from "../ui/badge";
 import {
   containerVariants,
   headerVariants,
   staggerChildren,
   serviceItemVariants,
 } from "@/lib/animations";
-import { cn } from "@/lib/utils";
 import { elevatedCardShadow, serviceCardHoverGlow } from "@/lib/shadows";
+import { cn } from "@/lib/utils";
 import { Compass, Rocket, Target, type Icon } from "@phosphor-icons/react";
+import { SectionEyebrow } from "./section-eyebrow";
 
 interface Stage {
   number: string;
@@ -67,9 +67,7 @@ export default function DeveloperJourney() {
         className="mb-14 flex flex-col items-center justify-center gap-4"
         variants={headerVariants}
       >
-        <Badge className="flex items-center gap-2 bg-gradient-to-r from-primary to-primary1 text-sm font-medium">
-          <Rocket weight="fill" className="size-4" /> How It Works
-        </Badge>
+        <SectionEyebrow>How It Works</SectionEyebrow>
         <h2 className="max-sm:text-4xl text-center font-primary text-5xl font-normal tracking-tight">
           How Developers{" "}
           <span className="bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
@@ -113,7 +111,7 @@ export default function DeveloperJourney() {
                   </div>
                 </div>
 
-                <h3 className="mb-4 overflow-visible pb-1.5 font-primary text-2xl font-medium leading-normal tracking-tight text-foreground">
+                <h3 className="mb-4 overflow-visible pb-1.5 font-inter text-2xl font-medium leading-normal tracking-tight text-foreground">
                   {stage.title}
                 </h3>
                 <p className="mt-auto text-sm leading-relaxed text-muted-foreground">

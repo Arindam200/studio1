@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { List } from "@phosphor-icons/react";
 
 type TocEntry = {
   id: string;
@@ -11,12 +10,37 @@ type TocEntry = {
 };
 
 type TableOfContentsProps = {
-  sticky?: boolean;
+  /**
+   * `"fixed"` (default): case-study right-rail: pinned to the viewport in the
+   * right gutter of the max-w-7xl container, with scroll-release at
+   * `[data-mdx-end]`.
+   *
+   * `"inline"`: renders as a normal in-flow block with no positioning of its
+   * own, so a consumer's own wrapper (e.g. the blog sidebar's `sticky top-20`
+   * flex column) controls placement. Scroll-release is disabled: blog pages
+   * have no `[data-mdx-end]` sentinel.
+   */
+  variant?: "fixed" | "inline";
 };
 
-export function TableOfContents({ sticky = true }: TableOfContentsProps) {
+/**
+ * Table of contents, shared by the case-study page and blog posts.
+ *
+ * In `"fixed"` mode it is positioned against the viewport rather than `sticky`
+ * inside the content grid. The grid began below the hero and metric band, so a
+ * sticky rail could only ever start mid-page; fixed positioning pins it to a
+ * consistent offset from the top of the viewport instead. It sits in the right
+ * gutter of the max-w-7xl container, so it never overlaps the left-aligned
+ * prose column.
+ *
+ * In `"inline"` mode it does no positioning at all, see {@link TableOfContentsProps}.
+ */
+export function TableOfContents({
+  variant = "fixed",
+}: TableOfContentsProps = {}) {
   const [headings, setHeadings] = useState<TocEntry[]>([]);
   const [activeId, setActiveId] = useState<string>("");
+  const [released, setReleased] = useState(false);
   const listRef = useRef<HTMLUListElement>(null);
   const [indicator, setIndicator] = useState<{
     top: number;
@@ -44,6 +68,10 @@ export function TableOfContents({ sticky = true }: TableOfContentsProps) {
   useEffect(() => {
     if (headings.length === 0) return;
 
+    // Rail top offset (top-32 = 8rem = 128px) plus a little breathing room,
+    // so the rail clears the narrative before the related strip reaches it.
+    const RELEASE_LINE = 160;
+
     let raf = 0;
     const update = () => {
       raf = 0;
@@ -55,6 +83,18 @@ export function TableOfContents({ sticky = true }: TableOfContentsProps) {
         }
       }
       setActiveId(current);
+
+      // Release the rail once the end of the case study reaches it. The
+      // sentinel sits after the credentials and before the related strip, so
+      // the rail stays for all study content and steps aside for the footer
+      // sections that follow. Only the fixed rail can overlap what follows it,
+      // so inline consumers skip this entirely.
+      if (variant === "fixed") {
+        const end = document.querySelector("[data-mdx-end]");
+        setReleased(
+          end ? end.getBoundingClientRect().top <= RELEASE_LINE : false,
+        );
+      }
     };
 
     const onScroll = () => {
@@ -67,7 +107,7 @@ export function TableOfContents({ sticky = true }: TableOfContentsProps) {
       window.removeEventListener("scroll", onScroll);
       if (raf) cancelAnimationFrame(raf);
     };
-  }, [headings]);
+  }, [headings, variant]);
 
   // Position the sliding indicator over the active link.
   useEffect(() => {
@@ -81,13 +121,30 @@ export function TableOfContents({ sticky = true }: TableOfContentsProps) {
 
   if (headings.length === 0) return null;
 
-  const tocContent = (
-    <>
-      <div className="flex items-center gap-2 mb-4 text-sm font-semibold text-foreground">
-        <List className="size-4" weight="bold" />
+  return (
+    <nav
+      aria-label="Table of contents"
+      aria-hidden={variant === "fixed" ? released : undefined}
+      className={cn(
+        variant === "fixed"
+          ? [
+              "fixed top-32 z-30 hidden w-52 xl:block",
+              // Pin to the right gutter of the max-w-7xl (80rem) container.
+              "right-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))]",
+              "transition-opacity duration-300 ease-out motion-reduce:transition-none",
+              released
+                ? "pointer-events-none opacity-0"
+                : "pointer-events-auto opacity-100",
+            ]
+          : // In-flow block; the consumer's wrapper owns positioning.
+            "block w-full",
+      )}
+    >
+      <p className="mb-4 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
         On this page
-      </div>
-      <div className="relative">
+      </p>
+
+      <div className="relative max-h-[60vh] overflow-y-auto">
         {indicator ? (
           <span
             aria-hidden
@@ -112,7 +169,7 @@ export function TableOfContents({ sticky = true }: TableOfContentsProps) {
                   "block py-1 text-[13px] leading-snug transition-colors duration-300",
                   heading.level === 2 ? "pl-4" : "pl-7",
                   activeId === heading.id
-                    ? "text-foreground font-medium"
+                    ? "font-medium text-foreground"
                     : "text-muted-foreground hover:text-foreground",
                 )}
               >
@@ -122,19 +179,6 @@ export function TableOfContents({ sticky = true }: TableOfContentsProps) {
           ))}
         </ul>
       </div>
-    </>
-  );
-
-  return (
-    <nav
-      aria-label="Table of contents"
-      className={cn("hidden xl:block", sticky && "h-full")}
-    >
-      {sticky ? (
-        <div className="sticky top-28">{tocContent}</div>
-      ) : (
-        tocContent
-      )}
     </nav>
   );
 }

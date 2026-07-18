@@ -47,7 +47,7 @@ const gridCardVariants: Variants = {
   },
 };
 
-/** Right-panel crossfade only — content swaps in a fixed slot. */
+/** Right-panel crossfade only: content swaps in a fixed slot. */
 const panelFadeVariants: Variants = {
   enter: { opacity: 0 },
   center: { opacity: 1, transition: { duration: 0.22, ease: "easeOut" } },
@@ -55,7 +55,7 @@ const panelFadeVariants: Variants = {
 };
 
 /**
- * Sticky panel height — content-sized around the right detail card (26rem)
+ * Sticky panel height: content-sized around the right detail card (26rem)
  * plus light vertical air.
  *
  * Track height: stickyHeight + (steps - 1) * stepScrollDistance

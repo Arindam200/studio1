@@ -1,20 +1,9 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  ArrowLeft,
-  ArrowUpRight,
-  Buildings,
-  CalendarBlank,
-  CheckCircle,
-  Clock,
-  Globe,
-  Stack,
-  Trophy,
-} from "@phosphor-icons/react/dist/ssr";
-import { Badge } from "@/components/ui/badge";
+import { ArrowLeft, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "@/components/ui/button";
-import { Num, NumericText } from "@/components/ui/num";
+import { NumericText } from "@/components/ui/num";
 import { TableOfContents } from "@/components/case-studies/table-of-contents";
 import { getClientLogo } from "@/components/case-studies/client-logos";
 import { RelatedCaseStudies } from "@/components/case-studies/related-case-studies";
@@ -26,276 +15,192 @@ type CaseStudyLayoutProps = {
   children: ReactNode;
 };
 
-type FactItem = {
-  label: string;
-  icon: typeof Buildings;
-  content: ReactNode;
-};
+/** Shared measure for every block on the page, one left edge, top to bottom. */
+const COLUMN = "max-w-3xl";
 
-function hostnameFromUrl(url: string): string {
-  try {
-    return new URL(url).hostname.replace(/^www\./, "");
-  } catch {
-    return url;
-  }
-}
-
+/**
+ * Case study detail layout.
+ *
+ * Single left-aligned column with a fixed right-rail table of contents.
+ * Everything shares one left edge and one measure, so the page reads as a
+ * continuous document rather than a stack of differently-sized bands.
+ *
+ * The headline metric leads a single horizontal metrics row; supporting
+ * metrics sit beside it at a quieter weight.
+ */
 export function CaseStudyLayout({
   study,
   related,
   children,
 }: CaseStudyLayoutProps) {
   const logo = getClientLogo(study.slug);
-  const hasMetrics = study.metrics.length > 0;
-  const hasOutcomes = study.outcomes.length > 0;
-
-  const facts: FactItem[] = [
-    {
-      label: "Client",
-      icon: Buildings,
-      content: (
-        <div className="flex min-w-0 items-center gap-2">
-          {logo ? (
-            <Image
-              src={logo.icon}
-              alt=""
-              className="h-6 w-auto shrink-0 rounded-md object-contain"
-            />
-          ) : null}
-          <span className="truncate text-sm font-medium text-foreground">
-            {study.client}
-          </span>
-        </div>
-      ),
-    },
-  ];
-
-  if (study.industry) {
-    facts.push({
-      label: "Industry",
-      icon: Globe,
-      content: (
-        <span className="text-sm font-medium leading-snug text-foreground">
-          {study.industry}
-        </span>
-      ),
-    });
-  }
-
-  if (study.services.length > 0) {
-    const shown = study.services.slice(0, 3);
-    const extra = study.services.length - shown.length;
-    facts.push({
-      label: "Services",
-      icon: Stack,
-      content: (
-        <p className="text-sm font-medium leading-snug text-foreground">
-          {shown.join(" · ")}
-          {extra > 0 ? (
-            <span className="text-muted-foreground">
-              {" "}
-              +<Num>{String(extra)}</Num>
-            </span>
-          ) : null}
-        </p>
-      ),
-    });
-  }
-
-  if (study.website) {
-    facts.push({
-      label: "Website",
-      icon: ArrowUpRight,
-      content: (
-        <a
-          href={study.website}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group/link inline-flex items-center gap-1 text-sm font-medium text-foreground transition-colors hover:text-primary"
-        >
-          {hostnameFromUrl(study.website)}
-          <ArrowUpRight className="size-3.5 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
-        </a>
-      ),
-    });
-  }
-
-  if (study.timeline) {
-    facts.push({
-      label: "Timeline",
-      icon: CalendarBlank,
-      content: (
-        <span className="text-sm font-medium leading-snug text-foreground">
-          <NumericText>{study.timeline}</NumericText>
-        </span>
-      ),
-    });
-  }
+  const [headline, ...supporting] = study.metrics;
+  const meta = [study.industry, study.category].filter(Boolean);
 
   return (
-    <article className="relative mx-auto max-w-7xl px-4 pt-12 pb-20 md:pt-20">
-      {/* Back link */}
-      <Link
-        href="/case-studies"
-        className="group mt-10 mb-10 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-      >
-        <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-0.5" />
-        All case studies
-      </Link>
+    <>
+      <TableOfContents />
 
-      {/* Hero */}
-      <header className="mb-10 max-w-4xl">
-        <div className="mb-5 flex flex-wrap items-center gap-3">
-          <Badge className="flex w-fit items-center gap-1.5 pb-1">
-            <Trophy className="size-3.5" weight="fill" />
-            Case Study
-          </Badge>
-          <Badge variant="secondary" className="text-xs uppercase tracking-wide">
-            {study.category}
-          </Badge>
-          {study.readingTimeMinutes > 0 && (
-            <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <Clock className="size-3.5" />
-              <NumericText>{`${study.readingTimeMinutes} min read`}</NumericText>
-            </span>
-          )}
-        </div>
+      <article className="relative mx-auto max-w-7xl px-4 pb-20 pt-12 md:pt-20">
+        <Link
+          href="/case-studies"
+          className="group mb-12 mt-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground md:mt-10"
+        >
+          <ArrowLeft className="size-4 transition-transform duration-300 group-hover:-translate-x-0.5 motion-reduce:transform-none" />
+          All case studies
+        </Link>
 
-        <h1 className="font-primary text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-5xl">
-          <NumericText>{study.title}</NumericText>
-        </h1>
-
-        <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
-          {study.description}
-        </p>
-      </header>
-
-      {/* Fact strip — full-width band under the hero */}
-      <div className="mb-12 grid w-full grid-cols-2 gap-px overflow-hidden rounded-2xl border bg-border/60 lg:grid-cols-4">
-        {facts.map((fact) => (
-          <div
-            key={fact.label}
-            className="flex flex-col gap-2 bg-background/90 p-5 backdrop-blur-md"
-          >
-            <div className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-              <fact.icon className="size-3.5" />
-              {fact.label}
-            </div>
-            {fact.content}
-          </div>
-        ))}
-      </div>
-
-      {/* Impact band: evidence-backed metrics, or a key-outcomes checklist for metric-light studies */}
-      {hasMetrics ? (
-        <div className="mb-14 max-w-4xl rounded-2xl border bg-background/80 p-6 backdrop-blur-md sm:p-8">
-          <p className="mb-6 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Impact
-          </p>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-            {study.metrics.slice(0, 3).map((metric) => {
-              const value = (
-                <div className="bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text text-4xl font-bold leading-none text-transparent md:text-5xl">
-                  <NumericText>{metric.value}</NumericText>
-                </div>
-              );
-
-              return metric.evidence ? (
-                <a
-                  key={metric.label}
-                  href={metric.evidence}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group/metric block"
-                >
-                  {value}
-                  <p className="mt-3 inline-flex items-center gap-1 text-sm text-muted-foreground">
-                    {metric.label}
-                    <ArrowUpRight className="size-3.5 opacity-0 transition-opacity group-hover/metric:opacity-100" />
-                  </p>
-                </a>
-              ) : (
-                <div key={metric.label}>
-                  {value}
-                  <p className="mt-3 text-sm text-muted-foreground">
-                    {metric.label}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      ) : hasOutcomes ? (
-        <div className="mb-14 max-w-4xl rounded-2xl border bg-background/80 p-6 backdrop-blur-md sm:p-8">
-          <div className="mb-6 flex items-center gap-2 text-primary">
-            <Trophy className="size-5" weight="fill" />
-            <h2 className="font-primary text-lg font-semibold text-foreground">
-              Key outcomes
-            </h2>
-          </div>
-          <ul className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
-            {study.outcomes.slice(0, 6).map((outcome) => (
-              <li key={outcome} className="flex items-start gap-3">
-                <CheckCircle
-                  className="mt-0.5 size-5 shrink-0 text-primary"
-                  weight="fill"
+        {/* Identity */}
+        <header className={COLUMN}>
+          <div className="flex items-center gap-3">
+            {logo ? (
+              <div className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-border/60 bg-background/80 p-2 backdrop-blur-md">
+                <Image
+                  src={logo.icon}
+                  alt=""
+                  width={28}
+                  height={28}
+                  className="size-full object-contain"
                 />
-                <span className="text-sm leading-relaxed text-foreground/90">
-                  <NumericText>{outcome}</NumericText>
-                </span>
-              </li>
+              </div>
+            ) : null}
+            <div className="min-w-0">
+              <p className="text-sm font-medium text-foreground">
+                {study.client}
+              </p>
+              {meta.length > 0 ? (
+                <p className="mt-0.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+                  {meta.join(" · ")}
+                </p>
+              ) : null}
+            </div>
+          </div>
+
+          <h1 className="mt-8 font-inter text-3xl font-bold leading-[1.15] tracking-tight md:text-4xl lg:text-5xl">
+            <NumericText>{study.title}</NumericText>
+          </h1>
+
+          <p className="mt-6 text-base leading-relaxed text-muted-foreground">
+            {study.description}
+          </p>
+        </header>
+
+        {/* Headline result */}
+        {headline ? (
+          <section
+            aria-label="Headline result"
+            className={`${COLUMN} mt-14 border-t border-border/60 pt-10`}
+          >
+            <dl className="flex flex-nowrap items-start gap-x-8 overflow-x-auto pb-1 sm:gap-x-12 md:gap-x-14">
+              <div className="min-w-0 shrink-0">
+                <dt className="sr-only">{headline.label}</dt>
+                <dd>
+                  <MetricValue
+                    metric={headline}
+                    className="font-numeric text-4xl font-bold leading-none tracking-tight tabular-nums text-primary sm:text-5xl md:text-6xl"
+                  />
+                </dd>
+                <p className="mt-2.5 max-w-[14rem] text-xs leading-snug text-muted-foreground">
+                  {headline.label}
+                </p>
+              </div>
+
+              {supporting.map((metric) => (
+                <div key={metric.label} className="min-w-0 shrink-0">
+                  <dt className="sr-only">{metric.label}</dt>
+                  <dd>
+                    <MetricValue
+                      metric={metric}
+                      className="font-numeric text-2xl font-semibold leading-none tabular-nums text-foreground md:text-3xl"
+                    />
+                  </dd>
+                  <p className="mt-2.5 max-w-[12rem] text-xs leading-snug text-muted-foreground">
+                    {metric.label}
+                  </p>
+                </div>
+              ))}
+            </dl>
+          </section>
+        ) : study.outcomes.length > 0 ? (
+          <section
+            aria-label="Key outcomes"
+            className={`${COLUMN} mt-14 space-y-4 border-t border-border/60 pt-10`}
+          >
+            {study.outcomes.slice(0, 4).map((outcome) => (
+              <p
+                key={outcome}
+                className="border-l-2 border-primary/40 pl-5 text-base leading-relaxed text-foreground/90"
+              >
+                <NumericText>{outcome}</NumericText>
+              </p>
             ))}
-          </ul>
-        </div>
-      ) : null}
+          </section>
+        ) : null}
 
-      {/* Cover image */}
-      <div className="relative mb-14 aspect-[16/9] w-full max-w-4xl overflow-hidden rounded-xl border bg-muted">
-        <Image
-          src={study.cover}
-          alt={`${study.client} case study`}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 56rem"
-          priority
-        />
-      </div>
-
-      {/* Content grid: main prose column + ToC sidebar */}
-      <div className="grid grid-cols-1 gap-10 xl:grid-cols-[minmax(0,1fr)_220px]">
+        {/* Narrative */}
         <div
           data-mdx-content
-          className="prose prose-neutral dark:prose-invert max-w-4xl prose-headings:scroll-mt-24 prose-p:leading-relaxed prose-li:leading-relaxed"
+          className={`prose prose-neutral mt-16 dark:prose-invert ${COLUMN} prose-headings:font-inter prose-headings:scroll-mt-32 prose-p:leading-relaxed prose-strong:font-inter prose-strong:font-semibold prose-li:leading-relaxed`}
         >
           {children}
         </div>
 
-        {/* ToC sidebar */}
-        <TableOfContents />
-      </div>
+        {/* Credentials */}
+        {study.services.length > 0 || study.website ? (
+          <div
+            className={`${COLUMN} mt-16 flex flex-wrap items-start justify-between gap-6 border-t border-border/60 pt-8`}
+          >
+            {study.services.length > 0 ? (
+              <div className="min-w-0">
+                <p className="mb-2 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+                  What we did
+                </p>
+                <p className="text-sm text-foreground">
+                  {study.services.join(" · ")}
+                </p>
+              </div>
+            ) : null}
 
-      {/* More case studies */}
-      <RelatedCaseStudies studies={related} />
-
-      {/* CTA footer */}
-      <div className="relative mt-16 max-w-4xl overflow-hidden rounded-2xl border bg-background/80 p-8 backdrop-blur-md">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary1/10"
-        />
-        <div className="relative z-[1] flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="font-primary text-lg font-semibold text-foreground">
-              <NumericText>
-                {study.ctaHook || `Want results like ${study.client}?`}
-              </NumericText>
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Share your ICP and competitors, and we&apos;ll outline a growth +
-              technical content strategy for your product.
-            </p>
+            {study.website ? (
+              <a
+                href={study.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              >
+                Visit {study.client}
+                <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none" />
+              </a>
+            ) : null}
           </div>
-          <Button variant="gradient" size="cta" className="shrink-0" asChild>
+        ) : null}
+
+        {/*
+          End-of-case-study sentinel. The fixed table of contents watches this
+          element and releases once it reaches the rail, so the rail stays with
+          the reader through the narrative AND the credentials, then steps
+          aside for the related strip and CTA, which aren't part of the study.
+        */}
+        <div aria-hidden data-mdx-end />
+
+        <div className={COLUMN}>
+          <RelatedCaseStudies studies={related} />
+        </div>
+
+        {/* CTA */}
+        <div
+          className={`${COLUMN} mt-16 flex flex-col items-start gap-5 rounded-2xl border border-border/60 bg-background/80 p-8 backdrop-blur-md sm:p-10`}
+        >
+          <p className="font-inter text-xl font-semibold text-foreground sm:text-2xl">
+            <NumericText>
+              {study.ctaHook || `Want results like ${study.client}?`}
+            </NumericText>
+          </p>
+          <p className="max-w-md text-sm text-muted-foreground">
+            Share your ICP and competitors, and we&apos;ll outline a growth +
+            technical content strategy for your product.
+          </p>
+          <Button variant="gradient" size="cta" asChild>
             <a
               href="https://cal.com/studio1/collab"
               target="_blank"
@@ -305,7 +210,44 @@ export function CaseStudyLayout({
             </a>
           </Button>
         </div>
-      </div>
-    </article>
+      </article>
+    </>
+  );
+}
+
+/**
+ * Renders a metric value, linking to its public source when one exists.
+ * The verify affordance stays permanently visible: it was hover-only before,
+ * making it undiscoverable on touch despite being the mechanism behind the
+ * "results developers can verify" promise.
+ */
+function MetricValue({
+  metric,
+  className,
+}: {
+  metric: CaseStudyMeta["metrics"][number];
+  className: string;
+}) {
+  const value = (
+    <span className={className}>
+      <NumericText>{metric.value}</NumericText>
+    </span>
+  );
+
+  if (!metric.evidence) return value;
+
+  return (
+    <a
+      href={metric.evidence}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group inline-flex items-start gap-1.5 transition-opacity hover:opacity-80"
+    >
+      {value}
+      <ArrowUpRight
+        className="mt-1 size-4 shrink-0 text-muted-foreground transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transform-none"
+        aria-label="View source"
+      />
+    </a>
   );
 }

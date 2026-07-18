@@ -1,10 +1,11 @@
 "use client";
-import { Badge } from "../ui/badge";
-import { Cube, Pen, Users } from "@phosphor-icons/react";
+import { Pen, Users } from "@phosphor-icons/react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { staggerChildren, serviceItemVariants } from "@/lib/animations";
 import { Num } from "@/components/ui/num";
+import { Badge } from "../ui/badge";
+import { SectionEyebrow } from "./section-eyebrow";
 import {
   elevatedCardShadow,
   servicesCenterGlow,
@@ -32,9 +33,7 @@ export default function Services() {
           variants={serviceItemVariants}
           className="flex flex-col z-[20] items-center gap-4 justify-center"
         >
-          <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 text-white pb-1 flex gap-2 items-center">
-            <Cube weight="fill" className="size-4" /> Services
-          </Badge>
+          <SectionEyebrow>Services</SectionEyebrow>
           <div className="text-5xl max-sm:text-4xl font-normal text-center">What We Do</div>
           <p className="text-center text-base max-sm:text-sm mt-2 max-w-2xl">
             We create technical tutorials, documentation, and DevRel programs

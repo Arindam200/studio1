@@ -21,7 +21,7 @@ export const sideBeamGlowLeft = `top-[-10rem] md:top-[-8rem] z-[-1] left-[-80%] 
 
 export const sideBeamGlowRight = `top-[-10rem] md:top-[-8rem] z-[-1] right-[-80%] md:right-[-20%] absolute glow-orb-beam ${glowCenterX} ${sideBeamOpacity} h-[50rem] md:h-[60rem] w-[10rem] rotate-[40deg]`;
 
-/** Hero pages — shorter beam height. */
+/** Hero pages, shorter beam height. */
 export const sideBeamGlowLeftHero = `top-[-10rem] md:top-[-8rem] z-[-1] left-[-80%] md:left-[-20%] absolute glow-orb-beam ${glowCenterX} ${sideBeamOpacity} h-[50rem] md:h-[42rem] w-[10rem] -rotate-[60deg]`;
 
 export const sideBeamGlowRightHero = `top-[-10rem] md:top-[-8rem] z-[-1] right-[-80%] md:right-[-20%] absolute glow-orb-beam ${glowCenterX} ${sideBeamOpacity} h-[50rem] md:h-[42rem] w-[10rem] rotate-[40deg]`;
@@ -36,12 +36,12 @@ export const sideBeamGlowLeftTall = `top-[-10rem] md:top-[-18rem] z-[-1] left-[-
 
 export const sideBeamGlowRightTall = `top-[-10rem] md:top-[-18rem] z-[-1] right-[-80%] md:right-[-20%] absolute glow-orb-beam ${glowCenterX} ${sideBeamOpacity} h-[50rem] md:h-[60rem] w-[10rem] rotate-[40deg]`;
 
-/** About page — slightly softer dark presence. */
+/** About page: slightly softer dark presence. */
 export const sideBeamGlowLeftMuted = `top-[-10rem] md:top-[-8rem] z-[-1] left-[-80%] md:left-[-20%] absolute glow-orb-beam ${glowCenterX} opacity-80 dark:opacity-60 dark:lg:opacity-75 h-[50rem] md:h-[60rem] w-[10rem] -rotate-[60deg]`;
 
 export const sideBeamGlowRightMuted = `top-[-10rem] md:top-[-8rem] z-[-1] right-[-80%] md:right-[-20%] absolute glow-orb-beam ${glowCenterX} opacity-80 dark:opacity-60 dark:lg:opacity-75 h-[50rem] md:h-[60rem] w-[10rem] rotate-[40deg]`;
 
-/** Case studies — restrained dark glow. */
+/** Case studies: restrained dark glow. */
 export const sideBeamGlowLeftSubtle = `top-[-10rem] md:top-[-8rem] z-[-1] left-[-80%] md:left-[-20%] fixed glow-orb-beam ${glowCenterX} opacity-80 dark:opacity-50 dark:lg:opacity-70 h-[50rem] md:h-[60rem] w-[10rem] -rotate-[60deg]`;
 
 export const sideBeamGlowRightSubtle = `top-[-10rem] md:top-[-8rem] z-[-1] right-[-80%] md:right-[-20%] fixed glow-orb-beam ${glowCenterX} opacity-80 dark:opacity-50 dark:lg:opacity-70 h-[50rem] md:h-[60rem] w-[10rem] rotate-[40deg]`;
