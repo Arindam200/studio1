@@ -119,7 +119,10 @@ const ScrollStepper: React.FC<Required<ProcessScrollerProps>> = ({
   });
   const [active, setActive] = useState(0);
   const lastIndex = Math.max(steps.length - 1, 0);
-  const [scrollOffsets, setScrollOffsets] = useState(() => {
+  const [scrollOffsets, setScrollOffsets] = useState<{
+    start: `${number}px`;
+    end: `${number}px`;
+  }>(() => {
     const half = STICKY_HEIGHT_PX_FALLBACK / 2;
     const center =
       typeof window !== "undefined" ? window.innerHeight / 2 : 400;

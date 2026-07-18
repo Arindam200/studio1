@@ -1,17 +1,24 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight, CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import { Badge } from "@/components/ui/badge";
 import { NumericText } from "@/components/ui/num";
+import { getClientLogo } from "@/components/case-studies/client-logos";
 import type { CaseStudyMeta } from "@/lib/case-studies";
 
 export function CaseStudyCard({ study }: { study: CaseStudyMeta }) {
-  const [heroMetric, ...secondaryMetrics] = study.metrics;
+  const logo = getClientLogo(study.slug);
+  const [heroMetric] = study.metrics;
+  const [heroOutcome] = study.outcomes;
+  const badgeItems = (study.services.length > 0 ? study.services : study.tags).slice(
+    0,
+    3,
+  );
 
   return (
     <Link
       href={`/case-studies/${study.slug}`}
-      className="group border relative overflow-hidden hover:border-primary hover:-translate-y-1 duration-500 rounded-lg flex min-w-0 flex-col items-stretch gap-0 bg-background/80 backdrop-blur-md"
+      className="group relative flex min-w-0 flex-col items-stretch gap-0 overflow-hidden rounded-2xl border bg-background/80 backdrop-blur-md transition-all duration-500 hover:-translate-y-1"
     >
       <div className="relative aspect-[3/1] w-full overflow-hidden border-b bg-muted">
         <Image
@@ -23,15 +30,26 @@ export function CaseStudyCard({ study }: { study: CaseStudyMeta }) {
         />
       </div>
 
-      <div className="flex min-w-0 flex-1 flex-col gap-4 p-4 sm:p-5">
+      <div className="flex min-w-0 flex-1 flex-col gap-3 p-4 sm:p-5">
         <div className="flex items-start justify-between gap-3">
-          <div className="min-w-0">
-            <h2 className="min-w-0 truncate text-sm font-sans font-semibold group-hover:text-primary transition-colors leading-snug">
-              {study.client}
-            </h2>
-            <span className="mt-1 block min-w-0 truncate text-[11px] font-medium uppercase tracking-wide text-primary">
-              {study.category}
-            </span>
+          <div className="flex min-w-0 items-center gap-2">
+            {logo ? (
+              <Image
+                src={logo.icon}
+                alt=""
+                width={24}
+                height={24}
+                className="size-6 shrink-0 rounded object-contain"
+              />
+            ) : null}
+            <div className="min-w-0">
+              <h3 className="min-w-0 truncate text-sm font-sans font-semibold leading-snug">
+                {study.client}
+              </h3>
+              <span className="mt-0.5 block min-w-0 truncate text-[11px] font-medium uppercase tracking-wide text-primary">
+                {study.category}
+              </span>
+            </div>
           </div>
           <span className="flex shrink-0 items-center gap-1 text-xs font-medium text-muted-foreground transition-colors group-hover:text-primary">
             Read
@@ -42,42 +60,45 @@ export function CaseStudyCard({ study }: { study: CaseStudyMeta }) {
           </span>
         </div>
 
+        <div>
+          <p className="line-clamp-2 text-base font-semibold leading-snug transition-colors group-hover:text-primary md:text-lg">
+            <NumericText>{study.title}</NumericText>
+          </p>
+          <p className="mt-1.5 line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {study.summary}
+          </p>
+        </div>
+
         {heroMetric ? (
-          <div>
-            <div className="font-numeric text-3xl font-semibold tabular-nums leading-none text-primary sm:text-4xl">
+          <div className="border-t border-border/60 pt-3">
+            <div className="font-numeric text-2xl font-semibold tabular-nums leading-none text-primary">
               <NumericText>{heroMetric.value}</NumericText>
             </div>
-            <p className="mt-2 text-sm leading-snug text-muted-foreground line-clamp-2">
+            <p className="mt-1.5 text-xs leading-snug text-muted-foreground line-clamp-2">
               {heroMetric.label}
+            </p>
+          </div>
+        ) : heroOutcome ? (
+          <div className="flex items-start gap-2 border-t border-border/60 pt-3">
+            <CheckCircle
+              weight="fill"
+              className="mt-0.5 size-4 shrink-0 text-primary"
+            />
+            <p className="text-sm leading-snug text-muted-foreground line-clamp-2">
+              {heroOutcome}
             </p>
           </div>
         ) : null}
 
-        {secondaryMetrics.length > 0 ? (
-          <dl className="grid grid-cols-2 gap-x-4 gap-y-3 border-t border-border/60 pt-4">
-            {secondaryMetrics.slice(0, 2).map((metric) => (
-              <div key={metric.label} className="min-w-0">
-                <dt className="sr-only">{metric.label}</dt>
-                <dd className="font-numeric text-lg font-semibold tabular-nums leading-tight">
-                  <NumericText>{metric.value}</NumericText>
-                </dd>
-                <span className="mt-1 block text-[11px] leading-snug text-muted-foreground line-clamp-2">
-                  {metric.label}
-                </span>
-              </div>
-            ))}
-          </dl>
-        ) : null}
-
-        {study.tags.length > 0 ? (
+        {badgeItems.length > 0 ? (
           <div className="mt-auto flex flex-wrap gap-1.5 pt-1">
-            {study.tags.map((tag) => (
+            {badgeItems.map((item) => (
               <Badge
-                key={tag}
+                key={item}
                 variant="secondary"
                 className="px-2 py-0 text-[11px]"
               >
-                {tag}
+                {item}
               </Badge>
             ))}
           </div>

@@ -7,6 +7,7 @@ import { Metadata } from "next";
 import Hero from "@/components/pages/blogs-as-a-service/hero";
 import PricingSection from "@/components/pages/blogs-as-a-service/pricing";
 import BlogDeliverables from "./deliverables";
+import NonNegotiable from "@/components/sections/non-negotiable";
 import FAQ, { type FAQItem } from "@/components/landing/faq";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
@@ -101,6 +102,10 @@ export default function Page() {
       <FAQ
         subtitle="Common questions about our Blog as a Service offering."
         items={blogFaqItems}
+      />
+      <NonNegotiable
+        headline="Every piece is written by engineers and technical writers matched to your stack, then technically validated before it ships."
+        body="We produce developer-focused blogs, tutorials, and integration guides with real code examples. Each writer is matched to your product domain, every article goes through peer review and technical validation, and distribution across Dev.to, Hashnode, Reddit, and LinkedIn is included with the engagement."
       />
       {/* <Team /> */}
       {/* <PricingSection /> */}

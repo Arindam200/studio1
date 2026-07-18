@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import {
   getCaseStudyBySlug,
   getCaseStudySlugs,
+  getRelatedCaseStudies,
 } from "@/lib/case-studies";
 import { CaseStudyLayout } from "@/components/case-studies/case-study-layout";
 import { caseStudyMdxComponents } from "@/components/case-studies/mdx";
@@ -43,6 +44,8 @@ export default async function CaseStudyPage({ params }: Props) {
   const { slug } = await params;
   const study = getCaseStudyBySlug(slug);
   if (!study) notFound();
+
+  const related = getRelatedCaseStudies(slug, 3);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -90,7 +93,7 @@ export default async function CaseStudyPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <CaseStudyLayout study={study}>
+      <CaseStudyLayout study={study} related={related}>
         <MDXRemote
           source={study.content}
           components={caseStudyMdxComponents}

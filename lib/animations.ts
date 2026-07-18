@@ -18,6 +18,8 @@ export const fadeInUp = {
       duration: 0.6,
       ease: "easeOut" as const,
     },
+    // blur(0) still creates a filter containing block that clips descenders (g, y, p)
+    transitionEnd: { filter: "none" },
   },
 };
 
@@ -34,6 +36,7 @@ export const fadeIn = {
       duration: 0.8,
       ease: "easeOut" as const,
     },
+    transitionEnd: { filter: "none" },
   },
 };
 
@@ -76,6 +79,7 @@ export const itemVariants = {
       stiffness: 100,
       duration: 0.6,
     },
+    transitionEnd: { filter: "none" },
   },
 };
 
@@ -96,6 +100,7 @@ export const headerVariants = {
       stiffness: 100,
       duration: 0.5,
     },
+    transitionEnd: { filter: "none" },
   },
 };
 
@@ -159,6 +164,7 @@ export const cardVariants = {
       duration: 1.8,
       ease: [0.22, 1, 0.36, 1] as const,
     },
+    transitionEnd: { filter: "none" },
   },
 };
 
@@ -169,6 +175,7 @@ export const serviceItemVariants = {
     opacity: 1,
     filter: "blur(0px)",
     transition: { duration: 0.3 },
+    transitionEnd: { filter: "none" },
   },
 };
 
@@ -242,6 +249,7 @@ export const createCardVariantsWithDelay = (
       ease: [0.22, 1, 0.36, 1] as const,
       delay: index * delayMultiplier,
     },
+    transitionEnd: { filter: "none" },
   },
 });
 

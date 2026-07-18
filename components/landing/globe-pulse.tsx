@@ -8,7 +8,6 @@ import {
   type PointerEvent as ReactPointerEvent,
 } from "react"
 import createGlobe from "cobe"
-import { useTheme } from "next-themes"
 import { cn } from "@/lib/utils"
 
 export type PulseMarker = {
@@ -29,6 +28,30 @@ export type GlobePulseProps = {
 const MARKER_COLOR: [number, number, number] = [0.98, 0.45, 0.09]
 const MARKER_HEX = "#f97316"
 
+/**
+ * COBE theme configs.
+ * `baseColor` is the globe surface color (not land-only).
+ * Light must stay near-white; dark stays charcoal/gray.
+ */
+const GLOBE_THEME = {
+  dark: {
+    dark: 1,
+    baseColor: [0.45, 0.45, 0.45] as [number, number, number],
+    glowColor: [0.14, 0.09, 0.05] as [number, number, number],
+    mapBrightness: 10,
+    diffuse: 1.4,
+    opacity: 0.75,
+  },
+  light: {
+    dark: 0,
+    baseColor: [1, 1, 1] as [number, number, number],
+    glowColor: [1, 1, 1] as [number, number, number],
+    mapBrightness: 6,
+    diffuse: 1.2,
+    opacity: 1,
+  },
+}
+
 const defaultMarkers: PulseMarker[] = [
   { id: "pulse-1", location: [51.51, -0.13], delay: 0 },
   { id: "pulse-2", location: [40.71, -74.01], delay: 0.5 },
@@ -47,6 +70,10 @@ export const CTA_GLOBE_MARKERS: PulseMarker[] = [
   { id: "vietnam", location: [10.82, 106.63], delay: 2.1 },
 ]
 
+function readIsDark() {
+  return document.documentElement.classList.contains("dark")
+}
+
 export function GlobePulse({
   markers = defaultMarkers,
   className,
@@ -54,13 +81,13 @@ export function GlobePulse({
   interactive = true,
 }: GlobePulseProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const globeRef = useRef<ReturnType<typeof createGlobe> | null>(null)
   const pointerInteracting = useRef<{ x: number; y: number } | null>(null)
   const dragOffset = useRef({ phi: 0, theta: 0 })
   const phiOffsetRef = useRef(0)
   const thetaOffsetRef = useRef(0)
   const isPausedRef = useRef(false)
-  const { resolvedTheme } = useTheme()
-  const isDark = resolvedTheme !== "light"
+  const phiRef = useRef(0)
 
   const endDrag = useCallback(() => {
     if (pointerInteracting.current !== null) {
@@ -113,7 +140,6 @@ export function GlobePulse({
 
   useEffect(() => {
     if (!interactive) return
-    // Fallback if pointer leaves the window while dragging
     window.addEventListener("pointerup", endDrag, { passive: true })
     window.addEventListener("pointercancel", endDrag, { passive: true })
     return () => {
@@ -122,38 +148,58 @@ export function GlobePulse({
     }
   }, [endDrag, interactive])
 
+  // Keep a stable canvas + globe. Theme changes update colors in place
+  // (no remount) so View Transitions / COBE destroy can't race removeChild.
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
 
-    let globe: ReturnType<typeof createGlobe> | null = null
     let animationId = 0
-    let phi = 0
     let resizeObserver: ResizeObserver | null = null
+    let disposed = false
 
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches
     const spinSpeed = reduceMotion ? 0 : speed
 
-    const init = (el: HTMLCanvasElement) => {
-      const width = el.offsetWidth
-      if (width === 0 || globe) return
+    const themeColorsFor = (dark: boolean) =>
+      dark ? GLOBE_THEME.dark : GLOBE_THEME.light
 
-      globe = createGlobe(el, {
+    const applyTheme = (dark: boolean) => {
+      const theme = themeColorsFor(dark)
+      globeRef.current?.update({
+        dark: theme.dark,
+        baseColor: theme.baseColor,
+        glowColor: theme.glowColor,
+        mapBrightness: theme.mapBrightness,
+        diffuse: theme.diffuse,
+        opacity: theme.opacity,
+        markerColor: MARKER_COLOR,
+        arcColor: MARKER_COLOR,
+      })
+    }
+
+    const init = (el: HTMLCanvasElement) => {
+      if (disposed || globeRef.current || el.offsetWidth === 0) return
+
+      const dark = readIsDark()
+      const theme = themeColorsFor(dark)
+
+      const width = el.offsetWidth
+      globeRef.current = createGlobe(el, {
         devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
         width,
         height: width,
         phi: 0,
         theta: 0.2,
-        dark: isDark ? 1 : 0,
-        diffuse: 1.5,
+        dark: theme.dark,
+        diffuse: theme.diffuse,
         mapSamples: 16000,
-        mapBrightness: isDark ? 10 : 6,
-        baseColor: isDark ? [0.5, 0.5, 0.5] : [0.92, 0.9, 0.88],
+        mapBrightness: theme.mapBrightness,
+        baseColor: theme.baseColor,
         markerColor: MARKER_COLOR,
-        // Soft primary-tinted atmosphere — avoids muddy dark / harsh cream halos
-        glowColor: isDark ? [0.18, 0.1, 0.05] : [0.99, 0.97, 0.94],
+        glowColor: theme.glowColor,
         markerElevation: 0,
         markers: markers.map((m) => ({
           location: m.location,
@@ -164,21 +210,21 @@ export function GlobePulse({
         arcColor: MARKER_COLOR,
         arcWidth: 0.5,
         arcHeight: 0.25,
-        opacity: isDark ? 0.7 : 0.9,
+        opacity: theme.opacity,
       })
 
-      const activeGlobe = globe
       const animate = () => {
-        if (!isPausedRef.current) phi += spinSpeed
-        activeGlobe.update({
-          phi: phi + phiOffsetRef.current + dragOffset.current.phi,
+        if (disposed || !globeRef.current) return
+        if (!isPausedRef.current) phiRef.current += spinSpeed
+        globeRef.current.update({
+          phi: phiRef.current + phiOffsetRef.current + dragOffset.current.phi,
           theta: 0.2 + thetaOffsetRef.current + dragOffset.current.theta,
         })
         animationId = requestAnimationFrame(animate)
       }
       animate()
       requestAnimationFrame(() => {
-        el.style.opacity = "1"
+        if (!disposed) el.style.opacity = "1"
       })
     }
 
@@ -195,17 +241,46 @@ export function GlobePulse({
       resizeObserver.observe(canvas)
     }
 
+    const onThemeClassChange = () => {
+      applyTheme(readIsDark())
+    }
+
+    const observer = new MutationObserver(onThemeClassChange)
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    })
+
     return () => {
+      disposed = true
       cancelAnimationFrame(animationId)
       resizeObserver?.disconnect()
-      globe?.destroy()
+      observer.disconnect()
+      const globe = globeRef.current
+      globeRef.current = null
+      // Defer destroy so it doesn't race View Transition DOM clones
+      requestAnimationFrame(() => {
+        try {
+          globe?.destroy()
+        } catch {
+          // COBE may already be detached during theme view transitions
+        }
+      })
     }
-  }, [markers, speed, isDark])
+  }, [markers, speed])
 
   const pulseDuration = "2s"
 
   return (
-    <div className={cn("relative aspect-square select-none", className)}>
+    <div
+      className={cn(
+        "relative aspect-square select-none",
+        // Stronger outer depth in light mode so the white globe doesn't flatten into the card
+        "[filter:drop-shadow(0_22px_48px_rgba(15,15,15,0.28))_drop-shadow(0_8px_18px_rgba(15,15,15,0.16))]",
+        "dark:[filter:drop-shadow(0_16px_36px_rgba(0,0,0,0.45))]",
+        className,
+      )}
+    >
       <style>{`
         @keyframes globe-pulse-expand {
           0% { transform: scaleX(0.3) scaleY(0.3); opacity: 0.8; }
@@ -282,15 +357,10 @@ export function GlobePulse({
             }}
           />
           <span
-            style={{
-              width: 10,
-              height: 10,
-              background: MARKER_HEX,
-              borderRadius: "50%",
-              boxShadow: isDark
-                ? `0 0 0 3px #111, 0 0 0 5px ${MARKER_HEX}`
-                : `0 0 0 3px hsl(var(--background)), 0 0 0 5px ${MARKER_HEX}`,
-            }}
+            className={cn(
+              "size-2.5 rounded-full bg-primary",
+              "shadow-[0_0_0_3px_hsl(var(--background)),0_0_0_5px_hsl(var(--primary))]",
+            )}
           />
         </div>
       ))}

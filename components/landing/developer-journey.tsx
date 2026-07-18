@@ -9,6 +9,7 @@ import {
   serviceItemVariants,
 } from "@/lib/animations";
 import { cn } from "@/lib/utils";
+import { elevatedCardShadow, serviceCardHoverGlow } from "@/lib/shadows";
 import { Compass, Rocket, Target, type Icon } from "@phosphor-icons/react";
 
 interface Stage {
@@ -42,22 +43,16 @@ const stages: Stage[] = [
   },
 ];
 
-const journeyCardFrame = cn(
-  "overflow-visible",
-  "border border-border/50 dark:border-white/[0.08]",
-  "shadow-elevated-card dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]",
-  "shadow-feature-card-hover dark:hover:shadow-xl",
-  "ring-1 ring-primary/10 dark:ring-white/[0.04]",
-  "text-foreground",
-  "rounded-xl",
+const journeyCardSurface = cn(
+  "group relative flex h-full flex-col overflow-hidden rounded-lg border-2 dark:border",
+  "bg-background/80 backdrop-blur-md",
+  "transition-all duration-700",
+  elevatedCardShadow,
 );
 
-const journeyCardBackdrop = cn(
-  "pointer-events-none absolute inset-0 overflow-hidden rounded-xl",
-  "bg-gradient-to-br from-background/95 via-background/90 to-primary/[0.06]",
-  "dark:from-white/[0.04] dark:to-white/[0.01]",
-  "backdrop-blur-xl",
-);
+function ServiceCardEffects() {
+  return <div aria-hidden className={serviceCardHoverGlow} />;
+}
 
 export default function DeveloperJourney() {
   return (
@@ -98,19 +93,12 @@ export default function DeveloperJourney() {
           return (
             <motion.article
               key={stage.number}
-              className={cn(
-                "group relative flex h-full flex-col transition-[transform,box-shadow] duration-300 hover:-translate-y-1",
-                journeyCardFrame,
-              )}
+              className={journeyCardSurface}
               variants={serviceItemVariants}
             >
-              <div aria-hidden className={journeyCardBackdrop} />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 overflow-hidden rounded-xl bg-grid-foreground/[0.04] dark:bg-grid-foreground/[0.03] [mask-image:linear-gradient(to_bottom,black_55%,transparent_100%)]"
-              />
+              <ServiceCardEffects />
 
-              <div className="relative z-[1] flex h-full flex-col overflow-visible p-7">
+              <div className="relative z-[1] flex h-full flex-col p-7">
                 <div className="mb-7 flex items-start justify-between gap-4">
                   <div className="flex flex-col gap-1">
                     <span className="font-secondary text-[0.7rem] font-medium tracking-[0.14em] text-muted-foreground uppercase">
@@ -120,7 +108,7 @@ export default function DeveloperJourney() {
                       {stage.number}
                     </span>
                   </div>
-                  <div className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-primary/20 bg-primary/10 text-primary transition-colors duration-300 group-hover:border-primary/40 group-hover:bg-primary/15">
+                  <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary/15">
                     <StageIcon weight="duotone" className="size-6" />
                   </div>
                 </div>

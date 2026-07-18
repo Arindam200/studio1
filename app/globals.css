@@ -79,7 +79,7 @@
   h4,
   h5,
   h6 {
-    @apply font-primary font-normal;
+    @apply overflow-visible font-primary font-normal;
   }
 }
 

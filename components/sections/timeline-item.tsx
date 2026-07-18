@@ -50,11 +50,11 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({
           width={800}
         />
         <div className="flex flex-col z-[50]">
-          <Badge className="flex z-[50] w-fit rounded-lg items-center gap-2">
-            <span className="text-sm font-semibold text-primary">
-              {<item.icon className="size-6 text-white" />}
-            </span>
-            <h3 className="text-xl font-bold">{item.name}</h3>
+          <Badge className="flex z-[50] w-fit items-center gap-2 rounded-lg py-1.5">
+            <item.icon className="size-5 shrink-0 text-white" />
+            <h3 className="pb-0 font-inter text-xl font-bold leading-none">
+              {item.name}
+            </h3>
           </Badge>
           <p className="mt-2 text-sm z-[50] text-neutral-600 font-medium dark:text-neutral-400">
             {item.description}

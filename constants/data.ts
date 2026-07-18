@@ -34,6 +34,7 @@ import {
 import {
   Briefcase,
   CheckCircle,
+  Files,
   Lightbulb,
   Pen,
   Star,
@@ -47,6 +48,7 @@ export const navItems = [
       { title: "Work", path: "/#work", icon: Briefcase },
       { title: "Why Us", path: "/#why-us", icon: Lightbulb },
       { title: "Testimonials", path: "/#testimonials", icon: Star },
+      { title: "Case Studies", path: "/case-studies", icon: Files },
     ],
   },
   { title: "About Us", path: "/about-us" },

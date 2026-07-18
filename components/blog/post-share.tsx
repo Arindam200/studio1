@@ -1,9 +1,4 @@
 import type { ReactNode, SVGProps } from "react";
-import {
-  LinkedinLogo,
-  RedditLogo,
-  XLogo,
-} from "@phosphor-icons/react/dist/ssr";
 
 type PostShareProps = {
   url: string;
@@ -15,9 +10,7 @@ type ShareLink = {
   label: string;
   href: string;
   ariaLabel: string;
-  defaultIcon: ReactNode;
-  sidebarIcon: ReactNode;
-  iconClassName: string;
+  icon: ReactNode;
   hoverClassName: string;
 };
 
@@ -50,10 +43,45 @@ function linkedInShareUrl(url: string) {
 
 type IconProps = SVGProps<SVGSVGElement>;
 
-const defaultIconSize = "size-[18px] shrink-0";
-const sidebarIconClass = "size-3.5 shrink-0";
-
+/** YC / Hacker News mark: #FF6600 tile + crisp white Y */
 function HackerNewsIcon({ className, ...props }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+      {...props}
+    >
+      <rect width="24" height="24" rx="5" fill="#FF6600" />
+      <path
+        fill="#fff"
+        d="M11.25 13.35 7.6 6.5h2.15l1.78 3.85c.2.44.36.85.36.85s.17-.43.38-.85L14.1 6.5h2.05l-3.65 6.85V17.5h-1.25v-4.15z"
+      />
+    </svg>
+  );
+}
+
+/** Reddit Simple Icons mark: white disc behind logo, orangered snoo on top */
+function RedditIcon({ className, ...props }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+      {...props}
+    >
+      <circle cx="12" cy="12" r="12" fill="#fff" />
+      <path
+        fill="#FF4500"
+        d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"
+      />
+    </svg>
+  );
+}
+
+function XIcon({ className, ...props }: IconProps) {
   return (
     <svg
       className={className}
@@ -64,84 +92,31 @@ function HackerNewsIcon({ className, ...props }: IconProps) {
     >
       <path
         fill="currentColor"
-        d="M6.951 5.896h1.88l2.457 4.875c.364.726.651 1.434.651 1.434s.316-.689.688-1.434l2.457-4.875h1.749l-4.148 7.799V18h-1.583v-5.064L6.951 5.896z"
+        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
       />
     </svg>
   );
 }
 
-function SidebarHackerNewsIcon() {
+function LinkedInIcon({ className, ...props }: IconProps) {
   return (
     <svg
-      className={sidebarIconClass}
+      className={className}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden
+      {...props}
     >
-      <rect width="24" height="24" rx="5" fill="#FF6600" />
       <path
-        fill="#fff"
-        d="M6.951 5.896h1.88l2.457 4.875c.364.726.651 1.434.651 1.434s.316-.689.688-1.434l2.457-4.875h1.749l-4.148 7.799V18h-1.583v-5.064L6.951 5.896z"
+        fill="currentColor"
+        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
       />
     </svg>
   );
 }
 
-function SidebarRedditIcon() {
-  return (
-    <svg
-      className={sidebarIconClass}
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-    >
-      <circle cx="12" cy="12" r="12" fill="#FF4500" />
-      <path
-        fill="#fff"
-        d="M16.67 11.17a1.08 1.08 0 0 0-1.08-1.08c-.59 0-1.07.47-1.08 1.05h-2.14c-.01-.58-.49-1.05-1.08-1.05-.6 0-1.08.48-1.08 1.08 0 .44.26.81.64.98-.04.24-.06.48-.06.73 0 2.45 2.85 4.43 6.37 4.43s6.37-1.98 6.37-4.43c0-.25-.02-.5-.06-.73.38-.17.64-.54.64-.98zm-7.59 1.08c-.47 0-.85-.38-.85-.85s.38-.85.85-.85.85.38.85.85-.38.85-.85.85zm4.84 0c-.47 0-.85-.38-.85-.85s.38-.85.85-.85.85.38.85.85-.38.85-.85.85zm.2 1.85c-.66.66-1.95.99-3.04.99-1.09 0-2.38-.33-3.04-.99a.3.3 0 0 1 0-.42.3.3 0 0 1 .42 0c.5.5 1.5.78 2.62.78 1.12 0 2.12-.28 2.62-.78a.3.3 0 0 1 .42 0 .3.3 0 0 1 0 .42z"
-      />
-    </svg>
-  );
-}
-
-function SidebarXIcon() {
-  return (
-    <svg
-      className={sidebarIconClass}
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-    >
-      <rect
-        width="24"
-        height="24"
-        rx="5"
-        className="fill-foreground"
-      />
-      <path
-        fill="hsl(var(--background))"
-        d="M13.2 11.04L17.52 6h-1.03l-3.76 4.38L10.2 6H6.8l4.54 6.62L6.8 18h1.03l3.98-4.63L14.8 18h3.4l-4.99-6.96z"
-      />
-    </svg>
-  );
-}
-
-function SidebarLinkedInIcon() {
-  return (
-    <svg
-      className={sidebarIconClass}
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-    >
-      <rect width="24" height="24" rx="5" fill="#0A66C2" />
-      <path
-        fill="#fff"
-        d="M7.12 9.64h2.39v8.36H7.12V9.64zm1.2-3.84a1.39 1.39 0 1 1 0 2.78 1.39 1.39 0 0 1 0-2.78zm3.28 3.84h2.29v1.14h.03c.32-.6 1.1-1.24 2.27-1.24 2.43 0 2.88 1.6 2.88 3.68v4.78h-2.39v-4.24c0-1.01-.02-2.31-1.41-2.31-1.41 0-1.63 1.1-1.63 2.23v4.32h-2.39V9.64z"
-      />
-    </svg>
-  );
-}
+const iconClass = "size-6 shrink-0";
+const sidebarIconClass = "size-5 shrink-0";
 
 export function PostShare({ url, title, variant = "default" }: PostShareProps) {
   const isSidebar = variant === "sidebar";
@@ -150,41 +125,43 @@ export function PostShare({ url, title, variant = "default" }: PostShareProps) {
       label: "Hacker News",
       href: hnSubmitUrl(url, title),
       ariaLabel: "Share on Hacker News",
-      defaultIcon: <HackerNewsIcon className={defaultIconSize} />,
-      sidebarIcon: <SidebarHackerNewsIcon />,
-      iconClassName: "text-[#FF6600]",
-      hoverClassName: "hover:border-[#FF6600]/35 hover:bg-[#FF6600]/[0.06]",
+      icon: (
+        <HackerNewsIcon
+          className={
+            isSidebar ? `${sidebarIconClass} rounded-md` : `${iconClass} rounded-md`
+          }
+        />
+      ),
+      hoverClassName: "hover:border-[#FF6600]/45 hover:bg-[#FF6600]/[0.08]",
     },
     {
       label: "Reddit",
       href: redditSubmitUrl(url, title),
       ariaLabel: "Share on Reddit",
-      defaultIcon: (
-        <RedditLogo className={defaultIconSize} weight="fill" />
-      ),
-      sidebarIcon: <SidebarRedditIcon />,
-      iconClassName: "text-[#FF4500]",
-      hoverClassName: "hover:border-[#FF4500]/35 hover:bg-[#FF4500]/[0.06]",
+      icon: <RedditIcon className={isSidebar ? sidebarIconClass : iconClass} />,
+      hoverClassName: "hover:border-[#FF4500]/45 hover:bg-[#FF4500]/[0.08]",
     },
     {
       label: "X",
       href: xIntentUrl(url, title),
       ariaLabel: "Share on X",
-      defaultIcon: <XLogo className={defaultIconSize} weight="bold" />,
-      sidebarIcon: <SidebarXIcon />,
-      iconClassName: "text-foreground",
-      hoverClassName: "hover:border-foreground/25 hover:bg-foreground/[0.05]",
+      icon: <XIcon className={isSidebar ? sidebarIconClass : iconClass} />,
+      hoverClassName:
+        "text-foreground hover:border-foreground/25 hover:bg-foreground/[0.06]",
     },
     {
       label: "LinkedIn",
       href: linkedInShareUrl(url),
       ariaLabel: "Share on LinkedIn",
-      defaultIcon: (
-        <LinkedinLogo className={defaultIconSize} weight="fill" />
+      icon: (
+        <LinkedInIcon
+          className={
+            isSidebar ? `${sidebarIconClass} text-[#0A66C2]` : iconClass
+          }
+        />
       ),
-      sidebarIcon: <SidebarLinkedInIcon />,
-      iconClassName: "text-[#0A66C2]",
-      hoverClassName: "hover:border-[#0A66C2]/35 hover:bg-[#0A66C2]/[0.06]",
+      hoverClassName:
+        "text-[#0A66C2] hover:border-[#0A66C2]/40 hover:bg-[#0A66C2]/10",
     },
   ];
 
@@ -193,11 +170,11 @@ export function PostShare({ url, title, variant = "default" }: PostShareProps) {
       className={
         isSidebar
           ? "not-prose border-t border-border pt-8"
-          : "not-prose mt-12 pt-8 border-t border-border"
+          : "not-prose mt-12 border-t border-border pt-8"
       }
       aria-labelledby="post-share-heading"
     >
-      <div className={isSidebar ? "mb-3" : "mb-5"}>
+      <div className={isSidebar ? "mb-4" : "mb-5"}>
         <h2
           id="post-share-heading"
           className={
@@ -218,7 +195,7 @@ export function PostShare({ url, title, variant = "default" }: PostShareProps) {
       <div
         className={
           isSidebar
-            ? "flex flex-wrap items-center gap-1.5"
+            ? "grid w-full grid-cols-4 gap-1.5"
             : "flex flex-wrap gap-2"
         }
       >
@@ -232,17 +209,15 @@ export function PostShare({ url, title, variant = "default" }: PostShareProps) {
             title={link.label}
             className={
               isSidebar
-                ? `group inline-flex size-7 items-center justify-center rounded-md border border-border/40 bg-background/40 transition-all duration-200 hover:-translate-y-px ${link.hoverClassName}`
-                : "inline-flex h-10 items-center gap-2 rounded-lg border border-border bg-muted/40 px-3 text-sm font-medium transition-colors hover:bg-muted hover:border-border/80 sm:px-4"
+                ? `group inline-flex aspect-square w-full items-center justify-center rounded-lg border border-border/50 bg-background transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm ${link.hoverClassName}`
+                : `inline-flex h-11 items-center gap-2.5 rounded-lg border border-border bg-muted/40 px-3.5 text-sm font-medium transition-colors hover:bg-muted sm:px-4 ${link.hoverClassName}`
             }
           >
-            <span
-              className={`${isSidebar ? "" : link.iconClassName} transition-transform duration-200 group-hover:scale-105`}
-            >
-              {isSidebar ? link.sidebarIcon : link.defaultIcon}
+            <span className="transition-transform duration-200 group-hover:scale-105">
+              {link.icon}
             </span>
             {!isSidebar ? (
-              <span className="hidden sm:inline text-foreground">
+              <span className="hidden text-foreground sm:inline">
                 {link.label}
               </span>
             ) : null}

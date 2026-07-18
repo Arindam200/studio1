@@ -7,6 +7,7 @@ import DevRelPricing from "@/components/sections/devrel-as-service/pricing";
 import { Metadata } from "next";
 import Hero from "@/components/pages/devrel-as-a-service/hero";
 import DevRelDeliverables from "./deliverables";
+import NonNegotiable from "@/components/sections/non-negotiable";
 import FAQ, { type FAQItem } from "@/components/landing/faq";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
@@ -101,6 +102,10 @@ export default function DevRel() {
       <FAQ
         subtitle="Common questions about our DevRel as a Service offering."
         items={devrelFaqItems}
+      />
+      <NonNegotiable
+        headline="We operate as an embedded DevRel team: community, content, education, and advocacy tied to your product goals."
+        body="From Discord and workshops to conference talks, DX audits, and Product Hunt launches, Studio1 runs end-to-end developer programs with writers, engineers, community managers, and advocates. You get measurable adoption without the overhead of hiring and managing a full in-house DevRel function."
       />
       {/* <DevRelPricing /> */}
       {/* <PricingSection /> */}

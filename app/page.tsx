@@ -5,6 +5,7 @@ import Features from "@/components/landing/features";
 import Testimonials from "@/components/landing/testimonials";
 import CaseStudyCards from "@/components/landing/case-study-cards";
 import DeveloperJourney from "@/components/landing/developer-journey";
+import GlobalReach from "@/components/landing/global-reach";
 import TechnicalDomains from "@/components/landing/domains";
 import RotatingPeople from "@/components/landing/rotating-people";
 import { homePageMetadata, websiteJsonLd } from "@/lib/seo";
@@ -25,6 +26,7 @@ export default function Home() {
         <Services />
         <CaseStudyCards />
         <DeveloperJourney />
+        <GlobalReach />
         <Features />
         <Testimonials />
       </div>

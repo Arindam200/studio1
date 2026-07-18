@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Num } from "@/components/ui/num";
-import { elevatedCardShadow } from "@/lib/shadows";
+import { elevatedCardShadow, serviceCardHoverGlow } from "@/lib/shadows";
 import { cn } from "@/lib/utils";
 
 export type CaseStudyResultStat = {
@@ -25,6 +25,17 @@ type CaseStudyResultProps = {
   className?: string;
 };
 
+const resultCardSurface = cn(
+  "group relative overflow-hidden rounded-lg border-2 dark:border",
+  "bg-background/80 backdrop-blur-md",
+  "transition-all duration-700",
+  elevatedCardShadow,
+);
+
+function ServiceCardEffects() {
+  return <div aria-hidden className={serviceCardHoverGlow} />;
+}
+
 export function CaseStudyResult({
   study,
   variant = "compact",
@@ -35,12 +46,14 @@ export function CaseStudyResult({
       <Link
         href={study.href}
         className={cn(
-          "group relative flex flex-col overflow-hidden rounded-xl border bg-background transition-[transform,border-color] duration-300 hover:-translate-y-0.5 hover:border-primary/40 md:flex-row md:items-stretch",
-          elevatedCardShadow,
+          "flex flex-col md:flex-row md:items-stretch",
+          resultCardSurface,
           className,
         )}
       >
-        <div className="flex flex-col justify-between gap-6 border-b border-border/60 p-6 md:w-[42%] md:border-b-0 md:border-r md:p-8 lg:p-10">
+        <ServiceCardEffects />
+
+        <div className="relative z-[1] flex flex-col justify-between gap-6 border-b border-border/60 p-6 md:w-[42%] md:border-b-0 md:border-r md:p-8 lg:p-10">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
               {study.category}
@@ -60,7 +73,7 @@ export function CaseStudyResult({
           </div>
         </div>
 
-        <div className="flex flex-1 flex-col justify-between gap-8 p-6 md:p-8 lg:p-10">
+        <div className="relative z-[1] flex flex-1 flex-col justify-between gap-8 p-6 md:p-8 lg:p-10">
           <div>
             <p className="max-w-xl font-primary text-xl font-normal leading-snug tracking-tight text-foreground md:text-2xl lg:text-[1.65rem] lg:leading-snug">
               {study.proof}
@@ -99,12 +112,14 @@ export function CaseStudyResult({
     <Link
       href={study.href}
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-xl border bg-background p-5 transition-[transform,border-color] duration-300 hover:-translate-y-0.5 hover:border-primary/40 sm:p-6",
-        elevatedCardShadow,
+        "flex h-full flex-col p-5 sm:p-6",
+        resultCardSurface,
         className,
       )}
     >
-      <div className="mb-5 flex items-start justify-between gap-3">
+      <ServiceCardEffects />
+
+      <div className="relative z-[1] mb-5 flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="truncate font-primary text-base font-medium tracking-tight">
             {study.company}
@@ -119,7 +134,7 @@ export function CaseStudyResult({
         />
       </div>
 
-      <div className="mt-auto">
+      <div className="relative z-[1] mt-auto">
         <p className="font-numeric text-4xl font-semibold tabular-nums leading-none tracking-tight text-primary sm:text-[2.75rem]">
           <Num>{study.heroValue}</Num>
         </p>

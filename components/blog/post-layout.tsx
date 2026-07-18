@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { PostShare } from "@/components/blog/post-share";
+import { BlogCta } from "@/components/blog/blog-cta";
 import { TableOfContents } from "@/components/case-studies/table-of-contents";
 import { Num } from "@/components/ui/num";
 
@@ -32,7 +33,7 @@ export function PostLayout({
     <article className="relative mx-auto max-w-7xl px-4 py-12 md:py-20">
       <Link
         href="/blog"
-        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-10 transition-colors"
+        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mt-10 mb-10 transition-colors"
       >
         <ArrowLeft className="size-4" />
         Back to blog
@@ -89,11 +90,16 @@ export function PostLayout({
         </div>
 
         <aside className="hidden xl:block">
-          <div className="sticky top-28 flex flex-col gap-10">
+          <div className="sticky top-20 flex flex-col gap-10">
             <TableOfContents sticky={false} />
             <PostShare url={shareUrl} title={title} variant="sidebar" />
           </div>
         </aside>
+      </div>
+
+      {/* CTA footer — outside the grid so the sticky ToC ends here */}
+      <div className="max-w-3xl">
+        <BlogCta />
       </div>
     </article>
   );

@@ -1,7 +1,12 @@
+import Link from "next/link";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
-import { Trophy, ChartLineUp, Target } from "@phosphor-icons/react/dist/ssr";
-import { getAllCaseStudies } from "@/lib/case-studies";
+import { Button } from "@/components/ui/button";
+import { Trophy, Target, ChartLineUp } from "@phosphor-icons/react/dist/ssr";
+import { getAllCaseStudies, getFeaturedCaseStudy } from "@/lib/case-studies";
 import { CaseStudyCard } from "@/components/case-studies/case-study-card";
+import { FeaturedCaseStudy } from "@/components/case-studies/featured-case-study";
+import { getClientLogo } from "@/components/case-studies/client-logos";
 import {
   sideBeamGlowLeftSubtle,
   sideBeamGlowRightSubtle,
@@ -18,6 +23,8 @@ const measures = [
 
 export default function CaseStudiesPage() {
   const studies = getAllCaseStudies();
+  const featuredStudy = getFeaturedCaseStudy();
+  const remainingStudies = studies.filter((s) => s.slug !== featuredStudy?.slug);
 
   const collectionJsonLd = {
     "@context": "https://schema.org",
@@ -52,27 +59,57 @@ export default function CaseStudiesPage() {
       />
 
       {/* Hero */}
-      <div className="z-20 mt-20 mb-14 text-center">
+      <div className="z-20 mt-20 text-center">
         <Badge className="mx-auto mb-6 flex w-fit items-center gap-2 pb-1">
           <Trophy className="size-5" weight="fill" />
           Case Studies
         </Badge>
         <h1 className="mb-4 text-4xl font-bold sm:text-6xl">
-          Our Success{" "}
+          Results developers can{" "}
           <span className="bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent italic text-transparent">
-            Stories
+            verify
           </span>
         </h1>
         <p className="mx-auto max-w-2xl text-base text-muted-foreground sm:text-lg">
-          How Studio1 partners with developer-first companies to turn complex
-          technical products into content engines that rank, get shared, and
-          convert developers into users.
+          How Studio1 partners with developer-first companies — docs, content,
+          community, and launches — with outcomes you can check: GitHub stars,
+          rankings, reach, and public endorsements.
         </p>
       </div>
 
+      {/* Client logo row */}
+      <div className="z-20 mt-12 flex flex-wrap items-center justify-center gap-3">
+        {studies.map((study) => {
+          const logo = getClientLogo(study.slug);
+          if (!logo) return null;
+          return (
+            <Link
+              key={study.slug}
+              href={`/case-studies/${study.slug}`}
+              aria-label={study.client}
+              className="flex items-center gap-2.5 rounded-full border bg-background/80 px-4 py-2 backdrop-blur-md transition-colors duration-300 hover:border-primary/50 hover:text-primary"
+            >
+              <Image
+                src={logo.icon}
+                alt=""
+                className="size-5 rounded object-contain"
+              />
+              <span className="text-sm font-medium">{study.client}</span>
+            </Link>
+          );
+        })}
+      </div>
+
+      {/* Featured study */}
+      {featuredStudy ? (
+        <div className="z-20 mt-16">
+          <FeaturedCaseStudy />
+        </div>
+      ) : null}
+
       {/* Cards */}
-      <div className="z-20 grid w-full min-w-0 grid-cols-1 gap-6 md:grid-cols-2">
-        {studies.map((study) => (
+      <div className="z-20 mt-14 grid w-full min-w-0 grid-cols-1 gap-6 md:grid-cols-2">
+        {remainingStudies.map((study) => (
           <CaseStudyCard key={study.slug} study={study} />
         ))}
       </div>
@@ -129,6 +166,26 @@ export default function CaseStudiesPage() {
             ))}
           </ul>
         </div>
+      </div>
+
+      {/* Bottom CTA */}
+      <div className="z-20 mt-20 flex flex-col items-center gap-5 rounded-2xl border bg-background/80 p-10 text-center backdrop-blur-md sm:p-14">
+        <h2 className="text-2xl font-bold sm:text-3xl">
+          Want results like these?
+        </h2>
+        <p className="max-w-xl text-sm text-muted-foreground sm:text-base">
+          Share your ICP and competitors — we&apos;ll outline a growth +
+          technical content strategy for your product.
+        </p>
+        <Button variant="gradient" size="cta" asChild>
+          <a
+            href="https://cal.com/studio1/collab"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book an intro call
+          </a>
+        </Button>
       </div>
     </section>
   );

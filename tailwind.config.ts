@@ -31,6 +31,7 @@ const config = {
         secondary: ["var(--font-dm-sans)", "sans-serif"],
         accent: ["var(--font-instrument-serif)", "serif"],
         numeric: ["var(--font-numeric)", "sans-serif"],
+        inter: ["var(--font-inter)", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

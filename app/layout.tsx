@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {
   DM_Sans,
   Instrument_Serif,
+  Inter,
   Space_Grotesk,
   Syne,
 } from "next/font/google";
@@ -43,6 +44,13 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-numeric",
   display: "swap",
   weight: ["500", "600"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -133,6 +141,7 @@ export default function RootLayout({
           dmSans.variable,
           instrumentSerif.variable,
           spaceGrotesk.variable,
+          inter.variable,
           "antialiased font-secondary",
         )}
         suppressHydrationWarning
