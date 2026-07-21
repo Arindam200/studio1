@@ -67,13 +67,13 @@ export default async function BlogPostPage({ params }: Props) {
     },
     image: absoluteImageUrl(post.image),
     keywords: post.tags.join(", "),
-    articleSection: "Blog",
+    articleSection: "Our Blog",
     wordCount: post.content.split(/\s+/).filter(Boolean).length,
   };
 
   const breadcrumbSchema = breadcrumbJsonLd([
     { name: "Home", path: "/" },
-    { name: "Blog", path: "/blog" },
+    { name: "Our Blog", path: "/blog" },
     { name: post.title, path: `/blog/${slug}` },
   ]);
 

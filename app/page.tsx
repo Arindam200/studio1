@@ -24,11 +24,11 @@ export default function Home() {
         <Trustedby />
         <TechnicalDomains />
         <Services />
-        <CaseStudyCards />
-        <DeveloperJourney />
-        <GlobalReach />
-        <Features />
         <Testimonials />
+        <GlobalReach />
+        <DeveloperJourney />
+        <Features />
+        <CaseStudyCards />
       </div>
     </>
   );

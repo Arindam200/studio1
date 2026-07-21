@@ -118,13 +118,13 @@ export default function Footer() {
                   className="hover:text-foreground duration-300 hover:font-semibold"
                   href={"/work"}
                 >
-                  Work
+                  Client Work
                 </Link>
                 <Link
                   className="hover:text-foreground duration-300 hover:font-semibold"
                   href={"/blog"}
                 >
-                  Blog
+                  Our Blog
                 </Link>
               </motion.div>
             </motion.div>

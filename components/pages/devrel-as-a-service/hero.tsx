@@ -38,7 +38,7 @@ export default function Hero() {
             className="md:text-7xl text-5xl font-medium text-center"
             variants={itemVariants}
           >
-            <span className="font-accent text-[1.08em] font-normal italic text-primary/75">
+            <span className="serif-accent font-accent text-[1.08em] font-normal italic text-primary/75">
               DevRel
             </span>{" "}
             as a Service

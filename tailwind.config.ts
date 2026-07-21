@@ -36,6 +36,8 @@ const config = {
       colors: {
         border: "hsl(var(--border))",
         primary1: "hsl(var(--primary1))",
+        primarySurface: "hsl(var(--primary-surface))",
+        primaryDeep: "hsl(var(--primary-deep))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",

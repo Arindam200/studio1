@@ -27,7 +27,7 @@ export const Version1 = ({
             "bottom-[-29rem] left-[50%] translate-x-[-50%] rounded-3xl",
           )}
         />
-        <Badge className="flex items-center gap-1 mb-4 py-1 rounded-md shadow-md bg-gradient-to-r from-primary via-primary1 to-primary1/40 text-white">
+        <Badge className="flex items-center gap-1 mb-4 py-1 rounded-md shadow-md bg-gradient-to-r from-primarySurface via-primary1 to-primary1/40 text-white dark:from-primary dark:via-primary1 dark:to-primary1/40">
           <Pencil className="size-4" />
           Blog
         </Badge>
@@ -50,10 +50,10 @@ export const Version1 = ({
           })}
         </div>
 
-        <div className="absolute bottom-[-6rem] -right-14 flex rotate-45 items-center justify-center size-36 rounded-[1.7rem] bg-gradient-to-bl from-primary via-primary/80 to-white/80">
+        <div className="absolute bottom-[-6rem] -right-14 flex rotate-45 items-center justify-center size-36 rounded-[1.7rem] bg-gradient-to-bl from-primarySurface via-primarySurface/80 to-white/80 dark:from-primary dark:via-primary/80 dark:to-white/80">
           <div className="size-28 rounded-full bg-accent"></div>
         </div>
-        <div className="absolute top-[-6rem] -left-14 flex rotate-45 items-center justify-center size-36 rounded-[1.7rem] bg-gradient-to-bl from-primary via-primary/80 to-white/80">
+        <div className="absolute top-[-6rem] -left-14 flex rotate-45 items-center justify-center size-36 rounded-[1.7rem] bg-gradient-to-bl from-primarySurface via-primarySurface/80 to-white/80 dark:from-primary dark:via-primary/80 dark:to-white/80">
           <div className="size-28 rounded-full bg-accent"></div>
         </div>
     </Link>

@@ -16,7 +16,7 @@ export default function Testimonials() {
   const containerRef = useRef(null);
 
   return (
-    <section id="testimonials" className="py-20 relative overflow-hidden">
+    <section id="testimonials" className="pt-12 pb-20 relative overflow-hidden">
       <div className={sideBeamGlowLeft}></div>
       <div className={sideBeamGlowRight}></div>
       <div className="max-w-7xl mx-auto px-6 sm:px-8">

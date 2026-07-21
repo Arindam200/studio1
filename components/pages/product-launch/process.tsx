@@ -64,7 +64,7 @@ export default function Process() {
         <div className="text-center mb-16">
           <div className="text-center font-semibold lg:text-5xl text-4xl mb-4">
             Launch{" "}
-            <span className="font-accent italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
+            <span className="serif-accent font-accent italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
               Process
             </span>
           </div>
@@ -89,13 +89,13 @@ export default function Process() {
               <div className="text-sm text-muted-foreground">Product of the Day</div>
             </div>
             <div className="bg-background border rounded-lg px-6 py-4 text-center">
-              <div className="font-accent text-2xl font-normal italic text-primary/75">
+              <div className="serif-accent font-accent text-2xl font-normal italic text-primary/75">
                 Credible
               </div>
               <div className="text-sm text-muted-foreground">Creator Lift</div>
             </div>
             <div className="bg-background border rounded-lg px-6 py-4 text-center">
-              <div className="font-accent text-2xl font-normal italic text-primary/75">
+              <div className="serif-accent font-accent text-2xl font-normal italic text-primary/75">
                 Meaningful
               </div>
               <div className="text-sm text-muted-foreground">Developer Signups</div>

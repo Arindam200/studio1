@@ -82,8 +82,8 @@ export function FeaturedCaseStudy() {
         </Button>
       </div>
 
-      {/* Artwork: remote cover from MDX, sized as a compact plate (not stretched to card height) */}
-      <div className="relative z-[1] flex min-w-0 items-center justify-center p-2 md:w-[min(38%,28rem)] md:shrink-0 lg:w-[min(40%,30rem)]">
+      {/* Artwork: stretches to narrative column height on md+ */}
+      <div className="relative z-[1] flex min-h-0 min-w-0 items-stretch p-2 md:w-[min(45%,32rem)] md:shrink-0 lg:w-[min(48%,34rem)]">
         <CardMedia study={study} variant="featured" priority />
       </div>
     </Link>

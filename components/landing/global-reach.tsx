@@ -64,7 +64,7 @@ export default function GlobalReach() {
         <SectionEyebrow>Global Reach</SectionEyebrow>
         <h2 className="max-sm:text-4xl text-center font-inter text-5xl font-normal tracking-tight">
           Building With Teams{" "}
-          <span className="bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text pr-2 font-accent font-bold italic text-transparent">
+          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
             Worldwide
           </span>
         </h2>
@@ -77,7 +77,7 @@ export default function GlobalReach() {
       <motion.div
         variants={fadeInUp}
         className={cn(
-          "relative mx-auto max-w-6xl overflow-hidden rounded-xl border border-border/50 bg-background p-3 sm:p-5 md:p-6",
+          "relative mx-auto max-w-6xl overflow-hidden rounded-xl border border-primary/15 bg-background p-3 dark:border-white/15 sm:p-5 md:p-6",
           elevatedCardShadow,
         )}
       >

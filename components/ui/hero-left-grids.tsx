@@ -5,11 +5,11 @@ export default function HeroLeftGrids() {
     <div className="-rotate-[18deg] dark:opacity-70 md:dark:opacity-100 opacity-40 sm:opacity-70 h-[80vh] lg:h-[140vh] absolute -bottom-44 lg:top-60 -left-36 lg:-left-0 w-fit">
       <div className="flex items-center gap-4 h-full w-full">
         <SingleGrid
-          innerClassName="bg-gradient-to-br from-white/20 via-primary to-primary"
+          innerClassName="bg-gradient-to-br from-white/20 via-primarySurface to-primarySurface dark:from-white/20 dark:via-primary dark:to-primary"
           outerClassName="w-[3.5rem] sm:w-[4.5rem] border-primary/20 p-2"
         />
         <SingleGrid
-          innerClassName="bg-gradient-to-br from-white/20 via-primary to-primary"
+          innerClassName="bg-gradient-to-br from-white/20 via-primarySurface to-primarySurface dark:from-white/20 dark:via-primary dark:to-primary"
           outerClassName="w-[3.5rem] sm:w-[4.5rem] border-primary/20 p-2"
         />
         <SingleGrid

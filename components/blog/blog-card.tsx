@@ -8,7 +8,7 @@ export function BlogCard({ post }: { post: BlogPostMeta }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group border relative overflow-hidden hover:border-primary hover:-translate-y-1 duration-500 rounded-lg flex flex-col items-start gap-0 bg-background/80 backdrop-blur-md"
+      className="group border relative overflow-hidden hover:border-primary hover:-translate-y-1 duration-500 rounded-lg flex h-full flex-col items-start gap-0 bg-background/80 backdrop-blur-md"
     >
       <div className="relative aspect-[16/9] w-full overflow-hidden border-b bg-muted">
         <Image
@@ -19,7 +19,7 @@ export function BlogCard({ post }: { post: BlogPostMeta }) {
           sizes="(max-width: 768px) 100vw, 42rem"
         />
       </div>
-      <div className="flex flex-col gap-2 w-full p-6">
+      <div className="flex flex-1 flex-col gap-2 w-full p-6">
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground font-medium">
           <time dateTime={post.date}>{post.date}</time>
           <span aria-hidden>·</span>
@@ -27,7 +27,7 @@ export function BlogCard({ post }: { post: BlogPostMeta }) {
             <Num>{post.readingTimeMinutes}</Num> min read
           </span>
         </div>
-        <h2 className="text-xl font-semibold group-hover:text-primary transition-colors">
+        <h2 className="font-inter text-xl font-semibold group-hover:text-primary transition-colors">
           {post.title}
         </h2>
         <p className="text-sm text-muted-foreground line-clamp-2">

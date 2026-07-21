@@ -56,7 +56,7 @@ export default function CaseStudyCards() {
   return (
     <motion.section
       id="results"
-      className="relative px-4 py-24 md:py-32"
+      className="relative px-4 pt-10 md:pt-12 pb-24 md:pb-32"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
@@ -67,15 +67,15 @@ export default function CaseStudyCards() {
         variants={headerVariants}
       >
         <SectionEyebrow>Case Studies</SectionEyebrow>
-        <h2 className="max-sm:text-4xl text-center font-primary text-5xl font-normal tracking-tight">
-          We Show{" "}
-          <span className="bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
-            Receipts
+        <h2 className="max-sm:text-4xl text-center font-inter text-5xl font-normal tracking-tight">
+          Campaigns that{" "}
+          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
+            landed
           </span>
         </h2>
         <p className="mt-2 max-w-2xl text-center text-base text-muted-foreground max-sm:text-sm">
-          GitHub stars, developer reach, and launch wins from technical content
-          and DevRel campaigns.
+          Open-source launches, multi-channel growth, and docs rebuilds for AI
+          and DevTool teams.
         </p>
       </motion.div>
 

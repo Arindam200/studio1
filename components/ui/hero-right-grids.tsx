@@ -9,11 +9,11 @@ export default function HeroRightGrids() {
           outerClassName="w-[3.5rem] sm:w-[4.5rem] border-secondary/80 p-2"
         />
         <SingleGrid
-          innerClassName="bg-gradient-to-br from-white/20 via-primary to-primary"
+          innerClassName="bg-gradient-to-br from-white/20 via-primarySurface to-primarySurface dark:from-white/20 dark:via-primary dark:to-primary"
           outerClassName="w-[3.5rem]   sm:w-[4.5rem] border-primary/20 p-2"
         />
         <SingleGrid
-          innerClassName="bg-gradient-to-br from-white/20 via-primary to-primary"
+          innerClassName="bg-gradient-to-br from-white/20 via-primarySurface to-primarySurface dark:from-white/20 dark:via-primary dark:to-primary"
           outerClassName="w-[3.5rem] sm:w-[4.5rem] border-primary/20 p-2"
         />
       </div>

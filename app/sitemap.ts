@@ -10,6 +10,7 @@ export default async function sitemap() {
     "/devrel-as-service",
     "/audit-services",
     "/video-production",
+    "/content-creation",
     "/product-launch",
     "/organic-campaign",
     "/influencer-management",

@@ -232,7 +232,7 @@ export default function Pricing() {
         <p className="text-base/7 font-semibold text-orange-400">Pricing</p>
         <h1 className="mt-2 text-balance text-5xl font-semibold tracking-tight text-white sm:text-6xl">
           Choose the{" "}
-          <span className="font-accent italic font-normal text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600">
+          <span className="serif-accent font-accent italic font-normal text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600">
             Right plan{" "}
           </span>{" "}
           for you

@@ -31,7 +31,7 @@ export default function Allblogs({ query, tags }: AllblogsProps) {
         <div className={sideBeamGlowLeftCentered}></div>
         <div className={sideBeamGlowRightCentered}></div>
         {filteredCards.length === 0 ? (
-          <div className="text-center text-white text-xl">
+          <div className="py-16 text-center font-inter text-base text-muted-foreground">
             No articles found matching your search.
           </div>
         ) : (

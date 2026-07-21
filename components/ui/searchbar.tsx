@@ -1,20 +1,33 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
 import { Input } from "@/components/ui/input";
 import { MagnifyingGlass } from "@phosphor-icons/react";
 
 export default function Searchbar() {
-  const [search, setSearch] = useState<string>("");
-
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const { replace } = useRouter();
+  const router = useRouter();
 
-  const handleSearch = useDebouncedCallback((term: string) => {
-    const params = new URLSearchParams(searchParams);
+  const urlQuery = searchParams.get("query") ?? "";
+  const [value, setValue] = useState(urlQuery);
+  const pendingUrlUpdate = useRef<string | undefined>(undefined);
+
+  useEffect(() => {
+    if (pendingUrlUpdate.current === urlQuery) {
+      pendingUrlUpdate.current = undefined;
+      return;
+    }
+
+    setValue(urlQuery);
+  }, [urlQuery]);
+
+  const pushQueryToUrl = useDebouncedCallback((term: string) => {
+    pendingUrlUpdate.current = term;
+
+    const params = new URLSearchParams(searchParams.toString());
 
     if (term) {
       params.set("query", term);
@@ -22,23 +35,28 @@ export default function Searchbar() {
       params.delete("query");
     }
 
-    replace(`${pathname}?${params.toString()}`);
-
-    setSearch(term);
-    console.log(search);
+    const qs = params.toString();
+    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
   }, 300);
 
   return (
-    <div className="flex max-w-2xl w-full max-sm:px-4 py-1 pl-2 pr-4 rounded-lg items-center space-x-2 relative">
+    <div className="relative flex w-full max-w-xl items-center gap-2 rounded-xl border border-border/60 bg-background/80 p-1.5 shadow-sm backdrop-blur-md transition-colors focus-within:border-border dark:border-white/[0.08] dark:focus-within:border-white/20">
       <Input
         type="text"
         placeholder="Search work..."
-        defaultValue={searchParams.get("query")?.toString()}
-        onChange={(e) => handleSearch(e.target.value)}
-        className="border-transparent font-medium bg-transparent ring-1 ring-primary text-foreground focus:outline-none"
+        value={value}
+        onChange={(e) => {
+          const term = e.target.value;
+          setValue(term);
+          pushQueryToUrl(term);
+        }}
+        className="h-11 border-0 bg-transparent font-inter text-sm text-foreground shadow-none outline-none ring-0 ring-offset-0 placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
       />
-      <div className="bg-gradient-to-b from-primary via-primary to-primary1 dark:from-primary/90 dark:via-primary/75 dark:to-primary1/60 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.22),inset_0_-1px_0_0_rgba(0,0,0,0.12)] h-full w-12 py-2 flex items-center justify-center rounded-lg cursor-pointer transition-all hover:brightness-[1.03]">
-        <MagnifyingGlass className="size-6 text-white" />
+      <div
+        aria-hidden
+        className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-gradient-to-b from-primarySurface via-primarySurface to-primary1 text-white shadow-[inset_0_1px_0_0_rgba(255,255,255,0.22),inset_0_-1px_0_0_rgba(0,0,0,0.12)] dark:from-primary/90 dark:via-primary/75 dark:to-primary1/60"
+      >
+        <MagnifyingGlass className="size-5" weight="bold" />
       </div>
     </div>
   );

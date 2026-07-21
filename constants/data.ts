@@ -36,8 +36,10 @@ import {
   CheckCircle,
   Files,
   Lightbulb,
+  Newspaper,
   Pen,
   Star,
+  YoutubeLogo,
 } from "@phosphor-icons/react/dist/ssr";
 
 export const navItems = [
@@ -66,10 +68,31 @@ export const navItems = [
         path: "/devrel-as-service",
         icon: CheckCircle,
       },
+      {
+        title: "Content Creation",
+        path: "/content-creation",
+        icon: YoutubeLogo,
+      },
     ],
   },
-  { title: "Work", path: "/work" },
-  { title: "Blog", path: "/blog" },
+  {
+    title: "Content",
+    path: "#",
+    children: [
+      {
+        title: "Client Work",
+        path: "/work",
+        icon: Briefcase,
+        description: "Tutorials and guides we write for clients",
+      },
+      {
+        title: "Our Blog",
+        path: "/blog",
+        icon: Newspaper,
+        description: "Articles and insights from the Studio1 team",
+      },
+    ],
+  },
 ];
 
 export const serviceNavItems = [

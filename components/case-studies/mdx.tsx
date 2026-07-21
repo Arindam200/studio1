@@ -1,4 +1,6 @@
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import { CaseStudyQuote } from "@/components/case-studies/case-study-quote";
+import { resolveCaseStudyImageAlt } from "@/lib/case-studies";
 import { mdxComponents } from "@/mdx-components";
 
 function slugify(text: string): string {
@@ -27,14 +29,22 @@ function Frame({ children }: { children: ReactNode }) {
 function CaseStudyImage({
   src,
   alt,
+  title,
+  ...props
 }: ComponentPropsWithoutRef<"img"> & { "data-path"?: string }) {
   if (!src) return null;
+  const resolvedSrc = typeof src === "string" ? src : undefined;
+  const resolvedAlt = resolveCaseStudyImageAlt(alt, resolvedSrc);
+
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={typeof src === "string" ? src : undefined}
-      alt={alt ?? ""}
+      {...props}
+      src={resolvedSrc}
+      alt={resolvedAlt}
+      title={title ?? undefined}
       loading="lazy"
+      decoding="async"
       className="w-full h-auto rounded-xl border bg-muted/30"
     />
   );
@@ -50,6 +60,38 @@ function CaseStudyH2({ children, ...props }: ComponentPropsWithoutRef<"h2">) {
     >
       {children}
     </h2>
+  );
+}
+
+function CaseStudyBlockquote({
+  children,
+}: ComponentPropsWithoutRef<"blockquote">) {
+  return (
+    <figure className="not-prose my-10">
+      <CaseStudyQuote>{children}</CaseStudyQuote>
+    </figure>
+  );
+}
+
+type PullQuoteProps = {
+  children: ReactNode;
+  author?: string;
+  role?: string;
+  source?: string;
+};
+
+function PullQuote({ children, author, role, source }: PullQuoteProps) {
+  return (
+    <figure className="not-prose my-12">
+      <CaseStudyQuote
+        variant="pull"
+        author={author}
+        role={role}
+        source={source}
+      >
+        {children}
+      </CaseStudyQuote>
+    </figure>
   );
 }
 
@@ -70,6 +112,8 @@ export const caseStudyMdxComponents = {
   ...mdxComponents,
   h2: CaseStudyH2,
   h3: CaseStudyH3,
+  blockquote: CaseStudyBlockquote,
+  PullQuote,
   Frame,
   img: CaseStudyImage,
 };

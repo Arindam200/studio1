@@ -27,7 +27,7 @@ export default function ProductHero() {
         variants={containerVariants}
       >
         <motion.div variants={headerVariants}>
-          <Badge className="flex items-center gap-2 bg-gradient-to-r from-primary via-primary1 to-primary1/20 pb-1 text-sm font-medium text-white shadow-md">
+          <Badge className="flex items-center gap-2 bg-gradient-to-r from-primarySurface via-primary1 to-primary1/20 pb-1 text-sm font-medium text-white shadow-md dark:from-primary dark:via-primary1 dark:to-primary1/60">
             <Cube weight="fill" className="size-4" />
             Built by <span className="font-primary">Studio1</span>
           </Badge>
@@ -38,7 +38,7 @@ export default function ProductHero() {
           className="font-primary text-3xl font-normal leading-[1.12] tracking-tight text-foreground/90 sm:text-4xl md:text-5xl lg:text-[3.5rem]"
         >
           Our{" "}
-          <span className="font-accent text-[1.08em] font-normal italic text-primary/75">
+          <span className="serif-accent font-accent text-[1.08em] font-normal italic text-primary/75">
             Products
           </span>
         </motion.h1>

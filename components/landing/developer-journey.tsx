@@ -70,7 +70,7 @@ export default function DeveloperJourney() {
         <SectionEyebrow>How It Works</SectionEyebrow>
         <h2 className="max-sm:text-4xl text-center font-primary text-5xl font-normal tracking-tight">
           How Developers{" "}
-          <span className="bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
+          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
             Find and Adopt
           </span>{" "}
           Your Product

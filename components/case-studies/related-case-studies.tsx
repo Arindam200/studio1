@@ -13,7 +13,7 @@ export function RelatedCaseStudies({ studies }: RelatedCaseStudiesProps) {
     <section className="mt-16 max-w-4xl">
       <h2 className="font-inter text-2xl font-semibold tracking-tight">
         More{" "}
-        <span className="bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent italic text-transparent">
+        <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent italic text-transparent">
           case studies
         </span>
       </h2>

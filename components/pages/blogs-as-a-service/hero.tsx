@@ -28,7 +28,7 @@ export default function Hero() {
         >
           <div className={serviceHeroContentClassName}>
           <motion.div variants={itemVariants}>
-            <Badge className="text-sm font-medium pb-1 shadow-md bg-gradient-to-r from-primary via-primary1 to-primary1/20 text-white flex gap-2 items-center">
+            <Badge className="text-sm font-medium pb-1 shadow-md bg-gradient-to-r from-primarySurface via-primary1 to-primary1/20 text-white flex gap-2 items-center dark:from-primary dark:via-primary1 dark:to-primary1/60">
               <IconPackages className="size-4" /> Services
             </Badge>
           </motion.div>
@@ -37,7 +37,7 @@ export default function Hero() {
             className="md:text-7xl text-5xl font-medium text-center"
             variants={itemVariants}
           >
-            <span className="font-accent text-[1.08em] font-normal italic text-primary/75">
+            <span className="serif-accent font-accent text-[1.08em] font-normal italic text-primary/75">
               Blogs
             </span>{" "}
             as a Service

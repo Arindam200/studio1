@@ -114,7 +114,7 @@ export const ctaCornerGlowLeft =
   `bottom-[-10rem] md:bottom-[-17rem] rotate-[-65deg] left-[-8%] opacity-75 dark:opacity-80 z-[-1] absolute glow-orb-corner-strong ${glowCenterX} w-[10rem] md:w-[10rem] h-[10rem] md:h-[30rem]`;
 
 export const floatingTileSurface =
-  "border border-white/25 dark:border-white/15 bg-gradient-to-b from-primary via-primary to-primary1 text-white shadow-floating-tile dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.28),inset_0_-1px_0_0_rgba(0,0,0,0.12),0_10px_28px_-6px_hsl(var(--primary)/0.35)]";
+  "border border-white/25 dark:border-white/15 bg-gradient-to-b from-primarySurface via-primarySurface to-primary1 text-white shadow-floating-tile dark:from-primary dark:via-primary dark:to-primary1 dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.28),inset_0_-1px_0_0_rgba(0,0,0,0.12),0_10px_28px_-6px_hsl(var(--primary)/0.35)]";
 
 export const featureCardHoverShadow =
   "shadow-feature-card shadow-feature-card-hover dark:shadow-none dark:hover:shadow-xl";

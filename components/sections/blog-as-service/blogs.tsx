@@ -25,7 +25,7 @@ export default function BlogSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-medium mb-4 md:text-5xl">
             Our{" "}
-            <span className="font-accent italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
+            <span className="serif-accent font-accent italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
               Blogs
             </span>
           </h2>
@@ -70,7 +70,7 @@ export default function BlogSection() {
           className="flex w-fit mx-auto justify-center"
         >
           <Link href="/work">
-            Read More Blogs <ArrowRight className="ml-2" size={24} />
+            View Client Work <ArrowRight className="ml-2" size={24} />
           </Link>
         </Button>
       </motion.div>

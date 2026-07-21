@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Trophy } from "@phosphor-icons/react/dist/ssr";
 import { getAllCaseStudies, getFeaturedCaseStudy } from "@/lib/case-studies";
 import { CaseStudyCard } from "@/components/case-studies/case-study-card";
@@ -12,6 +11,7 @@ import {
   sideBeamGlowRightSubtle,
 } from "@/lib/shadows";
 import { baseUrl } from "@/app/sitemap";
+import { absoluteImageUrl } from "@/lib/seo";
 
 export default function CaseStudiesPage() {
   const studies = getAllCaseStudies();
@@ -37,6 +37,7 @@ export default function CaseStudiesPage() {
         position: index + 1,
         url: `${baseUrl}/case-studies/${study.slug}`,
         name: study.title,
+        image: absoluteImageUrl(study.cover),
       })),
     },
   };
@@ -52,13 +53,13 @@ export default function CaseStudiesPage() {
 
       {/* Hero */}
       <div className="z-20 mt-20 text-center">
-        <Badge className="mx-auto mb-6 flex w-fit items-center gap-2 pb-1">
+        <Badge className="mx-auto mb-6 flex w-fit items-center gap-2 bg-[color-mix(in_hsl,hsl(var(--primary-surface))_85%,hsl(var(--primary))_15%)] pb-1 hover:bg-[color-mix(in_hsl,hsl(var(--primary-surface))_85%,hsl(var(--primary))_15%)] dark:hover:bg-primary">
           <Trophy className="size-5" weight="fill" />
           Case Studies
         </Badge>
         <h1 className="mb-5 font-inter text-4xl font-bold tracking-tight sm:text-6xl">
           Results developers can{" "}
-          <span className="bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent italic text-transparent">
+          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent italic text-transparent">
             verify
           </span>
         </h1>
@@ -107,26 +108,6 @@ export default function CaseStudiesPage() {
             );
           })}
         </div>
-      </div>
-
-      {/* CTA */}
-      <div className="z-20 mt-24 flex flex-col items-center gap-5 rounded-2xl border bg-background/80 p-10 text-center backdrop-blur-md sm:p-14">
-        <h2 className="font-inter text-2xl font-bold tracking-tight sm:text-3xl">
-          Want results like these?
-        </h2>
-        <p className="max-w-md text-sm text-muted-foreground sm:text-base">
-          Share your ICP and competitors, and we&apos;ll outline a strategy for
-          your product.
-        </p>
-        <Button variant="gradient" size="cta" asChild>
-          <a
-            href="https://cal.com/studio1/collab"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Book an intro call
-          </a>
-        </Button>
       </div>
     </section>
   );

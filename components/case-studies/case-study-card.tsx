@@ -9,7 +9,10 @@ import {
   glassCardHoverWash,
 } from "@/lib/shadows";
 import { cn } from "@/lib/utils";
-import type { CaseStudyMeta } from "@/lib/case-studies";
+import {
+  getCaseStudyCoverAlt,
+  type CaseStudyMeta,
+} from "@/lib/case-studies";
 
 /**
  * Case-study card system.
@@ -68,10 +71,10 @@ export function ClientMark({
     >
       <Image
         src={logo.icon}
-        alt=""
+        alt={`${study.client} logo`}
         width={48}
         height={48}
-        className="size-full scale-110 object-contain"
+        className="size-full scale-110 rounded-md object-contain"
       />
     </div>
   );
@@ -81,7 +84,7 @@ export function ClientMark({
  * Card artwork.
  *
  * Inset with rounded corners and a hairline ring so it reads as a deliberate
- * plate. Client mark sits top-left so it does not collide with banner wordmarks.
+ * plate.
  */
 export function CardMedia({
   study,
@@ -92,47 +95,39 @@ export function CardMedia({
   variant: CardVariant;
   priority?: boolean;
 }) {
-  const aspect =
+  const containerClass =
     variant === "featured"
-      ? "aspect-[16/10]"
+      ? "aspect-[16/10] md:aspect-auto md:h-full md:min-h-0"
       : variant === "compact"
         ? "aspect-[16/9]"
         : "aspect-[16/10]";
+
+  const imageClass =
+    variant === "featured"
+      ? "rounded-xl object-cover object-center scale-95 transition-transform duration-700 ease-out group-hover:scale-[0.98] motion-reduce:transform-none"
+      : "object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04] motion-reduce:transform-none";
 
   return (
     <div
       className={cn(
         "relative w-full overflow-hidden rounded-xl bg-muted/40 ring-1 ring-inset ring-foreground/[0.07] dark:ring-white/[0.07]",
-        aspect,
+        containerClass,
       )}
     >
       <Image
         src={study.cover}
-        alt={`${study.client} case study`}
+        alt={getCaseStudyCoverAlt(study)}
         fill
-        className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04] motion-reduce:transform-none"
+        className={imageClass}
         sizes={
           variant === "compact"
             ? "(max-width: 640px) 100vw, 24rem"
             : variant === "featured"
-              ? "(max-width: 768px) 100vw, 28rem"
+              ? "(max-width: 768px) 100vw, 34rem"
               : "(max-width: 768px) 100vw, 40rem"
         }
         priority={priority}
       />
-
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/25 to-transparent"
-      />
-
-      <div className="absolute left-3 top-3 z-[1]">
-        <ClientMark
-          study={study}
-          size={variant === "compact" ? "sm" : "md"}
-          frosted
-        />
-      </div>
     </div>
   );
 }

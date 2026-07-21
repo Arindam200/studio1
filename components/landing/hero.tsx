@@ -72,7 +72,7 @@ export default function Hero() {
               variants={staggerChildren}
             >
               <motion.div variants={fadeInUp}>
-                <Badge className="pb-1 shadow-md mb-2 bg-gradient-to-r from-primary via-primary1 to-primary1/20 text-white font-normal">
+                <Badge className="pb-1 shadow-md mb-2 bg-gradient-to-r from-primarySurface via-primary1 to-primary1/20 text-white font-normal dark:from-primary dark:via-primary1 dark:to-primary1/60">
                   <Building weight="fill" className="size-5 mr-2" />
                   Trusted by <Num>35+</Num> DevTool and SaaS Teams
                 </Badge>
@@ -83,12 +83,12 @@ export default function Hero() {
                 variants={fadeInUp}
               >
                 Technical Content and{" "}
-                <span className="font-accent italic font-normal text-primary/75 text-[0.92em]">
+                <span className="serif-accent font-accent italic font-normal text-primary dark:text-primary/75 text-[0.92em]">
                   DevRel
                 </span>
                 <br />
                 Partner for{" "}
-                <span className="font-accent italic font-normal text-primary/75 text-[0.92em]">
+                <span className="serif-accent font-accent italic font-normal text-primary dark:text-primary/75 text-[0.92em]">
                   DevTools
                 </span>
               </motion.h1>

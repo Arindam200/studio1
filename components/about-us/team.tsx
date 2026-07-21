@@ -23,7 +23,7 @@ export const Team = () => {
       >
         <h2 className="mb-4 font-primary text-4xl font-normal tracking-tight md:text-5xl">
           Meet Our{" "}
-          <span className="font-accent italic font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
+          <span className="serif-accent font-accent italic font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
             Leadership Team
           </span>{" "}
         </h2>

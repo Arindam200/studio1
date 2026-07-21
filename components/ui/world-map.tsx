@@ -54,9 +54,11 @@ export function WorldMap({
   const svgMap = useMemo(
     () =>
       map.getSVG({
-        radius: 0.22,
-        // Soft primary-tinted dots; stronger in light mode so continents stay readable
-        color: isDark ? "hsla(24, 40%, 70%, 0.28)" : "hsla(24, 25%, 28%, 0.42)",
+        radius: isDark ? 0.22 : 0.25,
+        // Primary-tinted land dots; higher contrast in light mode for readable continents
+        color: isDark
+          ? "hsla(24, 40%, 76%, 0.34)"
+          : "hsla(24, 52%, 14%, 0.74)",
         shape: "circle",
         backgroundColor: "transparent",
       }),
@@ -103,17 +105,17 @@ export function WorldMap({
   return (
     <div
       className={cn(
-        "relative aspect-[2/1] w-full overflow-hidden rounded-lg bg-transparent font-secondary md:aspect-[2.5/1] lg:aspect-[2/1]",
+        "relative aspect-[2/1] w-full overflow-hidden rounded-lg bg-primary/[0.05] font-secondary dark:bg-transparent md:aspect-[2.5/1] lg:aspect-[2/1]",
         className,
       )}
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.1)_0%,transparent_68%)] dark:bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.14)_0%,transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.2)_0%,transparent_62%)] dark:bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.14)_0%,transparent_70%)]"
       />
       <Image
         src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
-        className="pointer-events-none h-full w-full select-none object-fill opacity-100 [mask-image:radial-gradient(ellipse_at_center,black_48%,transparent_82%)] dark:opacity-80"
+        className="pointer-events-none h-full w-full select-none object-fill [mask-image:radial-gradient(ellipse_at_center,black_58%,transparent_74%)] dark:opacity-80 dark:[mask-image:radial-gradient(ellipse_at_center,black_48%,transparent_82%)]"
         alt="world map"
         height={495}
         width={1056}
@@ -156,11 +158,18 @@ export function WorldMap({
 
           return (
             <g key={`path-group-${i}`}>
+              <path
+                d={path}
+                fill="none"
+                stroke={lineColor}
+                strokeWidth={isDark ? "0.2" : "0.3"}
+                strokeOpacity={isDark ? 0.14 : 0.28}
+              />
               <motion.path
                 d={path}
                 fill="none"
                 stroke="url(#path-gradient)"
-                strokeWidth="0.35"
+                strokeWidth={isDark ? "0.35" : "0.42"}
                 initial={{ pathLength: 0 }}
                 animate={
                   loop
@@ -186,7 +195,7 @@ export function WorldMap({
 
               {loop ? (
                 <motion.circle
-                  r="1"
+                  r={isDark ? "1" : "1.15"}
                   fill={lineColor}
                   initial={{ offsetDistance: "0%", opacity: 0 }}
                   animate={{
@@ -225,28 +234,28 @@ export function WorldMap({
                 <circle
                   cx={projected.x}
                   cy={projected.y}
-                  r="0.9"
+                  r={isDark ? "0.9" : "1.05"}
                   fill={lineColor}
                   filter="url(#glow)"
                 />
                 <circle
                   cx={projected.x}
                   cy={projected.y}
-                  r="0.9"
+                  r={isDark ? "0.9" : "1.05"}
                   fill={lineColor}
-                  opacity="0.5"
+                  opacity={isDark ? "0.5" : "0.65"}
                 >
                   <animate
                     attributeName="r"
-                    from="0.9"
-                    to="3.2"
+                    from={isDark ? "0.9" : "1.05"}
+                    to={isDark ? "3.2" : "3.6"}
                     dur="2s"
                     begin={`${(i % 4) * 0.25}s`}
                     repeatCount="indefinite"
                   />
                   <animate
                     attributeName="opacity"
-                    from="0.55"
+                    from={isDark ? "0.55" : "0.65"}
                     to="0"
                     dur="2s"
                     begin={`${(i % 4) * 0.25}s`}

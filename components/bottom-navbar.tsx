@@ -9,6 +9,7 @@ import { elevatedCardShadow } from "@/lib/shadows";
 import { cn } from "@/lib/utils";
 
 const DEFAULT_SECTION = serviceNavItems[0]?.path ?? "#stats";
+const BOTTOM_SCROLL_THRESHOLD_PX = 96;
 
 export default function BottomNavbar() {
   const pathname = usePathname();
@@ -29,6 +30,14 @@ export default function BottomNavbar() {
     visibility.clear();
 
     const pickMostVisibleSection = () => {
+      const lastSectionId = sectionIds[sectionIds.length - 1];
+      const { scrollY, innerHeight } = window;
+      const docHeight = document.documentElement.scrollHeight;
+
+      if (scrollY + innerHeight >= docHeight - BOTTOM_SCROLL_THRESHOLD_PX) {
+        return `#${lastSectionId}`;
+      }
+
       let bestId = sectionIds[0];
       let bestRatio = -1;
 
@@ -38,6 +47,20 @@ export default function BottomNavbar() {
           bestRatio = ratio;
           bestId = id;
         }
+      }
+
+      if (bestRatio <= 0) {
+        const anchorY = scrollY + innerHeight * 0.35;
+        let scrollActiveId = sectionIds[0];
+
+        for (const id of sectionIds) {
+          const el = document.getElementById(id);
+          if (el && el.getBoundingClientRect().top + scrollY <= anchorY) {
+            scrollActiveId = id;
+          }
+        }
+
+        return `#${scrollActiveId}`;
       }
 
       return `#${bestId}`;
@@ -62,13 +85,17 @@ export default function BottomNavbar() {
     };
     window.addEventListener("hashchange", onHashChange);
 
+    const syncActiveSection = () => {
+      applyActiveHash(pickMostVisibleSection(), true);
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           visibility.set(entry.target.id, entry.intersectionRatio);
         });
 
-        applyActiveHash(pickMostVisibleSection(), true);
+        syncActiveSection();
       },
       {
         rootMargin: "-45% 0px -45% 0px",
@@ -81,8 +108,13 @@ export default function BottomNavbar() {
       if (el) observer.observe(el);
     });
 
+    window.addEventListener("scroll", syncActiveSection, { passive: true });
+    window.addEventListener("resize", syncActiveSection);
+
     return () => {
       window.removeEventListener("hashchange", onHashChange);
+      window.removeEventListener("scroll", syncActiveSection);
+      window.removeEventListener("resize", syncActiveSection);
       observer.disconnect();
       visibility.clear();
     };

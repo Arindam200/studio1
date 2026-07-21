@@ -120,6 +120,7 @@ export function articlePageMetadata({
   path,
   keywords,
   image,
+  imageAlt,
   publishedTime,
   tags,
 }: {
@@ -128,11 +129,13 @@ export function articlePageMetadata({
   path: string;
   keywords?: string[];
   image?: string;
+  imageAlt?: string;
   publishedTime?: string;
   tags?: string[];
 }): Metadata {
   const url = pageUrl(path);
   const ogImage = absoluteImageUrl(image);
+  const ogImageAlt = imageAlt?.trim() || title;
   const brandedTitle = `${title} | Studio1`;
 
   return {
@@ -150,7 +153,7 @@ export function articlePageMetadata({
       type: "article",
       ...(publishedTime ? { publishedTime } : {}),
       ...(tags?.length ? { tags } : {}),
-      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: ogImageAlt }],
     },
     twitter: {
       card: "summary_large_image",

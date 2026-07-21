@@ -91,7 +91,7 @@ export default function PricingSection() {
         >
           <h2 className="text-4xl font-bold mb-4 md:text-5xl">
             The Perfect Plan for <br />
-            <span className="font-accent italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
+            <span className="serif-accent font-accent italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
               Your Needs
             </span>
           </h2>
@@ -120,7 +120,7 @@ export default function PricingSection() {
                 {/* Card content remains the same */}
                 {plan.isRecommended && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                    <Badge className="text-primary-foreground">
                       Recommended
                     </Badge>
                   </div>
@@ -156,11 +156,7 @@ export default function PricingSection() {
                     variant={
                       plan.buttonVariant === "primary" ? "default" : "outline"
                     }
-                    className={`w-full ${
-                      plan.buttonVariant === "primary"
-                        ? "bg-primary hover:bg-primary/90 text-primary-foreground"
-                        : ""
-                    }`}
+                    className="w-full"
                   >
                     {plan.buttonText}
                   </Button>

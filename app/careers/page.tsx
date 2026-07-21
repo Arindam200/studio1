@@ -138,7 +138,7 @@ const Careers = () => {
 
               <motion.div className="mt-10" variants={itemVariants}>
                 <Button
-                  className="cta-button group px-6 py-6 rounded-full bg-primary hover:bg-primary/90"
+                  className="cta-button group px-6 py-6 rounded-full"
                   onClick={() =>
                     document
                       .getElementById("open-positions")

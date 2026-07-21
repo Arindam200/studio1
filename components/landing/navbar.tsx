@@ -71,19 +71,26 @@ export default function Navbar() {
                       "group-hover/nav:opacity-100 group-hover/nav:translate-y-0 group-hover/nav:scale-100 group-hover/nav:pointer-events-auto",
                     )}
                   >
-                    <div className="bg-background/95 backdrop-blur-xl shadow-lg border rounded-lg py-1.5 px-1 min-w-[14rem]">
+                    <div className="bg-background/95 backdrop-blur-xl shadow-lg border rounded-lg py-1.5 px-1 min-w-[17rem]">
                       {item.children.map((child) => (
                         <Link
                           key={child.title}
                           href={child.path}
-                          className="flex group/item items-center px-3 py-2 w-full gap-2 text-muted-foreground transition-colors duration-200 hover:text-foreground"
+                          className="flex group/item items-start px-3 py-2.5 w-full gap-2.5 text-muted-foreground transition-colors duration-200 hover:text-foreground"
                         >
                           <child.icon
                             weight="duotone"
-                            className="size-5 shrink-0 transition-colors duration-200 group-hover/item:text-primary"
+                            className="mt-0.5 size-5 shrink-0 transition-colors duration-200 group-hover/item:text-primary"
                           />
-                          <span className="text-sm font-medium">
-                            {child.title}
+                          <span className="flex flex-col gap-0.5">
+                            <span className="text-sm font-medium">
+                              {child.title}
+                            </span>
+                            {"description" in child && child.description ? (
+                              <span className="text-xs leading-snug text-muted-foreground/80">
+                                {child.description}
+                              </span>
+                            ) : null}
                           </span>
                         </Link>
                       ))}
@@ -148,14 +155,21 @@ export default function Navbar() {
                       <Link
                         key={child.title}
                         href={child.path}
-                        className="flex items-center px-3 py-2 group gap-2 text-muted-foreground transition-colors duration-200 hover:text-foreground"
+                        className="flex items-start px-3 py-2.5 group gap-2.5 text-muted-foreground transition-colors duration-200 hover:text-foreground"
                       >
                         <child.icon
                           weight="duotone"
-                          className="size-5 shrink-0 transition-colors duration-200 group-hover:text-primary"
+                          className="mt-0.5 size-5 shrink-0 transition-colors duration-200 group-hover:text-primary"
                         />
-                        <span className="text-sm font-medium">
-                          {child.title}
+                        <span className="flex flex-col gap-0.5">
+                          <span className="text-sm font-medium">
+                            {child.title}
+                          </span>
+                          {"description" in child && child.description ? (
+                            <span className="text-xs leading-snug text-muted-foreground/80">
+                              {child.description}
+                            </span>
+                          ) : null}
                         </span>
                       </Link>
                     ))}

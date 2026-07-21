@@ -19,7 +19,7 @@ export default function Process() {
         <div className="text-center mb-12 md:mb-16 w-full">
           <h2 className="text-4xl text-foreground font-medium mb-4 md:text-5xl">
             How We Deliver <br />
-            <span className="font-accent italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
+            <span className="serif-accent font-accent italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
               Developer-First Content
             </span>
           </h2>

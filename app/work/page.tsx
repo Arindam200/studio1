@@ -1,18 +1,16 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Searchbar from "@/components/ui/searchbar";
-import { Suspense } from "react";
 import Hero from "./hero";
 import { Metadata } from "next";
 import { FloatingTags } from "@/components/ui/floating-tags";
-import { Badge } from "@/components/ui/badge";
-import { Users } from "@phosphor-icons/react/dist/ssr";
+import { SectionEyebrow } from "@/components/landing/section-eyebrow";
 import { sideBeamGlowLeftFixed, sideBeamGlowRightFixed } from "@/lib/shadows";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Work",
+  title: "Client Work",
   description:
-    "Technical tutorials, DevRel insights, and developer content from Studio1. Explore AI, cloud, DevOps, and web development guides written by experienced developers.",
+    "Technical tutorials, guides, and developer content Studio1 creates for client teams across AI, cloud, DevOps, and web development.",
   path: "/work",
 });
 
@@ -21,11 +19,9 @@ export default async function Page(props: {
 }) {
   const searchParams = await props.searchParams;
 
-  // Handle query param
   const query =
     typeof searchParams?.query === "string" ? searchParams.query : "";
 
-  // Handle tags param (can be string, array, or undefined)
   let tags: string[] = ["All"];
   if (searchParams?.tags) {
     if (Array.isArray(searchParams.tags)) {
@@ -36,33 +32,47 @@ export default async function Page(props: {
   }
 
   return (
-    <section className="overflow-x-hidden">
-      <div className=" max-h-fit w-full relative max-w-7xl mx-auto flex flex-col mt-24">
-        <div className={sideBeamGlowLeftFixed}></div>
-        <div className={sideBeamGlowRightFixed}></div>
-        {/* <Navbar /> */}
-        <div className="text-4xl w-full sm:text-7xl font-bold relative z-20 pt-8 py-4 text-center">
-          <Badge className="w-fit mx-auto mb-10 flex items-center pb-1 text-sm font-medium shadow-md bg-gradient-to-r from-primary via-primary1 to-primary1/20 text-white">
-            <Users className="size-6 inline-block mr-2" />
-            Written by top experienced developers
-          </Badge>
-          <h1 className="font-bold">Our Work</h1>
-          <p className="text-base font-semibold relative z-20 text-foreground py-4 text-center">
-            We help you build and grow developer communities with <br /> DevRel
-            strategies tailored to your product and audience.
+    <section className="relative overflow-x-hidden">
+      <div className="relative mx-auto mt-24 flex max-h-fit w-full max-w-7xl flex-col px-4 pb-24">
+        <div aria-hidden className={sideBeamGlowLeftFixed} />
+        <div aria-hidden className={sideBeamGlowRightFixed} />
+
+        <div className="relative z-20 mx-auto mt-16 flex w-full max-w-3xl flex-col items-center text-center md:mt-20">
+          <SectionEyebrow className="mb-5">
+            Published for our clients
+          </SectionEyebrow>
+
+          <h1 className="font-inter text-4xl font-normal tracking-tight text-foreground max-sm:text-3xl sm:text-5xl md:text-6xl">
+            Client Work
+          </h1>
+
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Tutorials, guides, and developer content we create for the teams we
+            partner with.
           </p>
-          <div className="flex justify-center text-lg px-4 w-full">
-            <Suspense fallback={<div>Loading...</div>}>
+
+          <div className="mt-8 flex w-full justify-center">
+            <Suspense
+              fallback={
+                <div className="h-12 w-full max-w-2xl animate-pulse rounded-lg bg-muted/40" />
+              }
+            >
               <Searchbar />
             </Suspense>
           </div>
-          <div className="flex mt-10 w-full px-4 items-center justify-center text-lg">
-            <Suspense fallback={<div>Loading...</div>}>
+
+          <div className="mt-6 flex w-full items-center justify-center">
+            <Suspense fallback={null}>
               <FloatingTags />
             </Suspense>
           </div>
         </div>
-        <Suspense fallback={<div>Loading...</div>}>
+
+        <Suspense
+          fallback={
+            <div className="mt-16 h-40 w-full animate-pulse rounded-xl bg-muted/30" />
+          }
+        >
           <Hero query={query} tags={tags} />
         </Suspense>
       </div>

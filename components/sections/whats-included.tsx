@@ -50,7 +50,7 @@ export default function WhatsIncluded({
       >
         <h2 className="font-primary text-4xl md:text-5xl font-normal text-center tracking-tight">
           {headingParts[0]}
-          <span className="font-accent italic font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
+          <span className="serif-accent font-accent italic font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
             {highlightWord}
           </span>
           {headingParts[1] || ""}

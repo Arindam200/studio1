@@ -4,7 +4,6 @@ import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { PostShare } from "@/components/blog/post-share";
-import { BlogCta } from "@/components/blog/blog-cta";
 import { TableOfContents } from "@/components/case-studies/table-of-contents";
 import { Num } from "@/components/ui/num";
 
@@ -36,11 +35,11 @@ export function PostLayout({
         className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mt-10 mb-10 transition-colors"
       >
         <ArrowLeft className="size-4" />
-        Back to blog
+        Back to Our Blog
       </Link>
 
       <div className="grid grid-cols-1 gap-10 xl:grid-cols-[minmax(0,1fr)_220px]">
-        <div className="max-w-3xl">
+        <div className="max-w-4xl">
           <header className="mb-10">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground mb-3">
               <time dateTime={date}>{date}</time>
@@ -53,7 +52,7 @@ export function PostLayout({
                 </>
               ) : null}
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+            <h1 className="font-inter text-3xl md:text-4xl font-bold tracking-tight mb-4">
               {title}
             </h1>
             <p className="text-muted-foreground text-sm mb-4">By {author}</p>
@@ -72,7 +71,7 @@ export function PostLayout({
               alt={title}
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 42rem"
+              sizes="(max-width: 768px) 100vw, 56rem"
               priority
             />
           </div>
@@ -95,11 +94,6 @@ export function PostLayout({
             <PostShare url={shareUrl} title={title} variant="sidebar" />
           </div>
         </aside>
-      </div>
-
-      {/* CTA footer: outside the grid so the sticky ToC ends here */}
-      <div className="max-w-3xl">
-        <BlogCta />
       </div>
     </article>
   );

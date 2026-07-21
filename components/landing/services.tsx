@@ -25,10 +25,22 @@ export default function Services() {
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerChildren}
         id="work"
-        className=" mb-28 px-4 py-20 relative"
+        className=" mb-28 px-4 pt-4 md:pt-6 pb-20 relative"
       >
         <div className={servicesSectionGlowBottom}></div>
         <div className={servicesSectionGlowTop}></div>
+        <motion.div variants={serviceItemVariants} className="w-full z-[20] mb-12 md:mb-16">
+          <HeroStatsStrip
+            highlightValues
+            className="max-w-5xl"
+            stats={[
+              { value: "2M+", label: "content views" },
+              { value: "35+", label: "partner companies" },
+              { value: "50%", label: "cost savings" },
+              { value: "65%+", label: "client retention" },
+            ]}
+          />
+        </motion.div>
         <motion.div
           variants={serviceItemVariants}
           className="flex flex-col z-[20] items-center gap-4 justify-center"
@@ -71,7 +83,7 @@ export default function Services() {
                   </Badge>
                 </div>
                 <p className="text-4xl font-light text-left">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-br font-extrabold from-white via-primary/80 to-white">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-br font-extrabold from-white via-primary/80 to-white dark:from-white dark:via-primary/80 dark:to-white">
                     Blogs
                   </span>{" "}
                   as a<br /> Service
@@ -109,7 +121,7 @@ export default function Services() {
                   </Badge>
                 </div>
                 <p className="text-4xl font-light text-left">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-br font-extrabold from-white via-primary/80 to-white">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-br font-extrabold from-white via-primary/80 to-white dark:from-white dark:via-primary/80 dark:to-white">
                     DevRel
                   </span>{" "}
                   as a<br /> Service
@@ -121,19 +133,6 @@ export default function Services() {
               </div>
             </Link>
             <div className={servicesCenterGlow}></div>
-          </motion.div>
-
-          <motion.div variants={serviceItemVariants} className="w-full z-[20]">
-            <HeroStatsStrip
-              highlightValues
-              className="mt-16 md:mt-16 max-w-5xl"
-              stats={[
-                { value: "2M+", label: "content views" },
-                { value: "35+", label: "partner companies" },
-                { value: "50%", label: "cost savings" },
-                { value: "65%+", label: "client retention" },
-              ]}
-            />
           </motion.div>
         </div>
       </motion.section>

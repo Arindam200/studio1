@@ -12,9 +12,13 @@ interface AllblogsProps {
 
 export default function Hero({ query, tags }: AllblogsProps) {
   return (
-    <div className="mt-20 px-1.5 max-w-7xl mx-auto">
-      <Suspense fallback={<div>Loading...</div>}>
-        <Allblogs query={query || ""} tags={tags || "All"} />
+    <div className="relative z-20 mx-auto mt-16 w-full max-w-7xl md:mt-20">
+      <Suspense
+        fallback={
+          <div className="h-40 w-full animate-pulse rounded-xl bg-muted/30" />
+        }
+      >
+        <Allblogs query={query || ""} tags={tags.length ? tags : ["All"]} />
       </Suspense>
     </div>
   );

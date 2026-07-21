@@ -82,7 +82,7 @@ export default function TestimonialCard({
               {company ? (
                 <>
                   {", "}
-                  <span className="font-accent italic text-foreground/70">
+                  <span className="serif-accent font-accent italic text-foreground/70">
                     {company}
                   </span>
                 </>

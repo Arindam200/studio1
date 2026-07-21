@@ -89,11 +89,11 @@ export default function AboutUs() {
         >
           <h1 className="text-3xl md:text-5xl font-primary font-normal tracking-tight text-center leading-tight">
             Amplifying Your{" "}
-            <span className="font-accent italic font-bold text-primary/75 text-[1.08em]">
+            <span className="serif-accent font-accent italic font-bold text-primary/75 text-[1.08em]">
               Product Story
             </span>{" "}
             for{" "}
-            <span className="font-accent italic font-bold text-primary/75 text-[1.08em]">
+            <span className="serif-accent font-accent italic font-bold text-primary/75 text-[1.08em]">
               Developers
             </span>{" "}
             <br /> One Blog, Video and Initiatives at a Time

@@ -12,6 +12,14 @@ export type CaseStudyMetric = {
   evidence?: string;
 };
 
+export type CaseStudyQuote = {
+  text: string;
+  author: string;
+  role?: string;
+  /** Public source for the quote (LinkedIn post, review, etc.). */
+  source?: string;
+};
+
 export type CaseStudyMeta = {
   slug: string;
   /** Outcome-driven headline, e.g. "How Memori went from launch to 12,000+ GitHub stars". */
@@ -37,8 +45,10 @@ export type CaseStudyMeta = {
   order: number;
   cover: string;
   tags: string[];
-  /** Verified outcome numbers only: never invented. Max 3 rendered. */
+  /** Verified outcome numbers only: never invented. Max 3 rendered in highlights. */
   metrics: CaseStudyMetric[];
+  /** Client or community quotes. First quote is highlighted when no metrics exist. */
+  quotes: CaseStudyQuote[];
   /** Qualitative outcomes for impact lists and metric-light studies. */
   outcomes: string[];
   /** Theme-matched closing CTA line, e.g. "Need docs that convert developers?" */
@@ -66,6 +76,7 @@ type Frontmatter = {
   cover?: string;
   tags?: string[];
   metrics?: CaseStudyMetric[];
+  quotes?: CaseStudyQuote[];
   outcomes?: string[];
   ctaHook?: string;
 };
@@ -88,6 +99,7 @@ function toMeta(slug: string, data: Frontmatter, content: string): CaseStudyMeta
     cover: data.cover ?? "/opengraph-image.png",
     tags: Array.isArray(data.tags) ? data.tags : [],
     metrics: Array.isArray(data.metrics) ? data.metrics : [],
+    quotes: Array.isArray(data.quotes) ? data.quotes : [],
     outcomes: Array.isArray(data.outcomes) ? data.outcomes : [],
     ctaHook: data.ctaHook ?? "",
     readingTimeMinutes: estimateReadingMinutes(content),
@@ -135,4 +147,38 @@ export function getCaseStudyBySlug(slug: string): CaseStudy | null {
 
 export function getCaseStudySlugs(): string[] {
   return getAllCaseStudies().map((s) => s.slug);
+}
+
+/** Descriptive alt text for case study cover images in cards, OG, and JSON-LD. */
+export function getCaseStudyCoverAlt(
+  study: Pick<CaseStudyMeta, "client" | "title" | "category">,
+): string {
+  return `${study.client} case study cover: ${study.title}`;
+}
+
+const GENERIC_IMAGE_ALT = /^(image|photo|picture|screenshot|img)$/i;
+
+/** Human-readable fallback from a CDN or local image path. */
+export function humanizeImageSrc(src: string): string {
+  const filename = src.split("?")[0]?.split("/").pop() ?? "image";
+  return filename
+    .replace(/\.[^.]+$/, "")
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/** Prefer explicit alt; fall back to a humanized filename when missing or generic. */
+export function resolveCaseStudyImageAlt(
+  alt: string | undefined,
+  src: string | undefined,
+): string {
+  const trimmed = alt?.trim();
+  if (trimmed && !GENERIC_IMAGE_ALT.test(trimmed)) {
+    return trimmed;
+  }
+  if (src) {
+    return humanizeImageSrc(src);
+  }
+  return "Case study illustration";
 }

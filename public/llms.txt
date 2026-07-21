@@ -10,6 +10,7 @@ Studio1 helps developer-focused companies publish tutorials, documentation, and 
 - [DevRel as a Service](https://studio1hq.com/devrel-as-service): End-to-end developer relations programs -- strategy, content, community, and events.
 - [Audit Services](https://studio1hq.com/audit-services): Developer experience and documentation audits.
 - [Tech Video Production](https://studio1hq.com/video-production): Technical video content for developer audiences.
+- [Content Creation](https://studio1hq.com/content-creation): Channel strategy, scripting, editing, thumbnails, SEO titles, and publishing cadence for developer YouTube.
 - [Product Launch Support](https://studio1hq.com/product-launch): Launch campaigns targeting developer communities.
 - [Organic Campaign](https://studio1hq.com/organic-campaign): SEO and organic growth campaigns for developer products.
 - [Influencer Management](https://studio1hq.com/influencer-management): Developer influencer outreach and management.
@@ -17,8 +18,8 @@ Studio1 helps developer-focused companies publish tutorials, documentation, and 
 ## Key Pages
 
 - [Homepage](https://studio1hq.com/)
-- [Our Work](https://studio1hq.com/work)
-- [Blog](https://studio1hq.com/blog)
+- [Client Work](https://studio1hq.com/work): Tutorials, guides, and developer content Studio1 creates for client teams.
+- [Our Blog](https://studio1hq.com/blog): Articles and insights from the Studio1 team.
 - [Pricing](https://studio1hq.com/pricing)
 - [About Us](https://studio1hq.com/about-us)
 - [Case Studies](https://studio1hq.com/case-studies)

@@ -4,6 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import {
   getCaseStudyBySlug,
+  getCaseStudyCoverAlt,
   getCaseStudySlugs,
   getRelatedCaseStudies,
 } from "@/lib/case-studies";
@@ -35,6 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: `/case-studies/${slug}`,
     keywords: study.tags,
     image: study.cover,
+    imageAlt: getCaseStudyCoverAlt(study),
     publishedTime: study.date,
     tags: study.tags,
   });
@@ -72,7 +74,11 @@ export default async function CaseStudyPage({ params }: Props) {
       "@type": "WebPage",
       "@id": `${baseUrl}/case-studies/${slug}`,
     },
-    image: absoluteImageUrl(study.cover),
+    image: {
+      "@type": "ImageObject",
+      url: absoluteImageUrl(study.cover),
+      caption: getCaseStudyCoverAlt(study),
+    },
     keywords: study.tags.join(", "),
     articleSection: "Case Studies",
   };
