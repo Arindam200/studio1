@@ -14,8 +14,11 @@ import {
 } from "@/components/pages/shared/service-hero-layout";
 import { heroAccentGlow } from "@/lib/shadows";
 import { ServiceHeroTiles } from "@/components/ui/service-hero-tiles";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+  const t = useTranslations("ServiceHero.devrel");
+
   return (
     <section className="overflow-x-hidden max-h-fit">
       <div id="stats" className={serviceHeroOuterClassName}>
@@ -30,7 +33,7 @@ export default function Hero() {
           <div className={serviceHeroContentClassName}>
           <motion.div variants={itemVariants}>
             <Badge className="text-sm font-medium pb-1 flex gap-2 items-center">
-              <IconPackages className="size-4" /> Services
+              <IconPackages className="size-4" /> {t("badge")}
             </Badge>
           </motion.div>
 
@@ -39,18 +42,16 @@ export default function Hero() {
             variants={itemVariants}
           >
             <span className="serif-accent font-accent text-[1.08em] font-normal italic text-primary/75">
-              DevRel
+              {t("titleAccent")}
             </span>{" "}
-            as a Service
+            {t("titleRest")}
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
             className="md:text-xl text-base font-medium text-center"
           >
-            We build and grow developer communities with DevRel programs <br />
-            tailored to your product: content, video, audits, launches, and
-            campaigns.
+            {t("description")}
           </motion.p>
 
           <motion.div
@@ -64,7 +65,7 @@ export default function Hero() {
               asChild
             >
               <Link href="https://cal.com/studio1/collab">
-                Book a Call <IconPhoneFilled className="size-10" />
+                {t("primaryCta")} <IconPhoneFilled className="size-10" />
               </Link>
             </Button>
             <Button
@@ -74,7 +75,7 @@ export default function Hero() {
               asChild
             >
               <Link href="#work">
-                Explore Services <IconPackages className="size-10" />
+                {t("secondaryCta")} <IconPackages className="size-10" />
               </Link>
             </Button>
           </motion.div>
@@ -87,10 +88,10 @@ export default function Hero() {
             <HeroStatsStrip
               highlightValues
               stats={[
-                { value: "10+", label: "high-impact events" },
-                { value: "5+", label: "teams helped" },
-                { value: "50%", label: "cost savings" },
-                { value: "#1", label: "Product Hunt launch" },
+                { value: "10+", label: t("stats.events") },
+                { value: "5+", label: t("stats.teams") },
+                { value: "50%", label: t("stats.savings") },
+                { value: "#1", label: t("stats.launch") },
               ]}
             />
           </motion.div>

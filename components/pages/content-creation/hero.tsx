@@ -6,8 +6,11 @@ import { itemVariants, staggerChildren } from "@/lib/animations";
 import { IconPhoneFilled } from "@tabler/icons-react";
 import { YoutubeLogo } from "@phosphor-icons/react";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+  const t = useTranslations("ServiceHero.video");
+
   return (
     <section className="relative overflow-hidden border-b">
       <div
@@ -26,7 +29,7 @@ export default function Hero() {
           <motion.div variants={itemVariants} className="mb-6">
             <Badge className="gap-2 px-3 py-1 text-sm font-medium">
               <YoutubeLogo className="size-4" weight="fill" />
-              YouTube for developer brands
+              {t("badge")}
             </Badge>
           </motion.div>
 
@@ -34,9 +37,9 @@ export default function Hero() {
             variants={itemVariants}
             className="max-w-xl font-inter text-5xl font-medium tracking-tight md:text-6xl lg:text-7xl"
           >
-            We make YouTube videos{" "}
+            {t("titlePrefix")}{" "}
             <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
-              for developer brands.
+              {t("titleHighlight")}
             </span>
           </motion.h1>
 
@@ -44,7 +47,7 @@ export default function Hero() {
             variants={itemVariants}
             className="mt-6 max-w-lg text-base text-muted-foreground md:text-lg"
           >
-            Scripts, edits, thumbnails, and publishing, handled for you.
+            {t("description")}
           </motion.p>
 
           <motion.div variants={itemVariants} className="mt-10">
@@ -54,7 +57,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Book a Call <IconPhoneFilled className="size-5" />
+                {t("primaryCta")} <IconPhoneFilled className="size-5" />
               </a>
             </Button>
           </motion.div>
@@ -80,11 +83,11 @@ export default function Hero() {
 
             <div className="space-y-4 border-t px-6 py-6 md:px-7 md:py-7">
               <p className="font-inter text-xl font-medium leading-snug tracking-tight md:text-2xl">
-                Ship your first agent in 15 minutes
+                {t("previewTitle")}
               </p>
 
               <p className="font-secondary text-sm text-muted-foreground">
-                Studio1 for DevTools · Thumbnail A/B ready
+                {t("previewSubtitle")}
               </p>
             </div>
           </div>

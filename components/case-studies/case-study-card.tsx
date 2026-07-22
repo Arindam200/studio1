@@ -97,37 +97,39 @@ export function CardMedia({
 }) {
   const containerClass =
     variant === "featured"
-      ? "aspect-[16/10] md:aspect-auto md:h-full md:min-h-0"
+      ? "aspect-[16/9] p-3 md:aspect-auto md:h-full md:min-h-0 md:p-4"
       : variant === "compact"
-        ? "aspect-[16/9]"
-        : "aspect-[16/10]";
+        ? "aspect-[16/9] p-2"
+        : "aspect-[16/9] p-3";
 
   const imageClass =
     variant === "featured"
-      ? "rounded-xl object-cover object-center scale-95 transition-transform duration-700 ease-out group-hover:scale-[0.98] motion-reduce:transform-none"
-      : "object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04] motion-reduce:transform-none";
+      ? "rounded-lg object-contain object-center transition-transform duration-700 ease-out group-hover:scale-[1.02] motion-reduce:transform-none"
+      : "rounded-lg object-contain object-center transition-transform duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transform-none";
 
   return (
     <div
       className={cn(
-        "relative w-full overflow-hidden rounded-xl bg-muted/40 ring-1 ring-inset ring-foreground/[0.07] dark:ring-white/[0.07]",
+        "relative w-full overflow-hidden rounded-xl bg-[linear-gradient(135deg,hsl(var(--muted)/0.62),hsl(var(--background)),hsl(var(--primary)/0.08))] ring-1 ring-inset ring-foreground/[0.07] dark:bg-[linear-gradient(135deg,hsl(var(--muted)/0.22),hsl(var(--background)),hsl(var(--primary)/0.1))] dark:ring-white/[0.07]",
         containerClass,
       )}
     >
-      <Image
-        src={study.cover}
-        alt={getCaseStudyCoverAlt(study)}
-        fill
-        className={imageClass}
-        sizes={
-          variant === "compact"
-            ? "(max-width: 640px) 100vw, 24rem"
-            : variant === "featured"
-              ? "(max-width: 768px) 100vw, 34rem"
-              : "(max-width: 768px) 100vw, 40rem"
-        }
-        priority={priority}
-      />
+      <div className="relative h-full w-full overflow-hidden rounded-lg bg-background/70 shadow-[0_16px_40px_-24px_rgba(0,0,0,0.45)] ring-1 ring-black/5 dark:bg-background/45 dark:ring-white/10">
+        <Image
+          src={study.cover}
+          alt={getCaseStudyCoverAlt(study)}
+          fill
+          className={imageClass}
+          sizes={
+            variant === "compact"
+              ? "(max-width: 640px) 100vw, 24rem"
+              : variant === "featured"
+                ? "(max-width: 768px) 100vw, 34rem"
+                : "(max-width: 768px) 100vw, 40rem"
+          }
+          priority={priority}
+        />
+      </div>
     </div>
   );
 }
@@ -136,9 +138,11 @@ export function CardMedia({
 export function CaseStudyCard({
   study,
   variant = "default",
+  priority = false,
 }: {
   study: CaseStudyMeta;
   variant?: Exclude<CardVariant, "featured">;
+  priority?: boolean;
 }) {
   return (
     <Link
@@ -148,7 +152,7 @@ export function CaseStudyCard({
       <div aria-hidden className={glassCardEdgeHighlight} />
       <div aria-hidden className={glassCardHoverWash} />
 
-      <CardMedia study={study} variant={variant} />
+      <CardMedia study={study} variant={variant} priority={priority} />
 
       <div className="relative z-[1] flex min-w-0 flex-1 items-start justify-between gap-4 p-4 pt-5">
         <div className="min-w-0">

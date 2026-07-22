@@ -34,7 +34,7 @@ const layers = [
 
 export default function Packaging() {
   return (
-    <section id="packaging" className="relative py-28 md:py-36">
+    <section className="relative py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={staggerChildren}

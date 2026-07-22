@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { baseUrl } from "@/app/sitemap";
+import { baseUrl } from "@/lib/site";
+import {
+  DEFAULT_LOCALE,
+  localeMeta,
+  localizedUrl,
+  type Locale,
+} from "@/lib/i18n";
 
 export { baseUrl };
 
 export const DEFAULT_OG_IMAGE = "/opengraph-image.png";
 export const DEFAULT_OG_IMAGE_ALT =
-  "Studio1 - Technical Content & DevRel Services";
+  "Studio1 - Technical Content and Developer Growth Services";
 
 const defaultOgImageUrl = `${baseUrl}${DEFAULT_OG_IMAGE}`;
 
@@ -40,6 +46,7 @@ type PageMetadataOptions = {
   title: string;
   description: string;
   path: string;
+  locale?: Locale;
   keywords?: string[];
   type?: "website" | "article";
 };
@@ -48,25 +55,23 @@ export function pageMetadata({
   title,
   description,
   path,
+  locale = DEFAULT_LOCALE,
   keywords,
   type = "website",
 }: PageMetadataOptions): Metadata {
-  const url = pageUrl(path);
+  const url = localizedUrl(path, locale, baseUrl);
   const brandedTitle = `${title} | Studio1`;
 
   return {
     title,
     description,
     ...(keywords?.length ? { keywords } : {}),
-    alternates: {
-      canonical: url,
-    },
     openGraph: {
       title: brandedTitle,
       description,
       url,
       siteName: "Studio1",
-      locale: "en_US",
+      locale: localeMeta[locale].htmlLang.replace("-", "_"),
       type,
       images: [...defaultOgImages],
     },
@@ -80,34 +85,40 @@ export function pageMetadata({
   };
 }
 
-const HOME_TITLE = "Technical Content & DevRel Agency for DevTools";
+const HOME_TITLE = "Technical Content & Developer Growth Agency for DevTools";
 const HOME_DESCRIPTION =
-  "Studio1 is a technical content and DevRel partner for SaaS and devtool teams. We produce tutorials, docs, and developer programs that drive adoption. Book a call.";
+  "Studio1 is a technical content and developer growth partner for SaaS and devtool teams. We produce tutorials, docs, videos, launches, and developer programs that drive adoption.";
 
-export function homePageMetadata(): Metadata {
-  const brandedTitle = `${HOME_TITLE} | Studio1`;
+export function homePageMetadata({
+  title = HOME_TITLE,
+  description = HOME_DESCRIPTION,
+  locale = DEFAULT_LOCALE,
+}: {
+  title?: string;
+  description?: string;
+  locale?: Locale;
+} = {}): Metadata {
+  const brandedTitle = `${title} | Studio1`;
+  const url = localizedUrl("/", locale, baseUrl);
 
   return {
     title: {
       absolute: brandedTitle,
     },
-    description: HOME_DESCRIPTION,
-    alternates: {
-      canonical: baseUrl,
-    },
+    description,
     openGraph: {
       title: brandedTitle,
-      description: HOME_DESCRIPTION,
-      url: baseUrl,
+      description,
+      url,
       siteName: "Studio1",
-      locale: "en_US",
+      locale: localeMeta[locale].htmlLang.replace("-", "_"),
       type: "website",
       images: [...defaultOgImages],
     },
     twitter: {
       title: brandedTitle,
       card: "summary_large_image",
-      description: HOME_DESCRIPTION,
+      description,
       images: [defaultOgImageUrl],
       creator: "@Studio1HQ",
     },
@@ -142,9 +153,6 @@ export function articlePageMetadata({
     title,
     description,
     ...(keywords?.length ? { keywords } : {}),
-    alternates: {
-      canonical: url,
-    },
     openGraph: {
       title: brandedTitle,
       description,

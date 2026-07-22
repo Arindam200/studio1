@@ -8,8 +8,10 @@ import { SectionEyebrow } from "./section-eyebrow";
 import { motion, AnimatePresence } from "motion/react";
 import { staggerContainer, itemVariants, headerVariants } from "@/lib/animations";
 import { sideBeamGlowLeft, sideBeamGlowRight } from "@/lib/shadows";
+import { useTranslations } from "next-intl";
 
 export default function Testimonials() {
+  const t = useTranslations("Testimonials");
   const [showAll, setShowAll] = useState(false);
   const initialTestimonials = Data.Testimonials.slice(0, 6);
   const remainingTestimonials = Data.Testimonials.slice(6);
@@ -28,20 +30,19 @@ export default function Testimonials() {
           variants={staggerContainer}
         >
           <motion.div variants={headerVariants}>
-            <SectionEyebrow>Testimonials</SectionEyebrow>
+            <SectionEyebrow>{t("eyebrow")}</SectionEyebrow>
           </motion.div>
           <motion.h2
             variants={headerVariants}
             className="text-4xl md:text-5xl font-normal text-center"
           >
-            What Our Clients Say
+            {t("title")}
           </motion.h2>
           <motion.p
             variants={headerVariants}
             className="text-center text-base mt-2 max-w-2xl"
           >
-            Hear from the founders, CEOs and builders who trust our team to
-            tell their product story.
+            {t("description")}
           </motion.p>
         </motion.div>
 
@@ -97,7 +98,7 @@ export default function Testimonials() {
             transition={{ delay: 0.8, duration: 0.5 }}
           >
             <Button variant="gradient" size="cta" onClick={() => setShowAll(true)}>
-              See More
+              {t("seeMore")}
             </Button>
           </motion.div>
         )}

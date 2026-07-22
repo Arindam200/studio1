@@ -14,10 +14,13 @@ import {
 } from "@/components/pages/shared/service-hero-layout";
 import { heroAccentGlow } from "@/lib/shadows";
 import { ServiceHeroTiles } from "@/components/ui/service-hero-tiles";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+  const t = useTranslations("ServiceHero.docs");
+
   return (
-    <section className="overflow-x-hidden max-h-fit">
+    <section id="documentation-dx-audits" className="overflow-x-hidden max-h-fit">
       <div id="stats" className={serviceHeroOuterClassName}>
         <ServiceHeroTiles />
         <motion.div
@@ -30,7 +33,7 @@ export default function Hero() {
           <div className={serviceHeroContentClassName}>
             <motion.div variants={itemVariants}>
               <Badge className="text-sm font-medium pb-1 flex gap-2 items-center">
-                <IconPackages className="size-4" /> Services
+                <IconPackages className="size-4" /> {t("badge")}
               </Badge>
             </motion.div>
 
@@ -39,18 +42,16 @@ export default function Hero() {
               variants={itemVariants}
             >
               <span className="serif-accent font-accent text-[1.08em] font-normal italic text-primary/75">
-                Docs
+                {t("titleAccent")}
               </span>{" "}
-              as a Service
+              {t("titleRest")}
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
               className="md:text-xl text-base font-medium text-center"
             >
-              Docs audits, documentation, and DX improvements that get{" "}
-              <br className="hidden md:block" />
-              developers to first success with your product.
+              {t("description")}
             </motion.p>
 
             <motion.div
@@ -64,7 +65,7 @@ export default function Hero() {
                 asChild
               >
                 <Link href="https://cal.com/studio1/collab">
-                  Book a Call <IconPhoneFilled className="size-10" />
+                  {t("primaryCta")} <IconPhoneFilled className="size-10" />
                 </Link>
               </Button>
               <Button
@@ -74,7 +75,7 @@ export default function Hero() {
                 asChild
               >
                 <Link href="#work">
-                  Explore Services <IconPackages className="size-10" />
+                  {t("secondaryCta")} <IconPackages className="size-10" />
                 </Link>
               </Button>
             </motion.div>
@@ -88,9 +89,9 @@ export default function Hero() {
               highlightValues
               className="md:grid-cols-3"
               stats={[
-                { value: "25+", label: "docs audits" },
-                { value: "150+", label: "pages shipped" },
-                { value: "50%", label: "faster first success" },
+                { value: "25+", label: t("stats.audits") },
+                { value: "150+", label: t("stats.pages") },
+                { value: "50%", label: t("stats.success") },
               ]}
             />
           </motion.div>

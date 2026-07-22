@@ -13,7 +13,7 @@ const cards = Data.Blogs.slice(0, 6);
 export default function BlogSection() {
   return (
     <motion.div
-      id="work"
+      id="blog-examples"
       className="relative overflow-hidden sm:px-20 px-2.5 py-10 sm:py-20"
       initial="hidden"
       whileInView="visible"

@@ -12,8 +12,11 @@ import {
 } from "@/components/pages/shared/service-hero-layout";
 import { heroAccentGlow } from "@/lib/shadows";
 import { ServiceHeroTiles } from "@/components/ui/service-hero-tiles";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+  const t = useTranslations("ServiceHero.technicalContent");
+
   return (
     <>
       <div id="stats" className={serviceHeroOuterClassName}>
@@ -29,7 +32,7 @@ export default function Hero() {
           <div className={serviceHeroContentClassName}>
           <motion.div variants={itemVariants}>
             <Badge className="text-sm font-medium pb-1 shadow-md bg-gradient-to-r from-primarySurface via-primary1 to-primary1/20 text-white flex gap-2 items-center dark:from-primary dark:via-primary1 dark:to-primary1/60">
-              <IconPackages className="size-4" /> Services
+              <IconPackages className="size-4" /> {t("badge")}
             </Badge>
           </motion.div>
 
@@ -38,17 +41,16 @@ export default function Hero() {
             variants={itemVariants}
           >
             <span className="serif-accent font-accent text-[1.08em] font-normal italic text-primary/75">
-              Blogs
+              {t("titleAccent")}
             </span>{" "}
-            as a Service
+            {t("titleRest")}
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
             className="md:text-xl text-balance w-full md:w-[50%] text-base font-medium text-center"
           >
-            We create developer-focused content that builds trust, boosts
-            product visibility and drives technical adoption.
+            {t("description")}
           </motion.p>
 
           <motion.div
@@ -66,15 +68,18 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Book a Call <IconPhoneFilled className="size-10" />
+                {t("primaryCta")} <IconPhoneFilled className="size-10" />
               </a>
             </Button>
             <Button
               variant="outline-subtle"
               size="cta"
               className="w-full sm:w-auto"
+              asChild
             >
-              Explore Services <IconPackages className="size-10" />
+              <a href="#work">
+                {t("secondaryCta")} <IconPackages className="size-10" />
+              </a>
             </Button>
           </motion.div>
           </div>
@@ -86,10 +91,10 @@ export default function Hero() {
             <HeroStatsStrip
               highlightValues
               stats={[
-                { value: "2M+", label: "content views" },
-                { value: "25+", label: "teams helped" },
-                { value: "50%", label: "cost savings" },
-                { value: "65%+", label: "client retention" },
+                { value: "2M+", label: t("stats.views") },
+                { value: "25+", label: t("stats.teams") },
+                { value: "50%", label: t("stats.savings") },
+                { value: "65%+", label: t("stats.retention") },
               ]}
             />
           </motion.div>

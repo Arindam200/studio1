@@ -4,6 +4,11 @@ import Image from "next/image";
 import { ArrowLeft, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { NumericText } from "@/components/ui/num";
 import { CaseStudyHighlights } from "@/components/case-studies/case-study-highlights";
+import {
+  CaseStudyProof,
+  CaseStudyScope,
+  CaseStudySnapshot,
+} from "@/components/case-studies/case-study-detail-panels";
 import { TableOfContents } from "@/components/case-studies/table-of-contents";
 import { getClientLogo } from "@/components/case-studies/client-logos";
 import { RelatedCaseStudies } from "@/components/case-studies/related-case-studies";
@@ -35,10 +40,7 @@ export function CaseStudyLayout({
 }: CaseStudyLayoutProps) {
   const logo = getClientLogo(study.slug);
   const meta = [study.industry, study.category].filter(Boolean);
-  const showHighlights =
-    study.metrics.length > 0 ||
-    study.quotes.length > 0 ||
-    study.outcomes.length > 0;
+  const showHighlights = study.metrics.length > 0;
 
   return (
     <>
@@ -81,7 +83,7 @@ export function CaseStudyLayout({
               </div>
             </div>
 
-            <h1 className="mt-8 font-inter text-3xl font-bold leading-[1.15] tracking-tight md:text-4xl lg:text-5xl">
+            <h1 className="mt-8 font-primary text-3xl font-normal leading-[1.15] tracking-tight md:text-4xl lg:text-5xl">
               <NumericText>{study.title}</NumericText>
             </h1>
 
@@ -97,6 +99,9 @@ export function CaseStudyLayout({
             </div>
           ) : null}
 
+          <CaseStudySnapshot study={study} />
+          <CaseStudyScope study={study} />
+
           {/* Narrative: max-w-none so width comes from the column wrapper, not prose defaults. */}
           <div
             data-mdx-content
@@ -104,6 +109,8 @@ export function CaseStudyLayout({
           >
             {children}
           </div>
+
+          <CaseStudyProof study={study} />
 
           {/* Credentials */}
           {study.services.length > 0 || study.website ? (

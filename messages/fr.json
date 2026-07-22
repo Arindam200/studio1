@@ -1,0 +1,291 @@
+{
+  "LocaleSwitcher": {
+    "label": "Langue",
+    "english": "Anglais",
+    "french": "Français",
+    "spanish": "Espagnol",
+    "hindi": "Hindi",
+    "chinese": "Chinois"
+  },
+  "Metadata": {
+    "home": {
+      "title": "Agence de contenu technique et croissance développeur pour DevTools",
+      "description": "Studio1 est un partenaire de contenu technique et de croissance développeur pour les équipes SaaS et devtool. Nous produisons tutoriels, docs, vidéos, lancements et programmes DevRel qui stimulent l’adoption."
+    },
+    "services": {
+      "technicalContent": {
+        "title": "Services de marketing de contenu technique",
+        "description": "Marketing de contenu technique pour produits développeur : tutoriels, guides d’intégration, articles SEO et contenus avec code qui construisent la confiance et stimulent l’adoption."
+      },
+      "docs": {
+        "title": "Services de documentation développeur et audits DX",
+        "description": "Documentation développeur et audits DX pour produits IA et DevTool : onboarding, clarté API, quickstarts, références et chemin plus clair vers le premier succès."
+      },
+      "video": {
+        "title": "Services de production vidéo développeur",
+        "description": "Production vidéo développeur pour startups IA et DevTool : démos techniques, tutoriels, scripts, montages, miniatures, titres SEO, Shorts et cadence de publication."
+      },
+      "devrel": {
+        "title": "Developer Relations et campagnes de croissance",
+        "description": "DevRel et campagnes de croissance pour produits développeur : advocacy, programmes communautaires, lancements produit, distribution organique et gestion d’influenceurs."
+      }
+    }
+  },
+  "ServiceHero": {
+    "technicalContent": {
+      "badge": "Services",
+      "titleAccent": "Contenu technique",
+      "titleRest": "marketing",
+      "description": "Nous créons des tutoriels développeur, des guides et du contenu SEO qui construisent la confiance, améliorent la visibilité produit et stimulent l’adoption technique.",
+      "primaryCta": "Réserver un appel",
+      "secondaryCta": "Explorer les services",
+      "stats": {
+        "views": "vues de contenu",
+        "teams": "équipes aidées",
+        "savings": "économies de coûts",
+        "retention": "fidélisation client"
+      }
+    },
+    "docs": {
+      "badge": "Services",
+      "titleAccent": "Documentation développeur",
+      "titleRest": "et audits DX",
+      "description": "Audits de documentation, revues DX et améliorations docs pour amener les développeurs au premier succès avec votre produit.",
+      "primaryCta": "Réserver un appel",
+      "secondaryCta": "Explorer les services",
+      "stats": {
+        "audits": "audits docs",
+        "pages": "pages livrées",
+        "success": "premier succès plus rapide"
+      }
+    },
+    "devrel": {
+      "badge": "Services",
+      "titleAccent": "Developer Relations",
+      "titleRest": "et campagnes de croissance",
+      "description": "Advocacy développeur, croissance communautaire, lancements, distribution organique et programmes créateurs pour produits développeur.",
+      "primaryCta": "Réserver un appel",
+      "secondaryCta": "Explorer les services",
+      "stats": {
+        "events": "événements à fort impact",
+        "teams": "équipes aidées",
+        "savings": "économies de coûts",
+        "launch": "lancement Product Hunt"
+      }
+    },
+    "video": {
+      "badge": "Production vidéo développeur",
+      "titlePrefix": "Nous créons des vidéos techniques",
+      "titleHighlight": "pour les marques développeur.",
+      "description": "Démos produit, tutoriels, scripts, montages, miniatures et publication, pris en charge pour les marques développeur.",
+      "primaryCta": "Réserver un appel",
+      "previewTitle": "Lancez votre premier agent en 15 minutes",
+      "previewSubtitle": "Studio1 pour DevTools · Miniature prête pour A/B test"
+    }
+  },
+  "Hero": {
+    "badgePrefix": "Approuvé par",
+    "badgeSuffix": "équipes DevTool et SaaS",
+    "badgeSuffixShort": "équipes",
+    "titleLine1": "Contenu technique et",
+    "titleLine2": "partenaire pour",
+    "description": "Nous aidons les équipes SaaS et devtool à publier des tutoriels, des docs et des programmes DevRel qui se positionnent en recherche, activent les développeurs et construisent une confiance durable.",
+    "descriptionRich": "Nous aidons les <strong>équipes SaaS et devtool</strong> à publier des <strong>tutoriels, des docs et des programmes DevRel</strong><br></br>qui se positionnent en recherche, activent les <strong>développeurs</strong> et construisent une <strong>confiance durable</strong>.",
+    "primaryCta": "Réserver un appel stratégique",
+    "secondaryCta": "Voir nos services",
+    "trustedAria": "Approuvé par plus de 35 équipes devtool",
+    "trustedPrefix": "Approuvé par",
+    "trustedSuffix": "équipes devtool"
+  },
+  "Nav": {
+    "contact": "Contact",
+    "items": {
+      "about": "À propos",
+      "blog": "Notre blog",
+      "caseStudies": "Études de cas",
+      "clientWork": "Travaux clients",
+      "content": "Contenu",
+      "devrel": "DevRel et croissance",
+      "docs": "Documentation et audits DX",
+      "globalReach": "Portée mondiale",
+      "home": "Accueil",
+      "howItWorks": "Fonctionnement",
+      "offerings": "Offres",
+      "product": "Produit",
+      "results": "Résultats",
+      "services": "Services",
+      "technicalContent": "Marketing de contenu technique",
+      "testimonials": "Témoignages",
+      "top": "Début",
+      "trustedBy": "Ils nous font confiance",
+      "video": "Production vidéo développeur",
+      "whyUs": "Pourquoi nous"
+    },
+    "descriptions": {
+      "blog": "Articles et idées de l’équipe Studio1",
+      "caseStudies": "Preuves issues de nos travaux docs, DevRel, lancement et contenu",
+      "clientWork": "Tutoriels et guides écrits pour nos clients"
+    }
+  },
+  "HomeDomains": {
+    "eyebrow": "Ce que nous proposons",
+    "titlePrefix": "Les services que nous exécutons pour les",
+    "titleHighlight": "marques développeur",
+    "description": "Contenu, advocacy, vidéo, docs, croissance, lancements et programmes d’influence : tout le périmètre que nous prenons en charge.",
+    "explore": "Explorer le service",
+    "offerings": [
+      {
+        "label": "Rédaction de contenu technique",
+        "description": "Tutoriels développeur, guides et documentation qui construisent la confiance, se positionnent en recherche et stimulent l’adoption produit."
+      },
+      {
+        "label": "Developer advocacy",
+        "description": "Programmes DevRel de bout en bout pour développer des communautés autour de votre produit, de la stratégie au contenu et aux événements."
+      },
+      {
+        "label": "Production vidéo développeur",
+        "description": "Démos produit, tutoriels et vidéos d’intégration pour les équipes IA et DevTool qui doivent rendre leur produit clair."
+      },
+      {
+        "label": "Création de contenu",
+        "description": "Stratégie de chaîne, scripts, montages, miniatures et titres SEO avec une cadence pensée pour la croissance YouTube."
+      },
+      {
+        "label": "Documentation et audits DX",
+        "description": "Audit docs, documentation et améliorations DX : revues d’onboarding, guides livrables et chemin plus clair vers le premier succès."
+      },
+      {
+        "label": "Campagne de croissance organique",
+        "description": "Campagnes multicanales qui créent de la traction, stimulent l’adoption et installent votre produit dans les communautés développeur."
+      },
+      {
+        "label": "Support de lancement produit",
+        "description": "Stratégie, contenu et activation communautaire pour maximiser la visibilité du lancement et convertir l’intérêt en utilisateurs."
+      },
+      {
+        "label": "Gestion d’influenceurs",
+        "description": "Trouver les bons créateurs, gérer les campagnes et développer une visibilité authentique auprès des audiences développeur."
+      }
+    ]
+  },
+  "HomeServices": {
+    "eyebrow": "Services",
+    "title": "Ce que nous faisons",
+    "description": "Nous créons des tutoriels techniques, de la documentation et des programmes DevRel qui aident les développeurs à réussir avec votre produit et à l’adopter.",
+    "stats": {
+      "views": "vues de contenu",
+      "companies": "entreprises partenaires",
+      "savings": "économies de coûts",
+      "retention": "fidélisation client"
+    },
+    "cards": {
+      "content": {
+        "badgeOne": "vues",
+        "badgeTwo": "équipes",
+        "titleStrong": "Contenu",
+        "titleRest": "technique",
+        "description": "Tutoriels, guides et contenu SEO pour développeurs qui se positionnent et stimulent l’adoption produit."
+      },
+      "growth": {
+        "badgeOne": "événements",
+        "badgeTwo": "lancement PH",
+        "titleStrong": "Croissance",
+        "titleRest": "développeur",
+        "description": "DevRel, lancements, campagnes organiques, programmes créateurs et croissance communautaire."
+      }
+    }
+  },
+  "GlobalReach": {
+    "eyebrow": "Portée mondiale",
+    "titlePrefix": "Construire avec des équipes",
+    "titleHighlight": "partout dans le monde",
+    "description": "De l’Inde, du Brésil, du Vietnam et de l’Australie aux États-Unis, à la France, aux Pays-Bas et à Singapour, ce sont les hubs où nous avons collaboré avec des entreprises sur du contenu développeur et des programmes DevRel."
+  },
+  "Testimonials": {
+    "eyebrow": "Témoignages",
+    "title": "Ce que disent nos clients",
+    "description": "Écoutez les fondateurs, CEO et builders qui font confiance à notre équipe pour raconter leur produit.",
+    "seeMore": "Voir plus"
+  },
+  "DeveloperJourney": {
+    "eyebrow": "Fonctionnement",
+    "titlePrefix": "Comment les développeurs",
+    "titleHighlight": "découvrent et adoptent",
+    "titleSuffix": "votre produit",
+    "description": "Les développeurs recherchent avant d’évaluer, puis évaluent avant d’adopter. Votre contenu doit être présent à chaque étape.",
+    "stageLabel": "Étape",
+    "stages": {
+      "discover": {
+        "title": "Découvrir",
+        "description": "Nous cartographions votre audience développeur, recherchons les sujets à forte intention et construisons une stratégie de contenu alignée sur votre produit et vos objectifs de croissance."
+      },
+      "engage": {
+        "title": "Engager",
+        "description": "Nos ingénieurs et rédacteurs créent des tutoriels, guides et démos fiables. Chaque contenu est validé techniquement, optimisé SEO et construit autour de vrais exemples de code."
+      },
+      "adopt": {
+        "title": "Adopter",
+        "description": "Nous distribuons sur Reddit, Dev.to, Hacker News, LinkedIn et les communautés développeur, puis mesurons le trafic organique, les inscriptions, l’engagement et l’adoption produit."
+      }
+    }
+  },
+  "CTA": {
+    "titleLine1": "Prêt à développer",
+    "titleLine2": "l’adoption développeur ?",
+    "descriptionLine1": "Parlons de la façon dont nous pouvons vous aider à",
+    "descriptionLine2": "toucher plus de développeurs et accélérer l’adoption.",
+    "button": "Planifier un appel",
+    "bullets": {
+      "savings": "50% d’économies",
+      "lockIn": "Sans engagement",
+      "content": "Contenu pensé pour les développeurs",
+      "turnaround": "Livraison rapide"
+    }
+  },
+  "CaseStudiesIndex": {
+    "metadataName": "Études de cas Studio1",
+    "metadataDescription": "Des exemples concrets de la façon dont Studio1 aide les équipes devtool et SaaS à gagner en croissance, en visibilité et en adoption développeur grâce au contenu technique et à la distribution.",
+    "badge": "Études de cas",
+    "titlePrefix": "Des résultats que les développeurs peuvent",
+    "titleHighlight": "vérifier",
+    "description": "Des résultats réels issus du contenu technique, du DevRel et de la distribution.",
+    "trustedBy": "Approuvé par des équipes developer-first"
+  },
+  "NotFound": {
+    "eyebrow": "Page introuvable",
+    "titlePrefix": "Cette route a quitté le",
+    "titleHighlight": "parcours développeur",
+    "description": "La page ouverte n’existe pas, a été déplacée pendant la refonte des services Studio1, ou l’URL contient une erreur.",
+    "homeCta": "Retour à l’accueil",
+    "servicesCta": "Explorer les services",
+    "quickLinks": {
+      "docs": {
+        "title": "Docs et audits DX",
+        "description": "Consultez la page service dédiée à la documentation, l’onboarding et l’expérience développeur."
+      },
+      "caseStudies": {
+        "title": "Études de cas",
+        "description": "Découvrez des preuves issues de contenus techniques, DevRel, lancements et projets de documentation."
+      },
+      "contact": {
+        "title": "Parler à Studio1",
+        "description": "Réservez un appel stratégique si vous cherchiez un service ou une collaboration précise."
+      }
+    }
+  },
+  "Footer": {
+    "description": "Partenaire en contenu technique et croissance développeur pour les équipes devtool et SaaS.",
+    "rights": "Tous droits réservés.",
+    "links": {
+      "growth": "Croissance développeur",
+      "docs": "Docs et DX",
+      "products": "Produits",
+      "work": "Travaux clients",
+      "blog": "Notre blog"
+    },
+    "legal": {
+      "terms": "Conditions générales",
+      "privacy": "Politique de confidentialité"
+    }
+  }
+}

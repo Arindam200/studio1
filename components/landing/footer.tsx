@@ -10,8 +10,11 @@ import {
   gradientVariants,
 } from "@/lib/animations";
 import { Num } from "@/components/ui/num";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
+
   return (
     <motion.section
       className="relative max-h-fit  mt-0"
@@ -71,8 +74,7 @@ export default function Footer() {
                   className="text-foreground/90 font-semibold text-center sm:w-96"
                   variants={headerVariants}
                 >
-                  Technical content and DevRel partner for devtool and SaaS
-                  teams.
+                  {t("description")}
                 </motion.p>
               </motion.div>
               <motion.div
@@ -104,33 +106,33 @@ export default function Footer() {
               <motion.div className="flex flex-wrap gap-4 text-sm font-medium text-neutral-500 dark:text-neutral-400 max-w-full">
                 <Link
                   className="hover:text-foreground duration-300 hover:font-semibold"
-                  href={"/devrel-as-service"}
+                  href={"/developer-relations-growth-campaigns"}
                 >
-                  DevRel
+                  {t("links.growth")}
                 </Link>
                 <Link
                   className="hover:text-foreground duration-300 hover:font-semibold"
-                  href={"/docs-as-service"}
+                  href={"/developer-documentation-dx-audit"}
                 >
-                  Docs
+                  {t("links.docs")}
                 </Link>
                 <Link
                   className="hover:text-foreground duration-300 hover:font-semibold"
                   href={"/product"}
                 >
-                  Products
+                  {t("links.products")}
                 </Link>
                 <Link
                   className="hover:text-foreground duration-300 hover:font-semibold"
                   href={"/work"}
                 >
-                  Client Work
+                  {t("links.work")}
                 </Link>
                 <Link
                   className="hover:text-foreground duration-300 hover:font-semibold"
                   href={"/blog"}
                 >
-                  Our Blog
+                  {t("links.blog")}
                 </Link>
               </motion.div>
             </motion.div>
@@ -140,20 +142,20 @@ export default function Footer() {
             variants={headerVariants}
           >
             <p className="text-base text-muted-foreground">
-              ©<Num>{new Date().getFullYear()}</Num> Studio1. All rights reserved.
+              ©<Num>{new Date().getFullYear()}</Num> Studio1. {t("rights")}
             </p>
             <nav className="flex gap-4">
               <Link
                 href="/terms"
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                Terms and Conditions
+                {t("legal.terms")}
               </Link>
               <Link
                 href="/privacy"
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                Privacy Policy
+                {t("legal.privacy")}
               </Link>
             </nav>
           </motion.div>

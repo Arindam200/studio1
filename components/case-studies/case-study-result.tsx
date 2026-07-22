@@ -81,8 +81,11 @@ export function CaseStudyResult({
 
             {study.stats && study.stats.length > 0 ? (
               <dl className="mt-8 grid grid-cols-3 gap-4 border-t border-border/60 pt-6">
-                {study.stats.map((stat) => (
-                  <div key={stat.label} className="min-w-0">
+                {study.stats.map((stat, index) => (
+                  <div
+                    key={`${stat.value}-${stat.label}-${index}`}
+                    className="min-w-0"
+                  >
                     <dt className="sr-only">{stat.label}</dt>
                     <dd className="font-numeric text-lg font-semibold tabular-nums leading-none md:text-xl">
                       <Num>{stat.value}</Num>

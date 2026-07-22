@@ -1,0 +1,291 @@
+{
+  "LocaleSwitcher": {
+    "label": "语言",
+    "english": "英语",
+    "french": "法语",
+    "spanish": "西班牙语",
+    "hindi": "印地语",
+    "chinese": "中文"
+  },
+  "Metadata": {
+    "home": {
+      "title": "面向 DevTools 的技术内容与开发者增长机构",
+      "description": "Studio1 是面向 SaaS 和 devtool 团队的技术内容与开发者增长伙伴。我们制作教程、文档、视频、发布活动和 DevRel 项目，帮助推动采用。"
+    },
+    "services": {
+      "technicalContent": {
+        "title": "技术内容营销服务",
+        "description": "面向开发者产品的技术内容营销：教程、集成指南、SEO 文章和代码丰富的内容，用来建立信任并推动采用。"
+      },
+      "docs": {
+        "title": "开发者文档与 DX 审计服务",
+        "description": "面向 AI 和 DevTool 产品的开发者文档与 DX 审计：入门流程、API 清晰度、quickstarts、参考文档，以及更清楚的首次成功路径。"
+      },
+      "video": {
+        "title": "开发者视频制作服务",
+        "description": "面向 AI 和 DevTool 初创团队的开发者视频制作：技术演示、教程、脚本、剪辑、缩略图、SEO 标题、Shorts 和发布节奏。"
+      },
+      "devrel": {
+        "title": "Developer Relations 与增长活动",
+        "description": "面向开发者产品的 DevRel 与增长活动：开发者倡导、社区项目、产品发布、自然分发和创作者管理。"
+      }
+    }
+  },
+  "ServiceHero": {
+    "technicalContent": {
+      "badge": "服务",
+      "titleAccent": "技术内容",
+      "titleRest": "营销",
+      "description": "我们制作开发者教程、指南和 SEO 内容，用来建立信任、提升产品可见度，并推动技术采用。",
+      "primaryCta": "预约通话",
+      "secondaryCta": "查看服务",
+      "stats": {
+        "views": "内容浏览量",
+        "teams": "帮助的团队",
+        "savings": "成本节省",
+        "retention": "客户留存"
+      }
+    },
+    "docs": {
+      "badge": "服务",
+      "titleAccent": "开发者文档",
+      "titleRest": "与 DX 审计",
+      "description": "文档审计、DX 评审和文档改进，帮助开发者更快在你的产品中完成首次成功。",
+      "primaryCta": "预约通话",
+      "secondaryCta": "查看服务",
+      "stats": {
+        "audits": "文档审计",
+        "pages": "交付页面",
+        "success": "更快首次成功"
+      }
+    },
+    "devrel": {
+      "badge": "服务",
+      "titleAccent": "Developer Relations",
+      "titleRest": "与增长活动",
+      "description": "面向开发者产品的开发者倡导、社区增长、发布活动、自然分发和创作者项目。",
+      "primaryCta": "预约通话",
+      "secondaryCta": "查看服务",
+      "stats": {
+        "events": "高影响力活动",
+        "teams": "帮助的团队",
+        "savings": "成本节省",
+        "launch": "Product Hunt 发布"
+      }
+    },
+    "video": {
+      "badge": "开发者视频制作",
+      "titlePrefix": "我们制作技术视频",
+      "titleHighlight": "服务开发者品牌。",
+      "description": "为开发者品牌处理产品演示、教程、脚本、剪辑、缩略图和发布。",
+      "primaryCta": "预约通话",
+      "previewTitle": "15 分钟发布你的第一个 agent",
+      "previewSubtitle": "Studio1 for DevTools · 缩略图可做 A/B 测试"
+    }
+  },
+  "Hero": {
+    "badgePrefix": "受到",
+    "badgeSuffix": "DevTool 和 SaaS 团队信任",
+    "badgeSuffixShort": "团队信任",
+    "titleLine1": "技术内容与",
+    "titleLine2": "合作伙伴，面向",
+    "description": "我们帮助 SaaS 和 devtool 团队发布教程、文档和 DevRel 项目，让内容获得搜索曝光、激活开发者，并建立长期信任。",
+    "descriptionRich": "我们帮助 <strong>SaaS 和 devtool 团队</strong>发布<strong>教程、文档和 DevRel 项目</strong><br></br>让内容获得搜索曝光、激活<strong>开发者</strong>，并建立<strong>长期信任</strong>。",
+    "primaryCta": "预约策略沟通",
+    "secondaryCta": "查看服务",
+    "trustedAria": "受到 35+ devtool 团队信任",
+    "trustedPrefix": "受到",
+    "trustedSuffix": "devtool 团队信任"
+  },
+  "Nav": {
+    "contact": "联系我们",
+    "items": {
+      "about": "关于我们",
+      "blog": "我们的博客",
+      "caseStudies": "案例研究",
+      "clientWork": "客户作品",
+      "content": "内容",
+      "devrel": "DevRel 与增长",
+      "docs": "文档与 DX 审计",
+      "globalReach": "全球覆盖",
+      "home": "首页",
+      "howItWorks": "工作方式",
+      "offerings": "服务范围",
+      "product": "产品",
+      "results": "成果",
+      "services": "服务",
+      "technicalContent": "技术内容营销",
+      "testimonials": "客户评价",
+      "top": "顶部",
+      "trustedBy": "客户信任",
+      "video": "开发者视频制作",
+      "whyUs": "为什么选择我们"
+    },
+    "descriptions": {
+      "blog": "Studio1 团队的文章和观点",
+      "caseStudies": "来自文档、DevRel、发布和内容工作的证明",
+      "clientWork": "我们为客户撰写的教程和指南"
+    }
+  },
+  "HomeDomains": {
+    "eyebrow": "我们提供什么",
+    "titlePrefix": "我们为",
+    "titleHighlight": "开发者品牌提供的服务",
+    "description": "内容、开发者倡导、视频、文档、增长、发布和创作者项目：这是我们可以端到端承担的工作范围。",
+    "explore": "查看服务",
+    "offerings": [
+      {
+        "label": "技术内容写作",
+        "description": "面向开发者的教程、指南和文档，用来建立信任、获得搜索排名，并推动产品采用。"
+      },
+      {
+        "label": "Developer advocacy",
+        "description": "端到端 DevRel 项目，从策略、内容到活动，帮助你的产品建立开发者社区。"
+      },
+      {
+        "label": "开发者视频制作",
+        "description": "为 AI 和 DevTool 团队制作产品演示、操作教程和集成视频，让开发者更快理解产品。"
+      },
+      {
+        "label": "内容创作",
+        "description": "频道策略、脚本、剪辑、缩略图和 SEO 标题，以及为 YouTube 增长设计的发布节奏。"
+      },
+      {
+        "label": "文档与 DX 审计",
+        "description": "文档审计、文档制作和 DX 改进：入门流程评审、可发布指南，以及更清晰的首次成功路径。"
+      },
+      {
+        "label": "自然增长活动",
+        "description": "多渠道活动，用来制造关注、推动采用，并让产品进入开发者社区讨论。"
+      },
+      {
+        "label": "产品发布支持",
+        "description": "通过策略、内容和社区激活提高发布可见度，并把兴趣转化为用户。"
+      },
+      {
+        "label": "创作者管理",
+        "description": "寻找相关创作者、执行活动，并在开发者受众中建立真实可持续的可见度。"
+      }
+    ]
+  },
+  "HomeServices": {
+    "eyebrow": "服务",
+    "title": "我们做什么",
+    "description": "我们制作技术教程、文档和 DevRel 项目，帮助开发者成功使用你的产品，并推动产品采用。",
+    "stats": {
+      "views": "内容浏览量",
+      "companies": "合作公司",
+      "savings": "成本节省",
+      "retention": "客户留存"
+    },
+    "cards": {
+      "content": {
+        "badgeOne": "浏览量",
+        "badgeTwo": "团队",
+        "titleStrong": "技术",
+        "titleRest": "内容",
+        "description": "面向开发者的教程、指南和 SEO 内容，用来获得排名并推动产品采用。"
+      },
+      "growth": {
+        "badgeOne": "活动",
+        "badgeTwo": "PH 发布",
+        "titleStrong": "开发者",
+        "titleRest": "增长",
+        "description": "DevRel、产品发布、自然增长活动、创作者项目和社区增长。"
+      }
+    }
+  },
+  "GlobalReach": {
+    "eyebrow": "全球覆盖",
+    "titlePrefix": "与全球团队一起",
+    "titleHighlight": "构建",
+    "description": "从印度、巴西、越南和澳大利亚，到美国、法国、荷兰和新加坡，这些都是我们与公司合作开展开发者内容和 DevRel 项目的重要地区。"
+  },
+  "Testimonials": {
+    "eyebrow": "客户评价",
+    "title": "客户怎么评价我们",
+    "description": "听听信任 Studio1 团队来讲述产品故事的创始人、CEO 和 builders 怎么说。",
+    "seeMore": "查看更多"
+  },
+  "DeveloperJourney": {
+    "eyebrow": "工作方式",
+    "titlePrefix": "开发者如何",
+    "titleHighlight": "发现并采用",
+    "titleSuffix": "你的产品",
+    "description": "开发者会先研究，再评估，最后才采用。你的内容需要出现在每一个阶段。",
+    "stageLabel": "阶段",
+    "stages": {
+      "discover": {
+        "title": "发现",
+        "description": "我们梳理你的开发者受众，研究高意图主题，并围绕产品和增长目标制定内容策略。"
+      },
+      "engage": {
+        "title": "互动",
+        "description": "我们的工程师和作者制作开发者可信赖的教程、指南和演示。每个内容都会经过技术验证，并围绕真实代码和工作流构建。"
+      },
+      "adopt": {
+        "title": "采用",
+        "description": "我们在 Reddit、Dev.to、Hacker News、LinkedIn 和开发者社区分发内容，然后衡量自然流量、注册、社区互动和产品采用。"
+      }
+    }
+  },
+  "CTA": {
+    "titleLine1": "准备扩大",
+    "titleLine2": "开发者采用了吗？",
+    "descriptionLine1": "让我们聊聊如何帮助你",
+    "descriptionLine2": "触达更多开发者并加速采用。",
+    "button": "预约通话",
+    "bullets": {
+      "savings": "节省 50% 成本",
+      "lockIn": "无锁定合同",
+      "content": "开发者优先内容",
+      "turnaround": "快速交付"
+    }
+  },
+  "CaseStudiesIndex": {
+    "metadataName": "Studio1 案例研究",
+    "metadataDescription": "Studio1 如何通过技术内容和分发，帮助 devtool 与 SaaS 团队提升增长、搜索排名和开发者采用的真实案例。",
+    "badge": "案例研究",
+    "titlePrefix": "开发者可以",
+    "titleHighlight": "验证的结果",
+    "description": "来自技术内容、DevRel 和分发工作的真实成果。",
+    "trustedBy": "受到开发者优先团队信任"
+  },
+  "NotFound": {
+    "eyebrow": "页面未找到",
+    "titlePrefix": "这个路径偏离了",
+    "titleHighlight": "开发者路线",
+    "description": "你打开的页面不存在，可能在 Studio1 服务页面更新时移动了，或者 URL 输入有误。",
+    "homeCta": "返回首页",
+    "servicesCta": "查看服务",
+    "quickLinks": {
+      "docs": {
+        "title": "文档与 DX 审核",
+        "description": "查看关于文档、开发者入门和开发者体验工作的服务页面。"
+      },
+      "caseStudies": {
+        "title": "案例研究",
+        "description": "查看技术内容、DevRel、产品发布和文档项目的真实成果。"
+      },
+      "contact": {
+        "title": "联系 Studio1",
+        "description": "如果你在寻找特定服务或合作方式，可以预约一次策略沟通。"
+      }
+    }
+  },
+  "Footer": {
+    "description": "面向 devtool 和 SaaS 团队的技术内容与开发者增长伙伴。",
+    "rights": "版权所有。",
+    "links": {
+      "growth": "开发者增长",
+      "docs": "文档与 DX",
+      "products": "产品",
+      "work": "客户作品",
+      "blog": "我们的博客"
+    },
+    "legal": {
+      "terms": "条款与条件",
+      "privacy": "隐私政策"
+    }
+  }
+}

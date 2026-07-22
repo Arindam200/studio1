@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 const mediaFrameClassName = cn(
   "relative w-full min-w-0 overflow-hidden rounded-lg border border-border/60 bg-muted/20",
-  "h-[11rem] sm:h-[13rem] lg:h-auto lg:aspect-[16/10]",
+  "aspect-video sm:aspect-[16/9] lg:aspect-[16/10]",
 );
 
 type ProductMediaProps = {
@@ -25,7 +25,7 @@ export default function ProductMedia({ media, className }: ProductMediaProps) {
     <div className={cn(mediaFrameClassName, className)}>
       {showVideo ? (
         <video
-          className="h-full w-full object-cover object-top"
+          className="h-full w-full object-contain object-center lg:object-cover lg:object-top"
           src={media.src}
           poster={media.poster}
           autoPlay
@@ -40,7 +40,7 @@ export default function ProductMedia({ media, className }: ProductMediaProps) {
           alt={media.alt}
           fill
           unoptimized={isGif}
-          className="object-cover object-top"
+          className="object-contain object-center lg:object-cover lg:object-top"
           sizes="(max-width: 1024px) 100vw, 50vw"
         />
       )}

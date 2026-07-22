@@ -23,6 +23,7 @@ import {
   iconVariants,
   createFloatingAnimation,
 } from "@/lib/animations";
+import { useTranslations } from "next-intl";
 
 const testimonialStagger = {
   hidden: { opacity: 0 },
@@ -36,6 +37,7 @@ const testimonialStagger = {
 };
 
 export default function Hero() {
+  const t = useTranslations("Hero");
   const testimonialGlass = cn(
     "border border-border/50 dark:border-white/[0.08]",
     "bg-gradient-to-br from-background/95 via-background/90 to-primary/[0.06]",
@@ -58,8 +60,8 @@ export default function Hero() {
         <div className="lg:block hidden absolute bottom-0 right-0 z-[100] w-[30%] h-[15rem] bg-gradient-to-t from-background to-transparent"></div>
         <div className="lg:block hidden absolute bottom-0 right-0 z-[100] w-20 h-[40rem] bg-gradient-to-tl from-background/80 via-background/5 to-transparent"></div>
       </div> */}
-      <div className="relative max-w-7xl h-fit mx-auto pb-44 md:pb-28 px-4">
-        <div className="max-w-7xl relative mt-[4rem] h-[44rem] py-20 mx-auto">
+      <div className="relative mx-auto h-fit max-w-7xl px-4 pb-20 md:pb-28">
+        <div className="relative mx-auto mt-[4rem] min-h-[40rem] max-w-7xl py-16 md:h-[44rem] md:py-20">
           <FloatingSvgs />
           <motion.div
             className="flex flex-col items-center justify-center mt-10"
@@ -74,7 +76,12 @@ export default function Hero() {
               <motion.div variants={fadeInUp}>
                 <Badge className="pb-1 shadow-md mb-2 bg-gradient-to-r from-primarySurface via-primary1 to-primary1/20 text-white font-normal dark:from-primary dark:via-primary1 dark:to-primary1/60">
                   <Building weight="fill" className="size-5 mr-2" />
-                  Trusted by <Num>35+</Num> DevTool and SaaS Teams
+                  <span className="inline-flex items-baseline gap-1">
+                    <span>{t("badgePrefix")}</span>
+                    <Num>35+</Num>
+                    <span className="sm:hidden">{t("badgeSuffixShort")}</span>
+                    <span className="hidden sm:inline">{t("badgeSuffix")}</span>
+                  </span>
                 </Badge>
               </motion.div>
 
@@ -82,12 +89,13 @@ export default function Hero() {
                 className="text-4xl font-normal font-primary tracking-tight sm:text-5xl lg:text-[4rem] text-center text-foreground/90 leading-[1.1]"
                 variants={fadeInUp}
               >
-                Technical Content and{" "}
+                {t("titleLine1")}{" "}
                 <span className="serif-accent font-accent italic font-normal text-primary dark:text-primary/75 text-[0.92em]">
                   DevRel
                 </span>
+                {" "}
                 <br />
-                Partner for{" "}
+                {t("titleLine2")}{" "}
                 <span className="serif-accent font-accent italic font-normal text-primary dark:text-primary/75 text-[0.92em]">
                   DevTools
                 </span>
@@ -99,35 +107,19 @@ export default function Hero() {
               >
                 {/* For mobile screens - no spans */}
                 <div className="sm:hidden">
-                  We help SaaS and devtool teams publish tutorials, docs, and
-                  DevRel programs that rank in search, activate developers, and
-                  build long-term trust.
+                  {t("description")}
                 </div>
 
                 {/* For larger screens - with spans */}
                 <div className="hidden sm:block">
-                  We help
-                  <span className="font-medium text-foreground">
-                    {" "}
-                    SaaS and devtool teams
-                  </span>{" "}
-                  publish
-                  <span className="font-medium text-foreground">
-                    {" "}
-                    tutorials, docs, and DevRel programs
-                  </span>
-                  <br />
-                  that rank in search, activate
-                  <span className="font-medium text-foreground">
-                    {" "}
-                    developers
-                  </span>
-                  , and build
-                  <span className="font-medium text-foreground">
-                    {" "}
-                    long-term trust
-                  </span>
-                  .
+                  {t.rich("descriptionRich", {
+                    strong: (chunks) => (
+                      <span className="font-medium text-foreground">
+                        {chunks}
+                      </span>
+                    ),
+                    br: () => <br />,
+                  })}
                 </div>
               </motion.div>
 
@@ -146,7 +138,7 @@ export default function Hero() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Book a Strategy Call <IconPhoneFilled />
+                    {t("primaryCta")} <IconPhoneFilled />
                   </a>
                 </Button>
                 <Button
@@ -155,14 +147,46 @@ export default function Hero() {
                   className="w-full sm:w-auto"
                   asChild
                 >
-                  <a href="/blog-as-service">
-                    See Our Services <ArrowDownRight />
+                  <a href="/#service-offerings">
+                    {t("secondaryCta")} <ArrowDownRight />
                   </a>
                 </Button>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="mt-10">
                 <AvatarComponent />
+              </motion.div>
+              <motion.div
+                variants={fadeInUp}
+                className={cn(
+                  testimonialGlass,
+                  "mt-10 flex w-full max-w-[23rem] flex-col items-center justify-center rounded-xl p-4 md:hidden",
+                )}
+              >
+                <div className="flex items-center justify-center">
+                  <Image
+                    src={Data.Testimonials[8].avatar}
+                    alt={Data.Testimonials[8].name}
+                    width={96}
+                    height={96}
+                    className="size-14 rounded-full object-cover"
+                  />
+                </div>
+                <div className="mt-3 flex flex-col items-center justify-center text-center text-sm leading-relaxed">
+                  <NumericText>{Data.Testimonials[8].content}</NumericText>
+                </div>
+                <div className="flex items-center justify-center gap-1 rounded-md px-3 py-2">
+                  {[...Array(5)].map((_, index) => (
+                    <Star
+                      key={index}
+                      className="size-4 text-primary"
+                      weight="fill"
+                    />
+                  ))}
+                </div>
+                <div className="text-center text-sm font-medium">
+                  -{Data.Testimonials[8].name}
+                </div>
               </motion.div>
               {/* <div className="mt-4 ">15+ overall work</div> */}
             </motion.div>
@@ -248,7 +272,7 @@ export default function Hero() {
           </motion.div>
           <motion.div
             variants={fadeInUp}
-            className={`${testimonialGlass} flex md:mt-0 max-sm:w-[90%] md:max-w-[26rem] p-4 z-[101] rounded-xl h-60 md:h-56 items-center justify-center flex-col absolute bottom-[-4rem] md:bottom-0 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:right-[10%] lg:right-[14%] w-full`}
+            className={`${testimonialGlass} hidden md:mt-0 md:flex md:max-w-[26rem] p-4 z-[101] rounded-xl md:h-56 items-center justify-center flex-col absolute md:bottom-0 md:left-auto md:right-[10%] lg:right-[14%] w-full`}
           >
           <div className="flex items-center justify-center">
             <Image

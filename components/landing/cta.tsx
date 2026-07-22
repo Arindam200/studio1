@@ -11,8 +11,11 @@ import {
   elevatedCardShadow,
 } from "@/lib/shadows"
 import { cn } from "@/lib/utils"
+import { useTranslations } from "next-intl"
 
 export default function CTA() {
+  const t = useTranslations("CTA")
+
   return (
     <motion.div
       className="px-4 relative mt-10"
@@ -36,12 +39,11 @@ export default function CTA() {
         {/* Previous CTA copy: left on desktop, first on mobile */}
         <div className="relative z-20 flex min-w-0 flex-col items-center text-center md:items-start md:text-left">
           <div className="text-3xl md:text-5xl font-medium tracking-tight text-foreground">
-            Ready to Scale <br /> Developer Adoption?
+            {t("titleLine1")} <br /> {t("titleLine2")}
           </div>
           <div className="text-sm md:text-base w-[85%] md:w-full max-w-lg text-muted-foreground leading-tight mb-8 mt-4">
-            Let’s talk about how we can help you{" "}
-            <br className="hidden md:block" /> reach more developers and
-            accelerate adoption.
+            {t("descriptionLine1")}{" "}
+            <br className="hidden md:block" /> {t("descriptionLine2")}
           </div>
 
           <Button variant="gradient" size="cta" className="min-w-32" asChild>
@@ -50,24 +52,24 @@ export default function CTA() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Schedule a call <IconPhoneFilled />
+              {t("button")} <IconPhoneFilled />
             </a>
           </Button>
 
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-5 gap-y-2 mt-8 text-xs text-muted-foreground">
-            <span>50% cost savings</span>
+            <span>{t("bullets.savings")}</span>
             <span aria-hidden className="hidden sm:inline text-border">
               ·
             </span>
-            <span>No lock-in</span>
+            <span>{t("bullets.lockIn")}</span>
             <span aria-hidden className="hidden sm:inline text-border">
               ·
             </span>
-            <span>Developer-first content</span>
+            <span>{t("bullets.content")}</span>
             <span aria-hidden className="hidden sm:inline text-border">
               ·
             </span>
-            <span>Fast turnaround</span>
+            <span>{t("bullets.turnaround")}</span>
           </div>
         </div>
 

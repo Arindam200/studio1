@@ -23,11 +23,11 @@ const featuredStudy: CaseStudyResultData = {
   heroValue: "12,000+",
   heroLabel: "GitHub stars from launch",
   proof:
-    "Community-led distribution, demo content, and feedback loops turned an early OSS launch into sustained developer traction, with zero paid acquisition.",
+    "Community-led distribution, demo content, and feedback loops turned an early OSS launch into sustained developer traction.",
   stats: [
     { value: "100+", label: "developer comments" },
     { value: "150+", label: "meetup attendees" },
-    { value: "$0", label: "paid acquisition" },
+    { value: "12", label: "demo agents shipped" },
   ],
 };
 
@@ -45,8 +45,8 @@ const secondaryStudies: CaseStudyResultData[] = [
     company: "LiteLLM",
     category: "Docs Revamp & Onboarding",
     href: "/case-studies/litellm",
-    heroValue: "100+",
-    heroLabel: "LLM providers unified",
+    heroValue: "SDK + Gateway",
+    heroLabel: "docs paths clarified",
     proof:
       "Docs architecture, SDK/Gateway quickstarts, and community-driven DX feedback cut onboarding friction, endorsed publicly by the CEO.",
   },
@@ -68,9 +68,9 @@ export default function CaseStudyCards() {
       >
         <SectionEyebrow>Case Studies</SectionEyebrow>
         <h2 className="max-sm:text-4xl text-center font-inter text-5xl font-normal tracking-tight">
-          Campaigns that{" "}
+          Campaigns we{" "}
           <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
-            landed
+            did
           </span>
         </h2>
         <p className="mt-2 max-w-2xl text-center text-base text-muted-foreground max-sm:text-sm">

@@ -18,7 +18,10 @@ export default function BottomNavbar() {
 
   const isBottomNavValidPage =
     pathname.startsWith("/devrel-as-service") ||
-    pathname.startsWith("/blog-as-service");
+    pathname.startsWith("/blog-as-service") ||
+    pathname.startsWith("/technical-content-marketing") ||
+    pathname.startsWith("/developer-relations-growth-campaigns") ||
+    pathname.startsWith("/developer-documentation-dx-audit");
 
   useEffect(() => {
     if (!isBottomNavValidPage) return;

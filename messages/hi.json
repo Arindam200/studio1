@@ -1,0 +1,291 @@
+{
+  "LocaleSwitcher": {
+    "label": "भाषा",
+    "english": "अंग्रेज़ी",
+    "french": "फ़्रेंच",
+    "spanish": "स्पेनिश",
+    "hindi": "हिन्दी",
+    "chinese": "चीनी"
+  },
+  "Metadata": {
+    "home": {
+      "title": "DevTools के लिए Technical Content और Developer Growth Agency",
+      "description": "Studio1 SaaS और devtool teams के लिए technical content और developer growth partner है। हम tutorials, docs, videos, launches और DevRel programs बनाते हैं जो adoption बढ़ाते हैं।"
+    },
+    "services": {
+      "technicalContent": {
+        "title": "Technical Content Marketing Services",
+        "description": "Developer products के लिए technical content marketing: tutorials, integration guides, SEO articles और code-rich content जो trust और adoption बढ़ाते हैं।"
+      },
+      "docs": {
+        "title": "Developer Documentation और DX Audit Services",
+        "description": "AI और DevTool products के लिए developer documentation और DX audits: onboarding reviews, API clarity, quickstarts, reference docs और first success का clearer path."
+      },
+      "video": {
+        "title": "Developer Video Production Services",
+        "description": "AI और DevTool startups के लिए developer video production: technical demos, tutorials, scripts, edits, thumbnails, SEO titles, Shorts और publishing cadence."
+      },
+      "devrel": {
+        "title": "Developer Relations और Growth Campaigns",
+        "description": "Developer products के लिए DevRel और growth campaigns: advocacy, community programs, product launches, organic distribution और influencer management."
+      }
+    }
+  },
+  "ServiceHero": {
+    "technicalContent": {
+      "badge": "सेवाएँ",
+      "titleAccent": "Technical Content",
+      "titleRest": "Marketing",
+      "description": "हम developer tutorials, guides और SEO content बनाते हैं जो trust बनाते हैं, product visibility बढ़ाते हैं और technical adoption को आगे बढ़ाते हैं।",
+      "primaryCta": "कॉल बुक करें",
+      "secondaryCta": "सेवाएँ देखें",
+      "stats": {
+        "views": "content views",
+        "teams": "teams helped",
+        "savings": "cost savings",
+        "retention": "client retention"
+      }
+    },
+    "docs": {
+      "badge": "सेवाएँ",
+      "titleAccent": "Developer Documentation",
+      "titleRest": "और DX Audits",
+      "description": "Documentation audits, DX reviews और docs improvements जो developers को आपके product के साथ first success तक पहुँचाते हैं।",
+      "primaryCta": "कॉल बुक करें",
+      "secondaryCta": "सेवाएँ देखें",
+      "stats": {
+        "audits": "docs audits",
+        "pages": "pages shipped",
+        "success": "faster first success"
+      }
+    },
+    "devrel": {
+      "badge": "सेवाएँ",
+      "titleAccent": "Developer Relations",
+      "titleRest": "और Growth Campaigns",
+      "description": "Developer products के लिए advocacy, community growth, launch campaigns, organic distribution और creator programs.",
+      "primaryCta": "कॉल बुक करें",
+      "secondaryCta": "सेवाएँ देखें",
+      "stats": {
+        "events": "high-impact events",
+        "teams": "teams helped",
+        "savings": "cost savings",
+        "launch": "Product Hunt launch"
+      }
+    },
+    "video": {
+      "badge": "Developer video production",
+      "titlePrefix": "हम technical videos बनाते हैं",
+      "titleHighlight": "developer brands के लिए.",
+      "description": "Product demos, tutorials, scripts, edits, thumbnails और publishing, developer brands के लिए handled.",
+      "primaryCta": "कॉल बुक करें",
+      "previewTitle": "अपना पहला agent 15 मिनट में ship करें",
+      "previewSubtitle": "Studio1 for DevTools · Thumbnail A/B ready"
+    }
+  },
+  "Hero": {
+    "badgePrefix": "भरोसा किया",
+    "badgeSuffix": "DevTool और SaaS टीमों ने",
+    "badgeSuffixShort": "टीमों ने",
+    "titleLine1": "तकनीकी कंटेंट और",
+    "titleLine2": "पार्टनर फॉर",
+    "description": "हम SaaS और devtool टीमों को ट्यूटोरियल, डॉक्स और DevRel प्रोग्राम प्रकाशित करने में मदद करते हैं, जो सर्च में रैंक करते हैं, डेवलपर्स को सक्रिय करते हैं और दीर्घकालिक भरोसा बनाते हैं।",
+    "descriptionRich": "हम <strong>SaaS और devtool टीमों</strong> को <strong>ट्यूटोरियल, डॉक्स और DevRel प्रोग्राम</strong> प्रकाशित करने में मदद करते हैं<br></br>जो सर्च में रैंक करते हैं, <strong>डेवलपर्स</strong> को सक्रिय करते हैं और <strong>दीर्घकालिक भरोसा</strong> बनाते हैं।",
+    "primaryCta": "रणनीति कॉल बुक करें",
+    "secondaryCta": "सेवाएँ देखें",
+    "trustedAria": "35 से अधिक devtool टीमों ने भरोसा किया",
+    "trustedPrefix": "भरोसा किया",
+    "trustedSuffix": "devtool टीमों ने"
+  },
+  "Nav": {
+    "contact": "संपर्क करें",
+    "items": {
+      "about": "हमारे बारे में",
+      "blog": "हमारा ब्लॉग",
+      "caseStudies": "केस स्टडी",
+      "clientWork": "क्लाइंट वर्क",
+      "content": "कंटेंट",
+      "devrel": "DevRel और ग्रोथ",
+      "docs": "डॉक्यूमेंटेशन और DX ऑडिट",
+      "globalReach": "वैश्विक पहुँच",
+      "home": "होम",
+      "howItWorks": "कैसे काम करता है",
+      "offerings": "ऑफरिंग्स",
+      "product": "प्रोडक्ट",
+      "results": "परिणाम",
+      "services": "सेवाएँ",
+      "technicalContent": "तकनीकी कंटेंट मार्केटिंग",
+      "testimonials": "प्रशंसापत्र",
+      "top": "शीर्ष",
+      "trustedBy": "जिन्होंने भरोसा किया",
+      "video": "डेवलपर वीडियो प्रोडक्शन",
+      "whyUs": "हमें क्यों चुनें"
+    },
+    "descriptions": {
+      "blog": "Studio1 टीम के लेख और विचार",
+      "caseStudies": "डॉक्स, DevRel, लॉन्च और कंटेंट वर्क से प्रमाण",
+      "clientWork": "क्लाइंट्स के लिए लिखे गए ट्यूटोरियल और गाइड"
+    }
+  },
+  "HomeDomains": {
+    "eyebrow": "हम क्या ऑफर करते हैं",
+    "titlePrefix": "हम जिन सेवाओं को चलाते हैं",
+    "titleHighlight": "डेवलपर ब्रांड्स के लिए",
+    "description": "कंटेंट, advocacy, वीडियो, डॉक्स, ग्रोथ, लॉन्च और इन्फ्लुएंसर प्रोग्राम: वह पूरा काम जिसे हम संभालते हैं।",
+    "explore": "सेवा देखें",
+    "offerings": [
+      {
+        "label": "तकनीकी कंटेंट लेखन",
+        "description": "डेवलपर ट्यूटोरियल, गाइड और डॉक्यूमेंटेशन जो भरोसा बनाते हैं, सर्च में रैंक करते हैं और प्रोडक्ट अपनाने में मदद करते हैं।"
+      },
+      {
+        "label": "Developer advocacy",
+        "description": "एंड-टू-एंड DevRel प्रोग्राम जो रणनीति, कंटेंट और इवेंट्स के जरिए आपके प्रोडक्ट के आसपास समुदाय बनाते हैं।"
+      },
+      {
+        "label": "डेवलपर वीडियो प्रोडक्शन",
+        "description": "AI और DevTool टीमों के लिए प्रोडक्ट डेमो, how-to और इंटीग्रेशन वीडियो ताकि डेवलपर्स प्रोडक्ट जल्दी समझें।"
+      },
+      {
+        "label": "कंटेंट क्रिएशन",
+        "description": "YouTube ग्रोथ के लिए चैनल रणनीति, स्क्रिप्ट, एडिट, थंबनेल और SEO टाइटल के साथ पब्लिशिंग कैडेंस।"
+      },
+      {
+        "label": "डॉक्यूमेंटेशन और DX ऑडिट",
+        "description": "डॉक्स ऑडिट, डॉक्यूमेंटेशन और DX सुधार: onboarding review, शिप करने योग्य गाइड और पहले सफल अनुभव तक स्पष्ट रास्ता।"
+      },
+      {
+        "label": "ऑर्गेनिक ग्रोथ कैंपेन",
+        "description": "मल्टी-चैनल कैंपेन जो buzz बनाते हैं, adoption बढ़ाते हैं और आपके प्रोडक्ट को developer communities में स्थापित करते हैं।"
+      },
+      {
+        "label": "प्रोडक्ट लॉन्च सपोर्ट",
+        "description": "लॉन्च visibility बढ़ाने और interest को users में बदलने के लिए strategy, content और community activation।"
+      },
+      {
+        "label": "इन्फ्लुएंसर मैनेजमेंट",
+        "description": "Relevant creators ढूँढना, campaigns चलाना और developer-focused audiences में authentic visibility बढ़ाना।"
+      }
+    ]
+  },
+  "HomeServices": {
+    "eyebrow": "सेवाएँ",
+    "title": "हम क्या करते हैं",
+    "description": "हम तकनीकी ट्यूटोरियल, डॉक्यूमेंटेशन और DevRel प्रोग्राम बनाते हैं जो डेवलपर्स को आपके प्रोडक्ट में सफल होने और उसे अपनाने में मदद करते हैं।",
+    "stats": {
+      "views": "कंटेंट व्यूज़",
+      "companies": "पार्टनर कंपनियाँ",
+      "savings": "लागत बचत",
+      "retention": "क्लाइंट रिटेंशन"
+    },
+    "cards": {
+      "content": {
+        "badgeOne": "व्यूज़",
+        "badgeTwo": "टीमें",
+        "titleStrong": "तकनीकी",
+        "titleRest": "कंटेंट",
+        "description": "डेवलपर ट्यूटोरियल, गाइड और SEO कंटेंट जो रैंक करता है और प्रोडक्ट adoption बढ़ाता है।"
+      },
+      "growth": {
+        "badgeOne": "इवेंट्स",
+        "badgeTwo": "PH लॉन्च",
+        "titleStrong": "डेवलपर",
+        "titleRest": "ग्रोथ",
+        "description": "DevRel, launches, organic campaigns, creator programs और community growth।"
+      }
+    }
+  },
+  "GlobalReach": {
+    "eyebrow": "वैश्विक पहुँच",
+    "titlePrefix": "दुनिया भर की टीमों के साथ",
+    "titleHighlight": "काम",
+    "description": "भारत, ब्राज़ील, वियतनाम और ऑस्ट्रेलिया से लेकर USA, फ्रांस, नीदरलैंड्स और सिंगापुर तक, ये वे hubs हैं जहाँ हमने कंपनियों के साथ developer content और DevRel programs पर partnership और collaboration किया है।"
+  },
+  "Testimonials": {
+    "eyebrow": "प्रशंसापत्र",
+    "title": "हमारे क्लाइंट क्या कहते हैं",
+    "description": "उन founders, CEOs और builders से सुनें जो अपनी product story बताने के लिए हमारी team पर भरोसा करते हैं।",
+    "seeMore": "और देखें"
+  },
+  "DeveloperJourney": {
+    "eyebrow": "यह कैसे काम करता है",
+    "titlePrefix": "डेवलपर्स आपके प्रोडक्ट को कैसे",
+    "titleHighlight": "खोजते और अपनाते हैं",
+    "titleSuffix": "",
+    "description": "Developers evaluate करने से पहले research करते हैं, और adopt करने से पहले evaluate करते हैं। आपका content हर stage पर मौजूद होना चाहिए।",
+    "stageLabel": "स्टेज",
+    "stages": {
+      "discover": {
+        "title": "Discover",
+        "description": "हम आपकी developer audience map करते हैं, high-intent topics research करते हैं और product तथा growth goals के हिसाब से content strategy बनाते हैं।"
+      },
+      "engage": {
+        "title": "Engage",
+        "description": "हमारे engineers और writers tutorials, guides और demos बनाते हैं जिन पर developers भरोसा कर सकें। हर piece technically validated और SEO-optimized होता है।"
+      },
+      "adopt": {
+        "title": "Adopt",
+        "description": "हम Reddit, Dev.to, Hacker News, LinkedIn और developer communities पर distribute करते हैं, फिर organic traffic, signups, engagement और adoption measure करते हैं।"
+      }
+    }
+  },
+  "CTA": {
+    "titleLine1": "डेवलपर adoption",
+    "titleLine2": "scale करने के लिए तैयार?",
+    "descriptionLine1": "आइए बात करें कि हम आपको कैसे",
+    "descriptionLine2": "ज़्यादा developers तक पहुँचने और adoption तेज़ करने में मदद कर सकते हैं।",
+    "button": "कॉल शेड्यूल करें",
+    "bullets": {
+      "savings": "50% लागत बचत",
+      "lockIn": "कोई lock-in नहीं",
+      "content": "Developer-first content",
+      "turnaround": "तेज़ turnaround"
+    }
+  },
+  "CaseStudiesIndex": {
+    "metadataName": "Studio1 केस स्टडीज़",
+    "metadataDescription": "वास्तविक उदाहरण कि Studio1 कैसे devtool और SaaS teams को technical content और distribution के ज़रिए growth, rankings और developer adoption बढ़ाने में मदद करता है।",
+    "badge": "केस स्टडीज़",
+    "titlePrefix": "ऐसे results जिन्हें developers",
+    "titleHighlight": "verify कर सकते हैं",
+    "description": "Technical content, DevRel और distribution work से आए real outcomes.",
+    "trustedBy": "Developer-first teams द्वारा trusted"
+  },
+  "NotFound": {
+    "eyebrow": "पेज नहीं मिला",
+    "titlePrefix": "यह route developer",
+    "titleHighlight": "path से हट गया",
+    "description": "जो page आपने खोला है वह मौजूद नहीं है, Studio1 service refresh के दौरान move हो गया है, या URL गलत type हुआ है।",
+    "homeCta": "Home पर वापस जाएँ",
+    "servicesCta": "Services देखें",
+    "quickLinks": {
+      "docs": {
+        "title": "Docs और DX audits",
+        "description": "Documentation, onboarding और developer experience work के लिए service page देखें।"
+      },
+      "caseStudies": {
+        "title": "Case studies",
+        "description": "Technical content, DevRel, launch और documentation projects से proof देखें।"
+      },
+      "contact": {
+        "title": "Studio1 से बात करें",
+        "description": "अगर आप किसी specific service या collaboration को ढूँढ रहे थे, तो strategy call book करें।"
+      }
+    }
+  },
+  "Footer": {
+    "description": "Devtool और SaaS teams के लिए technical content और developer growth partner.",
+    "rights": "सर्वाधिकार सुरक्षित।",
+    "links": {
+      "growth": "Developer Growth",
+      "docs": "Docs & DX",
+      "products": "Products",
+      "work": "Client Work",
+      "blog": "हमारा ब्लॉग"
+    },
+    "legal": {
+      "terms": "नियम और शर्तें",
+      "privacy": "Privacy Policy"
+    }
+  }
+}

@@ -21,7 +21,7 @@ const defaultFaqData: FAQItem[] = [
   {
     question: "What does Studio1 offer?",
     answer:
-      "Studio1 offers a range of services designed to help tech companies grow their developer communities and increase product adoption. Our core offerings include DevRel as a Service (end-to-end developer relations strategies, community building, and event management), Blog as a Service (high-quality technical content like tutorials, guides, and blog posts), Organic Growth Campaigns (comprehensive marketing campaigns to create buzz and drive adoption), and Product Launch Support (strategic support for Product Hunt launches to maximize visibility and impact).",
+      "Studio1 helps developer-focused companies grow adoption through technical content marketing, developer documentation and DX audits, developer video production, and developer relations growth campaigns. That includes tutorials, guides, docs audits, product demos, community programs, product launches, organic campaigns, and influencer management.",
   },
   {
     question:

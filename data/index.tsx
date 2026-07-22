@@ -1137,7 +1137,7 @@ export const Data = {
   ],
   Services: [
     {
-      title: "Blogs as Service",
+      title: "Technical Content Marketing",
       description:
         "We create high-quality, technical and promotional blogs tailored for devtool and software companies. Our team of expert writers specializes in crafting SEO-optimized content that drives engagement, educates developers",
       icon: PencilLine,
@@ -1154,7 +1154,7 @@ export const Data = {
       icon: IconPlus,
     },
     {
-      title: "DevRel as Service",
+      title: "Developer Relations & Growth",
       description:
         "Accelerate your growth with targeted Developer Relations services. We help devtool and software companies connect authentically with developers, grow communities, and turn users into advocates.",
       icon: UsersTwo,
@@ -1193,7 +1193,7 @@ export const Data = {
       name: "Saurav Jain",
       role: "DevRel, Crawlee",
       avatar: SauravImg.src,
-      content: `Arindam and Studio1 team work really great with technical posts, they are super quick and write deeply technical articles that reaches to the right devleoper audiences through their absolute fantastic distribution system. 
+      content: `Arindam and Studio1 team work really great with technical posts, they are super quick and write deeply technical articles that reaches to the right developer audiences through their absolute fantastic distribution system.
       
       Highly recommended. 💯`,
       highlights: [
@@ -1461,48 +1461,51 @@ export const Data = {
   ],
   BlogAsServiceProcess: [
     {
-      name: "Discovery",
+      name: "Topic",
       description:
-        "We align with your product, team, and goals to shape a content strategy that makes sense.",
+        "We pick the right topic together: from your roadmap, your brief, or our research into what developers are searching for.",
       icon: IconSearch,
       details: [
-        <p>Tech stack deep-dive</p>,
-        <p>Developer audience analysis</p>,
-        <p>Scope definition</p>,
-        <p>First sync</p>,
+        <p>Client-provided or Studio1-researched topics</p>,
+        <p>Developer audience and search intent</p>,
+        <p>Format and publishing-channel decision</p>,
+        <p>Goal alignment before writing starts</p>,
       ],
     },
     {
-      name: "Strategy",
+      name: "Outline",
       description:
-        "We build a repeatable content engine tailored to your goals.",
+        "We prepare an outline and overview first, so your team can review the angle, structure, and examples early.",
       icon: IconBulb,
       details: [
-        <p>Topic ideation and prioritization</p>,
-        <p>Format selection (blog, guide, tutorial, etc.)</p>,
-        <p>Channel planning</p>,
+        <p>Article outline and technical flow</p>,
+        <p>Code example plan</p>,
+        <p>Product positioning notes</p>,
+        <p>Client approval before full draft</p>,
       ],
     },
     {
-      name: "Creation",
+      name: "Draft",
       description:
-        "Technical writers and engineers collaborate to produce high-quality, relevant content.",
+        "Studio1 writes the technical draft, reviews it internally, and sends it to your team for product and engineering feedback.",
       icon: IconRocket,
       details: [
-        <p>Code-rich, accurate technical writing</p>,
-        <p>Custom examples and use cases</p>,
-        <p>Technical validation + peer review</p>,
-        <p>SEO formatting and readability pass</p>,
+        <p>Code-rich technical writing</p>,
+        <p>Internal review and technical validation</p>,
+        <p>Client review and revision cycle</p>,
+        <p>SEO and readability polish</p>,
       ],
     },
     {
-      name: "Distribution",
-      description: "We help push your content where devs actually see it.",
+      name: "Publish",
+      description:
+        "We help publish on your company channels, Studio1/team profiles, or developer platforms, then support distribution.",
       icon: IconChartBar,
       details: [
-        <p>Dev.to, Medium, company blogs</p>,
-        <p>Social sharing and analytics</p>,
-        <p>Developer community amplification</p>,
+        <p>Company blog or external profile publishing</p>,
+        <p>Dev.to and Medium syndication</p>,
+        <p>X, LinkedIn, and community snippets</p>,
+        <p>Performance review after publish</p>,
       ],
     },
   ],
@@ -1536,102 +1539,82 @@ export const Data = {
     {
       name: "Discovery",
       description:
-        "We assess your product, DevRel touchpoints, and community to uncover quick wins and long-term opportunities.",
+        "We assess your product, developer audience, communities, open-source surface, and existing DevRel touchpoints.",
       icon: IconSearch,
       details: [
         <p>Audit existing developer programs</p>,
-        <p>Analyze community engagement</p>,
-        <p>Identify growth opportunities</p>,
-        <p>Provide an actionable assessment report</p>,
+        <p>Review docs, community, social, and GitHub signals</p>,
+        <p>Identify growth and partnership opportunities</p>,
+        <p>Provide an actionable assessment</p>,
       ],
     },
     {
       name: "Strategy",
       description:
-        "We craft a tailored DevRel roadmap aligned with your goals across content, community, education, and advocacy.",
+        "We build a DevRel and growth roadmap across content, community, partnerships, integrations, launches, and events.",
       icon: IconBulb,
       details: [
-        <p>Custom roadmap creation</p>,
-        <p>Resource and role planning</p>,
-        <p>Timeline and campaign mapping</p>,
-        <p>KPI and success metrics definition</p>,
+        <p>Custom DevRel roadmap</p>,
+        <p>Campaign and launch planning</p>,
+        <p>Community and partner mapping</p>,
+        <p>Success metrics definition</p>,
       ],
     },
 
     {
       name: "Creation",
       description:
-        "Our writers and DevRel engineers produce content and campaigns that drive trust, clarity, and developer engagement.",
+        "Our writers, engineers, and DevRel operators execute the work: docs, blogs, demos, repos, social posts, and community programs.",
       icon: IconRocket,
       details: [
-        <p>Technical content creation</p>,
-        <p>Community activation initiatives</p>,
-        <p>Campaign planning and execution</p>,
-        <p>Developer engagement strategies</p>,
+        <p>Technical content and repo-led demos</p>,
+        <p>Social and community management</p>,
+        <p>Open-source maintenance support</p>,
+        <p>Hackathon or event collaboration support</p>,
       ],
     },
 
     {
-      name: "Distribution",
+      name: "Amplification",
       description:
-        "We publish and amplify your content across the right developer channels, and iterate based on performance.",
+        "We distribute through developer communities, creators, events, partner channels, and social platforms, then iterate based on signals.",
       icon: IconChartBar,
       details: [
-        <p>Community-based promotion</p>,
-        <p>Analytics and performance reviews</p>,
-        <p>Strategic iteration</p>,
-        <p>ROI and impact tracking</p>,
+        <p>Creator and influencer management</p>,
+        <p>Partner and community outreach</p>,
+        <p>X, LinkedIn, Reddit, YouTube, and events</p>,
+        <p>Performance reporting and iteration</p>,
       ],
     },
   ],
 
   DevRelAsServiceServices: [
     {
-      title: "Technical Content Writing",
-      description:
-        "Tutorials, guides, and docs that build trust and drive adoption.",
-      icon: IconCode,
-    },
-    {
+      id: "developer-advocacy",
       title: "Developer Advocacy",
       description:
-        "End-to-end DevRel programs that grow communities around your product.",
+        "Community programs, education, and advocacy that build trust with developers.",
       icon: IconUsers,
     },
     {
-      title: "Tech Video Production",
-      description:
-        "Product demos, how-tos, and integration videos for developer audiences.",
-      icon: IconBrandYoutube,
-    },
-    {
-      title: "Content Creation",
-      description:
-        "Channel strategy, scripts, edits, and a cadence built for growth.",
-      icon: IconBook,
-    },
-    {
-      title: "Audit Services",
-      description:
-        "Docs and DX audits covered in our Docs as a Service offering.",
-      icon: IconSearch,
-    },
-    {
+      id: "organic-growth-campaign",
       title: "Organic Growth Campaign",
       description:
-        "Multi-channel campaigns that create buzz and drive adoption.",
+        "Multi-channel distribution across developer communities and social channels.",
       icon: IconTrendingUp,
     },
     {
+      id: "product-launch-support",
       title: "Product Launch Support",
       description:
-        "Strategy, content, and community activation for launch visibility.",
+        "Launch strategy, community activation, and post-launch amplification.",
       icon: IconRocket,
     },
     {
+      id: "influencer-management",
       title: "Influencer Management",
       description:
-        "Find creators, run campaigns, and grow authentic developer reach.",
+        "Creator discovery, briefs, managed collaborations, and performance reporting.",
       icon: IconStar,
     },
   ],
@@ -1673,51 +1656,51 @@ export const Data = {
 
   DocsAsServiceProcess: [
     {
-      name: "Discovery",
+      name: "Audit",
       description:
-        "Initial assessment of your docs, onboarding, and developer paths with stakeholder interviews and goal alignment.",
+        "We review your existing docs, API and SDK references, onboarding path, dashboard flows, and developer-facing product surfaces.",
       icon: IconSearch,
       details: [
-        <p>Current-state docs assessment</p>,
-        <p>Stakeholder interviews</p>,
-        <p>Onboarding and process review</p>,
+        <p>Existing docs assessment</p>,
+        <p>API and SDK reference review</p>,
+        <p>Dashboard and onboarding review</p>,
         <p>Goal alignment</p>,
       ],
     },
     {
       name: "Analysis",
       description:
-        "Deep dive into journeys, APIs, and documentation gaps with pain-point mapping across the developer experience.",
+        "We map what is missing, outdated, confusing, or blocking developers from first success.",
       icon: IconChartBar,
       details: [
-        <p>User journey mapping</p>,
-        <p>Pain point identification</p>,
-        <p>API and docs gap analysis</p>,
+        <p>Developer journey mapping</p>,
+        <p>Missing docs and stale examples</p>,
+        <p>API and SDK gap analysis</p>,
         <p>Priority friction ranking</p>,
       ],
     },
     {
-      name: "Recommendations",
+      name: "Roadmap",
       description:
-        "Detailed findings report with a prioritized plan for documentation and DX improvements.",
+        "You get a findings report and prioritized plan for edits, new docs, IA fixes, examples, and onboarding improvements.",
       icon: IconBulb,
       details: [
-        <p>Detailed findings report</p>,
-        <p>Content and DX priority plan</p>,
-        <p>Actionable recommendations</p>,
+        <p>Findings report</p>,
+        <p>Docs and DX priority plan</p>,
+        <p>Actionable recommendations by severity</p>,
         <p>Implementation roadmap</p>,
       ],
     },
     {
-      name: "Implementation Support",
+      name: "Implementation",
       description:
-        "Ship docs and DX changes with guidance, best practices, progress monitoring, and follow-up reviews.",
+        "We can edit existing docs, write missing docs from scratch, update examples, and support follow-up reviews.",
       icon: IconRocket,
       details: [
-        <p>Docs and DX change guidance</p>,
-        <p>Best practices consultation</p>,
-        <p>Progress monitoring</p>,
-        <p>Follow-up assessments</p>,
+        <p>Existing-doc edits</p>,
+        <p>New docs from scratch</p>,
+        <p>Example and snippet updates</p>,
+        <p>Follow-up assessment</p>,
       ],
     },
   ],

@@ -1,68 +1,65 @@
-import { Ripple } from "@/components/magicui/ripple";
-import { Data } from "@/data";
-import { cn } from "@/lib/utils";
+"use client";
 
-const services = Data.DevRelAsServiceServices;
+import { Rocket, UsersThree, ShareNetwork } from "@phosphor-icons/react";
+import {
+  ServiceOfferCards,
+  type ServiceOfferCard,
+} from "@/components/pages/shared/service-offer-cards";
+
+const offerings: ServiceOfferCard[] = [
+  {
+    id: "developer-advocacy",
+    icon: UsersThree,
+    badges: ["Advocacy", "Community"],
+    accent: "DevRel",
+    rest: "Execution",
+    description:
+      "Embedded support across developer education, community replies, open-source maintenance, and feedback loops.",
+    features: [
+      "Developer advocacy and education",
+      "Community support across social and forums",
+      "Open-source maintenance support",
+      "Product feedback surfaced from developers",
+    ],
+  },
+  {
+    id: "organic-growth-campaign",
+    anchorIds: ["product-launch-support"],
+    icon: Rocket,
+    badges: ["Launches", "Campaigns"],
+    accent: "Growth",
+    rest: "Campaigns",
+    description:
+      "Month-long developer campaigns built around one strong technical story: repo, blog, video, and social distribution.",
+    features: [
+      "Product launch support",
+      "Demo project or GitHub repo",
+      "Technical blog and video assets",
+      "Hackathon and event collaboration support",
+    ],
+  },
+  {
+    id: "influencer-management",
+    icon: ShareNetwork,
+    badges: ["Creators", "Partnerships"],
+    accent: "Influencer",
+    rest: "Management",
+    description:
+      "End-to-end creator campaigns for developer audiences, from shortlisting and outreach to pricing and reporting.",
+    features: [
+      "X, LinkedIn, YouTube, and newsletter creators",
+      "Creator discovery and vetting",
+      "Pricing, briefs, and deliverable management",
+      "Campaign reporting and follow-up",
+    ],
+  },
+];
 
 export default function Services() {
   return (
-    <div id="work" className="mt-20 relative overflow-x-hidden ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center my-10">
-          <div className="text-center  font-semibold lg:text-5xl text-4xl mb-4">
-            What We{" "}
-            <span className="serif-accent font-accent italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
-              Offer
-            </span>
-          </div>
-          <p className=" mx-auto text-foreground/80 dark:text-neutral-400 text-sm md:text-base ">
-            End-to-end support for building a strong developer relations program{" "}
-            <br className="hidden md:block" /> from content to community.
-          </p>
-        </div>
-
-        <div className="sm:mt-20 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="relative group bg-muted h-[20rem] flex flex-col justify-between items-start p-1 rounded-xl transition-all"
-            >
-              <div className="relative w-full h-full overflow-hidden bg-background border flex flex-col justify-between rounded-lg p-6 items-start">
-                {/* <div
-                className={cn(
-                  "top-[-10rem] md:top-[-29rem] group-hover:opacity-100 opacity-0 z-[10] absolute bg-gradient-to-t from-primary/10 dark:from-primary to-orange-200 dark:to-orange-900/90  blur-[8em] rounded-xl transition-all duration-700 ease-out w-[10rem] md:w-[30rem] h-[20rem] md:h-[25rem] rotate-[54deg]",
-                  index % 2 === 0
-                    ? "right-[-20%] md:right-[-50%] "
-                    : "left-[0%] translate-x-[-50%]",
-                  index === 0 && "left-[50%] translate-x-[-50%]",
-                  index === 3 && "left-[50%] translate-x-[-50%]"
-                )}
-              ></div> */}
-                <div className="absolute top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full">
-                  <div className="absolute border-[3px] group-hover:border-primary/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full z-[90] inline-flex p-6 ">
-                    <service.icon
-                      className="size-10 text-primary"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <Ripple className="top-1/2 left-1/2 opacity-40 group-hover:opacity-70 -translate-x-1/2 -translate-y-1/2 w-full h-full" />
-                </div>
-                <div className="mt-4 flex w-full flex-1 flex-col justify-end">
-                  <h3 className="min-h-[3.25rem]">
-                    <a className="font-inter text-2xl font-semibold leading-snug tracking-tight focus:outline-none line-clamp-2">
-                      <span className="absolute inset-0" aria-hidden="true" />
-                      {service.title}
-                    </a>
-                  </h3>
-                  <p className="mt-0.5 min-h-[2.5rem] text-sm font-medium tracking-wide text-neutral-600 line-clamp-2 dark:text-neutral-400">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+    <ServiceOfferCards
+      subtitle="Three connected workstreams for developer growth: run the DevRel motion, package launches into campaigns, and manage creator partnerships end to end."
+      cards={offerings}
+    />
   );
 }

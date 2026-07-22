@@ -11,6 +11,7 @@ import { Num } from "@/components/ui/num";
 export default function Trustedby() {
   return (
     <motion.div
+      id="trusted-by"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
@@ -43,12 +44,13 @@ export default function Trustedby() {
                       item.isWhite
                         ? "grayscale invert dark:invert-0"
                         : "invert-0 grayscale dark:invert",
-                      "opacity-80 w-auto object-contain",
+                      "opacity-80 object-contain",
                       item.className,
                     )}
                     alt=""
                     width={56}
                     height={56}
+                    style={{ height: "auto" }}
                   />
                   <span className="text-base sm:text-lg font-medium tracking-tight opacity-90 whitespace-nowrap">
                     {item.name}
@@ -77,6 +79,7 @@ export default function Trustedby() {
                   alt={item.name}
                   width={1000}
                   height={1000}
+                  style={{ width: "auto" }}
                 />
               )}
             </div>

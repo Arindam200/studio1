@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { SauravImg, JesseImg, MarketaImg, JuliaImg } from "@/constants/image";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const TRUSTED_AVATARS = [
   { src: SauravImg, alt: "Saurav" },
@@ -12,13 +13,15 @@ const TRUSTED_AVATARS = [
 ] as const;
 
 export default function AvatarComponent({ className }: { className?: string }) {
+  const t = useTranslations("Hero");
+
   return (
     <div
       className={cn(
         "flex flex-col items-center gap-3 sm:flex-row sm:gap-5",
         className,
       )}
-      aria-label="Trusted by 35+ devtool teams"
+      aria-label={t("trustedAria")}
     >
       <div className="flex items-center -space-x-2.5 sm:-space-x-3" aria-hidden>
         {TRUSTED_AVATARS.map((avatar, index) => (
@@ -44,11 +47,15 @@ export default function AvatarComponent({ className }: { className?: string }) {
       />
 
       <p className="text-center text-sm leading-snug sm:text-left">
-        <span className="font-secondary text-muted-foreground">Trusted by</span>{" "}
+        <span className="font-secondary text-muted-foreground">
+          {t("trustedPrefix")}
+        </span>{" "}
         <span className="font-numeric text-[1.15em] font-semibold text-primary">
           35+
         </span>{" "}
-        <span className="font-secondary text-foreground/85">devtool teams</span>
+        <span className="font-secondary text-foreground/85">
+          {t("trustedSuffix")}
+        </span>
       </p>
     </div>
   );

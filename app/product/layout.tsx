@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Products",
   description:
-    "Studio1-built tools for developers and SaaS teams. Raah for web analytics and real-user observability, AssetSnip for website asset extraction and design handoff.",
+    "Studio1-built tools for developers and SaaS teams: Raah for web analytics and real-user observability, AssetSnip for website asset extraction, and selected products in progress.",
   path: "/product",
 });
 

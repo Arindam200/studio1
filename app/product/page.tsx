@@ -1,6 +1,7 @@
 import { products } from "@/constants/products";
 import ProductHero from "@/components/product/product-hero";
 import ProductList from "@/components/product/product-list";
+import ProductPipelineCard from "@/components/product/product-pipeline-card";
 import { softwareApplicationJsonLd } from "@/lib/seo";
 
 const shipped = products
@@ -54,6 +55,9 @@ export default function ProductPage() {
       <section className="relative overflow-x-hidden px-4 pb-20 sm:px-6 sm:pb-24 md:pb-32 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <ProductList products={shipped} />
+          <div className="mt-5 sm:mt-6 md:mt-8">
+            <ProductPipelineCard />
+          </div>
         </div>
       </section>
     </main>

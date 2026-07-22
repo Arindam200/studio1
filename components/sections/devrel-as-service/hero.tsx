@@ -43,12 +43,12 @@ export default function Page() {
         <div className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 pt-8 py-4 text-center">
           <span className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600 from">
             {" "}
-            DevRel as a Service
+            Developer Relations & Growth
           </span>
 
           <p className="text-lg sm:w-[60rem] max-sm:mx-2.5 sm:text-2xl font-semibold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4 text-center">
-            We help you build and grow developer communities with <br /> DevRel
-            strategies tailored to your product and audience.
+            We help you build developer communities, launch products, and run
+            growth campaigns tailored to your audience.
           </p>
 
           <div className="flex justify-center sm:py-8">

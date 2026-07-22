@@ -1,5 +1,4 @@
 import type { CaseStudyMeta, CaseStudyMetric } from "@/lib/case-studies";
-import { CaseStudyHighlightQuotes } from "@/components/case-studies/case-study-highlight-quotes";
 import { CaseStudyHighlightStats } from "@/components/case-studies/case-study-highlight-stats";
 import { cn } from "@/lib/utils";
 
@@ -19,42 +18,23 @@ function dedupeMetrics(metrics: CaseStudyMetric[]) {
   });
 }
 
-function outcomeAsQuote(study: CaseStudyMeta) {
-  const outcome = study.outcomes[0];
-  if (!outcome) return null;
-
-  return {
-    text: outcome,
-    author: study.client,
-    role: study.category,
-  };
-}
-
 /**
  * Highlight below the case study header.
- * Verified metrics (up to 3) or one pull quote, never both.
+ * Verified metrics (up to 3). Client quotes and outcomes render later as
+ * proof panels so quote-led case studies still feel like case studies, not
+ * articles with one pull quote at the top.
  */
 export function CaseStudyHighlights({
   study,
   className,
 }: CaseStudyHighlightsProps) {
   const metrics = dedupeMetrics(study.metrics).slice(0, 3);
-  const fromOutcomes = study.quotes.length === 0;
-  const featuredQuote = study.quotes[0] ?? outcomeAsQuote(study);
 
-  if (metrics.length === 0 && !featuredQuote) return null;
+  if (metrics.length === 0) return null;
 
   return (
     <div className={cn(className)}>
-      {metrics.length > 0 ? (
-        <CaseStudyHighlightStats metrics={metrics} client={study.client} />
-      ) : featuredQuote ? (
-        <CaseStudyHighlightQuotes
-          quote={featuredQuote}
-          client={study.client}
-          fromOutcomes={fromOutcomes}
-        />
-      ) : null}
+      <CaseStudyHighlightStats metrics={metrics} client={study.client} />
     </div>
   );
 }

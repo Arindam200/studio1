@@ -19,6 +19,11 @@ export const TeamCard = ({
     };
   };
 }) => {
+  const imageClassName =
+    member.name === "Amitesh Anand"
+      ? "w-64 object-cover"
+      : "w-80 object-cover";
+
   return (
     <div className="flex relative hover:-translate-y-1 transition-all duration-700 border-2 dark:border-accent/80 bg-muted/20 group rounded-lg overflow-hidden h-[25rem] flex-col items-center justify-center">
       <div className={teamCardHoverGlow}></div>
@@ -31,7 +36,7 @@ export const TeamCard = ({
       />
       <div className="w-full flex items-center justify-center absolute bottom-0 h-fit">
         <Image
-          className="w-80 object-cover"
+          className={imageClassName}
           width={200}
           height={200}
           src={member.image}

@@ -1,15 +1,22 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import DottedMap from "dotted-map";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 
+type WorldMapLocation = {
+  lat: number;
+  lng: number;
+  label?: string;
+  labelOffset?: { x: number; y: number };
+};
+
 export type WorldMapDot = {
-  start: { lat: number; lng: number; label?: string };
-  end: { lat: number; lng: number; label?: string };
+  start: WorldMapLocation;
+  end: WorldMapLocation;
 };
 
 type WorldMapProps = {
@@ -42,9 +49,14 @@ export function WorldMap({
   className,
 }: WorldMapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
+  const [mounted, setMounted] = useState(false);
   const [hoveredLocation, setHoveredLocation] = useState<string | null>(null);
   const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
+  const isDark = mounted && resolvedTheme === "dark";
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const map = useMemo(
     () => new DottedMap({ height: 100, grid: "diagonal" }),
@@ -84,7 +96,7 @@ export function WorldMap({
   const uniquePoints = useMemo(() => {
     const seen = new Map<
       string,
-      { lat: number; lng: number; label?: string }
+      WorldMapLocation
     >();
 
     for (const dot of dots) {
@@ -221,6 +233,9 @@ export function WorldMap({
         {uniquePoints.map((point, i) => {
           const projected = projectPoint(point.lat, point.lng);
           const label = point.label || `Location ${i + 1}`;
+          const labelOffset = point.labelOffset ?? { x: 0, y: -3.35 };
+          const labelX = projected.x + labelOffset.x;
+          const labelY = projected.y + labelOffset.y;
 
           return (
             <g key={`point-${pointKey(point.lat, point.lng)}`}>
@@ -272,22 +287,22 @@ export function WorldMap({
                   className="pointer-events-none"
                 >
                   <rect
-                    x={projected.x - point.label.length * 0.55 - 1.2}
-                    y={projected.y - 5.4}
-                    width={point.label.length * 1.1 + 2.4}
-                    height="3.8"
+                    x={labelX - point.label.length * 0.65 - 1.4}
+                    y={labelY - 2.3}
+                    width={point.label.length * 1.3 + 2.8}
+                    height="4.6"
                     rx="0.6"
                     ry="0.6"
                     className="fill-background stroke-border/70"
                     strokeWidth="0.15"
                   />
                   <text
-                    x={projected.x}
-                    y={projected.y - 3.35}
+                    x={labelX}
+                    y={labelY}
                     textAnchor="middle"
                     dominantBaseline="middle"
                     className="fill-foreground"
-                    style={{ fontSize: "2.1px", fontWeight: 500 }}
+                    style={{ fontSize: "2.5px", fontWeight: 600 }}
                   >
                     {point.label}
                   </text>

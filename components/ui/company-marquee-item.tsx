@@ -218,7 +218,7 @@ export function CompanyMarqueeItem({
     item.isWhite
       ? "grayscale invert dark:invert-0"
       : "invert-0 grayscale dark:invert",
-    "opacity-80 w-auto object-contain",
+    "opacity-80 object-contain",
     item.showNameBeside && item.className,
     !item.showNameBeside && [
       "opacity-70 mx-10 w-auto object-contain",
@@ -312,6 +312,7 @@ export function CompanyMarqueeItem({
               width={56}
               height={56}
               sizes={imageSizes}
+              style={{ height: "auto" }}
             />
             <span className="whitespace-nowrap text-base font-medium tracking-tight opacity-90 sm:text-lg">
               {item.name}
@@ -325,6 +326,7 @@ export function CompanyMarqueeItem({
             width={1000}
             height={1000}
             sizes={imageSizes}
+            style={{ width: "auto" }}
           />
         )}
       </div>

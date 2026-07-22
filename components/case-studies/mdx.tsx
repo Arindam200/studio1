@@ -23,7 +23,18 @@ function extractText(children: ReactNode): string {
 }
 
 function Frame({ children }: { children: ReactNode }) {
-  return <figure className="not-prose my-8">{children}</figure>;
+  return (
+    <figure className="not-prose my-10 overflow-hidden rounded-xl border border-border/70 bg-[linear-gradient(135deg,hsl(var(--muted)/0.5),hsl(var(--background)),hsl(var(--primary)/0.06))] p-2 shadow-[0_18px_52px_-36px_rgba(0,0,0,0.55)] dark:border-white/[0.08] dark:bg-[linear-gradient(135deg,hsl(var(--muted)/0.18),hsl(var(--background)),hsl(var(--primary)/0.08))]">
+      <div className="mb-2 flex items-center gap-1.5 px-1">
+        <span className="size-2 rounded-full bg-primary/70" />
+        <span className="size-2 rounded-full bg-primary/35" />
+        <span className="size-2 rounded-full bg-muted-foreground/25" />
+      </div>
+      <div className="overflow-hidden rounded-lg border border-border/60 bg-background/80 dark:border-white/[0.08] dark:bg-background/45">
+        {children}
+      </div>
+    </figure>
+  );
 }
 
 function CaseStudyImage({
@@ -45,7 +56,7 @@ function CaseStudyImage({
       title={title ?? undefined}
       loading="lazy"
       decoding="async"
-      className="w-full h-auto rounded-xl border bg-muted/30"
+      className="h-auto w-full bg-muted/20"
     />
   );
 }

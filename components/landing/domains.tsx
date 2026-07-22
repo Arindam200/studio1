@@ -11,59 +11,47 @@ import {
 } from "@/lib/animations";
 import { cn } from "@/lib/utils";
 import { SectionEyebrow } from "./section-eyebrow";
+import { useTranslations } from "next-intl";
 
-const offerings = [
+const offeringLinks = [
   {
-    label: "Technical Content Writing",
-    href: "/blog-as-service",
-    description:
-      "Developer tutorials, guides, and documentation that build trust, rank in search, and drive product adoption.",
+    href: "/technical-content-marketing#technical-content-writing",
   },
   {
-    label: "Developer Advocacy",
-    href: "/devrel-as-service",
-    description:
-      "End-to-end DevRel programs that grow communities around your product, from strategy and content to events.",
+    href: "/developer-relations-growth-campaigns#developer-advocacy",
   },
   {
-    label: "Tech Video Production",
-    href: "/devrel-as-service",
-    description:
-      "Product demos, how-tos, and integration videos made for AI and DevTool teams who need developers to get it.",
+    href: "/developer-video-production#tech-video-production",
   },
   {
-    label: "Content Creation",
-    href: "/content-creation",
-    description:
-      "Channel strategy, scripts, edits, thumbnails, and SEO titles with a publishing cadence built for YouTube growth.",
+    href: "/developer-video-production#content-creation",
   },
   {
-    label: "Docs as a Service",
-    href: "/docs-as-service",
-    description:
-      "Docs audit, documentation, and DX improvements: onboarding reviews, shippable guides, and a clearer path to first success.",
+    href: "/developer-documentation-dx-audit#documentation-dx-audits",
   },
   {
-    label: "Organic Growth Campaign",
-    href: "/devrel-as-service",
-    description:
-      "Multi-channel campaigns that create buzz, drive adoption, and establish your product in developer communities.",
+    href: "/developer-relations-growth-campaigns#organic-growth-campaign",
   },
   {
-    label: "Product Launch Support",
-    href: "/devrel-as-service",
-    description:
-      "Strategy, content, and community activation to maximize launch visibility and convert interest into users.",
+    href: "/developer-relations-growth-campaigns#product-launch-support",
   },
   {
-    label: "Influencer Management",
-    href: "/devrel-as-service",
-    description:
-      "Find relevant creators, run campaigns, and grow authentic visibility with developer-focused audiences.",
+    href: "/developer-relations-growth-campaigns#influencer-management",
   },
 ] as const;
 
+type OfferingCopy = {
+  label: string;
+  description: string;
+};
+
 export default function TechnicalDomains() {
+  const t = useTranslations("HomeDomains");
+  const offeringCopy = t.raw("offerings") as OfferingCopy[];
+  const offerings = offeringLinks.map((offering, index) => ({
+    ...offering,
+    ...offeringCopy[index],
+  }));
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -81,6 +69,7 @@ export default function TechnicalDomains() {
 
   return (
     <motion.section
+      id="service-offerings"
       className="relative px-4 py-24 md:py-32"
       initial="hidden"
       whileInView="visible"
@@ -93,16 +82,15 @@ export default function TechnicalDomains() {
           variants={headerVariants}
         >
           <div className="flex flex-col gap-5">
-            <SectionEyebrow>What We Offer</SectionEyebrow>
+            <SectionEyebrow>{t("eyebrow")}</SectionEyebrow>
             <h2 className="max-w-md font-primary text-4xl font-normal tracking-tight text-foreground max-sm:text-3xl md:text-5xl">
-              The services we run for{" "}
+              {t("titlePrefix")}{" "}
               <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
-                developer brands
+                {t("titleHighlight")}
               </span>
             </h2>
             <p className="max-w-sm font-secondary text-base leading-relaxed text-muted-foreground max-sm:text-sm">
-              Content, advocacy, video, docs, growth, launches, and influencer
-              programs: the full set of work we take on.
+              {t("description")}
             </p>
           </div>
 
@@ -133,7 +121,7 @@ export default function TechnicalDomains() {
                   href={activeOffering.href}
                   className="group inline-flex w-fit items-center gap-2 font-secondary text-sm font-medium text-primary transition-colors hover:text-primary1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
-                  Explore service
+                  {t("explore")}
                   <ArrowRight
                     weight="bold"
                     className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5"

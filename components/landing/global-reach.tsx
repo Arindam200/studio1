@@ -11,15 +11,22 @@ import {
 } from "@/lib/animations";
 import { elevatedCardShadow } from "@/lib/shadows";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 const LOCATION_LABELS: Record<string, string> = {
   australia: "Australia",
+  brazil: "Brazil",
+  france: "France",
   india: "India",
   netherlands: "Netherlands",
   us: "USA",
-  israel: "Israel",
   singapore: "Singapore",
   vietnam: "Vietnam",
+};
+
+const LABEL_OFFSETS: Record<string, { x: number; y: number }> = {
+  france: { x: -5, y: 3.8 },
+  netherlands: { x: 6, y: -5.2 },
 };
 
 function markerPoint(id: string) {
@@ -33,6 +40,7 @@ function markerPoint(id: string) {
     lat,
     lng,
     label: LOCATION_LABELS[id] ?? id,
+    labelOffset: LABEL_OFFSETS[id],
   };
 }
 
@@ -41,13 +49,17 @@ const GLOBAL_REACH_DOTS: WorldMapDot[] = [
   { start: markerPoint("india"), end: markerPoint("us") },
   { start: markerPoint("india"), end: markerPoint("netherlands") },
   { start: markerPoint("india"), end: markerPoint("singapore") },
-  { start: markerPoint("singapore"), end: markerPoint("australia") },
+  { start: markerPoint("india"), end: markerPoint("brazil") },
   { start: markerPoint("singapore"), end: markerPoint("vietnam") },
-  { start: markerPoint("netherlands"), end: markerPoint("israel") },
+  { start: markerPoint("singapore"), end: markerPoint("australia") },
+  { start: markerPoint("france"), end: markerPoint("india") },
+  { start: markerPoint("france"), end: markerPoint("netherlands") },
   { start: markerPoint("us"), end: markerPoint("netherlands") },
 ];
 
 export default function GlobalReach() {
+  const t = useTranslations("GlobalReach");
+
   return (
     <motion.section
       id="global-reach"
@@ -61,16 +73,15 @@ export default function GlobalReach() {
         className="mb-14 flex flex-col items-center justify-center gap-4"
         variants={headerVariants}
       >
-        <SectionEyebrow>Global Reach</SectionEyebrow>
+        <SectionEyebrow>{t("eyebrow")}</SectionEyebrow>
         <h2 className="max-sm:text-4xl text-center font-inter text-5xl font-normal tracking-tight">
-          Building With Teams{" "}
+          {t("titlePrefix")}{" "}
           <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
-            Worldwide
+            {t("titleHighlight")}
           </span>
         </h2>
         <p className="mt-2 max-w-2xl text-center text-base text-muted-foreground max-sm:text-sm">
-          From India to the USA, Netherlands to Singapore: the same hubs on our
-          globe, mapped as the places we ship developer content and DevRel.
+          {t("description")}
         </p>
       </motion.div>
 

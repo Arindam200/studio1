@@ -15,8 +15,11 @@ import {
 } from "@/lib/shadows";
 import { HeroStatsStrip } from "@/components/ui/hero-stats-strip";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 export default function Services() {
+  const t = useTranslations("HomeServices");
+
   return (
     <>
       <motion.section
@@ -24,7 +27,7 @@ export default function Services() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerChildren}
-        id="work"
+        id="services"
         className=" mb-28 px-4 pt-4 md:pt-6 pb-20 relative"
       >
         <div className={servicesSectionGlowBottom}></div>
@@ -34,10 +37,10 @@ export default function Services() {
             highlightValues
             className="max-w-5xl"
             stats={[
-              { value: "2M+", label: "content views" },
-              { value: "35+", label: "partner companies" },
-              { value: "50%", label: "cost savings" },
-              { value: "65%+", label: "client retention" },
+              { value: "2M+", label: t("stats.views") },
+              { value: "35+", label: t("stats.companies") },
+              { value: "50%", label: t("stats.savings") },
+              { value: "65%+", label: t("stats.retention") },
             ]}
           />
         </motion.div>
@@ -45,11 +48,12 @@ export default function Services() {
           variants={serviceItemVariants}
           className="flex flex-col z-[20] items-center gap-4 justify-center"
         >
-          <SectionEyebrow>Services</SectionEyebrow>
-          <div className="text-5xl max-sm:text-4xl font-normal text-center">What We Do</div>
+          <SectionEyebrow>{t("eyebrow")}</SectionEyebrow>
+          <div className="text-5xl max-sm:text-4xl font-normal text-center">
+            {t("title")}
+          </div>
           <p className="text-center text-base max-sm:text-sm mt-2 max-w-2xl">
-            We create technical tutorials, documentation, and DevRel programs
-            that help developers succeed with your product and drive adoption.
+            {t("description")}
           </p>
         </motion.div>
         <div className="flex flex-col max-w-7xl mx-auto">
@@ -58,7 +62,7 @@ export default function Services() {
             className="flex relative items-center gap-[2%] w-full mt-20 justify-center md:-space-x-20 flex-col md:flex-row md:pb-20"
           >
             <Link
-              href={"/blog-as-service"}
+              href={"/technical-content-marketing"}
               className={cn(
                 "border-2 dark:border transition-all duration-700 hover:-translate-y-4 h-[30rem] relative w-full max-w-[23rem] group rounded-lg overflow-hidden flex flex-col items-start bg-background/80 backdrop-blur-md justify-start p-8 mb-8 md:mb-0",
                 elevatedCardShadow,
@@ -76,27 +80,26 @@ export default function Services() {
               <div className="flex flex-col gap-2">
                 <div className="flex gap-2 flex-wrap">
                   <Badge className="w-fit bg-accent text-foreground">
-                    <Num>2M+</Num> views
+                    <Num>2M+</Num> {t("cards.content.badgeOne")}
                   </Badge>
                   <Badge className="w-fit bg-accent text-foreground">
-                    <Num>30+</Num> teams
+                    <Num>30+</Num> {t("cards.content.badgeTwo")}
                   </Badge>
                 </div>
                 <p className="text-4xl font-light text-left">
                   <span className="text-transparent bg-clip-text bg-gradient-to-br font-extrabold from-white via-primary/80 to-white dark:from-white dark:via-primary/80 dark:to-white">
-                    Blogs
+                    {t("cards.content.titleStrong")}
                   </span>{" "}
-                  as a<br /> Service
+                  {t("cards.content.titleRest")}
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Developer tutorials, guides, and documentation that rank and
-                  drive product adoption.
+                  {t("cards.content.description")}
                 </p>
               </div>
             </Link>
 
             <Link
-              href={"/devrel-as-service"}
+              href={"/developer-relations-growth-campaigns"}
               className={cn(
                 "border-2 dark:border transition-all duration-700 hover:translate-y-4 relative overflow-hidden group flex flex-col items-start p-8 bg-background/80 backdrop-blur-2xl h-[30rem] w-full  max-w-[23rem] md:translate-y-20 rounded-lg",
                 elevatedCardShadow,
@@ -114,21 +117,20 @@ export default function Services() {
               <div className="flex flex-col gap-2">
                 <div className="flex gap-2 flex-wrap">
                   <Badge className="w-fit bg-accent text-foreground">
-                    <Num>10+</Num> events
+                    <Num>10+</Num> {t("cards.growth.badgeOne")}
                   </Badge>
                   <Badge className="w-fit bg-accent text-foreground">
-                    <Num>#1</Num> PH Launch
+                    <Num>#1</Num> {t("cards.growth.badgeTwo")}
                   </Badge>
                 </div>
                 <p className="text-4xl font-light text-left">
                   <span className="text-transparent bg-clip-text bg-gradient-to-br font-extrabold from-white via-primary/80 to-white dark:from-white dark:via-primary/80 dark:to-white">
-                    DevRel
+                    {t("cards.growth.titleStrong")}
                   </span>{" "}
-                  as a<br /> Service
+                  {t("cards.growth.titleRest")}
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
-                  End-to-end developer relations programs, from strategy and
-                  content to community and events.
+                  {t("cards.growth.description")}
                 </p>
               </div>
             </Link>

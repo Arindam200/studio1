@@ -25,11 +25,15 @@ export default function Navbar3({ className }: { className?: string }) {
         </Link> */}
         <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/devrel-as-service">
-              DevRel as Service
+            <HoveredLink href="/developer-relations-growth-campaigns">
+              Developer Relations & Growth
             </HoveredLink>
-            <HoveredLink href="/blog-as-service">Blog as Service</HoveredLink>
-            <HoveredLink href="/docs-as-service">Docs as Service</HoveredLink>
+            <HoveredLink href="/technical-content-marketing">
+              Technical Content Marketing
+            </HoveredLink>
+            <HoveredLink href="/developer-documentation-dx-audit">
+              Documentation & DX Audits
+            </HoveredLink>
           </div>
         </MenuItem>
         <Link href="#process">

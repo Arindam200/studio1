@@ -2,7 +2,7 @@ import { getAllPosts } from "@/lib/blog";
 import { BlogCard } from "@/components/blog/blog-card";
 import { Badge } from "@/components/ui/badge";
 import { Newspaper } from "@phosphor-icons/react/dist/ssr";
-import { baseUrl } from "@/app/sitemap";
+import { baseUrl } from "@/lib/site";
 
 export default function BlogIndexPage() {
   const posts = getAllPosts();
