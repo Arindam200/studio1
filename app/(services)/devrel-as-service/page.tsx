@@ -6,7 +6,6 @@ import Process from "@/components/pages/devrel-as-a-service/process";
 import DevRelPricing from "@/components/sections/devrel-as-service/pricing";
 import { Metadata } from "next";
 import Hero from "@/components/pages/devrel-as-a-service/hero";
-import DevRelDeliverables from "./deliverables";
 import NonNegotiable from "@/components/sections/non-negotiable";
 import FAQ, { type FAQItem } from "@/components/landing/faq";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
@@ -14,7 +13,7 @@ import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "DevRel as Service",
   description:
-    "We help you build and grow developer communities with DevRel strategies tailored to your product and audience.",
+    "End-to-end developer relations: community, technical content, video, DX audits, launches, and organic growth campaigns tailored to your product and audience.",
   path: "/devrel-as-service",
 });
 
@@ -59,6 +58,16 @@ const devrelFaqItems: FAQItem[] = [
     answer:
       "Yes. We provide end-to-end Product Hunt launch support including pre-launch strategy, community activation, content preparation, launch-day execution, and post-launch amplification. Our past launches have achieved #1 Product of the Day.",
   },
+  {
+    question: "What does a developer experience audit cover?",
+    answer:
+      "We review developer onboarding, documentation clarity, API usability, and workflow navigation. You get a findings report with prioritised recommendations and an implementation roadmap.",
+  },
+  {
+    question: "Do you run growth campaigns and influencer programs?",
+    answer:
+      "Yes. We run multi-channel organic campaigns across X, LinkedIn, Reddit, and YouTube, and handle discovery, vetting, and managed collaborations with developer creators. Everything is tracked against engagement and conversions.",
+  },
 ];
 
 export default function DevRel() {
@@ -67,7 +76,7 @@ export default function DevRel() {
     "@type": "Service",
     name: "DevRel as Service",
     description:
-      "We help you build and grow developer communities with DevRel strategies tailored to your product and audience.",
+      "End-to-end developer relations: community, technical content, video, DX audits, launches, and organic growth campaigns tailored to your product and audience.",
     provider: {
       "@type": "Organization",
       name: "Studio1",
@@ -97,15 +106,14 @@ export default function DevRel() {
       />
       <Hero />
       <Services />
-      <DevRelDeliverables />
       <Process />
       <FAQ
         subtitle="Common questions about our DevRel as a Service offering."
         items={devrelFaqItems}
       />
       <NonNegotiable
-        headline="We operate as an embedded DevRel team: community, content, education, and advocacy tied to your product goals."
-        body="From Discord and workshops to conference talks, DX audits, and Product Hunt launches, Studio1 runs end-to-end developer programs with writers, engineers, community managers, and advocates. You get measurable adoption without the overhead of hiring and managing a full in-house DevRel function."
+        headline="We operate as an embedded DevRel team: community, content, education, advocacy, launches, and growth campaigns tied to your product goals."
+        body="From Discord and workshops to conference talks, video, DX audits, product launches, organic growth campaigns, and creator programs, Studio1 runs end-to-end developer programs with writers, engineers, community managers, and advocates. You get measurable adoption without the overhead of hiring and managing a full in-house DevRel function."
       />
       {/* <DevRelPricing /> */}
       {/* <PricingSection /> */}

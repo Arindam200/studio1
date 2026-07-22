@@ -79,15 +79,6 @@ export default function Hero() {
             </div>
 
             <div className="space-y-4 border-t px-6 py-6 md:px-7 md:py-7">
-              <div className="flex items-center justify-between gap-3">
-                <p className="font-secondary text-xs font-medium tracking-wide text-muted-foreground">
-                  Tutorial series · Ep. 03
-                </p>
-                <span className="shrink-0 rounded-md bg-primary/10 px-2 py-0.5 font-secondary text-[11px] font-semibold text-primary">
-                  +38% CTR
-                </span>
-              </div>
-
               <p className="font-inter text-xl font-medium leading-snug tracking-tight md:text-2xl">
                 Ship your first agent in 15 minutes
               </p>

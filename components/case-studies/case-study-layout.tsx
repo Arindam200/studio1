@@ -25,8 +25,8 @@ const COLUMN = "max-w-[52rem]";
  * Everything shares one left edge and one measure, so the page reads as a
  * continuous document rather than a stack of differently-sized bands.
  *
- * Verified metrics (up to three) or one pull quote sits below the header in
- * the same prose measure, then the narrative continues.
+ * Verified metrics or one pull quote sits below the header in the same prose
+ * measure (highlight-card language). Nothing extra is added at the end.
  */
 export function CaseStudyLayout({
   study,
@@ -90,7 +90,7 @@ export function CaseStudyLayout({
             </p>
           </header>
 
-          {/* Verified stats or editorial pull quotes */}
+          {/* Metrics or quote highlight under the header */}
           {showHighlights ? (
             <div className="mt-14 border-t border-border/60 pt-10">
               <CaseStudyHighlights study={study} />

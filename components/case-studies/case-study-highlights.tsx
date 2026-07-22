@@ -32,7 +32,7 @@ function outcomeAsQuote(study: CaseStudyMeta) {
 
 /**
  * Highlight below the case study header.
- * All verified metrics (up to 3) or one pull quote, aligned with the prose column.
+ * Verified metrics (up to 3) or one pull quote, never both.
  */
 export function CaseStudyHighlights({
   study,
@@ -47,7 +47,7 @@ export function CaseStudyHighlights({
   return (
     <div className={cn(className)}>
       {metrics.length > 0 ? (
-        <CaseStudyHighlightStats metrics={metrics} />
+        <CaseStudyHighlightStats metrics={metrics} client={study.client} />
       ) : featuredQuote ? (
         <CaseStudyHighlightQuotes
           quote={featuredQuote}

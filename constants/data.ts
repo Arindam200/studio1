@@ -32,6 +32,7 @@ import {
   ByteRover,
 } from "./image";
 import {
+  Books,
   Briefcase,
   CheckCircle,
   Files,
@@ -72,6 +73,11 @@ export const navItems = [
         title: "Content Creation",
         path: "/content-creation",
         icon: YoutubeLogo,
+      },
+      {
+        title: "Docs as a Service",
+        path: "/docs-as-service",
+        icon: Books,
       },
     ],
   },

@@ -177,7 +177,7 @@ export default function FAQ({ items, subtitle }: FAQProps) {
                     <span className="font-numeric w-8 shrink-0 pt-0.5 text-sm font-semibold tabular-nums text-muted-foreground transition-colors group-data-[state=open]:text-primary sm:w-10">
                       {number}
                     </span>
-                    <span className="min-w-0 flex-1 pr-2 font-primary text-base font-medium leading-snug tracking-tight text-foreground sm:text-lg">
+                    <span className="min-w-0 flex-1 pr-2 font-inter text-base font-medium leading-snug tracking-tight text-foreground sm:text-lg">
                       {item.question}
                     </span>
                     <span

@@ -47,14 +47,14 @@ export default function Services() {
                   </div>
                   <Ripple className="top-1/2 left-1/2 opacity-40 group-hover:opacity-70 -translate-x-1/2 -translate-y-1/2 w-full h-full" />
                 </div>
-                <div className="mt-4 flex-1 flex items-start justify-end flex-col">
-                  <h3 className="text-lg">
-                    <a className="focus:outline-none font-semibold text-2xl ">
-                      <span className="absolute inset-0 " aria-hidden="true" />
+                <div className="mt-4 flex w-full flex-1 flex-col justify-end">
+                  <h3 className="min-h-[3.25rem]">
+                    <a className="font-inter text-2xl font-semibold leading-snug tracking-tight focus:outline-none line-clamp-2">
+                      <span className="absolute inset-0" aria-hidden="true" />
                       {service.title}
                     </a>
                   </h3>
-                  <p className="mt-1 text-sm text-neutral-600 font-medium dark:text-neutral-400 tracking-wide">
+                  <p className="mt-0.5 min-h-[2.5rem] text-sm font-medium tracking-wide text-neutral-600 line-clamp-2 dark:text-neutral-400">
                     {service.description}
                   </p>
                 </div>

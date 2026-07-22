@@ -18,6 +18,8 @@ export type CaseStudyQuote = {
   role?: string;
   /** Public source for the quote (LinkedIn post, review, etc.). */
   source?: string;
+  /** Optional author portrait path or URL. */
+  avatar?: string;
 };
 
 export type CaseStudyMeta = {

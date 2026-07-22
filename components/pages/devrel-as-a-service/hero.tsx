@@ -48,8 +48,9 @@ export default function Hero() {
             variants={itemVariants}
             className="md:text-xl text-base font-medium text-center"
           >
-            We help you build and grow developer communities with <br /> DevRel
-            strategies tailored to your product and audience.
+            We build and grow developer communities with DevRel programs <br />
+            tailored to your product: content, video, audits, launches, and
+            campaigns.
           </motion.p>
 
           <motion.div

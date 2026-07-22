@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { caseStudyHighlightCardClassName } from "@/components/case-studies/case-study-highlight-quotes";
 import { NumericText } from "@/components/ui/num";
 import type { CaseStudyMetric } from "@/lib/case-studies";
 import { cn } from "@/lib/utils";
 
 type CaseStudyHighlightStatsProps = {
   metrics: CaseStudyMetric[];
+  client: string;
   className?: string;
 };
-
 function StatValue({
   metric,
   className,
@@ -41,11 +42,12 @@ function StatValue({
 }
 
 /**
- * Verified metrics band: up to three numbers in one row on md+.
+ * Verified metrics in the same highlight-card language as client quotes.
  * Headline metric leads; supporting metrics sit beside it at a quieter weight.
  */
 export function CaseStudyHighlightStats({
   metrics,
+  client,
   className,
 }: CaseStudyHighlightStatsProps) {
   if (metrics.length === 0) return null;
@@ -55,11 +57,12 @@ export function CaseStudyHighlightStats({
   return (
     <section
       aria-label="Verified results"
-      className={cn(
-        "relative overflow-hidden rounded-xl border border-border/20 bg-muted/30 px-5 py-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.12),0_12px_36px_-12px_rgba(0,0,0,0.18),0_14px_36px_-10px_hsl(var(--primary)/0.12)] dark:border-transparent dark:bg-white/[0.02] dark:shadow-[0_4px_24px_-8px_rgba(0,0,0,0.35),0_16px_48px_-16px_rgba(0,0,0,0.55)] md:px-6",
-        className,
-      )}
+      className={cn(caseStudyHighlightCardClassName, className)}
     >
+      <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.14em] text-primary dark:text-primary/70">
+        Results with {client}
+      </p>
+
       <dl className="flex flex-col gap-y-8 md:flex-row md:flex-nowrap md:items-start md:gap-x-8 md:gap-y-0 lg:gap-x-10">
         <div className="min-w-0 md:flex-1">
           <dt className="sr-only">{headline.label}</dt>

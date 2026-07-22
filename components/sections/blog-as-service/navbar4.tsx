@@ -29,6 +29,7 @@ export default function Navbar3({ className }: { className?: string }) {
               DevRel as Service
             </HoveredLink>
             <HoveredLink href="/blog-as-service">Blog as Service</HoveredLink>
+            <HoveredLink href="/docs-as-service">Docs as Service</HoveredLink>
           </div>
         </MenuItem>
         <Link href="#process">

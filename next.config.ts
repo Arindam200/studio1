@@ -12,5 +12,25 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    // Folded service pages: audit now lives under docs-as-service.
+    return [
+      {
+        source: "/audit-services",
+        destination: "/docs-as-service",
+        permanent: true,
+      },
+      ...[
+        "/video-production",
+        "/product-launch",
+        "/organic-campaign",
+        "/influencer-management",
+      ].map((source) => ({
+        source,
+        destination: "/devrel-as-service",
+        permanent: true,
+      })),
+    ];
+  },
 };
 export default withMDX(nextConfig);

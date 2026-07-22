@@ -77,6 +77,7 @@ import {
   ByteRoverFull,
 } from "@/constants/image";
 import {
+  IconApi,
   IconAugmentedReality,
   IconBolt,
   IconBook,
@@ -85,14 +86,15 @@ import {
   IconChartBar,
   IconChartBarPopular,
   IconCode,
-  IconGitBranch,
+  IconFileDescription,
   IconHeadset,
   IconHeartHandshake,
-  IconMessage,
   IconPlus,
   IconRocket,
   IconSearch,
   IconSettingsCheck,
+  IconStar,
+  IconTrendingUp,
   IconUsers,
 } from "@tabler/icons-react";
 import {
@@ -1585,40 +1587,52 @@ export const Data = {
 
   DevRelAsServiceServices: [
     {
-      title: "Technical Content Creation",
+      title: "Technical Content Writing",
       description:
-        "Developer-focused blogs, docs, and tutorials that drive clarity and adoption.",
+        "Tutorials, guides, and docs that build trust and drive adoption.",
       icon: IconCode,
     },
     {
-      title: "Community Management",
+      title: "Developer Advocacy",
       description:
-        "Build and manage active developer communities around your product or ecosystem.",
+        "End-to-end DevRel programs that grow communities around your product.",
       icon: IconUsers,
     },
     {
-      title: "Developer Education",
+      title: "Tech Video Production",
       description:
-        "Live workshops, tutorials, and onboarding flows to help devs succeed with your tool.",
-      icon: IconBook,
-    },
-    {
-      title: "Developer Support",
-      description:
-        "Responsive help channels and community-driven answers that developers can count on.",
-      icon: IconMessage,
-    },
-    {
-      title: "Video Content",
-      description:
-        "Engaging demos, product explainers and dev-focused livestreams.",
+        "Product demos, how-tos, and integration videos for developer audiences.",
       icon: IconBrandYoutube,
     },
     {
-      title: "Tool Audit",
+      title: "Content Creation",
       description:
-        "Developer experience audits and onboarding gap analysis to optimize your DX.",
-      icon: IconGitBranch,
+        "Channel strategy, scripts, edits, and a cadence built for growth.",
+      icon: IconBook,
+    },
+    {
+      title: "Audit Services",
+      description:
+        "Docs and DX audits covered in our Docs as a Service offering.",
+      icon: IconSearch,
+    },
+    {
+      title: "Organic Growth Campaign",
+      description:
+        "Multi-channel campaigns that create buzz and drive adoption.",
+      icon: IconTrendingUp,
+    },
+    {
+      title: "Product Launch Support",
+      description:
+        "Strategy, content, and community activation for launch visibility.",
+      icon: IconRocket,
+    },
+    {
+      title: "Influencer Management",
+      description:
+        "Find creators, run campaigns, and grow authentic developer reach.",
+      icon: IconStar,
     },
   ],
   DevRelAsServiceTeam: [
@@ -1654,6 +1668,96 @@ export const Data = {
         linkedin: "https://in.linkedin.com/in/shivaylamba",
         website: "https://shivaylamba.me",
       },
+    },
+  ],
+
+  DocsAsServiceProcess: [
+    {
+      name: "Discovery",
+      description:
+        "Initial assessment of your docs, onboarding, and developer paths with stakeholder interviews and goal alignment.",
+      icon: IconSearch,
+      details: [
+        <p>Current-state docs assessment</p>,
+        <p>Stakeholder interviews</p>,
+        <p>Onboarding and process review</p>,
+        <p>Goal alignment</p>,
+      ],
+    },
+    {
+      name: "Analysis",
+      description:
+        "Deep dive into journeys, APIs, and documentation gaps with pain-point mapping across the developer experience.",
+      icon: IconChartBar,
+      details: [
+        <p>User journey mapping</p>,
+        <p>Pain point identification</p>,
+        <p>API and docs gap analysis</p>,
+        <p>Priority friction ranking</p>,
+      ],
+    },
+    {
+      name: "Recommendations",
+      description:
+        "Detailed findings report with a prioritized plan for documentation and DX improvements.",
+      icon: IconBulb,
+      details: [
+        <p>Detailed findings report</p>,
+        <p>Content and DX priority plan</p>,
+        <p>Actionable recommendations</p>,
+        <p>Implementation roadmap</p>,
+      ],
+    },
+    {
+      name: "Implementation Support",
+      description:
+        "Ship docs and DX changes with guidance, best practices, progress monitoring, and follow-up reviews.",
+      icon: IconRocket,
+      details: [
+        <p>Docs and DX change guidance</p>,
+        <p>Best practices consultation</p>,
+        <p>Progress monitoring</p>,
+        <p>Follow-up assessments</p>,
+      ],
+    },
+  ],
+
+  DocsAsServiceServices: [
+    {
+      title: "Developer Onboarding Audit",
+      description:
+        "Evaluate onboarding docs and processes so new developers reach first success faster.",
+      icon: IconUsers,
+    },
+    {
+      title: "API Usability & Docs Audit",
+      description:
+        "Test API and SDK docs for clarity, examples, errors, and completeness.",
+      icon: IconApi,
+    },
+    {
+      title: "Quickstarts & How-tos",
+      description:
+        "Ship getting-started and task guides with working code examples.",
+      icon: IconBook,
+    },
+    {
+      title: "Reference & Concept Docs",
+      description:
+        "API, SDK, and concept pages that stay accurate as the product moves.",
+      icon: IconFileDescription,
+    },
+    {
+      title: "DX Path Improvements",
+      description:
+        "Fix friction in flows, information architecture, examples, and error paths.",
+      icon: IconSettingsCheck,
+    },
+    {
+      title: "Implementation & Follow-up",
+      description:
+        "Prioritized roadmap, ship support, and follow-up reviews tied to activation.",
+      icon: IconRocket,
     },
   ],
 };

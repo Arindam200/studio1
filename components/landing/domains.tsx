@@ -27,7 +27,7 @@ const offerings = [
   },
   {
     label: "Tech Video Production",
-    href: "/video-production",
+    href: "/devrel-as-service",
     description:
       "Product demos, how-tos, and integration videos made for AI and DevTool teams who need developers to get it.",
   },
@@ -38,26 +38,26 @@ const offerings = [
       "Channel strategy, scripts, edits, thumbnails, and SEO titles with a publishing cadence built for YouTube growth.",
   },
   {
-    label: "Audit Services",
-    href: "/audit-services",
+    label: "Docs as a Service",
+    href: "/docs-as-service",
     description:
-      "Data-driven reviews of onboarding, docs, and workflows that surface friction and improve developer experience.",
+      "Docs audit, documentation, and DX improvements: onboarding reviews, shippable guides, and a clearer path to first success.",
   },
   {
     label: "Organic Growth Campaign",
-    href: "/organic-campaign",
+    href: "/devrel-as-service",
     description:
       "Multi-channel campaigns that create buzz, drive adoption, and establish your product in developer communities.",
   },
   {
     label: "Product Launch Support",
-    href: "/product-launch",
+    href: "/devrel-as-service",
     description:
       "Strategy, content, and community activation to maximize launch visibility and convert interest into users.",
   },
   {
     label: "Influencer Management",
-    href: "/influencer-management",
+    href: "/devrel-as-service",
     description:
       "Find relevant creators, run campaigns, and grow authentic visibility with developer-focused audiences.",
   },
@@ -101,7 +101,7 @@ export default function TechnicalDomains() {
               </span>
             </h2>
             <p className="max-w-sm font-secondary text-base leading-relaxed text-muted-foreground max-sm:text-sm">
-              Content, advocacy, video, audits, growth, launches, and influencer
+              Content, advocacy, video, docs, growth, launches, and influencer
               programs: the full set of work we take on.
             </p>
           </div>
@@ -113,7 +113,7 @@ export default function TechnicalDomains() {
           >
             <AnimatePresence mode="wait">
               <motion.div
-                key={activeOffering.href}
+                key={activeOffering.label}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
@@ -156,7 +156,7 @@ export default function TechnicalDomains() {
 
               return (
                 <li
-                  key={offering.href}
+                  key={offering.label}
                   className="border-b border-border/60 first:border-t"
                 >
                   <Link
@@ -193,7 +193,7 @@ export default function TechnicalDomains() {
                     <AnimatePresence initial={false}>
                       {isActive && (
                         <motion.span
-                          key={`${offering.href}-detail`}
+                          key={`${offering.label}-detail`}
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}

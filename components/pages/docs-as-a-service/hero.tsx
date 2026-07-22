@@ -1,0 +1,103 @@
+"use client";
+
+import { motion } from "motion/react";
+import { Badge } from "@/components/ui/badge";
+import { IconPackages, IconPhoneFilled } from "@tabler/icons-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { staggerChildren, itemVariants } from "@/lib/animations";
+import { HeroStatsStrip } from "@/components/ui/hero-stats-strip";
+import {
+  serviceHeroContentClassName,
+  serviceHeroOuterClassName,
+  serviceHeroStatsWrapperClassName,
+} from "@/components/pages/shared/service-hero-layout";
+import { heroAccentGlow } from "@/lib/shadows";
+import { ServiceHeroTiles } from "@/components/ui/service-hero-tiles";
+
+export default function Hero() {
+  return (
+    <section className="overflow-x-hidden max-h-fit">
+      <div id="stats" className={serviceHeroOuterClassName}>
+        <ServiceHeroTiles />
+        <motion.div
+          className="w-full"
+          variants={staggerChildren}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <div className={serviceHeroContentClassName}>
+            <motion.div variants={itemVariants}>
+              <Badge className="text-sm font-medium pb-1 flex gap-2 items-center">
+                <IconPackages className="size-4" /> Services
+              </Badge>
+            </motion.div>
+
+            <motion.h1
+              className="md:text-7xl text-5xl font-medium text-center"
+              variants={itemVariants}
+            >
+              <span className="serif-accent font-accent text-[1.08em] font-normal italic text-primary/75">
+                Docs
+              </span>{" "}
+              as a Service
+            </motion.h1>
+
+            <motion.p
+              variants={itemVariants}
+              className="md:text-xl text-base font-medium text-center"
+            >
+              Docs audits, documentation, and DX improvements that get{" "}
+              <br className="hidden md:block" />
+              developers to first success with your product.
+            </motion.p>
+
+            <motion.div
+              variants={itemVariants}
+              className="flex md:flex-row mt-10 w-full gap-4 flex-col justify-center"
+            >
+              <Button
+                variant="gradient"
+                size="cta"
+                className="w-full sm:w-auto"
+                asChild
+              >
+                <Link href="https://cal.com/studio1/collab">
+                  Book a Call <IconPhoneFilled className="size-10" />
+                </Link>
+              </Button>
+              <Button
+                variant="outline-subtle"
+                size="cta"
+                className="w-full sm:w-auto"
+                asChild
+              >
+                <Link href="#work">
+                  Explore Services <IconPackages className="size-10" />
+                </Link>
+              </Button>
+            </motion.div>
+          </div>
+
+          <motion.div
+            variants={itemVariants}
+            className={serviceHeroStatsWrapperClassName}
+          >
+            <HeroStatsStrip
+              highlightValues
+              className="md:grid-cols-3"
+              stats={[
+                { value: "25+", label: "docs audits" },
+                { value: "150+", label: "pages shipped" },
+                { value: "50%", label: "faster first success" },
+              ]}
+            />
+          </motion.div>
+        </motion.div>
+
+        <div className={heroAccentGlow}></div>
+      </div>
+    </section>
+  );
+}
