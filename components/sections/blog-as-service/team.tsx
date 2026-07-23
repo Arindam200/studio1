@@ -1,4 +1,5 @@
 import { Github, Globe, Linkedin, Twitter } from "lucide-react";
+import Image from "next/image";
 import { Data } from "@/data";
 
 const team = Data.BlogAsServiceTeam;
@@ -20,12 +21,16 @@ export default function Team() {
         <div className="sm:mt-20 mt-6 flex max-sm:flex-col justify-center gap-12 ">
           {team.map((member) => (
             <div key={member.name} className="space-y-4">
-              <div className="aspect-w-3 aspect-h-3 flex justify-center items-center">
-                <img
-                  className="object-cover shadow-lg rounded-lg max-h-[300px] "
-                  src={member.image}
-                  alt={member.name}
-                />
+              <div className="flex justify-center items-center">
+                <div className="relative h-[300px] w-[300px]">
+                  <Image
+                    className="object-cover shadow-lg rounded-lg"
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    sizes="300px"
+                  />
+                </div>
               </div>
               <div className="space-y-2">
                 <div className="text-lg leading-6 font-medium space-y-1 text-center">

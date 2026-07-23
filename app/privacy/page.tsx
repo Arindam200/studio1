@@ -12,13 +12,17 @@ export const metadata: Metadata = pageMetadata({
 
 export default function PrivacyPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 py-24">
-      <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
+    <section className="mx-auto max-w-4xl px-4 py-24 font-inter tabular-nums [&_h1]:font-inter [&_h2]:font-inter [&_strong]:font-inter">
+      <h1 className="mb-8 text-4xl font-semibold tracking-tight">
+        Privacy Policy
+      </h1>
 
-      <div className="prose prose-neutral dark:prose-invert max-w-none">
-        <p className="text-muted-foreground mb-8">Last updated: {LAST_UPDATED}</p>
+      <div className="prose prose-neutral max-w-none dark:prose-invert prose-headings:font-inter prose-headings:font-semibold prose-headings:tracking-tight prose-strong:font-inter">
+        <p className="mb-8 text-muted-foreground">Last updated: {LAST_UPDATED}</p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">1. Introduction</h2>
+        <h2 className="mb-4 mt-8 text-2xl font-semibold tracking-tight">
+          1. Introduction
+        </h2>
         <p className="text-muted-foreground mb-4">
           <strong>STUDI01HQ PRIVATE LIMITED</strong> (&quot;we&quot;,
           &quot;us&quot;, or &quot;our&quot;) is the data controller for the
@@ -29,7 +33,7 @@ export default function PrivacyPage() {
           services.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">
+        <h2 className="mb-4 mt-8 text-2xl font-semibold tracking-tight">
           2. Information We Collect
         </h2>
         <p className="text-muted-foreground mb-4">
@@ -38,7 +42,7 @@ export default function PrivacyPage() {
           with us by email.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">
+        <h2 className="mb-4 mt-8 text-2xl font-semibold tracking-tight">
           3. How We Use Your Information
         </h2>
         <p className="text-muted-foreground mb-4">
@@ -46,7 +50,7 @@ export default function PrivacyPage() {
           communicate with you, and fulfill contractual obligations.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">
+        <h2 className="mb-4 mt-8 text-2xl font-semibold tracking-tight">
           4. Information Sharing
         </h2>
         <p className="text-muted-foreground mb-4">
@@ -55,20 +59,26 @@ export default function PrivacyPage() {
           appropriate safeguards.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">5. Data Security</h2>
+        <h2 className="mb-4 mt-8 text-2xl font-semibold tracking-tight">
+          5. Data Security
+        </h2>
         <p className="text-muted-foreground mb-4">
           We implement appropriate security measures to protect your personal
           information from unauthorized access or disclosure.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">6. Your Rights</h2>
+        <h2 className="mb-4 mt-8 text-2xl font-semibold tracking-tight">
+          6. Your Rights
+        </h2>
         <p className="text-muted-foreground mb-4">
           You may have the right to access, correct, or delete your personal
           information, or to object to or restrict certain processing, in line
           with applicable law. Contact us to exercise these rights.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">7. Contact Us</h2>
+        <h2 className="mb-4 mt-8 text-2xl font-semibold tracking-tight">
+          7. Contact Us
+        </h2>
         <p className="text-muted-foreground mb-4">
           For privacy-related questions or requests, contact{" "}
           <strong>STUDI01HQ PRIVATE LIMITED</strong> at{" "}

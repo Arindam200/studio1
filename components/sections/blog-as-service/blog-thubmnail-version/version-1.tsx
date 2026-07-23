@@ -1,7 +1,6 @@
 "use client";
 import {
   CursorGlowCardEffects,
-  cursorGlowDarkBackground,
   cursorGlowCardClassName,
   useCursorGlow,
 } from "@/components/ui/cursor-glow-card";
@@ -30,13 +29,12 @@ export const Version1 = ({
       rel="noopener noreferrer"
       aria-label={title}
       onPointerMove={onPointerMove}
-      style={cursorGlowDarkBackground}
       className={cn(
         cursorGlowCardClassName,
         "flex h-72 w-full flex-col rounded-2xl",
       )}
     >
-      <CursorGlowCardEffects roundedClassName="rounded-2xl" darkened />
+      <CursorGlowCardEffects roundedClassName="rounded-2xl" />
 
       <div className="relative z-[2] flex flex-1 flex-col p-6">
         <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">

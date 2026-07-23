@@ -5,7 +5,6 @@ import { ArrowRight } from "@phosphor-icons/react";
 import { Num } from "@/components/ui/num";
 import {
   CursorGlowCardEffects,
-  cursorGlowDarkBackground,
   cursorGlowCardClassName,
   useCursorGlow,
 } from "@/components/ui/cursor-glow-card";
@@ -57,14 +56,13 @@ export function CaseStudyResult({
         ref={ref}
         href={study.href}
         onPointerMove={onPointerMove}
-        style={cursorGlowDarkBackground}
         className={cn(
           "flex flex-col md:flex-row md:items-stretch rounded-lg",
           cursorGlowCardClassName,
           className,
         )}
       >
-        <CursorGlowCardEffects roundedClassName="rounded-lg" darkened />
+        <CursorGlowCardEffects roundedClassName="rounded-lg" />
 
         <div className="relative z-[2] flex flex-col justify-between gap-6 border-b border-border/60 p-6 md:w-[42%] md:border-b-0 md:border-r md:p-8 lg:p-10">
           <div>
