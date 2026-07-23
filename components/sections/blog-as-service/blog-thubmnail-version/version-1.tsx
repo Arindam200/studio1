@@ -1,9 +1,13 @@
 "use client";
-import { Badge } from "@/components/ui/badge";
+import {
+  CursorGlowCardEffects,
+  cursorGlowDarkBackground,
+  cursorGlowCardClassName,
+  useCursorGlow,
+} from "@/components/ui/cursor-glow-card";
 import { cn } from "@/lib/utils";
-import { Pencil, Tag } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { cardHoverAccentGlow } from "@/lib/shadows";
 
 export const Version1 = ({
   title,
@@ -16,46 +20,59 @@ export const Version1 = ({
   tags: string[];
   hrefLink: string;
 }) => {
+  const { ref, onPointerMove } = useCursorGlow<HTMLAnchorElement>();
+
   return (
     <Link
+      ref={ref}
       href={hrefLink}
-      className="border dark:border-white/10 group w-full py-6 hover:-translate-y-1 transition-all duration-500 flex items-center overflow-hidden relative flex-col justify-center px-8 bg-gradient-to-b from-background to-accent/30 dark:from-accent/20 dark:to-background backdrop-blur-md shadow-[0_6px_20px_-6px_rgba(0,0,0,0.22)] hover:shadow-[0_14px_30px_-8px_rgba(0,0,0,0.3)] dark:shadow-lg dark:shadow-primary/10 dark:hover:shadow-xl dark:hover:shadow-primary/20 h-[16rem] rounded-lg"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={title}
+      onPointerMove={onPointerMove}
+      style={cursorGlowDarkBackground}
+      className={cn(
+        cursorGlowCardClassName,
+        "flex h-72 w-full flex-col rounded-2xl",
+      )}
     >
-        <div
-          className={cn(
-            cardHoverAccentGlow,
-            "bottom-[-29rem] left-[50%] translate-x-[-50%] rounded-3xl",
-          )}
-        />
-        <Badge className="flex items-center gap-1 mb-4 py-1 rounded-md shadow-md bg-gradient-to-r from-primarySurface via-primary1 to-primary1/40 text-white dark:from-primary dark:via-primary1 dark:to-primary1/40">
-          <Pencil className="size-4" />
+      <CursorGlowCardEffects roundedClassName="rounded-2xl" darkened />
+
+      <div className="relative z-[2] flex flex-1 flex-col p-6">
+        <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+          <span
+            aria-hidden
+            className="size-[5px] rounded-full bg-primary shadow-[0_0_8px_hsl(var(--primary)/0.8)]"
+          />
           Blog
-        </Badge>
-        <div className="text-center font-bold text-lg">{title}</div>
-        {/* <div className="text-center mt-2 flex-1 font-semibold text-xs text-muted-foreground">
-          {description?.slice(0, 100)}...
-        </div> */}
+        </span>
 
-        <div className="flex flex-wrap justify-center mt-4 gap-2">
-          {tags.map((item) => {
-            return (
-              <Badge
+        <h3 className="mt-5 line-clamp-2 font-inter text-lg font-semibold leading-snug tracking-tight text-foreground">
+          {title}
+        </h3>
+        {description ? (
+          <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
+            {description}
+          </p>
+        ) : null}
+
+        <div className="mt-auto flex items-center justify-between gap-3 border-t border-border/60 pt-4 dark:border-white/[0.08]">
+          <div className="flex min-w-0 flex-wrap gap-1.5">
+            {tags.map((item) => (
+              <span
                 key={item}
-                className="flex items-center bg-accent hover:bg-accent text-foreground gap-1 mb-2 py-1 rounded-md"
+                className="rounded-md border border-border/70 bg-foreground/[0.03] px-2.5 py-1 text-[11px] font-medium capitalize tracking-wide text-foreground/75 dark:border-white/[0.09] dark:bg-white/[0.04]"
               >
-                <Tag className="size-4" />
-                {item}
-              </Badge>
-            );
-          })}
+                {item.replaceAll("-", " ")}
+              </span>
+            ))}
+          </div>
+          <span className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap text-xs font-semibold text-muted-foreground transition-colors duration-300 group-hover:text-primary1 motion-reduce:transition-none">
+            Read article
+            <ArrowRight className="size-3.5 transition-transform duration-300 ease-out group-hover:translate-x-0.5 motion-reduce:transform-none" />
+          </span>
         </div>
-
-        <div className="absolute bottom-[-6rem] -right-14 flex rotate-45 items-center justify-center size-36 rounded-[1.7rem] bg-gradient-to-bl from-primarySurface via-primarySurface/80 to-white/80 dark:from-primary dark:via-primary/80 dark:to-white/80">
-          <div className="size-28 rounded-full bg-accent"></div>
-        </div>
-        <div className="absolute top-[-6rem] -left-14 flex rotate-45 items-center justify-center size-36 rounded-[1.7rem] bg-gradient-to-bl from-primarySurface via-primarySurface/80 to-white/80 dark:from-primary dark:via-primary/80 dark:to-white/80">
-          <div className="size-28 rounded-full bg-accent"></div>
-        </div>
+      </div>
     </Link>
   );
 };

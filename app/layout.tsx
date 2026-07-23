@@ -172,13 +172,13 @@ export default async function RootLayout({
         )}
         suppressHydrationWarning
       >
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NextIntlClientProvider locale={locale} messages={messages}>
             <Navbar />
             {children}
             <CTA />
@@ -186,8 +186,8 @@ export default async function RootLayout({
             <BottomNavbar />
             <ScrollToTopButton />
             <LocalizedLinkRuntime />
-          </ThemeProvider>
-        </NextIntlClientProvider>
+          </NextIntlClientProvider>
+        </ThemeProvider>
 
         <script
           type="application/ld+json"

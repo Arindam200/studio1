@@ -9,6 +9,7 @@ import { staggerChildren, itemVariants } from "@/lib/animations";
 import { HeroStatsStrip } from "@/components/ui/hero-stats-strip";
 import {
   serviceHeroContentClassName,
+  serviceHeroDescriptionClassName,
   serviceHeroOuterClassName,
   serviceHeroStatsWrapperClassName,
 } from "@/components/pages/shared/service-hero-layout";
@@ -49,7 +50,7 @@ export default function Hero() {
 
           <motion.p
             variants={itemVariants}
-            className="md:text-xl text-base font-medium text-center"
+            className={serviceHeroDescriptionClassName}
           >
             {t("description")}
           </motion.p>

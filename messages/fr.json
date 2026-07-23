@@ -252,26 +252,12 @@
     "trustedBy": "Approuvé par des équipes developer-first"
   },
   "NotFound": {
-    "eyebrow": "Page introuvable",
-    "titlePrefix": "Cette route a quitté le",
-    "titleHighlight": "parcours développeur",
-    "description": "La page ouverte n’existe pas, a été déplacée pendant la refonte des services Studio1, ou l’URL contient une erreur.",
-    "homeCta": "Retour à l’accueil",
-    "servicesCta": "Explorer les services",
-    "quickLinks": {
-      "docs": {
-        "title": "Docs et audits DX",
-        "description": "Consultez la page service dédiée à la documentation, l’onboarding et l’expérience développeur."
-      },
-      "caseStudies": {
-        "title": "Études de cas",
-        "description": "Découvrez des preuves issues de contenus techniques, DevRel, lancements et projets de documentation."
-      },
-      "contact": {
-        "title": "Parler à Studio1",
-        "description": "Réservez un appel stratégique si vous cherchiez un service ou une collaboration précise."
-      }
-    }
+    "eyebrow": "404",
+    "titlePrefix": "Page",
+    "titleHighlight": "introuvable",
+    "description": "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "homeCta": "Retour à l'accueil",
+    "servicesCta": "Découvrir les services"
   },
   "Footer": {
     "description": "Partenaire en contenu technique et croissance développeur pour les équipes devtool et SaaS.",

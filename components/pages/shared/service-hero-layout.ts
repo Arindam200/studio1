@@ -4,6 +4,9 @@ export const serviceHeroOuterClassName =
 export const serviceHeroContentClassName =
   "max-w-7xl mx-auto px-4 flex flex-col items-center justify-center gap-5";
 
+export const serviceHeroDescriptionClassName =
+  "md:text-xl text-base font-medium text-center max-w-2xl mx-auto";
+
 export const serviceHeroStatsWrapperClassName = "mt-20 md:mt-24 w-full px-4";
 
 /** Full-bleed outer shell for service process sections (edge-to-edge side beams). */

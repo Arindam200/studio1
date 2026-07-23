@@ -252,26 +252,12 @@
     "trustedBy": "Con la confianza de equipos developer-first"
   },
   "NotFound": {
-    "eyebrow": "Página no encontrada",
-    "titlePrefix": "Esta ruta salió del",
-    "titleHighlight": "camino developer",
-    "description": "La página que abriste no existe, se movió durante la actualización de servicios de Studio1 o tiene una URL incorrecta.",
+    "eyebrow": "404",
+    "titlePrefix": "Página",
+    "titleHighlight": "no encontrada",
+    "description": "La página que buscas no existe o se ha movido.",
     "homeCta": "Volver al inicio",
-    "servicesCta": "Explorar servicios",
-    "quickLinks": {
-      "docs": {
-        "title": "Docs y auditorías DX",
-        "description": "Revisa la página de servicio para documentación, onboarding y experiencia developer."
-      },
-      "caseStudies": {
-        "title": "Casos de estudio",
-        "description": "Mira pruebas de proyectos de contenido técnico, DevRel, lanzamientos y documentación."
-      },
-      "contact": {
-        "title": "Hablar con Studio1",
-        "description": "Reserva una llamada estratégica si buscabas un servicio o colaboración específica."
-      }
-    }
+    "servicesCta": "Explorar servicios"
   },
   "Footer": {
     "description": "Socio de contenido técnico y crecimiento developer para equipos devtool y SaaS.",

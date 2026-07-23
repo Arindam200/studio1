@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import DottedMap from "dotted-map";
 import Image from "next/image";
-import { useTheme } from "next-themes";
+import { useTheme } from "@wrksz/themes/client";
 import { cn } from "@/lib/utils";
 
 type WorldMapLocation = {
@@ -170,13 +170,6 @@ export function WorldMap({
 
           return (
             <g key={`path-group-${i}`}>
-              <path
-                d={path}
-                fill="none"
-                stroke={lineColor}
-                strokeWidth={isDark ? "0.2" : "0.3"}
-                strokeOpacity={isDark ? 0.14 : 0.28}
-              />
               <motion.path
                 d={path}
                 fill="none"

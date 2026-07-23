@@ -252,26 +252,12 @@
     "trustedBy": "Developer-first teams द्वारा trusted"
   },
   "NotFound": {
-    "eyebrow": "पेज नहीं मिला",
-    "titlePrefix": "यह route developer",
-    "titleHighlight": "path से हट गया",
-    "description": "जो page आपने खोला है वह मौजूद नहीं है, Studio1 service refresh के दौरान move हो गया है, या URL गलत type हुआ है।",
-    "homeCta": "Home पर वापस जाएँ",
-    "servicesCta": "Services देखें",
-    "quickLinks": {
-      "docs": {
-        "title": "Docs और DX audits",
-        "description": "Documentation, onboarding और developer experience work के लिए service page देखें।"
-      },
-      "caseStudies": {
-        "title": "Case studies",
-        "description": "Technical content, DevRel, launch और documentation projects से proof देखें।"
-      },
-      "contact": {
-        "title": "Studio1 से बात करें",
-        "description": "अगर आप किसी specific service या collaboration को ढूँढ रहे थे, तो strategy call book करें।"
-      }
-    }
+    "eyebrow": "404",
+    "titlePrefix": "पेज",
+    "titleHighlight": "नहीं मिला",
+    "description": "आप जो पेज खोज रहे हैं वह मौजूद नहीं है या हटा दिया गया है।",
+    "homeCta": "होम पर वापस जाएँ",
+    "servicesCta": "सेवाएँ देखें"
   },
   "Footer": {
     "description": "Devtool और SaaS teams के लिए technical content और developer growth partner.",

@@ -1,6 +1,14 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight } from "@phosphor-icons/react";
 import { Num } from "@/components/ui/num";
+import {
+  CursorGlowCardEffects,
+  cursorGlowDarkBackground,
+  cursorGlowCardClassName,
+  useCursorGlow,
+} from "@/components/ui/cursor-glow-card";
 import { elevatedCardShadow, serviceCardHoverGlow } from "@/lib/shadows";
 import { cn } from "@/lib/utils";
 
@@ -25,7 +33,7 @@ type CaseStudyResultProps = {
   className?: string;
 };
 
-const resultCardSurface = cn(
+const compactCardSurface = cn(
   "group relative overflow-hidden rounded-lg border-2 dark:border",
   "bg-background/80 backdrop-blur-md",
   "transition-all duration-700",
@@ -41,19 +49,24 @@ export function CaseStudyResult({
   variant = "compact",
   className,
 }: CaseStudyResultProps) {
+  const { ref, onPointerMove } = useCursorGlow<HTMLAnchorElement>();
+
   if (variant === "featured") {
     return (
       <Link
+        ref={ref}
         href={study.href}
+        onPointerMove={onPointerMove}
+        style={cursorGlowDarkBackground}
         className={cn(
-          "flex flex-col md:flex-row md:items-stretch",
-          resultCardSurface,
+          "flex flex-col md:flex-row md:items-stretch rounded-lg",
+          cursorGlowCardClassName,
           className,
         )}
       >
-        <ServiceCardEffects />
+        <CursorGlowCardEffects roundedClassName="rounded-lg" darkened />
 
-        <div className="relative z-[1] flex flex-col justify-between gap-6 border-b border-border/60 p-6 md:w-[42%] md:border-b-0 md:border-r md:p-8 lg:p-10">
+        <div className="relative z-[2] flex flex-col justify-between gap-6 border-b border-border/60 p-6 md:w-[42%] md:border-b-0 md:border-r md:p-8 lg:p-10">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
               {study.category}
@@ -73,7 +86,7 @@ export function CaseStudyResult({
           </div>
         </div>
 
-        <div className="relative z-[1] flex flex-1 flex-col justify-between gap-8 p-6 md:p-8 lg:p-10">
+        <div className="relative z-[2] flex flex-1 flex-col justify-between gap-8 p-6 md:p-8 lg:p-10">
           <div>
             <p className="max-w-xl font-inter text-xl font-normal leading-snug tracking-tight text-foreground md:text-2xl lg:text-[1.65rem] lg:leading-snug">
               {study.proof}
@@ -116,7 +129,7 @@ export function CaseStudyResult({
       href={study.href}
       className={cn(
         "flex h-full flex-col p-5 sm:p-6",
-        resultCardSurface,
+        compactCardSurface,
         className,
       )}
     >

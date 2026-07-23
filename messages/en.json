@@ -252,26 +252,12 @@
     "trustedBy": "Trusted by developer-first teams"
   },
   "NotFound": {
-    "eyebrow": "Page Not Found",
-    "titlePrefix": "This route missed the",
-    "titleHighlight": "developer path",
-    "description": "The page you opened does not exist, moved during the Studio1 service refresh, or was typed with the wrong URL.",
+    "eyebrow": "404",
+    "titlePrefix": "Page",
+    "titleHighlight": "not found",
+    "description": "The page you're looking for doesn't exist or may have moved.",
     "homeCta": "Back to home",
-    "servicesCta": "Explore services",
-    "quickLinks": {
-      "docs": {
-        "title": "Docs and DX audits",
-        "description": "Review the service page for documentation, onboarding, and developer experience work."
-      },
-      "caseStudies": {
-        "title": "Case studies",
-        "description": "See proof from technical content, DevRel, launch, and documentation projects."
-      },
-      "contact": {
-        "title": "Talk to Studio1",
-        "description": "Book a strategy call if you were looking for a specific service or collaboration."
-      }
-    }
+    "servicesCta": "Explore services"
   },
   "Footer": {
     "description": "Technical content and developer growth partner for devtool and SaaS teams.",

@@ -2,9 +2,8 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { Badge } from "../ui/badge";
 import { CheckSquare } from "@phosphor-icons/react";
-import { FlickeringGrid } from "../magicui/flickering-grid";
+import { CanvasRevealEffect } from "../ui/canvas-reveal-effect";
 import { Num } from "../ui/num";
 import { cn } from "@/lib/utils";
 
@@ -36,41 +35,47 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({
 
         <div className="absolute top-0 left-0 blur-[1em] z-[2] w-full h-[70%] bg-gradient-to-r from-background via-background/60"></div>
 
-        <div className="text-[18rem] z-[30] font-extrabold font-numeric tabular-nums bg-gradient-to-b from-foreground/60 via-foreground/20 dark:from-white/80 dark:via-white/15 to-transparent bg-clip-text text-transparent absolute bottom-[-8rem] opacity-25 right-[0rem]">
-          <Num>{index + 1}</Num>
+        <div className="absolute inset-0 z-[-1] size-full overflow-hidden rounded-xl opacity-25 transition-opacity duration-300 group-hover:opacity-60">
+          <CanvasRevealEffect
+            animationSpeed={3}
+            containerClassName="bg-transparent"
+            colors={[
+              [234, 88, 12],
+              [249, 115, 22],
+            ]}
+            dotSize={3}
+            showGradient={false}
+          />
         </div>
-        <FlickeringGrid
-          className="absolute group-hover:opacity-60 opacity-10 transition-all duration-300 inset-0 rounded-xl z-[-1] size-full"
-          squareSize={4}
-          gridGap={6}
-          color="#ea580c"
-          maxOpacity={0.5}
-          flickerChance={0.1}
-          height={800}
-          width={800}
-        />
-        <div className="flex flex-col z-[50]">
-          <Badge className="flex z-[50] w-fit items-center gap-2 rounded-lg py-1.5">
-            <item.icon className="size-5 shrink-0 text-white" />
-            <h3 className="pb-0 font-inter text-xl font-bold leading-none">
-              {item.name}
-            </h3>
-          </Badge>
-          <p className="mt-2 text-sm z-[50] text-neutral-600 font-medium dark:text-neutral-400">
+        <div className="relative z-[50] flex h-full flex-col justify-center text-left">
+          <div className="flex size-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary1 text-white shadow-lg shadow-primary/30 ring-1 ring-white/20 transition-transform duration-300 group-hover:scale-105">
+            <item.icon className="size-8" />
+          </div>
+
+          <span className="mt-4 font-secondary text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
+            Step <Num>{index + 1}</Num>
+          </span>
+          <h3 className="mt-1 font-inter text-2xl font-bold leading-tight text-foreground">
+            {item.name}
+          </h3>
+
+          <p className="mt-3 text-sm font-medium text-neutral-600 dark:text-neutral-400">
             {item.description}
           </p>
-          <div className="flex flex-col z-[50] mt-4 w-full gap-2">
-            {item.details.map((element, index) => {
-              return (
-                <div
-                  key={index}
-                  className="text-sm flex text-foreground font-semibold items-center gap-2 w-full"
-                >
-                  <CheckSquare className="size-6 text-primary" />
-                  {element}
-                </div>
-              );
-            })}
+
+          <div className="mt-6 grid w-full grid-cols-1 gap-2.5 sm:grid-cols-2">
+            {item.details.map((element, detailIndex) => (
+              <div
+                key={detailIndex}
+                className="flex items-center gap-2 rounded-lg border border-border/60 bg-background/40 px-3 py-2.5 text-left text-sm font-semibold leading-tight text-foreground backdrop-blur-sm transition-colors duration-300 hover:border-primary/40 dark:border-white/10 dark:bg-white/[0.03]"
+              >
+                <CheckSquare
+                  className="size-5 shrink-0 text-primary"
+                  weight="fill"
+                />
+                <span>{element}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

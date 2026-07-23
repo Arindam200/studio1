@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import {
   containerVariants,
@@ -10,6 +11,7 @@ import {
 import { elevatedCardShadow, serviceCardHoverGlow } from "@/lib/shadows";
 import { cn } from "@/lib/utils";
 import { Compass, Rocket, Target, type Icon } from "@phosphor-icons/react";
+import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 import { SectionEyebrow } from "./section-eyebrow";
 import { useTranslations } from "next-intl";
 
@@ -40,14 +42,100 @@ const stageConfig = [
 ] as const;
 
 const journeyCardSurface = cn(
-  "group relative flex h-full flex-col overflow-hidden rounded-lg border-2 dark:border",
+  "group relative flex h-full flex-col overflow-hidden rounded-lg border-2 border-border/80 dark:border",
   "bg-background/80 backdrop-blur-md",
-  "transition-all duration-700",
+  "transition-[border-color,box-shadow,transform] duration-500 ease-out",
+  "hover:-translate-y-1 hover:border-primary/35 dark:hover:border-primary/40",
   elevatedCardShadow,
 );
 
-function ServiceCardEffects() {
-  return <div aria-hidden className={serviceCardHoverGlow} />;
+function JourneyCardEffects({ active }: { active: boolean }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    if (active) {
+      setMounted(true);
+      return;
+    }
+
+    const timeout = window.setTimeout(() => setMounted(false), 450);
+    return () => window.clearTimeout(timeout);
+  }, [active]);
+
+  return (
+    <>
+      <div aria-hidden className={serviceCardHoverGlow} />
+      <div
+        aria-hidden
+        className={cn(
+          "pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-lg opacity-0 transition-opacity duration-500 ease-out motion-reduce:transition-none",
+          active && "opacity-100",
+        )}
+      >
+        {mounted ? (
+          <CanvasRevealEffect
+            animationSpeed={3}
+            containerClassName="bg-transparent"
+            colors={[
+              [234, 88, 12],
+              [249, 115, 22],
+            ]}
+            dotSize={2}
+            showGradient={false}
+          />
+        ) : null}
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/75 to-background/35" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.08] via-transparent to-transparent" />
+      </div>
+    </>
+  );
+}
+
+function JourneyStageCard({
+  stage,
+  stageLabel,
+}: {
+  stage: Stage;
+  stageLabel: string;
+}) {
+  const [hovered, setHovered] = useState(false);
+  const StageIcon = stage.icon;
+
+  return (
+    <motion.article
+      className={journeyCardSurface}
+      variants={serviceItemVariants}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+      onFocus={() => setHovered(true)}
+      onBlur={() => setHovered(false)}
+    >
+      <JourneyCardEffects active={hovered} />
+
+      <div className="relative z-[1] flex h-full flex-col p-7">
+        <div className="mb-7 flex items-start justify-between gap-4">
+          <div className="flex flex-col gap-1">
+            <span className="font-secondary text-[0.7rem] font-medium tracking-[0.14em] text-muted-foreground uppercase">
+              {stageLabel}
+            </span>
+            <span className="font-numeric text-5xl leading-none font-semibold tracking-tight text-primary tabular-nums transition-transform duration-500 group-hover:scale-[1.04]">
+              {stage.number}
+            </span>
+          </div>
+          <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-all duration-500 group-hover:scale-110 group-hover:bg-primary/20">
+            <StageIcon weight="duotone" className="size-6" />
+          </div>
+        </div>
+
+        <h3 className="mb-4 overflow-visible pb-1.5 font-inter text-2xl font-medium leading-normal tracking-tight text-foreground">
+          {stage.title}
+        </h3>
+        <p className="mt-auto text-sm leading-relaxed text-muted-foreground">
+          {stage.description}
+        </p>
+      </div>
+    </motion.article>
+  );
 }
 
 export default function DeveloperJourney() {
@@ -88,42 +176,13 @@ export default function DeveloperJourney() {
         className="relative mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 md:gap-5"
         variants={staggerChildren}
       >
-        {stages.map((stage) => {
-          const StageIcon = stage.icon;
-
-          return (
-            <motion.article
-              key={stage.number}
-              className={journeyCardSurface}
-              variants={serviceItemVariants}
-            >
-              <ServiceCardEffects />
-
-              <div className="relative z-[1] flex h-full flex-col p-7">
-                <div className="mb-7 flex items-start justify-between gap-4">
-                  <div className="flex flex-col gap-1">
-                    <span className="font-secondary text-[0.7rem] font-medium tracking-[0.14em] text-muted-foreground uppercase">
-                      {t("stageLabel")}
-                    </span>
-                    <span className="font-numeric text-5xl leading-none font-semibold tracking-tight text-primary tabular-nums">
-                      {stage.number}
-                    </span>
-                  </div>
-                  <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary/15">
-                    <StageIcon weight="duotone" className="size-6" />
-                  </div>
-                </div>
-
-                <h3 className="mb-4 overflow-visible pb-1.5 font-inter text-2xl font-medium leading-normal tracking-tight text-foreground">
-                  {stage.title}
-                </h3>
-                <p className="mt-auto text-sm leading-relaxed text-muted-foreground">
-                  {stage.description}
-                </p>
-              </div>
-            </motion.article>
-          );
-        })}
+        {stages.map((stage) => (
+          <JourneyStageCard
+            key={stage.number}
+            stage={stage}
+            stageLabel={t("stageLabel")}
+          />
+        ))}
       </motion.div>
     </motion.section>
   );

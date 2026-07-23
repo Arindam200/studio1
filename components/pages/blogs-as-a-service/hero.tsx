@@ -7,6 +7,7 @@ import { staggerChildren, itemVariants } from "@/lib/animations";
 import { HeroStatsStrip } from "@/components/ui/hero-stats-strip";
 import {
   serviceHeroContentClassName,
+  serviceHeroDescriptionClassName,
   serviceHeroOuterClassName,
   serviceHeroStatsWrapperClassName,
 } from "@/components/pages/shared/service-hero-layout";
@@ -37,10 +38,10 @@ export default function Hero() {
           </motion.div>
 
           <motion.h1
-            className="md:text-7xl text-5xl font-medium text-center"
+            className="text-center font-inter text-5xl font-medium tracking-tight md:text-7xl"
             variants={itemVariants}
           >
-            <span className="serif-accent font-accent text-[1.08em] font-normal italic text-primary/75">
+            <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
               {t("titleAccent")}
             </span>{" "}
             {t("titleRest")}
@@ -48,7 +49,7 @@ export default function Hero() {
 
           <motion.p
             variants={itemVariants}
-            className="md:text-xl text-balance w-full md:w-[50%] text-base font-medium text-center"
+            className={`${serviceHeroDescriptionClassName} text-balance`}
           >
             {t("description")}
           </motion.p>

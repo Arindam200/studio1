@@ -8,7 +8,8 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { containerVariants, fadeInUp, headerVariants } from "@/lib/animations";
 
-const cards = Data.Blogs.slice(0, 6);
+// Keep the service examples in sync with the canonical collection used by /work.
+const cards = Data.Allblogs.slice(0, 6);
 
 export default function BlogSection() {
   return (

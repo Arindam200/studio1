@@ -488,6 +488,41 @@ svg {
     );
     filter: blur(2.5rem);
   }
+
+  /* 404 page ambient glow: radial + theme-aware so it reads on white too */
+  .nf-glow-primary {
+    background: radial-gradient(
+      circle,
+      hsl(22 92% 44% / 0.9) 0%,
+      hsl(24 90% 48% / 0.45) 42%,
+      transparent 70%
+    );
+  }
+
+  .dark .nf-glow-primary {
+    background: radial-gradient(
+      circle,
+      hsl(var(--primary) / 0.55) 0%,
+      transparent 68%
+    );
+  }
+
+  .nf-glow-accent {
+    background: radial-gradient(
+      circle,
+      hsl(28 95% 50% / 0.8) 0%,
+      hsl(30 92% 55% / 0.35) 45%,
+      transparent 70%
+    );
+  }
+
+  .dark .nf-glow-accent {
+    background: radial-gradient(
+      circle,
+      hsl(var(--primary1) / 0.5) 0%,
+      transparent 68%
+    );
+  }
 }
 
 ::view-transition-old(root), ::view-transition-new(root) {

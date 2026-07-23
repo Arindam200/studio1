@@ -42,6 +42,14 @@ export function LanguageSwitcher({
   const search = searchParams.toString();
   const activeMeta = localeMeta[activeLocale] ?? localeMeta[DEFAULT_LOCALE];
 
+  const optionClassName = (isActive: boolean) =>
+    cn(
+      "group/item flex w-full items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transition-all duration-200",
+      "text-muted-foreground hover:bg-primary/10 hover:text-foreground dark:hover:bg-primary/20",
+      isActive &&
+        "bg-primary/10 text-foreground dark:bg-primary/15 hover:bg-primary/15 dark:hover:bg-primary/25",
+    );
+
   const options = LOCALES.map((locale) => {
     const meta = localeMeta[locale];
     const isActive = locale === activeLocale;
@@ -51,12 +59,11 @@ export function LanguageSwitcher({
         key={locale}
         href={localeHref(pathname, search, locale)}
         hrefLang={meta.hreflang}
-        className={cn(
-          "flex items-center gap-2 rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground",
-          isActive && "bg-accent text-foreground",
-        )}
+        className={optionClassName(isActive)}
       >
-        <span className="text-base">{meta.flag}</span>
+        <span className="text-base leading-none transition-transform duration-200 group-hover/item:scale-110">
+          {meta.flag}
+        </span>
         <span>{t(translationKeys[locale])}</span>
       </Link>
     );
@@ -93,14 +100,14 @@ export function LanguageSwitcher({
 
       <div
         className={cn(
-          "absolute right-0 top-full z-[570] pt-3",
+          "absolute right-0 top-full z-[570] origin-top pt-4",
           "opacity-0 -translate-y-1 scale-95 pointer-events-none",
-          "transition-all duration-200 ease-out",
+          "transition-all duration-300 ease-out",
           "group-hover/lang:opacity-100 group-hover/lang:translate-y-0 group-hover/lang:scale-100 group-hover/lang:pointer-events-auto",
           "group-focus-within/lang:opacity-100 group-focus-within/lang:translate-y-0 group-focus-within/lang:scale-100 group-focus-within/lang:pointer-events-auto",
         )}
       >
-        <div className="min-w-44 rounded-lg border bg-background/95 p-1.5 shadow-lg backdrop-blur-xl">
+        <div className="min-w-[17rem] space-y-0.5 rounded-lg border bg-background px-1 py-1.5 shadow-lg backdrop-blur-xl">
           {options}
         </div>
       </div>

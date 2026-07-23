@@ -7,7 +7,6 @@ import type { Metadata } from "next";
 import Hero from "@/components/pages/blogs-as-a-service/hero";
 import Services from "@/components/pages/blogs-as-a-service/services";
 import PricingSection from "@/components/pages/blogs-as-a-service/pricing";
-import BlogDeliverables from "./deliverables";
 import NonNegotiable from "@/components/sections/non-negotiable";
 import FAQ, { type FAQItem } from "@/components/landing/faq";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
@@ -216,7 +215,6 @@ export default function Page() {
         items={contentWorkflow}
         columns="three"
       />
-      <BlogDeliverables />
       <Process />
       <ServiceProofSection
         title="Technical content that ranks and teaches adoption"

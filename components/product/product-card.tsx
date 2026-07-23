@@ -84,7 +84,7 @@ export default function ProductCard({
           </h2>
 
           {product.tagline ? (
-            <p className="mt-1 font-secondary text-base leading-snug text-primary/75 sm:text-lg lg:text-xl">
+            <p className="mt-1 font-secondary text-sm leading-snug text-primary/75 sm:text-base">
               {product.tagline}
             </p>
           ) : null}

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import { useTheme } from "next-themes";
+import { useTheme } from "@wrksz/themes/client";
 import UserAvatarCollection from "./user-avatar-collection";
 import { NumberTicker } from "../magicui/number-ticker";
 import { CollaborationIllustration } from "../collaboration-illustration";

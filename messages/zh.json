@@ -252,26 +252,12 @@
     "trustedBy": "受到开发者优先团队信任"
   },
   "NotFound": {
-    "eyebrow": "页面未找到",
-    "titlePrefix": "这个路径偏离了",
-    "titleHighlight": "开发者路线",
-    "description": "你打开的页面不存在，可能在 Studio1 服务页面更新时移动了，或者 URL 输入有误。",
+    "eyebrow": "404",
+    "titlePrefix": "页面",
+    "titleHighlight": "未找到",
+    "description": "你访问的页面不存在或已被移动。",
     "homeCta": "返回首页",
-    "servicesCta": "查看服务",
-    "quickLinks": {
-      "docs": {
-        "title": "文档与 DX 审核",
-        "description": "查看关于文档、开发者入门和开发者体验工作的服务页面。"
-      },
-      "caseStudies": {
-        "title": "案例研究",
-        "description": "查看技术内容、DevRel、产品发布和文档项目的真实成果。"
-      },
-      "contact": {
-        "title": "联系 Studio1",
-        "description": "如果你在寻找特定服务或合作方式，可以预约一次策略沟通。"
-      }
-    }
+    "servicesCta": "浏览服务"
   },
   "Footer": {
     "description": "面向 devtool 和 SaaS 团队的技术内容与开发者增长伙伴。",

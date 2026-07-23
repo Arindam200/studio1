@@ -215,7 +215,7 @@ const ScrollStepper: React.FC<Required<ProcessScrollerProps>> = ({
               className="absolute bottom-9 left-9 top-9 w-px -translate-x-1/2 bg-border"
             >
               <motion.div
-                className="h-full w-full origin-top bg-primary"
+                className="h-full w-full origin-top bg-gradient-to-b from-primary via-primary1 to-primary"
                 style={{ scaleY: scrollYProgress }}
               />
             </div>
@@ -238,9 +238,9 @@ const ScrollStepper: React.FC<Required<ProcessScrollerProps>> = ({
                 >
                   <span
                     className={cn(
-                      "relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full border font-numeric text-sm font-bold tabular-nums transition-[background-color,border-color,color] duration-300",
+                      "relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full border font-numeric text-sm font-bold tabular-nums transition-[background-color,border-color,color,box-shadow] duration-300",
                       isReached
-                        ? "border-primary bg-primary text-white"
+                        ? "border-transparent bg-gradient-to-br from-primary to-primary1 text-white shadow-md shadow-primary/30"
                         : "border-border bg-background text-muted-foreground",
                     )}
                   >

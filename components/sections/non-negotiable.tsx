@@ -43,14 +43,14 @@ export default function NonNegotiable({
           </p>
           <h2
             id="non-negotiable-heading"
-            className="max-w-4xl font-inter text-3xl font-medium leading-snug tracking-tight text-foreground sm:text-4xl md:text-5xl md:leading-[1.25]"
+            className="max-w-4xl text-balance font-inter text-2xl font-medium leading-snug tracking-tight text-foreground sm:text-3xl md:text-4xl md:leading-[1.3]"
           >
             {headline}
           </h2>
         </motion.div>
 
         <motion.p
-          className="max-w-2xl font-secondary text-base leading-relaxed text-muted-foreground md:text-lg"
+          className="max-w-2xl text-pretty font-secondary text-base leading-relaxed text-muted-foreground md:text-lg"
           variants={fadeInUp}
         >
           {body}
