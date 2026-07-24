@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight, CheckCircle } from "@phosphor-icons/react/dist/ssr";
+import { caseStudyHighlightCardClassName } from "@/components/case-studies/case-study-highlight-quotes";
 import { CaseStudyQuote } from "@/components/case-studies/case-study-quote";
 import { NumericText } from "@/components/ui/num";
 import type { CaseStudyMeta } from "@/lib/case-studies";
@@ -87,17 +88,13 @@ export function CaseStudyProof({ study }: CaseStudyDetailPanelsProps) {
   return (
     <section className="not-prose mt-16 grid grid-cols-1 gap-5 lg:grid-cols-[1fr_0.9fr]">
       {quote ? (
-        <div
-          className={cn(
-            quietPanel,
-            "bg-gradient-to-br from-primary/[0.08] via-background to-primary1/[0.05] p-5 dark:from-primary/[0.1] dark:to-primary1/[0.06] md:p-6",
-          )}
-        >
+        <div className={cn(caseStudyHighlightCardClassName, "flex h-full flex-col")}>
           <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.16em] text-primary">
             Client testimonial
           </p>
           <CaseStudyQuote
             variant="pull"
+            pinFooter
             author={quote.author}
             role={quote.role}
             source={quote.source}

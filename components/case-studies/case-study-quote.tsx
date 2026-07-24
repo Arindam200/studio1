@@ -13,6 +13,8 @@ export type CaseStudyQuoteProps = {
   avatar?: string;
   /** Larger treatment for hero-style pull quotes. */
   variant?: "inline" | "pull";
+  /** Pin attribution footer to the bottom of a flex parent (e.g. proof cards). */
+  pinFooter?: boolean;
   className?: string;
 };
 
@@ -27,6 +29,7 @@ export function CaseStudyQuote({
   source,
   avatar,
   variant = "inline",
+  pinFooter = false,
   className,
 }: CaseStudyQuoteProps) {
   const isPull = variant === "pull";
@@ -44,7 +47,10 @@ export function CaseStudyQuote({
         className={cn(
           "flex items-center gap-3 border-t",
           isPull
-            ? "mt-4 border-primary/15 pt-3.5 dark:border-primary/20"
+            ? cn(
+                "border-primary/15 pt-3.5 dark:border-primary/20",
+                pinFooter ? "mt-auto" : "mt-4",
+              )
             : "mt-5 border-border/50 pt-4 dark:border-white/[0.06]",
         )}
       >
@@ -108,6 +114,7 @@ export function CaseStudyQuote({
       className={cn(
         "not-prose relative border-none p-0",
         isPull ? "max-w-none" : "my-8",
+        pinFooter && "flex min-h-0 flex-1 flex-col",
         className,
       )}
     >

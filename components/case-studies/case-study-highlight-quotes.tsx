@@ -10,9 +10,9 @@ type CaseStudyHighlightQuotesProps = {
   className?: string;
 };
 
-/** Shared surface with CaseStudyHighlightStats (gradient, border, shadow). */
+/** Shared surface with CaseStudyHighlightStats — hero testimonial glass. */
 export const caseStudyHighlightCardClassName =
-  "relative overflow-hidden rounded-2xl border border-border/30 bg-gradient-to-br from-primary/[0.04] via-foreground/[0.05] to-foreground/[0.08] px-5 py-5 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.16),0_12px_36px_-12px_rgba(0,0,0,0.22),0_14px_36px_-10px_hsl(var(--primary)/0.08)] dark:border-white/[0.06] dark:from-primary/[0.05] dark:via-black/50 dark:to-black/40 dark:shadow-[0_4px_24px_-8px_rgba(0,0,0,0.55),0_16px_48px_-16px_rgba(0,0,0,0.75)] md:px-6 md:py-6";
+  "rounded-2xl border border-border/50 bg-gradient-to-br from-background/95 via-background/90 to-primary/[0.06] px-5 py-5 backdrop-blur-xl shadow-elevated-card ring-1 ring-primary/10 text-foreground dark:border-white/[0.08] dark:from-white/[0.04] dark:to-white/[0.01] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] dark:ring-white/[0.04] md:px-6 md:py-6";
 
 /**
  * Single editorial pull quote when a study has no verified metrics.
