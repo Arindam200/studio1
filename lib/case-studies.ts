@@ -49,7 +49,7 @@ export type CaseStudyMeta = {
   tags: string[];
   /** Verified outcome numbers only: never invented. Max 3 rendered in highlights. */
   metrics: CaseStudyMetric[];
-  /** Client or community quotes. First quote is highlighted when no metrics exist. */
+  /** Client or community quotes. Used in proof panels (top when no metrics). */
   quotes: CaseStudyQuote[];
   /** Qualitative outcomes for impact lists and metric-light studies. */
   outcomes: string[];

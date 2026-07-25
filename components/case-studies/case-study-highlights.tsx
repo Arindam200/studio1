@@ -19,10 +19,9 @@ function dedupeMetrics(metrics: CaseStudyMetric[]) {
 }
 
 /**
- * Highlight below the case study header.
- * Verified metrics (up to 3). Client quotes and outcomes render later as
- * proof panels so quote-led case studies still feel like case studies, not
- * articles with one pull quote at the top.
+ * Highlight below the case study header — verified metrics only (up to 3).
+ * Studies without metrics render proof panels (quote + outcomes) in this
+ * slot via CaseStudyLayout instead.
  */
 export function CaseStudyHighlights({
   study,

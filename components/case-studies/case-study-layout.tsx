@@ -30,8 +30,9 @@ const COLUMN = "max-w-[52rem]";
  * Everything shares one left edge and one measure, so the page reads as a
  * continuous document rather than a stack of differently-sized bands.
  *
- * Verified metrics or one pull quote sits below the header in the same prose
- * measure (highlight-card language). Nothing extra is added at the end.
+ * Verified metrics sit below the header when present. Studies without metrics
+ * open with the testimonial + outcome proof panels instead; with metrics,
+ * those panels stay after the narrative.
  */
 export function CaseStudyLayout({
   study,
@@ -40,7 +41,7 @@ export function CaseStudyLayout({
 }: CaseStudyLayoutProps) {
   const logo = getClientLogo(study.slug);
   const meta = [study.industry, study.category].filter(Boolean);
-  const showHighlights = study.metrics.length > 0;
+  const hasMetrics = study.metrics.length > 0;
 
   return (
     <>
@@ -83,7 +84,7 @@ export function CaseStudyLayout({
               </div>
             </div>
 
-            <h1 className="mt-8 font-primary text-3xl font-normal leading-[1.15] tracking-tight md:text-4xl lg:text-5xl">
+            <h1 className="mt-8 font-inter text-3xl font-normal leading-[1.15] tracking-tight md:text-4xl lg:text-5xl">
               <NumericText>{study.title}</NumericText>
             </h1>
 
@@ -92,12 +93,18 @@ export function CaseStudyLayout({
             </p>
           </header>
 
-          {/* Metrics or quote highlight under the header */}
-          {showHighlights ? (
+          {/*
+            With metrics: verified results sit under the header; proof panels
+            stay after the narrative. Without metrics: testimonial + outcomes
+            move up so the page still opens with proof, not a blank gap.
+          */}
+          {hasMetrics ? (
             <div className="mt-14 border-t border-border/60 pt-10">
               <CaseStudyHighlights study={study} />
             </div>
-          ) : null}
+          ) : (
+            <CaseStudyProof study={study} />
+          )}
 
           <CaseStudySnapshot study={study} />
           <CaseStudyScope study={study} />
@@ -110,7 +117,7 @@ export function CaseStudyLayout({
             {children}
           </div>
 
-          <CaseStudyProof study={study} />
+          {hasMetrics ? <CaseStudyProof study={study} /> : null}
 
           {/* Credentials */}
           {study.services.length > 0 || study.website ? (

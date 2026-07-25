@@ -82,49 +82,79 @@ export function CaseStudyScope({ study }: CaseStudyDetailPanelsProps) {
 export function CaseStudyProof({ study }: CaseStudyDetailPanelsProps) {
   const quote = study.quotes[0];
   const outcomes = study.outcomes.slice(0, 5);
+  const hasBoth = Boolean(quote) && outcomes.length > 0;
 
   if (!quote && outcomes.length === 0) return null;
 
-  return (
-    <section className="not-prose mt-16 grid grid-cols-1 gap-5 lg:grid-cols-[1fr_0.9fr]">
-      {quote ? (
-        <div className={cn(caseStudyHighlightCardClassName, "flex h-full flex-col")}>
-          <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.16em] text-primary">
-            Client testimonial
-          </p>
-          <CaseStudyQuote
-            variant="pull"
-            pinFooter
-            author={quote.author}
-            role={quote.role}
-            source={quote.source}
-            avatar={quote.avatar}
-          >
-            {quote.text}
-          </CaseStudyQuote>
-        </div>
-      ) : null}
+  const quotePanel = quote ? (
+    <div className="flex min-h-0 flex-1 flex-col">
+      <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.16em] text-primary">
+        Client testimonial
+      </p>
+      <CaseStudyQuote
+        variant="pull"
+        compact
+        pinFooter
+        author={quote.author}
+        role={quote.role}
+        source={quote.source}
+        avatar={quote.avatar}
+      >
+        {quote.text}
+      </CaseStudyQuote>
+    </div>
+  ) : null;
 
-      {outcomes.length > 0 ? (
-        <div className={cn(quietPanel, quote ? "p-5 md:p-6" : "p-5 md:p-6 lg:col-span-2")}>
-          <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-primary">
-            Outcome highlights
-          </p>
-          <ul className="mt-5 space-y-3.5">
-            {outcomes.map((outcome) => (
-              <li key={outcome} className="flex gap-3">
-                <CheckCircle
-                  className="mt-0.5 size-5 shrink-0 text-primary"
-                  weight="fill"
-                />
-                <span className="text-sm leading-relaxed text-muted-foreground">
-                  <NumericText>{outcome}</NumericText>
-                </span>
-              </li>
-            ))}
-          </ul>
+  const outcomesPanel =
+    outcomes.length > 0 ? (
+      <div className="flex min-h-0 flex-1 flex-col">
+        <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-primary">
+          Outcome highlights
+        </p>
+        <ul className="mt-4 space-y-3">
+          {outcomes.map((outcome) => (
+            <li key={outcome} className="flex gap-2.5">
+              <CheckCircle
+                className="mt-0.5 size-4 shrink-0 text-primary"
+                weight="fill"
+              />
+              <span className="text-sm leading-relaxed text-muted-foreground">
+                <NumericText>{outcome}</NumericText>
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ) : null;
+
+  // Single surface, split horizontally when both panels exist.
+  if (hasBoth) {
+    return (
+      <section
+        aria-label="Client proof"
+        className={cn(
+          "not-prose mt-14 overflow-hidden",
+          caseStudyHighlightCardClassName,
+          "!p-0",
+        )}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 md:divide-x md:divide-border/50 dark:md:divide-white/[0.08]">
+          <div className="flex flex-col border-b border-border/50 p-5 dark:border-white/[0.08] md:border-b-0 md:p-6">
+            {quotePanel}
+          </div>
+          <div className="flex flex-col p-5 md:p-6">{outcomesPanel}</div>
         </div>
-      ) : null}
+      </section>
+    );
+  }
+
+  return (
+    <section
+      aria-label="Client proof"
+      className={cn("not-prose mt-14", caseStudyHighlightCardClassName)}
+    >
+      {quotePanel}
+      {outcomesPanel}
     </section>
   );
 }

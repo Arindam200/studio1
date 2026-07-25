@@ -13,6 +13,8 @@ export type CaseStudyQuoteProps = {
   avatar?: string;
   /** Larger treatment for hero-style pull quotes. */
   variant?: "inline" | "pull";
+  /** Tighter type for half-width proof panels. */
+  compact?: boolean;
   /** Pin attribution footer to the bottom of a flex parent (e.g. proof cards). */
   pinFooter?: boolean;
   className?: string;
@@ -29,6 +31,7 @@ export function CaseStudyQuote({
   source,
   avatar,
   variant = "inline",
+  compact = false,
   pinFooter = false,
   className,
 }: CaseStudyQuoteProps) {
@@ -81,11 +84,6 @@ export function CaseStudyQuote({
                 isPull ? "text-base md:text-[1.0625rem]" : "text-[0.9375rem]",
               )}
             >
-              {author ? (
-                <span className="text-muted-foreground/60" aria-hidden>
-                  ·{" "}
-                </span>
-              ) : null}
               <span className="serif-accent font-accent italic text-foreground/75">
                 {role}
               </span>
@@ -122,7 +120,9 @@ export function CaseStudyQuote({
         className={cn(
           "font-accent pointer-events-none select-none leading-none",
           isPull
-            ? "block text-6xl text-primary/45 md:text-7xl dark:text-primary/30"
+            ? compact
+              ? "block text-5xl text-primary/45 dark:text-primary/30"
+              : "block text-6xl text-primary/45 md:text-7xl dark:text-primary/30"
             : "relative text-[2.75rem] text-primary/35 dark:text-primary/20",
         )}
         aria-hidden
@@ -134,7 +134,9 @@ export function CaseStudyQuote({
         className={cn(
           "relative font-secondary text-foreground/90",
           isPull
-            ? "-mt-4 pl-0.5 text-[1.25rem] font-medium leading-snug md:-mt-5 md:text-[1.5rem] lg:text-[1.625rem]"
+            ? compact
+              ? "-mt-3 pl-0.5 text-[1.0625rem] font-medium leading-snug md:text-lg"
+              : "-mt-4 pl-0.5 text-[1.25rem] font-medium leading-snug md:-mt-5 md:text-[1.5rem] lg:text-[1.625rem]"
             : "-mt-1 text-base leading-relaxed sm:text-[1.0625rem] md:leading-[1.65]",
         )}
       >

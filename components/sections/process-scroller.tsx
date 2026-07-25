@@ -1,21 +1,21 @@
 "use client";
 
-import React, {
-  useCallback,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
-  AnimatePresence,
   motion,
   useMotionValueEvent,
   useReducedMotion,
   useScroll,
   type Variants,
 } from "motion/react";
-import { TimelineItem } from "./timeline-item";
+import { Check } from "@phosphor-icons/react";
 import { Num } from "../ui/num";
+import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
+import {
+  elevatedCardShadow,
+  glassCardEdgeHighlight,
+  serviceCardHoverGlow,
+} from "@/lib/shadows";
 import { cn } from "@/lib/utils";
 
 export interface ProcessStep {
@@ -27,302 +27,461 @@ export interface ProcessStep {
 
 interface ProcessScrollerProps {
   steps: ProcessStep[];
-  /** Label shown in the step rail, e.g. "Step", "Week", "Phase" */
+  /** Label shown next to step numbers, e.g. "Step", "Week", "Phase" */
   stepLabel?: string;
+  /**
+   * Section heading rendered inside the pinned viewport on desktop (so it
+   * stays visible while scrubbing) and above the stacked list elsewhere.
+   */
+  heading?: React.ReactNode;
 }
 
-const gridContainerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.08 },
-  },
-};
+const EASE_OUT: [number, number, number, number] = [0.32, 0.72, 0, 1];
 
-const gridCardVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
-  },
-};
+/** Scroll distance per step while the deck is pinned. */
+const STEP_SCROLL_VH = 70;
 
-/** Right-panel crossfade only: content swaps in a fixed slot. */
-const panelFadeVariants: Variants = {
-  enter: { opacity: 0 },
-  center: { opacity: 1, transition: { duration: 0.22, ease: "easeOut" } },
-  exit: { opacity: 0, transition: { duration: 0.16, ease: "easeIn" } },
-};
+/** Decorative ticks rendered between step ticks on the timeline rail. */
+const SUB_TICKS_PER_GAP = 2;
 
-/**
- * Sticky panel height: content-sized around the right detail card (26rem)
- * plus light vertical air.
- *
- * Track height: stickyHeight + (steps - 1) * stepScrollDistance
- *
- * Motion `useScroll` offsets only parse px / % / vw / vh. End/start edges are
- * measured in px so progress=1 aligns with unpin when the panel is centered.
- */
-const STICKY_HEIGHT = "30rem";
-const STICKY_HEIGHT_PX_FALLBACK = 480;
-/** Scroll distance per step transition while pinned. */
-const STEP_SCROLL_VH = 55;
+const pad2 = (value: number) => String(value).padStart(2, "0");
 
-function progressToStep(progress: number, lastIndex: number): number {
-  if (lastIndex === 0) return 0;
-  return Math.min(lastIndex, Math.floor(progress * (lastIndex + 1)));
-}
+type TimelineNode =
+  { type: "main"; index: number } | { type: "sub"; index: number };
 
-function centeredStickyOffsets(stickyHeightPx: number) {
-  const viewportCenter = window.innerHeight / 2;
-  return {
-    stickyTopPx: viewportCenter - stickyHeightPx / 2,
-    stickyBottomPx: viewportCenter + stickyHeightPx / 2,
-  };
-}
-
-const ProcessGrid: React.FC<{ steps: ProcessStep[]; animate: boolean }> = ({
-  steps,
-  animate,
-}) => (
-  <motion.div
-    className="mx-auto w-full max-w-5xl"
-    initial={animate ? "hidden" : false}
-    whileInView="visible"
-    viewport={{ once: true, margin: "-80px" }}
-    variants={animate ? gridContainerVariants : undefined}
-  >
-    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-      {steps.map((item, index) => (
-        <motion.div
-          key={item.name}
-          className="group h-full min-h-[18rem] overflow-hidden rounded-xl"
-          variants={animate ? gridCardVariants : undefined}
-        >
-          <TimelineItem item={item} index={index} />
-        </motion.div>
-      ))}
-    </div>
-  </motion.div>
+const processCardSurface = cn(
+  "group relative min-h-[22rem] overflow-hidden rounded-2xl border-2 border-border/80 dark:border",
+  "bg-background/80 backdrop-blur-md",
+  "transition-[border-color,box-shadow,transform] duration-500 ease-out",
+  "hover:-translate-y-1 hover:border-primary/35 dark:hover:border-white/15",
+  "motion-reduce:transition-none motion-reduce:hover:translate-y-0",
+  elevatedCardShadow,
 );
 
-const ScrollStepper: React.FC<Required<ProcessScrollerProps>> = ({
-  steps,
+function ProcessCardHoverEffects({ active }: { active: boolean }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    if (active) {
+      setMounted(true);
+      return;
+    }
+
+    const timeout = window.setTimeout(() => setMounted(false), 450);
+    return () => window.clearTimeout(timeout);
+  }, [active]);
+
+  return (
+    <>
+      <div aria-hidden className={serviceCardHoverGlow} />
+      <div
+        aria-hidden
+        className={cn(
+          "pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-2xl opacity-0 transition-opacity duration-500 ease-out motion-reduce:transition-none",
+          active && "opacity-100",
+        )}
+      >
+        {mounted ? (
+          <CanvasRevealEffect
+            animationSpeed={3}
+            containerClassName="bg-transparent"
+            colors={[
+              [234, 88, 12],
+              [249, 115, 22],
+            ]}
+            dotSize={2}
+            showGradient={false}
+          />
+        ) : null}
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/75 to-background/35" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.08] via-transparent to-transparent" />
+      </div>
+      <div aria-hidden className={glassCardEdgeHighlight} />
+    </>
+  );
+}
+
+function ProcessDeckCard({
+  step,
   stepLabel,
-}) => {
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const stickyRef = useRef<HTMLDivElement>(null);
-  const scrollMetricsRef = useRef({
-    stickyTopPx: 0,
-    stickyBottomPx: STICKY_HEIGHT_PX_FALLBACK,
-    stickyHeightPx: STICKY_HEIGHT_PX_FALLBACK,
-  });
+  index,
+  count,
+}: {
+  step: ProcessStep;
+  stepLabel: string;
+  index: number;
+  count: number;
+}) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div
+      className={processCardSurface}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onFocusCapture={() => setHovered(true)}
+      onBlurCapture={() => setHovered(false)}
+    >
+      <ProcessCardHoverEffects active={hovered} />
+
+      <div className="relative z-[1] flex h-full flex-col p-7 xl:p-8">
+        <div className="flex items-center justify-between">
+          <span className="font-numeric text-[11px] font-semibold uppercase tracking-[0.28em] text-primary">
+            {stepLabel} <Num>{pad2(index + 1)}</Num>{" "}
+            <span className="text-muted-foreground/50">
+              / <Num>{pad2(count)}</Num>
+            </span>
+          </span>
+          <step.icon className="size-[18px] text-muted-foreground/60 transition-colors duration-500 group-hover:text-primary" />
+        </div>
+
+        <h3 className="mt-3 font-inter text-3xl font-semibold tracking-tight text-foreground">
+          {step.name}
+        </h3>
+        <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
+          {step.description}
+        </p>
+
+        <ul className="mt-6 border-t border-border/60 dark:border-white/[0.06]">
+          {step.details.map((detail, detailIndex) => (
+            <li
+              key={detailIndex}
+              className="flex items-start gap-3 border-b border-border/40 py-3 last:border-b-0 dark:border-white/[0.04]"
+            >
+              <Check
+                weight="bold"
+                className="mt-[3px] size-4 shrink-0 text-primary"
+              />
+              <div className="text-[14px] font-medium leading-snug text-foreground/85">
+                {detail}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Desktop: scroll-driven card deck with timeline rail                 */
+/* ------------------------------------------------------------------ */
+
+const deckSpring = {
+  type: "spring" as const,
+  stiffness: 250,
+  damping: 26,
+  mass: 0.8,
+};
+
+const tickSpring = {
+  type: "spring" as const,
+  stiffness: 400,
+  damping: 25,
+};
+
+const ProcessDeck: React.FC<{
+  steps: ProcessStep[];
+  stepLabel: string;
+  heading?: React.ReactNode;
+}> = ({ steps, stepLabel, heading }) => {
+  const trackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
-  const lastIndex = Math.max(steps.length - 1, 0);
-  const [scrollOffsets, setScrollOffsets] = useState<{
-    start: `${number}px`;
-    end: `${number}px`;
-  }>(() => {
-    const half = STICKY_HEIGHT_PX_FALLBACK / 2;
-    const center =
-      typeof window !== "undefined" ? window.innerHeight / 2 : 400;
-    return {
-      start: `${center - half}px`,
-      end: `${center + half}px`,
-    };
-  });
-
-  useLayoutEffect(() => {
-    const sticky = stickyRef.current;
-    if (!sticky) return;
-
-    const syncMetrics = () => {
-      const stickyHeightPx = sticky.offsetHeight;
-      if (stickyHeightPx <= 0) return;
-
-      const { stickyTopPx, stickyBottomPx } =
-        centeredStickyOffsets(stickyHeightPx);
-      scrollMetricsRef.current = {
-        stickyTopPx,
-        stickyBottomPx,
-        stickyHeightPx,
-      };
-      setScrollOffsets({
-        start: `${stickyTopPx}px`,
-        end: `${stickyBottomPx}px`,
-      });
-    };
-
-    syncMetrics();
-    const observer = new ResizeObserver(syncMetrics);
-    observer.observe(sticky);
-    window.addEventListener("resize", syncMetrics);
-    return () => {
-      observer.disconnect();
-      window.removeEventListener("resize", syncMetrics);
-    };
-  }, []);
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+  const count = Math.max(steps.length, 1);
 
   const { scrollYProgress } = useScroll({
-    target: wrapperRef,
-    offset: [`start ${scrollOffsets.start}`, `end ${scrollOffsets.end}`],
+    target: trackRef,
+    offset: ["start start", "end end"],
   });
 
-  useMotionValueEvent(scrollYProgress, "change", (progress) => {
-    setActive(progressToStep(progress, lastIndex));
+  useMotionValueEvent(scrollYProgress, "change", (value) => {
+    const next = Math.min(count - 1, Math.max(0, Math.floor(value * count)));
+    setActive((prev) => (next === prev ? prev : next));
   });
 
   const scrollToStep = useCallback(
     (index: number) => {
-      const wrapper = wrapperRef.current;
-      if (!wrapper) return;
-
-      const { stickyTopPx, stickyBottomPx } = scrollMetricsRef.current;
-      const wrapperTop = wrapper.getBoundingClientRect().top + window.scrollY;
-      const wrapperHeight = wrapper.offsetHeight;
-      const progress = lastIndex === 0 ? 0 : index / lastIndex;
-      const scrollRange = wrapperHeight - stickyBottomPx + stickyTopPx;
-      const targetScrollY = wrapperTop - stickyTopPx + progress * scrollRange;
-
+      const track = trackRef.current;
+      if (!track) return;
+      const sticky = track.firstElementChild as HTMLElement | null;
+      const stickyHeight = sticky?.offsetHeight ?? window.innerHeight;
+      const range = Math.max(track.offsetHeight - stickyHeight, 1);
+      const top = track.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
-        top: targetScrollY,
+        top: top + ((index + 0.5) / count) * range,
         behavior: "smooth",
       });
     },
-    [lastIndex],
+    [count],
   );
+
+  const timelineNodes = useMemo(() => {
+    const nodes: TimelineNode[] = [];
+    steps.forEach((_, index) => {
+      nodes.push({ type: "main", index });
+      if (index < steps.length - 1) {
+        for (let sub = 1; sub <= SUB_TICKS_PER_GAP; sub++) {
+          nodes.push({
+            type: "sub",
+            index: index + sub / (SUB_TICKS_PER_GAP + 1),
+          });
+        }
+      }
+    });
+    return nodes;
+  }, [steps]);
 
   return (
     <div
-      ref={wrapperRef}
+      ref={trackRef}
       className="relative w-full"
-      style={{
-        height: `calc(${STICKY_HEIGHT} + ${lastIndex * STEP_SCROLL_VH}vh)`,
-      }}
+      style={{ height: `${count * STEP_SCROLL_VH}vh` }}
     >
-      <div
-        ref={stickyRef}
-        className="sticky flex items-center"
-        style={{
-          height: STICKY_HEIGHT,
-          top: `calc(50vh - ${STICKY_HEIGHT} / 2)`,
-        }}
-      >
-        <div className="mx-auto grid w-full max-w-5xl grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] items-center gap-12 xl:gap-16">
-          <div className="relative flex flex-col gap-1">
-            <div
-              aria-hidden
-              className="absolute bottom-9 left-9 top-9 w-px -translate-x-1/2 bg-border"
-            >
-              <motion.div
-                className="h-full w-full origin-top bg-gradient-to-b from-primary via-primary1 to-primary"
-                style={{ scaleY: scrollYProgress }}
-              />
-            </div>
-            {steps.map((step, index) => {
-              const isActive = index === active;
-              const isCompleted = index < active;
-              const isReached = isActive || isCompleted;
-              return (
-                <button
-                  key={step.name}
-                  type="button"
-                  onClick={() => scrollToStep(index)}
-                  aria-current={isActive ? "step" : undefined}
-                  className={cn(
-                    "relative flex w-full items-start gap-4 rounded-xl p-4 text-left transition-[background-color,color] duration-300",
-                    isActive
-                      ? "bg-accent/40 dark:bg-accent/20"
-                      : "hover:bg-accent/20 dark:hover:bg-accent/10",
-                  )}
-                >
-                  <span
-                    className={cn(
-                      "relative z-10 flex size-10 shrink-0 items-center justify-center rounded-full border font-numeric text-sm font-bold tabular-nums transition-[background-color,border-color,color,box-shadow] duration-300",
-                      isReached
-                        ? "border-transparent bg-gradient-to-br from-primary to-primary1 text-white shadow-md shadow-primary/30"
-                        : "border-border bg-background text-muted-foreground",
-                    )}
-                  >
-                    <Num>{index + 1}</Num>
-                  </span>
-                  <span className="flex min-w-0 flex-col">
-                    <span
-                      className={cn(
-                        "text-[11px] font-semibold uppercase tracking-wider transition-colors duration-300",
-                        isActive ? "text-primary" : "text-muted-foreground/60",
-                      )}
-                    >
-                      {stepLabel} <Num>{index + 1}</Num>
-                    </span>
-                    <span
-                      className={cn(
-                        "flex items-center gap-2 font-semibold transition-colors duration-300",
-                        isActive ? "text-foreground" : "text-muted-foreground",
-                      )}
-                    >
-                      <step.icon
-                        className={cn(
-                          "size-4 shrink-0 transition-colors duration-300",
-                          isActive ? "text-primary" : "text-muted-foreground/70",
-                        )}
-                      />
-                      {step.name}
-                    </span>
-                    {isActive && (
-                      <span className="mt-1.5 text-sm text-muted-foreground">
-                        {step.description}
-                      </span>
-                    )}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+      <div className="sticky top-0 flex w-full flex-col items-center pt-10 pb-6">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-20% 0px" }}
+          transition={{ duration: 0.6, ease: EASE_OUT }}
+          className="flex w-full flex-col items-center gap-3 xl:gap-4"
+        >
+          {heading && <div className="w-full">{heading}</div>}
 
-          <div className="relative h-[26rem]">
-            <AnimatePresence initial={false} mode="sync">
-              <motion.div
-                key={active}
-                variants={panelFadeVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                className="absolute inset-0 overflow-hidden rounded-xl"
-              >
-                <TimelineItem item={steps[active]} index={active} isActive />
-              </motion.div>
-            </AnimatePresence>
+          <div className="mt-5 flex w-full max-w-4xl items-center justify-center gap-10 xl:mt-6 xl:gap-14">
+            {/* Card deck */}
+            <div
+              className="relative flex h-[26rem] min-w-0 flex-1 items-center justify-center"
+              style={{ perspective: "1000px" }}
+            >
+              {steps.map((step, index) => {
+                const offset = index - active;
+                const isPast = index < active;
+                return (
+                  <motion.div
+                    key={step.name}
+                    aria-hidden={index !== active}
+                    className="absolute w-[30rem] max-w-full xl:w-[33rem]"
+                    initial={false}
+                    animate={{
+                      z: isPast ? 220 : offset * -70,
+                      y: isPast ? 260 : offset * -16,
+                      rotateX: isPast ? -18 : offset * 2,
+                      scale: isPast ? 1.15 : 1,
+                      opacity: isPast ? 0 : 1 - offset * 0.18,
+                    }}
+                    transition={deckSpring}
+                    style={{
+                      zIndex: count - index,
+                      pointerEvents: index === active ? "auto" : "none",
+                    }}
+                  >
+                  <ProcessDeckCard
+                    step={step}
+                    stepLabel={stepLabel}
+                    index={index}
+                    count={count}
+                  />
+                </motion.div>
+                );
+              })}
+            </div>
+
+            {/* Timeline rail */}
+            <div
+              className="relative z-10 flex shrink-0 flex-col items-end py-2"
+              role="group"
+              aria-label="Process steps"
+              onMouseLeave={() => setHoverIndex(null)}
+            >
+              {timelineNodes.map((node) => {
+                if (node.type === "main") {
+                  const index = node.index;
+                  const isActive = index === active;
+                  const isLabelVisible =
+                    hoverIndex === index || (hoverIndex === null && isActive);
+                  return (
+                    <button
+                      key={`main-${index}`}
+                      type="button"
+                      onMouseEnter={() => setHoverIndex(index)}
+                      onFocus={() => setHoverIndex(index)}
+                      onBlur={() => setHoverIndex(null)}
+                      onClick={() => scrollToStep(index)}
+                      aria-label={`${stepLabel} ${index + 1}: ${steps[index].name}`}
+                      aria-current={isActive ? "step" : undefined}
+                      className="group relative flex w-24 items-center justify-end py-[3px] focus-visible:outline-none"
+                    >
+                      {isLabelVisible && (
+                        <span className="pointer-events-none absolute right-9 top-1/2 -translate-y-1/2">
+                          <motion.span
+                            initial={{ opacity: 0, x: 5 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.18, ease: EASE_OUT }}
+                            className={cn(
+                              "block whitespace-nowrap text-[11px] font-semibold",
+                              isActive ? "text-primary" : "text-foreground/70",
+                            )}
+                          >
+                            {steps[index].name}
+                          </motion.span>
+                        </span>
+                      )}
+                      <motion.span
+                        className={cn(
+                          "block h-[3px] w-6 origin-right rounded-full transition-colors duration-300",
+                          isActive
+                            ? "bg-primary"
+                            : index < active
+                              ? "bg-primary/40 group-hover:bg-primary/60"
+                              : "bg-foreground/25 group-hover:bg-foreground/50",
+                          "group-focus-visible:ring-2 group-focus-visible:ring-primary/60 group-focus-visible:ring-offset-2 group-focus-visible:ring-offset-background",
+                        )}
+                        animate={{
+                          scaleX: isActive
+                            ? 1.4
+                            : hoverIndex !== null &&
+                                Math.abs(index - hoverIndex) < 0.5
+                              ? 1.25
+                              : 1,
+                        }}
+                        transition={tickSpring}
+                      />
+                    </button>
+                  );
+                }
+
+                const isNear =
+                  hoverIndex !== null &&
+                  Math.abs(node.index - hoverIndex) <= 0.5;
+                return (
+                  <div
+                    key={`sub-${node.index}`}
+                    aria-hidden
+                    className="flex w-24 cursor-pointer justify-end py-[3px]"
+                    onMouseEnter={() => setHoverIndex(node.index)}
+                    onClick={() => scrollToStep(Math.round(node.index))}
+                  >
+                    <motion.span
+                      className="block h-[3px] w-6 origin-right rounded-full bg-foreground/20"
+                      animate={{
+                        scaleX: isNear ? 1.15 : 1,
+                        opacity: isNear ? 0.6 : 0.35,
+                      }}
+                      transition={tickSpring}
+                    />
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
 };
 
+/* ------------------------------------------------------------------ */
+/* Stacked layout: mobile and reduced motion                           */
+/* ------------------------------------------------------------------ */
+
+const stackItemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: EASE_OUT,
+      staggerChildren: 0.05,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const stackDetailVariants: Variants = {
+  hidden: { opacity: 0, y: 8 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: EASE_OUT } },
+};
+
+const ProcessStack: React.FC<{
+  steps: ProcessStep[];
+  stepLabel: string;
+  animate: boolean;
+}> = ({ steps, stepLabel, animate }) => (
+  <ol className="mx-auto w-full max-w-2xl list-none divide-y divide-border/60">
+    {steps.map((step, index) => (
+      <motion.li
+        key={step.name}
+        className="py-10 first:pt-0 last:pb-0"
+        initial={animate ? "hidden" : false}
+        whileInView={animate ? "show" : undefined}
+        viewport={{ once: true, margin: "-60px" }}
+        variants={animate ? stackItemVariants : undefined}
+      >
+        <span className="font-numeric text-[11px] font-semibold uppercase tracking-[0.28em] text-primary">
+          {stepLabel} <Num>{pad2(index + 1)}</Num>
+        </span>
+        <h3 className="mt-2.5 font-inter text-2xl font-semibold tracking-tight text-foreground">
+          {step.name}
+        </h3>
+        <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
+          {step.description}
+        </p>
+
+        <ul className="mt-6 space-y-3">
+          {step.details.map((detail, detailIndex) => (
+            <motion.li
+              key={detailIndex}
+              variants={animate ? stackDetailVariants : undefined}
+              className="flex items-start gap-3"
+            >
+              <Check
+                weight="bold"
+                className="mt-[3px] size-4 shrink-0 text-primary"
+              />
+              <div className="text-[14px] font-medium leading-snug text-foreground/85">
+                {detail}
+              </div>
+            </motion.li>
+          ))}
+        </ul>
+      </motion.li>
+    ))}
+  </ol>
+);
+
 /**
- * Scroll-driven process section: a sticky step rail on the left with a
- * progress line, and the active step card crossfading on the right.
- * Falls back to a stacked card grid on small screens and for users who
- * prefer reduced motion.
+ * Process section as a scroll-driven card deck. The section pins while
+ * scrolling: each scroll increment brings the next step's card to the top
+ * of a 3D stack, sending completed cards toward the viewer. The timeline
+ * rail mirrors progress and jumps to a step on click. Small screens and
+ * reduced-motion users get a plain stacked list.
  */
 export const ProcessScroller: React.FC<ProcessScrollerProps> = ({
   steps,
   stepLabel = "Step",
+  heading,
 }) => {
   const reducedMotion = useReducedMotion();
 
   if (reducedMotion) {
-    return <ProcessGrid steps={steps} animate={false} />;
+    return (
+      <div className="w-full">
+        {heading && <div className="mb-6 w-full">{heading}</div>}
+        <ProcessStack steps={steps} stepLabel={stepLabel} animate={false} />
+      </div>
+    );
   }
 
   return (
     <>
       <div className="w-full lg:hidden">
-        <ProcessGrid steps={steps} animate />
+        {heading && <div className="mb-6 w-full">{heading}</div>}
+        <ProcessStack steps={steps} stepLabel={stepLabel} animate />
       </div>
       <div className="hidden w-full lg:block">
-        <ScrollStepper steps={steps} stepLabel={stepLabel} />
+        <ProcessDeck steps={steps} stepLabel={stepLabel} heading={heading} />
       </div>
     </>
   );

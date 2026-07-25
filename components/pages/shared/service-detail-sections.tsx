@@ -210,7 +210,7 @@ export function ServiceProofSection({
   study,
 }: ServiceProofSectionProps) {
   return (
-    <section className="relative px-4 py-20 md:py-24">
+    <section className="relative px-4 pt-2 pb-20 md:pt-4 md:pb-24">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto mb-10 max-w-3xl text-center">
           <p className="font-secondary text-sm font-medium tracking-wide text-primary">
