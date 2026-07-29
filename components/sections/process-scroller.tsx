@@ -39,7 +39,10 @@ interface ProcessScrollerProps {
 const EASE_OUT: [number, number, number, number] = [0.32, 0.72, 0, 1];
 
 /** Scroll distance per step while the deck is pinned. */
-const STEP_SCROLL_VH = 70;
+const STEP_SCROLL_VH = 100;
+
+/** Fixed navbar clearance — keep in sync with sticky `top-*` below. */
+const STICKY_TOP_PX = 96;
 
 /** Decorative ticks rendered between step ticks on the timeline rail. */
 const SUB_TICKS_PER_GAP = 2;
@@ -174,12 +177,6 @@ const deckSpring = {
   mass: 0.8,
 };
 
-const tickSpring = {
-  type: "spring" as const,
-  stiffness: 400,
-  damping: 25,
-};
-
 const ProcessDeck: React.FC<{
   steps: ProcessStep[];
   stepLabel: string;
@@ -192,11 +189,22 @@ const ProcessDeck: React.FC<{
 
   const { scrollYProgress } = useScroll({
     target: trackRef,
-    offset: ["start start", "end end"],
+    // Pin point = navbar clearance. Progress 0 at pin → always opens on step 01.
+    offset: [`start ${STICKY_TOP_PX}px`, "end end"],
   });
 
   useMotionValueEvent(scrollYProgress, "change", (value) => {
-    const next = Math.min(count - 1, Math.max(0, Math.floor(value * count)));
+    // Hold step 01 through the first slice so arriving at the section
+    // never lands mid-deck from scroll momentum / offset quirks.
+    const p = Number.isFinite(value) ? Math.min(1, Math.max(0, value)) : 0;
+    const intro = 1 / (count + 1);
+    const next =
+      p <= intro
+        ? 0
+        : Math.min(
+            count - 1,
+            Math.floor(((p - intro) / (1 - intro)) * count),
+          );
     setActive((prev) => (next === prev ? prev : next));
   });
 
@@ -208,8 +216,11 @@ const ProcessDeck: React.FC<{
       const stickyHeight = sticky?.offsetHeight ?? window.innerHeight;
       const range = Math.max(track.offsetHeight - stickyHeight, 1);
       const top = track.getBoundingClientRect().top + window.scrollY;
+      const intro = 1 / (count + 1);
+      const progress =
+        index <= 0 ? intro * 0.5 : intro + ((index + 0.5) / count) * (1 - intro);
       window.scrollTo({
-        top: top + ((index + 0.5) / count) * range,
+        top: top + progress * range,
         behavior: "smooth",
       });
     },
@@ -238,7 +249,10 @@ const ProcessDeck: React.FC<{
       className="relative w-full"
       style={{ height: `${count * STEP_SCROLL_VH}vh` }}
     >
-      <div className="sticky top-0 flex w-full flex-col items-center pt-10 pb-6">
+      <div
+        className="sticky flex w-full flex-col items-center pt-4 pb-6"
+        style={{ top: STICKY_TOP_PX }}
+      >
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -318,42 +332,17 @@ const ProcessDeck: React.FC<{
                             initial={{ opacity: 0, x: 5 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.18, ease: EASE_OUT }}
-                            className={cn(
-                              "block whitespace-nowrap text-[11px] font-semibold",
-                              isActive ? "text-primary" : "text-foreground/70",
-                            )}
+                            className="block whitespace-nowrap text-[11px] font-medium text-muted-foreground"
                           >
                             {steps[index].name}
                           </motion.span>
                         </span>
                       )}
-                      <motion.span
-                        className={cn(
-                          "block h-[3px] w-6 origin-right rounded-full transition-colors duration-300",
-                          isActive
-                            ? "bg-primary"
-                            : index < active
-                              ? "bg-primary/40 group-hover:bg-primary/60"
-                              : "bg-foreground/25 group-hover:bg-foreground/50",
-                          "group-focus-visible:ring-2 group-focus-visible:ring-primary/60 group-focus-visible:ring-offset-2 group-focus-visible:ring-offset-background",
-                        )}
-                        animate={{
-                          scaleX: isActive
-                            ? 1.4
-                            : hoverIndex !== null &&
-                                Math.abs(index - hoverIndex) < 0.5
-                              ? 1.25
-                              : 1,
-                        }}
-                        transition={tickSpring}
-                      />
+                      <span className="block h-[3px] w-6 rounded-full bg-foreground/25 transition-colors duration-300 group-hover:bg-foreground/40 group-focus-visible:ring-2 group-focus-visible:ring-primary/60 group-focus-visible:ring-offset-2 group-focus-visible:ring-offset-background" />
                     </button>
                   );
                 }
 
-                const isNear =
-                  hoverIndex !== null &&
-                  Math.abs(node.index - hoverIndex) <= 0.5;
                 return (
                   <div
                     key={`sub-${node.index}`}
@@ -362,14 +351,7 @@ const ProcessDeck: React.FC<{
                     onMouseEnter={() => setHoverIndex(node.index)}
                     onClick={() => scrollToStep(Math.round(node.index))}
                   >
-                    <motion.span
-                      className="block h-[3px] w-6 origin-right rounded-full bg-foreground/20"
-                      animate={{
-                        scaleX: isNear ? 1.15 : 1,
-                        opacity: isNear ? 0.6 : 0.35,
-                      }}
-                      transition={tickSpring}
-                    />
+                    <span className="block h-[3px] w-6 rounded-full bg-foreground/20" />
                   </div>
                 );
               })}

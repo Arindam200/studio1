@@ -44,17 +44,25 @@ function markerPoint(id: string) {
   };
 }
 
-/** Same hubs as the CTA globe, connected as reach arcs. */
+/** Same hubs as the CTA globe; arcs flow out from India westward, in from the east. */
+const HUB = "india";
+
+/** West of India on the map — lines animate India → country. */
+const WEST_SPOKE_IDS = ["us", "france", "netherlands", "brazil"] as const;
+
+/** East of India on the map — lines animate country → India. */
+const EAST_SPOKE_IDS = ["singapore", "vietnam", "australia"] as const;
+
 const GLOBAL_REACH_DOTS: WorldMapDot[] = [
-  { start: markerPoint("india"), end: markerPoint("us") },
-  { start: markerPoint("india"), end: markerPoint("netherlands") },
-  { start: markerPoint("india"), end: markerPoint("singapore") },
-  { start: markerPoint("india"), end: markerPoint("brazil") },
-  { start: markerPoint("singapore"), end: markerPoint("vietnam") },
-  { start: markerPoint("singapore"), end: markerPoint("australia") },
-  { start: markerPoint("france"), end: markerPoint("india") },
-  { start: markerPoint("france"), end: markerPoint("netherlands") },
-  { start: markerPoint("us"), end: markerPoint("netherlands") },
+  ...WEST_SPOKE_IDS.map((id) => ({
+    start: markerPoint(HUB),
+    end: markerPoint(id),
+  })),
+  ...EAST_SPOKE_IDS.map((id) => ({
+    start: markerPoint(HUB),
+    end: markerPoint(id),
+    reverse: true,
+  })),
 ];
 
 export default function GlobalReach() {

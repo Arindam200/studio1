@@ -1,9 +1,11 @@
 import type { StaticImageData } from "next/image";
 import {
+  Enteligence,
   LiteLLM,
   LiteLLMFull,
   Memori,
   MemoriFull,
+  Nebius,
   Permit,
   PermitFull,
   ScrapeGraph,
@@ -30,3 +32,17 @@ export const clientLogos: Record<string, ClientLogo> = {
 export function getClientLogo(slug: string): ClientLogo | null {
   return clientLogos[slug] ?? null;
 }
+
+/** Extra trusted brands shown on the case-studies logo wall (no case study yet). */
+export const trustedClientMarks: {
+  name: string;
+  href: string;
+  icon: StaticImageData;
+}[] = [
+  { name: "Nebius", href: "https://nebius.com/", icon: Nebius },
+  {
+    name: "Enteligence",
+    href: "https://enteligence.com/",
+    icon: Enteligence,
+  },
+];

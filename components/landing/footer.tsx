@@ -134,6 +134,12 @@ export default function Footer() {
                 >
                   {t("links.blog")}
                 </Link>
+                <Link
+                  className="hover:text-foreground duration-300 hover:font-semibold"
+                  href={"/careers"}
+                >
+                  {t("links.careers")}
+                </Link>
               </motion.div>
             </motion.div>
           </div>

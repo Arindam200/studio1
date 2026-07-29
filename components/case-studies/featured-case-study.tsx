@@ -45,7 +45,7 @@ export function FeaturedCaseStudy() {
           </div>
         </div>
 
-        <h2 className="font-inter text-2xl font-semibold leading-tight tracking-tight transition-colors duration-300 group-hover:text-primary md:text-3xl">
+        <h2 className="font-inter text-2xl font-semibold leading-tight tracking-tight md:text-3xl">
           <NumericText>{study.title}</NumericText>
         </h2>
 
@@ -84,7 +84,7 @@ export function FeaturedCaseStudy() {
 
       {/* Artwork: stretches to narrative column height on md+ */}
       <div className="relative z-[1] flex min-h-0 min-w-0 items-stretch p-2 md:w-[min(45%,32rem)] md:shrink-0 lg:w-[min(48%,34rem)]">
-        <CardMedia study={study} variant="featured" priority />
+        <CardMedia study={study} variant="featured" />
       </div>
     </Link>
   );

@@ -19,20 +19,16 @@ const navTitleKeys: Record<string, string> = {
   "Developer Relations & Growth": "devrel",
   "Developer Video Production": "video",
   "Documentation & DX Audits": "docs",
-  "Global Reach": "globalReach",
-  "How It Works": "howItWorks",
   "Our Blog": "blog",
   "Technical Content Marketing": "technicalContent",
-  "Trusted By": "trustedBy",
   Content: "content",
   Home: "home",
-  Offerings: "offerings",
+  Overview: "overview",
+  Process: "process",
   Product: "product",
+  Proof: "proof",
   Results: "results",
   Services: "services",
-  Testimonials: "testimonials",
-  Top: "top",
-  "Why Us": "whyUs",
 };
 
 const navDescriptionKeys: Record<string, string> = {
@@ -141,23 +137,33 @@ export default function Navbar() {
                       "group-hover/nav:opacity-100 group-hover/nav:translate-y-0 group-hover/nav:scale-100 group-hover/nav:pointer-events-auto",
                     )}
                   >
-                    <div className="bg-background/95 backdrop-blur-xl shadow-lg border rounded-lg py-1.5 px-1 min-w-[17rem]">
+                    <div
+                      className={cn(
+                        "rounded-lg border bg-background/95 px-1 py-1.5 shadow-lg backdrop-blur-xl",
+                        item.children.some(
+                          (child) =>
+                            "description" in child && Boolean(child.description),
+                        )
+                          ? "w-max min-w-[24rem]"
+                          : "min-w-[17rem]",
+                      )}
+                    >
                       {item.children.map((child) => (
                         <Link
                           key={child.title}
                           href={child.path}
-                          className="flex group/item items-start px-3 py-2.5 w-full gap-2.5 text-muted-foreground transition-colors duration-200 hover:text-foreground"
+                          className="group/item flex w-full items-start gap-2.5 px-3 py-2.5 text-muted-foreground transition-colors duration-200 hover:text-foreground"
                         >
                           <child.icon
                             weight="duotone"
                             className="mt-0.5 size-5 shrink-0 transition-colors duration-200 group-hover/item:text-primary"
                           />
-                          <span className="flex flex-col gap-0.5">
-                            <span className="text-sm font-medium">
+                          <span className="flex min-w-0 flex-col gap-0.5">
+                            <span className="whitespace-nowrap text-sm font-medium">
                               {translatedNavTitle(child.title, t)}
                             </span>
                             {"description" in child && child.description ? (
-                              <span className="text-xs leading-snug text-muted-foreground/80">
+                              <span className="whitespace-nowrap text-xs leading-snug text-muted-foreground/80">
                                 {translatedNavDescription(child.description, t)}
                               </span>
                             ) : null}

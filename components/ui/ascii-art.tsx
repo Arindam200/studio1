@@ -50,7 +50,7 @@ const resolveCssColor = (
 ): string => {
   if (!color) return color;
 
-  if (color.startsWith("var(")) {
+  if (color.includes("var(")) {
     if (!element) return "#ffffff";
 
     const tempDiv = document.createElement("div");

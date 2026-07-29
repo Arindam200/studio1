@@ -11,7 +11,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Building, Star } from "@phosphor-icons/react/dist/ssr";
-import { Data } from "@/data";
+import { heroFeaturedTestimonials } from "@/data";
 import Image from "next/image";
 import AvatarComponent from "./avatar-component";
 import { Num, NumericText } from "@/components/ui/num";
@@ -165,15 +165,15 @@ export default function Hero() {
               >
                 <div className="flex items-center justify-center">
                   <Image
-                    src={Data.Testimonials[8].avatar}
-                    alt={Data.Testimonials[8].name}
+                    src={heroFeaturedTestimonials.mobile.avatar}
+                    alt={heroFeaturedTestimonials.mobile.name}
                     width={96}
                     height={96}
                     className="size-14 rounded-full object-cover"
                   />
                 </div>
                 <div className="mt-3 flex flex-col items-center justify-center text-center text-sm leading-relaxed">
-                  <NumericText>{Data.Testimonials[8].content}</NumericText>
+                  <NumericText>{heroFeaturedTestimonials.mobile.content}</NumericText>
                 </div>
                 <div className="flex items-center justify-center gap-1 rounded-md px-3 py-2">
                   {[...Array(5)].map((_, index) => (
@@ -185,7 +185,7 @@ export default function Hero() {
                   ))}
                 </div>
                 <div className="text-center text-sm font-medium">
-                  -{Data.Testimonials[8].name}
+                  -{heroFeaturedTestimonials.mobile.name}
                 </div>
               </motion.div>
               {/* <div className="mt-4 ">15+ overall work</div> */}
@@ -251,15 +251,15 @@ export default function Hero() {
           >
           <div className="flex items-center justify-center">
             <Image
-              src={Data.Testimonials[6].avatar}
-              alt={Data.Testimonials[6].name}
+              src={heroFeaturedTestimonials.left.avatar}
+              alt={heroFeaturedTestimonials.left.name}
               width={140}
               height={140}
               className="rounded-full size-16"
             />
           </div>
           <div className="flex flex-col text-center mt-2 text-sm items-center justify-center">
-            <NumericText>{Data.Testimonials[6].content}</NumericText>
+            <NumericText>{heroFeaturedTestimonials.left.content}</NumericText>
           </div>
           <div className="flex px-3 py-2 rounded-md items-center gap-1 justify-center">
             {[...Array(5)].map((_, index) => (
@@ -267,7 +267,7 @@ export default function Hero() {
             ))}
           </div>
           <div className="text-sm font-medium text-center">
-            -{Data.Testimonials[6].name}
+            -{heroFeaturedTestimonials.left.name}
           </div>
           </motion.div>
           <motion.div
@@ -276,15 +276,15 @@ export default function Hero() {
           >
           <div className="flex items-center justify-center">
             <Image
-              src={Data.Testimonials[8].avatar}
-              alt={Data.Testimonials[8].name}
+              src={heroFeaturedTestimonials.right.avatar}
+              alt={heroFeaturedTestimonials.right.name}
               width={140}
               height={140}
               className="rounded-full size-16"
             />
           </div>
           <div className="flex flex-col text-center mt-2 text-sm items-center justify-center">
-            <NumericText>{Data.Testimonials[8].content}</NumericText>
+            <NumericText>{heroFeaturedTestimonials.right.content}</NumericText>
           </div>
           <div className="flex px-3 py-2 rounded-md items-center gap-1 justify-center">
             {[...Array(5)].map((_, index) => (
@@ -292,7 +292,7 @@ export default function Hero() {
             ))}
           </div>
           <div className="text-sm font-medium text-center">
-            -{Data.Testimonials[8].name}
+            -{heroFeaturedTestimonials.right.name}
           </div>
           </motion.div>
         </motion.div>

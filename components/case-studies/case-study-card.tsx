@@ -3,16 +3,14 @@ import Image from "next/image";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { NumericText } from "@/components/ui/num";
 import { getClientLogo } from "@/components/case-studies/client-logos";
+import { CaseStudyCoverArt } from "@/components/case-studies/case-study-cover-art";
 import {
   glassCardEdgeHighlight,
   glassCardFrame,
   glassCardHoverWash,
 } from "@/lib/shadows";
 import { cn } from "@/lib/utils";
-import {
-  getCaseStudyCoverAlt,
-  type CaseStudyMeta,
-} from "@/lib/case-studies";
+import type { CaseStudyMeta } from "@/lib/case-studies";
 
 /**
  * Case-study card system.
@@ -84,16 +82,16 @@ export function ClientMark({
  * Card artwork.
  *
  * Inset with rounded corners and a hairline ring so it reads as a deliberate
- * plate.
+ * plate. The plate itself is a live component (`CaseStudyCoverArt`), not a
+ * designed banner image, so every card renders at identical quality and a
+ * new case study only needs a title + logo to look right.
  */
 export function CardMedia({
   study,
   variant,
-  priority = false,
 }: {
   study: CaseStudyMeta;
   variant: CardVariant;
-  priority?: boolean;
 }) {
   const containerClass =
     variant === "featured"
@@ -101,11 +99,6 @@ export function CardMedia({
       : variant === "compact"
         ? "aspect-[16/9] p-2"
         : "aspect-[16/9] p-3";
-
-  const imageClass =
-    variant === "featured"
-      ? "rounded-lg object-contain object-center transition-transform duration-700 ease-out group-hover:scale-[1.02] motion-reduce:transform-none"
-      : "rounded-lg object-contain object-center transition-transform duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transform-none";
 
   return (
     <div
@@ -115,20 +108,7 @@ export function CardMedia({
       )}
     >
       <div className="relative h-full w-full overflow-hidden rounded-lg bg-background/70 shadow-[0_16px_40px_-24px_rgba(0,0,0,0.45)] ring-1 ring-black/5 dark:bg-background/45 dark:ring-white/10">
-        <Image
-          src={study.cover}
-          alt={getCaseStudyCoverAlt(study)}
-          fill
-          className={imageClass}
-          sizes={
-            variant === "compact"
-              ? "(max-width: 640px) 100vw, 24rem"
-              : variant === "featured"
-                ? "(max-width: 768px) 100vw, 34rem"
-                : "(max-width: 768px) 100vw, 40rem"
-          }
-          priority={priority}
-        />
+        <CaseStudyCoverArt study={study} variant={variant} />
       </div>
     </div>
   );
@@ -138,11 +118,9 @@ export function CardMedia({
 export function CaseStudyCard({
   study,
   variant = "default",
-  priority = false,
 }: {
   study: CaseStudyMeta;
   variant?: Exclude<CardVariant, "featured">;
-  priority?: boolean;
 }) {
   return (
     <Link
@@ -152,21 +130,21 @@ export function CaseStudyCard({
       <div aria-hidden className={glassCardEdgeHighlight} />
       <div aria-hidden className={glassCardHoverWash} />
 
-      <CardMedia study={study} variant={variant} priority={priority} />
+      <CardMedia study={study} variant={variant} />
 
       <div className="relative z-[1] flex min-w-0 flex-1 items-start justify-between gap-4 p-4 pt-5">
         <div className="min-w-0">
           <span className="text-[11px] font-medium uppercase tracking-wider text-primary">
             {study.category}
           </span>
-          <h3 className="mt-2 line-clamp-2 font-inter text-base font-semibold leading-snug tracking-tight transition-colors duration-300 group-hover:text-primary md:text-lg">
+          <h3 className="mt-2 line-clamp-2 font-inter text-base font-semibold leading-snug tracking-tight md:text-lg">
             <NumericText>{study.title}</NumericText>
           </h3>
         </div>
 
         <ArrowUpRight
           weight="bold"
-          className="mt-6 size-4 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary motion-reduce:transform-none"
+          className="mt-6 size-4 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 dark:group-hover:text-primary motion-reduce:transform-none"
         />
       </div>
     </Link>
@@ -189,7 +167,7 @@ export function CaseStudyCardCompact({ study }: { study: CaseStudyMeta }) {
         <span className="text-[11px] font-medium uppercase tracking-wider text-primary">
           {study.category}
         </span>
-        <h3 className="mt-1.5 line-clamp-2 font-inter text-sm font-semibold leading-snug transition-colors duration-300 group-hover:text-primary">
+        <h3 className="mt-1.5 line-clamp-2 font-inter text-sm font-semibold leading-snug">
           <NumericText>{study.title}</NumericText>
         </h3>
       </div>

@@ -17,6 +17,8 @@ type WorldMapLocation = {
 export type WorldMapDot = {
   start: WorldMapLocation;
   end: WorldMapLocation;
+  /** When true, the draw animation travels from end → start. */
+  reverse?: boolean;
 };
 
 type WorldMapProps = {
@@ -32,7 +34,10 @@ type Point = { x: number; y: number };
 
 function createCurvedPath(start: Point, end: Point) {
   const midX = (start.x + end.x) / 2;
-  const midY = Math.min(start.y, end.y) - 12;
+  const dx = Math.abs(start.x - end.x);
+  const dy = Math.abs(start.y - end.y);
+  const arcHeight = Math.max(8, Math.min(16, (dx + dy) * 0.07));
+  const midY = Math.min(start.y, end.y) - arcHeight;
   return `M ${start.x} ${start.y} Q ${midX} ${midY} ${end.x} ${end.y}`;
 }
 
@@ -143,13 +148,6 @@ export function WorldMap({
         preserveAspectRatio="none"
       >
         <defs>
-          <linearGradient id="path-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="white" stopOpacity="0" />
-            <stop offset="5%" stopColor={lineColor} stopOpacity="1" />
-            <stop offset="95%" stopColor={lineColor} stopOpacity="1" />
-            <stop offset="100%" stopColor="white" stopOpacity="0" />
-          </linearGradient>
-
           <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="0.35" result="coloredBlur" />
             <feMerge>
@@ -163,33 +161,43 @@ export function WorldMap({
           const startPoint = projectPoint(dot.start.lat, dot.start.lng);
           const endPoint = projectPoint(dot.end.lat, dot.end.lng);
           const path = createCurvedPath(startPoint, endPoint);
+          const reverse = dot.reverse ?? false;
           const startTime = (i * staggerDelay) / fullCycleDuration;
           const endTime =
             (i * staggerDelay + animationDuration) / fullCycleDuration;
           const resetTime = totalAnimationTime / fullCycleDuration;
+          const loopTransition = {
+            duration: fullCycleDuration,
+            times: [0, startTime, endTime, resetTime, 1] as number[],
+            ease: "easeInOut" as const,
+            repeat: Infinity,
+            repeatDelay: 0,
+          };
 
           return (
             <g key={`path-group-${i}`}>
               <motion.path
                 d={path}
                 fill="none"
-                stroke="url(#path-gradient)"
+                stroke={lineColor}
                 strokeWidth={isDark ? "0.35" : "0.42"}
-                initial={{ pathLength: 0 }}
+                strokeLinecap="round"
+                initial={{ pathLength: 0, pathOffset: reverse ? 1 : 0 }}
                 animate={
                   loop
-                    ? { pathLength: [0, 0, 1, 1, 0] }
-                    : { pathLength: 1 }
+                    ? reverse
+                      ? {
+                          pathLength: [0, 0, 1, 1, 0],
+                          pathOffset: [1, 1, 0, 0, 1],
+                        }
+                      : { pathLength: [0, 0, 1, 1, 0], pathOffset: [0, 0, 0, 0, 0] }
+                    : reverse
+                      ? { pathLength: 1, pathOffset: 0 }
+                      : { pathLength: 1, pathOffset: 0 }
                 }
                 transition={
                   loop
-                    ? {
-                        duration: fullCycleDuration,
-                        times: [0, startTime, endTime, resetTime, 1],
-                        ease: "easeInOut",
-                        repeat: Infinity,
-                        repeatDelay: 0,
-                      }
+                    ? loopTransition
                     : {
                         duration: animationDuration,
                         delay: i * staggerDelay,
@@ -202,18 +210,17 @@ export function WorldMap({
                 <motion.circle
                   r={isDark ? "1" : "1.15"}
                   fill={lineColor}
-                  initial={{ offsetDistance: "0%", opacity: 0 }}
+                  initial={{
+                    offsetDistance: reverse ? "100%" : "0%",
+                    opacity: 0,
+                  }}
                   animate={{
-                    offsetDistance: [null, "0%", "100%", "100%", "100%"],
+                    offsetDistance: reverse
+                      ? [null, "100%", "0%", "0%", "100%"]
+                      : [null, "0%", "100%", "100%", "0%"],
                     opacity: [0, 0, 1, 0, 0],
                   }}
-                  transition={{
-                    duration: fullCycleDuration,
-                    times: [0, startTime, endTime, resetTime, 1],
-                    ease: "easeInOut",
-                    repeat: Infinity,
-                    repeatDelay: 0,
-                  }}
+                  transition={loopTransition}
                   style={{
                     offsetPath: `path('${path}')`,
                   }}

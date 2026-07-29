@@ -39,7 +39,7 @@ export default function ProductPipelineCard() {
             </div>
 
             <h2 className="mt-2 font-accent text-xl font-medium italic tracking-tight text-foreground sm:text-2xl">
-              Replyr
+              upcoming ...
             </h2>
           </div>
         </div>

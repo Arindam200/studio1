@@ -5,7 +5,7 @@ import { Trophy } from "@phosphor-icons/react/dist/ssr";
 import { getAllCaseStudies, getFeaturedCaseStudy } from "@/lib/case-studies";
 import { CaseStudyCard } from "@/components/case-studies/case-study-card";
 import { FeaturedCaseStudy } from "@/components/case-studies/featured-case-study";
-import { getClientLogo } from "@/components/case-studies/client-logos";
+import { getClientLogo, trustedClientMarks } from "@/components/case-studies/client-logos";
 import {
   sideBeamGlowLeftSubtle,
   sideBeamGlowRightSubtle,
@@ -78,8 +78,8 @@ export default async function CaseStudiesPage() {
 
       {/* Grid */}
       <div className="z-20 mt-8 grid w-full min-w-0 grid-cols-1 gap-8 md:grid-cols-2">
-        {remainingStudies.map((study, index) => (
-          <CaseStudyCard key={study.slug} study={study} priority={index < 2} />
+        {remainingStudies.map((study) => (
+          <CaseStudyCard key={study.slug} study={study} />
         ))}
       </div>
 
@@ -108,6 +108,23 @@ export default async function CaseStudiesPage() {
               </Link>
             );
           })}
+          {trustedClientMarks.map((client) => (
+            <a
+              key={client.name}
+              href={client.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={client.name}
+              className="flex items-center gap-2.5 opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+            >
+              <Image
+                src={client.icon}
+                alt=""
+                className="size-6 rounded object-contain"
+              />
+              <span className="text-sm font-medium">{client.name}</span>
+            </a>
+          ))}
         </div>
       </div>
     </section>

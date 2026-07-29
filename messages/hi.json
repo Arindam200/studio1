@@ -107,19 +107,15 @@
       "content": "कंटेंट",
       "devrel": "DevRel और ग्रोथ",
       "docs": "डॉक्यूमेंटेशन और DX ऑडिट",
-      "globalReach": "वैश्विक पहुँच",
       "home": "होम",
-      "howItWorks": "कैसे काम करता है",
-      "offerings": "ऑफरिंग्स",
+      "overview": "अवलोकन",
+      "process": "प्रक्रिया",
       "product": "प्रोडक्ट",
+      "proof": "प्रमाण",
       "results": "परिणाम",
       "services": "सेवाएँ",
       "technicalContent": "तकनीकी कंटेंट मार्केटिंग",
-      "testimonials": "प्रशंसापत्र",
-      "top": "शीर्ष",
-      "trustedBy": "जिन्होंने भरोसा किया",
-      "video": "डेवलपर वीडियो प्रोडक्शन",
-      "whyUs": "हमें क्यों चुनें"
+      "video": "डेवलपर वीडियो प्रोडक्शन"
     },
     "descriptions": {
       "blog": "Studio1 टीम के लेख और विचार",
@@ -267,7 +263,8 @@
       "docs": "Docs & DX",
       "products": "Products",
       "work": "Client Work",
-      "blog": "हमारा ब्लॉग"
+      "blog": "हमारा ब्लॉग",
+      "careers": "करियर"
     },
     "legal": {
       "terms": "नियम और शर्तें",

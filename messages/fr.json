@@ -107,19 +107,15 @@
       "content": "Contenu",
       "devrel": "DevRel et croissance",
       "docs": "Documentation et audits DX",
-      "globalReach": "Portée mondiale",
       "home": "Accueil",
-      "howItWorks": "Fonctionnement",
-      "offerings": "Offres",
+      "overview": "Aperçu",
+      "process": "Processus",
       "product": "Produit",
+      "proof": "Preuves",
       "results": "Résultats",
       "services": "Services",
       "technicalContent": "Marketing de contenu technique",
-      "testimonials": "Témoignages",
-      "top": "Début",
-      "trustedBy": "Ils nous font confiance",
-      "video": "Production vidéo développeur",
-      "whyUs": "Pourquoi nous"
+      "video": "Production vidéo développeur"
     },
     "descriptions": {
       "blog": "Articles et idées de l’équipe Studio1",
@@ -267,7 +263,8 @@
       "docs": "Docs et DX",
       "products": "Produits",
       "work": "Travaux clients",
-      "blog": "Notre blog"
+      "blog": "Notre blog",
+      "careers": "Carrières"
     },
     "legal": {
       "terms": "Conditions générales",

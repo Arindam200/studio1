@@ -1747,3 +1747,17 @@ export const Data = {
     },
   ],
 };
+
+function getTestimonial(name: string) {
+  const testimonial = Data.Testimonials.find((entry) => entry.name === name);
+  if (!testimonial) {
+    throw new Error(`Testimonial not found: ${name}`);
+  }
+  return testimonial;
+}
+
+export const heroFeaturedTestimonials = {
+  left: getTestimonial("Ivan Cordoba"),
+  right: getTestimonial("Agita Jaunzeme"),
+  mobile: getTestimonial("Agita Jaunzeme"),
+};

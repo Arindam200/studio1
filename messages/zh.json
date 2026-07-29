@@ -107,19 +107,15 @@
       "content": "内容",
       "devrel": "DevRel 与增长",
       "docs": "文档与 DX 审计",
-      "globalReach": "全球覆盖",
       "home": "首页",
-      "howItWorks": "工作方式",
-      "offerings": "服务范围",
+      "overview": "概览",
+      "process": "流程",
       "product": "产品",
+      "proof": "客户见证",
       "results": "成果",
       "services": "服务",
       "technicalContent": "技术内容营销",
-      "testimonials": "客户评价",
-      "top": "顶部",
-      "trustedBy": "客户信任",
-      "video": "开发者视频制作",
-      "whyUs": "为什么选择我们"
+      "video": "开发者视频制作"
     },
     "descriptions": {
       "blog": "Studio1 团队的文章和观点",
@@ -267,7 +263,8 @@
       "docs": "文档与 DX",
       "products": "产品",
       "work": "客户作品",
-      "blog": "我们的博客"
+      "blog": "我们的博客",
+      "careers": "招聘"
     },
     "legal": {
       "terms": "条款与条件",
