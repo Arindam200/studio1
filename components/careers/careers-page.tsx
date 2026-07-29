@@ -12,6 +12,8 @@ import {
   RocketLaunch,
   UsersThree,
 } from "@phosphor-icons/react/dist/ssr";
+import { AboutRipple } from "@/components/magicui/about-ripple";
+import Logo from "@/components/ui/svgs/logo";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { staggerChildren, itemVariants } from "@/lib/animations";
@@ -33,6 +35,19 @@ const perks = [
 
 const capsuleClassName =
   "rounded-full px-3.5 py-1.5 inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground border border-border/40 dark:border-white/15 bg-white/55 dark:bg-white/[0.08] backdrop-blur-md shadow-[0_6px_18px_-4px_hsl(var(--primary)/0.32)] dark:shadow-[0_6px_18px_-4px_hsl(var(--primary)/0.22)]";
+
+const heroAnimation = {
+  hidden: { opacity: 0, y: 50, filter: "blur(10px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.8,
+      ease: "easeOut" as const,
+    },
+  },
+};
 
 function JobCard({
   id,
@@ -128,10 +143,29 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
         <div aria-hidden className={sideBeamGlowLeftMuted} />
         <div aria-hidden className={sideBeamGlowRightMuted} />
 
+        <motion.div
+          className="mt-20 flex h-[40rem] max-h-fit w-full flex-col"
+          initial="hidden"
+          animate="visible"
+          variants={heroAnimation}
+        >
+          <div className="relative h-full w-full">
+            <AboutRipple mainCircleSize={310} numCircles={10} />
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+              <div className="z-[30] flex items-center justify-center rounded-3xl border-2 border-accent/40 bg-background/60 p-3 backdrop-blur-sm drop-shadow-[0_0px_25px_hsl(var(--primary))]">
+                <Logo className="size-12 sm:size-16 md:size-24" />
+              </div>
+              <span className="font-primary text-2xl font-semibold tracking-tight">
+                Studio1
+              </span>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Hero */}
-        <section className="relative flex max-h-fit flex-col px-4 pb-8 pt-24 sm:px-6 md:pt-28 lg:px-8">
+        <section className="relative flex max-h-fit flex-col px-4 pb-8 sm:px-6 lg:px-8">
           <motion.div
-            className="mx-auto max-w-3xl text-center"
+            className="mx-auto max-w-3xl -translate-y-40 text-center"
             initial="hidden"
             animate="visible"
             variants={staggerChildren}
@@ -183,7 +217,7 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
         {/* Open positions */}
         <motion.section
           id="open-positions"
-          className="mx-auto max-w-6xl scroll-mt-28 px-4 pb-24 pt-8 sm:px-6 lg:px-8"
+          className="mx-auto max-w-6xl scroll-mt-28 px-4 pb-24 pt-0 sm:px-6 lg:px-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.12 }}
