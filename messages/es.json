@@ -123,6 +123,26 @@
       "clientWork": "Tutoriales y guías que escribimos para clientes"
     }
   },
+  "CommandPalette": {
+    "placeholder": "Escribe un comando o busca...",
+    "empty": "No se encontraron resultados.",
+    "trigger": "Buscar",
+    "triggerLabel": "Abrir búsqueda",
+    "groups": {
+      "pages": "Páginas",
+      "services": "Servicios",
+      "content": "Contenido",
+      "blog": "Blog",
+      "caseStudies": "Casos de estudio",
+      "careers": "Empleo",
+      "legal": "Legal"
+    },
+    "items": {
+      "careers": "Empleo",
+      "terms": "Términos de servicio",
+      "privacy": "Política de privacidad"
+    }
+  },
   "HomeDomains": {
     "eyebrow": "Qué ofrecemos",
     "titlePrefix": "Los servicios que ejecutamos para",

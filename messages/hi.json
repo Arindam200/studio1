@@ -123,6 +123,26 @@
       "clientWork": "क्लाइंट्स के लिए लिखे गए ट्यूटोरियल और गाइड"
     }
   },
+  "CommandPalette": {
+    "placeholder": "कमांड टाइप करें या खोजें...",
+    "empty": "कोई परिणाम नहीं मिला।",
+    "trigger": "खोजें",
+    "triggerLabel": "खोज खोलें",
+    "groups": {
+      "pages": "पेज",
+      "services": "सेवाएँ",
+      "content": "कंटेंट",
+      "blog": "ब्लॉग",
+      "caseStudies": "केस स्टडी",
+      "careers": "करियर",
+      "legal": "कानूनी"
+    },
+    "items": {
+      "careers": "करियर",
+      "terms": "सेवा की शर्तें",
+      "privacy": "गोपनीयता नीति"
+    }
+  },
   "HomeDomains": {
     "eyebrow": "हम क्या ऑफर करते हैं",
     "titlePrefix": "हम जिन सेवाओं को चलाते हैं",

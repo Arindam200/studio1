@@ -123,6 +123,26 @@
       "clientWork": "我们为客户撰写的教程和指南"
     }
   },
+  "CommandPalette": {
+    "placeholder": "输入命令或搜索...",
+    "empty": "未找到结果。",
+    "trigger": "搜索",
+    "triggerLabel": "打开搜索",
+    "groups": {
+      "pages": "页面",
+      "services": "服务",
+      "content": "内容",
+      "blog": "博客",
+      "caseStudies": "案例研究",
+      "careers": "招聘",
+      "legal": "法律"
+    },
+    "items": {
+      "careers": "招聘",
+      "terms": "服务条款",
+      "privacy": "隐私政策"
+    }
+  },
   "HomeDomains": {
     "eyebrow": "我们提供什么",
     "titlePrefix": "我们为",

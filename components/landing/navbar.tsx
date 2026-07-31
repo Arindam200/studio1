@@ -10,6 +10,10 @@ import { cn } from "@/lib/utils";
 import Logo from "../ui/svgs/logo";
 import { EnvelopeOpen } from "@phosphor-icons/react";
 import { LanguageSwitcher } from "@/components/localization/language-switcher";
+import {
+  MobileSearchTrigger,
+  SearchTrigger,
+} from "@/components/command-palette";
 import { useTranslations } from "next-intl";
 
 const navTitleKeys: Record<string, string> = {
@@ -178,6 +182,7 @@ export default function Navbar() {
           </div>
 
           <div className="hidden items-center justify-between gap-3 lg:flex">
+            <SearchTrigger />
             <SelectTheme />
             <LanguageSwitcher compact />
             <Button variant="gradient" asChild>
@@ -188,6 +193,7 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-2 lg:hidden">
+            <MobileSearchTrigger />
             <div className="flex size-10 items-center justify-center rounded-md hover:bg-accent">
               <SelectTheme />
             </div>
