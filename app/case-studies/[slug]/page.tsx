@@ -14,8 +14,11 @@ import {
   absoluteImageUrl,
   articlePageMetadata,
   baseUrl,
-  breadcrumbJsonLd,
+  localizedBreadcrumbJsonLd,
 } from "@/lib/seo";
+import { headers } from "next/headers";
+import { getSafeLocale } from "@/lib/i18n-messages";
+import { localizedUrl } from "@/lib/i18n";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -25,7 +28,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const study = getCaseStudyBySlug(slug);
+  const headerStore = await headers();
+  const locale = getSafeLocale(headerStore.get("x-studio1-locale"));
+  const study = getCaseStudyBySlug(slug, locale);
   if (!study) {
     return { title: "Not found" };
   }
@@ -34,6 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: study.title,
     description: study.description,
     path: `/case-studies/${slug}`,
+    locale,
     keywords: study.tags,
     image: study.cover,
     imageAlt: getCaseStudyCoverAlt(study),
@@ -44,10 +50,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CaseStudyPage({ params }: Props) {
   const { slug } = await params;
-  const study = getCaseStudyBySlug(slug);
+  const headerStore = await headers();
+  const locale = getSafeLocale(headerStore.get("x-studio1-locale"));
+  const study = getCaseStudyBySlug(slug, locale);
   if (!study) notFound();
 
-  const related = getRelatedCaseStudies(slug, 3);
+  const related = getRelatedCaseStudies(slug, 3, locale);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -72,7 +80,7 @@ export default async function CaseStudyPage({ params }: Props) {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${baseUrl}/case-studies/${slug}`,
+      "@id": localizedUrl(`/case-studies/${slug}`, locale, baseUrl),
     },
     image: {
       "@type": "ImageObject",
@@ -83,11 +91,11 @@ export default async function CaseStudyPage({ params }: Props) {
     articleSection: "Case Studies",
   };
 
-  const breadcrumbSchema = breadcrumbJsonLd([
+  const breadcrumbSchema = localizedBreadcrumbJsonLd([
     { name: "Home", path: "/" },
     { name: "Case Studies", path: "/case-studies" },
     { name: study.title, path: `/case-studies/${slug}` },
-  ]);
+  ], locale);
 
   return (
     <>

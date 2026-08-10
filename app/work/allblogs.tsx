@@ -12,17 +12,14 @@ import {
 const cards = Data.Allblogs;
 
 interface AllblogsProps {
-  query: string;
   tags: string[];
 }
 
-export default function Allblogs({ query, tags }: AllblogsProps) {
+export default function Allblogs({ tags }: AllblogsProps) {
   const filteredCards = cards.filter((card) => {
-    const searchContent = `${card.title} ${card.description}`.toLowerCase();
-    const matchesSearch = searchContent.includes(query.toLowerCase());
     const matchesTags =
       tags.includes("All") || tags.some((tag) => card.tags.includes(tag));
-    return matchesSearch && matchesTags;
+    return matchesTags;
   });
 
   return (
@@ -32,7 +29,7 @@ export default function Allblogs({ query, tags }: AllblogsProps) {
         <div className={sideBeamGlowRightCentered}></div>
         {filteredCards.length === 0 ? (
           <div className="py-16 text-center font-inter text-base text-muted-foreground">
-            No articles found matching your search.
+            No articles found for this tag.
           </div>
         ) : (
           <motion.div

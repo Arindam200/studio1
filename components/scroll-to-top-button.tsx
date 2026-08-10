@@ -6,17 +6,20 @@ import { ArrowUp } from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
 
 const SHOW_AFTER_PX = 520;
+const SERVICE_PAGE_PATHS = [
+  "/technical-content-marketing",
+  "/developer-documentation-dx-audit",
+  "/developer-video-production",
+  "/developer-relations-growth-campaigns",
+] as const;
 
 export default function ScrollToTopButton() {
   const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
 
-  const hasServiceBottomNav =
-    pathname.startsWith("/devrel-as-service") ||
-    pathname.startsWith("/blog-as-service") ||
-    pathname.startsWith("/technical-content-marketing") ||
-    pathname.startsWith("/developer-relations-growth-campaigns") ||
-    pathname.startsWith("/developer-documentation-dx-audit");
+  const hasServiceBottomNav = SERVICE_PAGE_PATHS.some((path) =>
+    pathname.startsWith(path),
+  );
 
   useEffect(() => {
     const syncVisibility = () => {

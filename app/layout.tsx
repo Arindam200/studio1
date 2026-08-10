@@ -18,7 +18,6 @@ import { NextIntlClientProvider } from "next-intl";
 import Navbar from "@/components/landing/navbar";
 import Footer from "@/components/landing/footer";
 import CTA from "@/components/landing/cta";
-import { SiteCommandPalette } from "@/components/site-command-palette";
 import { LocalizedLinkRuntime } from "@/components/localization/localized-link-runtime";
 import ScrollToTopButton from "@/components/scroll-to-top-button";
 import {
@@ -180,15 +179,13 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <SiteCommandPalette>
-              <Navbar />
-              {children}
-              <CTA />
-              <Footer />
-              <BottomNavbar />
-              <ScrollToTopButton />
-              <LocalizedLinkRuntime />
-            </SiteCommandPalette>
+            <Navbar />
+            {children}
+            <CTA />
+            <Footer />
+            <BottomNavbar />
+            <ScrollToTopButton />
+            <LocalizedLinkRuntime />
           </NextIntlClientProvider>
         </ThemeProvider>
 
@@ -206,7 +203,6 @@ export default async function RootLayout({
               sameAs: [
                 "https://twitter.com/Studio1HQ",
                 "https://linkedin.com/company/studio1hq",
-                // Add other social profiles
               ],
             }),
           }}

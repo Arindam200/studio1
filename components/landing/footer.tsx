@@ -71,7 +71,7 @@ export default function Footer() {
                   </span>
                 </motion.div>
                 <motion.p
-                  className="text-foreground/90 font-semibold text-center sm:w-96"
+                  className="max-w-sm text-center text-sm font-normal leading-relaxed text-muted-foreground sm:text-base"
                   variants={headerVariants}
                 >
                   {t("description")}

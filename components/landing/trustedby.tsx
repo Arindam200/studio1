@@ -30,56 +30,43 @@ export default function Trustedby() {
         <Marquee fade={false}>
           {trustedbyLogo.map((item) => (
             <div
-              className={cn(
-                "flex items-center justify-center",
-                item.showNameBeside && "gap-3 mx-8",
-              )}
+              className="mx-6 flex h-14 w-40 items-center justify-center sm:mx-8 sm:w-44"
               key={item.name}
             >
               {item.showNameBeside ? (
-                <>
+                <div className="flex max-w-full items-center justify-center gap-2.5 opacity-80">
                   <Image
                     src={item.image}
                     className={cn(
-                      item.isWhite
-                        ? "grayscale invert dark:invert-0"
-                        : "invert-0 grayscale dark:invert",
-                      "opacity-80 object-contain",
-                      item.className,
+                      "size-9 shrink-0 object-contain",
+                      !("noFilter" in item && item.noFilter) &&
+                        (item.isWhite
+                          ? "grayscale invert dark:invert-0"
+                          : "invert-0 grayscale dark:invert"),
                     )}
                     alt=""
-                    width={56}
-                    height={56}
-                    style={{ height: "auto" }}
+                    width={36}
+                    height={36}
+                    style={{ width: 36, height: 36 }}
                   />
-                  <span className="text-base sm:text-lg font-medium tracking-tight opacity-90 whitespace-nowrap">
+                  <span className="truncate text-base font-medium tracking-tight sm:text-lg">
                     {item.name}
                   </span>
-                </>
+                </div>
               ) : (
                 <Image
                   src={item.image}
                   className={cn(
-                    item.isWhite
+                    !("noFilter" in item && item.noFilter) &&
+                      (item.isWhite
                       ? "grayscale invert dark:invert-0"
-                      : "invert-0 grayscale dark:invert",
-                    "opacity-70 mx-10 w-auto object-contain",
-                    item.alt === "Eachlabs" && "h-14 aspect-square",
-                    item.alt === "Memori" && "h-20 w-auto aspect-square",
-                    item.alt === "LiteLLM" &&
-                      "h-20 sm:h-24 md:h-24 w-auto max-w-[min(100vw-2rem,400px)] sm:max-w-[440px]",
-                    item.alt === "InsForge" &&
-                      "h-8 sm:h-10 md:h-11 w-auto max-w-[200px] sm:max-w-[260px] md:max-w-[280px] object-contain",
-                    item.alt !== "Eachlabs" &&
-                      item.alt !== "Memori" &&
-                      item.alt !== "LiteLLM" &&
-                      item.alt !== "InsForge" &&
-                      "h-24 w-fit aspect-square",
+                      : "invert-0 grayscale dark:invert"),
+                    "h-auto max-h-9 w-auto max-w-36 object-contain opacity-70 sm:max-w-40",
                   )}
                   alt={item.name}
-                  width={1000}
-                  height={1000}
-                  style={{ width: "auto" }}
+                  width={220}
+                  height={72}
+                  sizes="176px"
                 />
               )}
             </div>

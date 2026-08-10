@@ -91,7 +91,7 @@ export default function Hero() {
               stats={[
                 { value: "10+", label: t("stats.events") },
                 { value: "5+", label: t("stats.teams") },
-                { value: "50%", label: t("stats.savings") },
+                { value: "35+", label: t("stats.partners") },
                 { value: "#1", label: t("stats.launch") },
               ]}
             />

@@ -47,6 +47,22 @@ export function proxy(request: NextRequest) {
   }
 
   if (locale && isLocale(locale)) {
+    if (
+      unprefixedPathname === "/blog" ||
+      unprefixedPathname.startsWith("/blog/") ||
+      unprefixedPathname === "/terms" ||
+      unprefixedPathname === "/privacy"
+    ) {
+      const url = nextUrl.clone();
+      url.pathname = "/__localized-not-found";
+
+      return NextResponse.rewrite(url, {
+        request: {
+          headers: requestHeaders(request, locale, pathname),
+        },
+      });
+    }
+
     const url = nextUrl.clone();
     url.pathname = unprefixedPathname;
 

@@ -11,9 +11,23 @@ export const LOCALIZED_PUBLIC_PATHS = [
   "/developer-video-production",
   "/developer-relations-growth-campaigns",
   "/case-studies",
+  "/about-us",
+  "/work",
+  "/product",
+  "/careers",
 ] as const;
 
 const localizedPublicPathSet = new Set<string>(LOCALIZED_PUBLIC_PATHS);
+
+export function isLocalizedPublicPath(pathname: string) {
+  const { pathname: unprefixed } = splitLocaleFromPathname(pathname);
+
+  return (
+    localizedPublicPathSet.has(unprefixed) ||
+    /^\/case-studies\/[^/]+$/.test(unprefixed) ||
+    /^\/careers\/[^/]+$/.test(unprefixed)
+  );
+}
 
 export const localeMeta: Record<
   Locale,
@@ -111,8 +125,7 @@ export function languageAlternates(pathname: string, baseUrl: string) {
 }
 
 export function hasLocalizedAlternates(pathname: string) {
-  const { pathname: unprefixed } = splitLocaleFromPathname(pathname);
-  return localizedPublicPathSet.has(unprefixed);
+  return isLocalizedPublicPath(pathname);
 }
 
 export function canonicalUrl(pathname: string, locale: Locale, baseUrl: string) {

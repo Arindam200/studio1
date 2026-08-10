@@ -13,11 +13,16 @@ import {
 import { baseUrl } from "@/lib/site";
 import { absoluteImageUrl } from "@/lib/seo";
 import { getTranslations } from "next-intl/server";
+import { headers } from "next/headers";
+import { getSafeLocale } from "@/lib/i18n-messages";
+import { localizedUrl } from "@/lib/i18n";
 
 export default async function CaseStudiesPage() {
+  const headerStore = await headers();
+  const locale = getSafeLocale(headerStore.get("x-studio1-locale"));
   const t = await getTranslations("CaseStudiesIndex");
-  const studies = getAllCaseStudies();
-  const featuredStudy = getFeaturedCaseStudy();
+  const studies = getAllCaseStudies(locale);
+  const featuredStudy = getFeaturedCaseStudy(locale);
   const remainingStudies = studies.filter((s) => s.slug !== featuredStudy?.slug);
 
   const collectionJsonLd = {
@@ -25,7 +30,7 @@ export default async function CaseStudiesPage() {
     "@type": "CollectionPage",
     name: t("metadataName"),
     description: t("metadataDescription"),
-    url: `${baseUrl}/case-studies`,
+    url: localizedUrl("/case-studies", locale, baseUrl),
     isPartOf: {
       "@type": "WebSite",
       name: "Studio1",
@@ -36,7 +41,7 @@ export default async function CaseStudiesPage() {
       itemListElement: studies.map((study, index) => ({
         "@type": "ListItem",
         position: index + 1,
-        url: `${baseUrl}/case-studies/${study.slug}`,
+        url: localizedUrl(`/case-studies/${study.slug}`, locale, baseUrl),
         name: study.title,
         image: absoluteImageUrl(study.cover),
       })),

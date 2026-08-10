@@ -1,6 +1,6 @@
 import {
   CopilotkitFull,
-  LiteLLMFull,
+  LiteLLM,
   PermitFull,
   TolgeeFull,
   NebiusFull,
@@ -9,10 +9,10 @@ import {
   CrawleeFull,
   OpireFull,
   EncoreFull,
-  VeltFull,
+  Velt,
   ReadySetFull,
   NitricFull,
-  JozuFull,
+  Jozu,
   CodeRabbitFull,
   shivayNoBg,
   arindamNoBg,
@@ -20,15 +20,23 @@ import {
   SwytchcodeFull,
   StackqlFull,
   EachlabFull,
+  EachlabWordmarkLight,
   MotiaFull,
   GraphiteFull,
-  LambdatestFull,
+  TestMuAiLogo,
   MemoriFull,
+  MemoriLogoLight,
   EntelligenceFull,
   RagieFull,
   IttybitFull,
   InsForgeFull,
   ByteRover,
+  WeaviateFull,
+  MaximFull,
+  Puck,
+  Unsiloed,
+  InteractAiLogo,
+  Corsair,
 } from "./image";
 import {
   Books,
@@ -141,11 +149,60 @@ export const trustedbyLogo = [
   },
   {
     name: "Velt",
-    image: VeltFull,
+    image: Velt,
+    isWhite: false,
+    showNameBeside: true,
+    className: "h-9 w-9 object-contain",
+    alt: "Velt",
+  },
+  {
+    name: "Weaviate",
+    image: WeaviateFull,
     isWhite: true,
     className:
-      "h-7 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
-    alt: "Velt",
+      "h-7 sm:h-8 md:h-8 w-auto max-w-[150px] object-contain",
+    alt: "Weaviate",
+  },
+  {
+    name: "Maxim AI",
+    image: MaximFull,
+    isWhite: false,
+    className:
+      "h-7 sm:h-8 md:h-8 w-auto max-w-[140px] sm:max-w-[160px] object-contain",
+    alt: "Maxim AI",
+  },
+  {
+    name: "Puck",
+    image: Puck,
+    isWhite: false,
+    showNameBeside: true,
+    className: "h-11 w-11 sm:h-12 sm:w-12 object-contain shrink-0",
+    noFilter: true,
+    alt: "Puck",
+  },
+  {
+    name: "Unsiloed",
+    image: Unsiloed,
+    isWhite: true,
+    showNameBeside: true,
+    className: "h-11 w-11 sm:h-12 sm:w-12 object-contain shrink-0",
+    alt: "Unsiloed",
+  },
+  {
+    name: "Interact AI",
+    image: InteractAiLogo,
+    isWhite: false,
+    className:
+      "h-7 sm:h-8 md:h-8 w-auto max-w-[150px] object-contain",
+    alt: "Interact AI",
+  },
+  {
+    name: "Corsair",
+    image: Corsair,
+    isWhite: false,
+    showNameBeside: true,
+    className: "h-11 w-11 sm:h-12 sm:w-12 object-contain shrink-0",
+    alt: "Corsair",
   },
   {
     name: "Stream",
@@ -164,17 +221,17 @@ export const trustedbyLogo = [
     alt: "Permit",
   },
   {
-    name: "Lambdatest",
-    image: LambdatestFull,
-    isWhite: true,
+    name: "TestMu AI",
+    image: TestMuAiLogo,
+    isWhite: false,
     className:
       "h-10 sm:h-12 md:h-16 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain dark:brightness-200",
-    alt: "Lambdatest",
+    alt: "TestMu AI",
   },
   {
     name: "Memori",
-    image: MemoriFull,
-    isWhite: false,
+    image: MemoriLogoLight,
+    isWhite: true,
     className:
       "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain",
     alt: "Memori",
@@ -197,8 +254,8 @@ export const trustedbyLogo = [
   },
   {
     name: "Eachlabs",
-    image: EachlabFull,
-    isWhite: true,
+    image: EachlabWordmarkLight,
+    isWhite: false,
     className:
       "h-6 sm:h-7 md:h-8 w-auto max-w-[80px] sm:max-w-[120px] md:max-w-[140px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
     alt: "Eachlabs",
@@ -253,10 +310,10 @@ export const trustedbyLogo = [
   },
   {
     name: "LiteLLM",
-    image: LiteLLMFull,
+    image: LiteLLM,
     isWhite: false,
-    className:
-      "h-8 sm:h-9 md:h-10 w-auto max-w-[140px] sm:max-w-[200px] md:max-w-[220px] object-contain",
+    showNameBeside: true,
+    className: "h-9 w-9 object-contain",
     alt: "LiteLLM",
   },
   {
@@ -293,10 +350,10 @@ export const trustedbyLogo = [
   },
   {
     name: "Jozu",
-    image: JozuFull,
+    image: Jozu,
     isWhite: false,
-    className:
-      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain",
+    showNameBeside: true,
+    className: "h-9 w-9 object-contain",
     alt: "Jozu",
   },
   {

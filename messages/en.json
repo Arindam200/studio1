@@ -9,8 +9,8 @@
   },
   "Metadata": {
     "home": {
-      "title": "Technical Content & Developer Growth Agency for DevTools",
-      "description": "Studio1 is a technical content and developer growth partner for SaaS and devtool teams. We produce tutorials, docs, videos, launches, and developer programs that drive adoption."
+      "title": "Technical Content & DevRel Agency for DevTools",
+      "description": "Studio1 helps SaaS, AI, and devtool teams ship technical content, docs, videos, launches, and DevRel programs that drive developer adoption."
     },
     "services": {
       "technicalContent": {
@@ -29,6 +29,28 @@
         "title": "Developer Relations & Growth Campaigns",
         "description": "Developer relations and growth campaigns for developer products: advocacy, community programs, product launches, organic distribution, and influencer management."
       }
+    },
+    "pages": {
+      "about": {
+        "title": "About Studio1",
+        "description": "Learn about Studio1, a developer-focused content agency helping devtool and SaaS companies grow through technical writing, DevRel strategy, video, and community work."
+      },
+      "work": {
+        "title": "Client Work",
+        "description": "Technical tutorials, integration guides, and developer content Studio1 creates for client teams across AI, cloud, DevOps, and web development."
+      },
+      "product": {
+        "title": "Studio1 Products for Developer Teams",
+        "description": "Studio1-built tools for developers and SaaS teams, including Raah for web analytics and AssetSnip for website asset extraction."
+      },
+      "careers": {
+        "title": "Careers at Studio1",
+        "description": "Join Studio1 as an intern across social content, visual video content, or growth, and help developer-focused products reach the right audience."
+      },
+      "caseStudies": {
+        "title": "Developer Growth Case Studies",
+        "description": "Explore how Studio1 has helped devtool and SaaS companies increase developer adoption through technical content, DevRel strategy, and community engagement."
+      }
     }
   },
   "ServiceHero": {
@@ -42,8 +64,8 @@
       "stats": {
         "views": "content views",
         "teams": "teams helped",
-        "savings": "cost savings",
-        "retention": "client retention"
+        "reddit": "Reddit impressions",
+        "partners": "partner companies"
       }
     },
     "docs": {
@@ -56,7 +78,7 @@
       "stats": {
         "audits": "docs audits",
         "pages": "pages shipped",
-        "success": "faster first success"
+        "tracks": "service tracks"
       }
     },
     "devrel": {
@@ -69,7 +91,7 @@
       "stats": {
         "events": "high-impact events",
         "teams": "teams helped",
-        "savings": "cost savings",
+        "partners": "partner companies",
         "launch": "Product Hunt launch"
       }
     },
@@ -89,8 +111,8 @@
     "badgeSuffixShort": "teams",
     "titleLine1": "Technical Content and",
     "titleLine2": "Partner for",
-    "description": "We help SaaS and devtool teams publish tutorials, docs, and DevRel programs that rank in search, activate developers, and build long-term trust.",
-    "descriptionRich": "We help <strong>SaaS and devtool teams</strong> publish <strong>tutorials, docs, and DevRel programs</strong><br></br>that rank in search, activate <strong>developers</strong>, and build <strong>long-term trust</strong>.",
+    "description": "We help SaaS and devtool teams publish content, docs, and DevRel programs that build search visibility and trust.",
+    "descriptionRich": "We help SaaS and devtool teams publish content, docs, and DevRel programs<br></br>that build search visibility and trust.",
     "primaryCta": "Book a Strategy Call",
     "secondaryCta": "See Our Services",
     "trustedAria": "Trusted by 35+ devtool teams",
@@ -123,31 +145,63 @@
       "clientWork": "Tutorials and guides we write for clients"
     }
   },
-  "CommandPalette": {
-    "placeholder": "Type a command or search...",
-    "empty": "No results found.",
-    "trigger": "Search",
-    "triggerLabel": "Open search",
-    "groups": {
-      "pages": "Pages",
-      "services": "Services",
-      "content": "Content",
-      "blog": "Blog",
-      "caseStudies": "Case Studies",
-      "careers": "Careers",
-      "legal": "Legal"
+  "WorkPage": {
+    "eyebrow": "Published for our clients",
+    "title": "Client Work",
+    "description": "Tutorials, guides, and developer content we create for the teams we partner with."
+  },
+  "AboutPage": {
+    "titlePrefix": "Amplifying Your",
+    "titleHighlightOne": "Product Story",
+    "titleMiddle": "for",
+    "titleHighlightTwo": "Developers",
+    "titleSuffix": "One Blog, Video, and Initiative at a Time",
+    "descriptionLineOne": "We help tech companies grow developer communities and boost engagement",
+    "descriptionLineTwo": "through DevRel and technical content that resonates.",
+    "tags": {
+      "developerCentric": "Developer-Centric",
+      "technicalExpertise": "Technical Expertise",
+      "communityDriven": "Community-Driven",
+      "contentFocused": "Content Focused",
+      "endToEnd": "End-to-End Solutions"
+    }
+  },
+  "ProductPage": {
+    "visitProduct": "Visit {name}",
+    "hero": {
+      "badge": "Built by",
+      "titlePrefix": "Our",
+      "titleHighlight": "Products",
+      "description": "Tools we build and ship for developers, designers, and teams."
     },
-    "items": {
-      "careers": "Careers",
-      "terms": "Terms of Service",
-      "privacy": "Privacy Policy"
+    "pipeline": {
+      "category": "AI SaaS",
+      "status": "In progress",
+      "title": "upcoming ..."
+    }
+  },
+  "CareersPage": {
+    "badge": "We're hiring",
+    "titlePrefix": "Join the team behind",
+    "titleHighlight": "developer-first",
+    "titleSuffix": "content",
+    "description": "Studio1 helps devtool and SaaS teams grow through technical content and DevRel while building products like Raah and AssetSnip.",
+    "internship": "Internship",
+    "posted": "Posted {date}",
+    "applyNow": "Apply now",
+    "allDepartments": "All",
+    "empty": "No open positions right now. Check back soon.",
+    "perks": {
+      "remote": "Remote-first",
+      "developerFocused": "Developer-focused",
+      "smallTeam": "Small team"
     }
   },
   "HomeDomains": {
     "eyebrow": "What We Offer",
     "titlePrefix": "The services we run for",
     "titleHighlight": "developer brands",
-    "description": "Content, advocacy, video, docs, growth, launches, and influencer programs: the full set of work we take on.",
+    "description": "Content, docs, video, DevRel, launches, and creator programs for developer brands.",
     "explore": "Explore service",
     "offerings": [
       {
@@ -187,12 +241,12 @@
   "HomeServices": {
     "eyebrow": "Services",
     "title": "What We Do",
-    "description": "We create technical tutorials, documentation, and DevRel programs that help developers succeed with your product and drive adoption.",
+    "description": "Technical content, documentation, and DevRel programs built for developer adoption.",
     "stats": {
       "views": "content views",
       "companies": "partner companies",
-      "savings": "cost savings",
-      "retention": "client retention"
+      "events": "high-impact events",
+      "launch": "Product Hunt launch"
     },
     "cards": {
       "content": {
@@ -215,12 +269,12 @@
     "eyebrow": "Global Reach",
     "titlePrefix": "Building With Teams",
     "titleHighlight": "Worldwide",
-    "description": "From India, Brazil, Vietnam, and Australia to the USA, France, the Netherlands, and Singapore, these are hubs where we have partnered and collaborated with companies on developer content and DevRel programs."
+    "description": "Partner and collaboration hubs across India, Brazil, Vietnam, Australia, Israel, the USA, France, the Netherlands, and Singapore."
   },
   "Testimonials": {
     "eyebrow": "Testimonials",
     "title": "What Our Clients Say",
-    "description": "Hear from the founders, CEOs and builders who trust our team to tell their product story.",
+    "description": "Founders, CEOs, and builders on working with Studio1.",
     "seeMore": "See More"
   },
   "DeveloperJourney": {
@@ -228,20 +282,20 @@
     "titlePrefix": "How Developers",
     "titleHighlight": "Find and Adopt",
     "titleSuffix": "Your Product",
-    "description": "Developers research before they evaluate, and evaluate before they adopt. Your content has to be present at every stage.",
+    "description": "Developer adoption starts with the right content at the right stage.",
     "stageLabel": "Stage",
     "stages": {
       "discover": {
         "title": "Discover",
-        "description": "We map your developer audience, research high-intent topics, and build a content strategy aligned with your product and growth goals. Every engagement starts with a deep dive into your ICP, competitors, and existing content landscape."
+        "description": "We map your developer audience and turn high-intent topics into a focused content strategy."
       },
       "engage": {
         "title": "Engage",
-        "description": "Our engineers and writers create tutorials, guides, and demos that developers trust. Every piece is technically validated, SEO-optimized, and built around real code examples and practical workflows your audience cares about."
+        "description": "Our engineers and writers create validated tutorials, guides, and demos developers can trust."
       },
       "adopt": {
         "title": "Adopt",
-        "description": "We distribute across Reddit, Dev.to, Hacker News, LinkedIn, and developer communities. Then we measure what moves the needle: organic traffic, developer signups, community engagement, and product adoption. Iterate and compound."
+        "description": "We distribute across developer channels, measure adoption signals, and improve what works."
       }
     }
   },
@@ -252,7 +306,7 @@
     "descriptionLine2": "reach more developers and accelerate adoption.",
     "button": "Schedule a call",
     "bullets": {
-      "savings": "50% cost savings",
+      "savings": "Leaner than hiring in-house",
       "lockIn": "No lock-in",
       "content": "Developer-first content",
       "turnaround": "Fast turnaround"

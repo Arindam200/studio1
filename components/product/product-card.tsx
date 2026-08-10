@@ -12,6 +12,7 @@ import {
   cornerGlowRight,
   elevatedCardShadow,
 } from "@/lib/shadows";
+import { useTranslations } from "next-intl";
 
 export type ProductCardData = {
   name: string;
@@ -41,6 +42,8 @@ export default function ProductCard({
   product: ProductCardData;
   reverse?: boolean;
 }) {
+  const t = useTranslations("ProductPage");
+
   return (
     <motion.article variants={cardVariants} className={productCardSurface}>
       <div aria-hidden className={cornerGlowRight} />
@@ -110,7 +113,7 @@ export default function ProductCard({
           <div className="mt-5 sm:mt-6">
             <Button variant="gradient" size="cta" asChild>
               <a href={product.url} target="_blank" rel="noopener noreferrer">
-                Visit {product.name}
+                {t("visitProduct", { name: product.name })}
                 <ArrowUpRight className="size-4" weight="bold" />
               </a>
             </Button>

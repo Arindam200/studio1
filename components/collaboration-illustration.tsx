@@ -44,10 +44,15 @@ export const CollaborationIllustration = ({
               ) : (
                 <Image
                   src={item.image}
-                  className="invert grayscale dark:invert-0 dark:grayscale h-fit object-contain"
+                  className={cn(
+                    "invert grayscale dark:invert-0 dark:grayscale",
+                    "h-fit object-contain",
+                    item.className,
+                  )}
                   alt={item.name}
                   width={100}
                   height={100}
+                  style={{ width: "auto" }}
                 />
               )}
             </div>

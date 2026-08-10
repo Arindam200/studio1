@@ -94,8 +94,8 @@ export default function Hero() {
               stats={[
                 { value: "2M+", label: t("stats.views") },
                 { value: "25+", label: t("stats.teams") },
-                { value: "50%", label: t("stats.savings") },
-                { value: "65%+", label: t("stats.retention") },
+                { value: "304K+", label: t("stats.reddit") },
+                { value: "35+", label: t("stats.partners") },
               ]}
             />
           </motion.div>

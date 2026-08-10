@@ -1,8 +1,10 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { DEFAULT_LOCALE, LOCALES, type Locale } from "@/lib/i18n";
 
 const jobsDirectory = path.join(process.cwd(), "content/careers/jobs");
+const jobFilePattern = /\.mdx?$/;
 
 export type JobOpening = {
   id: string;
@@ -11,6 +13,8 @@ export type JobOpening = {
   department: string;
   location: string;
   type: string;
+  status: string;
+  applySubject: string;
   isRemote: boolean;
   order: number;
   postedDate: string;
@@ -28,6 +32,8 @@ type JobFrontmatter = {
   department?: string;
   location?: string;
   type?: string;
+  status?: string;
+  applySubject?: string;
   isRemote?: boolean;
   order?: number;
   postedDate?: string | Date | number;
@@ -57,6 +63,8 @@ function toJobOpening(
     department: raw.department?.trim() ?? "General",
     location: raw.location?.trim() ?? "Remote",
     type: raw.type?.trim() ?? "Full-time",
+    status: raw.status?.trim() ?? "Open",
+    applySubject: raw.applySubject?.trim() ?? raw.title.trim(),
     isRemote: raw.isRemote !== false,
     order: typeof raw.order === "number" ? raw.order : index + 1,
     postedDate:
@@ -68,8 +76,37 @@ function toJobOpening(
   };
 }
 
-function readJobFile(fileName: string): JobDetail | null {
-  const fullPath = path.join(jobsDirectory, fileName);
+function localeDirectory(locale: Locale) {
+  return path.join(jobsDirectory, locale);
+}
+
+function getLocaleJobFiles(locale: Locale) {
+  const directory = localeDirectory(locale);
+  if (!fs.existsSync(directory)) return [];
+
+  return fs
+    .readdirSync(directory)
+    .filter((fileName) => jobFilePattern.test(fileName))
+    .sort();
+}
+
+export function validateLocalizedJobs() {
+  const sourceFiles = getLocaleJobFiles(DEFAULT_LOCALE);
+  if (sourceFiles.length === 0) {
+    throw new Error(`Missing localized job files in ${localeDirectory(DEFAULT_LOCALE)}`);
+  }
+
+  for (const locale of LOCALES) {
+    const files = getLocaleJobFiles(locale);
+    const missing = sourceFiles.filter((fileName) => !files.includes(fileName));
+    if (missing.length > 0) {
+      throw new Error(`Missing ${locale} career translations: ${missing.join(", ")}`);
+    }
+  }
+}
+
+function readJobFile(fileName: string, locale: Locale): JobDetail | null {
+  const fullPath = path.join(localeDirectory(locale), fileName);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
   const fallbackId = fileName.replace(/\.mdx?$/, "");
@@ -83,23 +120,30 @@ function readJobFile(fileName: string): JobDetail | null {
   };
 }
 
-export function getJobOpenings(): JobOpening[] {
-  if (!fs.existsSync(jobsDirectory)) return [];
+export function getJobOpenings(locale: Locale = DEFAULT_LOCALE): JobOpening[] {
+  validateLocalizedJobs();
+  const directory = localeDirectory(locale);
+  if (!fs.existsSync(directory)) return [];
 
   const fileNames = fs
-    .readdirSync(jobsDirectory)
-    .filter((fileName) => fileName.endsWith(".md") || fileName.endsWith(".mdx"));
+    .readdirSync(directory)
+    .filter((fileName) => jobFilePattern.test(fileName));
 
   return fileNames
-    .map((fileName) => readJobFile(fileName))
+    .map((fileName) => readJobFile(fileName, locale))
     .filter((job): job is JobDetail => job !== null)
     .map(({ content: _content, ...meta }) => meta)
     .sort((a, b) => a.order - b.order);
 }
 
-export function getJobById(id: string): JobDetail | null {
-  const markdownPath = path.join(jobsDirectory, `${id}.md`);
-  const mdxPath = path.join(jobsDirectory, `${id}.mdx`);
+export function getJobById(
+  id: string,
+  locale: Locale = DEFAULT_LOCALE,
+): JobDetail | null {
+  validateLocalizedJobs();
+  const directory = localeDirectory(locale);
+  const markdownPath = path.join(directory, `${id}.md`);
+  const mdxPath = path.join(directory, `${id}.mdx`);
   const fullPath = fs.existsSync(markdownPath)
     ? markdownPath
     : fs.existsSync(mdxPath)
@@ -108,9 +152,9 @@ export function getJobById(id: string): JobDetail | null {
 
   if (!fullPath) return null;
 
-  return readJobFile(path.basename(fullPath));
+  return readJobFile(path.basename(fullPath), locale);
 }
 
 export function getJobIds(): string[] {
-  return getJobOpenings().map((job) => job.id);
+  return getJobOpenings(DEFAULT_LOCALE).map((job) => job.id);
 }

@@ -25,14 +25,14 @@ export default function Impact() {
         </CardWithGrid>
         <CardWithGrid>
           <div className="w-full h-40 border font-bold border-orange-400 rounded-md p-3 flex flex-col justify-center items-center space-y-2">
-            <div className="text-center sm:text-5xl text-3xl font-numeric tabular-nums">50%</div>
-            <div className="text-center text-xl ">Cost Savings</div>
+            <div className="text-center sm:text-5xl text-3xl font-numeric tabular-nums">304K+</div>
+            <div className="text-center text-xl ">Reddit Impressions</div>
           </div>
         </CardWithGrid>
         <CardWithGrid>
           <div className="w-full h-40 border font-bold border-orange-400 rounded-md p-3 flex flex-col justify-center items-center space-y-2">
-            <div className="text-center sm:text-5xl text-3xl font-numeric tabular-nums">65%+</div>
-            <div className="text-center text-xl ">Client Retention</div>
+            <div className="text-center sm:text-5xl text-3xl font-numeric tabular-nums">35+</div>
+            <div className="text-center text-xl ">Partner Companies</div>
           </div>
         </CardWithGrid>
       </div>

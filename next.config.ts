@@ -21,8 +21,8 @@ const nextConfig: NextConfig = {
     // Keep old service URLs alive while the public pages use SEO-friendly names.
     return [
       {
-        source: "/sitemap.xml",
-        destination: "/sitemap",
+        source: "/sitemap",
+        destination: "/sitemap.xml",
         permanent: true,
       },
       {

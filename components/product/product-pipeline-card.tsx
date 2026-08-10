@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { cardVariants } from "@/lib/animations";
 import { cn } from "@/lib/utils";
 import { elevatedCardShadow } from "@/lib/shadows";
+import { useTranslations } from "next-intl";
 
 const pipelineCardSurface = cn(
   "relative overflow-hidden rounded-xl border bg-background/80 p-5 backdrop-blur-md sm:p-6",
@@ -12,6 +13,8 @@ const pipelineCardSurface = cn(
 );
 
 export default function ProductPipelineCard() {
+  const t = useTranslations("ProductPage.pipeline");
+
   return (
     <motion.article variants={cardVariants} className={pipelineCardSurface}>
       <div
@@ -27,19 +30,19 @@ export default function ProductPipelineCard() {
 
           <div className="min-w-0">
             <div className="flex flex-wrap items-center gap-2 font-secondary text-xs text-muted-foreground">
-              <span>AI SaaS</span>
+              <span>{t("category")}</span>
               <span aria-hidden>·</span>
               <span className="inline-flex items-center gap-1.5">
                 <span aria-hidden className="relative flex h-1.5 w-1.5 shrink-0">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75 motion-reduce:animate-none" />
                   <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-amber-400" />
                 </span>
-                In progress
+                {t("status")}
               </span>
             </div>
 
             <h2 className="mt-2 font-accent text-xl font-medium italic tracking-tight text-foreground sm:text-2xl">
-              upcoming ...
+              {t("title")}
             </h2>
           </div>
         </div>

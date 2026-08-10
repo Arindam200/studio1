@@ -93,7 +93,7 @@ export default function Hero() {
               stats={[
                 { value: "25+", label: t("stats.audits") },
                 { value: "150+", label: t("stats.pages") },
-                { value: "50%", label: t("stats.success") },
+                { value: "3", label: t("stats.tracks") },
               ]}
             />
           </motion.div>

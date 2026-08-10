@@ -2,8 +2,10 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { estimateReadingMinutes } from "@/lib/blog";
+import { DEFAULT_LOCALE, LOCALES, type Locale } from "@/lib/i18n";
 
 const caseStudiesDirectory = path.join(process.cwd(), "content/case-studies");
+const caseStudyFilePattern = /\.mdx$/;
 
 export type CaseStudyMetric = {
   value: string;
@@ -108,15 +110,49 @@ function toMeta(slug: string, data: Frontmatter, content: string): CaseStudyMeta
   };
 }
 
-export function getAllCaseStudies(): CaseStudyMeta[] {
-  if (!fs.existsSync(caseStudiesDirectory)) return [];
+function localeDirectory(locale: Locale) {
+  return path.join(caseStudiesDirectory, locale);
+}
+
+function getLocaleCaseStudyFiles(locale: Locale) {
+  const directory = localeDirectory(locale);
+  if (!fs.existsSync(directory)) return [];
+
+  return fs
+    .readdirSync(directory)
+    .filter((fileName) => caseStudyFilePattern.test(fileName))
+    .sort();
+}
+
+export function validateLocalizedCaseStudies() {
+  const sourceFiles = getLocaleCaseStudyFiles(DEFAULT_LOCALE);
+  if (sourceFiles.length === 0) {
+    throw new Error(
+      `Missing localized case study files in ${localeDirectory(DEFAULT_LOCALE)}`,
+    );
+  }
+
+  for (const locale of LOCALES) {
+    const files = getLocaleCaseStudyFiles(locale);
+    const missing = sourceFiles.filter((fileName) => !files.includes(fileName));
+    if (missing.length > 0) {
+      throw new Error(
+        `Missing ${locale} case study translations: ${missing.join(", ")}`,
+      );
+    }
+  }
+}
+
+export function getAllCaseStudies(locale: Locale = DEFAULT_LOCALE): CaseStudyMeta[] {
+  validateLocalizedCaseStudies();
+  const directory = localeDirectory(locale);
   const fileNames = fs
-    .readdirSync(caseStudiesDirectory)
-    .filter((f) => f.endsWith(".mdx"));
+    .readdirSync(directory)
+    .filter((fileName) => caseStudyFilePattern.test(fileName));
   const studies = fileNames.map((fileName) => {
     const slug = fileName.replace(/\.mdx$/, "");
     const fileContents = fs.readFileSync(
-      path.join(caseStudiesDirectory, fileName),
+      path.join(directory, fileName),
       "utf8",
     );
     const { data, content } = matter(fileContents);
@@ -125,22 +161,27 @@ export function getAllCaseStudies(): CaseStudyMeta[] {
   return studies.sort((a, b) => a.order - b.order);
 }
 
-export function getFeaturedCaseStudy(): CaseStudyMeta | null {
-  const studies = getAllCaseStudies();
+export function getFeaturedCaseStudy(locale: Locale = DEFAULT_LOCALE): CaseStudyMeta | null {
+  const studies = getAllCaseStudies(locale);
   return studies.find((s) => s.featured) ?? studies[0] ?? null;
 }
 
 export function getRelatedCaseStudies(
   slug: string,
   limit = 3,
+  locale: Locale = DEFAULT_LOCALE,
 ): CaseStudyMeta[] {
-  return getAllCaseStudies()
+  return getAllCaseStudies(locale)
     .filter((s) => s.slug !== slug)
     .slice(0, limit);
 }
 
-export function getCaseStudyBySlug(slug: string): CaseStudy | null {
-  const fullPath = path.join(caseStudiesDirectory, `${slug}.mdx`);
+export function getCaseStudyBySlug(
+  slug: string,
+  locale: Locale = DEFAULT_LOCALE,
+): CaseStudy | null {
+  validateLocalizedCaseStudies();
+  const fullPath = path.join(localeDirectory(locale), `${slug}.mdx`);
   if (!fs.existsSync(fullPath)) return null;
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
@@ -148,7 +189,7 @@ export function getCaseStudyBySlug(slug: string): CaseStudy | null {
 }
 
 export function getCaseStudySlugs(): string[] {
-  return getAllCaseStudies().map((s) => s.slug);
+  return getAllCaseStudies(DEFAULT_LOCALE).map((s) => s.slug);
 }
 
 /** Descriptive alt text for case study cover images in cards, OG, and JSON-LD. */

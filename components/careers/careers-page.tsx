@@ -6,6 +6,8 @@ import { motion } from "motion/react";
 import {
   ArrowRight,
   Briefcase,
+  CalendarBlank,
+  CheckCircle,
   GlobeHemisphereWest,
   MapPin,
   PenNib,
@@ -26,11 +28,12 @@ import {
   sideBeamGlowRightMuted,
 } from "@/lib/shadows";
 import { cn } from "@/lib/utils";
+import { useLocale, useTranslations } from "next-intl";
 
 const perks = [
-  { name: "Remote-first", icon: GlobeHemisphereWest },
-  { name: "Developer-focused", icon: PenNib },
-  { name: "Small team", icon: UsersThree },
+  { key: "remote", icon: GlobeHemisphereWest },
+  { key: "developerFocused", icon: PenNib },
+  { key: "smallTeam", icon: UsersThree },
 ];
 
 const capsuleClassName =
@@ -49,19 +52,38 @@ const heroAnimation = {
   },
 };
 
+function formatPostedDate(value: string, locale: string) {
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) return value;
+
+  return parsed.toLocaleDateString(locale, {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+}
+
 function JobCard({
   id,
   title,
   description,
   location,
   type,
+  status,
+  postedDate,
+  locale,
 }: {
   id: string;
   title: string;
   description: string;
   location: string;
   type: string;
+  status: string;
+  postedDate: string;
+  locale: string;
 }) {
+  const t = useTranslations("CareersPage");
+
   return (
     <article
       className={cn(
@@ -77,9 +99,15 @@ function JobCard({
         href={`/careers/${id}`}
         className="relative z-[1] flex flex-1 flex-col outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded-lg"
       >
-        <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-primary">
-          Open role
-        </p>
+        <div className="flex items-center justify-between gap-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-primary">
+            {t("internship")}
+          </p>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
+            <CheckCircle className="size-3.5" weight="fill" />
+            {status}
+          </span>
+        </div>
         <h3 className="mt-3 font-inter text-xl font-semibold leading-snug tracking-tight text-foreground transition-colors group-hover:text-primary">
           {title}
         </h3>
@@ -99,6 +127,13 @@ function JobCard({
             />
             <span>{type}</span>
           </div>
+          <div className="flex items-center gap-2.5 text-xs font-medium text-muted-foreground">
+            <CalendarBlank
+              className="size-4 shrink-0 text-primary"
+              weight="duotone"
+            />
+            <span>{t("posted", { date: formatPostedDate(postedDate, locale) })}</span>
+          </div>
         </div>
       </Link>
 
@@ -109,7 +144,7 @@ function JobCard({
         asChild
       >
         <Link href={`/careers/${id}`}>
-          Apply now
+          {t("applyNow")}
           <ArrowRight
             className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 motion-reduce:transform-none"
             weight="bold"
@@ -125,6 +160,8 @@ type CareersPageProps = {
 };
 
 export function CareersPage({ jobOpenings }: CareersPageProps) {
+  const t = useTranslations("CareersPage");
+  const locale = useLocale();
   const [selectedDepartment, setSelectedDepartment] = useState<string | null>(
     null,
   );
@@ -173,7 +210,7 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
             <motion.div variants={itemVariants}>
               <Badge className="mx-auto mb-6 flex w-fit items-center gap-2 bg-[color-mix(in_hsl,hsl(var(--primary-surface))_85%,hsl(var(--primary))_15%)] pb-1 hover:bg-[color-mix(in_hsl,hsl(var(--primary-surface))_85%,hsl(var(--primary))_15%)] dark:hover:bg-primary">
                 <RocketLaunch className="size-4" weight="fill" />
-                We&apos;re hiring
+                {t("badge")}
               </Badge>
             </motion.div>
 
@@ -181,20 +218,18 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
               className="font-primary text-4xl font-normal tracking-tight sm:text-5xl md:text-6xl"
               variants={itemVariants}
             >
-              Join the team behind{" "}
+              {t("titlePrefix")}{" "}
               <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent italic text-transparent">
-                developer-first
+                {t("titleHighlight")}
               </span>{" "}
-              content
+              {t("titleSuffix")}
             </motion.h1>
 
             <motion.p
               className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg"
               variants={itemVariants}
             >
-              Studio1 helps devtool and SaaS teams grow through technical
-              writing, DevRel, and content that developers trust. If you love
-              explaining complex products clearly, you&apos;ll fit right in.
+              {t("description")}
             </motion.p>
 
             <motion.div
@@ -202,12 +237,12 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
               variants={itemVariants}
             >
               {perks.map((perk) => (
-                <span key={perk.name} className={capsuleClassName}>
+                <span key={perk.key} className={capsuleClassName}>
                   <perk.icon
                     weight="fill"
                     className="size-4 shrink-0 text-primary"
                   />
-                  {perk.name}
+                  {t(`perks.${perk.key}`)}
                 </span>
               ))}
             </motion.div>
@@ -239,7 +274,7 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
                     : "opacity-80 hover:opacity-100",
                 )}
               >
-                All
+                {t("allDepartments")}
               </button>
               {departments.map((dept) => (
                 <button
@@ -263,7 +298,7 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
           {filteredJobs.length > 0 ? (
             <motion.div
               key={selectedDepartment ?? "all"}
-              className="flex flex-wrap justify-center gap-6"
+              className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
               initial="hidden"
               animate="visible"
               variants={staggerChildren}
@@ -271,7 +306,7 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
               {filteredJobs.map((job) => (
                 <motion.div
                   key={job.id}
-                  className="w-full max-w-sm"
+                  className="min-w-0"
                   variants={itemVariants}
                 >
                   <JobCard
@@ -280,13 +315,16 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
                     description={job.description}
                     location={job.location}
                     type={job.type}
+                    status={job.status}
+                    postedDate={job.postedDate}
+                    locale={locale}
                   />
                 </motion.div>
               ))}
             </motion.div>
           ) : (
             <p className="text-center text-sm text-muted-foreground">
-              No open positions right now. Check back soon.
+              {t("empty")}
             </p>
           )}
         </motion.section>

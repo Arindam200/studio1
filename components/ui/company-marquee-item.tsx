@@ -312,7 +312,6 @@ export function CompanyMarqueeItem({
               width={56}
               height={56}
               sizes={imageSizes}
-              style={{ height: "auto" }}
             />
             <span className="whitespace-nowrap text-base font-medium tracking-tight opacity-90 sm:text-lg">
               {item.name}

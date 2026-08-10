@@ -10,18 +10,21 @@ import { cn } from "@/lib/utils";
 
 const DEFAULT_SECTION = serviceNavItems[0]?.path ?? "#stats";
 const BOTTOM_SCROLL_THRESHOLD_PX = 96;
+const SERVICE_PAGE_PATHS = [
+  "/technical-content-marketing",
+  "/developer-documentation-dx-audit",
+  "/developer-video-production",
+  "/developer-relations-growth-campaigns",
+] as const;
 
 export default function BottomNavbar() {
   const pathname = usePathname();
   const [activeHash, setActiveHash] = useState(DEFAULT_SECTION);
   const visibilityRef = useRef(new Map<string, number>());
 
-  const isBottomNavValidPage =
-    pathname.startsWith("/devrel-as-service") ||
-    pathname.startsWith("/blog-as-service") ||
-    pathname.startsWith("/technical-content-marketing") ||
-    pathname.startsWith("/developer-relations-growth-campaigns") ||
-    pathname.startsWith("/developer-documentation-dx-audit");
+  const isBottomNavValidPage = SERVICE_PAGE_PATHS.some((path) =>
+    pathname.startsWith(path),
+  );
 
   useEffect(() => {
     if (!isBottomNavValidPage) return;

@@ -114,7 +114,7 @@ export default function Hero() {
                 <div className="hidden sm:block">
                   {t.rich("descriptionRich", {
                     strong: (chunks) => (
-                      <span className="font-medium text-foreground">
+                      <span className="font-normal text-foreground">
                         {chunks}
                       </span>
                     ),

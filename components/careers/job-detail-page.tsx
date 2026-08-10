@@ -6,6 +6,7 @@ import {
   ArrowRight,
   CalendarBlank,
   CaretRight,
+  CheckCircle,
   Clock,
   MapPin,
 } from "@phosphor-icons/react/dist/ssr";
@@ -98,6 +99,13 @@ export function JobDetailPage({ job, children }: JobDetailPageProps) {
               {job.title}
             </h1>
             <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground sm:text-base">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
+                <CheckCircle className="size-3.5" weight="fill" />
+                {job.status}
+              </span>
+              <span aria-hidden className="text-border">
+                |
+              </span>
               <span className="inline-flex items-center gap-1.5">
                 <MapPin className="size-4 text-primary" weight="duotone" />
                 {job.location}
@@ -139,6 +147,11 @@ export function JobDetailPage({ job, children }: JobDetailPageProps) {
             </div>
 
             <dl className="px-5">
+              <JobDetailRow
+                label="Status"
+                value={job.status}
+                icon={CheckCircle}
+              />
               <JobDetailRow label="Location" value={job.location} icon={MapPin} />
               <JobDetailRow label="Time type" value={job.type} icon={Clock} />
               <JobDetailRow
@@ -153,11 +166,6 @@ export function JobDetailPage({ job, children }: JobDetailPageProps) {
             </div>
           </div>
         </aside>
-      </div>
-
-      {/* Mobile sticky apply bar */}
-      <div className="fixed inset-x-0 bottom-0 z-[150] border-t border-border/50 bg-background/95 p-4 backdrop-blur-md dark:border-white/[0.08] lg:hidden">
-        <ApplyButton className="w-full" href={applyMailto} />
       </div>
     </section>
   );

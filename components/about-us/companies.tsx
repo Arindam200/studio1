@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { sideBeamGlowLeftMuted, sideBeamGlowRightMuted } from "@/lib/shadows";
+import { cn } from "@/lib/utils";
 
 /** Studio1 inset edge highlight, same values as button / floating-tile inset pair. */
 const companyCardInsetShadow =
@@ -36,6 +37,19 @@ export const Companies = () => {
 
         <div className="grid max-w-5xl z-20 mx-auto grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
           {Data.Companies.map((item, index) => {
+            const logoVariant =
+              "logoVariant" in item ? item.logoVariant : undefined;
+            const logoDarkImage =
+              "logoDarkImage" in item ? item.logoDarkImage : undefined;
+            const logoClassName =
+              "logoClassName" in item ? item.logoClassName : undefined;
+            const logoImageClassName = cn(
+              logoVariant === "wide"
+                ? "object-contain dark:brightness-125"
+                : "rounded-lg object-contain",
+              logoClassName,
+            );
+
             return (
               <Link
                 href={item.href}
@@ -47,14 +61,39 @@ export const Companies = () => {
                 <div
                   className={`border-2 bg-accent z-20 backdrop-blur-2xl dark:bg-muted-foreground/5 w-full h-full rounded-xl flex flex-col items-center justify-center gap-2.5 px-3 py-5 sm:py-6 cursor-pointer transition-transform duration-300 group-hover:-translate-y-1 ${companyCardInsetShadow}`}
                 >
-                  <div className="relative size-12 sm:size-14 shrink-0">
-                    <Image
-                      className="rounded-lg object-contain"
-                      src={item.image}
-                      fill
-                      sizes="56px"
-                      alt={item.name}
-                    />
+                  <div
+                    className={
+                      logoVariant === "wide"
+                        ? "relative h-12 w-28 shrink-0 sm:h-14 sm:w-36"
+                        : "relative size-12 shrink-0 sm:size-14"
+                    }
+                  >
+                    {logoDarkImage ? (
+                      <>
+                        <Image
+                          className={cn(logoImageClassName, "dark:hidden")}
+                          src={item.image}
+                          fill
+                          sizes={logoVariant === "wide" ? "144px" : "56px"}
+                          alt={item.name}
+                        />
+                        <Image
+                          className={cn(logoImageClassName, "hidden dark:block")}
+                          src={logoDarkImage}
+                          fill
+                          sizes={logoVariant === "wide" ? "144px" : "56px"}
+                          alt={item.name}
+                        />
+                      </>
+                    ) : (
+                      <Image
+                        className={logoImageClassName}
+                        src={item.image}
+                        fill
+                        sizes={logoVariant === "wide" ? "144px" : "56px"}
+                        alt={item.name}
+                      />
+                    )}
                   </div>
                   <div className="text-center text-sm font-semibold leading-snug line-clamp-2">
                     {item.name}

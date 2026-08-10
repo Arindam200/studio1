@@ -18,6 +18,7 @@ const LOCATION_LABELS: Record<string, string> = {
   brazil: "Brazil",
   france: "France",
   india: "India",
+  israel: "Israel",
   netherlands: "Netherlands",
   us: "USA",
   singapore: "Singapore",
@@ -26,6 +27,7 @@ const LOCATION_LABELS: Record<string, string> = {
 
 const LABEL_OFFSETS: Record<string, { x: number; y: number }> = {
   france: { x: -5, y: 3.8 },
+  israel: { x: 6, y: 4.8 },
   netherlands: { x: 6, y: -5.2 },
 };
 
@@ -48,7 +50,13 @@ function markerPoint(id: string) {
 const HUB = "india";
 
 /** West of India on the map — lines animate India → country. */
-const WEST_SPOKE_IDS = ["us", "france", "netherlands", "brazil"] as const;
+const WEST_SPOKE_IDS = [
+  "us",
+  "france",
+  "netherlands",
+  "israel",
+  "brazil",
+] as const;
 
 /** East of India on the map — lines animate country → India. */
 const EAST_SPOKE_IDS = ["singapore", "vietnam", "australia"] as const;

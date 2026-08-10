@@ -1,6 +1,7 @@
 import type { StaticImageData } from "next/image";
 import {
   Enteligence,
+  EntelligenceFull,
   LiteLLM,
   LiteLLMFull,
   Memori,
@@ -22,6 +23,7 @@ export type ClientLogo = {
 
 /** Case-study slug → local client logo assets. */
 export const clientLogos: Record<string, ClientLogo> = {
+  "entelligence-ai": { icon: Enteligence, full: EntelligenceFull },
   litellm: { icon: LiteLLM, full: LiteLLMFull },
   memori: { icon: Memori, full: MemoriFull },
   permit: { icon: Permit, full: PermitFull },
@@ -40,9 +42,4 @@ export const trustedClientMarks: {
   icon: StaticImageData;
 }[] = [
   { name: "Nebius", href: "https://nebius.com/", icon: Nebius },
-  {
-    name: "Enteligence",
-    href: "https://enteligence.com/",
-    icon: Enteligence,
-  },
 ];

@@ -13,26 +13,27 @@ import { Team } from "@/components/about-us/team";
 import { Companies } from "@/components/about-us/companies";
 import { motion } from "motion/react";
 import { sideBeamGlowLeftMuted, sideBeamGlowRightMuted } from "@/lib/shadows";
+import { useTranslations } from "next-intl";
 
 const tags = [
   {
-    name: "Developer-Centric",
+    key: "developerCentric",
     icon: Code,
   },
   {
-    name: "Technical Expertise",
+    key: "technicalExpertise",
     icon: Wrench,
   },
   {
-    name: "Community-Driven",
+    key: "communityDriven",
     icon: UsersThree,
   },
   {
-    name: "Content Focused",
+    key: "contentFocused",
     icon: FileText,
   },
   {
-    name: "End-to-End Solutions",
+    key: "endToEnd",
     icon: LinkIcon,
   },
 ];
@@ -56,6 +57,8 @@ const sectionAnimation = {
 };
 
 export default function AboutUs() {
+  const t = useTranslations("AboutPage");
+
   return (
     <section className="overflow-x-hidden">
       <div className="max-w-7xl mx-auto h-fit relative">
@@ -88,26 +91,25 @@ export default function AboutUs() {
           variants={sectionAnimation}
         >
           <h1 className="text-3xl md:text-5xl font-primary font-normal tracking-tight text-center leading-tight">
-            Amplifying Your{" "}
+            {t("titlePrefix")}{" "}
             <span className="serif-accent font-accent italic font-bold text-primary/75 text-[1.08em]">
-              Product Story
+              {t("titleHighlightOne")}
             </span>{" "}
-            for{" "}
+            {t("titleMiddle")}{" "}
             <span className="serif-accent font-accent italic font-bold text-primary/75 text-[1.08em]">
-              Developers
+              {t("titleHighlightTwo")}
             </span>{" "}
-            <br /> One Blog, Video and Initiatives at a Time
+            <br /> {t("titleSuffix")}
           </h1>
-          <div className="text-center text-sm md:text-base text-neutral-600 dark:text-neutral-400 font-semibold">
-            We help tech companies grow developer communities and boost
-            engagement <br className="hidden md:block" /> through DevRel and
-            technical content that resonates.
+          <div className="text-center text-sm md:text-base text-neutral-600 dark:text-neutral-400">
+            {t("descriptionLineOne")}
+            <br className="hidden md:block" /> {t("descriptionLineTwo")}
           </div>
 
           <div className="flex flex-wrap max-w-md sm:max-w-xl items-center justify-center gap-2.5 sm:gap-3 mt-10">
             {tags.map((tag, index) => (
               <motion.div
-                key={tag.name}
+                key={tag.key}
                 initial={{ opacity: 0, y: 20, filter: "blur(5px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ delay: 0.1 * index, duration: 0.5 }}
@@ -117,7 +119,7 @@ export default function AboutUs() {
                     weight="fill"
                     className="size-4 shrink-0 text-primary"
                   />
-                  {tag.name}
+                  {t(`tags.${tag.key}`)}
                 </span>
               </motion.div>
             ))}

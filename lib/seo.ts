@@ -129,6 +129,7 @@ export function articlePageMetadata({
   title,
   description,
   path,
+  locale = DEFAULT_LOCALE,
   keywords,
   image,
   imageAlt,
@@ -138,13 +139,14 @@ export function articlePageMetadata({
   title: string;
   description: string;
   path: string;
+  locale?: Locale;
   keywords?: string[];
   image?: string;
   imageAlt?: string;
   publishedTime?: string;
   tags?: string[];
 }): Metadata {
-  const url = pageUrl(path);
+  const url = localizedUrl(path, locale, baseUrl);
   const ogImage = absoluteImageUrl(image);
   const ogImageAlt = imageAlt?.trim() || title;
   const brandedTitle = `${title} | Studio1`;
@@ -183,6 +185,79 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
       name: item.name,
       item: pageUrl(item.path),
     })),
+  };
+}
+
+export function localizedBreadcrumbJsonLd(
+  items: { name: string; path: string }[],
+  locale: Locale = DEFAULT_LOCALE,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: localizedUrl(item.path, locale, baseUrl),
+    })),
+  };
+}
+
+export function stripMarkdownForSchema(value: string) {
+  return value
+    .replace(/^---[\s\S]*?---/m, "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/[`*_#[\]()]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+export function jobPostingJsonLd(job: {
+  title: string;
+  description: string;
+  content: string;
+  location: string;
+  type: string;
+  postedDate: string;
+  id: string;
+  isRemote: boolean;
+  applyUrl: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    title: job.title,
+    description: stripMarkdownForSchema(job.content || job.description),
+    datePosted: job.postedDate,
+    employmentType: "INTERN",
+    hiringOrganization: {
+      "@type": "Organization",
+      name: "Studio1",
+      sameAs: baseUrl,
+      logo: `${baseUrl}/icon.png`,
+    },
+    identifier: {
+      "@type": "PropertyValue",
+      name: "Studio1",
+      value: job.id,
+    },
+    applicantLocationRequirements: {
+      "@type": "Country",
+      name: "India",
+    },
+    ...(job.isRemote ? { jobLocationType: "TELECOMMUTE" } : {}),
+    jobLocation: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: job.location,
+        addressCountry: "IN",
+      },
+    },
+    directApply: true,
+    url: pageUrl(`/careers/${job.id}`),
+    applicationContact: job.applyUrl,
   };
 }
 

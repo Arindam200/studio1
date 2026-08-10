@@ -9,8 +9,8 @@
   },
   "Metadata": {
     "home": {
-      "title": "Agencia de contenido técnico y crecimiento developer para DevTools",
-      "description": "Studio1 es un socio de contenido técnico y crecimiento developer para equipos SaaS y devtool. Producimos tutoriales, docs, videos, lanzamientos y programas DevRel que impulsan la adopción."
+      "title": "Agencia de contenido técnico y DevRel para DevTools",
+      "description": "Studio1 ayuda a equipos SaaS, IA y devtool a publicar contenido técnico, docs, videos, lanzamientos y programas DevRel que impulsan la adopción."
     },
     "services": {
       "technicalContent": {
@@ -29,6 +29,28 @@
         "title": "Developer Relations y campañas de crecimiento",
         "description": "DevRel y campañas de crecimiento para productos developer: advocacy, comunidad, lanzamientos, distribución orgánica e influencer management."
       }
+    },
+    "pages": {
+      "about": {
+        "title": "Sobre Studio1",
+        "description": "Conoce Studio1, una agencia de contenido enfocada en developers que ayuda a empresas devtool y SaaS con escritura técnica, DevRel, video y comunidad."
+      },
+      "work": {
+        "title": "Trabajo para clientes",
+        "description": "Tutoriales técnicos, guías de integración y contenido developer que Studio1 crea para equipos de IA, cloud, DevOps y web."
+      },
+      "product": {
+        "title": "Productos de Studio1 para equipos developer",
+        "description": "Herramientas creadas por Studio1 para developers y equipos SaaS, incluyendo Raah para analítica web y AssetSnip para extracción de assets."
+      },
+      "careers": {
+        "title": "Carreras en Studio1",
+        "description": "Únete a Studio1 como intern en contenido social, video visual o growth, y ayuda a productos developer a llegar a su audiencia."
+      },
+      "caseStudies": {
+        "title": "Casos de crecimiento developer",
+        "description": "Explora cómo Studio1 ayuda a equipos devtool y SaaS a aumentar la adopción developer con contenido técnico, DevRel y comunidad."
+      }
     }
   },
   "ServiceHero": {
@@ -42,8 +64,8 @@
       "stats": {
         "views": "vistas de contenido",
         "teams": "equipos ayudados",
-        "savings": "ahorro de costos",
-        "retention": "retención de clientes"
+        "reddit": "impresiones en Reddit",
+        "partners": "empresas asociadas"
       }
     },
     "docs": {
@@ -56,7 +78,7 @@
       "stats": {
         "audits": "auditorías docs",
         "pages": "páginas entregadas",
-        "success": "primer éxito más rápido"
+        "tracks": "líneas de servicio"
       }
     },
     "devrel": {
@@ -69,7 +91,7 @@
       "stats": {
         "events": "eventos de alto impacto",
         "teams": "equipos ayudados",
-        "savings": "ahorro de costos",
+        "partners": "empresas asociadas",
         "launch": "lanzamiento Product Hunt"
       }
     },
@@ -89,8 +111,8 @@
     "badgeSuffixShort": "equipos",
     "titleLine1": "Contenido técnico y",
     "titleLine2": "socio para",
-    "description": "Ayudamos a equipos SaaS y devtool a publicar tutoriales, documentación y programas DevRel que posicionan en búsqueda, activan desarrolladores y construyen confianza a largo plazo.",
-    "descriptionRich": "Ayudamos a <strong>equipos SaaS y devtool</strong> a publicar <strong>tutoriales, documentación y programas DevRel</strong><br></br>que posicionan en búsqueda, activan <strong>desarrolladores</strong> y construyen <strong>confianza a largo plazo</strong>.",
+    "description": "Ayudamos a equipos SaaS y devtool a publicar contenido, docs y DevRel que ganan búsqueda y confianza.",
+    "descriptionRich": "Ayudamos a equipos SaaS y devtool a publicar contenido, docs y DevRel<br></br>que ganan búsqueda y confianza.",
     "primaryCta": "Reservar una llamada estratégica",
     "secondaryCta": "Ver servicios",
     "trustedAria": "Con la confianza de más de 35 equipos devtool",
@@ -123,31 +145,63 @@
       "clientWork": "Tutoriales y guías que escribimos para clientes"
     }
   },
-  "CommandPalette": {
-    "placeholder": "Escribe un comando o busca...",
-    "empty": "No se encontraron resultados.",
-    "trigger": "Buscar",
-    "triggerLabel": "Abrir búsqueda",
-    "groups": {
-      "pages": "Páginas",
-      "services": "Servicios",
-      "content": "Contenido",
-      "blog": "Blog",
-      "caseStudies": "Casos de estudio",
-      "careers": "Empleo",
-      "legal": "Legal"
+  "WorkPage": {
+    "eyebrow": "Publicado para nuestros clientes",
+    "title": "Trabajo para clientes",
+    "description": "Tutoriales, guías y contenido developer que creamos para los equipos con los que colaboramos."
+  },
+  "AboutPage": {
+    "titlePrefix": "Amplificamos tu",
+    "titleHighlightOne": "historia de producto",
+    "titleMiddle": "para",
+    "titleHighlightTwo": "developers",
+    "titleSuffix": "un blog, video e iniciativa a la vez",
+    "descriptionLineOne": "Ayudamos a empresas tech a crecer comunidades developer",
+    "descriptionLineTwo": "con DevRel y contenido técnico que conecta.",
+    "tags": {
+      "developerCentric": "Centrado en developers",
+      "technicalExpertise": "Experiencia técnica",
+      "communityDriven": "Impulsado por comunidad",
+      "contentFocused": "Foco en contenido",
+      "endToEnd": "End-to-end"
+    }
+  },
+  "ProductPage": {
+    "visitProduct": "Visitar {name}",
+    "hero": {
+      "badge": "Creado por",
+      "titlePrefix": "Nuestros",
+      "titleHighlight": "productos",
+      "description": "Herramientas que construimos y lanzamos para developers, diseñadores y equipos."
     },
-    "items": {
-      "careers": "Empleo",
-      "terms": "Términos de servicio",
-      "privacy": "Política de privacidad"
+    "pipeline": {
+      "category": "SaaS de IA",
+      "status": "En progreso",
+      "title": "próximamente ..."
+    }
+  },
+  "CareersPage": {
+    "badge": "Estamos contratando",
+    "titlePrefix": "Únete al equipo detrás del contenido",
+    "titleHighlight": "developer-first",
+    "titleSuffix": "",
+    "description": "Studio1 ayuda a equipos devtool y SaaS a crecer con contenido técnico y DevRel mientras construimos Raah y AssetSnip.",
+    "internship": "Internship",
+    "posted": "Publicado {date}",
+    "applyNow": "Aplicar",
+    "allDepartments": "Todos",
+    "empty": "No hay posiciones abiertas ahora. Vuelve pronto.",
+    "perks": {
+      "remote": "Remote-first",
+      "developerFocused": "Enfoque developer",
+      "smallTeam": "Equipo pequeño"
     }
   },
   "HomeDomains": {
     "eyebrow": "Qué ofrecemos",
     "titlePrefix": "Los servicios que ejecutamos para",
     "titleHighlight": "marcas developer",
-    "description": "Contenido, advocacy, video, docs, crecimiento, lanzamientos y programas con creadores: todo el trabajo que podemos asumir.",
+    "description": "Contenido, docs, video, DevRel, lanzamientos y creadores para marcas developer.",
     "explore": "Explorar servicio",
     "offerings": [
       {
@@ -187,12 +241,12 @@
   "HomeServices": {
     "eyebrow": "Servicios",
     "title": "Qué hacemos",
-    "description": "Creamos tutoriales técnicos, documentación y programas DevRel que ayudan a los desarrolladores a tener éxito con tu producto y adoptar más rápido.",
+    "description": "Contenido técnico, documentación y programas DevRel creados para adopción developer.",
     "stats": {
       "views": "vistas de contenido",
       "companies": "empresas asociadas",
-      "savings": "ahorro de costos",
-      "retention": "retención de clientes"
+      "events": "eventos de alto impacto",
+      "launch": "lanzamiento Product Hunt"
     },
     "cards": {
       "content": {
@@ -215,12 +269,12 @@
     "eyebrow": "Alcance global",
     "titlePrefix": "Construyendo con equipos",
     "titleHighlight": "en todo el mundo",
-    "description": "Desde India, Brasil, Vietnam y Australia hasta Estados Unidos, Francia, Países Bajos y Singapur, estos son hubs donde hemos colaborado con empresas en contenido para desarrolladores y programas DevRel."
+    "description": "Hubs de colaboración en India, Brasil, Vietnam, Australia, Israel, Estados Unidos, Francia, Países Bajos y Singapur."
   },
   "Testimonials": {
     "eyebrow": "Testimonios",
     "title": "Qué dicen nuestros clientes",
-    "description": "Escucha a fundadores, CEOs y builders que confían en nuestro equipo para contar la historia de su producto.",
+    "description": "Fundadores, CEOs y builders comparten su experiencia con Studio1.",
     "seeMore": "Ver más"
   },
   "DeveloperJourney": {
@@ -228,20 +282,20 @@
     "titlePrefix": "Cómo los desarrolladores",
     "titleHighlight": "descubren y adoptan",
     "titleSuffix": "tu producto",
-    "description": "Los desarrolladores investigan antes de evaluar y evalúan antes de adoptar. Tu contenido debe estar presente en cada etapa.",
+    "description": "La adopción developer empieza con el contenido correcto en el momento correcto.",
     "stageLabel": "Etapa",
     "stages": {
       "discover": {
         "title": "Descubrir",
-        "description": "Mapeamos tu audiencia developer, investigamos temas de alta intención y construimos una estrategia de contenido alineada con tu producto y objetivos de crecimiento."
+        "description": "Mapeamos la audiencia y convertimos temas de alta intención en estrategia clara."
       },
       "engage": {
         "title": "Interactuar",
-        "description": "Nuestros ingenieros y redactores crean tutoriales, guías y demos que los desarrolladores pueden confiar. Cada pieza se valida técnicamente y se optimiza para SEO."
+        "description": "Nuestros ingenieros y redactores crean tutoriales, guías y demos validados."
       },
       "adopt": {
         "title": "Adoptar",
-        "description": "Distribuimos en Reddit, Dev.to, Hacker News, LinkedIn y comunidades developer; luego medimos tráfico orgánico, registros, engagement y adopción de producto."
+        "description": "Distribuimos, medimos señales de adopción y mejoramos lo que funciona."
       }
     }
   },
@@ -252,7 +306,7 @@
     "descriptionLine2": "llegar a más desarrolladores y acelerar la adopción.",
     "button": "Programar llamada",
     "bullets": {
-      "savings": "50% ahorro de costos",
+      "savings": "Más ligero que contratar internamente",
       "lockIn": "Sin permanencia",
       "content": "Contenido para desarrolladores",
       "turnaround": "Entrega rápida"

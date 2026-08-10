@@ -9,6 +9,6 @@ export default function robots() {
         disallow: ["/api/"],
       },
     ],
-    sitemap: `${baseUrl}/sitemap`,
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }

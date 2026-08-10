@@ -39,8 +39,8 @@ export default function Services() {
             stats={[
               { value: "2M+", label: t("stats.views") },
               { value: "35+", label: t("stats.companies") },
-              { value: "50%", label: t("stats.savings") },
-              { value: "65%+", label: t("stats.retention") },
+              { value: "10+", label: t("stats.events") },
+              { value: "#1", label: t("stats.launch") },
             ]}
           />
         </motion.div>

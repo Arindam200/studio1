@@ -175,7 +175,7 @@ export function ServiceDetailSection({
           <h2 className="mt-4 text-balance font-inter text-3xl font-medium leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
             {title}
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
+          <p className="mx-auto mt-5 max-w-xl text-pretty text-sm leading-relaxed text-muted-foreground md:text-base">
             {description}
           </p>
         </motion.div>
@@ -219,7 +219,7 @@ export function ServiceProofSection({
           <h2 className="mt-4 text-balance font-inter text-4xl font-medium leading-tight tracking-tight text-foreground md:text-5xl">
             {title}
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
             {description}
           </p>
         </div>
