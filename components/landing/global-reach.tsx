@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { WorldMap, type WorldMapDot } from "@/components/ui/world-map";
-import { CTA_GLOBE_MARKERS } from "@/components/landing/globe-pulse";
+import { CTA_GLOBE_MARKERS } from "@/components/landing/globe-markers";
 import { SectionEyebrow } from "@/components/landing/section-eyebrow";
 import {
   containerVariants,

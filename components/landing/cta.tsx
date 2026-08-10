@@ -1,8 +1,9 @@
 "use client"
 import React from "react"
+import dynamic from "next/dynamic"
 import { IconPhoneFilled } from "@tabler/icons-react"
 import { Button } from "../ui/button"
-import { GlobePulse, CTA_GLOBE_MARKERS } from "./globe-pulse"
+import { CTA_GLOBE_MARKERS } from "./globe-markers"
 import { motion } from "motion/react"
 import { containerVariants, cardVariants } from "@/lib/animations"
 import {
@@ -12,6 +13,11 @@ import {
 } from "@/lib/shadows"
 import { cn } from "@/lib/utils"
 import { useTranslations } from "next-intl"
+
+const GlobePulse = dynamic(
+  () => import("./globe-pulse").then((module) => module.GlobePulse),
+  { ssr: false },
+)
 
 export default function CTA() {
   const t = useTranslations("CTA")

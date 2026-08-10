@@ -169,6 +169,7 @@ export default function Hero() {
                     alt={heroFeaturedTestimonials.mobile.name}
                     width={96}
                     height={96}
+                    sizes="56px"
                     className="size-14 rounded-full object-cover"
                   />
                 </div>
@@ -212,6 +213,7 @@ export default function Hero() {
             alt="Y Combinator"
             width={100}
             height={100}
+            sizes="40px"
             className="size-full object-contain"
           />
         </motion.div>
@@ -231,6 +233,7 @@ export default function Hero() {
             alt="Dev.to"
             width={100}
             height={100}
+            sizes="40px"
             className="size-full object-contain"
           />
         </motion.div>
@@ -255,6 +258,7 @@ export default function Hero() {
               alt={heroFeaturedTestimonials.left.name}
               width={140}
               height={140}
+              sizes="64px"
               className="rounded-full size-16"
             />
           </div>
@@ -280,6 +284,7 @@ export default function Hero() {
               alt={heroFeaturedTestimonials.right.name}
               width={140}
               height={140}
+              sizes="64px"
               className="rounded-full size-16"
             />
           </div>

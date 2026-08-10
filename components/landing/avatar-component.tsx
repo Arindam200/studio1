@@ -35,6 +35,7 @@ export default function AvatarComponent({ className }: { className?: string }) {
               src={avatar.src}
               width={36}
               height={36}
+              sizes="36px"
               alt=""
             />
           </div>

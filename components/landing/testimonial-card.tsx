@@ -69,6 +69,7 @@ export default function TestimonialCard({
               alt=""
               width={44}
               height={44}
+              sizes="44px"
               className="relative size-11 rounded-full object-cover ring-2 ring-background dark:ring-white/10"
             />
           </div>

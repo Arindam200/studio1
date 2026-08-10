@@ -10,12 +10,32 @@ const nextConfig: NextConfig = {
     root: process.cwd(),
   },
   images: {
+    // Serve compact modern formats and reuse optimized derivatives on repeat visits.
+    formats: ["image/avif", "image/webp"],
+    qualities: [50, 75],
+    minimumCacheTTL: 60 * 60 * 24 * 30,
+    deviceSizes: [360, 640, 768, 1024, 1280, 1536, 1920],
+    imageSizes: [32, 48, 64, 96, 128, 256, 384],
     remotePatterns: [
       {
         protocol: "https" as const,
         hostname: "**",
       },
     ],
+  },
+  async headers() {
+    return [
+      {
+        source: "/assets/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value:
+              "public, max-age=86400, s-maxage=31536000, stale-while-revalidate=604800",
+          },
+        ],
+      },
+    ];
   },
   async redirects() {
     // Keep old service URLs alive while the public pages use SEO-friendly names.
