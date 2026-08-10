@@ -20,6 +20,7 @@ import Footer from "@/components/landing/footer";
 import CTA from "@/components/landing/cta";
 import { LocalizedLinkRuntime } from "@/components/localization/localized-link-runtime";
 import ScrollToTopButton from "@/components/scroll-to-top-button";
+import { PageTransition } from "@/components/page-transition";
 import {
   DEFAULT_LOCALE,
   canonicalUrl,
@@ -180,7 +181,7 @@ export default async function RootLayout({
         >
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Navbar />
-            {children}
+            <PageTransition>{children}</PageTransition>
             <CTA />
             <Footer />
             <BottomNavbar />

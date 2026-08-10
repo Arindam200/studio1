@@ -525,7 +525,44 @@ svg {
   }
 }
 
-::view-transition-old(root), ::view-transition-new(root) {
-    animation: none;
-    mix-blend-mode: normal;
+::view-transition {
+  pointer-events: none;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(.page-content) {
+  animation: 120ms ease-in both studio1-page-exit;
+}
+
+::view-transition-new(.page-content) {
+  animation: 220ms ease-out 80ms both studio1-page-enter;
+}
+
+@keyframes studio1-page-exit {
+  to {
+    opacity: 0;
+    filter: blur(2px);
+  }
+}
+
+@keyframes studio1-page-enter {
+  from {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
 }
