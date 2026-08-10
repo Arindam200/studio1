@@ -35,20 +35,21 @@ export default function Trustedby() {
             >
               {item.showNameBeside ? (
                 <div className="flex max-w-full items-center justify-center gap-2.5 opacity-80">
-                  <Image
-                    src={item.image}
-                    className={cn(
-                      "size-9 shrink-0 object-contain",
-                      !("noFilter" in item && item.noFilter) &&
-                        (item.isWhite
-                          ? "grayscale invert dark:invert-0"
-                          : "invert-0 grayscale dark:invert"),
-                    )}
-                    alt=""
-                    width={36}
-                    height={36}
-                    style={{ width: 36, height: 36 }}
-                  />
+                  <div className={cn("relative size-9 shrink-0", item.className)}>
+                    <Image
+                      src={item.image}
+                      className={cn(
+                        "object-contain",
+                        !("noFilter" in item && item.noFilter) &&
+                          (item.isWhite
+                            ? "grayscale invert dark:invert-0"
+                            : "invert-0 grayscale dark:invert"),
+                      )}
+                      alt=""
+                      fill
+                      sizes="48px"
+                    />
+                  </div>
                   <span className="truncate text-base font-medium tracking-tight sm:text-lg">
                     {item.name}
                   </span>
