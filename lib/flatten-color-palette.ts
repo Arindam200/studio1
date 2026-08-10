@@ -1,6 +1,6 @@
-type ColorValue = string | ColorPalette
-
-type ColorPalette = Record<string, ColorValue>
+interface ColorPalette {
+  [color: string]: string | ColorPalette
+}
 
 /** Flatten nested Tailwind colour values into utility-friendly keys. */
 export function flattenColorPalette(colors: ColorPalette = {}): Record<string, string> {
