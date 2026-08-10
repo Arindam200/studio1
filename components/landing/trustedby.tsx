@@ -67,6 +67,7 @@ export default function Trustedby() {
                   width={220}
                   height={72}
                   sizes="176px"
+                  style={{ width: "auto", height: "auto" }}
                 />
               )}
             </div>

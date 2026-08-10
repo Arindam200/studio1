@@ -52,7 +52,7 @@ export const CollaborationIllustration = ({
                   alt={item.name}
                   width={100}
                   height={100}
-                  style={{ width: "auto" }}
+                  style={{ width: "auto", height: "auto" }}
                 />
               )}
             </div>

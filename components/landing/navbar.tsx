@@ -272,6 +272,9 @@ export default function Navbar() {
                 )}
               </div>
             ))}
+            <div className="pt-2">
+              <LanguageSwitcher inline />
+            </div>
             <div className="mt-4 flex items-center justify-end gap-2 rounded-3xl bg-accent/50 p-2">
               <Button variant="gradient" asChild>
                 <a href="mailto:contact@studio1hq.com" onClick={closeMobileMenu}>
