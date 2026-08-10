@@ -1,7 +1,8 @@
 import svgToDataUri from "mini-svg-data-uri";
-import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 import tailwindcssAnimate from "tailwindcss-animate";
 import typography from "@tailwindcss/typography";
+
+import { flattenColorPalette } from "./lib/flatten-color-palette";
 
 import type { Config } from "tailwindcss";
 
