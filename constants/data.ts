@@ -9,10 +9,10 @@ import {
   CrawleeFull,
   OpireFull,
   EncoreFull,
-  Velt,
+  VeltFull,
   ReadySetFull,
   NitricFull,
-  Jozu,
+  JozuFull,
   CodeRabbitFull,
   shivayNoBg,
   arindamNoBg,
@@ -33,7 +33,7 @@ import {
   ByteRover,
   WeaviateFull,
   MaximFull,
-  Puck,
+  PuckWordmark,
   Unsiloed,
   InteractAiLogo,
   Corsair,
@@ -143,41 +143,33 @@ export const trustedbyLogo = [
     name: "Nebius",
     image: NebiusFull,
     isWhite: true,
-    className:
-      "h-5 sm:h-6 md:h-6 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200",
+    className: "dark:brightness-200",
     alt: "Nebius",
   },
   {
     name: "Velt",
-    image: Velt,
-    isWhite: false,
-    showNameBeside: true,
-    className: "h-9 w-9 object-contain",
+    image: VeltFull,
+    isWhite: true,
+    className: "dark:brightness-200",
     alt: "Velt",
   },
   {
     name: "Weaviate",
     image: WeaviateFull,
     isWhite: true,
-    className:
-      "h-7 sm:h-8 md:h-8 w-auto max-w-[150px] object-contain",
+    className: "dark:brightness-200",
     alt: "Weaviate",
   },
   {
     name: "Maxim AI",
     image: MaximFull,
     isWhite: false,
-    className:
-      "h-7 sm:h-8 md:h-8 w-auto max-w-[140px] sm:max-w-[160px] object-contain",
     alt: "Maxim AI",
   },
   {
     name: "Puck",
-    image: Puck,
+    image: PuckWordmark,
     isWhite: false,
-    showNameBeside: true,
-    className: "h-11 w-11 sm:h-12 sm:w-12 object-contain shrink-0",
-    noFilter: true,
     alt: "Puck",
   },
   {
@@ -192,8 +184,6 @@ export const trustedbyLogo = [
     name: "Interact AI",
     image: InteractAiLogo,
     isWhite: false,
-    className:
-      "h-7 sm:h-8 md:h-8 w-auto max-w-[150px] object-contain",
     alt: "Interact AI",
   },
   {
@@ -208,104 +198,90 @@ export const trustedbyLogo = [
     name: "Stream",
     image: StreamFull,
     isWhite: true,
-    className:
-      "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
+    className: "dark:brightness-200",
     alt: "Stream",
   },
   {
     name: "Permit",
     image: PermitFull,
     isWhite: true,
-    className:
-      "h-10 sm:h-12 md:h-16 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain dark:brightness-200",
+    className: "dark:brightness-200",
     alt: "Permit",
   },
   {
     name: "TestMu AI",
     image: TestMuAiLogo,
     isWhite: false,
-    className:
-      "h-10 sm:h-12 md:h-16 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain dark:brightness-200",
+    className: "dark:brightness-200",
     alt: "TestMu AI",
   },
   {
     name: "Memori",
     image: MemoriLogoLight,
     isWhite: true,
-    className:
-      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain",
     alt: "Memori",
   },
   {
     name: "Motia",
     image: MotiaFull,
     isWhite: true,
-    className:
-      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    className: "dark:brightness-200 dark:contrast-125",
     alt: "Motia",
   },
   {
     name: "Graphite",
     image: GraphiteFull,
     isWhite: true,
-    className:
-      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    className: "dark:brightness-200 dark:contrast-125",
     alt: "Graphite",
   },
   {
     name: "Eachlabs",
     image: EachlabWordmarkLight,
     isWhite: false,
-    className:
-      "h-6 sm:h-7 md:h-8 w-auto max-w-[80px] sm:max-w-[120px] md:max-w-[140px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    className: "dark:brightness-200 dark:contrast-125",
     alt: "Eachlabs",
   },
   {
     name: "Entelligence",
     image: EntelligenceFull,
     isWhite: true,
-    className:
-      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    className: "dark:brightness-200 dark:contrast-125",
     alt: "Entelligence",
   },
   {
     name: "Latitude",
     image: LatitudeFull,
     isWhite: true,
-    className:
-      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain dark:brightness-200",
+    className: "dark:brightness-200",
     alt: "Latitude",
   },
   {
     name: "Ragie",
     image: RagieFull,
     isWhite: true,
-    className:
-      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    className: "dark:brightness-200 dark:contrast-125",
     alt: "Ragie",
   },
   {
     name: "Encore",
     image: EncoreFull,
     isWhite: true,
-    className:
-      "h-10 sm:h-12 md:h-14 w-auto max-w-[160px] sm:max-w-[200px] md:max-w-[240px] object-contain dark:brightness-200",
+    className: "dark:brightness-200",
     alt: "Encore",
   },
   {
     name: "ReadySet",
     image: ReadySetFull,
     isWhite: false,
-    className:
-      "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
+    className: "dark:brightness-200",
     alt: "ReadySet",
   },
   {
     name: "CopilotKit",
     image: CopilotkitFull,
     isWhite: true,
-    className:
-      "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain dark:brightness-200",
+    className: "dark:brightness-200",
     alt: "CopilotKit",
   },
   {
@@ -320,80 +296,69 @@ export const trustedbyLogo = [
     name: "Crawlee",
     image: CrawleeFull,
     isWhite: true,
-    className:
-      "h-10 sm:h-12 md:h-14 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200",
+    className: "dark:brightness-200",
     alt: "Crawlee",
   },
   {
     name: "Tolgee",
     image: TolgeeFull,
     isWhite: true,
-    className:
-      "h-8 sm:h-10 md:h-12 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200",
+    className: "dark:brightness-200",
     alt: "Tolgee",
   },
   {
     name: "Nitric",
     image: NitricFull,
     isWhite: false,
-    className:
-      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    className: "dark:brightness-200 dark:contrast-125",
     alt: "Nitric",
   },
   {
     name: "WebCrumbs",
     image: WebcrumbsFull,
     isWhite: true,
-    className:
-      "h-10 sm:h-12 md:h-16 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain dark:brightness-200",
+    className: "dark:brightness-200",
     alt: "WebCrumbs",
   },
   {
     name: "Jozu",
-    image: Jozu,
+    image: JozuFull,
     isWhite: false,
-    showNameBeside: true,
-    className: "h-9 w-9 object-contain",
     alt: "Jozu",
   },
   {
     name: "CodeRabbit",
     image: CodeRabbitFull,
     isWhite: true,
-    className:
-      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    className: "dark:brightness-200 dark:contrast-125",
     alt: "CodeRabbit",
   },
   {
     name: "SwytchCode",
     image: SwytchcodeFull,
     isWhite: false,
-    className:
-      "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
+    className: "dark:brightness-200",
     alt: "Swytchcode",
   },
   {
     name: "StackQL",
     image: StackqlFull,
     isWhite: false,
-    className:
-      "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
+    className: "dark:brightness-200",
     alt: "Stackql",
   },
   {
     name: "Opire",
     image: OpireFull,
     isWhite: true,
-    className:
-      "h-8 sm:h-9 md:h-10 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[144px] object-contain dark:brightness-200",
+    className: "dark:brightness-200",
     alt: "Opire",
   },
   {
     name: "Ittybit",
     image: IttybitFull,
     isWhite: true,
-    className:
-      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
+    className: "dark:brightness-200 dark:contrast-125",
     alt: "Ittybit",
   },
 ];

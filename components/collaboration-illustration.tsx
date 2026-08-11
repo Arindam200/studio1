@@ -20,42 +20,24 @@ export const CollaborationIllustration = ({
           {trustedbyLogo.map((item) => (
             <div
               key={item.name}
-              className="border-2 !w-1/3 h-20 flex px-4 bg-accent/80 backdrop-blur-xl rounded-md items-center justify-center overflow-hidden"
+              className="flex h-14 w-[6.75rem] shrink-0 items-center justify-center overflow-hidden rounded-md border-2 bg-accent/80 px-2.5 backdrop-blur-xl sm:h-16 sm:w-[7.5rem] sm:px-3"
             >
-              {item.showNameBeside ? (
-                <div className="flex items-center gap-2 min-w-0">
-                  <div className={cn("relative size-9 shrink-0", item.className)}>
-                    <Image
-                      src={item.image}
-                      className={cn(
-                        item.isWhite
-                          ? "invert grayscale dark:invert-0 dark:grayscale"
-                          : "invert-0 grayscale dark:invert",
-                        "object-contain",
-                      )}
-                      alt=""
-                      fill
-                      sizes="48px"
-                    />
-                  </div>
-                  <span className="text-xs font-semibold truncate">
-                    {item.name}
-                  </span>
-                </div>
-              ) : (
+              <div className="relative h-7 w-full sm:h-8">
                 <Image
                   src={item.image}
                   className={cn(
-                    "invert grayscale dark:invert-0 dark:grayscale",
-                    "h-fit object-contain",
+                    "object-contain object-center",
+                    !("noFilter" in item && item.noFilter) &&
+                      (item.isWhite
+                        ? "grayscale invert dark:invert-0"
+                        : "invert-0 grayscale dark:invert"),
                     item.className,
                   )}
                   alt={item.name}
-                  width={100}
-                  height={100}
-                  style={{ width: "auto", height: "auto" }}
+                  fill
+                  sizes="(max-width: 640px) 108px, 120px"
                 />
-              )}
+              </div>
             </div>
           ))}
         </Marquee>

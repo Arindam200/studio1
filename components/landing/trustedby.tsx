@@ -35,7 +35,12 @@ export default function Trustedby() {
             >
               {item.showNameBeside ? (
                 <div className="flex max-w-full items-center justify-center gap-2.5 opacity-80">
-                  <div className={cn("relative size-9 shrink-0", item.className)}>
+                  <div
+                    className={cn(
+                      "relative size-10 shrink-0 sm:size-11",
+                      item.className,
+                    )}
+                  >
                     <Image
                       src={item.image}
                       className={cn(
@@ -50,7 +55,7 @@ export default function Trustedby() {
                       sizes="48px"
                     />
                   </div>
-                  <span className="truncate text-base font-medium tracking-tight sm:text-lg">
+                  <span className="truncate text-lg font-medium tracking-tight sm:text-xl">
                     {item.name}
                   </span>
                 </div>
@@ -60,15 +65,17 @@ export default function Trustedby() {
                   className={cn(
                     !("noFilter" in item && item.noFilter) &&
                       (item.isWhite
-                      ? "grayscale invert dark:invert-0"
-                      : "invert-0 grayscale dark:invert"),
-                    "h-auto max-h-9 w-auto max-w-36 object-contain opacity-70 sm:max-w-40",
+                        ? "grayscale invert dark:invert-0"
+                        : "invert-0 grayscale dark:invert"),
+                    item.className,
+                    // Keep a consistent marquee height; per-logo className can still add scale/filters
+                    "h-10 w-auto max-w-44 object-contain opacity-70 sm:h-11",
                   )}
                   alt={item.name}
                   width={220}
                   height={72}
                   sizes="176px"
-                  style={{ width: "auto", height: "auto" }}
+                  style={{ width: "auto" }}
                 />
               )}
             </div>
