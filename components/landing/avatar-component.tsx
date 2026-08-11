@@ -18,7 +18,7 @@ export default function AvatarComponent({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "flex flex-col items-center gap-3 sm:flex-row sm:gap-5",
+        "flex flex-col items-center gap-2 sm:flex-row sm:gap-x-2.5 sm:gap-y-2",
         className,
       )}
       aria-label={t("trustedAria")}

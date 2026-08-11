@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { Globe } from "@phosphor-icons/react";
@@ -28,6 +28,12 @@ function localeHref(pathname: string, search: string, locale: Locale) {
   return `${localizedPath}${sourcePath === "/" ? "" : search ? `?${search}` : ""}`;
 }
 
+function navigateToLocale(href: string) {
+  if (typeof window === "undefined") return;
+  if (window.location.pathname + window.location.search === href) return;
+  window.location.assign(href);
+}
+
 export function LanguageSwitcher({
   compact = false,
   inline = false,
@@ -41,6 +47,38 @@ export function LanguageSwitcher({
   const t = useTranslations("LocaleSwitcher");
   const search = searchParams.toString();
   const activeMeta = localeMeta[activeLocale] ?? localeMeta[DEFAULT_LOCALE];
+  const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handlePointerDown = (event: PointerEvent) => {
+      const target = event.target;
+      if (target instanceof Node && !containerRef.current?.contains(target)) {
+        setIsOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen]);
+
+  const handleLocaleSelect = (href: string) => {
+    setIsOpen(false);
+    navigateToLocale(href);
+  };
 
   const optionClassName = (isActive: boolean) =>
     cn(
@@ -53,19 +91,25 @@ export function LanguageSwitcher({
   const options = LOCALES.map((locale) => {
     const meta = localeMeta[locale];
     const isActive = locale === activeLocale;
+    const href = localeHref(pathname, search, locale);
 
     return (
-      <Link
+      <a
         key={locale}
-        href={localeHref(pathname, search, locale)}
+        href={href}
         hrefLang={meta.hreflang}
+        aria-current={isActive ? "true" : undefined}
         className={optionClassName(isActive)}
+        onClick={(event) => {
+          event.preventDefault();
+          handleLocaleSelect(href);
+        }}
       >
         <span className="text-base leading-none transition-transform duration-200 group-hover/item:scale-110">
           {meta.flag}
         </span>
         <span>{t(translationKeys[locale])}</span>
-      </Link>
+      </a>
     );
   });
 
@@ -82,13 +126,17 @@ export function LanguageSwitcher({
   }
 
   return (
-    <div className="group/lang relative">
+    <div ref={containerRef} className="relative">
       <button
         type="button"
         aria-label={t("label")}
+        aria-expanded={isOpen}
+        aria-haspopup="menu"
+        onClick={() => setIsOpen((open) => !open)}
         className={cn(
           "inline-flex h-10 items-center justify-center gap-2 rounded-lg border border-border/70 bg-background/70 px-3 text-sm font-medium text-foreground shadow-sm backdrop-blur transition-colors hover:border-primary/40 hover:text-primary",
           compact && "h-9 px-2.5",
+          isOpen && "border-primary/40 text-primary",
         )}
       >
         <Globe className="size-4" weight="duotone" />
@@ -98,19 +146,16 @@ export function LanguageSwitcher({
         ) : null}
       </button>
 
-      <div
-        className={cn(
-          "absolute right-0 top-full z-[570] origin-top pt-4",
-          "opacity-0 -translate-y-1 scale-95 pointer-events-none",
-          "transition-all duration-300 ease-out",
-          "group-hover/lang:opacity-100 group-hover/lang:translate-y-0 group-hover/lang:scale-100 group-hover/lang:pointer-events-auto",
-          "group-focus-within/lang:opacity-100 group-focus-within/lang:translate-y-0 group-focus-within/lang:scale-100 group-focus-within/lang:pointer-events-auto",
-        )}
-      >
-        <div className="min-w-[17rem] space-y-0.5 rounded-lg border bg-background px-1 py-1.5 shadow-lg backdrop-blur-xl">
-          {options}
+      {isOpen ? (
+        <div className="absolute right-0 top-full z-[570] origin-top pt-2">
+          <div
+            role="menu"
+            className="min-w-[17rem] space-y-0.5 rounded-lg border bg-background px-1 py-1.5 shadow-lg backdrop-blur-xl"
+          >
+            {options}
+          </div>
         </div>
-      </div>
+      ) : null}
     </div>
   );
 }
