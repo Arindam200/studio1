@@ -26,7 +26,7 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/assets/:path*",
+        source: "/:assetPath(assets|blog|case-studies|products)/:path*",
         headers: [
           {
             key: "Cache-Control",
@@ -75,15 +75,13 @@ const nextConfig: NextConfig = {
         destination: "/developer-video-production",
         permanent: true,
       },
-      ...[
-        "/product-launch",
-        "/organic-campaign",
-        "/influencer-management",
-      ].map((source) => ({
-        source,
-        destination: "/developer-relations-growth-campaigns",
-        permanent: true,
-      })),
+      ...["/product-launch", "/organic-campaign", "/influencer-management"].map(
+        (source) => ({
+          source,
+          destination: "/developer-relations-growth-campaigns",
+          permanent: true,
+        }),
+      ),
     ];
   },
 };

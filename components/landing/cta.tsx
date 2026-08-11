@@ -1,26 +1,46 @@
-"use client"
-import React from "react"
-import dynamic from "next/dynamic"
-import { IconPhoneFilled } from "@tabler/icons-react"
-import { Button } from "../ui/button"
-import { CTA_GLOBE_MARKERS } from "./globe-markers"
-import { motion } from "motion/react"
-import { containerVariants, cardVariants } from "@/lib/animations"
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
+import { IconPhoneFilled } from "@tabler/icons-react";
+import { Button } from "../ui/button";
+import { CTA_GLOBE_MARKERS } from "./globe-markers";
+import { motion } from "motion/react";
+import { containerVariants, cardVariants } from "@/lib/animations";
 import {
   ctaCornerGlowLeft,
   ctaCornerGlowRight,
   elevatedCardShadow,
-} from "@/lib/shadows"
-import { cn } from "@/lib/utils"
-import { useTranslations } from "next-intl"
+} from "@/lib/shadows";
+import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 const GlobePulse = dynamic(
   () => import("./globe-pulse").then((module) => module.GlobePulse),
   { ssr: false },
-)
+);
 
 export default function CTA() {
-  const t = useTranslations("CTA")
+  const t = useTranslations("CTA");
+  const globeContainerRef = useRef<HTMLDivElement>(null);
+  const [shouldLoadGlobe, setShouldLoadGlobe] = useState(false);
+
+  useEffect(() => {
+    const element = globeContainerRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) return;
+        setShouldLoadGlobe(true);
+        observer.disconnect();
+      },
+      // Start loading before the CTA is visible, without competing with above-the-fold work.
+      { rootMargin: "300px" },
+    );
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <motion.div
@@ -48,8 +68,8 @@ export default function CTA() {
             {t("titleLine1")} <br /> {t("titleLine2")}
           </div>
           <div className="text-sm md:text-base w-[85%] md:w-full max-w-lg text-muted-foreground leading-tight mb-8 mt-4">
-            {t("descriptionLine1")}{" "}
-            <br className="hidden md:block" /> {t("descriptionLine2")}
+            {t("descriptionLine1")} <br className="hidden md:block" />{" "}
+            {t("descriptionLine2")}
           </div>
 
           <Button variant="gradient" size="cta" className="min-w-32" asChild>
@@ -85,15 +105,20 @@ export default function CTA() {
             aria-hidden
             className="pointer-events-none absolute inset-0 m-auto size-[75%] bg-[radial-gradient(circle_at_center,hsl(var(--primary)_/_0.1)_0%,transparent_62%)] dark:bg-[radial-gradient(circle_at_center,hsl(var(--primary)_/_0.08)_0%,transparent_58%)]"
           />
-          <div className="relative w-[min(18rem,78vw)] sm:w-[20rem] md:w-[22rem] lg:w-[26rem] touch-none">
-            <GlobePulse
-              markers={CTA_GLOBE_MARKERS}
-              speed={0.0025}
-              className="h-full w-full"
-            />
+          <div
+            ref={globeContainerRef}
+            className="relative aspect-square w-[min(18rem,78vw)] sm:w-[20rem] md:w-[22rem] lg:w-[26rem] touch-none"
+          >
+            {shouldLoadGlobe ? (
+              <GlobePulse
+                markers={CTA_GLOBE_MARKERS}
+                speed={0.0025}
+                className="h-full w-full"
+              />
+            ) : null}
           </div>
         </div>
       </motion.div>
     </motion.div>
-  )
+  );
 }
