@@ -1,11 +1,25 @@
 "use client";
-import { Badge } from "../ui/badge";
-import { Cube, Pen, Users } from "@phosphor-icons/react";
+import { Pen, Users } from "@phosphor-icons/react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { staggerChildren, serviceItemVariants } from "@/lib/animations";
+import { Num } from "@/components/ui/num";
+import { Badge } from "../ui/badge";
+import { SectionEyebrow } from "./section-eyebrow";
+import {
+  elevatedCardShadow,
+  servicesCenterGlow,
+  servicesSectionGlowBottom,
+  servicesSectionGlowTop,
+  serviceCardHoverGlow,
+} from "@/lib/shadows";
+import { HeroStatsStrip } from "@/components/ui/hero-stats-strip";
+import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 export default function Services() {
+  const t = useTranslations("HomeServices");
+
   return (
     <>
       <motion.section
@@ -13,22 +27,33 @@ export default function Services() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerChildren}
-        id="work"
-        className=" mb-28 px-4 py-20 relative"
+        id="services"
+        className=" mb-28 px-4 pt-4 md:pt-6 pb-20 relative"
       >
-        <div className="bottom-[-10rem] md:bottom-[-18rem] z-[-1] left-[-0%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
-        <div className="top-[-10rem] md:top-[-18rem] z-[-1] right-[-0%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary/80 blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out md:size-[30rem] md:h-[40rem] md:w-[10rem] rotate-[60deg]"></div>
+        <div className={servicesSectionGlowBottom}></div>
+        <div className={servicesSectionGlowTop}></div>
+        <motion.div variants={serviceItemVariants} className="w-full z-[20] mb-12 md:mb-16">
+          <HeroStatsStrip
+            highlightValues
+            className="max-w-5xl"
+            stats={[
+              { value: "2M+", label: t("stats.views") },
+              { value: "35+", label: t("stats.companies") },
+              { value: "10+", label: t("stats.events") },
+              { value: "5+", label: t("stats.launch") },
+            ]}
+          />
+        </motion.div>
         <motion.div
           variants={serviceItemVariants}
           className="flex flex-col z-[20] items-center gap-4 justify-center"
         >
-          <Badge className="text-sm font-medium bg-gradient-to-r from-primary to-primary1 text-white pb-1 flex gap-2 items-center">
-            <Cube weight="fill" className="size-4" /> Services
-          </Badge>
-          <div className="text-5xl max-sm:text-4xl font-medium text-center">What We Do</div>
+          <SectionEyebrow>{t("eyebrow")}</SectionEyebrow>
+          <div className="text-5xl max-sm:text-4xl font-normal text-center">
+            {t("title")}
+          </div>
           <p className="text-center text-base max-sm:text-sm mt-2 max-w-2xl">
-            We create technical tutorials, documentation, and DevRel programs
-            that help developers succeed with your product and drive adoption.
+            {t("description")}
           </p>
         </motion.div>
         <div className="flex flex-col max-w-7xl mx-auto">
@@ -37,12 +62,15 @@ export default function Services() {
             className="flex relative items-center gap-[2%] w-full mt-20 justify-center md:-space-x-20 flex-col md:flex-row md:pb-20"
           >
             <Link
-              href={"/blog-as-service"}
-              className="shadow-xl border-2 dark:border transition-all duration-700 hover:-translate-y-4 h-[30rem] relative w-full max-w-[23rem] group rounded-lg overflow-hidden flex flex-col items-start bg-background/80 backdrop-blur-md justify-start p-8 mb-8 md:mb-0"
+              href={"/technical-content-marketing"}
+              className={cn(
+                "border-2 dark:border transition-all duration-700 hover:-translate-y-4 h-[30rem] relative w-full max-w-[23rem] group rounded-lg overflow-hidden flex flex-col items-start bg-background/80 backdrop-blur-md justify-start p-8 mb-8 md:mb-0",
+                elevatedCardShadow,
+              )}
             >
               <div className="absolute top-[-23rem] z-[101] delay-100 rotate-45 left-[-2rem] group-hover:top-[15rem] group-hover:left-[20rem] transition-all blur-[3em] duration-700 rounded-md h-[40rem] bg-white/50 opacity-30 w-[5rem] backdrop-blur-md"></div>
 
-              <div className="-bottom-[18rem] -translate-y-1/2 z-[-1] left-1/2 absolute bg-gradient-to-t opacity-10 group-hover:opacity-100 from-primary/80 dark:to-primary/80 to-primary/20 blur-[4em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[15rem] size-[10rem] rotate-[0deg]"></div>
+              <div className={serviceCardHoverGlow}></div>
 
               <div className="flex-1 flex items-start justify-between w-full">
                 <div className="flex items-center bg-accent dark:bg-accent/50 justify-center size-16 p-3 rounded-lg">
@@ -52,32 +80,34 @@ export default function Services() {
               <div className="flex flex-col gap-2">
                 <div className="flex gap-2 flex-wrap">
                   <Badge className="w-fit bg-accent text-foreground">
-                    2M+ views
+                    <Num>2M+</Num> {t("cards.content.badgeOne")}
                   </Badge>
                   <Badge className="w-fit bg-accent text-foreground">
-                    30+ teams
+                    <Num>30+</Num> {t("cards.content.badgeTwo")}
                   </Badge>
                 </div>
                 <p className="text-4xl font-light text-left">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-br font-extrabold from-white via-primary/80 to-white">
-                    Blogs
+                  <span className="text-transparent bg-clip-text bg-gradient-to-br font-extrabold from-white via-primary/80 to-white dark:from-white dark:via-primary/80 dark:to-white">
+                    {t("cards.content.titleStrong")}
                   </span>{" "}
-                  as a<br /> Service
+                  {t("cards.content.titleRest")}
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Developer tutorials, guides, and documentation that rank and
-                  drive product adoption.
+                  {t("cards.content.description")}
                 </p>
               </div>
             </Link>
 
             <Link
-              href={"/devrel-as-service"}
-              className="shadow-xl border-2 dark:border transition-all duration-700 hover:translate-y-4 relative overflow-hidden group flex flex-col items-start p-8 bg-background/80 backdrop-blur-2xl h-[30rem] w-full  max-w-[23rem] md:translate-y-20 rounded-lg"
+              href={"/developer-relations-growth-campaigns"}
+              className={cn(
+                "border-2 dark:border transition-all duration-700 hover:translate-y-4 relative overflow-hidden group flex flex-col items-start p-8 bg-background/80 backdrop-blur-2xl h-[30rem] w-full  max-w-[23rem] md:translate-y-20 rounded-lg",
+                elevatedCardShadow,
+              )}
             >
               <div className="absolute top-[-23rem] z-[101] rotate-45 delay-100 left-[-2rem] group-hover:top-[15rem] group-hover:left-[20rem] transition-all blur-[3em] duration-700 rounded-md h-[40rem] bg-white/50 opacity-30 w-[5rem] backdrop-blur-md"></div>
 
-              <div className="-bottom-[18rem] -translate-y-1/2 z-[-1] left-1/2 absolute bg-gradient-to-t opacity-10 group-hover:opacity-100 from-primary/80 dark:to-primary/80 to-primary/20 blur-[4em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[15rem] size-[10rem] rotate-[0deg]"></div>
+              <div className={serviceCardHoverGlow}></div>
 
               <div className="flex-1 flex items-start justify-between w-full">
                 <div className="flex items-center bg-accent dark:bg-accent/50 justify-center size-16 p-3 rounded-lg">
@@ -87,53 +117,24 @@ export default function Services() {
               <div className="flex flex-col gap-2">
                 <div className="flex gap-2 flex-wrap">
                   <Badge className="w-fit bg-accent text-foreground">
-                    10+ events
+                    <Num>10+</Num> {t("cards.growth.badgeOne")}
                   </Badge>
                   <Badge className="w-fit bg-accent text-foreground">
-                    #1 PH Launch
+                    <Num>5+</Num> {t("cards.growth.badgeTwo")}
                   </Badge>
                 </div>
                 <p className="text-4xl font-light text-left">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-br font-extrabold from-white via-primary/80 to-white">
-                    DevRel
+                  <span className="text-transparent bg-clip-text bg-gradient-to-br font-extrabold from-white via-primary/80 to-white dark:from-white dark:via-primary/80 dark:to-white">
+                    {t("cards.growth.titleStrong")}
                   </span>{" "}
-                  as a<br /> Service
+                  {t("cards.growth.titleRest")}
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
-                  End-to-end developer relations programs—from strategy and
-                  content to community and events.
+                  {t("cards.growth.description")}
                 </p>
               </div>
             </Link>
-            <div className="top-1/2 -translate-y-1/2 z-[-1] left-[50%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary/80 to-primary/50 blur-[8em] rounded-full transition-all translate-x-[-50%] duration-700 ease-out md:size-[25rem] w-[20rem] h-[40rem] rotate-[0deg]"></div>
-          </motion.div>
-
-          {/* Stats Banner */}
-          <motion.div
-            variants={serviceItemVariants}
-            className="mt-16 z-[20] border rounded-xl p-6 md:p-8 bg-gradient-to-br from-primary/5 to-primary/10 max-w-5xl mx-auto w-full"
-          >
-            <p className="text-center text-sm text-muted-foreground mb-6">
-              Results from our technical content and DevRel work
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-primary">2M+</div>
-                <div className="text-sm text-muted-foreground mt-1">Content Views</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-primary">35+</div>
-                <div className="text-sm text-muted-foreground mt-1">Partner Companies</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-primary">50%</div>
-                <div className="text-sm text-muted-foreground mt-1">Cost Savings</div>
-              </div>
-              <div>
-                <div className="text-3xl md:text-4xl font-bold text-primary">65%+</div>
-                <div className="text-sm text-muted-foreground mt-1">Client Retention</div>
-              </div>
-            </div>
+            <div className={servicesCenterGlow}></div>
           </motion.div>
         </div>
       </motion.section>

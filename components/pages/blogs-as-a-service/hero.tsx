@@ -2,144 +2,102 @@
 import { Badge } from "@/components/ui/badge";
 import { IconPackages, IconPhoneFilled } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
-import {
-  CalendarCheck,
-  GraduationCap,
-  Megaphone,
-  UsersFour,
-} from "@phosphor-icons/react";
 import { motion } from "motion/react";
 import { staggerChildren, itemVariants } from "@/lib/animations";
+import { HeroStatsStrip } from "@/components/ui/hero-stats-strip";
+import {
+  serviceHeroContentClassName,
+  serviceHeroDescriptionClassName,
+  serviceHeroOuterClassName,
+  serviceHeroStatsWrapperClassName,
+} from "@/components/pages/shared/service-hero-layout";
+import { heroAccentGlow } from "@/lib/shadows";
+import { ServiceHeroTiles } from "@/components/ui/service-hero-tiles";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+  const t = useTranslations("ServiceHero.technicalContent");
+
   return (
     <>
-      <div className="h-fit relative max-w-7xl mx-auto py-10 md:py-20 px-4 mt-24 w-full">
-        <div className="top-[-15rem] left-[50%] z-[-1] opacity-50 dark:opacity-100 absolute bg-gradient-to-t from-primary/10 dark:from-primary to-orange-200 dark:to-orange-900/90  blur-[8em] rounded-xl transition-all translate-x-[-50%] duration-700 ease-out size-[20rem] rotate-[54deg]"></div>
-        <div className="top-[-10rem] md:top-[-8rem] z-[-1] left-[-80%] md:left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-60 dark:lg:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[42rem] w-[10rem] -rotate-[60deg]"></div>
+      <div id="overview" className={serviceHeroOuterClassName}>
+        <div className={heroAccentGlow}></div>
+        <ServiceHeroTiles />
         <motion.div
           variants={staggerChildren}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="flex flex-col items-center justify-center gap-4"
+          className="w-full"
         >
+          <div className={serviceHeroContentClassName}>
           <motion.div variants={itemVariants}>
-            <Badge className="text-sm font-medium pb-1 flex gap-2 items-center">
-              <IconPackages className="size-4" /> Services
+            <Badge className="text-sm font-medium pb-1 shadow-md bg-gradient-to-r from-primarySurface via-primary1 to-primary1/20 text-white flex gap-2 items-center dark:from-primary dark:via-primary1 dark:to-primary1/60">
+              <IconPackages className="size-4" /> {t("badge")}
             </Badge>
           </motion.div>
 
-          <motion.div
-            className="md:text-7xl text-5xl font-medium text-center"
+          <motion.h1
+            className="text-center font-inter text-5xl font-normal tracking-tight md:text-7xl"
             variants={itemVariants}
           >
-            Blogs as a Service
-          </motion.div>
+            <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-normal italic text-transparent">
+              {t("titleAccent")}
+            </span>{" "}
+            {t("titleRest")}
+          </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="md:text-xl text-balance w-full md:w-[50%] text-base font-medium text-center"
+            className={`${serviceHeroDescriptionClassName} text-balance`}
           >
-            We create developer-focused content that builds trust, boosts
-            product visibility and drives technical adoption.
+            {t("description")}
           </motion.p>
 
           <motion.div
             variants={itemVariants}
             className="flex md:flex-row mt-10 w-full gap-4 flex-col justify-center"
           >
-            <Button className=" h-14 w-full md:w-44" asChild>
+            <Button
+              variant="gradient"
+              size="cta"
+              className="w-full sm:w-auto"
+              asChild
+            >
               <a
                 href="https://cal.com/studio1/collab"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Book a Call <IconPhoneFilled className="size-10" />
+                {t("primaryCta")} <IconPhoneFilled className="size-10" />
               </a>
             </Button>
-            <Button variant="secondary" className=" h-14 md:w-44 w-full">
-              Explore Services <IconPackages className="size-10" />
+            <Button
+              variant="outline-subtle"
+              size="cta"
+              className="w-full sm:w-auto"
+              asChild
+            >
+              <a href="#work">
+                {t("secondaryCta")} <IconPackages className="size-10" />
+              </a>
             </Button>
           </motion.div>
+          </div>
 
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:mt-14 mt-10"
+            className={serviceHeroStatsWrapperClassName}
           >
-            <div className="flex bg-muted-foreground/10 w-40 flex-col gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">2M+</div>
-              <div className="text-sm text-center">
-                content <br /> views
-              </div>
-            </div>
-            <div className="flex flex-col bg-muted-foreground/10 w-40 gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">25+</div>
-              <div className="text-sm text-center">
-                fast-moving <br /> teams helped
-              </div>
-            </div>
-            <div className="flex flex-col bg-muted-foreground/10 w-40 gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">50%</div>
-              <div className="text-sm text-center">
-                cost savings <br /> vs agencies
-              </div>
-            </div>
-            <div className="flex flex-col bg-muted-foreground/10 w-40 gap-2 min-w-24 min-h-32 justify-center max-h-32 rounded-2xl items-center">
-              <div className="text-4xl font-bold">65%+</div>
-              <div className="text-sm text-center">
-                client <br /> retention
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          variants={staggerChildren}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className=" flex flex-wrap items-center mt-20 justify-center gap-4"
-        >
-          <motion.div
-            variants={staggerChildren}
-            className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:-rotate-12 top-[15rem] left-[5rem]"
-          >
-            <Megaphone
-              weight="fill"
-              className="size-5 md:size-8 text-primary"
+            <HeroStatsStrip
+              highlightValues
+              className="md:grid-cols-3"
+              stats={[
+                { value: "300+", label: t("stats.views") },
+                { value: "25+", label: t("stats.teams") },
+                { value: "<7 days", label: t("stats.reddit") },
+              ]}
             />
-            <span>Advocacy</span>
-          </motion.div>
-          <motion.div
-            variants={staggerChildren}
-            className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:rotate-12 top-[27rem] left-[10rem]"
-          >
-            <GraduationCap
-              weight="fill"
-              className="size-5 md:size-8 text-primary"
-            />
-            <span>Education</span>
-          </motion.div>
-          <motion.div
-            variants={staggerChildren}
-            className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:rotate-12 top-[15rem] right-[5rem]"
-          >
-            <CalendarCheck
-              weight="fill"
-              className="size-5 md:size-8 text-primary"
-            />
-            <span>Events</span>
-          </motion.div>
-          <motion.div
-            variants={staggerChildren}
-            className="lg:absolute border bg-muted-foreground/10 dark:bg-accent/40 backdrop-blur-lg flex items-center justify-center gap-2 font-semibold rounded-full px-3 py-1 w-fit h-fit lg:-rotate-12 top-[27rem] right-[10rem]"
-          >
-            <UsersFour
-              weight="fill"
-              className="size-5 md:size-8 text-primary"
-            />
-            <span>Community</span>
           </motion.div>
         </motion.div>
       </div>

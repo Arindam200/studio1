@@ -1,6 +1,6 @@
 import {
   CopilotkitFull,
-  LiteLLMFull,
+  LiteLLM,
   PermitFull,
   TolgeeFull,
   NebiusFull,
@@ -9,34 +9,46 @@ import {
   CrawleeFull,
   OpireFull,
   EncoreFull,
-  VeltFull,
+  Velt,
   ReadySetFull,
   NitricFull,
-  JozuFull,
+  Jozu,
   CodeRabbitFull,
-  amiteshNoBg,
   shivayNoBg,
   arindamNoBg,
   StreamFull,
   SwytchcodeFull,
   StackqlFull,
   EachlabFull,
+  EachlabWordmarkLight,
   MotiaFull,
   GraphiteFull,
-  LambdatestFull,
+  TestMuAiLogo,
   MemoriFull,
+  MemoriLogoLight,
   EntelligenceFull,
   RagieFull,
   IttybitFull,
   InsForgeFull,
   ByteRover,
+  WeaviateFull,
+  MaximFull,
+  Puck,
+  Unsiloed,
+  InteractAiLogo,
+  Corsair,
 } from "./image";
 import {
+  Books,
   Briefcase,
   CheckCircle,
+  Files,
   Lightbulb,
+  Newspaper,
   Pen,
+  RocketLaunch,
   Star,
+  YoutubeLogo,
 } from "@phosphor-icons/react/dist/ssr";
 
 export const navItems = [
@@ -44,9 +56,11 @@ export const navItems = [
     title: "Home",
     path: "/",
     children: [
-      { title: "Work", path: "/#work", icon: Briefcase },
-      { title: "Why Us", path: "/#why-us", icon: Lightbulb },
-      { title: "Testimonials", path: "/#testimonials", icon: Star },
+      { title: "Overview", path: "/#hero", icon: RocketLaunch },
+      { title: "Services", path: "/#service-offerings", icon: Briefcase },
+      { title: "Proof", path: "/#testimonials", icon: Star },
+      { title: "Process", path: "/#how-it-works", icon: Lightbulb },
+      { title: "Results", path: "/#results", icon: Files },
     ],
   },
   { title: "About Us", path: "/about-us" },
@@ -55,24 +69,57 @@ export const navItems = [
     path: "#",
     children: [
       {
-        title: "Blog as a Service",
-        path: "/blog-as-service",
+        title: "Technical Content Marketing",
+        path: "/technical-content-marketing",
         icon: Pen,
       },
       {
-        title: "DevRel as a Service",
-        path: "/devrel-as-service",
+        title: "Developer Relations & Growth",
+        path: "/developer-relations-growth-campaigns",
         icon: CheckCircle,
+      },
+      {
+        title: "Developer Video Production",
+        path: "/developer-video-production",
+        icon: YoutubeLogo,
+      },
+      {
+        title: "Documentation & DX Audits",
+        path: "/developer-documentation-dx-audit",
+        icon: Books,
       },
     ],
   },
-  { title: "Work", path: "/work" },
-  { title: "Blog", path: "/blog" },
+  { title: "Product", path: "/product" },
+  {
+    title: "Content",
+    path: "#",
+    children: [
+      {
+        title: "Client Work",
+        path: "/work",
+        icon: Briefcase,
+        description: "Tutorials and guides we write for clients",
+      },
+      {
+        title: "Case Studies",
+        path: "/case-studies",
+        icon: CheckCircle,
+        description: "Proof from docs, DevRel, launch, and content work",
+      },
+      {
+        title: "Our Blog",
+        path: "/blog",
+        icon: Newspaper,
+        description: "Articles and insights from the Studio1 team",
+      },
+    ],
+  },
 ];
 
 export const serviceNavItems = [
-  { title: "Stats", path: "#stats" },
-  { title: "Work", path: "#work" },
+  { title: "Overview", path: "#overview" },
+  { title: "Services", path: "#work" },
   { title: "Process", path: "#process" },
 ];
 
@@ -102,11 +149,60 @@ export const trustedbyLogo = [
   },
   {
     name: "Velt",
-    image: VeltFull,
+    image: Velt,
+    isWhite: false,
+    showNameBeside: true,
+    className: "h-9 w-9 object-contain",
+    alt: "Velt",
+  },
+  {
+    name: "Weaviate",
+    image: WeaviateFull,
     isWhite: true,
     className:
-      "h-7 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
-    alt: "Velt",
+      "h-7 sm:h-8 md:h-8 w-auto max-w-[150px] object-contain",
+    alt: "Weaviate",
+  },
+  {
+    name: "Maxim AI",
+    image: MaximFull,
+    isWhite: false,
+    className:
+      "h-7 sm:h-8 md:h-8 w-auto max-w-[140px] sm:max-w-[160px] object-contain",
+    alt: "Maxim AI",
+  },
+  {
+    name: "Puck",
+    image: Puck,
+    isWhite: false,
+    showNameBeside: true,
+    className: "h-11 w-11 sm:h-12 sm:w-12 object-contain shrink-0",
+    noFilter: true,
+    alt: "Puck",
+  },
+  {
+    name: "Unsiloed",
+    image: Unsiloed,
+    isWhite: true,
+    showNameBeside: true,
+    className: "h-11 w-11 sm:h-12 sm:w-12 object-contain shrink-0",
+    alt: "Unsiloed",
+  },
+  {
+    name: "Interact AI",
+    image: InteractAiLogo,
+    isWhite: false,
+    className:
+      "h-7 sm:h-8 md:h-8 w-auto max-w-[150px] object-contain",
+    alt: "Interact AI",
+  },
+  {
+    name: "Corsair",
+    image: Corsair,
+    isWhite: false,
+    showNameBeside: true,
+    className: "h-11 w-11 sm:h-12 sm:w-12 object-contain shrink-0",
+    alt: "Corsair",
   },
   {
     name: "Stream",
@@ -125,17 +221,17 @@ export const trustedbyLogo = [
     alt: "Permit",
   },
   {
-    name: "Lambdatest",
-    image: LambdatestFull,
-    isWhite: true,
+    name: "TestMu AI",
+    image: TestMuAiLogo,
+    isWhite: false,
     className:
       "h-10 sm:h-12 md:h-16 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[176px] object-contain dark:brightness-200",
-    alt: "Lambdatest",
+    alt: "TestMu AI",
   },
   {
     name: "Memori",
-    image: MemoriFull,
-    isWhite: false,
+    image: MemoriLogoLight,
+    isWhite: true,
     className:
       "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain",
     alt: "Memori",
@@ -158,8 +254,8 @@ export const trustedbyLogo = [
   },
   {
     name: "Eachlabs",
-    image: EachlabFull,
-    isWhite: true,
+    image: EachlabWordmarkLight,
+    isWhite: false,
     className:
       "h-6 sm:h-7 md:h-8 w-auto max-w-[80px] sm:max-w-[120px] md:max-w-[140px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
     alt: "Eachlabs",
@@ -214,10 +310,10 @@ export const trustedbyLogo = [
   },
   {
     name: "LiteLLM",
-    image: LiteLLMFull,
+    image: LiteLLM,
     isWhite: false,
-    className:
-      "h-8 sm:h-9 md:h-10 w-auto max-w-[140px] sm:max-w-[200px] md:max-w-[220px] object-contain",
+    showNameBeside: true,
+    className: "h-9 w-9 object-contain",
     alt: "LiteLLM",
   },
   {
@@ -254,10 +350,10 @@ export const trustedbyLogo = [
   },
   {
     name: "Jozu",
-    image: JozuFull,
+    image: Jozu,
     isWhite: false,
-    className:
-      "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain",
+    showNameBeside: true,
+    className: "h-9 w-9 object-contain",
     alt: "Jozu",
   },
   {
@@ -317,12 +413,12 @@ export const teamMembers = [
   {
     name: "Amitesh Anand",
     role: "Technical writer and DevRel",
-    image: amiteshNoBg,
+    image: "/assets/amitesh-anand.png",
     bio: "",
     social: {
       twitter: "https://mobile.twitter.com/astrodevil_",
       linkedin: "https://www.linkedin.com/in/amitesh1208/",
-      website: "https://mranand.com/featured/",
+      website: "https://mranand.com/",
     },
   },
   {

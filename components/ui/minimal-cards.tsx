@@ -37,12 +37,12 @@ const MinimalCardImage = React.forwardRef<
     )}
     {...props}
   >
-    <img
+    <Image
       src={src}
       alt={alt}
-      width={200}
-      height={200}
-      className="rounded-lg object-cover absolute h-full w-full inset-0 "
+      fill
+      sizes="(max-width: 768px) 100vw, 400px"
+      className="rounded-lg object-cover"
     />
     <div className="absolute inset-0 rounded-lg">
       <div

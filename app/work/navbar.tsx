@@ -9,19 +9,19 @@ export default function Navbar5({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed top-4 inset-x-0 max-w-2xl mx-auto z-50 rounded-md py-2 gap-6 max-sm:gap-0 max-sm:mx-2 text-lg max-sm:text-sm",
+        "fixed top-4 inset-x-0 max-w-4xl mx-auto z-50 rounded-md py-2 gap-6 max-sm:gap-0 max-sm:mx-2 text-base max-sm:text-sm",
         className,
       )}
     >
       <Menu setActive={setActive}>
-        <Link href="/team">
-          <p className=" font-medium text-white">Team</p>
+        <Link href="/about-us">
+          <p className=" font-medium text-white">About</p>
         </Link>
-        <Link href="/blog-as-service">
-          <p className="font-medium text-white">Blogs Service</p>
+        <Link href="/case-studies">
+          <p className=" font-medium text-white">Case Studies</p>
         </Link>
-        <Link href="/devrel-as-service">
-          <p className=" font-medium text-white">DevRel Service</p>
+        <Link href="/technical-content-marketing">
+          <p className="font-medium text-white">Content</p>
         </Link>
         <Link href="mailto:contact@studio1hq.com">
           <p className=" font-medium text-white">Contact Us</p>

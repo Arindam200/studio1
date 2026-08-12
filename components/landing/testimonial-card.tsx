@@ -1,5 +1,33 @@
 import { Star } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import { NumericText } from "@/components/ui/num";
+import { cn } from "@/lib/utils";
+import { elevatedCardShadow } from "@/lib/shadows";
+
+function parseRole(role: string) {
+  const lastComma = role.lastIndexOf(",");
+  if (lastComma === -1) return { title: role, company: null as string | null };
+
+  return {
+    title: role.slice(0, lastComma).trim(),
+    company: role.slice(lastComma + 1).trim(),
+  };
+}
+
+const testimonialSurface = cn(
+  "group relative flex h-full flex-col text-left",
+  "rounded-xl border border-border/50 dark:border-white/[0.08]",
+  "bg-gradient-to-br from-background/95 via-background/90 to-primary/[0.05]",
+  "dark:from-white/[0.04] dark:to-white/[0.01]",
+  "backdrop-blur-sm",
+  elevatedCardShadow,
+  "shadow-feature-card-hover",
+  "ring-1 ring-primary/[0.06] dark:ring-white/[0.04]",
+  "transition-[box-shadow,ring-color,border-color] duration-500 ease-out",
+  "hover:border-primary/20 hover:ring-primary/15",
+  "dark:hover:shadow-xl",
+  "motion-reduce:transition-none",
+);
 
 export default function TestimonialCard({
   testimonial,
@@ -12,29 +40,71 @@ export default function TestimonialCard({
     highlights: string[];
   };
 }) {
+  const { title, company } = parseRole(testimonial.role);
+
   return (
-    <div className="border hover:translate-y-[-6px] transition-all duration-300 ease-in-out bg-accent dark:bg-accent/50 rounded-lg p-6 mb-6 flex flex-col items-center animate-fade-in">
-      <div className="flex items-center justify-center mb-4">
-        <Image
-          src={testimonial.avatar || "/placeholder.svg"}
-          alt={testimonial.name}
-          width={64}
-          height={64}
-          className="rounded-full"
-        />
-      </div>
-      <div className="text-sm text-center mb-4">{testimonial.content}</div>
-      <div className="flex items-center justify-center gap-1 mb-4">
-        {[...Array(5)].map((_, index) => (
-          <Star key={index} className="size-4 text-primary" weight="fill" />
-        ))}
-      </div>
-      <div className="text-base font-semibold text-center mb-1">
-        {testimonial.name}
-      </div>
-      <div className="text-sm text-neutral-500 dark:text-neutral-400 text-center">
-        {testimonial.role}
-      </div>
-    </div>
+    <article className={cn(testimonialSurface, "p-6 sm:p-7")}>
+      <span
+        className="font-accent pointer-events-none select-none text-[2.75rem] leading-none text-primary/20 dark:text-primary/15"
+        aria-hidden
+      >
+        &ldquo;
+      </span>
+
+      <blockquote className="mt-1 flex-1">
+        <p className="font-secondary text-sm leading-[1.65] text-foreground/85 sm:text-[0.9375rem]">
+          <NumericText>{testimonial.content.trim()}</NumericText>
+        </p>
+      </blockquote>
+
+      <footer className="mt-6 border-t border-border/40 pt-5 dark:border-white/[0.06]">
+        <div className="flex items-center gap-3">
+          <div className="relative shrink-0">
+            <div
+              className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/25 to-primary1/15 opacity-0 blur-[6px] transition-opacity duration-500 group-hover:opacity-100 motion-reduce:transition-none"
+              aria-hidden
+            />
+            <Image
+              src={testimonial.avatar || "/placeholder.svg"}
+              alt=""
+              width={44}
+              height={44}
+              sizes="44px"
+              className="relative size-11 rounded-full object-cover ring-2 ring-background dark:ring-white/10"
+            />
+          </div>
+
+          <div className="min-w-0 flex-1">
+            <cite className="block truncate font-primary text-sm font-medium not-italic text-foreground">
+              {testimonial.name}
+            </cite>
+            <p className="mt-0.5 font-secondary text-xs leading-snug text-muted-foreground">
+              {title}
+              {company ? (
+                <>
+                  {", "}
+                  <span className="serif-accent font-accent italic text-foreground/70">
+                    {company}
+                  </span>
+                </>
+              ) : null}
+            </p>
+          </div>
+        </div>
+
+        <div
+          className="mt-3 flex items-center gap-0.5"
+          aria-label="5 out of 5 stars"
+        >
+          {[...Array(5)].map((_, index) => (
+            <Star
+              key={index}
+              className="size-3 text-primary/60 dark:text-primary/50"
+              weight="fill"
+            />
+          ))}
+        </div>
+      </footer>
+    </article>
   );
 }

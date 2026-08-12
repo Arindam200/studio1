@@ -1,54 +1,99 @@
-"use client";
-import React from "react";
-import { IconPhoneFilled } from "@tabler/icons-react";
-import { Button } from "../ui/button";
-import { motion } from "motion/react";
-import { containerVariants, cardVariants } from "@/lib/animations";
+"use client"
+import React from "react"
+import dynamic from "next/dynamic"
+import { IconPhoneFilled } from "@tabler/icons-react"
+import { Button } from "../ui/button"
+import { CTA_GLOBE_MARKERS } from "./globe-markers"
+import { motion } from "motion/react"
+import { containerVariants, cardVariants } from "@/lib/animations"
+import {
+  ctaCornerGlowLeft,
+  ctaCornerGlowRight,
+  elevatedCardShadow,
+} from "@/lib/shadows"
+import { cn } from "@/lib/utils"
+import { useTranslations } from "next-intl"
+
+const GlobePulse = dynamic(
+  () => import("./globe-pulse").then((module) => module.GlobePulse),
+  { ssr: false },
+)
 
 export default function CTA() {
-  return (
-    <>
-      <motion.div
-        className="px-4 relative mt-20"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={containerVariants}
-      >
-        <motion.div
-          className="border bg-background max-w-4xl z-[101] mx-auto shadow-xl relative flex flex-col overflow-hidden items-center justify-center h-[20rem] rounded-3xl"
-          variants={cardVariants}
-        >
-          <motion.div
-            className="text-2xl md:text-4xl text-center font-bold"
-            variants={cardVariants}
-          >
-            Ready to Scale <br /> Developer Adoption?
-          </motion.div>
-          <motion.div
-            className="text-center text-sm md:text-base w-[80%] md:w-full text-muted-foreground leading-tight mb-8 mt-4"
-            variants={cardVariants}
-          >
-            Let’s talk about how we can help you{" "}
-            <br className="hidden md:block" /> reach more developers and
-            accelerate adoption.
-          </motion.div>
-          <div className="bottom-[-10rem] md:bottom-[-18rem] rotate-[65deg] right-[-14%] opacity-50 dark:opacity-100 z-[-1] absolute bg-gradient-to-t from-primary to-primary/90 blur-[4em] rounded-xl transition-all translate-x-[-50%] w-[10rem] md:w-[10rem] h-[10rem] md:h-[30rem]" />
-          <div className="bottom-[-10rem] md:bottom-[-17rem] rotate-[-65deg] left-[-8%] opacity-50 dark:opacity-100 z-[-1] absolute bg-gradient-to-t from-primary to-primary/90 blur-[4em] rounded-xl transition-all translate-x-[-50%] w-[10rem] md:w-[10rem] h-[10rem] md:h-[30rem]" />
+  const t = useTranslations("CTA")
 
-          <motion.div variants={cardVariants}>
-            <Button className="h-12 min-w-32 px-4" asChild>
-              <a
-                href="https://cal.com/studio1/collab"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Schedule a call <IconPhoneFilled />
-              </a>
-            </Button>
-          </motion.div>
-        </motion.div>
+  return (
+    <motion.div
+      className="px-4 relative mt-10"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+    >
+      <motion.div
+        className={cn(
+          "border bg-background max-w-7xl z-[101] mx-auto relative overflow-hidden rounded-3xl",
+          "grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-12",
+          "px-6 py-14 sm:px-10 md:px-12 md:py-16 lg:px-16",
+          elevatedCardShadow,
+        )}
+        variants={cardVariants}
+      >
+        <div aria-hidden className={ctaCornerGlowRight} />
+        <div aria-hidden className={ctaCornerGlowLeft} />
+
+        {/* Previous CTA copy: left on desktop, first on mobile */}
+        <div className="relative z-20 flex min-w-0 flex-col items-center text-center md:items-start md:text-left">
+          <div className="text-3xl md:text-5xl font-medium tracking-tight text-foreground">
+            {t("titleLine1")} <br /> {t("titleLine2")}
+          </div>
+          <div className="text-sm md:text-base w-[85%] md:w-full max-w-lg text-muted-foreground leading-tight mb-8 mt-4">
+            {t("descriptionLine1")}{" "}
+            <br className="hidden md:block" /> {t("descriptionLine2")}
+          </div>
+
+          <Button variant="gradient" size="cta" className="min-w-32" asChild>
+            <a
+              href="https://cal.com/studio1/collab"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("button")} <IconPhoneFilled />
+            </a>
+          </Button>
+
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-5 gap-y-2 mt-8 text-xs text-muted-foreground">
+            <span>{t("bullets.savings")}</span>
+            <span aria-hidden className="hidden sm:inline text-border">
+              ·
+            </span>
+            <span>{t("bullets.lockIn")}</span>
+            <span aria-hidden className="hidden sm:inline text-border">
+              ·
+            </span>
+            <span>{t("bullets.content")}</span>
+            <span aria-hidden className="hidden sm:inline text-border">
+              ·
+            </span>
+            <span>{t("bullets.turnaround")}</span>
+          </div>
+        </div>
+
+        {/* Globe: right on desktop, below on mobile */}
+        <div className="relative z-10 flex items-center justify-center md:justify-end">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 m-auto size-[75%] bg-[radial-gradient(circle_at_center,hsl(var(--primary)_/_0.1)_0%,transparent_62%)] dark:bg-[radial-gradient(circle_at_center,hsl(var(--primary)_/_0.08)_0%,transparent_58%)]"
+          />
+          <div className="relative w-[min(18rem,78vw)] sm:w-[20rem] md:w-[22rem] lg:w-[26rem] touch-none">
+            <GlobePulse
+              markers={CTA_GLOBE_MARKERS}
+              speed={0.0025}
+              className="h-full w-full"
+            />
+          </div>
+        </div>
       </motion.div>
-    </>
-  );
+    </motion.div>
+  )
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { SelectTheme } from "../theme-toggler";
@@ -9,91 +9,165 @@ import { navItems } from "@/constants/data";
 import { cn } from "@/lib/utils";
 import Logo from "../ui/svgs/logo";
 import { EnvelopeOpen } from "@phosphor-icons/react";
-import { ArrowRight } from "@phosphor-icons/react";
+import { LanguageSwitcher } from "@/components/localization/language-switcher";
+import { useTranslations } from "next-intl";
+
+const navTitleKeys: Record<string, string> = {
+  "About Us": "about",
+  "Case Studies": "caseStudies",
+  "Client Work": "clientWork",
+  "Developer Relations & Growth": "devrel",
+  "Developer Video Production": "video",
+  "Documentation & DX Audits": "docs",
+  "Our Blog": "blog",
+  "Technical Content Marketing": "technicalContent",
+  Content: "content",
+  Home: "home",
+  Overview: "overview",
+  Process: "process",
+  Product: "product",
+  Proof: "proof",
+  Results: "results",
+  Services: "services",
+};
+
+const navDescriptionKeys: Record<string, string> = {
+  "Tutorials and guides we write for clients": "clientWork",
+  "Proof from docs, DevRel, launch, and content work": "caseStudies",
+  "Articles and insights from the Studio1 team": "blog",
+};
+
+function translatedNavTitle(title: string, t: ReturnType<typeof useTranslations>) {
+  const key = navTitleKeys[title];
+  return key ? t(`items.${key}`) : title;
+}
+
+function translatedNavDescription(
+  description: string,
+  t: ReturnType<typeof useTranslations>,
+) {
+  const key = navDescriptionKeys[description];
+  return key ? t(`descriptions.${key}`) : description;
+}
 
 export default function Navbar() {
+  const t = useTranslations("Nav");
+  const headerRef = useRef<HTMLElement | null>(null);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const [sublistHover, setSublistHover] = useState<number | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
+    if (!isMenuOpen) return;
 
-    const handleScroll = () => {
-      if (window.scrollY < lastScrollY) {
-        setIsVisible(true); // Show navbar when scrolling up
-      } else {
-        setIsVisible(false); // Hide navbar when scrolling down
+    const handlePointerDown = (event: PointerEvent) => {
+      const target = event.target;
+      if (target instanceof Node && !headerRef.current?.contains(target)) {
+        setIsMenuOpen(false);
+        setHoveredItem(null);
       }
-      lastScrollY = window.scrollY;
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+        setHoveredItem(null);
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMenuOpen]);
+
+  const closeMobileMenu = () => {
+    setIsMenuOpen(false);
+    setHoveredItem(null);
+  };
 
   return (
     <>
       <header
+        ref={headerRef}
         className={cn(
-          "fixed left-0 right-0 top-0 py-2 z-[550] border-b bg-background/80 backdrop-blur-2xl transition-transform duration-300",
-          isVisible ? "translate-y-0" : "-translate-y-full",
+          "fixed left-0 right-0 top-0 z-[550] border-b border-border/50 bg-background/40 py-2 backdrop-blur-2xl",
         )}
       >
         <nav className="flex z-20 max-w-7xl mx-auto h-16 px-4 rounded-2xl justify-between items-center">
           <Link href={"/"} className="flex justify-between gap-2 items-center">
             <Logo className="size-8" />
-            <span className="text-2xl font-bold">Studio1</span>
+            <span className="text-2xl font-medium">Studio1</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex  justify-between gap-8 font-medium items-center">
+          <div className="hidden items-center justify-between gap-8 font-medium lg:flex">
             {navItems.map((item) => (
-              <div
-                key={item.title}
-                className="relative group"
-                onMouseEnter={() => setHoveredItem(item.title)}
-                onMouseLeave={() => setHoveredItem(null)}
-              >
-                <Link
-                  href={item.path}
-                  className="flex items-center text-sm justify-center transition-all duration-300 hover:bg-accent rounded-sm px-2 py-1"
-                >
-                  {item.title}
-                  {item.children && (
-                    <IconChevronDown className="ml-1 size-4 mt-1" />
-                  )}
-                </Link>
-                {item.children && hoveredItem === item.title && (
-                  <div className="pt-8 absolute top-full left-0">
-                    <div className="bg-background shadow-xl border rounded-md p-2 min-w-[12rem] max-w-[30rem] z-10">
-                      {item.children.map((child, index) => (
+              <div key={item.title} className="relative group/nav">
+                {item.children ? (
+                  <button
+                    type="button"
+                    className={cn(
+                      "relative flex items-center justify-center px-2 py-1 text-sm transition-colors duration-200 hover:text-primary group-hover/nav:text-primary",
+                      "after:absolute after:-bottom-0.5 after:left-2 after:right-2 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-primary after:to-primary1 after:transition-transform after:duration-300 hover:after:scale-x-100 group-hover/nav:after:scale-x-100",
+                    )}
+                  >
+                    {translatedNavTitle(item.title, t)}
+                    <IconChevronDown className="ml-1 mt-0.5 size-4 transition-transform duration-300 group-hover/nav:rotate-180" />
+                  </button>
+                ) : (
+                  <Link
+                    href={item.path}
+                    className={cn(
+                      "relative flex items-center justify-center px-2 py-1 text-sm transition-colors duration-200 hover:text-primary group-hover/nav:text-primary",
+                      "after:absolute after:-bottom-0.5 after:left-2 after:right-2 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-primary after:to-primary1 after:transition-transform after:duration-300 hover:after:scale-x-100 group-hover/nav:after:scale-x-100",
+                    )}
+                  >
+                    {translatedNavTitle(item.title, t)}
+                  </Link>
+                )}
+                {item.children && (
+                  <div
+                    className={cn(
+                      "absolute top-full left-0 pt-4 origin-top",
+                      "opacity-0 -translate-y-1 scale-95 pointer-events-none",
+                      "transition-all duration-300 ease-out",
+                      "group-hover/nav:opacity-100 group-hover/nav:translate-y-0 group-hover/nav:scale-100 group-hover/nav:pointer-events-auto",
+                    )}
+                  >
+                    <div
+                      className={cn(
+                        "rounded-lg border bg-background/95 px-1 py-1.5 shadow-lg backdrop-blur-xl",
+                        item.children.some(
+                          (child) =>
+                            "description" in child && Boolean(child.description),
+                        )
+                          ? "w-max min-w-[24rem]"
+                          : "min-w-[17rem]",
+                      )}
+                    >
+                      {item.children.map((child) => (
                         <Link
                           key={child.title}
                           href={child.path}
-                          className="flex group items-center p-2 w-fit hover:bg-accent rounded-md gap-3"
-                          onMouseEnter={() => setSublistHover(index)}
-                          onMouseLeave={() => setSublistHover(null)}
+                          className="group/item flex w-full items-start gap-2.5 px-3 py-2.5 text-muted-foreground transition-colors duration-200 hover:text-foreground"
                         >
-                          <div
-                            className={cn(
-                              "flex group justify-center  items-center w-14 h-14 border rounded-md",
-                              sublistHover === index &&
-                                "group-hover:bg-gradient-to-br group-hover:from-primary via-primary group-hover:to-primary1",
-                            )}
-                          >
-                            {
-                              <child.icon
-                                weight="fill"
-                                className={cn(
-                                  "size-6 text-foreground",
-                                  sublistHover === index && "text-white",
-                                )}
-                              />
-                            }
-                          </div>
-                          <div className="w-44">{child.title}</div>
+                          <child.icon
+                            weight="duotone"
+                            className="mt-0.5 size-5 shrink-0 transition-colors duration-200 group-hover/item:text-primary"
+                          />
+                          <span className="flex min-w-0 flex-col gap-0.5">
+                            <span className="whitespace-nowrap text-sm font-medium">
+                              {translatedNavTitle(child.title, t)}
+                            </span>
+                            {"description" in child && child.description ? (
+                              <span className="whitespace-nowrap text-xs leading-snug text-muted-foreground/80">
+                                {translatedNavDescription(child.description, t)}
+                              </span>
+                            ) : null}
+                          </span>
                         </Link>
                       ))}
                     </div>
@@ -103,80 +177,108 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:flex justify-between gap-4 items-center">
+          <div className="hidden items-center justify-between gap-3 lg:flex">
             <SelectTheme />
-            <Button asChild>
+            <LanguageSwitcher compact />
+            <Button variant="gradient" asChild>
               <a href="mailto:contact@studio1hq.com">
-                Contact Us <EnvelopeOpen className="ml-2" />
+                {t("contact")} <EnvelopeOpen className="ml-2" />
               </a>
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 hover:bg-accent rounded-md"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <IconMenu2 className="size-6" />
-          </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <div className="flex size-10 items-center justify-center rounded-md hover:bg-accent">
+              <SelectTheme />
+            </div>
+            <button
+              type="button"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+              className="rounded-md p-2 hover:bg-accent"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <IconMenu2 className="size-6" />
+            </button>
+          </div>
         </nav>
 
         {/* Mobile Navigation */}
         <div
           className={cn(
-            "md:hidden bg-background border shadow-2xl pb-6 transition-all duration-300 overflow-hidden",
-            isMenuOpen ? "max-h-[1000px] block translate-y-4" : "hidden ",
+            "border bg-background pb-6 shadow-2xl transition-all duration-300 lg:hidden",
+            isMenuOpen
+              ? "block max-h-[calc(100vh-5rem)] translate-y-4 overflow-y-auto"
+              : "hidden",
           )}
         >
           <div className="px-4 py-2 space-y-2">
             {navItems.map((item) => (
               <div key={item.title} className="space-y-2">
-                <Link
-                  href={!item.children ? item.path : ""}
-                  className="flex items-center justify-between px-4 py-2 hover:bg-accent rounded-md"
-                  onClick={() =>
-                    item.children &&
-                    setHoveredItem(
-                      hoveredItem === item.title ? null : item.title,
-                    )
-                  }
-                >
-                  {item.title}
-                  {item.children && (
+                {item.children ? (
+                  <button
+                    type="button"
+                    className="flex w-full items-center justify-between rounded-md px-4 py-2 text-left hover:bg-accent"
+                    aria-expanded={hoveredItem === item.title}
+                    onClick={() => {
+                      setHoveredItem(
+                        hoveredItem === item.title ? null : item.title,
+                      );
+                    }}
+                  >
+                    {translatedNavTitle(item.title, t)}
                     <IconChevronDown
                       className={cn(
                         "size-4 transition-transform duration-200",
                         hoveredItem === item.title && "rotate-180",
                       )}
                     />
-                  )}
-                </Link>
+                  </button>
+                ) : (
+                  <Link
+                    href={item.path}
+                    className="flex items-center justify-between rounded-md px-4 py-2 hover:bg-accent"
+                    onClick={closeMobileMenu}
+                  >
+                    {translatedNavTitle(item.title, t)}
+                  </Link>
+                )}
                 {item.children && hoveredItem === item.title && (
-                  <div className="pl-4 space-y-2">
+                  <div className="pl-4 space-y-0.5">
                     {item.children.map((child) => (
                       <Link
                         key={child.title}
                         href={child.path}
-                        className="flex items-center p-2 group hover:bg-accent rounded-md gap-3"
+                        onClick={closeMobileMenu}
+                        className="flex items-start px-3 py-2.5 group gap-2.5 text-muted-foreground transition-colors duration-200 hover:text-foreground"
                       >
-                        <div className="flex justify-center items-center w-10 h-10 border rounded-md group-hover:bg-gradient-to-r group-hover:from-primary/50 group-hover:to-primary/50">
-                          <child.icon
-                            weight="fill"
-                            className="size-5 group-hover:text-white"
-                          />
-                        </div>
-                        <span>{child.title}</span>
+                        <child.icon
+                          weight="duotone"
+                          className="mt-0.5 size-5 shrink-0 transition-colors duration-200 group-hover:text-primary"
+                        />
+                        <span className="flex flex-col gap-0.5">
+                          <span className="text-sm font-medium">
+                            {translatedNavTitle(child.title, t)}
+                          </span>
+                          {"description" in child && child.description ? (
+                            <span className="text-xs leading-snug text-muted-foreground/80">
+                              {translatedNavDescription(child.description, t)}
+                            </span>
+                          ) : null}
+                        </span>
                       </Link>
                     ))}
                   </div>
                 )}
               </div>
             ))}
-            <div className="flex items-center justify-between p-2 bg-accent/50 pr-2 pl-4 rounded-3xl mt-4">
-              <SelectTheme />
-              <Button asChild>
-                <a href="mailto:contact@studio1hq.com">
-                  Contact Us <EnvelopeOpen className="ml-2" />
+            <div className="pt-2">
+              <LanguageSwitcher inline />
+            </div>
+            <div className="mt-4 flex items-center justify-end gap-2 rounded-3xl bg-accent/50 p-2">
+              <Button variant="gradient" asChild>
+                <a href="mailto:contact@studio1hq.com" onClick={closeMobileMenu}>
+                  {t("contact")} <EnvelopeOpen className="ml-2" />
                 </a>
               </Button>
             </div>

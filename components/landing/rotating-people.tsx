@@ -9,6 +9,7 @@ import { JuliaImg, MarketaImg } from "@/constants/image";
 import { DavidImg, FerranImg } from "@/constants/image";
 import { ColeImg } from "@/constants/image";
 import Logo from "../ui/svgs/logo";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 export default function RotatingPeople({ className }: { className?: string }) {
   const avatarUrls = [
@@ -46,11 +47,13 @@ export default function RotatingPeople({ className }: { className?: string }) {
                 top: `calc(50% + ${y}px)`,
               }}
             >
-              <div className="w-full h-full rounded-md overflow-hidden border-[3px] border-white shadow-lg animate-spin-reverse-slow">
-                <img
-                  src={element.src || "/placeholder.svg"}
+              <div className="relative w-full h-full rounded-md overflow-hidden border-[3px] border-white shadow-lg animate-spin-reverse-slow">
+                <Image
+                  src={element}
                   alt={`Community member ${index + 1}`}
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="48px"
+                  className="object-cover"
                 />
               </div>
             </div>

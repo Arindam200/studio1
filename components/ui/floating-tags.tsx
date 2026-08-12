@@ -65,43 +65,42 @@ export function FloatingTags() {
   };
 
   return (
-    <div className="grid grid-cols-2 md:flex w-full mx-auto sm:justify-center sm:items-center gap-2 mt-4">
+    <div className="mx-auto mt-2 flex w-full flex-wrap items-center justify-center gap-2">
       <AnimatePresence>
-        {tags.map((tag) => (
-          <motion.div
-            key={tag}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.2 }}
-            onClick={() => handleTagClick(tag)}
-            className={`rounded-md relative flex gap-2 text-foreground items-center justify-center h-10 px-8 w-full md:w-fit ${
-              selectedTags.includes(tag)
-                ? "bg-primary text-white"
-                : "bg-accent text-foreground"
-            }`}
-          >
-            <Tag
-              weight="duotone"
+        {tags.map((tag) => {
+          const isSelected = selectedTags.includes(tag);
+
+          return (
+            <motion.button
+              key={tag}
+              type="button"
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => handleTagClick(tag)}
               className={cn(
-                "size-4",
-                selectedTags.includes(tag) ? "text-white" : "text-foreground",
+                "relative inline-flex h-9 items-center gap-2 rounded-full px-4 font-inter text-sm tracking-tight transition-colors duration-200",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                isSelected
+                  ? "bg-primary/15 text-primary dark:bg-primary/20"
+                  : "bg-transparent text-muted-foreground hover:bg-accent/50 hover:text-foreground",
               )}
-            />
-            <div className="bg-transparent text-xs md:text-sm w-fit">
-              {tag}
-              {selectedTags.includes(tag) && tag !== "All" && (
+            >
+              <Tag weight="duotone" className="size-3.5 shrink-0" />
+              <span className="capitalize">{tag === "All" ? "All" : tag.replace("-", " ")}</span>
+              {isSelected && tag !== "All" ? (
                 <X
-                  className="ml-2 absolute top-1 right-1 h-4 w-4 cursor-pointer"
+                  className="size-3.5 shrink-0 opacity-70 transition-opacity hover:opacity-100"
                   onClick={(e) => {
                     e.stopPropagation();
                     removeTag(tag);
                   }}
                 />
-              )}
-            </div>
-          </motion.div>
-        ))}
+              ) : null}
+            </motion.button>
+          );
+        })}
       </AnimatePresence>
     </div>
   );

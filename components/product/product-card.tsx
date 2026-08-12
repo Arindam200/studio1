@@ -1,84 +1,125 @@
 "use client";
 
-import { motion } from "motion/react";
 import { ArrowUpRight } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { createCardVariantsWithDelay } from "@/lib/animations";
-import type { Product } from "@/constants/products";
+import ProductMedia from "@/components/product/product-media";
+import type { ProductMedia as ProductMediaType } from "@/constants/products";
+import { motion } from "motion/react";
+import { cardVariants } from "@/lib/animations";
+import { cn } from "@/lib/utils";
+import {
+  cornerGlowLeft,
+  cornerGlowRight,
+  elevatedCardShadow,
+} from "@/lib/shadows";
+import { useTranslations } from "next-intl";
 
-const statusStyles: Record<
-  Product["status"],
-  { badge: "default" | "secondary" | "outline"; dot: string }
-> = {
-  launched: { badge: "default", dot: "bg-green-500" },
-  live: { badge: "secondary", dot: "bg-blue-500" },
-  upcoming: { badge: "outline", dot: "bg-amber-500" },
+export type ProductCardData = {
+  name: string;
+  tagline: string;
+  description: string;
+  highlights: string[];
+  url: string;
+  category: string;
+  statusLabel: string;
+  media: ProductMediaType;
 };
+
+const productCardSurface = cn(
+  "relative overflow-hidden rounded-xl border bg-background p-4 sm:p-6 lg:p-8 transition-colors duration-300",
+  elevatedCardShadow,
+);
+
+function isLiveStatus(statusLabel: string) {
+  const normalized = statusLabel.trim().toLowerCase();
+  return normalized === "live" || normalized === "launched";
+}
 
 export default function ProductCard({
   product,
-  index,
+  reverse = false,
 }: {
-  product: Product;
-  index: number;
+  product: ProductCardData;
+  reverse?: boolean;
 }) {
-  const style = statusStyles[product.status];
+  const t = useTranslations("ProductPage");
 
   return (
-    <motion.div
-      variants={createCardVariantsWithDelay(index)}
-      className="group relative flex flex-col justify-between rounded-2xl border border-border bg-background/60 backdrop-blur-sm p-6 sm:p-8 transition-colors hover:border-primary/40"
-    >
-      <div>
-        <div className="flex items-center justify-between mb-4">
-          <Badge variant="secondary" className="text-xs">
-            {product.category}
-          </Badge>
-          <Badge variant={style.badge} className="text-xs flex items-center gap-1.5">
-            <span className={`size-2 rounded-full ${style.dot}`} />
-            {product.statusLabel}
-          </Badge>
+    <motion.article variants={cardVariants} className={productCardSurface}>
+      <div aria-hidden className={cornerGlowRight} />
+      <div aria-hidden className={cornerGlowLeft} />
+
+      <div
+        className={cn(
+          "grid min-w-0 gap-6 lg:grid-cols-2 lg:items-center lg:gap-10 xl:gap-12",
+        )}
+      >
+        <ProductMedia
+          media={product.media}
+          className={cn(
+            "order-1 w-full",
+            reverse ? "lg:order-2" : "lg:order-1",
+          )}
+        />
+
+        <div
+          className={cn(
+            "order-2 flex min-w-0 flex-col",
+            reverse ? "lg:order-1" : "lg:order-2",
+          )}
+        >
+          <div className="flex items-center gap-2 font-secondary text-xs text-muted-foreground">
+            <span>{product.category}</span>
+            <span aria-hidden>·</span>
+            <span className="inline-flex items-center gap-1.5">
+              {isLiveStatus(product.statusLabel) ? (
+                <span aria-hidden className="relative flex h-1.5 w-1.5 shrink-0">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75 motion-reduce:animate-none" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                </span>
+              ) : null}
+              {product.statusLabel}
+            </span>
+          </div>
+
+          <h2 className="mt-2 font-accent text-xl font-medium italic tracking-tight text-foreground sm:mt-3 sm:text-2xl lg:text-3xl">
+            {product.name}
+          </h2>
+
+          {product.tagline ? (
+            <p className="mt-1 font-secondary text-sm leading-snug text-primary/75 sm:text-base">
+              {product.tagline}
+            </p>
+          ) : null}
+
+          <p className="mt-3 font-secondary text-sm leading-relaxed text-muted-foreground sm:mt-4 sm:text-base">
+            {product.description}
+          </p>
+
+          {product.highlights.length > 0 ? (
+            <ul className="mt-3 space-y-1 font-secondary text-sm leading-relaxed text-muted-foreground/90 sm:mt-4 sm:space-y-1.5">
+              {product.highlights.map((highlight) => (
+                <li key={highlight} className="flex gap-2.5">
+                  <span
+                    aria-hidden
+                    className="mt-[0.45em] size-1 shrink-0 rounded-full bg-primary/50"
+                  />
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+
+          <div className="mt-5 sm:mt-6">
+            <Button variant="gradient" size="cta" asChild>
+              <a href={product.url} target="_blank" rel="noopener noreferrer">
+                {t("visitProduct", { name: product.name })}
+                <ArrowUpRight className="size-4" weight="bold" />
+              </a>
+            </Button>
+          </div>
         </div>
-
-        <h3 className="text-2xl font-bold tracking-tight mb-1">
-          {product.name}
-        </h3>
-        <p className="text-sm text-muted-foreground font-medium mb-4">
-          {product.tagline}
-        </p>
-        <p className="text-foreground/80 leading-relaxed mb-6">
-          {product.longDescription}
-        </p>
-
-        <ul className="space-y-4 mb-8">
-          {product.features.map((f) => (
-            <li key={f.label} className="flex gap-3 text-sm">
-              <f.icon
-                className="size-5 shrink-0 text-primary mt-0.5"
-                weight="duotone"
-              />
-              <div>
-                <span className="font-medium">{f.label}</span>
-                <p className="text-muted-foreground mt-0.5">{f.detail}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
       </div>
-
-      {product.status === "upcoming" ? (
-        <p className="text-sm text-muted-foreground font-medium">
-          Currently in development. Stay tuned.
-        </p>
-      ) : (
-        <Button asChild className="w-fit">
-          <a href={product.url} target="_blank" rel="noopener noreferrer">
-            Visit {product.name}
-            <ArrowUpRight className="size-4" weight="bold" />
-          </a>
-        </Button>
-      )}
-    </motion.div>
+    </motion.article>
   );
 }

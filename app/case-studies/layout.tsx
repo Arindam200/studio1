@@ -1,26 +1,21 @@
-import { Metadata } from "next";
-import { baseUrl } from "@/app/sitemap";
+import { pageMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { getTranslations } from "next-intl/server";
+import { getSafeLocale } from "@/lib/i18n-messages";
 
-export const metadata: Metadata = {
-  title: "Case Studies",
-  description:
-    "Explore how Studio1 has helped devtool and SaaS companies increase developer adoption through technical content, DevRel strategies, and community engagement.",
-  openGraph: {
-    title: "Case Studies | Studio1",
-    description:
-      "Explore how Studio1 has helped devtool and SaaS companies increase developer adoption through technical content, DevRel strategies, and community engagement.",
-    url: baseUrl + "/case-studies",
-    siteName: "Studio1",
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    title: "Case Studies | Studio1",
-    card: "summary_large_image",
-    description:
-      "Explore how Studio1 has helped devtool and SaaS companies increase developer adoption through technical content, DevRel strategies, and community engagement.",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("Metadata.pages.caseStudies");
+  const headerStore = await headers();
+  const locale = getSafeLocale(headerStore.get("x-studio1-locale"));
+
+  return pageMetadata({
+    title: t("title"),
+    description: t("description"),
+    path: "/case-studies",
+    locale,
+  });
+}
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return children;

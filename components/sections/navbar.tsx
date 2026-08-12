@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Logo from "@/public/assets/logo.png";
 
 export default function Navbar() {
@@ -21,12 +22,15 @@ export default function Navbar() {
       <div className="container flex h-20 max-w-screen-2xl items-center justify-between">
         {!isScrolled && (
           <Link href="/" className="flex items-center space-x-2">
-            <img
-              src={Logo.src}
+            <Image
+              src={Logo}
               alt="Studio1 - Technical Content and DevRel Services"
+              width={56}
+              height={56}
+              priority
               className="h-14 w-14 max-md:h-10 max-md:w-10 fill-primary text-primary rounded-full"
             />
-            <span className="text-xl font-bold max-sm:hidden sm:visible">
+            <span className="font-primary text-xl font-bold max-sm:hidden sm:visible">
               Studio1HQ
             </span>
           </Link>

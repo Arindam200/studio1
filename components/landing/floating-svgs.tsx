@@ -2,6 +2,10 @@
 import { Code, Pen } from "@phosphor-icons/react";
 import { motion } from "motion/react";
 import { iconVariants, createFloatingAnimation } from "@/lib/animations";
+import { floatingTileSurface } from "@/lib/shadows";
+import { cn } from "@/lib/utils";
+
+export { floatingTileSurface };
 
 export default function FloatingSvgs() {
   return (
@@ -10,28 +14,28 @@ export default function FloatingSvgs() {
         variants={iconVariants}
         initial="hidden"
         whileInView="visible"
-        animate={createFloatingAnimation(0, -25)} // Combining floating animation
-        viewport={{ once: false, amount: 0.2 }} // Controls when animation triggers
-        className="text-white drop-shadow-[10px_16px_50px_hsl(var(--primary))] rounded-2xl flex items-center justify-center bg-gradient-to-br from-primary1 via-primary to-primary1 backdrop-blur-xl absolute bottom-[-2rem] z-[201] md:top-[26rem] left-[2rem] md:left-[4rem] lg:left-[18rem] xl:left-[20rem] size-14"
+        animate={createFloatingAnimation(0, -12)}
+        viewport={{ once: false, amount: 0.2 }}
+        className={cn(
+          floatingTileSurface,
+          "absolute top-[3rem] z-[201] flex size-14 items-center justify-center rounded-2xl left-[0.25rem] sm:left-[0.5rem] md:top-[6rem] md:left-[1rem] lg:top-[7rem] lg:left-[2rem] xl:top-[8rem] xl:left-[4rem]"
+        )}
       >
-        <Code className="size-6" />
+        <Code className="size-6 drop-shadow-sm" weight="bold" />
       </motion.div>
       <motion.div
         variants={iconVariants}
         initial="hidden"
         whileInView="visible"
-        animate={createFloatingAnimation(1, 25)} // Combining floating animation
-        viewport={{ once: false, amount: 0.2 }} // Controls when animation triggers
-        className="text-white drop-shadow-[10px_16px_50px_hsl(var(--primary))] rounded-2xl flex items-center justify-center bg-gradient-to-br from-primary1 via-primary to-primary1 backdrop-blur-xl absolute bottom-[-2rem] z-[201] md:top-[26rem] right-[2rem] md:right-[4rem] lg:right-[18rem] xl:right-[20rem] size-14"
+        animate={createFloatingAnimation(1, 12)}
+        viewport={{ once: false, amount: 0.2 }}
+        className={cn(
+          floatingTileSurface,
+          "absolute top-[5rem] z-[201] flex size-14 items-center justify-center rounded-2xl right-[0.25rem] sm:right-[0.5rem] md:top-[8rem] md:right-[1rem] lg:top-[9rem] lg:right-[2rem] xl:top-[10rem] xl:right-[4rem]"
+        )}
       >
-        <Pen className="size-6" />
+        <Pen className="size-6 drop-shadow-sm" weight="bold" />
       </motion.div>
-      {/* <div className="md:flex hidden text-white drop-shadow-[10px_16px_50px_hsl(var(--primary))] rotate-[25deg] rounded-2xl items-center justify-center bg-gradient-to-br from-primary1 via-primary to-primary1 backdrop-blur-xl absolute top-[30rem] right-[18rem] size-16">
-        <Laptop className="size-8" />
-      </div>
-      <div className="md:flex hidden text-white drop-shadow-[10px_16px_50px_hsl(var(--primary))] -rotate-[25deg] rounded-2xl items-center justify-center bg-gradient-to-br from-primary1 via-primary to-primary1 backdrop-blur-xl absolute top-[30rem] left-[18rem] size-16">
-        <Lightbulb className="size-8" />
-      </div> */}
     </>
   );
 }

@@ -1,4 +1,6 @@
 "use client";
+
+import { useEffect, useState } from "react";
 import { Icon } from "@phosphor-icons/react";
 import {
   ChartBar,
@@ -13,6 +15,14 @@ import {
   HandHeart,
 } from "@phosphor-icons/react/dist/ssr";
 import { motion } from "motion/react";
+import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
+import {
+  elevatedCardShadow,
+  serviceCardHoverGlow,
+  sideBeamGlowLeftTall,
+  sideBeamGlowRightTall,
+} from "@/lib/shadows";
+import { cn } from "@/lib/utils";
 
 const contentData = {
   vision: {
@@ -69,9 +79,60 @@ const contentData = {
   },
 };
 
-// Create a reusable card component
-const ContentCard = ({
+const cardSurface = cn(
+  "group relative flex h-full flex-col gap-7 overflow-hidden rounded-xl border-2 border-border/80 p-6 sm:p-8 dark:border",
+  "bg-accent dark:bg-muted-foreground/5",
+  "transition-[border-color,box-shadow,transform] duration-500 ease-out",
+  "hover:-translate-y-1 hover:border-primary/35 dark:hover:border-white/15",
+  "motion-reduce:transition-none motion-reduce:hover:translate-y-0",
+  elevatedCardShadow
+);
+
+function VisionMissionCardEffects({ active }: { active: boolean }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    if (active) {
+      setMounted(true);
+      return;
+    }
+
+    const timeout = window.setTimeout(() => setMounted(false), 450);
+    return () => window.clearTimeout(timeout);
+  }, [active]);
+
+  return (
+    <>
+      <div aria-hidden className={serviceCardHoverGlow} />
+      <div
+        aria-hidden
+        className={cn(
+          "pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-xl opacity-0 transition-opacity duration-500 ease-out motion-reduce:transition-none",
+          active && "opacity-100"
+        )}
+      >
+        {mounted ? (
+          <CanvasRevealEffect
+            animationSpeed={3}
+            containerClassName="bg-transparent"
+            colors={[
+              [234, 88, 12],
+              [249, 115, 22],
+            ]}
+            dotSize={2}
+            showGradient={false}
+          />
+        ) : null}
+        <div className="absolute inset-0 bg-gradient-to-t from-accent via-accent/80 to-accent/40 dark:from-background dark:via-background/75 dark:to-background/35" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.08] via-transparent to-transparent" />
+      </div>
+    </>
+  );
+}
+
+const ContentBlock = ({
   data,
+  index,
 }: {
   data: {
     title: string;
@@ -81,81 +142,108 @@ const ContentCard = ({
       text: string;
     }[];
   };
+  index: number;
 }) => {
   const HeaderIcon = data.icon;
+  const [hovered, setHovered] = useState(false);
 
   return (
-    <motion.div
-      className="flex flex-col w-full rounded-xl h-full"
-      initial={{ opacity: 0, y: 30, filter: "blur(5px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+    <motion.article
+      className={cardSurface}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.7 }}
+      transition={{ duration: 0.55, delay: 0.08 * index, ease: "easeOut" }}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+      onFocus={() => setHovered(true)}
+      onBlur={() => setHovered(false)}
     >
-      <div className="flex items-center h-20 px-4 rounded-t-xl bg-gradient-to-r from-primary to-primary1 text-white gap-2">
-        <HeaderIcon className="size-8" />
-        <span className="text-2xl font-primary font-semibold text-center leading-tight">
-          {data.title}
-        </span>
-      </div>
+      <VisionMissionCardEffects active={hovered} />
 
-      <div className="flex bg-background sm:bg-accent dark:bg-background/70 backdrop-blur-xl dark:sm:bg-accent/50 rounded-b-xl flex-col gap-4 p-6 h-full">
-        {data.points.map((point, index) => {
-          const PointIcon = point.icon;
-          return (
-            <motion.div
-              key={index}
-              className="flex items-start gap-4"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 * index, duration: 0.5 }}
-            >
-              <PointIcon className="size-6 text-primary flex-shrink-0" />
-              <p className="text-sm">{point.text}</p>
-            </motion.div>
-          );
-        })}
+      <div className="relative z-[1] flex h-full flex-col gap-7">
+        <header className="flex items-center gap-3.5">
+          <span
+            className={cn(
+              "flex size-12 shrink-0 items-center justify-center rounded-lg",
+              "bg-background text-foreground",
+              "dark:bg-background/80",
+              "transition-transform duration-500 ease-out group-hover:scale-110",
+              "motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+            )}
+            aria-hidden
+          >
+            <HeaderIcon weight="regular" className="size-6" />
+          </span>
+          <h3 className="font-primary text-2xl font-semibold tracking-tight text-foreground sm:text-[1.65rem]">
+            {data.title}
+          </h3>
+        </header>
+
+        <div className="h-px w-full bg-border/80" />
+
+        <ul className="flex flex-col gap-4">
+          {data.points.map((point, pointIndex) => {
+            const PointIcon = point.icon;
+            return (
+              <motion.li
+                key={point.text}
+                className="flex items-start gap-3"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  delay: 0.1 + pointIndex * 0.04,
+                  duration: 0.35,
+                  ease: "easeOut",
+                }}
+              >
+                <PointIcon
+                  weight="regular"
+                  className="mt-0.5 size-[1.125rem] shrink-0 text-primary"
+                  aria-hidden
+                />
+                <p className="font-secondary text-[0.9375rem] leading-relaxed text-foreground/80">
+                  {point.text}
+                </p>
+              </motion.li>
+            );
+          })}
+        </ul>
       </div>
-    </motion.div>
+    </motion.article>
   );
 };
 
 export const VisionMission = () => {
   return (
-    <div className="w-full mt-44 relative mx-auto px-4 py-8">
-      <div className="top-[-10rem] md:top-[-18rem] z-[-1] left-[-80%] md:left-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] -rotate-[60deg]"></div>
-      <div className="top-[-10rem] md:top-[-18rem] z-[-1] right-[-80%] md:right-[-20%] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] rotate-[40deg]"></div>
+    <div className="relative mx-auto mt-44 w-full px-4 py-8">
+      <div className={sideBeamGlowLeftTall}></div>
+      <div className={sideBeamGlowRightTall}></div>
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
+        className="mb-14 text-center md:mb-16"
       >
-        <p className="text-center text-sm font-semibold text-neutral-600 dark:text-neutral-400 mx-auto mb-12"></p>
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 md:text-5xl">
-            What{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
-              Fuels
-            </span>{" "}
-            Us?
-          </h2>
-          <p className="text-muted-foreground ">
-            We help SaaS teams build developer trust through <br /> high-impact
-            content and DevRel strategy that scales with their product.
-          </p>
-        </div>
+        <h2 className="mb-4 font-primary text-4xl font-normal tracking-tight md:text-5xl">
+          What{" "}
+          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent italic font-normal text-transparent">
+            Fuels
+          </span>{" "}
+          Us?
+        </h2>
+        <p className="text-muted-foreground">
+          We help SaaS teams build developer trust through <br /> high-impact
+          content and DevRel strategy that scales with their product.
+        </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 place-items-center sm:place-items-start sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-        <div className="flex justify-center h-full max-w-[23rem]">
-          <ContentCard data={contentData.vision} />
-        </div>
-        <div className="flex justify-center h-full max-w-[23rem]">
-          <ContentCard data={contentData.mission} />
-        </div>
+      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-2">
+        <ContentBlock data={contentData.vision} index={0} />
+        <ContentBlock data={contentData.mission} index={1} />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import { useTheme } from "next-themes";
+import { useTheme } from "@wrksz/themes/client";
 import UserAvatarCollection from "./user-avatar-collection";
 import { NumberTicker } from "../magicui/number-ticker";
 import { CollaborationIllustration } from "../collaboration-illustration";
@@ -10,6 +10,7 @@ import LightExpertiseIllustration from "../ui/svgs/light-expertise-illustration"
 import DisplayCards from "./display-cards";
 import { BarChart, PenTool, Users } from "lucide-react";
 import { ComparisonMetric } from "../comparison-metric";
+import { Num } from "../ui/num";
 
 interface FeatureIllustrationProps {
   title: string;
@@ -104,8 +105,8 @@ export function FeatureIllustration({ title }: FeatureIllustrationProps) {
               value={2000}
               className="whitespace-pre-wrap text-8xl font-medium tracking-tighter text-primary dark:text-primary"
             />
-            <p className="text-6xl font-medium tracking-tighter text-primary">
-              k+
+            <p className="text-6xl font-medium font-numeric tabular-nums tracking-tighter text-primary">
+              <Num>k+</Num>
             </p>
           </div>
           <div className="text-sm text-muted-foreground">

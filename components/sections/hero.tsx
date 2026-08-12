@@ -5,6 +5,7 @@ import { Spotlight } from "@/components/ui/spotlight";
 import { ArrowRight } from "lucide-react";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import Navbar from "@/components/sections/navbar";
+import { Num } from "@/components/ui/num";
 import type { Variants } from "motion/react";
 import { motion, useAnimation } from "motion/react";
 
@@ -27,7 +28,9 @@ export function GridBackgroundDemo() {
         </span>
         <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
           <a href="#trustedby">
-            <span>Trusted by 35+ DevTool Teams</span>
+            <span>
+              Trusted by <Num>35+</Num> DevTool Teams
+            </span>
           </a>
 
           <svg
@@ -116,7 +119,7 @@ export function GridBackgroundDemo() {
       </div>
 
       <div className="flex gap-2 font-thin font-serif text-3xl align-center sm:pt-1.5 pt-0.5">
-        <span className="number-text">3</span>
+        <Num>3</Num>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-8 w-auto mt-2.5 max-sm:mt-2"

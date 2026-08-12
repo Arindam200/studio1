@@ -1,44 +1,33 @@
-import React from "react";
-import Searchbar from "@/components/ui/searchbar";
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 import Hero from "./hero";
-import { baseUrl } from "@/app/sitemap";
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { FloatingTags } from "@/components/ui/floating-tags";
-import { Badge } from "@/components/ui/badge";
-import { Users } from "@phosphor-icons/react/dist/ssr";
+import { SectionEyebrow } from "@/components/landing/section-eyebrow";
+import { sideBeamGlowLeftFixed, sideBeamGlowRightFixed } from "@/lib/shadows";
+import { pageMetadata } from "@/lib/seo";
+import { getTranslations } from "next-intl/server";
+import { getSafeLocale } from "@/lib/i18n-messages";
 
-export const metadata: Metadata = {
-  title: "Work",
-  description:
-    "Technical tutorials, DevRel insights, and developer content from Studio1. Explore AI, cloud, DevOps, and web development guides written by experienced developers.",
-  openGraph: {
-    title: "Work | Studio1",
-    description:
-      "Technical tutorials, DevRel insights, and developer content from Studio1. Explore AI, cloud, DevOps, and web development guides written by experienced developers.",
-    url: baseUrl + "/work",
-    siteName: "Studio1",
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    title: "Work | Studio1",
-    card: "summary_large_image",
-    description:
-      "Technical tutorials, DevRel insights, and developer content from Studio1. Explore AI, cloud, DevOps, and web development guides written by experienced developers.",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("Metadata.pages.work");
+  const headerStore = await headers();
+  const locale = getSafeLocale(headerStore.get("x-studio1-locale"));
+
+  return pageMetadata({
+    title: t("title"),
+    description: t("description"),
+    path: "/work",
+    locale,
+  });
+}
 
 export default async function Page(props: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const searchParams = await props.searchParams;
+  const t = await getTranslations("WorkPage");
 
-  // Handle query param
-  const query =
-    typeof searchParams?.query === "string" ? searchParams.query : "";
-
-  // Handle tags param (can be string, array, or undefined)
   let tags: string[] = ["All"];
   if (searchParams?.tags) {
     if (Array.isArray(searchParams.tags)) {
@@ -49,34 +38,37 @@ export default async function Page(props: {
   }
 
   return (
-    <section className="overflow-x-hidden">
-      <div className=" max-h-fit w-full relative max-w-7xl mx-auto flex flex-col mt-24">
-        <div className="top-[-10rem] md:top-[-18rem] z-[-1] left-[-80%] md:left-[-20%] fixed bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] -rotate-[60deg]"></div>
-        <div className="top-[-10rem] md:top-[-18rem] z-[-1] right-[-80%] md:right-[-20%] fixed bg-gradient-to-t opacity-50 dark:opacity-100 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] rotate-[40deg]"></div>
-        {/* <Navbar /> */}
-        <div className="text-4xl w-full sm:text-7xl font-bold relative z-20 pt-8 py-4 text-center">
-          <Badge className="w-fit mx-auto mb-10 flex items-center pb-1">
-            <Users className="size-6 inline-block mr-2" />
-            Written by top experienced developers
-          </Badge>
-          <span className="font-bold"> Our Work </span>
-          <p className="text-base font-semibold relative z-20 text-foreground py-4 text-center">
-            We help you build and grow developer communities with <br /> DevRel
-            strategies tailored to your product and audience.
+    <section className="relative overflow-x-hidden">
+      <div className="relative mx-auto mt-24 flex max-h-fit w-full max-w-7xl flex-col px-4 pb-24">
+        <div aria-hidden className={sideBeamGlowLeftFixed} />
+        <div aria-hidden className={sideBeamGlowRightFixed} />
+
+        <div className="relative z-20 mx-auto mt-16 flex w-full max-w-3xl flex-col items-center text-center md:mt-20">
+          <SectionEyebrow className="mb-5">
+            {t("eyebrow")}
+          </SectionEyebrow>
+
+          <h1 className="font-inter text-4xl font-normal tracking-tight text-foreground max-sm:text-3xl sm:text-5xl md:text-6xl">
+            {t("title")}
+          </h1>
+
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            {t("description")}
           </p>
-          <div className="flex justify-center text-lg px-4 w-full">
-            <Suspense fallback={<div>Loading...</div>}>
-              <Searchbar />
-            </Suspense>
-          </div>
-          <div className="flex mt-10 w-full px-4 items-center justify-center text-lg">
-            <Suspense fallback={<div>Loading...</div>}>
+
+          <div className="mt-8 flex w-full items-center justify-center">
+            <Suspense fallback={null}>
               <FloatingTags />
             </Suspense>
           </div>
         </div>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Hero query={query} tags={tags} />
+
+        <Suspense
+          fallback={
+            <div className="mt-16 h-40 w-full animate-pulse rounded-xl bg-muted/30" />
+          }
+        >
+          <Hero tags={tags} />
         </Suspense>
       </div>
     </section>

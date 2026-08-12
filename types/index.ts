@@ -140,6 +140,7 @@ export interface NavChild {
   title: string;
   path: string;
   icon: ComponentType<{ className?: string; weight?: string }>;
+  description?: string;
 }
 
 // Impact Metrics Types

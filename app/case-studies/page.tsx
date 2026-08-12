@@ -1,65 +1,137 @@
-"use client";
+import Link from "next/link";
+import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
+import { Trophy } from "@phosphor-icons/react/dist/ssr";
+import { getAllCaseStudies, getFeaturedCaseStudy } from "@/lib/case-studies";
+import { CaseStudyCard } from "@/components/case-studies/case-study-card";
+import { FeaturedCaseStudy } from "@/components/case-studies/featured-case-study";
+import { getClientLogo, trustedClientMarks } from "@/components/case-studies/client-logos";
+import {
+  sideBeamGlowLeftSubtle,
+  sideBeamGlowRightSubtle,
+} from "@/lib/shadows";
+import { baseUrl } from "@/lib/site";
+import { absoluteImageUrl } from "@/lib/seo";
+import { getTranslations } from "next-intl/server";
+import { headers } from "next/headers";
+import { getSafeLocale } from "@/lib/i18n-messages";
+import { localizedUrl } from "@/lib/i18n";
 
-import { Timeline } from "@/components/case-studies/timeline";
-import caseStudy1 from "@/components/case-studies/case-study-1/page.mdx";
-import caseStudy2 from "@/components/case-studies/case-study-2/page.mdx";
-import caseStudy3 from "@/components/case-studies/case-study-3/page.mdx";
-import { motion } from "motion/react";
+export default async function CaseStudiesPage() {
+  const headerStore = await headers();
+  const locale = getSafeLocale(headerStore.get("x-studio1-locale"));
+  const t = await getTranslations("CaseStudiesIndex");
+  const studies = getAllCaseStudies(locale);
+  const featuredStudy = getFeaturedCaseStudy(locale);
+  const remainingStudies = studies.filter((s) => s.slug !== featuredStudy?.slug);
 
-const timelineItems = [
-  {
-    title:
-      "New steps component and improved accessibility on Hashnode's blog and docs product.",
-    date: "2024-01-01",
-    description:
-      "At Hashnode, we want to help you build docs and blogs that are highly customizable, follow accessibility standards, and offer a great developer experience. We have been adding features and enhancements every week that focus on helping you build effective docs and blogs.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
-    mdxContent: caseStudy1,
-  },
-  {
-    title: "Development Phase",
-    date: "2024-01-01",
-    description: "Building the foundation and core features",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c",
-    mdxContent: caseStudy2,
-  },
-  {
-    title: "Launch and Beyond",
-    date: "2024-01-01",
-    description: "Taking the product to market and future plans",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-    mdxContent: caseStudy3,
-  },
-];
+  const collectionJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: t("metadataName"),
+    description: t("metadataDescription"),
+    url: localizedUrl("/case-studies", locale, baseUrl),
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Studio1",
+      url: baseUrl,
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: studies.map((study, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: localizedUrl(`/case-studies/${study.slug}`, locale, baseUrl),
+        name: study.title,
+        image: absoluteImageUrl(study.cover),
+      })),
+    },
+  };
 
-export default function CaseStudies() {
   return (
-    <div className="mt-20 relative py-12">
-      <div className="top-[-10rem] md:top-[-8rem] z-[-1] left-[-80%] md:left-[-20%] fixed bg-gradient-to-t opacity-50 dark:opacity-30 dark:lg:opacity-80 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] -rotate-[60deg]"></div>
-      <div className="top-[-10rem] md:top-[-8rem] z-[-1] right-[-80%] md:right-[-20%] fixed bg-gradient-to-t opacity-50 dark:opacity-30 dark:lg:opacity-80 from-primary dark:to-primary to-primary blur-[8em] rounded-md transition-all translate-x-[-50%] duration-700 ease-out  h-[50rem] md:h-[60rem] w-[10rem] rotate-[40deg]"></div>
+    <section className="relative mx-auto mt-24 flex max-w-7xl flex-col px-4 pb-24">
+      <div aria-hidden className={sideBeamGlowLeftSubtle} />
+      <div aria-hidden className={sideBeamGlowRightSubtle} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
+      />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold mb-4 md:text-5xl">
-            Case{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary ">
-              Studies
-            </span>{" "}
-          </h2>
-          <p className="text-muted-foreground ">
-            We empower tech brands to build thriving <br /> developer
-            communities through DevRel and high-impact content.
-          </p>
-        </motion.div>
-
-        <Timeline items={timelineItems} />
+      {/* Hero */}
+      <div className="z-20 mt-20 text-center">
+        <Badge className="mx-auto mb-6 flex w-fit items-center gap-2 bg-[color-mix(in_hsl,hsl(var(--primary-surface))_85%,hsl(var(--primary))_15%)] pb-1 hover:bg-[color-mix(in_hsl,hsl(var(--primary-surface))_85%,hsl(var(--primary))_15%)] dark:hover:bg-primary">
+          <Trophy className="size-5" weight="fill" />
+          {t("badge")}
+        </Badge>
+        <h1 className="mb-5 font-primary text-4xl font-normal tracking-tight sm:text-6xl">
+          {t("titlePrefix")}{" "}
+          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-normal italic text-transparent">
+            {t("titleHighlight")}
+          </span>
+        </h1>
+        <p className="mx-auto max-w-xl text-base text-muted-foreground sm:text-lg">
+          {t("description")}
+        </p>
       </div>
-    </div>
+
+      {/* Featured */}
+      {featuredStudy ? (
+        <div className="z-20 mt-16">
+          <FeaturedCaseStudy />
+        </div>
+      ) : null}
+
+      {/* Grid */}
+      <div className="z-20 mt-8 grid w-full min-w-0 grid-cols-1 gap-8 md:grid-cols-2">
+        {remainingStudies.map((study) => (
+          <CaseStudyCard key={study.slug} study={study} />
+        ))}
+      </div>
+
+      {/* Closing logo wall */}
+      <div className="z-20 mt-24 flex flex-col items-center">
+        <p className="mb-8 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+          {t("trustedBy")}
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+          {studies.map((study) => {
+            const logo = getClientLogo(study.slug);
+            if (!logo) return null;
+            return (
+              <Link
+                key={study.slug}
+                href={`/case-studies/${study.slug}`}
+                aria-label={study.client}
+                className="flex items-center gap-2.5 opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+              >
+                <Image
+                  src={logo.icon}
+                  alt=""
+                  className="size-6 rounded object-contain"
+                />
+                <span className="text-sm font-medium">{study.client}</span>
+              </Link>
+            );
+          })}
+          {trustedClientMarks.map((client) => (
+            <a
+              key={client.name}
+              href={client.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={client.name}
+              className="flex items-center gap-2.5 opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+            >
+              <Image
+                src={client.icon}
+                alt=""
+                className="size-6 rounded object-contain"
+              />
+              <span className="text-sm font-medium">{client.name}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

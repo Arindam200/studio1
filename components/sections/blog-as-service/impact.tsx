@@ -13,26 +13,26 @@ export default function Impact() {
       <div className="container flex flex-wrap max-sm:flex-col max-sm:px-5 justify-center gap-6 ">
         <CardWithGrid>
           <div className="w-full h-40 border font-bold border-orange-400 rounded-md p-3 flex flex-col justify-center items-center space-y-2">
-            <div className="text-center sm:text-5xl text-3xl">2M+</div>
-            <div className="text-center text-xl ">Content Views</div>
+            <div className="text-center sm:text-5xl text-3xl font-numeric tabular-nums">300+</div>
+            <div className="text-center text-xl ">Tutorials & Guides</div>
           </div>
         </CardWithGrid>
         <CardWithGrid>
           <div className="w-full h-40 border font-bold border-orange-400 rounded-md p-3 flex flex-col justify-center items-center space-y-2">
-            <div className="text-center sm:text-5xl text-3xl">25+</div>
+            <div className="text-center sm:text-5xl text-3xl font-numeric tabular-nums">25+</div>
             <div className="text-center text-xl ">Teams Helped</div>
           </div>
         </CardWithGrid>
         <CardWithGrid>
           <div className="w-full h-40 border font-bold border-orange-400 rounded-md p-3 flex flex-col justify-center items-center space-y-2">
-            <div className="text-center sm:text-5xl text-3xl">50%</div>
-            <div className="text-center text-xl ">Cost Savings</div>
+            <div className="text-center sm:text-5xl text-3xl font-numeric tabular-nums">3-7d</div>
+            <div className="text-center text-xl ">Typical Draft Window</div>
           </div>
         </CardWithGrid>
         <CardWithGrid>
           <div className="w-full h-40 border font-bold border-orange-400 rounded-md p-3 flex flex-col justify-center items-center space-y-2">
-            <div className="text-center sm:text-5xl text-3xl">65%+</div>
-            <div className="text-center text-xl ">Client Retention</div>
+            <div className="text-center sm:text-5xl text-3xl font-numeric tabular-nums">10-14d</div>
+            <div className="text-center text-xl ">Complex Deep Dives</div>
           </div>
         </CardWithGrid>
       </div>

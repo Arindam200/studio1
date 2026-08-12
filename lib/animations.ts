@@ -18,6 +18,8 @@ export const fadeInUp = {
       duration: 0.6,
       ease: "easeOut" as const,
     },
+    // blur(0) still creates a filter containing block that clips descenders (g, y, p)
+    transitionEnd: { filter: "none" },
   },
 };
 
@@ -34,6 +36,7 @@ export const fadeIn = {
       duration: 0.8,
       ease: "easeOut" as const,
     },
+    transitionEnd: { filter: "none" },
   },
 };
 
@@ -76,6 +79,7 @@ export const itemVariants = {
       stiffness: 100,
       duration: 0.6,
     },
+    transitionEnd: { filter: "none" },
   },
 };
 
@@ -96,6 +100,7 @@ export const headerVariants = {
       stiffness: 100,
       duration: 0.5,
     },
+    transitionEnd: { filter: "none" },
   },
 };
 
@@ -159,6 +164,7 @@ export const cardVariants = {
       duration: 1.8,
       ease: [0.22, 1, 0.36, 1] as const,
     },
+    transitionEnd: { filter: "none" },
   },
 };
 
@@ -169,6 +175,7 @@ export const serviceItemVariants = {
     opacity: 1,
     filter: "blur(0px)",
     transition: { duration: 0.3 },
+    transitionEnd: { filter: "none" },
   },
 };
 
@@ -183,15 +190,28 @@ export const staggerChildren = {
   },
 };
 
+/** Slow ambient drift for decorative hero glow orbs (product page). */
+export const productHeroGlowAmbient = {
+  y: [0, -14, 6, 0],
+  x: [0, 12, -8, 0],
+  opacity: [0.82, 0.98, 0.88, 0.82],
+  scale: [1, 1.05, 0.98, 1],
+  transition: {
+    duration: 14,
+    repeat: Number.POSITIVE_INFINITY,
+    ease: "easeInOut" as const,
+  },
+};
+
 // Helper function to create floating animation
 export const createFloatingAnimation = (delay: number, rotate: number) => ({
-  y: [0, -10, 0],
+  y: [0, -6, 0],
   rotate: rotate,
   transition: {
     y: {
-      duration: 3,
+      duration: 5,
       repeat: Number.POSITIVE_INFINITY,
-      ease: "easeInOut" as const,
+      ease: [0.45, 0, 0.55, 1] as const,
       delay: delay,
     },
     rotate: {
@@ -229,6 +249,7 @@ export const createCardVariantsWithDelay = (
       ease: [0.22, 1, 0.36, 1] as const,
       delay: index * delayMultiplier,
     },
+    transitionEnd: { filter: "none" },
   },
 });
 

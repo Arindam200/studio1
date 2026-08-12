@@ -24,19 +24,20 @@ export const CollaborationIllustration = ({
             >
               {item.showNameBeside ? (
                 <div className="flex items-center gap-2 min-w-0">
-                  <Image
-                    src={item.image}
-                    className={cn(
-                      item.isWhite
-                        ? "invert grayscale dark:invert-0 dark:grayscale"
-                        : "invert-0 grayscale dark:invert",
-                      "h-9 w-9 shrink-0 object-contain",
-                      item.className,
-                    )}
-                    alt=""
-                    width={36}
-                    height={36}
-                  />
+                  <div className={cn("relative size-9 shrink-0", item.className)}>
+                    <Image
+                      src={item.image}
+                      className={cn(
+                        item.isWhite
+                          ? "invert grayscale dark:invert-0 dark:grayscale"
+                          : "invert-0 grayscale dark:invert",
+                        "object-contain",
+                      )}
+                      alt=""
+                      fill
+                      sizes="48px"
+                    />
+                  </div>
                   <span className="text-xs font-semibold truncate">
                     {item.name}
                   </span>
@@ -44,10 +45,15 @@ export const CollaborationIllustration = ({
               ) : (
                 <Image
                   src={item.image}
-                  className="invert grayscale dark:invert-0 dark:grayscale h-fit object-contain"
+                  className={cn(
+                    "invert grayscale dark:invert-0 dark:grayscale",
+                    "h-fit object-contain",
+                    item.className,
+                  )}
                   alt={item.name}
                   width={100}
                   height={100}
+                  style={{ width: "auto", height: "auto" }}
                 />
               )}
             </div>

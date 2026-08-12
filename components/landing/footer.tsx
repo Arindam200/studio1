@@ -1,6 +1,11 @@
 "use client";
 import React from "react";
-import { IconBrandLinkedin, IconBrandX, IconNews } from "@tabler/icons-react";
+import {
+  IconBrandLinkedin,
+  IconBrandX,
+  IconBrandYoutube,
+  IconNews,
+} from "@tabler/icons-react";
 import Logo from "../ui/svgs/logo";
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -9,8 +14,12 @@ import {
   headerVariants,
   gradientVariants,
 } from "@/lib/animations";
+import { Num } from "@/components/ui/num";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
+
   return (
     <motion.section
       className="relative max-h-fit  mt-0"
@@ -67,11 +76,10 @@ export default function Footer() {
                   </span>
                 </motion.div>
                 <motion.p
-                  className="text-foreground/90 font-semibold text-center sm:w-96"
+                  className="max-w-sm text-center text-sm font-normal leading-relaxed text-muted-foreground sm:text-base"
                   variants={headerVariants}
                 >
-                  Technical content and DevRel partner for devtool and SaaS
-                  teams.
+                  {t("description")}
                 </motion.p>
               </motion.div>
               <motion.div
@@ -93,6 +101,13 @@ export default function Footer() {
                   <span className="sr-only">LinkedIn</span>
                 </Link>
                 <Link
+                  href="https://www.youtube.com/@studio1hq/"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <IconBrandYoutube className="size-6 hover:text-primary duration-300" />
+                  <span className="sr-only">YouTube</span>
+                </Link>
+                <Link
                   href="https://dev.to/studio1hq"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
@@ -102,28 +117,40 @@ export default function Footer() {
               </motion.div>
               <motion.div className="flex flex-wrap gap-4 text-sm font-medium text-neutral-500 dark:text-neutral-400 max-w-full">
                 <Link
-                  className="hover:text-foreground duration-300 hover:font-semibold"
-                  href={"/devrel-as-service"}
+                  className="hover:text-foreground duration-300"
+                  href={"/developer-relations-growth-campaigns"}
                 >
-                  DevRel
+                  {t("links.growth")}
                 </Link>
                 <Link
-                  className="hover:text-foreground duration-300 hover:font-semibold"
+                  className="hover:text-foreground duration-300"
+                  href={"/developer-documentation-dx-audit"}
+                >
+                  {t("links.docs")}
+                </Link>
+                <Link
+                  className="hover:text-foreground duration-300"
                   href={"/product"}
                 >
-                  Products
+                  {t("links.products")}
                 </Link>
                 <Link
-                  className="hover:text-foreground duration-300 hover:font-semibold"
+                  className="hover:text-foreground duration-300"
                   href={"/work"}
                 >
-                  Work
+                  {t("links.work")}
                 </Link>
                 <Link
-                  className="hover:text-foreground duration-300 hover:font-semibold"
+                  className="hover:text-foreground duration-300"
                   href={"/blog"}
                 >
-                  Blog
+                  {t("links.blog")}
+                </Link>
+                <Link
+                  className="hover:text-foreground duration-300"
+                  href={"/careers"}
+                >
+                  {t("links.careers")}
                 </Link>
               </motion.div>
             </motion.div>
@@ -133,20 +160,20 @@ export default function Footer() {
             variants={headerVariants}
           >
             <p className="text-base text-muted-foreground">
-              ©{new Date().getFullYear()} Studio1. All rights reserved.
+              ©<Num>{new Date().getFullYear()}</Num> Studio1. {t("rights")}
             </p>
             <nav className="flex gap-4">
               <Link
                 href="/terms"
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                Terms and Conditions
+                {t("legal.terms")}
               </Link>
               <Link
                 href="/privacy"
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                Privacy Policy
+                {t("legal.privacy")}
               </Link>
             </nav>
           </motion.div>

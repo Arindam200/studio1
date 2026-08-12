@@ -1,0 +1,348 @@
+{
+  "LocaleSwitcher": {
+    "label": "भाषा",
+    "english": "अंग्रेज़ी",
+    "french": "फ़्रेंच",
+    "spanish": "स्पेनिश",
+    "hindi": "हिन्दी",
+    "chinese": "चीनी"
+  },
+  "Metadata": {
+    "home": {
+      "title": "DevTools के लिए Technical Content और DevRel Agency",
+      "description": "Studio1 SaaS, AI और devtool teams को technical content, docs, videos, launches और DevRel programs ship करने में मदद करता है।"
+    },
+    "services": {
+      "technicalContent": {
+        "title": "Technical Content Marketing Services",
+        "description": "Developer products के लिए technical content marketing: tutorials, integration guides, SEO articles और code-rich content जो trust और adoption बढ़ाते हैं।"
+      },
+      "docs": {
+        "title": "Developer Documentation और DX Audit Services",
+        "description": "AI और DevTool products के लिए developer documentation और DX audits: onboarding reviews, API clarity, quickstarts, reference docs और first success का clearer path."
+      },
+      "video": {
+        "title": "Developer Video Production Services",
+        "description": "AI और DevTool startups के लिए developer video production: technical demos, tutorials, scripts, edits, thumbnails, SEO titles, Shorts और publishing cadence."
+      },
+      "devrel": {
+        "title": "Developer Relations और Growth Campaigns",
+        "description": "Developer products के लिए DevRel और growth campaigns: advocacy, community programs, product launches, organic distribution और influencer management."
+      }
+    },
+    "pages": {
+      "about": {
+        "title": "Studio1 के बारे में",
+        "description": "Studio1 के बारे में जानें, एक developer-focused content agency जो devtool और SaaS teams को technical writing, DevRel, video और community work से grow करने में मदद करती है."
+      },
+      "work": {
+        "title": "Client Work",
+        "description": "AI, cloud, DevOps और web teams के लिए Studio1 द्वारा बनाए गए technical tutorials, integration guides और developer content."
+      },
+      "product": {
+        "title": "Developer teams के लिए Studio1 Products",
+        "description": "Developers और SaaS teams के लिए Studio1-built tools, जिनमें web analytics के लिए Raah और website asset extraction के लिए AssetSnip शामिल हैं."
+      },
+      "careers": {
+        "title": "Studio1 Careers",
+        "description": "Social content, visual video content या growth internship में Studio1 से जुड़ें और developer-focused products को सही audience तक पहुँचाने में मदद करें."
+      },
+      "caseStudies": {
+        "title": "Developer Growth Case Studies",
+        "description": "देखें Studio1 ने technical content, DevRel और community work से devtool और SaaS companies को developer adoption बढ़ाने में कैसे मदद की."
+      }
+    }
+  },
+  "ServiceHero": {
+    "technicalContent": {
+      "badge": "सेवाएँ",
+      "titleAccent": "Technical",
+      "titleRest": "Content Marketing",
+      "description": "हम developer tutorials, guides और SEO content बनाते हैं जो trust बनाते हैं, product visibility बढ़ाते हैं और technical adoption को आगे बढ़ाते हैं।",
+      "primaryCta": "कॉल बुक करें",
+      "secondaryCta": "सेवाएँ देखें",
+      "stats": {
+        "views": "tutorials और guides",
+        "teams": "teams helped",
+        "reddit": "typical draft window",
+        "partners": "complex deep dives"
+      }
+    },
+    "docs": {
+      "badge": "सेवाएँ",
+      "titleAccent": "Developer Documentation",
+      "titleRest": "और DX Audits",
+      "description": "Documentation audits, DX reviews और docs improvements जो developers को आपके product के साथ first success तक पहुँचाते हैं।",
+      "primaryCta": "कॉल बुक करें",
+      "secondaryCta": "सेवाएँ देखें",
+      "stats": {
+        "audits": "docs audits",
+        "pages": "docs edits और revamps",
+        "tracks": "docs work"
+      }
+    },
+    "devrel": {
+      "badge": "सेवाएँ",
+      "titleAccent": "Developer Relations",
+      "titleRest": "और Growth Campaigns",
+      "description": "Developer products के लिए advocacy, community growth, launch campaigns, organic distribution और creator programs.",
+      "primaryCta": "कॉल बुक करें",
+      "secondaryCta": "सेवाएँ देखें",
+      "stats": {
+        "events": "high-impact events",
+        "teams": "teams helped",
+        "partners": "partner companies",
+        "launch": "launches supported"
+      }
+    },
+    "video": {
+      "badge": "Developer video production",
+      "titlePrefix": "हम technical videos बनाते हैं",
+      "titleHighlight": "developer brands के लिए.",
+      "description": "Developer brands के लिए technical demos, tutorials, scripts, edits, shorts और upload-ready assets.",
+      "primaryCta": "कॉल बुक करें",
+      "previewTitle": "LLM Fine-Tuning & Model Iteration Loop",
+      "previewSubtitle": "Studio1 technical video sample"
+    }
+  },
+  "Hero": {
+    "badgePrefix": "भरोसा किया",
+    "badgeSuffix": "DevTool और SaaS टीमों ने",
+    "badgeSuffixShort": "टीमों ने",
+    "titleLine1": "तकनीकी कंटेंट और",
+    "titleLine2": "पार्टनर फॉर",
+    "description": "हम SaaS और devtool teams को content, docs और DevRel publish करने में मदद करते हैं जो search और trust बनाते हैं.",
+    "descriptionRich": "हम SaaS और devtool teams को content, docs और DevRel publish करने में मदद करते हैं<br></br>जो search और trust बनाते हैं.",
+    "primaryCta": "रणनीति कॉल बुक करें",
+    "secondaryCta": "सेवाएँ देखें",
+    "trustedAria": "35 से अधिक devtool टीमों ने भरोसा किया",
+    "trustedPrefix": "भरोसा किया",
+    "trustedSuffix": "devtool टीमों ने"
+  },
+  "Nav": {
+    "contact": "संपर्क करें",
+    "items": {
+      "about": "हमारे बारे में",
+      "blog": "हमारा ब्लॉग",
+      "caseStudies": "केस स्टडी",
+      "clientWork": "क्लाइंट वर्क",
+      "content": "कंटेंट",
+      "devrel": "DevRel और ग्रोथ",
+      "docs": "डॉक्यूमेंटेशन और DX ऑडिट",
+      "home": "होम",
+      "overview": "अवलोकन",
+      "process": "प्रक्रिया",
+      "product": "प्रोडक्ट",
+      "proof": "प्रमाण",
+      "results": "परिणाम",
+      "services": "सेवाएँ",
+      "technicalContent": "तकनीकी कंटेंट मार्केटिंग",
+      "video": "डेवलपर वीडियो प्रोडक्शन"
+    },
+    "descriptions": {
+      "blog": "Studio1 टीम के लेख और विचार",
+      "caseStudies": "डॉक्स, DevRel, लॉन्च और कंटेंट वर्क से प्रमाण",
+      "clientWork": "क्लाइंट्स के लिए लिखे गए ट्यूटोरियल और गाइड"
+    }
+  },
+  "WorkPage": {
+    "eyebrow": "हमारे clients के लिए published",
+    "title": "Client Work",
+    "description": "Tutorials, guides और developer content जो हम partner teams के लिए बनाते हैं."
+  },
+  "AboutPage": {
+    "titlePrefix": "आपकी",
+    "titleHighlightOne": "Product Story",
+    "titleMiddle": "को",
+    "titleHighlightTwo": "Developers",
+    "titleSuffix": "तक एक blog, video और initiative के साथ पहुँचाते हैं",
+    "descriptionLineOne": "हम tech companies को developer communities grow करने में मदद करते हैं",
+    "descriptionLineTwo": "DevRel और technical content के जरिए जो developers से connect करता है.",
+    "tags": {
+      "developerCentric": "Developer-Centric",
+      "technicalExpertise": "Technical Expertise",
+      "communityDriven": "Community-Driven",
+      "contentFocused": "Content Focused",
+      "endToEnd": "End-to-End Solutions"
+    }
+  },
+  "ProductPage": {
+    "visitProduct": "{name} देखें",
+    "hero": {
+      "badge": "Built by",
+      "titlePrefix": "हमारे",
+      "titleHighlight": "Products",
+      "description": "Developers, designers और teams के लिए बनाए और ship किए गए tools."
+    },
+    "pipeline": {
+      "category": "AI SaaS",
+      "status": "In progress",
+      "title": "upcoming ..."
+    }
+  },
+  "CareersPage": {
+    "badge": "हम hiring कर रहे हैं",
+    "titlePrefix": "उस team से जुड़ें जो",
+    "titleHighlight": "developer-first",
+    "titleSuffix": "content बनाती है",
+    "description": "Studio1 technical content और DevRel से devtool और SaaS teams को grow करने में मदद करता है, साथ में Raah और AssetSnip जैसे products बनाता है.",
+    "internship": "Internship",
+    "posted": "Posted {date}",
+    "applyNow": "Apply now",
+    "allDepartments": "All",
+    "empty": "अभी कोई open position नहीं है. जल्द फिर देखें.",
+    "perks": {
+      "remote": "Remote-first",
+      "developerFocused": "Developer-focused",
+      "smallTeam": "Small team"
+    }
+  },
+  "HomeDomains": {
+    "eyebrow": "हम क्या ऑफर करते हैं",
+    "titlePrefix": "हम जिन सेवाओं को चलाते हैं",
+    "titleHighlight": "डेवलपर ब्रांड्स के लिए",
+    "description": "Content, docs, video, DevRel, launches और creator programs for developer brands.",
+    "explore": "सेवा देखें",
+    "offerings": [
+      {
+        "label": "तकनीकी कंटेंट लेखन",
+        "description": "डेवलपर ट्यूटोरियल, गाइड और डॉक्यूमेंटेशन जो भरोसा बनाते हैं, सर्च में रैंक करते हैं और प्रोडक्ट अपनाने में मदद करते हैं।"
+      },
+      {
+        "label": "Developer advocacy",
+        "description": "एंड-टू-एंड DevRel प्रोग्राम जो रणनीति, कंटेंट और इवेंट्स के जरिए आपके प्रोडक्ट के आसपास समुदाय बनाते हैं।"
+      },
+      {
+        "label": "डेवलपर वीडियो प्रोडक्शन",
+        "description": "AI और DevTool टीमों के लिए प्रोडक्ट डेमो, how-to और इंटीग्रेशन वीडियो ताकि डेवलपर्स प्रोडक्ट जल्दी समझें।"
+      },
+      {
+        "label": "कंटेंट क्रिएशन",
+        "description": "कंटेंट आइडिया, तकनीकी angles, social posts और distribution assets ताकि developer brands सही channels पर active रहें।"
+      },
+      {
+        "label": "डॉक्यूमेंटेशन और DX ऑडिट",
+        "description": "डॉक्स ऑडिट, डॉक्यूमेंटेशन और DX सुधार: onboarding review, शिप करने योग्य गाइड और पहले सफल अनुभव तक स्पष्ट रास्ता।"
+      },
+      {
+        "label": "ऑर्गेनिक ग्रोथ कैंपेन",
+        "description": "मल्टी-चैनल कैंपेन जो buzz बनाते हैं, adoption बढ़ाते हैं और आपके प्रोडक्ट को developer communities में स्थापित करते हैं।"
+      },
+      {
+        "label": "प्रोडक्ट लॉन्च सपोर्ट",
+        "description": "लॉन्च visibility बढ़ाने और interest को users में बदलने के लिए strategy, content और community activation।"
+      },
+      {
+        "label": "इन्फ्लुएंसर मैनेजमेंट",
+        "description": "Relevant creators ढूँढना, campaigns चलाना और developer-focused audiences में authentic visibility बढ़ाना।"
+      }
+    ]
+  },
+  "HomeServices": {
+    "eyebrow": "सेवाएँ",
+    "title": "हम क्या करते हैं",
+    "description": "Technical content, documentation और DevRel programs built for developer adoption.",
+    "stats": {
+      "views": "कंटेंट व्यूज़",
+      "companies": "पार्टनर कंपनियाँ",
+      "events": "high-impact events",
+      "launch": "launches supported"
+    },
+    "cards": {
+      "content": {
+        "badgeOne": "व्यूज़",
+        "badgeTwo": "टीमें",
+        "titleStrong": "तकनीकी",
+        "titleRest": "कंटेंट",
+        "description": "डेवलपर ट्यूटोरियल, गाइड और SEO कंटेंट जो रैंक करता है और प्रोडक्ट adoption बढ़ाता है।"
+      },
+      "growth": {
+        "badgeOne": "इवेंट्स",
+        "badgeTwo": "launches",
+        "titleStrong": "डेवलपर",
+        "titleRest": "ग्रोथ",
+        "description": "DevRel, launches, organic campaigns, creator programs और community growth।"
+      }
+    }
+  },
+  "GlobalReach": {
+    "eyebrow": "वैश्विक पहुँच",
+    "titlePrefix": "दुनिया भर की टीमों की",
+    "titleHighlight": "मदद",
+    "description": "India, Brazil, Vietnam, Australia, Israel, USA, France, Netherlands और Singapore की companies के साथ partnership और collaboration."
+  },
+  "Testimonials": {
+    "eyebrow": "प्रशंसापत्र",
+    "title": "हमारे क्लाइंट क्या कहते हैं",
+    "description": "Founders, CEOs और builders Studio1 के साथ अपना experience share करते हैं.",
+    "seeMore": "और देखें"
+  },
+  "DeveloperJourney": {
+    "eyebrow": "यह कैसे काम करता है",
+    "titlePrefix": "डेवलपर्स आपके प्रोडक्ट को कैसे",
+    "titleHighlight": "खोजते और अपनाते हैं",
+    "titleSuffix": "",
+    "description": "Developer adoption सही stage पर सही content से शुरू होता है.",
+    "stageLabel": "स्टेज",
+    "stages": {
+      "discover": {
+        "title": "Discover",
+        "description": "हम audience map करके high-intent topics को clear strategy में बदलते हैं."
+      },
+      "engage": {
+        "title": "Engage",
+        "description": "हमारे engineers और writers technically validated tutorials, guides और demos बनाते हैं."
+      },
+      "adopt": {
+        "title": "Adopt",
+        "description": "हम distribute करते हैं, adoption signals measure करते हैं और what works improve करते हैं."
+      }
+    }
+  },
+  "CTA": {
+    "titleLine1": "डेवलपर adoption",
+    "titleLine2": "scale करने के लिए तैयार?",
+    "descriptionLine1": "आइए बात करें कि हम आपको कैसे",
+    "descriptionLine2": "ज़्यादा developers तक पहुँचने और adoption तेज़ करने में मदद कर सकते हैं।",
+    "button": "कॉल शेड्यूल करें",
+    "bullets": {
+      "savings": "In-house hiring से leaner",
+      "lockIn": "कोई lock-in नहीं",
+      "content": "Developer-first content",
+      "turnaround": "तेज़ turnaround"
+    }
+  },
+  "CaseStudiesIndex": {
+    "metadataName": "Studio1 केस स्टडीज़",
+    "metadataDescription": "वास्तविक उदाहरण कि Studio1 कैसे devtool और SaaS teams को technical content और distribution के ज़रिए growth, rankings और developer adoption बढ़ाने में मदद करता है।",
+    "badge": "केस स्टडीज़",
+    "titlePrefix": "Developer Growth Work की",
+    "titleHighlight": "Case Studies",
+    "description": "Technical content, DevRel, documentation और launch work से proof-led examples.",
+    "trustedBy": "Developer-first teams द्वारा trusted"
+  },
+  "NotFound": {
+    "eyebrow": "404",
+    "titlePrefix": "पेज",
+    "titleHighlight": "नहीं मिला",
+    "description": "आप जो पेज खोज रहे हैं वह मौजूद नहीं है या हटा दिया गया है।",
+    "homeCta": "होम पर वापस जाएँ",
+    "servicesCta": "सेवाएँ देखें"
+  },
+  "Footer": {
+    "description": "Devtool और SaaS teams के लिए technical content और developer growth partner.",
+    "rights": "सर्वाधिकार सुरक्षित।",
+    "links": {
+      "growth": "Developer Growth",
+      "docs": "Docs & DX",
+      "products": "Products",
+      "work": "Client Work",
+      "blog": "हमारा ब्लॉग",
+      "careers": "करियर"
+    },
+    "legal": {
+      "terms": "नियम और शर्तें",
+      "privacy": "Privacy Policy"
+    }
+  }
+}

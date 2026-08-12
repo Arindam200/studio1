@@ -1,6 +1,4 @@
-import { baseUrl } from "./sitemap";
-
-// Machine-readable site summary for AI crawlers: https://studio1hq.com/llms.txt
+import { baseUrl } from "@/lib/site";
 
 export default function robots() {
   return {
@@ -8,7 +6,7 @@ export default function robots() {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/_next/"],
+        disallow: ["/api/"],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,

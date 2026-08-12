@@ -12,6 +12,7 @@ import ReadySet from "@/public/assets/readyset.png";
 import Nitric from "@/public/assets/nitric.svg";
 import Jozu from "@/public/assets/jozu.png";
 import Memori from "@/public/assets/memori.png";
+import MemoriLogoLight from "@/public/assets/memori-logo-light.webp";
 import CodeRabbit from "@/public/assets/coderabbit.png";
 import Eachlab from "@/public/assets/eachlab.png";
 import Stream from "@/public/assets/stream.png";
@@ -25,7 +26,6 @@ import Brightdata from "@/public/assets/brightdata.png";
 import ForgeCode from "@/public/assets/forgecode.png";
 import ScrapeGraph from "@/public/assets/scrapegraph.png";
 import Dualite from "@/public/assets/dualite.png";
-import Lambdatest from "@/public/assets/lambdatest.png";
 import Pieces from "@/public/assets/pieces.png";
 import Amazon from "@/public/assets/amazon.png";
 import Fabric from "@/public/assets/fabric.png";
@@ -37,11 +37,28 @@ import TryCua from "@/public/assets/trycua.png";
 import Unacademy from "@/public/assets/unacademy.png";
 import Uploadcare from "@/public/assets/uploadcare.png";
 import Apilayer from "@/public/assets/apilayer.png";
+import WeaviateMark from "@/public/assets/weaviate-mark.svg";
+import WeaviateImage from "@/public/assets/weaviate.png";
+import WeaviateFull from "@/public/assets/weaviate-full.svg";
+import MaximFull from "@/public/assets/maxim-full.png";
+import MaximMark from "@/public/assets/maxim-mark.png";
+import Puck from "@/public/assets/puck.svg";
+import PuckWordmark from "@/public/assets/puck-wordmark.svg";
+import Unsiloed from "@/public/assets/unsiloed.png";
+import UnsiloedFull from "@/public/assets/unsiloed-full.png";
+import UnsiloedOriginal from "@/public/assets/unsiloed-original.png";
+import InteractAi from "@/public/assets/interact-ai.svg";
+import InteractAiLogo from "@/public/assets/interact-ai-logo.svg";
+import InteractAiMark from "@/public/assets/interact-ai-mark.png";
+import Corsair from "@/public/assets/corsair.png";
+import TestMuAiLogo from "@/public/assets/testmu-ai-logo.svg";
+import TestMuAiMark from "@/public/assets/testmu-ai-mark.svg";
 
-import LambdatestFull from "@/public/assets/lambdatest-full.png";
 import RagieFull from "@/public/assets/ragie-full.png";
 import EntelligenceFull from "@/public/assets/entelligence-full.png";
 import MemoriFull from "@/public/assets/Memori-full.png";
+import EachlabWordmarkDark from "@/public/assets/eachlabs-wordmark-dark.svg";
+import EachlabWordmarkLight from "@/public/assets/eachlabs-wordmark-light.svg";
 import MotiaFull from "@/public/assets/motia-full.png";
 import GraphiteFull from "@/public/assets/graphite-full.svg";
 import PermitFull from "@/public/assets/Permit-full.png";
@@ -107,6 +124,7 @@ export {
   Vmware,
   Webcrumbs,
   Memori,
+  MemoriLogoLight,
   Crawlee,
   Opire,
   Encore,
@@ -127,13 +145,27 @@ export {
   Scaler,
   TryCua,
   Apilayer,
+  WeaviateMark,
+  WeaviateImage,
+  WeaviateFull,
+  MaximFull,
+  MaximMark,
+  Puck,
+  PuckWordmark,
+  Unsiloed,
+  UnsiloedFull,
+  UnsiloedOriginal,
+  InteractAi,
+  InteractAiLogo,
+  InteractAiMark,
+  Corsair,
+  TestMuAiLogo,
+  TestMuAiMark,
   Unacademy,
   Uploadcare,
   MotiaFull,
   Nitric,
   Jozu,
-  Lambdatest,
-  LambdatestFull,
   GraphiteFull,
   CodeRabbit,
   PermitFull,
@@ -151,6 +183,8 @@ export {
   Pieces,
   ReadySetFull,
   MemoriFull,
+  EachlabWordmarkDark,
+  EachlabWordmarkLight,
   EntelligenceFull,
   RagieFull,
   NitricFull,

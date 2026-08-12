@@ -1,26 +1,21 @@
-import { Metadata } from "next";
-import { baseUrl } from "@/app/sitemap";
+import { pageMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import { getTranslations } from "next-intl/server";
+import { getSafeLocale } from "@/lib/i18n-messages";
 
-export const metadata: Metadata = {
-  title: "Careers",
-  description:
-    "Join Studio1 and help devtool companies grow through technical content and DevRel strategies. Explore open positions for technical writers, DevRel specialists, and content strategists.",
-  openGraph: {
-    title: "Careers | Studio1",
-    description:
-      "Join Studio1 and help devtool companies grow through technical content and DevRel strategies. Explore open positions for technical writers, DevRel specialists, and content strategists.",
-    url: baseUrl + "/careers",
-    siteName: "Studio1",
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    title: "Careers | Studio1",
-    card: "summary_large_image",
-    description:
-      "Join Studio1 and help devtool companies grow through technical content and DevRel strategies. Explore open positions for technical writers, DevRel specialists, and content strategists.",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("Metadata.pages.careers");
+  const headerStore = await headers();
+  const locale = getSafeLocale(headerStore.get("x-studio1-locale"));
+
+  return pageMetadata({
+    title: t("title"),
+    description: t("description"),
+    path: "/careers",
+    locale,
+  });
+}
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return children;

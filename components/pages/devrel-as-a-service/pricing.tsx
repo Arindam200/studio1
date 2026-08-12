@@ -12,6 +12,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { staggerChildren, itemVariants } from "@/lib/animations";
+import { NumericText } from "@/components/ui/num";
+import { pricingDecorGlow } from "@/lib/shadows";
 
 const pricingPlans = [
   {
@@ -77,8 +79,8 @@ export default function PricingSection() {
   return (
     <div className="w-full py-24 max-w-7xl mx-auto relative">
       {/* Decorative shapes */}
-      <div className="absolute top-20 right-20 w-32 h-32 bg-primary blur-[4em] rounded-full rotate-12 " />
-      <div className="absolute bottom-0 left-20 w-24 h-24 bg-primary blur-[4em] rounded-full -rotate-12 " />
+      <div className={`absolute top-20 right-20 w-32 h-32 rounded-full rotate-12 ${pricingDecorGlow}`} />
+      <div className={`absolute bottom-0 left-20 w-24 h-24 rounded-full -rotate-12 ${pricingDecorGlow}`} />
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-16"
@@ -89,7 +91,7 @@ export default function PricingSection() {
         >
           <h2 className="text-4xl font-bold mb-4 md:text-5xl">
             The Perfect Plan for <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
+            <span className="serif-accent font-accent italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
               Your Needs
             </span>
           </h2>
@@ -118,7 +120,7 @@ export default function PricingSection() {
                 {/* Card content remains the same */}
                 {plan.isRecommended && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                    <Badge className="text-primary-foreground">
                       Recommended
                     </Badge>
                   </div>
@@ -127,7 +129,9 @@ export default function PricingSection() {
                   <CardTitle className="flex flex-col items-start">
                     <span className="text-lg font-bold mb-2">{plan.name}</span>
                     <div className="flex items-end gap-1">
-                      <span className="text-4xl font-bold">{plan.price}</span>
+                      <span className="text-4xl font-bold font-numeric tabular-nums">
+                        {plan.price}
+                      </span>
                       {plan.price !== "Custom" && (
                         <span className="text-muted-foreground mb-1">/mo</span>
                       )}
@@ -140,7 +144,9 @@ export default function PricingSection() {
                     {plan.features.map((feature, index) => (
                       <li key={index} className="flex items-start">
                         <Check className="h-5 w-5 text-green-400 mr-2 shrink-0" />
-                        <span>{feature}</span>
+                        <span>
+                          <NumericText>{feature}</NumericText>
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -150,11 +156,7 @@ export default function PricingSection() {
                     variant={
                       plan.buttonVariant === "primary" ? "default" : "outline"
                     }
-                    className={`w-full ${
-                      plan.buttonVariant === "primary"
-                        ? "bg-primary hover:bg-primary/90 text-primary-foreground"
-                        : ""
-                    }`}
+                    className="w-full"
                   >
                     {plan.buttonText}
                   </Button>

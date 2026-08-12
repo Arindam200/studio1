@@ -1,44 +1,42 @@
 # Studio1
 
-> Technical content and DevRel partner for devtool and SaaS teams.
+> Technical content and developer growth partner for devtool, SaaS, and AI teams.
 
-Studio1 helps developer-focused companies publish tutorials, documentation, and DevRel programs that rank in search, activate developers, and build long-term trust. We have worked with 40+ companies including Amazon, Nebius AI, Bright Data, Permit.io, CopilotKit, LambdaTest, LiteLLM, and Stream.
+Studio1 helps developer-focused companies grow adoption through technical content marketing, developer documentation and DX audits, developer video production, and developer relations growth campaigns. The team creates tutorials, guides, docs, demos, launch campaigns, community programs, organic distribution, and creator collaborations for products built for developers.
 
 ## Services
 
-- [Blog as a Service](https://studio1hq.com/blog-as-service): Developer tutorials, guides, and technical blog posts written by engineers.
-- [DevRel as a Service](https://studio1hq.com/devrel-as-service): End-to-end developer relations programs -- strategy, content, community, and events.
-- [Audit Services](https://studio1hq.com/audit-services): Developer experience and documentation audits.
-- [Tech Video Production](https://studio1hq.com/video-production): Technical video content for developer audiences.
-- [Product Launch Support](https://studio1hq.com/product-launch): Launch campaigns targeting developer communities.
-- [Organic Campaign](https://studio1hq.com/organic-campaign): SEO and organic growth campaigns for developer products.
-- [Influencer Management](https://studio1hq.com/influencer-management): Developer influencer outreach and management.
+- [Technical Content Marketing](https://studio1hq.com/technical-content-marketing): Developer tutorials, integration guides, SEO articles, and code-rich content written by engineers.
+- [Developer Documentation & DX Audits](https://studio1hq.com/developer-documentation-dx-audit): Documentation audits, onboarding reviews, API clarity, quickstarts, reference docs, and developer experience improvements.
+- [Developer Video Production](https://studio1hq.com/developer-video-production): Technical demos, product walkthroughs, long-form tutorials, Shorts, scripts, edits, thumbnails, SEO titles, and publishing support.
+- [Developer Relations & Growth Campaigns](https://studio1hq.com/developer-relations-growth-campaigns): Developer advocacy, community programs, product launches, organic growth campaigns, and influencer management.
 
 ## Key Pages
 
 - [Homepage](https://studio1hq.com/)
-- [Our Work](https://studio1hq.com/work)
-- [Blog](https://studio1hq.com/blog)
-- [Pricing](https://studio1hq.com/pricing)
+- [Client Work](https://studio1hq.com/work): Tutorials, guides, and developer content Studio1 creates for client teams.
+- [Case Studies](https://studio1hq.com/case-studies): Outcomes from technical content, docs, DevRel, and growth work.
+- [Products](https://studio1hq.com/product): Studio1-built tools including Raah, AssetSnip, and selected Studio1 products.
+- [Our Blog](https://studio1hq.com/blog): Articles and insights from the Studio1 team.
 - [About Us](https://studio1hq.com/about-us)
-- [Case Studies](https://studio1hq.com/case-studies)
 - [Careers](https://studio1hq.com/careers)
 - [Terms of Use](https://studio1hq.com/terms)
 - [Privacy Policy](https://studio1hq.com/privacy)
 
+## Products
+
+- [Raah](https://raah.dev): Web analytics and real-user observability for developers and SaaS teams.
+- [AssetSnip](https://assetsnip.com): Website asset extraction for design research and handoff.
+
 ## Team
 
-- **Arindam Majumder** -- Co-founder & Content Lead. Developer advocate, open-source contributor, and technical writer who has reached 270k+ developers.
-- **Amitesh Anand** -- Co-founder & Operations Lead. Technical writer and developer advocate with 80k+ published words across major tech platforms.
-- **Shivay Lamba** -- ML Engineer and open-source advocate.
+- **Arindam Majumder**: Co-founder and Content Lead. Developer advocate, open-source contributor, and technical writer who has reached 270k+ developers.
+- **Amitesh Anand**: Co-founder and Operations Lead. Technical writer and developer advocate with 80k+ published words across major tech platforms.
+- **Shivay Lamba**: ML engineer and open-source advocate.
 
 ## Contact
 
 - Email: contact@studio1hq.com
 - Book a call: https://cal.com/studio1/collab
-- Twitter: https://x.com/Studio1HQ
+- X/Twitter: https://x.com/Studio1HQ
 - LinkedIn: https://www.linkedin.com/company/studio1hq/
-
-## Documentation
-
-- [Docs](https://docs.studio1hq.com/)

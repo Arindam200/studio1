@@ -1,19 +1,19 @@
-/** @type {import('tailwindcss').Config} */
+import svgToDataUri from "mini-svg-data-uri";
+import tailwindcssAnimate from "tailwindcss-animate";
+import typography from "@tailwindcss/typography";
 
-const svgToDataUri = require("mini-svg-data-uri");
+import { flattenColorPalette } from "./lib/flatten-color-palette";
 
-const colors = require("tailwindcss/colors");
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
+import type { Config } from "tailwindcss";
 
-const config = {
+const config: Config = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    "./lib/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -26,12 +26,17 @@ const config = {
     },
     extend: {
       fontFamily: {
-        primary: ["var(--font-raleway)", "sans-serif"],
-        secondary: ["var(--font-jakarta)", "sans-serif"],
+        primary: ["var(--font-syne)", "sans-serif"],
+        secondary: ["var(--font-dm-sans)", "sans-serif"],
+        accent: ["var(--font-instrument-serif)", "serif"],
+        numeric: ["var(--font-numeric)", "sans-serif"],
+        inter: ["var(--font-inter)", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
         primary1: "hsl(var(--primary1))",
+        primarySurface: "hsl(var(--primary-surface))",
+        primaryDeep: "hsl(var(--primary-deep))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
@@ -89,11 +94,11 @@ const config = {
         },
         spotlight: {
           "0%": {
-            opacity: 0,
+            opacity: "0",
             transform: "translate(-72%, -62%) scale(0.5)",
           },
           "100%": {
-            opacity: 1,
+            opacity: "1",
             transform: "translate(-50%,-40%) scale(1)",
           },
         },
@@ -174,8 +179,8 @@ const config = {
     },
   },
   plugins: [
-    require("tailwindcss-animate"),
-    require("@tailwindcss/typography"),
+    tailwindcssAnimate,
+    typography,
     function ({ matchUtilities, theme }: any) {
       matchUtilities(
         {
