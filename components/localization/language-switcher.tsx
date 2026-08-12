@@ -3,6 +3,7 @@
 import { usePathname, useSearchParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import type { MouseEvent } from "react";
+import { useState } from "react";
 import { Globe } from "@phosphor-icons/react";
 import {
   DEFAULT_LOCALE,
@@ -28,12 +29,14 @@ function localeHref(pathname: string, search: string, locale: Locale) {
   return `${localizedPath}${sourcePath === "/" ? "" : search ? `?${search}` : ""}`;
 }
 
-function navigateToLocale(event: MouseEvent<HTMLAnchorElement>, locale: Locale) {
-  event.preventDefault();
-  const href = event.currentTarget.href;
+function prefetchLocalePage(href: string) {
+  if (typeof document === "undefined") return;
+  if (document.querySelector(`link[rel="prefetch"][href="${href}"]`)) return;
 
-  document.cookie = `studio1-locale=${locale}; Path=/; Max-Age=${60 * 60 * 24 * 365}; SameSite=Lax`;
-  window.location.assign(href);
+  const link = document.createElement("link");
+  link.rel = "prefetch";
+  link.href = href;
+  document.head.appendChild(link);
 }
 
 export function LanguageSwitcher({
@@ -49,6 +52,23 @@ export function LanguageSwitcher({
   const t = useTranslations("LocaleSwitcher");
   const search = searchParams.toString();
   const activeMeta = localeMeta[activeLocale] ?? localeMeta[DEFAULT_LOCALE];
+  const [pendingLocale, setPendingLocale] = useState<Locale | null>(null);
+
+  const navigateToLocale = (
+    event: MouseEvent<HTMLAnchorElement>,
+    locale: Locale,
+  ) => {
+    event.preventDefault();
+
+    if (locale === activeLocale) return;
+
+    const href = event.currentTarget.href;
+    setPendingLocale(locale);
+    document.documentElement.setAttribute("aria-busy", "true");
+    document.body.style.cursor = "progress";
+    document.cookie = `studio1-locale=${locale}; Path=/; Max-Age=${60 * 60 * 24 * 365}; SameSite=Lax`;
+    window.location.assign(href);
+  };
 
   const optionClassName = (isActive: boolean) =>
     cn(
@@ -61,19 +81,28 @@ export function LanguageSwitcher({
   const options = LOCALES.map((locale) => {
     const meta = localeMeta[locale];
     const isActive = locale === activeLocale;
+    const isPending = locale === pendingLocale;
+    const href = localeHref(pathname, search, locale);
 
     return (
       <a
         key={locale}
-        href={localeHref(pathname, search, locale)}
+        href={href}
         hrefLang={meta.hreflang}
-        className={optionClassName(isActive)}
+        aria-current={isActive ? "true" : undefined}
+        aria-busy={isPending ? "true" : undefined}
+        className={cn(
+          optionClassName(isActive),
+          pendingLocale && "pointer-events-none opacity-70",
+        )}
         onClick={(event) => navigateToLocale(event, locale)}
+        onFocus={() => prefetchLocalePage(href)}
+        onPointerEnter={() => prefetchLocalePage(href)}
       >
         <span className="text-base leading-none transition-transform duration-200 group-hover/item:scale-110">
           {meta.flag}
         </span>
-        <span>{t(translationKeys[locale])}</span>
+        <span>{isPending ? t("switching") : t(translationKeys[locale])}</span>
       </a>
     );
   });

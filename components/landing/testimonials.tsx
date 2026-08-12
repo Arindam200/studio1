@@ -48,7 +48,7 @@ export default function Testimonials() {
 
         <motion.div
           ref={containerRef}
-          className="mt-12 columns-1 gap-6 space-y-6 sm:columns-2 lg:columns-3"
+          className="mt-12 grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 xl:grid-cols-3"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
@@ -57,7 +57,7 @@ export default function Testimonials() {
           {initialTestimonials.map((testimonial) => (
             <motion.div
               key={testimonial.name}
-              className="break-inside-avoid"
+              className="h-full"
               variants={itemVariants}
             >
               <TestimonialCard testimonial={testimonial} />
@@ -70,7 +70,7 @@ export default function Testimonials() {
                 {remainingTestimonials.map((testimonial, index) => (
                   <motion.div
                     key={testimonial.name}
-                    className="break-inside-avoid"
+                    className="h-full"
                     initial={{ y: 50, opacity: 0, filter: "blur(10px)" }}
                     animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                     exit={{ y: 50, opacity: 0, filter: "blur(10px)" }}
