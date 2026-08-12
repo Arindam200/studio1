@@ -187,9 +187,11 @@
     "titleSuffix": "内容的团队",
     "description": "Studio1 通过技术内容和 DevRel 帮助 devtool 与 SaaS 团队增长，同时构建 Raah 和 AssetSnip。",
     "internship": "实习",
+    "openings": "{count, plural, one {# 个岗位} other {# 个岗位}}",
     "posted": "发布于 {date}",
     "applyNow": "申请",
     "allDepartments": "全部",
+    "applicationNote": "Each role has specific application instructions. Please follow them carefully. It helps us spot serious candidates faster and save time as a small team. Application response time is usually 1 week if there is a fit.",
     "empty": "目前没有开放岗位。请稍后查看。",
     "perks": {
       "remote": "远程优先",

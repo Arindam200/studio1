@@ -219,18 +219,26 @@ export function jobPostingJsonLd(job: {
   content: string;
   location: string;
   type: string;
+  status: string;
   postedDate: string;
   id: string;
   isRemote: boolean;
   applyUrl: string;
 }) {
+  const isOpeningSoon = job.type.toLowerCase().includes("contract")
+    ? job.status?.toLowerCase().includes("soon")
+    : false;
+  const employmentType = job.type.toLowerCase().includes("contract")
+    ? "CONTRACTOR"
+    : "INTERN";
+
   return {
     "@context": "https://schema.org",
     "@type": "JobPosting",
     title: job.title,
     description: stripMarkdownForSchema(job.content || job.description),
     datePosted: job.postedDate,
-    employmentType: "INTERN",
+    employmentType,
     hiringOrganization: {
       "@type": "Organization",
       name: "Studio1",
@@ -255,9 +263,9 @@ export function jobPostingJsonLd(job: {
         addressCountry: "IN",
       },
     },
-    directApply: true,
+    directApply: !isOpeningSoon,
     url: pageUrl(`/careers/${job.id}`),
-    applicationContact: job.applyUrl,
+    ...(!isOpeningSoon ? { applicationContact: job.applyUrl } : {}),
   };
 }
 

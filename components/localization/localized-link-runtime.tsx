@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useLocale } from "next-intl";
 import {
   DEFAULT_LOCALE,
+  hasLocalizedAlternates,
   isLocale,
   localizePathname,
   shouldBypassLocale,
@@ -29,6 +30,7 @@ function shouldLocalizeAnchor(anchor: HTMLAnchorElement) {
     const url = new URL(href, window.location.origin);
     if (url.origin !== window.location.origin) return false;
     if (shouldBypassLocale(url.pathname)) return false;
+    if (!hasLocalizedAlternates(url.pathname)) return false;
     return true;
   } catch {
     return false;
@@ -37,7 +39,9 @@ function shouldLocalizeAnchor(anchor: HTMLAnchorElement) {
 
 function localizedHref(href: string, locale: Locale) {
   const url = new URL(href, window.location.origin);
-  const { locale: hrefLocale, pathname } = splitLocaleFromPathname(url.pathname);
+  const { locale: hrefLocale, pathname } = splitLocaleFromPathname(
+    url.pathname,
+  );
 
   if (hrefLocale && isLocale(hrefLocale) && hrefLocale === locale) {
     return href;

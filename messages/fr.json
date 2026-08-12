@@ -187,9 +187,11 @@
     "titleSuffix": "",
     "description": "Studio1 aide les équipes devtool et SaaS à grandir avec du contenu technique et du DevRel, tout en construisant Raah et AssetSnip.",
     "internship": "Stage",
+    "openings": "{count, plural, one {# poste ouvert} other {# postes ouverts}}",
     "posted": "Publié le {date}",
     "applyNow": "Postuler",
     "allDepartments": "Tous",
+    "applicationNote": "Each role has specific application instructions. Please follow them carefully. It helps us spot serious candidates faster and save time as a small team. Application response time is usually 1 week if there is a fit.",
     "empty": "Aucun poste ouvert pour le moment. Revenez bientôt.",
     "perks": {
       "remote": "Remote-first",

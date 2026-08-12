@@ -20,7 +20,11 @@ const legacyRedirects: Record<string, string> = {
   "/influencer-management": "/developer-relations-growth-campaigns",
 };
 
-function requestHeaders(request: NextRequest, locale: Locale, pathname: string) {
+function requestHeaders(
+  request: NextRequest,
+  locale: Locale,
+  pathname: string,
+) {
   const headers = new Headers(request.headers);
   headers.set("x-studio1-locale", locale);
   headers.set("x-studio1-pathname", pathname);
@@ -50,6 +54,10 @@ export function proxy(request: NextRequest) {
     if (
       unprefixedPathname === "/blog" ||
       unprefixedPathname.startsWith("/blog/") ||
+      unprefixedPathname === "/case-studies" ||
+      unprefixedPathname.startsWith("/case-studies/") ||
+      unprefixedPathname === "/careers" ||
+      unprefixedPathname.startsWith("/careers/") ||
       unprefixedPathname === "/terms" ||
       unprefixedPathname === "/privacy"
     ) {

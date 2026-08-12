@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { DEFAULT_LOCALE, LOCALES, type Locale } from "@/lib/i18n";
+import { DEFAULT_LOCALE, type Locale } from "@/lib/i18n";
 
 const jobsDirectory = path.join(process.cwd(), "content/careers/jobs");
 const jobFilePattern = /\.mdx?$/;
@@ -16,6 +16,7 @@ export type JobOpening = {
   status: string;
   applySubject: string;
   isRemote: boolean;
+  openings: number;
   order: number;
   postedDate: string;
   requisitionId: string;
@@ -35,6 +36,7 @@ type JobFrontmatter = {
   status?: string;
   applySubject?: string;
   isRemote?: boolean;
+  openings?: number;
   order?: number;
   postedDate?: string | Date | number;
   requisitionId?: string | number;
@@ -66,6 +68,10 @@ function toJobOpening(
     status: raw.status?.trim() ?? "Open",
     applySubject: raw.applySubject?.trim() ?? raw.title.trim(),
     isRemote: raw.isRemote !== false,
+    openings:
+      typeof raw.openings === "number" && raw.openings > 0
+        ? Math.floor(raw.openings)
+        : 1,
     order: typeof raw.order === "number" ? raw.order : index + 1,
     postedDate:
       toFrontmatterString(raw.postedDate) ??
@@ -93,15 +99,9 @@ function getLocaleJobFiles(locale: Locale) {
 export function validateLocalizedJobs() {
   const sourceFiles = getLocaleJobFiles(DEFAULT_LOCALE);
   if (sourceFiles.length === 0) {
-    throw new Error(`Missing localized job files in ${localeDirectory(DEFAULT_LOCALE)}`);
-  }
-
-  for (const locale of LOCALES) {
-    const files = getLocaleJobFiles(locale);
-    const missing = sourceFiles.filter((fileName) => !files.includes(fileName));
-    if (missing.length > 0) {
-      throw new Error(`Missing ${locale} career translations: ${missing.join(", ")}`);
-    }
+    throw new Error(
+      `Missing localized job files in ${localeDirectory(DEFAULT_LOCALE)}`,
+    );
   }
 }
 

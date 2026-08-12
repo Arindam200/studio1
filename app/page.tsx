@@ -1,16 +1,43 @@
 import Hero from "@/components/landing/hero";
 import Trustedby from "@/components/landing/trustedby";
-import Features from "@/components/landing/features";
-import Testimonials from "@/components/landing/testimonials";
-import CaseStudyCards from "@/components/landing/case-study-cards";
-import DeveloperJourney from "@/components/landing/developer-journey";
-import GlobalReach from "@/components/landing/global-reach";
-import TechnicalDomains from "@/components/landing/domains";
 import { homePageMetadata, websiteJsonLd } from "@/lib/seo";
 import { getTranslations } from "next-intl/server";
+import dynamic from "next/dynamic";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { getSafeLocale } from "@/lib/i18n-messages";
+
+const TechnicalDomains = dynamic(() => import("@/components/landing/domains"), {
+  loading: () => <SectionSkeleton />,
+});
+const Features = dynamic(() => import("@/components/landing/features"), {
+  loading: () => <SectionSkeleton />,
+});
+const Testimonials = dynamic(
+  () => import("@/components/landing/testimonials"),
+  {
+    loading: () => <SectionSkeleton />,
+  },
+);
+const GlobalReach = dynamic(() => import("@/components/landing/global-reach"), {
+  loading: () => <SectionSkeleton />,
+});
+const DeveloperJourney = dynamic(
+  () => import("@/components/landing/developer-journey"),
+  {
+    loading: () => <SectionSkeleton />,
+  },
+);
+const CaseStudyCards = dynamic(
+  () => import("@/components/landing/case-study-cards"),
+  {
+    loading: () => <SectionSkeleton />,
+  },
+);
+
+function SectionSkeleton() {
+  return <div className="mx-auto h-64 w-full max-w-7xl px-6 sm:px-8" />;
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const headerStore = await headers();

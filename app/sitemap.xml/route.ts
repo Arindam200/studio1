@@ -59,26 +59,26 @@ export async function GET() {
     }),
   );
 
-  const caseStudyPaths: SitemapEntry[] = getAllCaseStudies("en").map(
-    (study) => ({
-      path: `/case-studies/${study.slug}`,
-      lastModified: study.date,
-      priority: 0.7,
-      localized: true,
-    }),
-  );
-
-  const careerPaths: SitemapEntry[] = getJobOpenings("en").map((job) => ({
-    path: `/careers/${job.id}`,
-    lastModified: job.postedDate,
-    priority: 0.7,
-    localized: true,
-  }));
-
   const englishOnlyPaths: SitemapEntry[] = [
+    {
+      path: "/case-studies",
+      lastModified: STATIC_LAST_MODIFIED,
+      priority: 0.8,
+    },
+    { path: "/careers", lastModified: STATIC_LAST_MODIFIED, priority: 0.8 },
     { path: "/blog", lastModified: STATIC_LAST_MODIFIED, priority: 0.8 },
     { path: "/terms", lastModified: LEGAL_LAST_MODIFIED, priority: 0.5 },
     { path: "/privacy", lastModified: LEGAL_LAST_MODIFIED, priority: 0.5 },
+    ...getJobOpenings("en").map((job) => ({
+      path: `/careers/${job.id}`,
+      lastModified: job.postedDate,
+      priority: 0.7,
+    })),
+    ...getAllCaseStudies("en").map((study) => ({
+      path: `/case-studies/${study.slug}`,
+      lastModified: study.date,
+      priority: 0.7,
+    })),
     ...getAllPosts().map((post) => ({
       path: `/blog/${post.slug}`,
       lastModified: post.date,
@@ -86,11 +86,7 @@ export async function GET() {
     })),
   ];
 
-  const localizedEntries = [
-    ...localizedStaticPaths,
-    ...caseStudyPaths,
-    ...careerPaths,
-  ]
+  const localizedEntries = localizedStaticPaths
     .flatMap((entry) => LOCALES.map((locale) => urlEntry(entry, locale)))
     .join("\n");
 

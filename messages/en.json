@@ -182,14 +182,16 @@
   },
   "CareersPage": {
     "badge": "We're hiring",
-    "titlePrefix": "Join the team behind",
+    "titlePrefix": "We're hiring for",
     "titleHighlight": "developer-first",
-    "titleSuffix": "content",
+    "titleSuffix": "content roles",
     "description": "Studio1 helps devtool and SaaS teams grow through technical content and DevRel while building products like Raah and AssetSnip.",
     "internship": "Internship",
+    "openings": "{count, plural, one {# opening} other {# openings}}",
     "posted": "Posted {date}",
     "applyNow": "Apply now",
     "allDepartments": "All",
+    "applicationNote": "Each role has specific application instructions. Please follow them carefully. It helps us spot serious candidates faster and save time as a small team. Application response time is usually 1 week if there is a fit.",
     "empty": "No open positions right now. Check back soon.",
     "perks": {
       "remote": "Remote-first",

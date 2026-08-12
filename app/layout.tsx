@@ -210,12 +210,6 @@ export default async function RootLayout({
         />
 
         <Script
-          async
-          src="https://cloud.umami.is/script.js"
-          data-website-id="d2503074-d887-4016-9be5-90629ed32e70"
-        />
-
-        <Script
           src="https://t.raah.dev/script.js"
           data-pid="proj_w60eqpxi5ax0dw36"
           data-domain="studio1hq.com"

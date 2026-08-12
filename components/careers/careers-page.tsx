@@ -70,6 +70,7 @@ function JobCard({
   location,
   type,
   status,
+  openings,
   postedDate,
   locale,
 }: {
@@ -79,10 +80,12 @@ function JobCard({
   location: string;
   type: string;
   status: string;
+  openings: number;
   postedDate: string;
   locale: string;
 }) {
   const t = useTranslations("CareersPage");
+  const isOpeningSoon = status.toLowerCase().includes("soon");
 
   return (
     <article
@@ -101,9 +104,16 @@ function JobCard({
       >
         <div className="flex items-center justify-between gap-3">
           <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-primary">
-            {t("internship")}
+            {type}
           </p>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
+          <span
+            className={cn(
+              "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium",
+              isOpeningSoon
+                ? "border-amber-400/35 bg-amber-400/10 text-amber-700 dark:text-amber-300"
+                : "border-primary/25 bg-primary/10 text-primary",
+            )}
+          >
             <CheckCircle className="size-3.5" weight="fill" />
             {status}
           </span>
@@ -116,6 +126,13 @@ function JobCard({
         </p>
 
         <div className="mt-6 space-y-2.5 border-t border-border/50 pt-5 dark:border-white/[0.06]">
+          <div className="flex items-center gap-2.5 text-xs font-medium text-muted-foreground">
+            <UsersThree
+              className="size-4 shrink-0 text-primary"
+              weight="duotone"
+            />
+            <span>{t("openings", { count: openings })}</span>
+          </div>
           <div className="flex items-center gap-2.5 text-xs font-medium text-muted-foreground">
             <MapPin className="size-4 shrink-0 text-primary" weight="duotone" />
             <span>{location}</span>
@@ -132,19 +149,25 @@ function JobCard({
               className="size-4 shrink-0 text-primary"
               weight="duotone"
             />
-            <span>{t("posted", { date: formatPostedDate(postedDate, locale) })}</span>
+            <span>
+              {t("posted", { date: formatPostedDate(postedDate, locale) })}
+            </span>
           </div>
         </div>
       </Link>
 
       <Button
-        variant="gradient"
+        variant={isOpeningSoon ? "outline" : "gradient"}
         size="cta"
-        className="relative z-[2] mt-6 w-fit"
+        className={cn(
+          "relative z-[2] mt-6 w-fit",
+          isOpeningSoon &&
+            "border-amber-400/35 bg-amber-400/10 text-amber-800 hover:bg-amber-400/15 dark:text-amber-200",
+        )}
         asChild
       >
         <Link href={`/careers/${id}`}>
-          {t("applyNow")}
+          {isOpeningSoon ? "Coming soon" : t("applyNow")}
           <ArrowRight
             className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 motion-reduce:transform-none"
             weight="bold"
@@ -260,7 +283,7 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
         >
           {departments.length > 0 ? (
             <motion.div
-              className="mb-10 flex flex-wrap items-center justify-center gap-2"
+              className="mb-6 flex flex-wrap items-center justify-center gap-2"
               variants={itemVariants}
             >
               <button
@@ -295,6 +318,13 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
             </motion.div>
           ) : null}
 
+          <motion.p
+            className="mx-auto mb-10 max-w-3xl rounded-xl border border-border/50 bg-muted/20 px-4 py-3 text-center text-sm leading-relaxed text-muted-foreground dark:border-white/[0.08] dark:bg-white/[0.03]"
+            variants={itemVariants}
+          >
+            {t("applicationNote")}
+          </motion.p>
+
           {filteredJobs.length > 0 ? (
             <motion.div
               key={selectedDepartment ?? "all"}
@@ -316,6 +346,7 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
                     location={job.location}
                     type={job.type}
                     status={job.status}
+                    openings={job.openings}
                     postedDate={job.postedDate}
                     locale={locale}
                   />

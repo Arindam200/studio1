@@ -9,6 +9,7 @@ import {
   CheckCircle,
   Clock,
   MapPin,
+  UsersThree,
 } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "@/components/ui/button";
 import type { JobDetail } from "@/lib/careers";
@@ -55,11 +56,26 @@ function ApplyButton({
   className,
   href,
   label = "Apply",
+  disabled = false,
 }: {
   className?: string;
   href: string;
   label?: string;
+  disabled?: boolean;
 }) {
+  if (disabled) {
+    return (
+      <Button
+        variant="gradient"
+        size="cta"
+        className={cn("rounded-md px-8", className)}
+        disabled
+      >
+        {label}
+      </Button>
+    );
+  }
+
   return (
     <Button
       variant="gradient"
@@ -77,17 +93,25 @@ function ApplyButton({
 
 export function JobDetailPage({ job, children }: JobDetailPageProps) {
   const applyMailto = getJobApplicationMailto(job);
+  const openingsLabel =
+    job.openings === 1 ? "1 opening" : `${job.openings} openings`;
+  const isOpeningSoon = job.status.toLowerCase().includes("soon");
 
   return (
     <section className="overflow-x-hidden bg-background pb-24 pt-20 md:pt-24">
       {/* Breadcrumb */}
       <div className="border-b border-border/50 dark:border-white/[0.06]">
         <div className="mx-auto flex max-w-6xl items-center gap-2 px-4 py-3 text-sm text-muted-foreground sm:px-6 lg:px-8">
-          <Link href="/careers" className="transition-colors hover:text-foreground">
+          <Link
+            href="/careers"
+            className="transition-colors hover:text-foreground"
+          >
             Careers
           </Link>
           <CaretRight className="size-3.5 shrink-0" weight="bold" />
-          <span className="truncate font-medium text-foreground">{job.title}</span>
+          <span className="truncate font-medium text-foreground">
+            {job.title}
+          </span>
         </div>
       </div>
 
@@ -152,7 +176,16 @@ export function JobDetailPage({ job, children }: JobDetailPageProps) {
                 value={job.status}
                 icon={CheckCircle}
               />
-              <JobDetailRow label="Location" value={job.location} icon={MapPin} />
+              <JobDetailRow
+                label="Openings"
+                value={openingsLabel}
+                icon={UsersThree}
+              />
+              <JobDetailRow
+                label="Location"
+                value={job.location}
+                icon={MapPin}
+              />
               <JobDetailRow label="Time type" value={job.type} icon={Clock} />
               <JobDetailRow
                 label="Posted on"
@@ -162,7 +195,12 @@ export function JobDetailPage({ job, children }: JobDetailPageProps) {
             </dl>
 
             <div className="border-t border-border/50 p-5 dark:border-white/[0.06]">
-              <ApplyButton className="w-full" href={applyMailto} />
+              <ApplyButton
+                className="w-full"
+                href={applyMailto}
+                label={isOpeningSoon ? "Coming soon" : "Apply"}
+                disabled={isOpeningSoon}
+              />
             </div>
           </div>
         </aside>

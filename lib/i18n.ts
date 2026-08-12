@@ -10,11 +10,9 @@ export const LOCALIZED_PUBLIC_PATHS = [
   "/developer-documentation-dx-audit",
   "/developer-video-production",
   "/developer-relations-growth-campaigns",
-  "/case-studies",
   "/about-us",
   "/work",
   "/product",
-  "/careers",
 ] as const;
 
 const localizedPublicPathSet = new Set<string>(LOCALIZED_PUBLIC_PATHS);
@@ -22,11 +20,7 @@ const localizedPublicPathSet = new Set<string>(LOCALIZED_PUBLIC_PATHS);
 export function isLocalizedPublicPath(pathname: string) {
   const { pathname: unprefixed } = splitLocaleFromPathname(pathname);
 
-  return (
-    localizedPublicPathSet.has(unprefixed) ||
-    /^\/case-studies\/[^/]+$/.test(unprefixed) ||
-    /^\/careers\/[^/]+$/.test(unprefixed)
-  );
+  return localizedPublicPathSet.has(unprefixed);
 }
 
 export const localeMeta: Record<
@@ -108,7 +102,11 @@ export function localizePathname(pathname: string, locale: Locale): string {
   return `${localeMeta[locale].pathPrefix}${unprefixed}`;
 }
 
-export function localizedUrl(pathname: string, locale: Locale, baseUrl: string) {
+export function localizedUrl(
+  pathname: string,
+  locale: Locale,
+  baseUrl: string,
+) {
   return `${baseUrl}${localizePathname(pathname, locale)}`;
 }
 
@@ -128,7 +126,11 @@ export function hasLocalizedAlternates(pathname: string) {
   return isLocalizedPublicPath(pathname);
 }
 
-export function canonicalUrl(pathname: string, locale: Locale, baseUrl: string) {
+export function canonicalUrl(
+  pathname: string,
+  locale: Locale,
+  baseUrl: string,
+) {
   const { pathname: unprefixed } = splitLocaleFromPathname(pathname);
   return localizedUrl(unprefixed, locale, baseUrl);
 }

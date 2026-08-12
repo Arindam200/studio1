@@ -187,9 +187,11 @@
     "titleSuffix": "content बनाती है",
     "description": "Studio1 technical content और DevRel से devtool और SaaS teams को grow करने में मदद करता है, साथ में Raah और AssetSnip जैसे products बनाता है.",
     "internship": "Internship",
+    "openings": "{count, plural, one {# opening} other {# openings}}",
     "posted": "Posted {date}",
     "applyNow": "Apply now",
     "allDepartments": "All",
+    "applicationNote": "Each role has specific application instructions. Please follow them carefully. It helps us spot serious candidates faster and save time as a small team. Application response time is usually 1 week if there is a fit.",
     "empty": "अभी कोई open position नहीं है. जल्द फिर देखें.",
     "perks": {
       "remote": "Remote-first",
