@@ -36,6 +36,8 @@ const perks = [
   { key: "smallTeam", icon: UsersThree },
 ];
 
+const departmentOrder = ["Marketing", "Engineering", "General"];
+
 const capsuleClassName =
   "rounded-full px-3.5 py-1.5 inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground border border-border/40 dark:border-white/15 bg-white/55 dark:bg-white/[0.08] backdrop-blur-md shadow-[0_6px_18px_-4px_hsl(var(--primary)/0.32)] dark:shadow-[0_6px_18px_-4px_hsl(var(--primary)/0.22)]";
 
@@ -102,10 +104,7 @@ function JobCard({
         href={`/careers/${id}`}
         className="relative z-[1] flex flex-1 flex-col outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded-lg"
       >
-        <div className="flex items-center justify-between gap-3">
-          <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-primary">
-            {type}
-          </p>
+        <div className="flex items-center justify-end gap-3">
           <span
             className={cn(
               "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium",
@@ -195,7 +194,16 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
 
   const departments = Array.from(
     new Set(jobOpenings.map((job) => job.department)),
-  );
+  ).sort((a, b) => {
+    const aIndex = departmentOrder.indexOf(a);
+    const bIndex = departmentOrder.indexOf(b);
+
+    if (aIndex === -1 && bIndex === -1) return a.localeCompare(b);
+    if (aIndex === -1) return 1;
+    if (bIndex === -1) return -1;
+
+    return aIndex - bIndex;
+  });
 
   return (
     <section className="overflow-x-hidden">
@@ -318,41 +326,43 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
             </motion.div>
           ) : null}
 
-          <motion.p
-            className="mx-auto mb-10 max-w-3xl rounded-xl border border-border/50 bg-muted/20 px-4 py-3 text-center text-sm leading-relaxed text-muted-foreground dark:border-white/[0.08] dark:bg-white/[0.03]"
-            variants={itemVariants}
-          >
-            {t("applicationNote")}
-          </motion.p>
-
           {filteredJobs.length > 0 ? (
-            <motion.div
-              key={selectedDepartment ?? "all"}
-              className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
-              initial="hidden"
-              animate="visible"
-              variants={staggerChildren}
-            >
-              {filteredJobs.map((job) => (
-                <motion.div
-                  key={job.id}
-                  className="min-w-0"
-                  variants={itemVariants}
-                >
-                  <JobCard
-                    id={job.id}
-                    title={job.title}
-                    description={job.description}
-                    location={job.location}
-                    type={job.type}
-                    status={job.status}
-                    openings={job.openings}
-                    postedDate={job.postedDate}
-                    locale={locale}
-                  />
-                </motion.div>
-              ))}
-            </motion.div>
+            <>
+              <motion.div
+                key={selectedDepartment ?? "all"}
+                className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+                initial="hidden"
+                animate="visible"
+                variants={staggerChildren}
+              >
+                {filteredJobs.map((job) => (
+                  <motion.div
+                    key={job.id}
+                    className="min-w-0"
+                    variants={itemVariants}
+                  >
+                    <JobCard
+                      id={job.id}
+                      title={job.title}
+                      description={job.description}
+                      location={job.location}
+                      type={job.type}
+                      status={job.status}
+                      openings={job.openings}
+                      postedDate={job.postedDate}
+                      locale={locale}
+                    />
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              <motion.p
+                className="mx-auto mt-10 max-w-2xl text-center text-base leading-relaxed text-muted-foreground sm:text-lg"
+                variants={itemVariants}
+              >
+                {t("applicationNote")}
+              </motion.p>
+            </>
           ) : (
             <p className="text-center text-sm text-muted-foreground">
               {t("empty")}

@@ -4,14 +4,14 @@ title: Pitch Your Role
 description: >-
   Open contract role for people who can clearly explain how they can help
   Studio1 with relevant skills, proof, and a focused one-page proposal.
-department: Contract
+department: General
 location: Remote
 type: Contract
 status: Open
 applySubject: Pitch Your Role
 isRemote: true
 openings: 1
-order: 5
+order: 6
 postedDate: 2026-08-10T00:00:00.000Z
 requisitionId: STU_OPEN_PITCH_CONTRACT_005
 ---

@@ -154,7 +154,9 @@ export default async function RootLayout({
 }>) {
   const headerStore = await headers();
   const locale = getSafeLocale(headerStore.get("x-studio1-locale"));
+  const pathname = headerStore.get("x-studio1-pathname") ?? "/";
   const messages = await getMessages(locale);
+  const shouldShowGlobalCta = !pathname.replace(/^\/(fr|es|hi|zh)(?=\/|$)/, "").startsWith("/careers");
 
   return (
     <html
@@ -182,7 +184,7 @@ export default async function RootLayout({
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Navbar />
             <PageTransition>{children}</PageTransition>
-            <CTA />
+            {shouldShowGlobalCta ? <CTA /> : null}
             <Footer />
             <BottomNavbar />
             <ScrollToTopButton />

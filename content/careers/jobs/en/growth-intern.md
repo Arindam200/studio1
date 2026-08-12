@@ -4,7 +4,7 @@ title: Growth & Marketing Intern
 description: >-
   Support Studio1 growth across sales outreach, client research, marketing,
   partnerships, product growth, and operations for Studio1, Raah, and AssetSnip.
-department: Growth & Ops
+department: Marketing
 location: Remote (India)
 type: Internship - 3 months
 status: Open

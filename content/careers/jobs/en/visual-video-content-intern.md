@@ -4,7 +4,7 @@ title: Content Creator Intern
 description: >-
   Create memes, visuals, scripts, reels, short videos, cover graphics, and
   scheduled social assets for Studio1, Raah, AssetSnip, and campaigns.
-department: Creative
+department: Marketing
 location: Remote (India)
 type: Internship - 3 months
 status: Open

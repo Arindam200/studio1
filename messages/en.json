@@ -183,8 +183,8 @@
   "CareersPage": {
     "badge": "We're hiring",
     "titlePrefix": "We're hiring for",
-    "titleHighlight": "developer-first",
-    "titleSuffix": "content roles",
+    "titleHighlight": "tech-native",
+    "titleSuffix": "roles",
     "description": "Studio1 helps devtool and SaaS teams grow through technical content and DevRel while building products like Raah and AssetSnip.",
     "internship": "Internship",
     "openings": "{count, plural, one {# opening} other {# openings}}",

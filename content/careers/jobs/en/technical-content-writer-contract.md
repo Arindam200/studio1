@@ -5,7 +5,7 @@ description: >-
   Engineering-first writing role for developer tutorials, code demos,
   prototypes, and technical articles across AI, ML, auth, agents, SaaS, and
   devtool topics.
-department: Content
+department: Engineering
 location: Remote
 type: Contract
 status: Opening soon

@@ -56,6 +56,35 @@ const sectionAnimation = {
   },
 };
 
+function StudioIntroVideo() {
+  return (
+    <section className="mx-auto mt-14 mb-14 max-w-5xl md:mt-20 md:mb-20">
+      <div className="mb-8 flex flex-col items-center text-center">
+        <h2 className="max-w-2xl font-primary text-4xl font-normal tracking-tight md:text-5xl">
+          Our{" "}
+          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent italic font-normal text-transparent">
+            Story
+          </span>
+        </h2>
+      </div>
+
+      <div className="overflow-hidden rounded-2xl border border-border/60 bg-muted/20 shadow-[0_24px_80px_-42px_hsl(var(--primary)/0.7)] dark:border-white/[0.08] dark:bg-white/[0.03]">
+        <div className="aspect-video w-full">
+          <iframe
+            className="h-full w-full"
+            src="https://www.youtube-nocookie.com/embed/86fFNr5Dyqk?rel=0"
+            title="How Studio1 started"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function AboutUs() {
   const t = useTranslations("AboutPage");
 
@@ -127,6 +156,14 @@ export default function AboutUs() {
         </motion.div>
 
         <div className="px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={sectionAnimation}
+          >
+            <StudioIntroVideo />
+          </motion.div>
           <motion.div
             initial="hidden"
             whileInView="visible"
