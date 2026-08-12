@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
+import type { MouseEvent } from "react";
 import { Globe } from "@phosphor-icons/react";
 import {
   DEFAULT_LOCALE,
@@ -26,6 +26,14 @@ function localeHref(pathname: string, search: string, locale: Locale) {
   const sourcePath = hasLocalizedAlternates(pathname) ? pathname : "/";
   const localizedPath = localizePathname(sourcePath || "/", locale);
   return `${localizedPath}${sourcePath === "/" ? "" : search ? `?${search}` : ""}`;
+}
+
+function navigateToLocale(event: MouseEvent<HTMLAnchorElement>, locale: Locale) {
+  event.preventDefault();
+  const href = event.currentTarget.href;
+
+  document.cookie = `studio1-locale=${locale}; Path=/; Max-Age=${60 * 60 * 24 * 365}; SameSite=Lax`;
+  window.location.assign(href);
 }
 
 export function LanguageSwitcher({
@@ -55,17 +63,18 @@ export function LanguageSwitcher({
     const isActive = locale === activeLocale;
 
     return (
-      <Link
+      <a
         key={locale}
         href={localeHref(pathname, search, locale)}
         hrefLang={meta.hreflang}
         className={optionClassName(isActive)}
+        onClick={(event) => navigateToLocale(event, locale)}
       >
         <span className="text-base leading-none transition-transform duration-200 group-hover/item:scale-110">
           {meta.flag}
         </span>
         <span>{t(translationKeys[locale])}</span>
-      </Link>
+      </a>
     );
   });
 
