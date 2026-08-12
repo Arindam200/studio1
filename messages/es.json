@@ -56,16 +56,16 @@
   "ServiceHero": {
     "technicalContent": {
       "badge": "Servicios",
-      "titleAccent": "Contenido técnico",
-      "titleRest": "marketing",
+      "titleAccent": "Contenido",
+      "titleRest": "técnico marketing",
       "description": "Creamos tutoriales developer, guías y contenido SEO que construyen confianza, aumentan visibilidad de producto e impulsan adopción técnica.",
       "primaryCta": "Reservar llamada",
       "secondaryCta": "Explorar servicios",
       "stats": {
-        "views": "vistas de contenido",
+        "views": "tutoriales y guías",
         "teams": "equipos ayudados",
-        "reddit": "impresiones en Reddit",
-        "partners": "empresas asociadas"
+        "reddit": "ventana típica de borrador",
+        "partners": "deep dives"
       }
     },
     "docs": {
@@ -77,8 +77,8 @@
       "secondaryCta": "Explorar servicios",
       "stats": {
         "audits": "auditorías docs",
-        "pages": "páginas entregadas",
-        "tracks": "líneas de servicio"
+        "pages": "ediciones y renovaciones docs",
+        "tracks": "trabajo docs"
       }
     },
     "devrel": {
@@ -92,17 +92,17 @@
         "events": "eventos de alto impacto",
         "teams": "equipos ayudados",
         "partners": "empresas asociadas",
-        "launch": "lanzamiento Product Hunt"
+        "launch": "lanzamientos apoyados"
       }
     },
     "video": {
       "badge": "Producción de video developer",
       "titlePrefix": "Creamos videos técnicos",
       "titleHighlight": "para marcas developer.",
-      "description": "Demos de producto, tutoriales, guiones, edición, thumbnails y publicación, gestionado para marcas developer.",
+      "description": "Demos técnicos, tutoriales, guiones, edición, shorts y activos listos para publicar para marcas developer.",
       "primaryCta": "Reservar llamada",
-      "previewTitle": "Lanza tu primer agente en 15 minutos",
-      "previewSubtitle": "Studio1 para DevTools · Thumbnail listo para A/B test"
+      "previewTitle": "LLM Fine-Tuning & Model Iteration Loop",
+      "previewSubtitle": "Ejemplo de video técnico de Studio1"
     }
   },
   "Hero": {
@@ -218,7 +218,7 @@
       },
       {
         "label": "Creación de contenido",
-        "description": "Estrategia de canal, guiones, edición, miniaturas y títulos SEO con una cadencia diseñada para crecer en YouTube."
+        "description": "Ideas de contenido, ángulos técnicos, publicaciones sociales y activos de distribución para mantenerse activo en los canales adecuados."
       },
       {
         "label": "Documentación y auditorías DX",
@@ -246,7 +246,7 @@
       "views": "vistas de contenido",
       "companies": "empresas asociadas",
       "events": "eventos de alto impacto",
-      "launch": "lanzamiento Product Hunt"
+      "launch": "lanzamientos apoyados"
     },
     "cards": {
       "content": {
@@ -258,7 +258,7 @@
       },
       "growth": {
         "badgeOne": "eventos",
-        "badgeTwo": "lanzamiento PH",
+        "badgeTwo": "lanzamientos",
         "titleStrong": "Crecimiento",
         "titleRest": "developer",
         "description": "DevRel, lanzamientos, campañas orgánicas, programas con creadores y crecimiento de comunidad."
@@ -267,9 +267,9 @@
   },
   "GlobalReach": {
     "eyebrow": "Alcance global",
-    "titlePrefix": "Construyendo con equipos",
+    "titlePrefix": "Ayudando a equipos",
     "titleHighlight": "en todo el mundo",
-    "description": "Hubs de colaboración en India, Brasil, Vietnam, Australia, Israel, Estados Unidos, Francia, Países Bajos y Singapur."
+    "description": "Hemos colaborado con empresas en India, Brasil, Vietnam, Australia, Israel, Estados Unidos, Francia, Países Bajos y Singapur."
   },
   "Testimonials": {
     "eyebrow": "Testimonios",
@@ -316,9 +316,9 @@
     "metadataName": "Casos de estudio de Studio1",
     "metadataDescription": "Ejemplos reales de cómo Studio1 ayuda a equipos devtool y SaaS a crecer, posicionarse y aumentar la adopción developer con contenido técnico y distribución.",
     "badge": "Casos de estudio",
-    "titlePrefix": "Resultados que los desarrolladores pueden",
-    "titleHighlight": "verificar",
-    "description": "Resultados reales de contenido técnico, DevRel y distribución.",
+    "titlePrefix": "Casos de estudio de",
+    "titleHighlight": "crecimiento developer",
+    "description": "Ejemplos con prueba de contenido técnico, DevRel, documentación y lanzamientos.",
     "trustedBy": "Con la confianza de equipos developer-first"
   },
   "NotFound": {

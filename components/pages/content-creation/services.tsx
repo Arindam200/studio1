@@ -14,11 +14,11 @@ const offerings: ServiceOfferCard[] = [
     accent: "Technical",
     rest: "Videos",
     description:
-      "Long-form tutorials, product walkthroughs, and architecture explainers built around real developer workflows.",
+      "Long-form tutorials, product walkthroughs, and technical explainers built around real developer workflows.",
     features: [
       "Developer tutorials",
       "Product demos",
-      "Architecture explainers",
+      "Technical explainers",
       "Script, edit, and publishing support",
     ],
   },
@@ -29,12 +29,12 @@ const offerings: ServiceOfferCard[] = [
     accent: "Shorts",
     rest: "Cutdowns",
     description:
-      "Short-form clips and social-ready assets that keep the technical point clear while fitting fast-moving channels.",
+      "Short-form clips and social-ready assets that keep the core technical point clear.",
     features: [
       "Launch teasers",
       "Feature clips",
       "Captioned social cuts",
-      "Thumbnail and title options",
+      "Supporting post copy",
     ],
   },
   {
@@ -43,11 +43,11 @@ const offerings: ServiceOfferCard[] = [
     accent: "Demo",
     rest: "Production",
     description:
-      "Repo-led videos, recurring channel series, and campaign assets that give developers something concrete to try.",
+      "Repo-led videos and campaign assets that give developers something concrete to inspect or try.",
     features: [
       "Demo project builds",
       "GitHub repo packaging",
-      "Channel series planning",
+      "Walkthrough structure",
       "Blog and social asset support",
     ],
   },

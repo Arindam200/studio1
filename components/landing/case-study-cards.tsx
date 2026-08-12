@@ -45,8 +45,8 @@ const secondaryStudies: CaseStudyResultData[] = [
     company: "LiteLLM",
     category: "Docs Revamp & Onboarding",
     href: "/case-studies/litellm",
-    heroValue: "SDK + Gateway",
-    heroLabel: "docs paths clarified",
+  heroValue: "SDK + Gateway",
+  heroLabel: "onboarding clarified",
     proof:
       "Docs architecture, SDK/Gateway quickstarts, and community-driven DX feedback cut onboarding friction, endorsed publicly by the CEO.",
   },
@@ -69,7 +69,7 @@ export default function CaseStudyCards() {
         <SectionEyebrow>Case Studies</SectionEyebrow>
         <h2 className="max-sm:text-4xl text-center font-inter text-5xl font-normal tracking-tight">
           Campaigns we{" "}
-          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
+          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-normal italic text-transparent">
             did
           </span>
         </h2>

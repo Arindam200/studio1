@@ -22,7 +22,7 @@ export default function Hero() {
 
   return (
     <section className="overflow-x-hidden max-h-fit">
-      <div id="stats" className={serviceHeroOuterClassName}>
+      <div id="overview" className={serviceHeroOuterClassName}>
         <ServiceHeroTiles />
         <motion.div
           className="w-full"
@@ -39,12 +39,13 @@ export default function Hero() {
           </motion.div>
 
           <motion.h1
-            className="md:text-7xl text-5xl font-medium text-center"
+            className="md:text-7xl text-5xl font-normal text-center"
             variants={itemVariants}
           >
             <span className="serif-accent font-accent text-[1.08em] font-normal italic text-primary/75">
               {t("titleAccent")}
-            </span>{" "}
+            </span>
+            <br />
             {t("titleRest")}
           </motion.h1>
 
@@ -90,9 +91,9 @@ export default function Hero() {
               highlightValues
               stats={[
                 { value: "10+", label: t("stats.events") },
-                { value: "5+", label: t("stats.teams") },
+                { value: "7+", label: t("stats.teams") },
                 { value: "35+", label: t("stats.partners") },
-                { value: "#1", label: t("stats.launch") },
+                { value: "5+", label: t("stats.launch") },
               ]}
             />
           </motion.div>

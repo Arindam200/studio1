@@ -40,13 +40,13 @@ const offerings: ServiceOfferCard[] = [
     icon: ShareNetwork,
     badges: ["SEO", "Distribution"],
     accent: "Content",
-    rest: "Distribution",
+    rest: "Repurposing",
     description:
-      "Publishing and repurposing support so each piece reaches developer channels beyond your own blog.",
+      "Optional publishing and repurposing support so strong articles can travel across the right developer channels.",
     features: [
       "Dev.to and Medium syndication",
       "X and LinkedIn post copy",
-      "Reddit and community positioning",
+      "Developer-community snippets",
       "Performance review after publish",
     ],
   },

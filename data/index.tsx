@@ -537,13 +537,13 @@ export const Data = {
     {
       title: "Quality",
       description:
-        "Premium tutorials, API docs, and developer onboarding content at 50% less cost than other technical agencies. 65%+ of our clients choose to work with us again.",
+        "Premium tutorials, API docs, and developer onboarding content from a lean team that can support docs, content, and DevRel without a full in-house hire.",
       icon: CubeFocus,
     },
     {
       title: "Experience",
       description:
-        "From seed-stage startups to NASDAQ-listed enterprises like Amazon and VMware, we've scaled developer adoption for 35+ companies.",
+        "From seed-stage startups to global developer platforms, we've supported developer adoption for 35+ companies.",
       icon: Lightning,
     },
     {
@@ -567,7 +567,7 @@ export const Data = {
     {
       title: "Collaboration",
       description:
-        "30+ successful partnerships with fast-moving teams. Trusted by industry leaders like Permit.io, Bright Data, and CopilotKit.",
+        "30+ successful partnerships with fast-moving teams. Trusted by industry leaders like Permit.io, Bright Data, and Nebius.",
       icon: Handshake,
     },
     {
@@ -579,6 +579,17 @@ export const Data = {
   ],
 
   Allblogs: [
+    {
+      title:
+        "Building a Hermes Memory Plugin for a Voice-Powered Conference Agent with Weaviate Engram",
+      description:
+        "A technical deep dive on adding memory to a voice-powered conference agent with Hermes and Weaviate Engram.",
+      link: "https://mranand.substack.com/p/building-a-hermes-memory-plugin-for",
+      image:
+        "https://substackcdn.com/image/fetch/$s_!ezPL!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3cff2c98-64da-43a9-854e-bd4e4d8ace43_1735x906.png",
+      tags: ["project-building"],
+      version: 1,
+    },
     {
       title: "Understanding the Model Context Protocol: Architecture",
       description:
@@ -1566,7 +1577,7 @@ export const Data = {
     {
       name: "Publish",
       description:
-        "We help publish on your company channels, Studio1/team profiles, or developer platforms, then support distribution.",
+        "We help publish on your company channels, Studio1/team profiles, or approved developer platforms.",
       icon: IconChartBar,
       details: [
         <p>Company blog or external profile publishing</p>,
@@ -1597,7 +1608,7 @@ export const Data = {
       social: {
         twitter: "https://mobile.twitter.com/astrodevil_",
         linkedin: "https://www.linkedin.com/in/amitesh1208/",
-        website: "https://mranand.com/featured/",
+        website: "https://mranand.com/",
       },
     },
   ],
@@ -1705,7 +1716,7 @@ export const Data = {
       social: {
         twitter: "https://mobile.twitter.com/astrodevil_",
         linkedin: "https://www.linkedin.com/in/amitesh1208/",
-        website: "https://mranand.com/featured/",
+        website: "https://mranand.com/",
       },
     },
     {

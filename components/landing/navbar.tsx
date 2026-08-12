@@ -282,7 +282,6 @@ export default function Navbar() {
                 </a>
               </Button>
             </div>
-            <LanguageSwitcher inline />
           </div>
         </div>
       </header>

@@ -65,7 +65,7 @@ export default async function CaseStudiesPage() {
         </Badge>
         <h1 className="mb-5 font-primary text-4xl font-normal tracking-tight sm:text-6xl">
           {t("titlePrefix")}{" "}
-          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent italic text-transparent">
+          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-normal italic text-transparent">
             {t("titleHighlight")}
           </span>
         </h1>

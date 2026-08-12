@@ -5,10 +5,10 @@ import Services from "@/components/pages/content-creation/services";
 import Packaging from "@/components/pages/content-creation/packaging";
 import Formats from "@/components/pages/content-creation/formats";
 import Cadence from "@/components/pages/content-creation/cadence";
+import ProjectDemo from "@/components/pages/content-creation/project-demo";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { ServiceDetailSection } from "@/components/pages/shared/service-detail-sections";
 import FAQ, { type FAQItem } from "@/components/landing/faq";
-import NonNegotiable from "@/components/sections/non-negotiable";
 import { getTranslations } from "next-intl/server";
 import { headers } from "next/headers";
 import { getSafeLocale } from "@/lib/i18n-messages";
@@ -25,10 +25,10 @@ export async function generateMetadata(): Promise<Metadata> {
     locale,
     keywords: [
       "content creation",
-      "YouTube for developers",
-      "DevTool YouTube channel",
+      "developer video production",
+      "DevTool product demos",
       "technical YouTube videos",
-      "YouTube thumbnails and SEO",
+      "technical video demos",
     ],
   });
 }
@@ -37,18 +37,18 @@ const videoWorkstreams = [
   {
     title: "Long-form technical videos",
     description:
-      "Product walkthroughs, tutorials, architecture explainers, and implementation videos that help developers understand how your product works.",
+      "Product walkthroughs, tutorials, and implementation videos that help developers understand how your product works.",
     points: [
       "Developer tutorials",
       "Product demos",
       "Project walkthroughs",
-      "Architecture explainers",
+      "Technical explainers",
     ],
   },
   {
     title: "Shorts and cutdowns",
     description:
-      "We turn longer technical ideas into concise clips for social distribution without losing the technical point.",
+      "We turn longer technical ideas into concise clips for social channels without losing the technical point.",
     points: [
       "Short-form product clips",
       "Launch teasers",
@@ -59,11 +59,11 @@ const videoWorkstreams = [
   {
     title: "Channel series",
     description:
-      "For teams investing in YouTube, we help plan recurring series with consistent packaging, topics, and publishing cadence.",
+      "For teams that want a recurring video motion, we help plan repeatable topics, formats, and publishing support.",
     points: [
       "Series planning",
       "Topic calendar",
-      "Thumbnail and title system",
+      "Title and description support",
       "Publishing workflow",
     ],
   },
@@ -81,7 +81,7 @@ const videoWorkstreams = [
   {
     title: "Campaign-ready video production",
     description:
-      "For month-long campaigns, video can sit alongside a blog, repo, and social posts so the same technical story compounds across channels.",
+      "For launch or education campaigns, video can sit alongside a blog, repo, and social posts so the same technical story reaches developers across channels.",
     points: [
       "One technical video",
       "One supporting blog",
@@ -92,7 +92,7 @@ const videoWorkstreams = [
   {
     title: "Packaging and publishing",
     description:
-      "We handle the details that help technical videos perform: scripts, edits, thumbnails, titles, descriptions, chapters, and upload support.",
+      "We can handle the details around technical videos: scripts, edits, thumbnails, titles, descriptions, chapters, and upload support.",
     points: [
       "Script and storyboard",
       "Editing and motion polish",
@@ -106,7 +106,7 @@ const videoFaqItems: FAQItem[] = [
   {
     question: "What kind of developer videos do you produce?",
     answer:
-      "We produce long-form tutorials, product demos, project walkthroughs, architecture explainers, Shorts, cutdowns, and recurring channel series for developer products.",
+      "We produce long-form tutorials, product demos, project walkthroughs, technical explainers, Shorts, cutdowns, and recurring video formats for developer products.",
   },
   {
     question: "Can you build a demo project for the video?",
@@ -116,12 +116,12 @@ const videoFaqItems: FAQItem[] = [
   {
     question: "Can video be part of a larger campaign?",
     answer:
-      "Yes. A month-long campaign can pair one technical video with a blog, demo repo, and social posts so the same developer story reaches multiple channels.",
+      "Yes. A campaign can pair one technical video with a blog, demo repo, and social posts so the same developer story reaches multiple channels.",
   },
   {
     question: "Do you handle packaging and publishing?",
     answer:
-      "Yes. We support scripts, editing, thumbnails, titles, descriptions, chapters, SEO metadata, Shorts, and upload-ready publishing assets.",
+      "Yes. We can support scripts, editing, thumbnails, titles, descriptions, chapters, Shorts, and upload-ready publishing assets.",
   },
 ];
 
@@ -131,7 +131,7 @@ export default function Page() {
     "@type": "Service",
     name: "Developer Video Production Services",
     description:
-      "Developer video production services for AI and DevTool startups: technical demos, tutorials, scripts, edits, thumbnails, SEO titles, Shorts, and a publishing cadence built for growth.",
+      "Developer video production services for AI and DevTool startups: technical demos, tutorials, scripts, edits, thumbnails, Shorts, and upload-ready assets.",
     provider: {
       "@type": "Organization",
       name: "Studio1",
@@ -167,20 +167,17 @@ export default function Page() {
       <ServiceDetailSection
         eyebrow="Video production scope"
         title="Technical videos that developers can actually learn from"
-        description="We produce walkthroughs, shorts, demo projects, repo-led videos, and campaign assets for developer brands."
+        description="We produce walkthroughs, shorts, demo projects, repo-led videos, and supporting assets for developer brands."
         items={videoWorkstreams}
         columns="three"
       />
+      <ProjectDemo />
       <Packaging />
       <Formats />
       <Cadence />
       <FAQ
         subtitle="Common questions about our developer video production services."
         items={videoFaqItems}
-      />
-      <NonNegotiable
-        headline="Developer video should teach a real workflow, not just show a UI tour."
-        body="We build videos around concrete use-cases, demos, repos, and product moments. That makes the content useful for developer education, launch campaigns, onboarding, and social distribution."
       />
     </div>
   );

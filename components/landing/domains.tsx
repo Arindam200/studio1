@@ -85,7 +85,7 @@ export default function TechnicalDomains() {
             <SectionEyebrow>{t("eyebrow")}</SectionEyebrow>
             <h2 className="max-w-md font-primary text-4xl font-normal tracking-tight text-foreground max-sm:text-3xl md:text-5xl">
               {t("titlePrefix")}{" "}
-              <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
+              <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-normal italic text-transparent">
                 {t("titleHighlight")}
               </span>
             </h2>

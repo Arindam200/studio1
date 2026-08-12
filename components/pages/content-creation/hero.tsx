@@ -12,7 +12,7 @@ export default function Hero() {
   const t = useTranslations("ServiceHero.video");
 
   return (
-    <section className="relative overflow-hidden border-b">
+    <section id="overview" className="relative scroll-mt-28 overflow-hidden border-b">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(var(--primary)/0.12),transparent_55%)]"
@@ -35,10 +35,10 @@ export default function Hero() {
 
           <motion.h1
             variants={itemVariants}
-            className="max-w-xl font-inter text-5xl font-medium tracking-tight md:text-6xl lg:text-7xl"
+            className="max-w-xl font-inter text-5xl font-normal tracking-tight md:text-6xl lg:text-7xl"
           >
             {t("titlePrefix")}{" "}
-            <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
+            <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-normal italic text-transparent">
               {t("titleHighlight")}
             </span>
           </motion.h1>
@@ -73,8 +73,8 @@ export default function Hero() {
           <div className="overflow-hidden rounded-2xl border bg-background shadow-[0_4px_20px_-6px_rgba(0,0,0,0.08),0_12px_36px_-14px_rgba(0,0,0,0.12),0_14px_36px_-10px_hsl(var(--primary)/0.15)] dark:shadow-[0_4px_24px_-8px_rgba(0,0,0,0.35),0_16px_48px_-16px_rgba(0,0,0,0.55),0_12px_32px_-8px_hsl(var(--primary)/0.14)]">
             <div className="relative aspect-video overflow-hidden bg-muted">
               <iframe
-                src="https://www.youtube.com/embed/xiR3XzVfBAA"
-                title="Introducing Studio1HQ - Go to Devrel and content services for startups!"
+                src="https://www.youtube.com/embed/Um7sjLEhaQM"
+                title="LLM Fine-Tuning & Model Iteration Loop"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 className="absolute inset-0 h-full w-full border-0"

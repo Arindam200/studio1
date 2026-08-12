@@ -219,7 +219,7 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
               variants={itemVariants}
             >
               {t("titlePrefix")}{" "}
-              <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent italic text-transparent">
+              <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-normal italic text-transparent">
                 {t("titleHighlight")}
               </span>{" "}
               {t("titleSuffix")}

@@ -20,9 +20,9 @@ export default function Process() {
           steps={Data.DocsAsServiceProcess}
           heading={
             <div className="w-full text-center">
-              <h2 className="text-4xl text-foreground font-medium mb-3 md:text-5xl lg:text-6xl">
+              <h2 className="text-4xl text-foreground font-normal mb-3 md:text-5xl lg:text-6xl">
                 How We Deliver <br />
-                <span className="serif-accent font-accent italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
+                <span className="serif-accent font-accent font-normal italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
                   Developer-First Docs
                 </span>
               </h2>

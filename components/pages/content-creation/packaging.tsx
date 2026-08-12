@@ -12,23 +12,23 @@ import { motion } from "motion/react";
 const layers = [
   {
     icon: IconPhoto,
-    title: "Thumbnails that earn the click",
-    body: "Readable on mobile, high contrast, and built for A/B tests. Packaging for developer curiosity, not stock faces and neon arrows.",
+    title: "Clear preview packaging",
+    body: "Readable titles, thumbnails, and descriptions that set the right expectation before a developer presses play.",
   },
   {
     icon: IconSearch,
-    title: "Titles and SEO that surface",
-    body: "Search-friendly titles, descriptions, tags, and chapters so the right engineers find the video when they are already looking.",
+    title: "Search-friendly context",
+    body: "Titles, descriptions, tags, and chapters written around the topic, product, and developer problem being explained.",
   },
   {
     icon: IconClick,
-    title: "Hooks that hold retention",
-    body: "Cold opens, demo beats, and CTAs paced for YouTube watch time, not a five-minute brand intro nobody finishes.",
+    title: "A strong technical opening",
+    body: "Cold opens and demo beats that get to the technical point quickly instead of starting with a long brand intro.",
   },
   {
     icon: IconDeviceMobile,
-    title: "Shorts that feed the long form",
-    body: "Cutdowns and vertical clips that pull viewers into playlists, series, and the full tutorial when they want depth.",
+    title: "Shorts from the same idea",
+    body: "Short clips and vertical cuts that reuse the strongest explanation without pretending every topic needs a full campaign.",
   },
 ];
 
@@ -50,16 +50,15 @@ export default function Packaging() {
             <p className="font-secondary text-sm font-medium tracking-wide text-primary">
               The packaging layer
             </p>
-            <h2 className="mt-4 max-w-md font-inter text-4xl font-medium tracking-tight md:text-5xl">
-              Most channels lose before{" "}
-              <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
+            <h2 className="mt-4 max-w-md font-inter text-4xl font-normal tracking-tight md:text-5xl">
+              Make the technical idea clear before{" "}
+              <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-normal italic text-transparent">
                 play
               </span>
             </h2>
             <p className="mt-6 max-w-md text-base text-muted-foreground">
-              Great footage still fails with a weak title and thumbnail. We treat
-              packaging as part of production, not an afterthought the day you
-              upload.
+              We support the practical details around a video: title, thumbnail,
+              description, chapters, clips, and upload-ready assets when needed.
             </p>
           </motion.div>
 

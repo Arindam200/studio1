@@ -40,7 +40,7 @@ export default function Services() {
               { value: "2M+", label: t("stats.views") },
               { value: "35+", label: t("stats.companies") },
               { value: "10+", label: t("stats.events") },
-              { value: "#1", label: t("stats.launch") },
+              { value: "5+", label: t("stats.launch") },
             ]}
           />
         </motion.div>
@@ -120,7 +120,7 @@ export default function Services() {
                     <Num>10+</Num> {t("cards.growth.badgeOne")}
                   </Badge>
                   <Badge className="w-fit bg-accent text-foreground">
-                    <Num>#1</Num> {t("cards.growth.badgeTwo")}
+                    <Num>5+</Num> {t("cards.growth.badgeTwo")}
                   </Badge>
                 </div>
                 <p className="text-4xl font-light text-left">

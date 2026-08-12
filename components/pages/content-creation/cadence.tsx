@@ -3,26 +3,26 @@
 import { fadeInUp, staggerChildren } from "@/lib/animations";
 import {
   IconCalendarEvent,
-  IconChartBar,
-  IconRefresh,
+  IconListCheck,
+  IconMessageCircle,
 } from "@tabler/icons-react";
 import { motion } from "motion/react";
 
 const loop = [
   {
     icon: IconCalendarEvent,
-    title: "Plan the calendar",
-    body: "Series themes, publish days, and playlist structure locked before you record a frame.",
+    title: "Plan the topic flow",
+    body: "Decide the topic, demo path, supporting assets, and publish sequence before production starts.",
   },
   {
-    icon: IconChartBar,
-    title: "Ship for discovery",
-    body: "Upload with SEO metadata, end screens, and cards that pull people into the next video.",
+    icon: IconListCheck,
+    title: "Ship with context",
+    body: "Package the video with the right title, description, chapters, links, and supporting posts.",
   },
   {
-    icon: IconRefresh,
-    title: "Read the signals",
-    body: "CTR, average view duration, and subscriber growth decide what we double down on next.",
+    icon: IconMessageCircle,
+    title: "Use product questions",
+    body: "Developer questions, release notes, and product feedback help decide what the next video should explain.",
   },
 ];
 
@@ -41,14 +41,14 @@ export default function Cadence() {
             variants={fadeInUp}
             className="font-secondary text-sm font-medium tracking-wide text-primary"
           >
-            Cadence and growth
+            Video workflow
           </motion.p>
           <motion.h2
             variants={fadeInUp}
-            className="mt-4 font-inter text-4xl font-medium tracking-tight md:text-5xl"
+            className="mt-4 font-inter text-4xl font-normal tracking-tight md:text-5xl"
           >
-            Consistency beats{" "}
-            <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
+            Repeatable video work beats{" "}
+            <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-normal italic text-transparent">
               one-off drops
             </span>
           </motion.h2>
@@ -56,8 +56,8 @@ export default function Cadence() {
             variants={fadeInUp}
             className="mt-6 text-base text-muted-foreground"
           >
-            A single polished video is a demo. A weekly channel is a growth
-            engine. We run the loop with you.
+            We turn product topics into clear videos, supporting clips, and
+            publish-ready assets when your team needs them.
           </motion.p>
         </motion.div>
 

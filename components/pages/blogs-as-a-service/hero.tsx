@@ -20,7 +20,7 @@ export default function Hero() {
 
   return (
     <>
-      <div id="stats" className={serviceHeroOuterClassName}>
+      <div id="overview" className={serviceHeroOuterClassName}>
         <div className={heroAccentGlow}></div>
         <ServiceHeroTiles />
         <motion.div
@@ -38,10 +38,10 @@ export default function Hero() {
           </motion.div>
 
           <motion.h1
-            className="text-center font-inter text-5xl font-medium tracking-tight md:text-7xl"
+            className="text-center font-inter text-5xl font-normal tracking-tight md:text-7xl"
             variants={itemVariants}
           >
-            <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
+            <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-normal italic text-transparent">
               {t("titleAccent")}
             </span>{" "}
             {t("titleRest")}
@@ -91,11 +91,11 @@ export default function Hero() {
           >
             <HeroStatsStrip
               highlightValues
+              className="md:grid-cols-3"
               stats={[
-                { value: "2M+", label: t("stats.views") },
+                { value: "300+", label: t("stats.views") },
                 { value: "25+", label: t("stats.teams") },
-                { value: "304K+", label: t("stats.reddit") },
-                { value: "35+", label: t("stats.partners") },
+                { value: "<7 days", label: t("stats.reddit") },
               ]}
             />
           </motion.div>

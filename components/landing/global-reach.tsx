@@ -92,7 +92,7 @@ export default function GlobalReach() {
         <SectionEyebrow>{t("eyebrow")}</SectionEyebrow>
         <h2 className="max-sm:text-4xl text-center font-inter text-5xl font-normal tracking-tight">
           {t("titlePrefix")}{" "}
-          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
+          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-normal italic text-transparent">
             {t("titleHighlight")}
           </span>
         </h2>

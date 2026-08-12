@@ -56,16 +56,16 @@
   "ServiceHero": {
     "technicalContent": {
       "badge": "服务",
-      "titleAccent": "技术内容",
-      "titleRest": "营销",
+      "titleAccent": "技术",
+      "titleRest": "内容营销",
       "description": "我们制作开发者教程、指南和 SEO 内容，用来建立信任、提升产品可见度，并推动技术采用。",
       "primaryCta": "预约通话",
       "secondaryCta": "查看服务",
       "stats": {
-        "views": "内容浏览量",
+        "views": "教程与指南",
         "teams": "帮助的团队",
-        "reddit": "Reddit 展示量",
-        "partners": "合作公司"
+        "reddit": "常见草稿周期",
+        "partners": "复杂技术深潜"
       }
     },
     "docs": {
@@ -77,8 +77,8 @@
       "secondaryCta": "查看服务",
       "stats": {
         "audits": "文档审计",
-        "pages": "交付页面",
-        "tracks": "服务方向"
+        "pages": "文档编辑与改版",
+        "tracks": "文档工作"
       }
     },
     "devrel": {
@@ -92,17 +92,17 @@
         "events": "高影响力活动",
         "teams": "帮助的团队",
         "partners": "合作公司",
-        "launch": "Product Hunt 发布"
+        "launch": "支持的发布"
       }
     },
     "video": {
       "badge": "开发者视频制作",
       "titlePrefix": "我们制作技术视频",
       "titleHighlight": "服务开发者品牌。",
-      "description": "为开发者品牌处理产品演示、教程、脚本、剪辑、缩略图和发布。",
+      "description": "为开发者品牌制作技术演示、教程、脚本、剪辑、Shorts 和可发布素材。",
       "primaryCta": "预约通话",
-      "previewTitle": "15 分钟发布你的第一个 agent",
-      "previewSubtitle": "Studio1 for DevTools · 缩略图可做 A/B 测试"
+      "previewTitle": "LLM Fine-Tuning & Model Iteration Loop",
+      "previewSubtitle": "Studio1 技术视频示例"
     }
   },
   "Hero": {
@@ -218,7 +218,7 @@
       },
       {
         "label": "内容创作",
-        "description": "频道策略、脚本、剪辑、缩略图和 SEO 标题，以及为 YouTube 增长设计的发布节奏。"
+        "description": "内容创意、技术角度、社交帖子和分发素材，帮助开发者品牌在合适渠道保持活跃。"
       },
       {
         "label": "文档与 DX 审计",
@@ -246,7 +246,7 @@
       "views": "内容浏览量",
       "companies": "合作公司",
       "events": "高影响力活动",
-      "launch": "Product Hunt 发布"
+      "launch": "支持的发布"
     },
     "cards": {
       "content": {
@@ -258,7 +258,7 @@
       },
       "growth": {
         "badgeOne": "活动",
-        "badgeTwo": "PH 发布",
+        "badgeTwo": "发布",
         "titleStrong": "开发者",
         "titleRest": "增长",
         "description": "DevRel、产品发布、自然增长活动、创作者项目和社区增长。"
@@ -267,9 +267,9 @@
   },
   "GlobalReach": {
     "eyebrow": "全球覆盖",
-    "titlePrefix": "与全球团队一起",
-    "titleHighlight": "构建",
-    "description": "合作地区覆盖印度、巴西、越南、澳大利亚、以色列、美国、法国、荷兰和新加坡。"
+    "titlePrefix": "帮助世界各地的",
+    "titleHighlight": "团队",
+    "description": "我们与印度、巴西、越南、澳大利亚、以色列、美国、法国、荷兰和新加坡的公司建立过合作。"
   },
   "Testimonials": {
     "eyebrow": "客户评价",
@@ -316,9 +316,9 @@
     "metadataName": "Studio1 案例研究",
     "metadataDescription": "Studio1 如何通过技术内容和分发，帮助 devtool 与 SaaS 团队提升增长、搜索排名和开发者采用的真实案例。",
     "badge": "案例研究",
-    "titlePrefix": "开发者可以",
-    "titleHighlight": "验证的结果",
-    "description": "来自技术内容、DevRel 和分发工作的真实成果。",
+    "titlePrefix": "来自开发者增长工作的",
+    "titleHighlight": "案例研究",
+    "description": "来自技术内容、DevRel、文档和发布工作的证据导向案例。",
     "trustedBy": "受到开发者优先团队信任"
   },
   "NotFound": {

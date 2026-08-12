@@ -36,7 +36,7 @@ const formats = [
 
 export default function Formats() {
   return (
-    <section className="relative py-28 md:py-36">
+    <section id="formats" className="relative scroll-mt-28 py-28 md:py-36">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-border"
@@ -58,7 +58,7 @@ export default function Formats() {
           </motion.p>
           <motion.h2
             variants={fadeInUp}
-            className="mt-4 font-inter text-4xl font-medium tracking-tight md:text-5xl"
+            className="mt-4 font-inter text-4xl font-normal tracking-tight md:text-5xl"
           >
             The videos we make most often
           </motion.h2>
@@ -66,8 +66,8 @@ export default function Formats() {
             variants={fadeInUp}
             className="mt-6 text-base text-muted-foreground"
           >
-            Pick what fits your product and audience. We handle scripting, edit,
-            packaging, and publish.
+            Pick what fits your product and audience. We can support scripting,
+            editing, packaging, and upload-ready assets.
           </motion.p>
         </motion.div>
 

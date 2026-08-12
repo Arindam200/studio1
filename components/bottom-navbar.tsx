@@ -8,7 +8,18 @@ import { Button } from "@/components/ui/button";
 import { elevatedCardShadow } from "@/lib/shadows";
 import { cn } from "@/lib/utils";
 
-const DEFAULT_SECTION = serviceNavItems[0]?.path ?? "#stats";
+type BottomNavItem = {
+  title: string;
+  path: string;
+};
+
+const VIDEO_SERVICE_NAV_ITEMS: BottomNavItem[] = [
+  { title: "Overview", path: "#overview" },
+  { title: "Services", path: "#work" },
+  { title: "Demo", path: "#project-demo" },
+];
+
+const DEFAULT_SECTION = serviceNavItems[0]?.path ?? "#overview";
 const BOTTOM_SCROLL_THRESHOLD_PX = 96;
 const SERVICE_PAGE_PATHS = [
   "/technical-content-marketing",
@@ -17,19 +28,28 @@ const SERVICE_PAGE_PATHS = [
   "/developer-relations-growth-campaigns",
 ] as const;
 
+function withoutLocalePrefix(pathname: string) {
+  return pathname.replace(/^\/(fr|es|hi|zh)(?=\/|$)/, "") || "/";
+}
+
 export default function BottomNavbar() {
   const pathname = usePathname();
   const [activeHash, setActiveHash] = useState(DEFAULT_SECTION);
   const visibilityRef = useRef(new Map<string, number>());
+  const pathnameWithoutLocale = withoutLocalePrefix(pathname);
 
+  const navItems =
+    pathnameWithoutLocale === "/developer-video-production"
+      ? VIDEO_SERVICE_NAV_ITEMS
+      : serviceNavItems;
   const isBottomNavValidPage = SERVICE_PAGE_PATHS.some((path) =>
-    pathname.startsWith(path),
+    pathnameWithoutLocale.startsWith(path),
   );
 
   useEffect(() => {
     if (!isBottomNavValidPage) return;
 
-    const sectionIds = serviceNavItems.map((item) =>
+    const sectionIds = navItems.map((item) =>
       item.path.replace("#", ""),
     );
     const visibility = visibilityRef.current;
@@ -81,7 +101,7 @@ export default function BottomNavbar() {
 
     const hashFromUrl = window.location.hash;
     const hasValidHash = sectionIds.some((id) => hashFromUrl === `#${id}`);
-    applyActiveHash(hasValidHash ? hashFromUrl : DEFAULT_SECTION);
+    applyActiveHash(hasValidHash ? hashFromUrl : navItems[0]?.path ?? DEFAULT_SECTION);
 
     const onHashChange = () => {
       const hash = window.location.hash;
@@ -124,7 +144,7 @@ export default function BottomNavbar() {
       observer.disconnect();
       visibility.clear();
     };
-  }, [isBottomNavValidPage, pathname]);
+  }, [isBottomNavValidPage, navItems, pathname]);
 
   return (
     <nav className="fixed bottom-[5rem] z-[101] left-0 w-full">
@@ -136,7 +156,7 @@ export default function BottomNavbar() {
               elevatedCardShadow,
             )}
           >
-            {serviceNavItems.map((item) => {
+            {navItems.map((item) => {
               const isActive = activeHash === item.path;
 
               return (

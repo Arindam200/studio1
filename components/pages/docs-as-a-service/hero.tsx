@@ -22,7 +22,7 @@ export default function Hero() {
 
   return (
     <section id="documentation-dx-audits" className="overflow-x-hidden max-h-fit">
-      <div id="stats" className={serviceHeroOuterClassName}>
+      <div id="overview" className={serviceHeroOuterClassName}>
         <ServiceHeroTiles />
         <motion.div
           className="w-full"
@@ -39,10 +39,10 @@ export default function Hero() {
             </motion.div>
 
             <motion.h1
-              className="text-center font-inter text-5xl font-medium tracking-tight md:text-7xl"
+              className="text-center font-inter text-5xl font-normal tracking-tight md:text-7xl"
               variants={itemVariants}
             >
-              <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-bold italic text-transparent">
+              <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-normal italic text-transparent">
                 {t("titleAccent")}
               </span>
               <br />
@@ -89,11 +89,10 @@ export default function Hero() {
           >
             <HeroStatsStrip
               highlightValues
-              className="md:grid-cols-3"
+              className="md:grid-cols-2"
               stats={[
-                { value: "25+", label: t("stats.audits") },
-                { value: "150+", label: t("stats.pages") },
-                { value: "3", label: t("stats.tracks") },
+                { value: "15+", label: t("stats.audits") },
+                { value: "4+", label: t("stats.pages") },
               ]}
             />
           </motion.div>

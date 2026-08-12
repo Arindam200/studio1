@@ -6,7 +6,6 @@ import Process from "@/components/pages/devrel-as-a-service/process";
 import DevRelPricing from "@/components/sections/devrel-as-service/pricing";
 import type { Metadata } from "next";
 import Hero from "@/components/pages/devrel-as-a-service/hero";
-import NonNegotiable from "@/components/sections/non-negotiable";
 import FAQ, { type FAQItem } from "@/components/landing/faq";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import {
@@ -34,7 +33,7 @@ const devrelFaqItems: FAQItem[] = [
   {
     question: "What do Developer Relations & Growth Campaigns include?",
     answer:
-      "Our developer relations and growth service covers community building, developer education, advocacy, product launches, organic distribution, creator collaborations, event support, and metrics reporting. We operate as an embedded extension of your team.",
+      "Our developer relations and growth service covers community building, developer education, advocacy, project tutorials, product launches, organic distribution, creator collaborations, integrations, and event support. We operate as an embedded extension of your team.",
   },
   {
     question: "How is this different from hiring an in-house DevRel team?",
@@ -47,14 +46,14 @@ const devrelFaqItems: FAQItem[] = [
       "We help set up, grow, and support developer communities on Discord, Slack, GitHub Discussions, forums, Reddit, X, LinkedIn, and event channels. This includes onboarding flows, engagement programs, developer replies, feedback loops, AMAs, hackathons, and community partnerships.",
   },
   {
-    question: "Do you handle conference talks and meetups?",
+    question: "Do you support hackathons and community collaborations?",
     answer:
-      "Yes. We prepare and deliver talks, host meetup sessions, represent your product at developer events, and support event partnerships. We can also help with hackathon, student community, and tech community collaborations in India.",
+      "Yes. We can help with hackathon collaborations, student community partnerships, tech community outreach, meetup support, and developer event partnerships, especially across India.",
   },
   {
     question: "How do you measure DevRel success?",
     answer:
-      "We track community growth and engagement, content reach and performance, developer adoption rates, event attendance and feedback, GitHub activity (stars, issues, PRs), and product feedback surfaced from community conversations. Reports are delivered regularly.",
+      "We look at community growth and engagement, content reach, developer adoption signals, event feedback, GitHub activity, and product feedback surfaced from community conversations.",
   },
   {
     question: "Can you work alongside our existing DevRel team?",
@@ -67,19 +66,9 @@ const devrelFaqItems: FAQItem[] = [
       "We start with a Discovery phase where we audit your existing developer programs, analyze community engagement, and identify growth opportunities. Within the first two weeks, we deliver an actionable assessment and a tailored DevRel roadmap aligned to your goals.",
   },
   {
-    question: "Do you support Product Hunt launches?",
-    answer:
-      "Yes. We provide end-to-end Product Hunt launch support including pre-launch strategy, community activation, content preparation, launch-day execution, and post-launch amplification. Our past launches have achieved #1 Product of the Day.",
-  },
-  {
     question: "Do you run growth campaigns and influencer programs?",
     answer:
       "Yes. We run multi-channel organic campaigns across X, LinkedIn, Reddit, YouTube, newsletters, and developer communities. For influencer management, we handle creator discovery, outreach, pricing, briefs, coordination, and reporting across X, LinkedIn, YouTube, and other relevant channels.",
-  },
-  {
-    question: "What does a one-month campaign include?",
-    answer:
-      "A typical campaign can include a demo project or GitHub repo, one technical blog, one video, and multiple social posts. The goal is to tell one strong technical story across channels instead of publishing isolated assets.",
   },
 ];
 
@@ -87,23 +76,23 @@ const devrelScope = [
   {
     title: "Embedded DevRel execution",
     description:
-      "We can operate as a hands-on DevRel partner for product teams that need execution across content, community, open source, and developer support.",
+      "We can operate as a hands-on DevRel partner for product teams that need execution across content, community, open source, tutorials, and developer support.",
     points: [
       "Developer docs and technical content",
+      "Project tutorials and walkthroughs",
       "Open-source maintenance support",
       "Community replies and feedback loops",
-      "Developer-facing social management",
     ],
   },
   {
     title: "Integrations and partnerships",
     description:
-      "We help identify integration opportunities, reach out to partner companies, coordinate collaboration, and turn ecosystem work into developer-facing content.",
+      "We help identify integration opportunities, reach out to partner companies, coordinate collaboration, and turn ecosystem work into developer-facing tutorials.",
     points: [
       "Potential integration partner research",
       "Partner outreach and coordination",
-      "Co-marketing and co-built examples",
-      "Integration content and launch support",
+      "Integration demos and examples",
+      "Integration content and release support",
     ],
   },
   {
@@ -131,11 +120,11 @@ const devrelScope = [
   {
     title: "One-month growth campaigns",
     description:
-      "For launches or awareness pushes, we can run a campaign around one concrete technical story: a project, repo, blog, video, and social distribution.",
+      "For launches or awareness pushes, we can run a campaign around one concrete technical story: a project, repo, tutorial, video, and social distribution.",
     points: [
       "Demo project or GitHub repo",
-      "One technical blog",
-      "One product/demo video",
+      "Technical blog or tutorial",
+      "Project demo video",
       "Social posts across relevant channels",
     ],
   },
@@ -159,7 +148,7 @@ const memoriProof = {
   heroValue: "12,000+",
   heroLabel: "GitHub stars from launch",
   proof:
-    "Studio1 supported Memori with community-led launches, thought leadership, demo content, live developer education, feedback loops, and targeted influencer management.",
+    "Studio1 supported Memori with early product-idea validation, community-led launches, thought leadership, demo content, live developer education, feedback loops, and selective developer collaborations.",
   stats: [
     { value: "50K+", label: "Reddit launch impressions" },
     { value: "100+", label: "developer comments" },
@@ -215,17 +204,13 @@ export default function DevRel() {
       />
       <Process />
       <ServiceProofSection
-        title="Open-source growth through community, demos, and creator partnerships"
-        description="Memori combined demos, communities, live education, feedback, and developer creators."
+        title="Open-source growth through validation, demos, and meaningful collaborations"
+        description="Memori combined early product validation, demo agents, community education, feedback loops, and relevant developer collaborations."
         study={memoriProof}
       />
       <FAQ
         subtitle="Common questions about our developer relations and growth campaign services."
         items={devrelFaqItems}
-      />
-      <NonNegotiable
-        headline="We operate as an embedded developer relations and growth team: advocacy, community, launches, organic campaigns, and creator programs tied to product goals."
-        body="From Discord and workshops to product launches, organic distribution, and developer creator programs, Studio1 runs growth programs with writers, engineers, community managers, and advocates. You get measurable developer adoption without the overhead of building a full in-house team."
       />
       {/* <DevRelPricing /> */}
       {/* <PricingSection /> */}

@@ -118,8 +118,8 @@ export const navItems = [
 ];
 
 export const serviceNavItems = [
-  { title: "Stats", path: "#stats" },
-  { title: "Work", path: "#work" },
+  { title: "Overview", path: "#overview" },
+  { title: "Services", path: "#work" },
   { title: "Process", path: "#process" },
 ];
 
@@ -418,7 +418,7 @@ export const teamMembers = [
     social: {
       twitter: "https://mobile.twitter.com/astrodevil_",
       linkedin: "https://www.linkedin.com/in/amitesh1208/",
-      website: "https://mranand.com/featured/",
+      website: "https://mranand.com/",
     },
   },
   {

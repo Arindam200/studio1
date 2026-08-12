@@ -10,10 +10,10 @@ export const heroStatItemClassName =
   "flex items-baseline justify-center gap-1.5 whitespace-nowrap px-3 py-2 md:px-4 lg:px-5";
 
 export const heroStatValueClassName =
-  "text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-foreground tabular-nums";
+  "text-xl md:text-2xl lg:text-3xl font-normal tracking-tight text-foreground tabular-nums";
 
 export const heroStatValueHighlightClassName =
-  "text-xl md:text-2xl lg:text-3xl font-bold tracking-tight tabular-nums bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text text-transparent";
+  "text-xl md:text-2xl lg:text-3xl font-normal tracking-tight tabular-nums bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text text-transparent";
 
 export const heroStatLabelClassName =
   "text-sm md:text-base text-muted-foreground";

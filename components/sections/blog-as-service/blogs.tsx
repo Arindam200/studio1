@@ -24,9 +24,9 @@ export default function BlogSection() {
       <motion.div className="text-center my-10" variants={headerVariants}>
         <p className="mx-auto text-foreground/80 text-sm md:text-base"></p>
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-medium mb-4 md:text-5xl">
+          <h2 className="text-4xl font-normal mb-4 md:text-5xl">
             Our{" "}
-            <span className="serif-accent font-accent italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
+            <span className="serif-accent font-accent font-normal italic text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
               Blogs
             </span>
           </h2>

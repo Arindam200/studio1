@@ -7,7 +7,6 @@ import type { Metadata } from "next";
 import Hero from "@/components/pages/blogs-as-a-service/hero";
 import Services from "@/components/pages/blogs-as-a-service/services";
 import PricingSection from "@/components/pages/blogs-as-a-service/pricing";
-import NonNegotiable from "@/components/sections/non-negotiable";
 import FAQ, { type FAQItem } from "@/components/landing/faq";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import {
@@ -43,19 +42,14 @@ const blogFaqItems: FAQItem[] = [
       "Our writers are experienced engineers and technical writers with backgrounds in AI/ML, DevOps, cloud computing, web development, and more. Each writer is matched to your product's stack so the content reads like it was written by someone on your team.",
   },
   {
-    question: "How do you handle SEO for technical blog content?",
-    answer:
-      "We start with keyword research to identify high-intent developer queries, structure content for search engine visibility and AI citation, and distribute across high-authority platforms like Dev.to, Hashnode, and Medium to build backlinks and improve rankings.",
-  },
-  {
     question: "What is the typical turnaround time per blog post?",
     answer:
-      "Individual blog posts and tutorials are typically delivered within 10 to 14 days from brief to publish. This includes topic research, writing, technical validation, peer review, and SEO optimization.",
+      "Most straightforward blogs and tutorials can move from brief to draft in 3 to 7 days. Complex technical deep dives, product walkthroughs, or code-heavy implementation guides usually need 10 to 14 days for research, validation, review, and polish.",
   },
   {
-    question: "Do you distribute the content after publishing?",
+    question: "Can you help repurpose content after publishing?",
     answer:
-      "Yes. Every piece is distributed across Dev.to, Hashnode, Reddit, LinkedIn, developer newsletters, and relevant community channels. Distribution is included with every engagement, not an upsell.",
+      "Yes, when it fits the engagement. We can adapt a published article into short social copy, developer-community snippets, or republishing formats for approved channels like Dev.to, Medium, X, and LinkedIn.",
   },
   {
     question: "How do you ensure technical accuracy?",
@@ -76,11 +70,6 @@ const blogFaqItems: FAQItem[] = [
     question: "Can content publish from Studio1 or individual author profiles?",
     answer:
       "Yes. Depending on the goal, content can publish on your company blog, your Dev.to or Medium profile, Studio1 profiles, or individual author profiles. We also support social posts from either your channels or ours when that fits the campaign.",
-  },
-  {
-    question: "How do you measure the success of blog content?",
-    answer:
-      "We track organic traffic growth, keyword ranking positions, backlink acquisition, content engagement metrics, and developer signups or conversions attributed to specific posts. Regular reports are provided for every engagement.",
   },
 ];
 
@@ -130,18 +119,7 @@ const contentWorkflow = [
     ],
   },
   {
-    title: "Social posts and distribution",
-    description:
-      "For selected pieces, we turn the article into launch posts, short social copy, and developer-community distribution.",
-    points: [
-      "X and LinkedIn post copy",
-      "Reddit/community positioning",
-      "Newsletter and platform snippets",
-      "Performance review after publish",
-    ],
-  },
-  {
-    title: "Content that teaches adoption",
+    title: "Content that explains implementation",
     description:
       "The goal is not only traffic. We write technical content that helps developers understand, try, and trust your product.",
     points: [
@@ -153,18 +131,18 @@ const contentWorkflow = [
   },
 ];
 
-const permitProof = {
-  company: "Permit.io",
-  category: "Technical SEO & Adoption",
-  href: "/case-studies/permit",
-  heroValue: "2-track",
-  heroLabel: "content engine shipped",
+const entelligenceProof = {
+  company: "Entelligence AI",
+  category: "Technical Content & Repurposing",
+  href: "/case-studies/entelligence-ai",
+  heroValue: "Blog",
+  heroLabel: "engine for AI engineering topics",
   proof:
-    "Studio1 built a two-track content engine for Permit.io: growth articles plus deep implementation guides that ranked, taught adoption, and supported a Product Hunt launch.",
+    "Studio1 helped Entelligence AI plan, draft, edit, publish, cross-post, and promote technical blogs for AI engineering audiences.",
   stats: [
-    { value: "2", label: "content tracks" },
-    { value: "RBAC", label: "Supabase guide" },
-    { value: "Dev.to", label: "distribution channel" },
+    { value: "Technical", label: "blogs and deep dives" },
+    { value: "DEV", label: "cross-posting support" },
+    { value: "Social", label: "repurposed launch posts" },
   ],
 };
 
@@ -211,23 +189,19 @@ export default function Page() {
       <ServiceDetailSection
         eyebrow="How the content engine works"
         title="From topic idea to published technical content"
-        description="We align topic, outline, draft, review, publishing, and distribution around one developer goal."
+        description="We align topic, outline, draft, review, publishing, and optional repurposing around one developer goal."
         items={contentWorkflow}
         columns="three"
       />
       <Process />
       <ServiceProofSection
-        title="Technical content that ranks and teaches adoption"
-        description="Permit.io combined SEO strategy, implementation guides, ghostwriting, and developer-channel distribution."
-        study={permitProof}
+        title="Technical content that ranks and explains implementation"
+        description="Entelligence AI turned product ideas, AI engineering trends, and feature launches into developer-facing blogs and social assets."
+        study={entelligenceProof}
       />
       <FAQ
         subtitle="Common questions about our technical content marketing services."
         items={blogFaqItems}
-      />
-      <NonNegotiable
-        headline="Every piece is written by engineers and technical writers matched to your stack, then technically validated before it ships."
-        body="We produce developer-focused blogs, tutorials, and integration guides with real code examples. Each writer is matched to your product domain, every article goes through peer review and technical validation, and distribution across Dev.to, Hashnode, Reddit, and LinkedIn is included with the engagement."
       />
       {/* <Team /> */}
       {/* <PricingSection /> */}

@@ -17,7 +17,7 @@ type SitemapEntry = {
   localized?: boolean;
 };
 
-const STATIC_LAST_MODIFIED = "2026-08-10";
+const STATIC_LAST_MODIFIED = "2026-08-12";
 const LEGAL_LAST_MODIFIED = "2025-01-15";
 
 function escapeXml(value: string) {

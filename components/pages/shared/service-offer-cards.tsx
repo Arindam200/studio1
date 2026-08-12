@@ -70,7 +70,7 @@ export function ServiceOfferCards({
         ) : null}
         <div className="text-center text-5xl font-normal max-sm:text-4xl">
           {titlePrefix}{" "}
-          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent italic text-transparent">
+          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent font-normal italic text-transparent">
             {titleAccent}
           </span>
         </div>

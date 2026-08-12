@@ -56,16 +56,16 @@
   "ServiceHero": {
     "technicalContent": {
       "badge": "Services",
-      "titleAccent": "Technical Content",
-      "titleRest": "Marketing",
+      "titleAccent": "Technical",
+      "titleRest": "Content Marketing",
       "description": "We create developer tutorials, guides, and SEO content that build trust, increase product visibility, and drive technical adoption.",
       "primaryCta": "Book a Call",
       "secondaryCta": "Explore Services",
       "stats": {
-        "views": "content views",
+        "views": "tutorials & guides",
         "teams": "teams helped",
-        "reddit": "Reddit impressions",
-        "partners": "partner companies"
+        "reddit": "typical draft window",
+        "partners": "deep dives"
       }
     },
     "docs": {
@@ -77,8 +77,8 @@
       "secondaryCta": "Explore Services",
       "stats": {
         "audits": "docs audits",
-        "pages": "pages shipped",
-        "tracks": "service tracks"
+        "pages": "docs edits & revamps",
+        "tracks": "docs work"
       }
     },
     "devrel": {
@@ -92,17 +92,17 @@
         "events": "high-impact events",
         "teams": "teams helped",
         "partners": "partner companies",
-        "launch": "Product Hunt launch"
+        "launch": "launches supported"
       }
     },
     "video": {
       "badge": "Developer video production",
       "titlePrefix": "We make technical videos",
       "titleHighlight": "for developer brands.",
-      "description": "Product demos, tutorials, scripts, edits, thumbnails, and publishing, handled for developer brands.",
+      "description": "Technical demos, tutorials, scripts, edits, shorts, and upload-ready assets for developer brands.",
       "primaryCta": "Book a Call",
-      "previewTitle": "Ship your first agent in 15 minutes",
-      "previewSubtitle": "Studio1 for DevTools · Thumbnail A/B ready"
+      "previewTitle": "LLM Fine-Tuning & Model Iteration Loop",
+      "previewSubtitle": "Studio1 technical video sample"
     }
   },
   "Hero": {
@@ -218,7 +218,7 @@
       },
       {
         "label": "Content Creation",
-        "description": "Channel strategy, scripts, edits, thumbnails, and SEO titles with a publishing cadence built for YouTube growth."
+        "description": "Content ideas, technical angles, social posts, and distribution assets that help developer brands stay active across channels."
       },
       {
         "label": "Documentation & DX Audits",
@@ -246,7 +246,7 @@
       "views": "content views",
       "companies": "partner companies",
       "events": "high-impact events",
-      "launch": "Product Hunt launch"
+      "launch": "launches supported"
     },
     "cards": {
       "content": {
@@ -258,7 +258,7 @@
       },
       "growth": {
         "badgeOne": "events",
-        "badgeTwo": "PH Launch",
+        "badgeTwo": "launches",
         "titleStrong": "Developer",
         "titleRest": "Growth",
         "description": "Developer relations, launches, organic campaigns, creator programs, and community growth."
@@ -267,9 +267,9 @@
   },
   "GlobalReach": {
     "eyebrow": "Global Reach",
-    "titlePrefix": "Building With Teams",
-    "titleHighlight": "Worldwide",
-    "description": "Partner and collaboration hubs across India, Brazil, Vietnam, Australia, Israel, the USA, France, the Netherlands, and Singapore."
+    "titlePrefix": "Helping Teams",
+    "titleHighlight": "Around the World",
+    "description": "Partnered and collaborated with companies across India, Brazil, Vietnam, Australia, Israel, the USA, France, the Netherlands, and Singapore."
   },
   "Testimonials": {
     "eyebrow": "Testimonials",
@@ -316,9 +316,9 @@
     "metadataName": "Studio1 Case Studies",
     "metadataDescription": "Real-world examples of how Studio1 helps devtool and SaaS companies drive growth, rankings, and developer adoption through technical content and distribution.",
     "badge": "Case Studies",
-    "titlePrefix": "Results developers can",
-    "titleHighlight": "verify",
-    "description": "Real outcomes from technical content, DevRel, and distribution work.",
+    "titlePrefix": "Case Studies From",
+    "titleHighlight": "Developer Growth Work",
+    "description": "Proof-led examples from technical content, DevRel, documentation, and launch work.",
     "trustedBy": "Trusted by developer-first teams"
   },
   "NotFound": {

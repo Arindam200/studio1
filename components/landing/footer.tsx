@@ -1,6 +1,11 @@
 "use client";
 import React from "react";
-import { IconBrandLinkedin, IconBrandX, IconNews } from "@tabler/icons-react";
+import {
+  IconBrandLinkedin,
+  IconBrandX,
+  IconBrandYoutube,
+  IconNews,
+} from "@tabler/icons-react";
 import Logo from "../ui/svgs/logo";
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -96,6 +101,13 @@ export default function Footer() {
                   <span className="sr-only">LinkedIn</span>
                 </Link>
                 <Link
+                  href="https://www.youtube.com/@studio1hq/"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <IconBrandYoutube className="size-6 hover:text-primary duration-300" />
+                  <span className="sr-only">YouTube</span>
+                </Link>
+                <Link
                   href="https://dev.to/studio1hq"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
@@ -105,37 +117,37 @@ export default function Footer() {
               </motion.div>
               <motion.div className="flex flex-wrap gap-4 text-sm font-medium text-neutral-500 dark:text-neutral-400 max-w-full">
                 <Link
-                  className="hover:text-foreground duration-300 hover:font-semibold"
+                  className="hover:text-foreground duration-300"
                   href={"/developer-relations-growth-campaigns"}
                 >
                   {t("links.growth")}
                 </Link>
                 <Link
-                  className="hover:text-foreground duration-300 hover:font-semibold"
+                  className="hover:text-foreground duration-300"
                   href={"/developer-documentation-dx-audit"}
                 >
                   {t("links.docs")}
                 </Link>
                 <Link
-                  className="hover:text-foreground duration-300 hover:font-semibold"
+                  className="hover:text-foreground duration-300"
                   href={"/product"}
                 >
                   {t("links.products")}
                 </Link>
                 <Link
-                  className="hover:text-foreground duration-300 hover:font-semibold"
+                  className="hover:text-foreground duration-300"
                   href={"/work"}
                 >
                   {t("links.work")}
                 </Link>
                 <Link
-                  className="hover:text-foreground duration-300 hover:font-semibold"
+                  className="hover:text-foreground duration-300"
                   href={"/blog"}
                 >
                   {t("links.blog")}
                 </Link>
                 <Link
-                  className="hover:text-foreground duration-300 hover:font-semibold"
+                  className="hover:text-foreground duration-300"
                   href={"/careers"}
                 >
                   {t("links.careers")}

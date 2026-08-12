@@ -92,11 +92,11 @@ export default function AboutUs() {
         >
           <h1 className="text-3xl md:text-5xl font-primary font-normal tracking-tight text-center leading-tight">
             {t("titlePrefix")}{" "}
-            <span className="serif-accent font-accent italic font-bold text-primary/75 text-[1.08em]">
+            <span className="serif-accent font-accent italic font-normal text-primary/75 text-[1.08em]">
               {t("titleHighlightOne")}
             </span>{" "}
             {t("titleMiddle")}{" "}
-            <span className="serif-accent font-accent italic font-bold text-primary/75 text-[1.08em]">
+            <span className="serif-accent font-accent italic font-normal text-primary/75 text-[1.08em]">
               {t("titleHighlightTwo")}
             </span>{" "}
             <br /> {t("titleSuffix")}

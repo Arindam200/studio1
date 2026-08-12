@@ -24,6 +24,7 @@ type ServiceDetailItem = {
 };
 
 type ServiceDetailSectionProps = {
+  id?: string;
   eyebrow: string;
   title: string;
   description: string;
@@ -149,6 +150,7 @@ function ServiceDetailCard({
 }
 
 export function ServiceDetailSection({
+  id = "scope",
   eyebrow,
   title,
   description,
@@ -157,7 +159,7 @@ export function ServiceDetailSection({
 }: ServiceDetailSectionProps) {
   return (
     <motion.section
-      id="work"
+      id={id}
       className="relative scroll-mt-28 px-4 py-20 md:py-24"
       initial="hidden"
       whileInView="visible"
@@ -172,7 +174,7 @@ export function ServiceDetailSection({
           <p className="font-secondary text-sm font-medium tracking-wide text-primary">
             {eyebrow}
           </p>
-          <h2 className="mt-4 text-balance font-inter text-3xl font-medium leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
+          <h2 className="mt-4 text-balance font-inter text-3xl font-normal leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
             {title}
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-pretty text-sm leading-relaxed text-muted-foreground md:text-base">
@@ -216,7 +218,7 @@ export function ServiceProofSection({
           <p className="font-secondary text-sm font-medium tracking-wide text-primary">
             {eyebrow}
           </p>
-          <h2 className="mt-4 text-balance font-inter text-4xl font-medium leading-tight tracking-tight text-foreground md:text-5xl">
+          <h2 className="mt-4 text-balance font-inter text-4xl font-normal leading-tight tracking-tight text-foreground md:text-5xl">
             {title}
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">

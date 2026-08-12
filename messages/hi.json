@@ -56,16 +56,16 @@
   "ServiceHero": {
     "technicalContent": {
       "badge": "सेवाएँ",
-      "titleAccent": "Technical Content",
-      "titleRest": "Marketing",
+      "titleAccent": "Technical",
+      "titleRest": "Content Marketing",
       "description": "हम developer tutorials, guides और SEO content बनाते हैं जो trust बनाते हैं, product visibility बढ़ाते हैं और technical adoption को आगे बढ़ाते हैं।",
       "primaryCta": "कॉल बुक करें",
       "secondaryCta": "सेवाएँ देखें",
       "stats": {
-        "views": "content views",
+        "views": "tutorials और guides",
         "teams": "teams helped",
-        "reddit": "Reddit impressions",
-        "partners": "partner companies"
+        "reddit": "typical draft window",
+        "partners": "complex deep dives"
       }
     },
     "docs": {
@@ -77,8 +77,8 @@
       "secondaryCta": "सेवाएँ देखें",
       "stats": {
         "audits": "docs audits",
-        "pages": "pages shipped",
-        "tracks": "service tracks"
+        "pages": "docs edits और revamps",
+        "tracks": "docs work"
       }
     },
     "devrel": {
@@ -92,17 +92,17 @@
         "events": "high-impact events",
         "teams": "teams helped",
         "partners": "partner companies",
-        "launch": "Product Hunt launch"
+        "launch": "launches supported"
       }
     },
     "video": {
       "badge": "Developer video production",
       "titlePrefix": "हम technical videos बनाते हैं",
       "titleHighlight": "developer brands के लिए.",
-      "description": "Product demos, tutorials, scripts, edits, thumbnails और publishing, developer brands के लिए handled.",
+      "description": "Developer brands के लिए technical demos, tutorials, scripts, edits, shorts और upload-ready assets.",
       "primaryCta": "कॉल बुक करें",
-      "previewTitle": "अपना पहला agent 15 मिनट में ship करें",
-      "previewSubtitle": "Studio1 for DevTools · Thumbnail A/B ready"
+      "previewTitle": "LLM Fine-Tuning & Model Iteration Loop",
+      "previewSubtitle": "Studio1 technical video sample"
     }
   },
   "Hero": {
@@ -218,7 +218,7 @@
       },
       {
         "label": "कंटेंट क्रिएशन",
-        "description": "YouTube ग्रोथ के लिए चैनल रणनीति, स्क्रिप्ट, एडिट, थंबनेल और SEO टाइटल के साथ पब्लिशिंग कैडेंस।"
+        "description": "कंटेंट आइडिया, तकनीकी angles, social posts और distribution assets ताकि developer brands सही channels पर active रहें।"
       },
       {
         "label": "डॉक्यूमेंटेशन और DX ऑडिट",
@@ -246,7 +246,7 @@
       "views": "कंटेंट व्यूज़",
       "companies": "पार्टनर कंपनियाँ",
       "events": "high-impact events",
-      "launch": "Product Hunt launch"
+      "launch": "launches supported"
     },
     "cards": {
       "content": {
@@ -258,7 +258,7 @@
       },
       "growth": {
         "badgeOne": "इवेंट्स",
-        "badgeTwo": "PH लॉन्च",
+        "badgeTwo": "launches",
         "titleStrong": "डेवलपर",
         "titleRest": "ग्रोथ",
         "description": "DevRel, launches, organic campaigns, creator programs और community growth।"
@@ -267,9 +267,9 @@
   },
   "GlobalReach": {
     "eyebrow": "वैश्विक पहुँच",
-    "titlePrefix": "दुनिया भर की टीमों के साथ",
-    "titleHighlight": "काम",
-    "description": "India, Brazil, Vietnam, Australia, Israel, USA, France, Netherlands और Singapore में collaboration hubs."
+    "titlePrefix": "दुनिया भर की टीमों की",
+    "titleHighlight": "मदद",
+    "description": "India, Brazil, Vietnam, Australia, Israel, USA, France, Netherlands और Singapore की companies के साथ partnership और collaboration."
   },
   "Testimonials": {
     "eyebrow": "प्रशंसापत्र",
@@ -316,9 +316,9 @@
     "metadataName": "Studio1 केस स्टडीज़",
     "metadataDescription": "वास्तविक उदाहरण कि Studio1 कैसे devtool और SaaS teams को technical content और distribution के ज़रिए growth, rankings और developer adoption बढ़ाने में मदद करता है।",
     "badge": "केस स्टडीज़",
-    "titlePrefix": "ऐसे results जिन्हें developers",
-    "titleHighlight": "verify कर सकते हैं",
-    "description": "Technical content, DevRel और distribution work से आए real outcomes.",
+    "titlePrefix": "Developer Growth Work की",
+    "titleHighlight": "Case Studies",
+    "description": "Technical content, DevRel, documentation और launch work से proof-led examples.",
     "trustedBy": "Developer-first teams द्वारा trusted"
   },
   "NotFound": {

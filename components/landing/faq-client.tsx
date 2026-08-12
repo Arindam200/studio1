@@ -42,7 +42,7 @@ export default function FAQClient({ items, subtitle }: FAQClientProps) {
           </p>
           <h2 className="font-primary text-4xl font-normal tracking-tight text-foreground max-sm:text-3xl md:text-5xl">
             Frequently Asked{" "}
-            <span className="serif-accent font-accent italic font-bold text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
+            <span className="serif-accent font-accent italic font-normal text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary1 to-primary">
               Questions
             </span>
           </h2>

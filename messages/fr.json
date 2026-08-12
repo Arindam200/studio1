@@ -56,16 +56,16 @@
   "ServiceHero": {
     "technicalContent": {
       "badge": "Services",
-      "titleAccent": "Contenu technique",
-      "titleRest": "marketing",
+      "titleAccent": "Contenu",
+      "titleRest": "technique marketing",
       "description": "Tutoriels, guides et contenu SEO pour gagner en confiance, visibilité et adoption.",
       "primaryCta": "Réserver un appel",
       "secondaryCta": "Explorer les services",
       "stats": {
-        "views": "vues de contenu",
+        "views": "tutoriels et guides",
         "teams": "équipes aidées",
-        "reddit": "impressions Reddit",
-        "partners": "entreprises partenaires"
+        "reddit": "délai de brouillon habituel",
+        "partners": "deep dives"
       }
     },
     "docs": {
@@ -77,8 +77,8 @@
       "secondaryCta": "Explorer les services",
       "stats": {
         "audits": "audits docs",
-        "pages": "pages livrées",
-        "tracks": "axes de service"
+        "pages": "éditions et refontes docs",
+        "tracks": "travail docs"
       }
     },
     "devrel": {
@@ -92,17 +92,17 @@
         "events": "événements à fort impact",
         "teams": "équipes aidées",
         "partners": "entreprises partenaires",
-        "launch": "lancement Product Hunt"
+        "launch": "lancements accompagnés"
       }
     },
     "video": {
       "badge": "Production vidéo développeur",
       "titlePrefix": "Nous créons des vidéos techniques",
       "titleHighlight": "pour les marques développeur.",
-      "description": "Démos produit, tutoriels, scripts, montages, miniatures et publication, pris en charge pour les marques développeur.",
+      "description": "Démos techniques, tutoriels, scripts, montages, shorts et assets prêts à publier pour les marques développeur.",
       "primaryCta": "Réserver un appel",
-      "previewTitle": "Lancez votre premier agent en 15 minutes",
-      "previewSubtitle": "Studio1 pour DevTools · Miniature prête pour A/B test"
+      "previewTitle": "LLM Fine-Tuning & Model Iteration Loop",
+      "previewSubtitle": "Exemple de vidéo technique Studio1"
     }
   },
   "Hero": {
@@ -218,7 +218,7 @@
       },
       {
         "label": "Création de contenu",
-        "description": "Stratégie de chaîne, scripts, montages, miniatures et titres SEO avec une cadence pensée pour la croissance YouTube."
+        "description": "Idées de contenu, angles techniques, posts sociaux et assets de distribution pour rester actif sur les bons canaux."
       },
       {
         "label": "Documentation et audits DX",
@@ -246,7 +246,7 @@
       "views": "vues de contenu",
       "companies": "entreprises partenaires",
       "events": "événements à fort impact",
-      "launch": "lancement Product Hunt"
+      "launch": "lancements accompagnés"
     },
     "cards": {
       "content": {
@@ -258,7 +258,7 @@
       },
       "growth": {
         "badgeOne": "événements",
-        "badgeTwo": "lancement PH",
+        "badgeTwo": "lancements",
         "titleStrong": "Croissance",
         "titleRest": "développeur",
         "description": "DevRel, lancements, campagnes organiques, programmes créateurs et croissance communautaire."
@@ -267,9 +267,9 @@
   },
   "GlobalReach": {
     "eyebrow": "Portée mondiale",
-    "titlePrefix": "Construire avec des équipes",
+    "titlePrefix": "Aider les équipes",
     "titleHighlight": "partout dans le monde",
-    "description": "Hubs de collaboration en Inde, au Brésil, au Vietnam, en Australie, en Israël, aux USA, en France, aux Pays-Bas et à Singapour."
+    "description": "Partenariats et collaborations avec des entreprises en Inde, au Brésil, au Vietnam, en Australie, en Israël, aux USA, en France, aux Pays-Bas et à Singapour."
   },
   "Testimonials": {
     "eyebrow": "Témoignages",
@@ -316,9 +316,9 @@
     "metadataName": "Études de cas Studio1",
     "metadataDescription": "Des exemples concrets de la façon dont Studio1 aide les équipes devtool et SaaS à gagner en croissance, en visibilité et en adoption développeur grâce au contenu technique et à la distribution.",
     "badge": "Études de cas",
-    "titlePrefix": "Des résultats que les développeurs peuvent",
-    "titleHighlight": "vérifier",
-    "description": "Des résultats réels issus du contenu technique, du DevRel et de la distribution.",
+    "titlePrefix": "Études de cas issues du",
+    "titleHighlight": "travail de croissance développeur",
+    "description": "Des exemples concrets issus du contenu technique, du DevRel, de la documentation et des lancements.",
     "trustedBy": "Approuvé par des équipes developer-first"
   },
   "NotFound": {

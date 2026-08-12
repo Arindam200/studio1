@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Hero from "@/components/pages/docs-as-a-service/hero";
 import Services from "@/components/pages/docs-as-a-service/services";
 import Process from "@/components/pages/docs-as-a-service/process";
-import NonNegotiable from "@/components/sections/non-negotiable";
 import FAQ, { type FAQItem } from "@/components/landing/faq";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import {
@@ -157,7 +156,7 @@ const litellmProof = {
   category: "Docs & Developer Onboarding",
   href: "/case-studies/litellm",
   heroValue: "SDK + Gateway",
-  heroLabel: "docs paths clarified",
+  heroLabel: "onboarding clarified",
   proof:
     "Studio1 revamped LiteLLM's docs across SDK and Gateway paths, added focused quickstarts, improved information architecture, and turned community questions into a DX feedback loop.",
   stats: [
@@ -222,10 +221,6 @@ export default function Page() {
       <FAQ
         subtitle="Common questions about our developer documentation and DX audit services."
         items={docsFaqItems}
-      />
-      <NonNegotiable
-        headline="We audit the docs, write what is missing, and improve the path until first success is obvious."
-        body="Docs audits surface friction in onboarding, APIs, and workflows. Documentation and DX improvements turn those findings into shippable guides, clearer flows, and a roadmap your team can keep executing against."
       />
     </div>
   );

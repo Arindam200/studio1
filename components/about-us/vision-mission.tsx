@@ -230,7 +230,7 @@ export const VisionMission = () => {
       >
         <h2 className="mb-4 font-primary text-4xl font-normal tracking-tight md:text-5xl">
           What{" "}
-          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent italic font-bold text-transparent">
+          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent italic font-normal text-transparent">
             Fuels
           </span>{" "}
           Us?

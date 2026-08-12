@@ -31,8 +31,8 @@ export default function Impact() {
         </CardWithGrid>
         <CardWithGrid>
           <div className="w-full h-40 border border-orange-400 rounded-md p-3 flex flex-col justify-center items-center space-y-2">
-            <div className="text-center text-4xl font-bold font-numeric tabular-nums">#1</div>
-            <div className="text-center text-sm">Product of the Day</div>
+            <div className="text-center text-4xl font-bold font-numeric tabular-nums">5+</div>
+            <div className="text-center text-sm">Launches Supported</div>
           </div>
         </CardWithGrid>
       </div>
