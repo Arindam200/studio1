@@ -97,13 +97,12 @@
       }
     },
     "video": {
-      "badge": "Production vidéo développeur",
-      "titlePrefix": "Nous créons des vidéos techniques",
-      "titleHighlight": "pour les marques développeur.",
+      "badge": "Services",
+      "titleAccent": "Production vidéo",
+      "titleRest": "développeur",
       "description": "Démos techniques, tutoriels, scripts, montages, shorts et assets prêts à publier pour les marques développeur.",
       "primaryCta": "Réserver un appel",
-      "previewTitle": "LLM Fine-Tuning & Model Iteration Loop",
-      "previewSubtitle": "Exemple de vidéo technique Studio1"
+      "secondaryCta": "Explorer les services"
     }
   },
   "Hero": {

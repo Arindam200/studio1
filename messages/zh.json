@@ -97,13 +97,12 @@
       }
     },
     "video": {
-      "badge": "开发者视频制作",
-      "titlePrefix": "我们制作技术视频",
-      "titleHighlight": "服务开发者品牌。",
+      "badge": "服务",
+      "titleAccent": "开发者视频",
+      "titleRest": "制作",
       "description": "为开发者品牌制作技术演示、教程、脚本、剪辑、Shorts 和可发布素材。",
       "primaryCta": "预约通话",
-      "previewTitle": "LLM Fine-Tuning & Model Iteration Loop",
-      "previewSubtitle": "Studio1 技术视频示例"
+      "secondaryCta": "查看服务"
     }
   },
   "Hero": {

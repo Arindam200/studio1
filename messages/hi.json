@@ -97,13 +97,12 @@
       }
     },
     "video": {
-      "badge": "Developer video production",
-      "titlePrefix": "हम technical videos बनाते हैं",
-      "titleHighlight": "developer brands के लिए.",
+      "badge": "सेवाएँ",
+      "titleAccent": "Developer Video",
+      "titleRest": "Production",
       "description": "Developer brands के लिए technical demos, tutorials, scripts, edits, shorts और upload-ready assets.",
       "primaryCta": "कॉल बुक करें",
-      "previewTitle": "LLM Fine-Tuning & Model Iteration Loop",
-      "previewSubtitle": "Studio1 technical video sample"
+      "secondaryCta": "सेवाएँ देखें"
     }
   },
   "Hero": {

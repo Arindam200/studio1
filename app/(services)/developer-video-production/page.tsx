@@ -5,7 +5,7 @@ import Services from "@/components/pages/content-creation/services";
 import Packaging from "@/components/pages/content-creation/packaging";
 import Formats from "@/components/pages/content-creation/formats";
 import Cadence from "@/components/pages/content-creation/cadence";
-import ProjectDemo from "@/components/pages/content-creation/project-demo";
+// import ProjectDemo from "@/components/pages/content-creation/project-demo";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import { ServiceDetailSection } from "@/components/pages/shared/service-detail-sections";
 import FAQ, { type FAQItem } from "@/components/landing/faq";
@@ -171,7 +171,7 @@ export default function Page() {
         items={videoWorkstreams}
         columns="three"
       />
-      <ProjectDemo />
+      {/* <ProjectDemo /> */}
       <Packaging />
       <Formats />
       <Cadence />
