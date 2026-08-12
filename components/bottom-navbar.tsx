@@ -15,12 +15,14 @@ type BottomNavItem = {
 
 const VIDEO_SERVICE_NAV_ITEMS: BottomNavItem[] = [
   { title: "Overview", path: "#overview" },
-  { title: "Services", path: "#work" },
-  { title: "Demo", path: "#project-demo" },
+  { title: "Scope", path: "#work" },
+  { title: "Workflow", path: "#formats" },
 ];
 
 const DEFAULT_SECTION = serviceNavItems[0]?.path ?? "#overview";
 const BOTTOM_SCROLL_THRESHOLD_PX = 96;
+const TOP_SCROLL_THRESHOLD_PX = 220;
+const HASH_TARGET_ACTIVE_RANGE_PX = 360;
 const SERVICE_PAGE_PATHS = [
   "/technical-content-marketing",
   "/developer-documentation-dx-audit",
@@ -57,8 +59,25 @@ export default function BottomNavbar() {
 
     const pickMostVisibleSection = () => {
       const lastSectionId = sectionIds[sectionIds.length - 1];
+      const firstSectionId = sectionIds[0];
       const { scrollY, innerHeight } = window;
       const docHeight = document.documentElement.scrollHeight;
+      const hashId = window.location.hash.replace("#", "");
+      const hashTarget = sectionIds.includes(hashId)
+        ? document.getElementById(hashId)
+        : null;
+
+      if (
+        hashTarget &&
+        Math.abs(hashTarget.getBoundingClientRect().top) <=
+          HASH_TARGET_ACTIVE_RANGE_PX
+      ) {
+        return `#${hashId}`;
+      }
+
+      if (scrollY <= TOP_SCROLL_THRESHOLD_PX) {
+        return `#${firstSectionId}`;
+      }
 
       if (scrollY + innerHeight >= docHeight - BOTTOM_SCROLL_THRESHOLD_PX) {
         return `#${lastSectionId}`;
@@ -92,11 +111,8 @@ export default function BottomNavbar() {
       return `#${bestId}`;
     };
 
-    const applyActiveHash = (hash: string, syncUrl = false) => {
+    const applyActiveHash = (hash: string) => {
       setActiveHash(hash);
-      if (syncUrl && window.location.hash !== hash) {
-        history.replaceState(null, "", `${pathname}${hash}`);
-      }
     };
 
     const hashFromUrl = window.location.hash;
@@ -112,7 +128,7 @@ export default function BottomNavbar() {
     window.addEventListener("hashchange", onHashChange);
 
     const syncActiveSection = () => {
-      applyActiveHash(pickMostVisibleSection(), true);
+      applyActiveHash(pickMostVisibleSection());
     };
 
     const observer = new IntersectionObserver(
@@ -167,7 +183,12 @@ export default function BottomNavbar() {
                   className="min-w-[5rem]"
                   asChild
                 >
-                  <Link href={item.path}>{item.title}</Link>
+                  <Link
+                    href={`${pathnameWithoutLocale}${item.path}`}
+                    onClick={() => setActiveHash(item.path)}
+                  >
+                    {item.title}
+                  </Link>
                 </Button>
               );
             })}

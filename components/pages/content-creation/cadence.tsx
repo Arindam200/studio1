@@ -28,7 +28,7 @@ const loop = [
 
 export default function Cadence() {
   return (
-    <section className="relative py-28 md:py-36">
+    <section id="process" className="relative scroll-mt-28 py-28 md:py-36">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={staggerChildren}

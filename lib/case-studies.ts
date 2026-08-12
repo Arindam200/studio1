@@ -171,8 +171,16 @@ export function getRelatedCaseStudies(
   limit = 3,
   locale: Locale = DEFAULT_LOCALE,
 ): CaseStudyMeta[] {
-  return getAllCaseStudies(locale)
-    .filter((s) => s.slug !== slug)
+  const studies = getAllCaseStudies(locale);
+  const currentIndex = studies.findIndex((s) => s.slug === slug);
+
+  if (currentIndex === -1) {
+    return studies.slice(0, limit);
+  }
+
+  return studies
+    .slice(currentIndex + 1)
+    .concat(studies.slice(0, currentIndex))
     .slice(0, limit);
 }
 

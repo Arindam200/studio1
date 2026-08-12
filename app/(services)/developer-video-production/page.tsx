@@ -165,6 +165,7 @@ export default function Page() {
       <Hero />
       <Services />
       <ServiceDetailSection
+        id="work"
         eyebrow="Video production scope"
         title="Technical videos that developers can actually learn from"
         description="We produce walkthroughs, shorts, demo projects, repo-led videos, and supporting assets for developer brands."

@@ -4,7 +4,7 @@ title: Pitch Your Role
 description: >-
   Open contract role for people who can clearly explain how they can help
   Studio1 with relevant skills, proof, and a focused one-page proposal.
-department: Open Pitch
+department: Contract
 location: Remote
 type: Contract
 status: Open
