@@ -53,6 +53,12 @@ import InteractAiMark from "@/public/assets/interact-ai-mark.webp";
 import Corsair from "@/public/assets/corsair.webp";
 import SearchApi from "@/public/assets/searchapi.webp";
 import BrowserAct from "@/public/assets/browseract.png";
+import MaximAi from "@/public/assets/maxim-ai.webp";
+import PuckMark from "@/public/assets/puck.webp";
+import Kombai from "@/public/assets/kombai.webp";
+import KiloCode from "@/public/assets/kilo-code.webp";
+import Quadratic from "@/public/assets/quadratic.webp";
+import Olostep from "@/public/assets/olostep.webp";
 import TestMuAiLogo from "@/public/assets/testmu-ai-logo.svg";
 import TestMuAiMark from "@/public/assets/testmu-ai-mark.svg";
 
@@ -163,6 +169,12 @@ export {
   Corsair,
   SearchApi,
   BrowserAct,
+  MaximAi,
+  PuckMark,
+  Kombai,
+  KiloCode,
+  Quadratic,
+  Olostep,
   TestMuAiLogo,
   TestMuAiMark,
   Unacademy,
