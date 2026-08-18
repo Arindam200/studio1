@@ -401,7 +401,7 @@ export const trustedbyLogo = [
 export const teamMembers = [
   {
     name: "Arindam Majumder",
-    role: "Open source developer and DevRel",
+    role: "Co-Founder",
     image: arindamNoBg,
     bio: "",
     social: {
@@ -412,7 +412,7 @@ export const teamMembers = [
   },
   {
     name: "Amitesh Anand",
-    role: "Technical writer and DevRel",
+    role: "Co-Founder",
     image: "/assets/amitesh-anand.webp",
     bio: "",
     social: {
@@ -423,7 +423,7 @@ export const teamMembers = [
   },
   {
     name: "Shivay Lamba",
-    role: "ML Engineer and Open source advocate",
+    role: "Founding Team",
     image: shivayNoBg,
     bio: "",
     social: {

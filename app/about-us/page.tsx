@@ -1,6 +1,4 @@
 "use client";
-import { AboutRipple } from "@/components/magicui/about-ripple";
-import Logo from "@/components/ui/svgs/logo";
 import { VisionMission } from "@/components/about-us/vision-mission";
 import {
   Code,
@@ -58,16 +56,7 @@ const sectionAnimation = {
 
 function StudioIntroVideo() {
   return (
-    <section className="mx-auto mt-14 mb-14 max-w-5xl md:mt-20 md:mb-20">
-      <div className="mb-8 flex flex-col items-center text-center">
-        <h2 className="max-w-2xl font-primary text-4xl font-normal tracking-tight md:text-5xl">
-          Our{" "}
-          <span className="serif-accent bg-gradient-to-br from-primary via-primary1 to-primary bg-clip-text font-accent italic font-normal text-transparent">
-            Story
-          </span>
-        </h2>
-      </div>
-
+    <section className="mx-auto mt-14 mb-14 w-full max-w-[65rem] md:mt-20 md:mb-20">
       <div className="overflow-hidden rounded-2xl border border-border/60 bg-muted/20 shadow-[0_24px_80px_-42px_hsl(var(--primary)/0.7)] dark:border-white/[0.08] dark:bg-white/[0.03]">
         <div className="aspect-video w-full">
           <iframe
@@ -93,6 +82,7 @@ export default function AboutUs() {
       <div className="max-w-7xl mx-auto h-fit relative">
         <div className={sideBeamGlowLeftMuted}></div>
         <div className={sideBeamGlowRightMuted}></div>
+        {/*
         <motion.div
           className="flex flex-col w-full h-[40rem] max-h-fit mt-20"
           initial="hidden"
@@ -111,20 +101,22 @@ export default function AboutUs() {
             </div>
           </div>
         </motion.div>
+        */}
 
         <motion.div
-          className="flex px-4 flex-col items-center gap-4 -translate-y-40"
+          className="flex flex-col items-center gap-8 px-4 pt-20"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={sectionAnimation}
         >
+          <StudioIntroVideo />
           <h1 className="text-3xl md:text-5xl font-primary font-normal tracking-tight text-center leading-tight">
-            {t("titlePrefix")}{" "}
+            {t("titlePrefix")} {" "}
             <span className="serif-accent font-accent italic font-normal text-primary/75 text-[1.08em]">
               {t("titleHighlightOne")}
             </span>{" "}
-            {t("titleMiddle")}{" "}
+            {t("titleMiddle")} {" "}
             <span className="serif-accent font-accent italic font-normal text-primary/75 text-[1.08em]">
               {t("titleHighlightTwo")}
             </span>{" "}
@@ -156,14 +148,6 @@ export default function AboutUs() {
         </motion.div>
 
         <div className="px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={sectionAnimation}
-          >
-            <StudioIntroVideo />
-          </motion.div>
           <motion.div
             initial="hidden"
             whileInView="visible"
