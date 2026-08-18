@@ -1,5 +1,6 @@
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import { CaseStudyQuote } from "@/components/case-studies/case-study-quote";
+import { TweetEmbed } from "@/components/case-studies/tweet-embed";
 import { resolveCaseStudyImageAlt } from "@/lib/case-studies";
 import { mdxComponents } from "@/mdx-components";
 
@@ -126,5 +127,6 @@ export const caseStudyMdxComponents = {
   blockquote: CaseStudyBlockquote,
   PullQuote,
   Frame,
+  TweetEmbed,
   img: CaseStudyImage,
 };

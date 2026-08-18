@@ -13,9 +13,9 @@ const TILE_SIZE: Record<CardVariant, string> = {
 };
 
 const TILE_PAD: Record<CardVariant, string> = {
-  featured: "p-3.5 md:p-4",
-  default: "p-3",
-  compact: "p-2",
+  featured: "p-1",
+  default: "p-1",
+  compact: "p-0.5",
 };
 
 const GAP: Record<CardVariant, string> = {
@@ -42,7 +42,7 @@ function CoverTile({
       className={cn(
         TILE_SIZE[variant],
         TILE_PAD[variant],
-        "flex shrink-0 items-center justify-center rounded-xl bg-white shadow-[0_10px_24px_-10px_rgba(0,0,0,0.55)] ring-1 ring-black/10",
+        "flex shrink-0 items-center justify-center rounded-xl border-2 border-white/25 bg-white shadow-none",
       )}
     >
       {children}

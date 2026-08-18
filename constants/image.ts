@@ -51,6 +51,8 @@ import InteractAi from "@/public/assets/interact-ai.svg";
 import InteractAiLogo from "@/public/assets/interact-ai-logo.svg";
 import InteractAiMark from "@/public/assets/interact-ai-mark.webp";
 import Corsair from "@/public/assets/corsair.webp";
+import SearchApi from "@/public/assets/searchapi.webp";
+import BrowserAct from "@/public/assets/browseract.png";
 import TestMuAiLogo from "@/public/assets/testmu-ai-logo.svg";
 import TestMuAiMark from "@/public/assets/testmu-ai-mark.svg";
 
@@ -159,6 +161,8 @@ export {
   InteractAiLogo,
   InteractAiMark,
   Corsair,
+  SearchApi,
+  BrowserAct,
   TestMuAiLogo,
   TestMuAiMark,
   Unacademy,

@@ -13,6 +13,7 @@ import PaulImg from "@/public/assets/Paul.webp";
 import DylanImg from "@/public/assets/Dylan.webp";
 import TanmayImg from "../public/assets/Tanmay.webp";
 import React from "react";
+import Tensorlake from "@/public/case-studies/tensorlake/tensorlake-logo.webp";
 import {
   Permit,
   Tolgee,
@@ -83,6 +84,8 @@ import {
   UnsiloedFull,
   InteractAiLogo,
   Corsair,
+  SearchApi,
+  BrowserAct,
 } from "@/constants/image";
 import {
   IconApi,
@@ -152,6 +155,14 @@ export const Data = {
       description: "AI Gateway to access 100+ LLMs.",
     },
     {
+      id: 49,
+      name: "Tensorlake",
+      designation: "AI Infrastructure",
+      image: Tensorlake,
+      href: "https://www.tensorlake.ai/",
+      description: "Composable infrastructure for AI agents.",
+    },
+    {
       id: 40,
       name: "Weaviate",
       designation: "Vector Database",
@@ -206,6 +217,22 @@ export const Data = {
       image: Corsair,
       href: "https://corsair.dev/",
       description: "Open-source integration layer for AI agents.",
+    },
+    {
+      id: 47,
+      name: "SearchApi",
+      designation: "Search API",
+      image: SearchApi,
+      href: "https://www.searchapi.io/",
+      description: "Search engine results API for developers.",
+    },
+    {
+      id: 48,
+      name: "BrowserAct",
+      designation: "Browser Automation",
+      image: BrowserAct,
+      href: "https://www.browseract.com/?co-from=Arindam",
+      description: "Browser infrastructure for AI agents.",
     },
     {
       id: 2,

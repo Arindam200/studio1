@@ -13,6 +13,7 @@ import {
   Webcrumbs,
   WebcrumbsFull,
 } from "@/constants/image";
+import Tensorlake from "@/public/case-studies/tensorlake/tensorlake-logo.webp";
 
 export type ClientLogo = {
   /** Square mark, used in cards and fact strips. */
@@ -28,6 +29,7 @@ export const clientLogos: Record<string, ClientLogo> = {
   memori: { icon: Memori, full: MemoriFull },
   permit: { icon: Permit, full: PermitFull },
   scrapegraph: { icon: ScrapeGraph },
+  tensorlake: { icon: Tensorlake },
   webcrumbs: { icon: Webcrumbs, full: WebcrumbsFull },
 };
 
