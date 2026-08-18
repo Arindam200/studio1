@@ -66,7 +66,7 @@ export default function TestimonialCard({
             />
             <Image
               src={testimonial.avatar || "/placeholder.svg"}
-              alt=""
+              alt={`${testimonial.name} portrait`}
               width={44}
               height={44}
               sizes="44px"
@@ -94,6 +94,7 @@ export default function TestimonialCard({
 
         <div
           className="mt-3 flex items-center gap-0.5"
+          role="img"
           aria-label="5 out of 5 stars"
         >
           {[...Array(5)].map((_, index) => (

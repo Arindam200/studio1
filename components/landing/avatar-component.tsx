@@ -21,6 +21,7 @@ export default function AvatarComponent({ className }: { className?: string }) {
         "flex flex-col items-center gap-3 sm:flex-row sm:gap-5",
         className,
       )}
+      role="group"
       aria-label={t("trustedAria")}
     >
       <div className="flex items-center -space-x-2.5 sm:-space-x-3" aria-hidden>
