@@ -118,39 +118,15 @@ export default function Footer() {
               <motion.div className="flex flex-wrap gap-4 text-sm font-medium text-neutral-500 dark:text-neutral-400 max-w-full">
                 <Link
                   className="hover:text-foreground duration-300"
-                  href={"/developer-relations-growth-campaigns"}
-                >
-                  {t("links.growth")}
-                </Link>
-                <Link
-                  className="hover:text-foreground duration-300"
-                  href={"/developer-documentation-dx-audit"}
-                >
-                  {t("links.docs")}
-                </Link>
-                <Link
-                  className="hover:text-foreground duration-300"
-                  href={"/product"}
-                >
-                  {t("links.products")}
-                </Link>
-                <Link
-                  className="hover:text-foreground duration-300"
-                  href={"/work"}
-                >
-                  {t("links.work")}
-                </Link>
-                <Link
-                  className="hover:text-foreground duration-300"
-                  href={"/blog"}
-                >
-                  {t("links.blog")}
-                </Link>
-                <Link
-                  className="hover:text-foreground duration-300"
                   href={"/careers"}
                 >
                   {t("links.careers")}
+                </Link>
+                <Link
+                  className="hover:text-foreground duration-300"
+                  href={"/devrel-jobs"}
+                >
+                  {t("links.devrelJobs")}
                 </Link>
               </motion.div>
             </motion.div>

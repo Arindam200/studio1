@@ -1,17 +1,17 @@
-import IvanImg from "../public/assets/Ivan.jpg";
-import GabrielImg from "../public/assets/Gabriel.png";
-import JuliaImg from "../public/assets/Julia.png";
-import DavidImg from "../public/assets/David.png";
-import ColeImg from "../public/assets/Cole.png";
-import FerranImg from "../public/assets/Ferran.png";
-import AgitaImg from "../public/assets/Agita.png";
-import SauravImg from "../public/assets/Saurav.png";
-import NathanImg from "../public/assets/Nathan.png";
-import MarketaImg from "../public/assets/Marketa.png";
-import JesseImg from "@/public/assets/Jesse.png";
-import PaulImg from "@/public/assets/Paul.png";
-import DylanImg from "@/public/assets/Dylan.png";
-import TanmayImg from "../public/assets/Tanmay.jpeg";
+import IvanImg from "../public/assets/Ivan.webp";
+import GabrielImg from "../public/assets/Gabriel.webp";
+import JuliaImg from "../public/assets/Julia.webp";
+import DavidImg from "../public/assets/David.webp";
+import ColeImg from "../public/assets/Cole.webp";
+import FerranImg from "../public/assets/Ferran.webp";
+import AgitaImg from "../public/assets/Agita.webp";
+import SauravImg from "../public/assets/Saurav.webp";
+import NathanImg from "../public/assets/Nathan.webp";
+import MarketaImg from "../public/assets/Marketa.webp";
+import JesseImg from "@/public/assets/Jesse.webp";
+import PaulImg from "@/public/assets/Paul.webp";
+import DylanImg from "@/public/assets/Dylan.webp";
+import TanmayImg from "../public/assets/Tanmay.webp";
 import React from "react";
 import {
   Permit,
@@ -1603,7 +1603,7 @@ export const Data = {
     {
       name: "Amitesh Anand",
       role: "Co-founder & Operations Lead",
-      image: "/assets/amitesh.png",
+      image: "/assets/amitesh.webp",
       bio: "Technical writer and developer advocate with expertise in creating scalable content. Published 80k+ words reaching thousands of readers across major tech platforms. Nominated for Noonies 2022 Tech Awards, focused on delivering high-impact technical content.",
       social: {
         twitter: "https://mobile.twitter.com/astrodevil_",
@@ -1711,7 +1711,7 @@ export const Data = {
     {
       name: "Amitesh Anand",
       role: "Technical writer and DevRel",
-      image: "/assets/amitesh.png",
+      image: "/assets/amitesh.webp",
       bio: "",
       social: {
         twitter: "https://mobile.twitter.com/astrodevil_",

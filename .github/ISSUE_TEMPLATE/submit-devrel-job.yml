@@ -1,0 +1,84 @@
+name: Submit a DevRel job
+description: List a Developer Relations, Developer Advocate, Developer Experience, or community role on the Studio1 DevRel jobs board.
+title: "[Job]: <role title> at <company>"
+labels: ["devrel-job"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting a role! We review every submission before publishing it to [studio1hq.com/devrel-jobs](https://studio1hq.com/devrel-jobs). Listings are free.
+  - type: input
+    id: title
+    attributes:
+      label: Job title
+      description: e.g. Senior Developer Advocate
+      placeholder: Senior Developer Advocate
+    validations:
+      required: true
+  - type: input
+    id: company
+    attributes:
+      label: Company
+      placeholder: Acme DevTools
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: City/country, or "Remote - <region>"
+      placeholder: Remote - USA
+    validations:
+      required: true
+  - type: dropdown
+    id: workplace
+    attributes:
+      label: Workplace
+      options:
+        - Remote
+        - Hybrid
+        - On-site
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Developer Advocate
+        - Developer Relations
+        - Developer Experience
+        - Community
+        - Developer Marketing
+    validations:
+      required: true
+  - type: input
+    id: salary
+    attributes:
+      label: Salary range (optional)
+      placeholder: "$150k - $200k"
+    validations:
+      required: false
+  - type: input
+    id: url
+    attributes:
+      label: Application URL
+      description: Link to the job posting on your own careers page or ATS.
+      placeholder: https://yourcompany.com/careers/...
+    validations:
+      required: true
+  - type: input
+    id: tags
+    attributes:
+      label: Tags (optional)
+      description: Up to 3 comma-separated keywords, e.g. AI, API, Open Source
+      placeholder: AI, API, Open Source
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else? (optional)
+      description: Visa sponsorship, seniority, application deadline, etc.
+    validations:
+      required: false

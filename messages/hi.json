@@ -51,6 +51,10 @@
       "caseStudies": {
         "title": "Developer Growth Case Studies",
         "description": "देखें Studio1 ने technical content, DevRel और community work से devtool और SaaS companies को developer adoption बढ़ाने में कैसे मदद की."
+      },
+      "devrelJobs": {
+        "title": "DevRel Jobs Board",
+        "description": "Devtool companies से curated Developer Relations, Developer Advocate, Developer Experience और community jobs. Open DevRel roles खोजें और filter करें, हर हफ्ते updated."
       }
     }
   },
@@ -199,6 +203,41 @@
       "smallTeam": "Small team"
     }
   },
+  "DevRelJobsPage": {
+    "badge": "DevRel jobs board",
+    "titlePrefix": "अपना अगला",
+    "titleHighlight": "DevRel role",
+    "description": "Devtool companies से Developer Relations, Developer Advocate, Developer Experience और community roles का curated board. हर card सीधे company के application page पर ले जाता है.",
+    "statsRoles": "{count, plural, one {# open role} other {# open roles}}",
+    "statsCompanies": "{count, plural, one {# company hiring} other {# companies hiring}}",
+    "statsUpdated": "हर हफ्ते updated",
+    "searchPlaceholder": "Role, company या keyword से खोजें...",
+    "searchLabel": "Jobs खोजें",
+    "allCategories": "सभी",
+    "allWorkplaces": "सभी कार्य मॉडल",
+    "allTypes": "सभी प्रकार",
+    "allLocations": "सभी स्थान",
+    "allLevels": "सभी स्तर",
+    "categoryFilter": "श्रेणी से फ़िल्टर करें",
+    "workplaceFilter": "कार्य मॉडल से फ़िल्टर करें",
+    "typeFilter": "रोज़गार प्रकार से फ़िल्टर करें",
+    "locationFilter": "स्थान से फ़िल्टर करें",
+    "levelFilter": "स्तर से फ़िल्टर करें",
+    "ycOnly": "केवल YC",
+    "pagination": "जॉब लिस्टिंग पेज",
+    "previousPage": "पिछला",
+    "nextPage": "अगला",
+    "pageOf": "पेज {page} / {total}",
+    "showing": "{total} में से {shown} roles",
+    "newBadge": "नई",
+    "emptyTitle": "आपके filters से कोई role match नहीं हुआ",
+    "emptyDescription": "कोई दूसरा keyword आज़माएं या filters clear करें.",
+    "clearFilters": "Filters clear करें",
+    "submitTitle": "DevRel role के लिए hire कर रहे हैं?",
+    "submitDescription": "Studio1 को follow करने वाले developers के सामने अपनी Developer Relations, advocacy या DX opening list करें. Listings free हैं और publish से पहले review होती हैं.",
+    "submitCta": "Job submit करें",
+    "submitNote": "GitHub पर एक छोटा form खुलता है"
+  },
   "HomeDomains": {
     "eyebrow": "हम क्या ऑफर करते हैं",
     "titlePrefix": "हम जिन सेवाओं को चलाते हैं",
@@ -340,7 +379,8 @@
       "products": "Products",
       "work": "Client Work",
       "blog": "हमारा ब्लॉग",
-      "careers": "करियर"
+      "careers": "करियर",
+      "devrelJobs": "DevRel Jobs"
     },
     "legal": {
       "terms": "नियम और शर्तें",

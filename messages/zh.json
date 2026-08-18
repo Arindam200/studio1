@@ -51,6 +51,10 @@
       "caseStudies": {
         "title": "开发者增长案例研究",
         "description": "了解 Studio1 如何通过技术内容、DevRel 和社区工作帮助 devtool 与 SaaS 公司提升开发者采用。"
+      },
+      "devrelJobs": {
+        "title": "DevRel 职位板",
+        "description": "精选来自 devtool 公司的 Developer Relations、Developer Advocate、Developer Experience 和社区职位。搜索和筛选开放的 DevRel 职位,每周更新。"
       }
     }
   },
@@ -199,6 +203,41 @@
       "smallTeam": "小团队"
     }
   },
+  "DevRelJobsPage": {
+    "badge": "DevRel 职位板",
+    "titlePrefix": "找到你的下一个",
+    "titleHighlight": "DevRel 职位",
+    "description": "精选来自 devtool 公司的 Developer Relations、Developer Advocate、Developer Experience 和社区职位。每张卡片直接链接到该公司的申请页面。",
+    "statsRoles": "{count, plural, other {# 个开放职位}}",
+    "statsCompanies": "{count, plural, other {# 家公司招聘中}}",
+    "statsUpdated": "每周更新",
+    "searchPlaceholder": "按职位、公司或关键词搜索...",
+    "searchLabel": "搜索职位",
+    "allCategories": "全部",
+    "allWorkplaces": "全部工作模式",
+    "allTypes": "全部类型",
+    "allLocations": "全部地点",
+    "allLevels": "全部级别",
+    "categoryFilter": "按类别筛选",
+    "workplaceFilter": "按工作模式筛选",
+    "typeFilter": "按雇佣类型筛选",
+    "locationFilter": "按地点筛选",
+    "levelFilter": "按级别筛选",
+    "ycOnly": "仅 YC",
+    "pagination": "职位列表页面",
+    "previousPage": "上一页",
+    "nextPage": "下一页",
+    "pageOf": "第 {page} 页，共 {total} 页",
+    "showing": "{total} 个职位中的 {shown} 个",
+    "newBadge": "新",
+    "emptyTitle": "没有符合筛选条件的职位",
+    "emptyDescription": "试试其他关键词或清除筛选。",
+    "clearFilters": "清除筛选",
+    "submitTitle": "正在招聘 DevRel 职位？",
+    "submitDescription": "将你的 Developer Relations、advocacy 或 DX 职位展示给关注 Studio1 的开发者。发布免费,发布前会经过审核。",
+    "submitCta": "提交职位",
+    "submitNote": "打开一个简短的 GitHub 表单"
+  },
   "HomeDomains": {
     "eyebrow": "我们提供什么",
     "titlePrefix": "我们为",
@@ -340,7 +379,8 @@
       "products": "产品",
       "work": "客户作品",
       "blog": "我们的博客",
-      "careers": "招聘"
+      "careers": "招聘",
+      "devrelJobs": "DevRel 职位"
     },
     "legal": {
       "terms": "条款与条件",

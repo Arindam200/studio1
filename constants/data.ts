@@ -413,7 +413,7 @@ export const teamMembers = [
   {
     name: "Amitesh Anand",
     role: "Technical writer and DevRel",
-    image: "/assets/amitesh-anand.png",
+    image: "/assets/amitesh-anand.webp",
     bio: "",
     social: {
       twitter: "https://mobile.twitter.com/astrodevil_",

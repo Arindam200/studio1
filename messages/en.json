@@ -51,6 +51,10 @@
       "caseStudies": {
         "title": "Developer Growth Case Studies",
         "description": "Explore how Studio1 has helped devtool and SaaS companies increase developer adoption through technical content, DevRel strategy, and community engagement."
+      },
+      "devrelJobs": {
+        "title": "DevRel Jobs Board",
+        "description": "Curated Developer Relations, Developer Advocate, Developer Experience, and community jobs from devtool companies. Search and filter open DevRel roles, updated weekly."
       }
     }
   },
@@ -199,6 +203,41 @@
       "smallTeam": "Small team"
     }
   },
+  "DevRelJobsPage": {
+    "badge": "DevRel jobs board",
+    "titlePrefix": "Find your next",
+    "titleHighlight": "DevRel role",
+    "description": "A curated board of Developer Relations, Developer Advocate, Developer Experience, and community roles from devtool companies. Every card links straight to the company's own application page.",
+    "statsRoles": "{count, plural, one {# open role} other {# open roles}}",
+    "statsCompanies": "{count, plural, one {# company hiring} other {# companies hiring}}",
+    "statsUpdated": "Updated weekly",
+    "searchPlaceholder": "Search by role, company, or keyword...",
+    "searchLabel": "Search jobs",
+    "allCategories": "All roles",
+    "allWorkplaces": "All workplaces",
+    "allTypes": "All types",
+    "allLocations": "All locations",
+    "allLevels": "All levels",
+    "categoryFilter": "Filter by category",
+    "workplaceFilter": "Filter by workplace",
+    "typeFilter": "Filter by employment type",
+    "locationFilter": "Filter by location",
+    "levelFilter": "Filter by level",
+    "ycOnly": "YC only",
+    "pagination": "Job listing pages",
+    "previousPage": "Previous",
+    "nextPage": "Next",
+    "pageOf": "Page {page} of {total}",
+    "showing": "{shown} of {total} roles",
+    "newBadge": "New",
+    "emptyTitle": "No roles match your filters",
+    "emptyDescription": "Try a different keyword or clear the filters.",
+    "clearFilters": "Clear filters",
+    "submitTitle": "Hiring for a DevRel role?",
+    "submitDescription": "List your Developer Relations, advocacy, or DX opening in front of the developers who follow Studio1. Listings are free and reviewed before publishing.",
+    "submitCta": "Submit a job",
+    "submitNote": "Opens a short GitHub form"
+  },
   "HomeDomains": {
     "eyebrow": "What We Offer",
     "titlePrefix": "The services we run for",
@@ -340,7 +379,8 @@
       "products": "Products",
       "work": "Client Work",
       "blog": "Our Blog",
-      "careers": "Careers"
+      "careers": "Careers",
+      "devrelJobs": "DevRel Jobs"
     },
     "legal": {
       "terms": "Terms and Conditions",

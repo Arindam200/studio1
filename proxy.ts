@@ -58,6 +58,7 @@ export function proxy(request: NextRequest) {
       unprefixedPathname.startsWith("/case-studies/") ||
       unprefixedPathname === "/careers" ||
       unprefixedPathname.startsWith("/careers/") ||
+      unprefixedPathname === "/devrel-jobs" ||
       unprefixedPathname === "/terms" ||
       unprefixedPathname === "/privacy"
     ) {

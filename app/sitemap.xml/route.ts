@@ -66,6 +66,11 @@ export async function GET() {
       priority: 0.8,
     },
     { path: "/careers", lastModified: STATIC_LAST_MODIFIED, priority: 0.8 },
+    {
+      path: "/devrel-jobs",
+      lastModified: STATIC_LAST_MODIFIED,
+      priority: 0.8,
+    },
     { path: "/blog", lastModified: STATIC_LAST_MODIFIED, priority: 0.8 },
     { path: "/terms", lastModified: LEGAL_LAST_MODIFIED, priority: 0.5 },
     { path: "/privacy", lastModified: LEGAL_LAST_MODIFIED, priority: 0.5 },
