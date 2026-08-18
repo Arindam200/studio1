@@ -12,6 +12,7 @@ import {
   UsersThree,
 } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "@/components/ui/button";
+import { JobApplicationForm } from "@/components/careers/job-application-form";
 import type { JobDetail } from "@/lib/careers";
 import { getJobApplicationMailto } from "@/lib/careers-mailto";
 import { cn } from "@/lib/utils";
@@ -160,6 +161,10 @@ export function JobDetailPage({ job, children }: JobDetailPageProps) {
           )}
         >
           {children}
+
+          {!isOpeningSoon && (
+            <JobApplicationForm jobId={job.id} jobTitle={job.title} />
+          )}
         </article>
 
         <aside className="lg:sticky lg:top-24 lg:self-start">
