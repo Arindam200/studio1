@@ -1,8 +1,8 @@
-import { Data } from "@/data";
+import { devRelAsServiceTeam } from "@/data/service-processes";
 import Image from "next/image";
 import { Github, Linkedin, Twitter, Mail, Calendar, Globe } from "lucide-react";
 
-const team = Data.DevRelAsServiceTeam;
+const team = devRelAsServiceTeam;
 
 export default function Team() {
   return (

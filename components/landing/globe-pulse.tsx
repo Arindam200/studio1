@@ -313,8 +313,7 @@ export function GlobePulse({
               justifyContent: "center",
               pointerEvents: "none",
               opacity: `var(--cobe-visible-${m.id}, 0)`,
-              filter: `blur(calc((1 - var(--cobe-visible-${m.id}, 0)) * 8px))`,
-              transition: "opacity 0.4s, filter 0.4s",
+              transition: "opacity 0.25s",
             } as CSSProperties
           }
         >

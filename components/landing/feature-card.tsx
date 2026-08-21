@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { featureCardHoverShadow, featureCardHoverGlow } from "@/lib/shadows";
 import { Particles } from "../ui/particles";
@@ -13,6 +13,25 @@ interface FeatureCardProps {
 }
 
 export function FeatureCard({ feature, index }: FeatureCardProps) {
+  const [particlesActive, setParticlesActive] = useState(false);
+  const [canUseParticles, setCanUseParticles] = useState(false);
+
+  useEffect(() => {
+    const pointerQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () =>
+      setCanUseParticles(pointerQuery.matches && !motionQuery.matches);
+
+    update();
+    pointerQuery.addEventListener("change", update);
+    motionQuery.addEventListener("change", update);
+
+    return () => {
+      pointerQuery.removeEventListener("change", update);
+      motionQuery.removeEventListener("change", update);
+    };
+  }, []);
+
   return (
     <div
       className={cn(
@@ -21,6 +40,10 @@ export function FeatureCard({ feature, index }: FeatureCardProps) {
         index === 0 && "md:col-span-2",
         index === 3 && "md:col-span-2"
       )}
+      onPointerEnter={() => canUseParticles && setParticlesActive(true)}
+      onPointerLeave={() => setParticlesActive(false)}
+      onFocus={() => canUseParticles && setParticlesActive(true)}
+      onBlur={() => setParticlesActive(false)}
     >
       <div className="rounded-xl bg-background h-full transition-all duration-700 relative overflow-hidden w-full p-8 flex flex-col items-start">
         <FeatureIllustration title={feature.title} />
@@ -36,13 +59,15 @@ export function FeatureCard({ feature, index }: FeatureCardProps) {
           )}
         />
 
-        <Particles
-          className="absolute h-screen opacity-0 group-hover:opacity-100 transition-all duration-700 inset-0 z-0"
-          quantity={100}
-          ease={80}
-          color="#f97316"
-          refresh
-        />
+        {canUseParticles && particlesActive ? (
+          <Particles
+            className="absolute h-screen opacity-100 transition-opacity duration-300 inset-0 z-0"
+            quantity={70}
+            ease={80}
+            color="#f97316"
+            refresh
+          />
+        ) : null}
 
         <div className="flex items-start flex-col gap-2 drop-shadow-lg">
           <div>

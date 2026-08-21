@@ -2,6 +2,8 @@ import type { StaticImageData } from "next/image";
 import {
   Enteligence,
   EntelligenceFull,
+  Ittybit,
+  IttybitFull,
   LiteLLM,
   LiteLLMFull,
   Memori,
@@ -25,6 +27,7 @@ export type ClientLogo = {
 /** Case-study slug → local client logo assets. */
 export const clientLogos: Record<string, ClientLogo> = {
   "entelligence-ai": { icon: Enteligence, full: EntelligenceFull },
+  ittybit: { icon: Ittybit, full: IttybitFull },
   litellm: { icon: LiteLLM, full: LiteLLMFull },
   memori: { icon: Memori, full: MemoriFull },
   permit: { icon: Permit, full: PermitFull },

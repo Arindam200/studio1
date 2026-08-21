@@ -56,11 +56,42 @@ export function WorldMap({
   const svgRef = useRef<SVGSVGElement>(null);
   const [mounted, setMounted] = useState(false);
   const [hoveredLocation, setHoveredLocation] = useState<string | null>(null);
+  const [reduceMotion, setReduceMotion] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const { resolvedTheme } = useTheme();
   const isDark = mounted && resolvedTheme === "dark";
+  const shouldLoop = loop && !reduceMotion && !isMobile;
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+    const update = () => {
+      setReduceMotion(motionQuery.matches);
+      setIsMobile(mobileQuery.matches);
+    };
+
+    update();
+    if (typeof motionQuery.addEventListener === "function") {
+      motionQuery.addEventListener("change", update);
+      mobileQuery.addEventListener("change", update);
+    } else {
+      motionQuery.addListener(update);
+      mobileQuery.addListener(update);
+    }
+
+    return () => {
+      if (typeof motionQuery.removeEventListener === "function") {
+        motionQuery.removeEventListener("change", update);
+        mobileQuery.removeEventListener("change", update);
+      } else {
+        motionQuery.removeListener(update);
+        mobileQuery.removeListener(update);
+      }
+    };
   }, []);
 
   const map = useMemo(
@@ -137,7 +168,6 @@ export function WorldMap({
         height={495}
         width={1056}
         draggable={false}
-        priority
         unoptimized
       />
 
@@ -184,7 +214,7 @@ export function WorldMap({
                 strokeLinecap="round"
                 initial={{ pathLength: 0, pathOffset: reverse ? 1 : 0 }}
                 animate={
-                  loop
+                  shouldLoop
                     ? reverse
                       ? {
                           pathLength: [0, 0, 1, 1, 0],
@@ -196,17 +226,17 @@ export function WorldMap({
                       : { pathLength: 1, pathOffset: 0 }
                 }
                 transition={
-                  loop
+                  shouldLoop
                     ? loopTransition
                     : {
-                        duration: animationDuration,
+                        duration: reduceMotion ? 0 : animationDuration,
                         delay: i * staggerDelay,
                         ease: "easeInOut",
                       }
                 }
               />
 
-              {loop ? (
+              {shouldLoop ? (
                 <motion.circle
                   r={isDark ? "1" : "1.15"}
                   fill={lineColor}
@@ -243,7 +273,7 @@ export function WorldMap({
                 onHoverStart={() => setHoveredLocation(label)}
                 onHoverEnd={() => setHoveredLocation(null)}
                 className="cursor-pointer"
-                whileHover={{ scale: 1.25 }}
+                whileHover={isMobile ? undefined : { scale: 1.25 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
                 <circle
@@ -253,30 +283,32 @@ export function WorldMap({
                   fill={lineColor}
                   filter="url(#glow)"
                 />
-                <circle
-                  cx={projected.x}
-                  cy={projected.y}
-                  r={isDark ? "0.9" : "1.05"}
-                  fill={lineColor}
-                  opacity={isDark ? "0.5" : "0.65"}
-                >
-                  <animate
-                    attributeName="r"
-                    from={isDark ? "0.9" : "1.05"}
-                    to={isDark ? "3.2" : "3.6"}
-                    dur="2s"
-                    begin={`${(i % 4) * 0.25}s`}
-                    repeatCount="indefinite"
-                  />
-                  <animate
-                    attributeName="opacity"
-                    from={isDark ? "0.55" : "0.65"}
-                    to="0"
-                    dur="2s"
-                    begin={`${(i % 4) * 0.25}s`}
-                    repeatCount="indefinite"
-                  />
-                </circle>
+                {shouldLoop ? (
+                  <circle
+                    cx={projected.x}
+                    cy={projected.y}
+                    r={isDark ? "0.9" : "1.05"}
+                    fill={lineColor}
+                    opacity={isDark ? "0.5" : "0.65"}
+                  >
+                    <animate
+                      attributeName="r"
+                      from={isDark ? "0.9" : "1.05"}
+                      to={isDark ? "3.2" : "3.6"}
+                      dur="2s"
+                      begin={`${(i % 4) * 0.25}s`}
+                      repeatCount="indefinite"
+                    />
+                    <animate
+                      attributeName="opacity"
+                      from={isDark ? "0.55" : "0.65"}
+                      to="0"
+                      dur="2s"
+                      begin={`${(i % 4) * 0.25}s`}
+                      repeatCount="indefinite"
+                    />
+                  </circle>
+                ) : null}
               </motion.g>
 
               {showLabels && point.label ? (

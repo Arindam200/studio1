@@ -11,7 +11,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Building, Star } from "@phosphor-icons/react/dist/ssr";
-import { heroFeaturedTestimonials } from "@/data";
+import { heroFeaturedTestimonials } from "@/data/home";
 import Image from "next/image";
 import AvatarComponent from "./avatar-component";
 import { Num, NumericText } from "@/components/ui/num";

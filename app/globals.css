@@ -546,23 +546,79 @@ svg {
 @keyframes studio1-page-exit {
   to {
     opacity: 0;
-    filter: blur(2px);
   }
 }
 
 @keyframes studio1-page-enter {
   from {
     opacity: 0;
-    filter: blur(2px);
     transform: translateY(8px);
   }
 }
 
+@media (max-width: 767px) {
+  .glow-orb-beam,
+  .glow-orb-hero,
+  .glow-orb-accent,
+  .glow-orb-section,
+  .glow-orb-section-soft,
+  .glow-orb-center,
+  .glow-orb-corner,
+  .glow-orb-corner-strong,
+  .glow-orb-service-card,
+  .glow-orb-feature-hover,
+  .glow-orb-card-hover,
+  .glow-orb-pricing,
+  .glow-orb-product,
+  .glow-orb-floor,
+  .glow-orb-team-hover {
+    filter: blur(1.75rem);
+    opacity: 0.45;
+    transition-duration: 250ms;
+  }
+
+  .nf-glow-primary,
+  .nf-glow-accent {
+    filter: blur(56px);
+    opacity: 0.45;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   ::view-transition-old(*),
   ::view-transition-new(*),
   ::view-transition-group(*) {
     animation-duration: 0s !important;
     animation-delay: 0s !important;
+  }
+
+  .glow-orb-beam,
+  .glow-orb-hero,
+  .glow-orb-accent,
+  .glow-orb-section,
+  .glow-orb-section-soft,
+  .glow-orb-center,
+  .glow-orb-corner,
+  .glow-orb-corner-strong,
+  .glow-orb-service-card,
+  .glow-orb-feature-hover,
+  .glow-orb-card-hover,
+  .glow-orb-pricing,
+  .glow-orb-product,
+  .glow-orb-floor,
+  .glow-orb-team-hover {
+    filter: blur(1.5rem);
+    opacity: 0.42;
+    transition: none;
+  }
+
+  .nf-glow-primary,
+  .nf-glow-accent {
+    filter: blur(48px);
+    opacity: 0.42;
   }
 }

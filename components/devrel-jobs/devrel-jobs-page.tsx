@@ -48,13 +48,12 @@ const capsuleClassName =
 const JOBS_PER_PAGE = 12;
 
 const heroAnimation = {
-  hidden: { opacity: 0, y: 50, filter: "blur(10px)" },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
-      duration: 0.8,
+      duration: 0.35,
       ease: "easeOut" as const,
     },
   },

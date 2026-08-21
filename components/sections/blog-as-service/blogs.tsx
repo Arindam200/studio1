@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { ArrowRight } from "lucide-react";
-import { Data } from "@/data";
+import { clientWorkCards } from "@/data/client-work";
 import { Version1 } from "./blog-thubmnail-version/version-1";
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
@@ -9,7 +9,7 @@ import Link from "next/link";
 import { containerVariants, fadeInUp, headerVariants } from "@/lib/animations";
 
 // Keep the service examples in sync with the canonical collection used by /work.
-const cards = Data.Allblogs.slice(0, 6);
+const cards = clientWorkCards.slice(0, 6);
 
 export default function BlogSection() {
   return (

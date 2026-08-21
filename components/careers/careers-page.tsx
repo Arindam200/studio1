@@ -36,19 +36,20 @@ const perks = [
   { key: "smallTeam", icon: UsersThree },
 ];
 
-const departmentOrder = ["Marketing", "Engineering", "General"];
+const careerFilters = ["All", "Engineering", "Marketing", "Growth", "Other"] as const;
+
+type CareerFilter = (typeof careerFilters)[number];
 
 const capsuleClassName =
   "rounded-full px-3.5 py-1.5 inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground border border-border/40 dark:border-white/15 bg-white/55 dark:bg-white/[0.08] backdrop-blur-md shadow-[0_6px_18px_-4px_hsl(var(--primary)/0.32)] dark:shadow-[0_6px_18px_-4px_hsl(var(--primary)/0.22)]";
 
 const heroAnimation = {
-  hidden: { opacity: 0, y: 50, filter: "blur(10px)" },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
-      duration: 0.8,
+      duration: 0.35,
       ease: "easeOut" as const,
     },
   },
@@ -184,25 +185,19 @@ type CareersPageProps = {
 export function CareersPage({ jobOpenings }: CareersPageProps) {
   const t = useTranslations("CareersPage");
   const locale = useLocale();
-  const [selectedDepartment, setSelectedDepartment] = useState<string | null>(
-    null,
-  );
+  const [selectedFilter, setSelectedFilter] = useState<CareerFilter>("All");
 
-  const filteredJobs = selectedDepartment
-    ? jobOpenings.filter((job) => job.department === selectedDepartment)
-    : jobOpenings;
+  const filteredJobs = jobOpenings.filter((job) => {
+    const isOpeningSoon = job.status.toLowerCase().includes("soon");
 
-  const departments = Array.from(
-    new Set(jobOpenings.map((job) => job.department)),
-  ).sort((a, b) => {
-    const aIndex = departmentOrder.indexOf(a);
-    const bIndex = departmentOrder.indexOf(b);
+    if (selectedFilter === "All") return true;
+    if (selectedFilter === "Other") return isOpeningSoon;
+    if (isOpeningSoon) return false;
+    if (selectedFilter === "Growth") {
+      return job.department === "Growth" || job.department === "Founder's Office";
+    }
 
-    if (aIndex === -1 && bIndex === -1) return a.localeCompare(b);
-    if (aIndex === -1) return 1;
-    if (bIndex === -1) return -1;
-
-    return aIndex - bIndex;
+    return job.department === selectedFilter;
   });
 
   return (
@@ -289,38 +284,25 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
           viewport={{ once: true, amount: 0.12 }}
           variants={staggerChildren}
         >
-          {departments.length > 0 ? (
+          {jobOpenings.length > 0 ? (
             <motion.div
               className="mb-6 flex flex-wrap items-center justify-center gap-2"
               variants={itemVariants}
             >
-              <button
-                type="button"
-                onClick={() => setSelectedDepartment(null)}
-                className={cn(
-                  capsuleClassName,
-                  "cursor-pointer transition-opacity duration-200",
-                  selectedDepartment === null
-                    ? "border-primary/40 bg-primary/10"
-                    : "opacity-80 hover:opacity-100",
-                )}
-              >
-                {t("allDepartments")}
-              </button>
-              {departments.map((dept) => (
+              {careerFilters.map((filter) => (
                 <button
-                  key={dept}
+                  key={filter}
                   type="button"
-                  onClick={() => setSelectedDepartment(dept)}
+                  onClick={() => setSelectedFilter(filter)}
                   className={cn(
                     capsuleClassName,
                     "cursor-pointer transition-opacity duration-200",
-                    selectedDepartment === dept
+                    selectedFilter === filter
                       ? "border-primary/40 bg-primary/10"
                       : "opacity-80 hover:opacity-100",
                   )}
                 >
-                  {dept}
+                  {filter === "All" ? t("allDepartments") : filter}
                 </button>
               ))}
             </motion.div>
@@ -329,7 +311,7 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
           {filteredJobs.length > 0 ? (
             <>
               <motion.div
-                key={selectedDepartment ?? "all"}
+                key={selectedFilter}
                 className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
                 initial="hidden"
                 animate="visible"

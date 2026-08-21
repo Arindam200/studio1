@@ -45,10 +45,10 @@ export const Team = ({ showHeader = true, className }: TeamProps) => {
         {teamMembers.map((member, index) => (
           <motion.div
             key={member.name}
-            initial={{ opacity: 0, y: 50, filter: "blur(5px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 * (index % 3), duration: 0.7 }}
+            transition={{ delay: 0.06 * (index % 3), duration: 0.3 }}
           >
             <TeamCard member={member} />
           </motion.div>

@@ -1,5 +1,5 @@
 "use client";
-import { Data } from "@/data";
+import { homeFeatures } from "@/data/home";
 import { FeatureCard } from "./feature-card";
 import { SectionEyebrow } from "./section-eyebrow";
 import { motion } from "motion/react";
@@ -41,7 +41,7 @@ export default function Features() {
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-4 mt-20"
         variants={fadeInUp}
       >
-        {Data.Features.map((feature, index) => (
+        {homeFeatures.map((feature, index) => (
           <FeatureCard key={index} feature={feature} index={index} />
         ))}
       </motion.div>

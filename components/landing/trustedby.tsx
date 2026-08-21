@@ -63,6 +63,7 @@ export default function Trustedby() {
                       ? "grayscale invert dark:invert-0"
                       : "invert-0 grayscale dark:invert"),
                     "h-auto max-h-9 w-auto max-w-36 object-contain opacity-70 sm:max-w-40",
+                    item.name === "Novita AI" && "max-h-11 sm:max-h-12",
                   )}
                   alt={item.name}
                   width={220}

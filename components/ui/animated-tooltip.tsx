@@ -8,9 +8,9 @@ import {
   useMotionValue,
   useSpring,
 } from "motion/react";
-import { Data } from "@/data";
+import { companies } from "@/data/companies";
 
-const people = Data.Companies;
+const people = companies;
 
 export const AnimatedTooltip = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);

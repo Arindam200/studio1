@@ -37,6 +37,8 @@ function withoutLocalePrefix(pathname: string) {
 export default function BottomNavbar() {
   const pathname = usePathname();
   const [activeHash, setActiveHash] = useState(DEFAULT_SECTION);
+  const activeHashRef = useRef(DEFAULT_SECTION);
+  const frameRef = useRef<number | null>(null);
   const visibilityRef = useRef(new Map<string, number>());
   const pathnameWithoutLocale = withoutLocalePrefix(pathname);
 
@@ -112,6 +114,8 @@ export default function BottomNavbar() {
     };
 
     const applyActiveHash = (hash: string) => {
+      if (activeHashRef.current === hash) return;
+      activeHashRef.current = hash;
       setActiveHash(hash);
     };
 
@@ -127,8 +131,16 @@ export default function BottomNavbar() {
     };
     window.addEventListener("hashchange", onHashChange);
 
-    const syncActiveSection = () => {
+    const syncActiveSectionNow = () => {
       applyActiveHash(pickMostVisibleSection());
+    };
+
+    const syncActiveSection = () => {
+      if (frameRef.current !== null) return;
+      frameRef.current = window.requestAnimationFrame(() => {
+        frameRef.current = null;
+        syncActiveSectionNow();
+      });
     };
 
     const observer = new IntersectionObserver(
@@ -157,6 +169,10 @@ export default function BottomNavbar() {
       window.removeEventListener("hashchange", onHashChange);
       window.removeEventListener("scroll", syncActiveSection);
       window.removeEventListener("resize", syncActiveSection);
+      if (frameRef.current !== null) {
+        window.cancelAnimationFrame(frameRef.current);
+        frameRef.current = null;
+      }
       observer.disconnect();
       visibility.clear();
     };
@@ -185,7 +201,10 @@ export default function BottomNavbar() {
                 >
                   <Link
                     href={`${pathnameWithoutLocale}${item.path}`}
-                    onClick={() => setActiveHash(item.path)}
+                    onClick={() => {
+                      activeHashRef.current = item.path;
+                      setActiveHash(item.path);
+                    }}
                   >
                     {item.title}
                   </Link>

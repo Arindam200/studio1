@@ -67,10 +67,11 @@ export default function TestimonialCard({
             <Image
               src={testimonial.avatar || "/placeholder.svg"}
               alt={`${testimonial.name} portrait`}
-              width={44}
-              height={44}
-              sizes="44px"
-              className="relative size-11 rounded-full object-cover ring-2 ring-background dark:ring-white/10"
+              width={52}
+              height={52}
+              quality={95}
+              sizes="52px"
+              className="relative size-12 rounded-full object-cover ring-2 ring-background [image-rendering:auto] dark:ring-white/10"
             />
           </div>
 

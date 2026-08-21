@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { ProcessScroller } from "@/components/sections/process-scroller";
-import { Data } from "@/data";
+import { devRelAsServiceProcess } from "@/data/service-processes";
 import {
   serviceProcessInnerClassName,
   serviceProcessOuterClassName,
@@ -17,7 +17,7 @@ export default function Process() {
         className={`${serviceProcessInnerClassName} flex flex-col items-center`}
       >
         <ProcessScroller
-          steps={Data.DevRelAsServiceProcess}
+          steps={devRelAsServiceProcess}
           heading={
             <div className="w-full text-center">
               <h2 className="text-4xl text-foreground font-normal mb-3 md:text-5xl lg:text-6xl">

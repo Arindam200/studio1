@@ -8,18 +8,14 @@ export const fadeInUp = {
   hidden: {
     opacity: 0,
     y: 20,
-    filter: "blur(4px)",
   },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
-      duration: 0.6,
+      duration: 0.35,
       ease: "easeOut" as const,
     },
-    // blur(0) still creates a filter containing block that clips descenders (g, y, p)
-    transitionEnd: { filter: "none" },
   },
 };
 
@@ -27,16 +23,13 @@ export const fadeInUp = {
 export const fadeIn = {
   hidden: {
     opacity: 0,
-    filter: "blur(4px)",
   },
   visible: {
     opacity: 1,
-    filter: "blur(0px)",
     transition: {
-      duration: 0.8,
+      duration: 0.3,
       ease: "easeOut" as const,
     },
-    transitionEnd: { filter: "none" },
   },
 };
 
@@ -65,42 +58,36 @@ export const staggerContainer = {
 // Item variants with spring animation
 export const itemVariants = {
   hidden: {
-    y: 50,
+    y: 24,
     opacity: 0,
-    filter: "blur(10px)",
   },
   visible: {
     y: 0,
     opacity: 1,
-    filter: "blur(0px)",
     transition: {
       type: "spring" as const,
-      damping: 15,
-      stiffness: 100,
-      duration: 0.6,
+      damping: 22,
+      stiffness: 140,
+      duration: 0.35,
     },
-    transitionEnd: { filter: "none" },
   },
 };
 
 // Header/title animation
 export const headerVariants = {
   hidden: {
-    y: 30,
+    y: 18,
     opacity: 0,
-    filter: "blur(5px)",
   },
   visible: {
     y: 0,
     opacity: 1,
-    filter: "blur(0px)",
     transition: {
       type: "spring" as const,
-      damping: 20,
-      stiffness: 100,
-      duration: 0.5,
+      damping: 24,
+      stiffness: 140,
+      duration: 0.35,
     },
-    transitionEnd: { filter: "none" },
   },
 };
 
@@ -114,7 +101,7 @@ export const scaleIn = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.3,
       ease: "easeOut" as const,
     },
   },
@@ -127,7 +114,7 @@ export const iconVariants = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 1,
+      duration: 0.3,
       ease: "easeOut" as const,
     },
   },
@@ -143,7 +130,7 @@ export const gradientVariants = {
     opacity: 0.3,
     scale: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.3,
       ease: "easeOut" as const,
     },
   },
@@ -153,29 +140,24 @@ export const gradientVariants = {
 export const cardVariants = {
   hidden: {
     opacity: 0,
-    y: 50,
-    filter: "blur(10px)",
+    y: 24,
   },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
-      duration: 1.8,
+      duration: 0.35,
       ease: [0.22, 1, 0.36, 1] as const,
     },
-    transitionEnd: { filter: "none" },
   },
 };
 
 // Service/feature item animation
 export const serviceItemVariants = {
-  hidden: { opacity: 0, filter: "blur(10px)" },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    filter: "blur(0px)",
-    transition: { duration: 0.3 },
-    transitionEnd: { filter: "none" },
+    transition: { duration: 0.25 },
   },
 };
 
@@ -185,7 +167,7 @@ export const staggerChildren = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.08,
     },
   },
 };
@@ -197,7 +179,7 @@ export const productHeroGlowAmbient = {
   opacity: [0.82, 0.98, 0.88, 0.82],
   scale: [1, 1.05, 0.98, 1],
   transition: {
-    duration: 14,
+    duration: 18,
     repeat: Number.POSITIVE_INFINITY,
     ease: "easeInOut" as const,
   },
@@ -205,7 +187,7 @@ export const productHeroGlowAmbient = {
 
 // Helper function to create floating animation
 export const createFloatingAnimation = (delay: number, rotate: number) => ({
-  y: [0, -6, 0],
+  y: [0, -3, 0],
   rotate: rotate,
   transition: {
     y: {
@@ -233,23 +215,20 @@ export const springTransition = {
 // Factory function to create card variants with index-based delay
 export const createCardVariantsWithDelay = (
   index: number,
-  delayMultiplier: number = 0.15
+  delayMultiplier: number = 0.06
 ) => ({
   hidden: {
     opacity: 0,
-    y: 50,
-    filter: "blur(10px)",
+    y: 18,
   },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
-      duration: 0.2,
+      duration: 0.25,
       ease: [0.22, 1, 0.36, 1] as const,
       delay: index * delayMultiplier,
     },
-    transitionEnd: { filter: "none" },
   },
 });
 
@@ -257,5 +236,5 @@ export const createCardVariantsWithDelay = (
 export const createFadeInWithDelay = (delay: number) => ({
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, delay },
+  transition: { duration: 0.3, delay },
 });

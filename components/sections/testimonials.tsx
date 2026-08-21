@@ -9,10 +9,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Data } from "@/data";
+import { homeTestimonials } from "@/data/home";
 import { AnimatePresence, motion } from "motion/react";
 
-const testimonials = Data.Testimonials;
+const testimonials = homeTestimonials;
 
 const Testimonial6: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

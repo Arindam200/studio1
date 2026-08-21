@@ -1,6 +1,5 @@
 import { Icon, IconProps } from "@tabler/icons-react";
 import ProcessCard from "./process-card";
-import { Data } from "@/data";
 
 export default function ProcessSection({
   steps,

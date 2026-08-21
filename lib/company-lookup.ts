@@ -1,4 +1,4 @@
-import { Data } from "@/data";
+import { companies, type Company } from "@/data/companies";
 
 const ALIASES: Record<string, string> = {
   Permit: "Permit.io",
@@ -9,10 +9,10 @@ function normalizeName(name: string) {
 }
 
 const companyByNormalized = new Map(
-  Data.Companies.map((company) => [normalizeName(company.name), company]),
+  companies.map((company) => [normalizeName(company.name), company]),
 );
 
-export type CompanyInfo = (typeof Data.Companies)[number];
+export type CompanyInfo = Company;
 
 export function getCompanyByName(name: string): CompanyInfo | undefined {
   const resolved = ALIASES[name] ?? name;
@@ -20,7 +20,7 @@ export function getCompanyByName(name: string): CompanyInfo | undefined {
 
   return (
     companyByNormalized.get(normalized) ??
-    Data.Companies.find((company) =>
+    companies.find((company) =>
       normalizeName(company.name).includes(normalized),
     )
   );

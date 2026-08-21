@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { baseUrl } from "@/lib/site";
 import {
   DEFAULT_LOCALE,
+  hasLocalizedAlternates,
   localeMeta,
+  languageAlternates,
   localizedUrl,
   type Locale,
 } from "@/lib/i18n";
@@ -66,6 +68,12 @@ export function pageMetadata({
     title,
     description,
     ...(keywords?.length ? { keywords } : {}),
+    alternates: {
+      canonical: url,
+      ...(hasLocalizedAlternates(path)
+        ? { languages: languageAlternates(path, baseUrl) }
+        : {}),
+    },
     openGraph: {
       title: brandedTitle,
       description,
@@ -106,6 +114,10 @@ export function homePageMetadata({
       absolute: brandedTitle,
     },
     description,
+    alternates: {
+      canonical: url,
+      languages: languageAlternates("/", baseUrl),
+    },
     openGraph: {
       title: brandedTitle,
       description,
@@ -155,6 +167,9 @@ export function articlePageMetadata({
     title,
     description,
     ...(keywords?.length ? { keywords } : {}),
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
       title: brandedTitle,
       description,

@@ -1,5 +1,5 @@
 "use client";
-import { Data } from "@/data";
+import { companies } from "@/data/companies";
 import Image from "next/image";
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -36,7 +36,7 @@ export const Companies = () => {
         </div>
 
         <div className="grid max-w-5xl z-20 mx-auto grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
-          {Data.Companies.map((item, index) => {
+          {companies.map((item, index) => {
             const logoVariant =
               "logoVariant" in item ? item.logoVariant : undefined;
             const logoDarkImage =

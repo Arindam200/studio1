@@ -7,11 +7,11 @@ description: >-
 department: General
 location: Remote
 type: Contract
-status: Open
+status: Opening soon
 applySubject: Pitch Your Role
 isRemote: true
 openings: 1
-order: 6
+order: 7
 postedDate: 2026-08-10T00:00:00.000Z
 requisitionId: STU_OPEN_PITCH_CONTRACT_005
 ---

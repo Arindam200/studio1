@@ -27,15 +27,9 @@ import ForgeCode from "@/public/assets/forgecode.webp";
 import ScrapeGraph from "@/public/assets/scrapegraph.webp";
 import Dualite from "@/public/assets/dualite.webp";
 import Pieces from "@/public/assets/pieces.webp";
-import Amazon from "@/public/assets/amazon.webp";
-import Fabric from "@/public/assets/fabric.webp";
-import Flyte from "@/public/assets/flyte.webp";
 import Keploy from "@/public/assets/keploy.webp";
-import Meilisearch from "@/public/assets/meilisearch.webp";
 import Scaler from "@/public/assets/scaler.webp";
 import TryCua from "@/public/assets/trycua.webp";
-import Unacademy from "@/public/assets/unacademy.webp";
-import Uploadcare from "@/public/assets/uploadcare.webp";
 import Apilayer from "@/public/assets/apilayer.webp";
 import WeaviateMark from "@/public/assets/weaviate-mark.svg";
 import WeaviateImage from "@/public/assets/weaviate.webp";
@@ -56,11 +50,16 @@ import BrowserAct from "@/public/assets/browseract.png";
 import MaximAi from "@/public/assets/maxim-ai.webp";
 import PuckMark from "@/public/assets/puck.webp";
 import Kombai from "@/public/assets/kombai.webp";
+import Ittybit from "@/public/assets/ittybit.webp";
 import KiloCode from "@/public/assets/kilo-code.webp";
+import KiloCodeLight from "@/public/assets/kilo-code-light.webp";
 import Quadratic from "@/public/assets/quadratic.webp";
 import Olostep from "@/public/assets/olostep.webp";
 import TestMuAiLogo from "@/public/assets/testmu-ai-logo.svg";
 import TestMuAiMark from "@/public/assets/testmu-ai-mark.svg";
+import NovitaAiMark from "@/public/assets/novita-ai-mark.webp";
+import NovitaAiMarkGreen from "@/public/assets/novita-ai-mark-green.webp";
+import NovitaAiLogo from "@/public/assets/novita-ai-logo.webp";
 
 import RagieFull from "@/public/assets/ragie-full.webp";
 import EntelligenceFull from "@/public/assets/entelligence-full.webp";
@@ -89,7 +88,6 @@ import NitricFull from "@/public/assets/Nitric-full.webp";
 import JozuFull from "@/public/assets/Jozu-full.webp";
 import CodeRabbitFull from "@/public/assets/Coderabbit-full.webp";
 import StackqlFull from "@/public/assets/Stackql-full.webp";
-import Ittybit from "@/public/assets/ittybit.webp";
 import IttybitFull from "@/public/assets/Ittybit-full.webp";
 import InsForge from "@/public/assets/insforge.webp";
 import InsForgeFull from "@/public/assets/insforge-full.webp";
@@ -115,6 +113,7 @@ import YC from "../public/assets/yc.webp";
 import Devto from "../public/assets/devto.webp";
 import arindamNoBg from "../public/assets/arindam_nobg.webp";
 import amiteshNoBg from "../public/assets/amitesh-nobg.webp";
+import amiteshProfileSquare from "../public/assets/amitesh-profile-square.webp";
 import shivayNoBg from "../public/assets/shivay-nobg.webp";
 import amitesh from "../public/assets/amitesh.webp";
 
@@ -124,7 +123,6 @@ export {
   Copilotkit,
   Nebius,
   Eachlab,
-  Amazon,
   Stream,
   Swytchcode,
   Stackql,
@@ -146,10 +144,7 @@ export {
   ScrapeGraph,
   Graphite,
   Motia,
-  Fabric,
-  Flyte,
   Keploy,
-  Meilisearch,
   Scaler,
   TryCua,
   Apilayer,
@@ -172,13 +167,16 @@ export {
   MaximAi,
   PuckMark,
   Kombai,
+  Ittybit,
   KiloCode,
+  KiloCodeLight,
   Quadratic,
   Olostep,
   TestMuAiLogo,
   TestMuAiMark,
-  Unacademy,
-  Uploadcare,
+  NovitaAiMark,
+  NovitaAiMarkGreen,
+  NovitaAiLogo,
   MotiaFull,
   Nitric,
   Jozu,
@@ -210,7 +208,6 @@ export {
   StreamFull,
   SwytchcodeFull,
   StackqlFull,
-  Ittybit,
   IttybitFull,
   InsForge,
   InsForgeFull,
@@ -234,6 +231,7 @@ export {
   Devto,
   arindamNoBg,
   amiteshNoBg,
+  amiteshProfileSquare,
   shivayNoBg,
   amitesh,
 };

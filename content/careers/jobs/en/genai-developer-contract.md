@@ -11,7 +11,7 @@ status: Opening soon
 applySubject: GenAI Developer
 isRemote: true
 openings: 2
-order: 5
+order: 6
 postedDate: 2026-08-10T00:00:00.000Z
 requisitionId: STU_GENAI_DEV_INTERN_CONTRACT_005
 ---

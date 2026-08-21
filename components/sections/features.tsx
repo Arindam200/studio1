@@ -1,5 +1,5 @@
 import React from "react";
-import { Data } from "@/data";
+import { homeFeatures } from "@/data/home";
 
 interface Reason {
   icon: React.ComponentType<{ className?: string }>;
@@ -7,7 +7,7 @@ interface Reason {
   description: string;
 }
 
-const reasons: Reason[] = [...Data.Features];
+const reasons: Reason[] = [...homeFeatures];
 
 const Features = () => {
   return (

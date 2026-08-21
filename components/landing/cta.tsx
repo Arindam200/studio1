@@ -1,5 +1,5 @@
 "use client"
-import React from "react"
+import React, { useEffect, useRef, useState } from "react"
 import dynamic from "next/dynamic"
 import { IconPhoneFilled } from "@tabler/icons-react"
 import { Button } from "../ui/button"
@@ -19,8 +19,73 @@ const GlobePulse = dynamic(
   { ssr: false },
 )
 
+function StaticGlobeFallback() {
+  return (
+    <div className="relative aspect-square w-full overflow-hidden rounded-full border border-primary/15 bg-[radial-gradient(circle_at_45%_38%,hsl(var(--primary)/0.24),hsl(var(--primary)/0.1)_36%,transparent_68%)] dark:border-white/10 dark:bg-[radial-gradient(circle_at_45%_38%,hsl(var(--primary)/0.2),hsl(var(--primary)/0.08)_36%,transparent_68%)]">
+      <div
+        aria-hidden
+        className="absolute inset-[12%] rounded-full border border-primary/20 dark:border-white/10"
+      />
+      <div
+        aria-hidden
+        className="absolute left-[20%] top-[30%] size-2 rounded-full bg-primary shadow-[0_0_18px_hsl(var(--primary)/0.7)]"
+      />
+      <div
+        aria-hidden
+        className="absolute right-[22%] top-[42%] size-2 rounded-full bg-primary shadow-[0_0_18px_hsl(var(--primary)/0.7)]"
+      />
+      <div
+        aria-hidden
+        className="absolute bottom-[24%] left-[46%] size-2 rounded-full bg-primary shadow-[0_0_18px_hsl(var(--primary)/0.7)]"
+      />
+    </div>
+  )
+}
+
 export default function CTA() {
   const t = useTranslations("CTA")
+  const globeRef = useRef<HTMLDivElement | null>(null)
+  const [shouldLoadGlobe, setShouldLoadGlobe] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 767px)")
+    const updateMobile = () => setIsMobile(mobileQuery.matches)
+    updateMobile()
+
+    if (typeof mobileQuery.addEventListener === "function") {
+      mobileQuery.addEventListener("change", updateMobile)
+    } else {
+      mobileQuery.addListener(updateMobile)
+    }
+
+    return () => {
+      if (typeof mobileQuery.removeEventListener === "function") {
+        mobileQuery.removeEventListener("change", updateMobile)
+      } else {
+        mobileQuery.removeListener(updateMobile)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    const target = globeRef.current
+    if (!target || isMobile || shouldLoadGlobe) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setShouldLoadGlobe(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: "700px 0px" },
+    )
+
+    observer.observe(target)
+
+    return () => observer.disconnect()
+  }, [isMobile, shouldLoadGlobe])
 
   return (
     <motion.div
@@ -85,12 +150,19 @@ export default function CTA() {
             aria-hidden
             className="pointer-events-none absolute inset-0 m-auto size-[75%] bg-[radial-gradient(circle_at_center,hsl(var(--primary)_/_0.1)_0%,transparent_62%)] dark:bg-[radial-gradient(circle_at_center,hsl(var(--primary)_/_0.08)_0%,transparent_58%)]"
           />
-          <div className="relative w-[min(18rem,78vw)] sm:w-[20rem] md:w-[22rem] lg:w-[26rem] touch-none">
-            <GlobePulse
-              markers={CTA_GLOBE_MARKERS}
-              speed={0.0025}
-              className="h-full w-full"
-            />
+          <div
+            ref={globeRef}
+            className="relative w-[min(18rem,78vw)] sm:w-[20rem] md:w-[22rem] lg:w-[26rem] touch-none"
+          >
+            {shouldLoadGlobe && !isMobile ? (
+              <GlobePulse
+                markers={CTA_GLOBE_MARKERS}
+                speed={0.0025}
+                className="h-full w-full"
+              />
+            ) : (
+              <StaticGlobeFallback />
+            )}
           </div>
         </div>
       </motion.div>

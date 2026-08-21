@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import {
+  IconBrandInstagram,
   IconBrandLinkedin,
   IconBrandX,
   IconBrandYoutube,
@@ -89,6 +90,8 @@ export default function Footer() {
                 <Link
                   href="https://x.com/Studio1HQ"
                   className="text-muted-foreground hover:text-foreground transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <IconBrandX className="size-6 hover:text-primary duration-300" />
                   <span className="sr-only">Twitter</span>
@@ -96,13 +99,26 @@ export default function Footer() {
                 <Link
                   href="https://www.linkedin.com/company/studio1hq/"
                   className="text-muted-foreground hover:text-foreground transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <IconBrandLinkedin className="size-6 hover:text-primary duration-300" />
                   <span className="sr-only">LinkedIn</span>
                 </Link>
                 <Link
+                  href="https://www.instagram.com/studio1_hq/"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <IconBrandInstagram className="size-6 hover:text-primary duration-300" />
+                  <span className="sr-only">Instagram</span>
+                </Link>
+                <Link
                   href="https://www.youtube.com/@studio1hq/"
                   className="text-muted-foreground hover:text-foreground transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <IconBrandYoutube className="size-6 hover:text-primary duration-300" />
                   <span className="sr-only">YouTube</span>
@@ -110,6 +126,8 @@ export default function Footer() {
                 <Link
                   href="https://dev.to/studio1hq"
                   className="text-muted-foreground hover:text-foreground transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <IconNews className="size-6 hover:text-primary duration-300" />
                   <span className="sr-only">Blogs</span>

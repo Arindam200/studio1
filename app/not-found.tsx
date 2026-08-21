@@ -1,17 +1,16 @@
 import Link from "next/link";
-import { headers } from "next/headers";
 import { getTranslations } from "next-intl/server";
 import { ArrowRight, Home } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { NotFoundGlow } from "@/components/not-found-glow";
-import { getSafeLocale } from "@/lib/i18n-messages";
-import { localizePathname } from "@/lib/i18n";
+import { DEFAULT_LOCALE, localizePathname } from "@/lib/i18n";
 
 export default async function NotFound() {
-  const t = await getTranslations("NotFound");
-  const headerStore = await headers();
-  const locale = getSafeLocale(headerStore.get("x-studio1-locale"));
+  const t = await getTranslations({
+    locale: DEFAULT_LOCALE,
+    namespace: "NotFound",
+  });
 
   return (
     <div className="relative -mb-10">
@@ -36,7 +35,7 @@ export default async function NotFound() {
 
           <div className="mt-10 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
             <Button variant="gradient" size="cta" className="w-full sm:w-auto" asChild>
-              <Link href={localizePathname("/", locale)}>
+              <Link href={localizePathname("/", DEFAULT_LOCALE)}>
                 <Home className="size-5" />
                 {t("homeCta")}
               </Link>
@@ -47,7 +46,7 @@ export default async function NotFound() {
               className="w-full sm:w-auto"
               asChild
             >
-              <Link href={localizePathname("/technical-content-marketing", locale)}>
+              <Link href={localizePathname("/technical-content-marketing", DEFAULT_LOCALE)}>
                 {t("servicesCta")}
                 <ArrowRight className="size-5" />
               </Link>

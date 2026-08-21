@@ -91,9 +91,10 @@ export const TeamCard = ({
             <Image
               src={member.image}
               alt={member.name}
-              fill
+              width={500}
+              height={600}
               sizes="(min-width: 768px) 30vw, 90vw"
-              className="object-cover grayscale transition-all duration-700 ease-out group-hover:scale-[1.03] group-hover:grayscale-0"
+              className="absolute bottom-0 left-1/2 h-full w-auto -translate-x-1/2 object-contain object-bottom grayscale transition-all duration-700 ease-out group-hover:scale-[1.03] group-hover:grayscale-0"
             />
           ) : (
             <Image

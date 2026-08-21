@@ -16,6 +16,7 @@ import {
   CodeRabbitFull,
   shivayNoBg,
   arindamNoBg,
+  amiteshProfileSquare,
   StreamFull,
   SwytchcodeFull,
   StackqlFull,
@@ -37,6 +38,7 @@ import {
   Unsiloed,
   InteractAiLogo,
   Corsair,
+  NovitaAiMark,
 } from "./image";
 import {
   Books,
@@ -396,6 +398,13 @@ export const trustedbyLogo = [
       "h-6 sm:h-7 md:h-8 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[160px] object-contain dark:brightness-200 dark:contrast-125 scale-90",
     alt: "Ittybit",
   },
+  {
+    name: "Novita AI",
+    image: NovitaAiMark,
+    isWhite: false,
+    className: "h-9 sm:h-10 md:h-11 w-auto object-contain",
+    alt: "Novita AI",
+  },
 ];
 
 export const teamMembers = [
@@ -413,7 +422,7 @@ export const teamMembers = [
   {
     name: "Amitesh Anand",
     role: "Co-Founder",
-    image: "/assets/amitesh-anand.webp",
+    image: amiteshProfileSquare,
     bio: "",
     social: {
       twitter: "https://mobile.twitter.com/astrodevil_",

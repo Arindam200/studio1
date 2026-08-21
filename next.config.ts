@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
   images: {
     // Serve compact modern formats and reuse optimized derivatives on repeat visits.
     formats: ["image/avif", "image/webp"],
-    qualities: [50, 75],
+    qualities: [50, 75, 95],
     minimumCacheTTL: 60 * 60 * 24 * 30,
     deviceSizes: [360, 640, 768, 1024, 1280, 1536, 1920],
     imageSizes: [32, 48, 64, 96, 128, 256, 384],
@@ -58,6 +58,11 @@ const nextConfig: NextConfig = {
       {
         source: "/content-creation",
         destination: "/developer-video-production",
+        permanent: true,
+      },
+      {
+        source: "/careers/growth-intern",
+        destination: "/careers/founders-office-associate",
         permanent: true,
       },
       {

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import {
   DM_Sans,
   Instrument_Serif,
@@ -12,23 +11,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { baseUrl } from "@/lib/site";
 import Script from "next/script";
 import { cn } from "@/lib/utils";
-import BottomNavbar from "@/components/bottom-navbar";
-import { NextIntlClientProvider } from "next-intl";
-
-import Navbar from "@/components/landing/navbar";
-import Footer from "@/components/landing/footer";
-import CTA from "@/components/landing/cta";
-import { LocalizedLinkRuntime } from "@/components/localization/localized-link-runtime";
-import ScrollToTopButton from "@/components/scroll-to-top-button";
-import { PageTransition } from "@/components/page-transition";
-import {
-  DEFAULT_LOCALE,
-  canonicalUrl,
-  hasLocalizedAlternates,
-  languageAlternates,
-  localeMeta,
-} from "@/lib/i18n";
-import { getMessages, getSafeLocale } from "@/lib/i18n-messages";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -66,101 +48,75 @@ const inter = Inter({
   weight: ["400", "500", "600"],
 });
 
-export async function generateMetadata(): Promise<Metadata> {
-  const headerStore = await headers();
-  const locale = getSafeLocale(headerStore.get("x-studio1-locale"));
-  const pathname = headerStore.get("x-studio1-pathname") ?? "/";
-
-  return {
-    metadataBase: new URL(baseUrl),
-
-    applicationName: "Studio1",
-    appleWebApp: {
-      title: "Studio1",
-    },
-    icons: {
-      icon: [{ url: "/icon.png", type: "image/png" }],
-      apple: [{ url: "/icon.png", type: "image/png" }],
-    },
-
-    title: {
-      default:
-        "Technical Content & Developer Growth Agency for DevTools | Studio1",
-      template: "%s | Studio1",
-    },
+export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
+  applicationName: "Studio1",
+  appleWebApp: {
+    title: "Studio1",
+  },
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/icon.png", type: "image/png" }],
+  },
+  title: {
+    default: "Technical Content & Developer Growth Agency for DevTools | Studio1",
+    template: "%s | Studio1",
+  },
+  description:
+    "Studio1 is a technical content and developer growth partner for SaaS and devtool teams. We produce tutorials, docs, videos, launches, and developer programs that drive adoption.",
+  keywords: [
+    "technical content",
+    "developer relations",
+    "DevRel",
+    "developer marketing",
+    "technical writing",
+    "API documentation",
+    "technical blog",
+    "developer community",
+    "technical content agency",
+    "devrel agency",
+    "developer tutorials",
+    "developer documentation",
+    "developer advocacy",
+    "technical tutorial writing",
+    "content marketing for devtools",
+  ],
+  authors: [{ name: "Studio1" }],
+  openGraph: {
+    title: "Technical Content & Developer Growth Agency for DevTools | Studio1",
     description:
       "Studio1 is a technical content and developer growth partner for SaaS and devtool teams. We produce tutorials, docs, videos, launches, and developer programs that drive adoption.",
-    keywords: [
-      "technical content",
-      "developer relations",
-      "DevRel",
-      "developer marketing",
-      "technical writing",
-      "API documentation",
-      "technical blog",
-      "developer community",
-      "technical content agency",
-      "devrel agency",
-      "developer tutorials",
-      "developer documentation",
-      "developer advocacy",
-      "technical tutorial writing",
-      "content marketing for devtools",
+    url: baseUrl,
+    siteName: "Studio1",
+    locale: "en",
+    type: "website",
+    images: [
+      {
+        url: `${baseUrl}/opengraph-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Studio1 - Technical Content and Developer Growth Services",
+      },
     ],
-    authors: [{ name: "Studio1" }],
-    alternates: {
-      canonical:
-        locale === DEFAULT_LOCALE
-          ? canonicalUrl(pathname, DEFAULT_LOCALE, baseUrl)
-          : canonicalUrl(pathname, locale, baseUrl),
-      ...(hasLocalizedAlternates(pathname)
-        ? { languages: languageAlternates(pathname, baseUrl) }
-        : {}),
-    },
-    openGraph: {
-      title:
-        "Technical Content & Developer Growth Agency for DevTools | Studio1",
-      description:
-        "Studio1 is a technical content and developer growth partner for SaaS and devtool teams. We produce tutorials, docs, videos, launches, and developer programs that drive adoption.",
-      url: canonicalUrl(pathname, locale, baseUrl),
-      siteName: "Studio1",
-      locale: localeMeta[locale].htmlLang.replace("-", "_"),
-      type: "website",
-      images: [
-        {
-          url: `${baseUrl}/opengraph-image.png`,
-          width: 1200,
-          height: 630,
-          alt: "Studio1 - Technical Content and Developer Growth Services",
-        },
-      ],
-    },
-    twitter: {
-      title:
-        "Technical Content & Developer Growth Agency for DevTools | Studio1",
-      card: "summary_large_image",
-      description:
-        "Studio1 is a technical content and developer growth partner for SaaS and devtool teams. We produce tutorials, docs, videos, launches, and developer programs that drive adoption.",
-      images: [`${baseUrl}/opengraph-image.png`],
-      creator: "@Studio1HQ",
-    },
-  };
-}
+  },
+  twitter: {
+    title: "Technical Content & Developer Growth Agency for DevTools | Studio1",
+    card: "summary_large_image",
+    description:
+      "Studio1 is a technical content and developer growth partner for SaaS and devtool teams. We produce tutorials, docs, videos, launches, and developer programs that drive adoption.",
+    images: [`${baseUrl}/opengraph-image.png`],
+    creator: "@Studio1HQ",
+  },
+};
 
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const headerStore = await headers();
-  const locale = getSafeLocale(headerStore.get("x-studio1-locale"));
-  const pathname = headerStore.get("x-studio1-pathname") ?? "/";
-  const messages = await getMessages(locale);
-  const shouldShowGlobalCta = !pathname.replace(/^\/(fr|es|hi|zh)(?=\/|$)/, "").startsWith("/careers");
-
   return (
     <html
-      lang={localeMeta[locale].htmlLang}
+      lang="en"
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
@@ -181,15 +137,7 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <Navbar />
-            <PageTransition>{children}</PageTransition>
-            {shouldShowGlobalCta ? <CTA /> : null}
-            <Footer />
-            <BottomNavbar />
-            <ScrollToTopButton />
-            <LocalizedLinkRuntime />
-          </NextIntlClientProvider>
+          {children}
         </ThemeProvider>
 
         <script

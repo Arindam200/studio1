@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import { Button } from "../ui/button";
-import { Data } from "@/data";
+import { homeTestimonials } from "@/data/home";
 import TestimonialCard from "./testimonial-card";
 import { SectionEyebrow } from "./section-eyebrow";
 import { motion, AnimatePresence } from "motion/react";
@@ -13,8 +13,8 @@ import { useTranslations } from "next-intl";
 export default function Testimonials() {
   const t = useTranslations("Testimonials");
   const [showAll, setShowAll] = useState(false);
-  const initialTestimonials = Data.Testimonials.slice(0, 6);
-  const remainingTestimonials = Data.Testimonials.slice(6);
+  const initialTestimonials = homeTestimonials.slice(0, 6);
+  const remainingTestimonials = homeTestimonials.slice(6);
   const containerRef = useRef(null);
 
   return (
@@ -71,15 +71,15 @@ export default function Testimonials() {
                   <motion.div
                     key={testimonial.name}
                     className="h-full"
-                    initial={{ y: 50, opacity: 0, filter: "blur(10px)" }}
-                    animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                    exit={{ y: 50, opacity: 0, filter: "blur(10px)" }}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: 20, opacity: 0 }}
                     transition={{
                       type: "spring" as const,
-                      damping: 15,
-                      stiffness: 100,
+                      damping: 22,
+                      stiffness: 140,
                       delay: index * 0.05,
-                      duration: 0.6,
+                      duration: 0.3,
                     }}
                   >
                     <TestimonialCard testimonial={testimonial} />
