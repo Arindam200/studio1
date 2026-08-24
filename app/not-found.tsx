@@ -6,6 +6,18 @@ import { Button } from "@/components/ui/button";
 import { NotFoundGlow } from "@/components/not-found-glow";
 import { DEFAULT_LOCALE, localizePathname } from "@/lib/i18n";
 
+const agentRecoveryMarkdown = `# Page not found
+
+This Studio1 URL does not exist.
+
+Useful machine-readable links:
+- Sitemap: /sitemap.xml
+- Agent overview: /llms.txt
+- Homepage: /
+- Services: /technical-content-marketing, /developer-documentation-dx-audit, /developer-video-production, /developer-relations-growth-campaigns
+- Case studies: /case-studies
+- Careers: /careers`;
+
 export default async function NotFound() {
   const t = await getTranslations({
     locale: DEFAULT_LOCALE,
@@ -52,6 +64,10 @@ export default async function NotFound() {
               </Link>
             </Button>
           </div>
+
+          <pre className="sr-only" data-agent-404-recovery>
+            {agentRecoveryMarkdown}
+          </pre>
         </div>
       </section>
     </div>

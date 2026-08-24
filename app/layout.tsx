@@ -165,6 +165,15 @@ export default async function RootLayout({
           data-domain="studio1hq.com"
           strategy="afterInteractive"
         />
+        <div
+          data-raah-live=""
+          data-pid="proj_w60eqpxi5ax0dw36"
+          data-domain="studio1hq.com"
+          data-theme="light"
+          data-sticky="true"
+          data-position="bottom-left"
+        />
+        <Script src="https://t.raah.dev/badge.js" strategy="afterInteractive" />
       </body>
     </html>
   );

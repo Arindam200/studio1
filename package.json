@@ -11,7 +11,8 @@
     "build": "next build",
     "start": "next start",
     "format": "prettier --write .",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:agent-readiness": "node scripts/verify-agent-readiness.mjs"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

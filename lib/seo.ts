@@ -240,9 +240,9 @@ export function jobPostingJsonLd(job: {
   isRemote: boolean;
   applyUrl: string;
 }) {
-  const isOpeningSoon = job.type.toLowerCase().includes("contract")
-    ? job.status?.toLowerCase().includes("soon")
-    : false;
+  const normalizedStatus = job.status?.toLowerCase() ?? "";
+  const isUnavailable =
+    normalizedStatus.includes("soon") || normalizedStatus.includes("closed");
   const employmentType = job.type.toLowerCase().includes("contract")
     ? "CONTRACTOR"
     : "INTERN";
@@ -278,9 +278,9 @@ export function jobPostingJsonLd(job: {
         addressCountry: "IN",
       },
     },
-    directApply: !isOpeningSoon,
+    directApply: !isUnavailable,
     url: pageUrl(`/careers/${job.id}`),
-    ...(!isOpeningSoon ? { applicationContact: job.applyUrl } : {}),
+    ...(!isUnavailable ? { applicationContact: job.applyUrl } : {}),
   };
 }
 

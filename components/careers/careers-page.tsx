@@ -66,6 +66,33 @@ function formatPostedDate(value: string, locale: string) {
   });
 }
 
+function getJobAvailability(status: string) {
+  const normalizedStatus = status.toLowerCase();
+  const isOpeningSoon = normalizedStatus.includes("soon");
+  const isClosed = normalizedStatus.includes("closed");
+
+  return {
+    isClosed,
+    isOpeningSoon,
+    isUnavailable: isOpeningSoon || isClosed,
+    buttonLabel: isClosed ? "Closed" : "Coming soon",
+  };
+}
+
+function getStatusBadgeClassName(status: string) {
+  const { isClosed, isOpeningSoon } = getJobAvailability(status);
+
+  if (isClosed) {
+    return "border-primary/25 bg-primary/10 text-primary";
+  }
+
+  if (isOpeningSoon) {
+    return "border-yellow-400/45 bg-yellow-400/10 text-yellow-700 dark:text-yellow-300";
+  }
+
+  return "border-green-500/35 bg-green-500/10 text-green-700 dark:text-green-300";
+}
+
 function JobCard({
   id,
   title,
@@ -88,7 +115,8 @@ function JobCard({
   locale: string;
 }) {
   const t = useTranslations("CareersPage");
-  const isOpeningSoon = status.toLowerCase().includes("soon");
+  const { isClosed, isOpeningSoon, isUnavailable, buttonLabel } =
+    getJobAvailability(status);
 
   return (
     <article
@@ -109,9 +137,7 @@ function JobCard({
           <span
             className={cn(
               "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium",
-              isOpeningSoon
-                ? "border-amber-400/35 bg-amber-400/10 text-amber-700 dark:text-amber-300"
-                : "border-primary/25 bg-primary/10 text-primary",
+              getStatusBadgeClassName(status),
             )}
           >
             <CheckCircle className="size-3.5" weight="fill" />
@@ -157,17 +183,19 @@ function JobCard({
       </Link>
 
       <Button
-        variant={isOpeningSoon ? "outline" : "gradient"}
+        variant={isUnavailable ? "outline" : "gradient"}
         size="cta"
         className={cn(
           "relative z-[2] mt-6 w-fit",
           isOpeningSoon &&
             "border-amber-400/35 bg-amber-400/10 text-amber-800 hover:bg-amber-400/15 dark:text-amber-200",
+          isClosed &&
+            "border-primary/25 bg-primary/10 text-primary hover:bg-primary/15",
         )}
         asChild
       >
         <Link href={`/careers/${id}`}>
-          {isOpeningSoon ? "Coming soon" : t("applyNow")}
+          {isUnavailable ? buttonLabel : t("applyNow")}
           <ArrowRight
             className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 motion-reduce:transform-none"
             weight="bold"
@@ -187,18 +215,32 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
   const locale = useLocale();
   const [selectedFilter, setSelectedFilter] = useState<CareerFilter>("All");
 
-  const filteredJobs = jobOpenings.filter((job) => {
-    const isOpeningSoon = job.status.toLowerCase().includes("soon");
+  const filteredJobs = jobOpenings
+    .filter((job) => {
+      if (selectedFilter === "All") return true;
+      if (selectedFilter === "Other") {
+        return !["Engineering", "Marketing", "Growth", "Founder's Office"].includes(
+          job.department,
+        );
+      }
+      if (selectedFilter === "Growth") {
+        return (
+          job.department === "Growth" || job.department === "Founder's Office"
+        );
+      }
 
-    if (selectedFilter === "All") return true;
-    if (selectedFilter === "Other") return isOpeningSoon;
-    if (isOpeningSoon) return false;
-    if (selectedFilter === "Growth") {
-      return job.department === "Growth" || job.department === "Founder's Office";
-    }
+      return job.department === selectedFilter;
+    })
+    .sort((a, b) => {
+      const aUnavailable = getJobAvailability(a.status).isUnavailable;
+      const bUnavailable = getJobAvailability(b.status).isUnavailable;
 
-    return job.department === selectedFilter;
-  });
+      if (aUnavailable !== bUnavailable) {
+        return aUnavailable ? 1 : -1;
+      }
+
+      return a.order - b.order;
+    });
 
   return (
     <section className="overflow-x-hidden">

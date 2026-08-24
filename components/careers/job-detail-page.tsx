@@ -52,6 +52,33 @@ function JobDetailRow({
   );
 }
 
+function getJobAvailability(status: string) {
+  const normalizedStatus = status.toLowerCase();
+  const isOpeningSoon = normalizedStatus.includes("soon");
+  const isClosed = normalizedStatus.includes("closed");
+
+  return {
+    isClosed,
+    isOpeningSoon,
+    isUnavailable: isOpeningSoon || isClosed,
+    buttonLabel: isClosed ? "Closed" : "Coming soon",
+  };
+}
+
+function getStatusBadgeClassName(status: string) {
+  const { isClosed, isOpeningSoon } = getJobAvailability(status);
+
+  if (isClosed) {
+    return "border-primary/25 bg-primary/10 text-primary";
+  }
+
+  if (isOpeningSoon) {
+    return "border-yellow-400/45 bg-yellow-400/10 text-yellow-700 dark:text-yellow-300";
+  }
+
+  return "border-green-500/35 bg-green-500/10 text-green-700 dark:text-green-300";
+}
+
 function ApplyButton({
   className,
   href,
@@ -95,7 +122,7 @@ export function JobDetailPage({ job, children }: JobDetailPageProps) {
   const applyMailto = getJobApplicationMailto(job);
   const openingsLabel =
     job.openings === 1 ? "1 opening" : `${job.openings} openings`;
-  const isOpeningSoon = job.status.toLowerCase().includes("soon");
+  const { isUnavailable, buttonLabel } = getJobAvailability(job.status);
 
   return (
     <section className="overflow-x-hidden bg-background pb-24 pt-20 md:pt-24">
@@ -123,7 +150,12 @@ export function JobDetailPage({ job, children }: JobDetailPageProps) {
               {job.title}
             </h1>
             <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground sm:text-base">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
+              <span
+                className={cn(
+                  "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium",
+                  getStatusBadgeClassName(job.status),
+                )}
+              >
                 <CheckCircle className="size-3.5" weight="fill" />
                 {job.status}
               </span>
@@ -198,8 +230,8 @@ export function JobDetailPage({ job, children }: JobDetailPageProps) {
               <ApplyButton
                 className="w-full"
                 href={applyMailto}
-                label={isOpeningSoon ? "Coming soon" : "Apply"}
-                disabled={isOpeningSoon}
+                label={isUnavailable ? buttonLabel : "Apply"}
+                disabled={isUnavailable}
               />
             </div>
           </div>

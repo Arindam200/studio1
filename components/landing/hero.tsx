@@ -147,7 +147,7 @@ export default function Hero() {
                   className="w-full sm:w-auto"
                   asChild
                 >
-                  <a href="/#service-offerings">
+                  <a href="/case-studies">
                     {t("secondaryCta")} <ArrowDownRight />
                   </a>
                 </Button>

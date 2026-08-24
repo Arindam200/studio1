@@ -15,6 +15,8 @@ export type GlobePulseProps = {
   markers?: PulseMarker[]
   className?: string
   speed?: number
+  mapSamples?: number
+  pixelRatioLimit?: number
   /** When false, disables drag interaction (decorative use). */
   interactive?: boolean
 }
@@ -62,6 +64,8 @@ export function GlobePulse({
   markers = defaultMarkers,
   className,
   speed = 0.003,
+  mapSamples = 16000,
+  pixelRatioLimit = 2,
   interactive = true,
 }: GlobePulseProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -172,14 +176,14 @@ export function GlobePulse({
 
       const width = el.offsetWidth
       globeRef.current = createGlobe(el, {
-        devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
+        devicePixelRatio: Math.min(window.devicePixelRatio || 1, pixelRatioLimit),
         width,
         height: width,
         phi: 0,
         theta: 0.2,
         dark: theme.dark,
         diffuse: theme.diffuse,
-        mapSamples: 16000,
+        mapSamples,
         mapBrightness: theme.mapBrightness,
         baseColor: theme.baseColor,
         markerColor: MARKER_COLOR,
@@ -251,7 +255,7 @@ export function GlobePulse({
         }
       })
     }
-  }, [markers, speed])
+  }, [markers, mapSamples, pixelRatioLimit, speed])
 
   const pulseDuration = "2s"
 
@@ -292,7 +296,7 @@ export function GlobePulse({
           opacity: 0,
           transition: "opacity 1.2s ease",
           borderRadius: "50%",
-          touchAction: "none",
+          touchAction: interactive ? "none" : "pan-y",
           userSelect: "none",
         }}
       />

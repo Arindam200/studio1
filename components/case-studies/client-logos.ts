@@ -4,6 +4,8 @@ import {
   EntelligenceFull,
   Ittybit,
   IttybitFull,
+  Jozu,
+  JozuFull,
   LiteLLM,
   LiteLLMFull,
   Memori,
@@ -28,6 +30,7 @@ export type ClientLogo = {
 export const clientLogos: Record<string, ClientLogo> = {
   "entelligence-ai": { icon: Enteligence, full: EntelligenceFull },
   ittybit: { icon: Ittybit, full: IttybitFull },
+  jozu: { icon: Jozu, full: JozuFull },
   litellm: { icon: LiteLLM, full: LiteLLMFull },
   memori: { icon: Memori, full: MemoriFull },
   permit: { icon: Permit, full: PermitFull },

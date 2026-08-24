@@ -70,7 +70,7 @@ export default function CTA() {
 
   useEffect(() => {
     const target = globeRef.current
-    if (!target || isMobile || shouldLoadGlobe) return
+    if (!target || shouldLoadGlobe) return
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -79,7 +79,7 @@ export default function CTA() {
           observer.disconnect()
         }
       },
-      { rootMargin: "700px 0px" },
+      { rootMargin: isMobile ? "260px 0px" : "700px 0px" },
     )
 
     observer.observe(target)
@@ -152,12 +152,18 @@ export default function CTA() {
           />
           <div
             ref={globeRef}
-            className="relative w-[min(18rem,78vw)] sm:w-[20rem] md:w-[22rem] lg:w-[26rem] touch-none"
+            className={cn(
+              "relative w-[min(18rem,78vw)] sm:w-[20rem] md:w-[22rem] lg:w-[26rem]",
+              isMobile ? "touch-pan-y" : "touch-none",
+            )}
           >
-            {shouldLoadGlobe && !isMobile ? (
+            {shouldLoadGlobe ? (
               <GlobePulse
                 markers={CTA_GLOBE_MARKERS}
                 speed={0.0025}
+                mapSamples={isMobile ? 8000 : 16000}
+                pixelRatioLimit={isMobile ? 1.25 : 2}
+                interactive={!isMobile}
                 className="h-full w-full"
               />
             ) : (

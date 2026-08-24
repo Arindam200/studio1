@@ -66,6 +66,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/careers/aws-bedrock-ai-agent-engineer",
+        destination: "/careers/ai-cloud-engineer",
+        permanent: true,
+      },
+      {
+        source: "/careers/aws-ai-agent-engineer",
+        destination: "/careers/ai-cloud-engineer",
+        permanent: true,
+      },
+      {
         source: "/devrel-as-service",
         destination: "/developer-relations-growth-campaigns",
         permanent: true,

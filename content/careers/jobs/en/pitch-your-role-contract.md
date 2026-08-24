@@ -11,7 +11,7 @@ status: Opening soon
 applySubject: Pitch Your Role
 isRemote: true
 openings: 1
-order: 7
+order: 8
 postedDate: 2026-08-10T00:00:00.000Z
 requisitionId: STU_OPEN_PITCH_CONTRACT_005
 ---
@@ -44,7 +44,7 @@ This is a remote contract opportunity. Scope, timeline, and workload will depend
 
 ## How to apply
 
-Use the Apply button and keep the subject line as: `Application: Pitch Your Role`.
+When this opens, email [careers@studio1hq.com](mailto:careers@studio1hq.com) and keep the subject line as: `Application: Pitch Your Role`.
 
 Include your resume or profile, proof of past work, and one clean single-page document explaining the role you are pitching, what you can help with, why it matters for Studio1, and what you would do first.
 
