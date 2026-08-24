@@ -13,7 +13,10 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "@/components/ui/button";
 import type { JobDetail } from "@/lib/careers";
-import { getJobApplicationMailto } from "@/lib/careers-mailto";
+import {
+  CAREERS_CONTACT_EMAIL,
+  getJobApplicationMailto,
+} from "@/lib/careers-mailto";
 import { cn } from "@/lib/utils";
 
 type JobDetailPageProps = {
@@ -233,6 +236,35 @@ export function JobDetailPage({ job, children }: JobDetailPageProps) {
                 label={isUnavailable ? buttonLabel : "Apply"}
                 disabled={isUnavailable}
               />
+              {!isUnavailable ? (
+                <div className="mt-4 hidden rounded-md border border-border/50 bg-background/60 p-3 text-xs leading-relaxed text-muted-foreground lg:block dark:border-white/[0.06] dark:bg-white/[0.03]">
+                  <p>
+                    Or send your application to{" "}
+                    <a
+                      href={applyMailto}
+                      className="font-medium text-foreground underline-offset-4 hover:underline"
+                    >
+                      {CAREERS_CONTACT_EMAIL}
+                    </a>
+                    .
+                  </p>
+                  <p className="mt-2">
+                    Subject:{" "}
+                    <span className="font-medium text-foreground">
+                      Application: {job.applySubject}
+                    </span>
+                  </p>
+                  <p className="mt-3 font-medium text-foreground">
+                    Include:
+                  </p>
+                  <ul className="mt-1.5 list-disc space-y-1 pl-4">
+                    <li>Resume or profile link</li>
+                    <li>Relevant past work or portfolio links, if available</li>
+                    <li>A short 1-week plan if you join Studio1</li>
+                    <li>Why this role fits you</li>
+                  </ul>
+                </div>
+              ) : null}
             </div>
           </div>
         </aside>
