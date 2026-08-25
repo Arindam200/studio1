@@ -19,6 +19,12 @@ const VIDEO_SERVICE_NAV_ITEMS: BottomNavItem[] = [
   { title: "Workflow", path: "#formats" },
 ];
 
+const CONTENT_MARKETING_NAV_ITEMS: BottomNavItem[] = [
+  { title: "Scope", path: "#work" },
+  { title: "Proof", path: "#proof" },
+  { title: "Process", path: "#process" },
+];
+
 const DEFAULT_SECTION = serviceNavItems[0]?.path ?? "#overview";
 const BOTTOM_SCROLL_THRESHOLD_PX = 96;
 const TOP_SCROLL_THRESHOLD_PX = 220;
@@ -45,7 +51,10 @@ export default function BottomNavbar() {
   const navItems =
     pathnameWithoutLocale === "/developer-video-production"
       ? VIDEO_SERVICE_NAV_ITEMS
+      : pathnameWithoutLocale === "/technical-content-marketing"
+        ? CONTENT_MARKETING_NAV_ITEMS
       : serviceNavItems;
+  const defaultSection = navItems[0]?.path ?? DEFAULT_SECTION;
   const isBottomNavValidPage = SERVICE_PAGE_PATHS.some((path) =>
     pathnameWithoutLocale.startsWith(path),
   );
@@ -121,7 +130,7 @@ export default function BottomNavbar() {
 
     const hashFromUrl = window.location.hash;
     const hasValidHash = sectionIds.some((id) => hashFromUrl === `#${id}`);
-    applyActiveHash(hasValidHash ? hashFromUrl : navItems[0]?.path ?? DEFAULT_SECTION);
+    applyActiveHash(hasValidHash ? hashFromUrl : defaultSection);
 
     const onHashChange = () => {
       const hash = window.location.hash;
@@ -176,7 +185,7 @@ export default function BottomNavbar() {
       observer.disconnect();
       visibility.clear();
     };
-  }, [isBottomNavValidPage, navItems, pathname]);
+  }, [defaultSection, isBottomNavValidPage, navItems, pathname]);
 
   return (
     <nav className="fixed bottom-[5rem] z-[101] left-0 w-full">

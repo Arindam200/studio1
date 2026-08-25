@@ -11,7 +11,6 @@ export const LOCALIZED_PUBLIC_PATHS = [
   "/developer-video-production",
   "/developer-relations-growth-campaigns",
   "/about-us",
-  "/work",
   "/product",
 ] as const;
 

@@ -36,10 +36,6 @@
         "title": "Studio1 के बारे में",
         "description": "Studio1 के बारे में जानें, एक developer-focused content agency जो devtool और SaaS teams को technical writing, DevRel, video और community work से grow करने में मदद करती है."
       },
-      "work": {
-        "title": "Client Work",
-        "description": "AI, cloud, DevOps और web teams के लिए Studio1 द्वारा बनाए गए technical tutorials, integration guides और developer content."
-      },
       "product": {
         "title": "Developer teams के लिए Studio1 Products",
         "description": "Developers और SaaS teams के लिए Studio1-built tools, जिनमें web analytics के लिए Raah और website asset extraction के लिए AssetSnip शामिल हैं."
@@ -129,7 +125,6 @@
       "about": "हमारे बारे में",
       "blog": "हमारा ब्लॉग",
       "caseStudies": "केस स्टडी",
-      "clientWork": "क्लाइंट वर्क",
       "content": "कंटेंट",
       "devrel": "DevRel और ग्रोथ",
       "docs": "डॉक्यूमेंटेशन और DX ऑडिट",
@@ -145,14 +140,8 @@
     },
     "descriptions": {
       "blog": "Studio1 टीम के लेख और विचार",
-      "caseStudies": "डॉक्स, DevRel, लॉन्च और कंटेंट वर्क से प्रमाण",
-      "clientWork": "क्लाइंट्स के लिए लिखे गए ट्यूटोरियल और गाइड"
+      "caseStudies": "डॉक्स, DevRel, लॉन्च और कंटेंट वर्क से प्रमाण"
     }
-  },
-  "WorkPage": {
-    "eyebrow": "हमारे clients के लिए published",
-    "title": "Client Work",
-    "description": "Tutorials, guides और developer content जो हम partner teams के लिए बनाते हैं."
   },
   "AboutPage": {
     "titlePrefix": "आपकी",
@@ -377,7 +366,6 @@
       "growth": "Developer Growth",
       "docs": "Docs & DX",
       "products": "Products",
-      "work": "Client Work",
       "blog": "हमारा ब्लॉग",
       "careers": "करियर",
       "devrelJobs": "DevRel Jobs"

@@ -1,20 +1,18 @@
-import React from "react";
-import Impact from "@/components/sections/blog-as-service/impact";
 import Process from "@/components/pages/blogs-as-a-service/process";
-import MinimalCardDemo from "@/components/sections/blog-as-service/blogs";
-import Team from "@/components/sections/blog-as-service/team";
 import type { Metadata } from "next";
 import Hero from "@/components/pages/blogs-as-a-service/hero";
 import Services from "@/components/pages/blogs-as-a-service/services";
-import PricingSection from "@/components/pages/blogs-as-a-service/pricing";
 import FAQ, { type FAQItem } from "@/components/landing/faq";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import {
   ServiceDetailSection,
-  ServiceProofSection,
 } from "@/components/pages/shared/service-detail-sections";
 import { getTranslations } from "next-intl/server";
 import { DEFAULT_LOCALE } from "@/lib/i18n";
+import {
+  CaseStudyResult,
+  type CaseStudyResultData,
+} from "@/components/case-studies/case-study-result";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations({
@@ -131,20 +129,88 @@ const contentWorkflow = [
   },
 ];
 
-const entelligenceProof = {
-  company: "Entelligence AI",
-  category: "Technical Content & Repurposing",
-  href: "/case-studies/entelligence-ai",
-  heroValue: "Blog",
-  heroLabel: "engine for AI engineering topics",
-  proof:
-    "Studio1 helped Entelligence AI plan, draft, edit, publish, cross-post, and promote technical blogs for AI engineering audiences.",
-  stats: [
-    { value: "Technical", label: "blogs and deep dives" },
-    { value: "DEV", label: "cross-posting support" },
-    { value: "Social", label: "repurposed launch posts" },
-  ],
-};
+const contentCaseStudyProofs: CaseStudyResultData[] = [
+  {
+    company: "Entelligence AI",
+    category: "Technical Content & Distribution",
+    href: "/case-studies/entelligence-ai",
+    heroValue: "275K+",
+    heroLabel: "Reddit impressions generated from developer distribution",
+    proof:
+      "Technical blogs, deep dives, feature-launch content, and social distribution for an AI engineering audience.",
+    stats: [
+      { value: "Blogs", label: "planning, writing, and editing" },
+      { value: "Social", label: "distribution assets" },
+      { value: "Deep dives", label: "technical explanations" },
+    ],
+  },
+  {
+    company: "Permit.io",
+    category: "Authorization Guides",
+    href: "/case-studies/permit",
+    heroValue: "Auth",
+    heroLabel: "implementation content for developer adoption",
+    proof:
+      "Developer-facing authorization guides and technical content built around practical implementation questions.",
+    stats: [
+      { value: "Guides", label: "developer education" },
+      { value: "Auth", label: "implementation topics" },
+      { value: "Blog", label: "content support" },
+    ],
+  },
+  {
+    company: "Tensorlake",
+    category: "Search-Led Technical Content",
+    href: "/case-studies/tensorlake",
+    heroValue: "SEO",
+    heroLabel: "technical content for AI workflow topics",
+    proof:
+      "Search-led technical writing and visual tutorials that made complex AI infrastructure ideas easier to understand.",
+    stats: [
+      { value: "SEO", label: "topic planning" },
+      { value: "AI", label: "workflow explainers" },
+      { value: "Visuals", label: "technical tutorials" },
+    ],
+  },
+];
+
+function TechnicalContentProofGrid() {
+  const [featuredStudy, ...supportingStudies] = contentCaseStudyProofs;
+
+  return (
+    <section id="proof" className="relative scroll-mt-28 px-4 py-20 md:py-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="mx-auto mb-10 max-w-3xl text-center">
+          <p className="font-secondary text-sm font-medium tracking-wide text-primary">
+            Proof
+          </p>
+          <h2 className="mt-4 text-balance font-inter text-4xl font-normal leading-tight tracking-tight text-foreground md:text-5xl">
+            Case studies from technical content work
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            Blogs, guides, deep dives, and developer education shaped around real technical topics.
+          </p>
+        </div>
+
+        <div className="mx-auto grid max-w-5xl gap-6">
+          {featuredStudy ? (
+            <CaseStudyResult
+              study={featuredStudy}
+              variant="featured"
+              density="dense"
+            />
+          ) : null}
+
+          <div className="grid gap-6 md:grid-cols-2">
+            {supportingStudies.map((study) => (
+              <CaseStudyResult key={study.href} study={study} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Page() {
   const serviceSchema = {
@@ -185,7 +251,7 @@ export default function Page() {
       />
       <Hero />
       <Services />
-      <MinimalCardDemo />
+      <TechnicalContentProofGrid />
       <ServiceDetailSection
         eyebrow="How the content engine works"
         title="From topic idea to published technical content"
@@ -194,17 +260,10 @@ export default function Page() {
         columns="three"
       />
       <Process />
-      <ServiceProofSection
-        title="Technical content that ranks and explains implementation"
-        description="Entelligence AI turned product ideas, AI engineering trends, and feature launches into developer-facing blogs and social assets."
-        study={entelligenceProof}
-      />
       <FAQ
         subtitle="Common questions about our technical content marketing services."
         items={blogFaqItems}
       />
-      {/* <Team /> */}
-      {/* <PricingSection /> */}
     </div>
   );
 }

@@ -58,7 +58,6 @@ export const navItems = [
     title: "Home",
     path: "/",
     children: [
-      { title: "Overview", path: "/#hero", icon: RocketLaunch },
       { title: "Services", path: "/#service-offerings", icon: Briefcase },
       { title: "Proof", path: "/#testimonials", icon: Star },
       { title: "Process", path: "/#how-it-works", icon: Lightbulb },
@@ -97,12 +96,6 @@ export const navItems = [
     title: "Content",
     path: "#",
     children: [
-      {
-        title: "Client Work",
-        path: "/work",
-        icon: Briefcase,
-        description: "Tutorials and guides we write for clients",
-      },
       {
         title: "Case Studies",
         path: "/case-studies",

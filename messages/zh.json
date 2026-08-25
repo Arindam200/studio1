@@ -36,10 +36,6 @@
         "title": "关于 Studio1",
         "description": "了解 Studio1，一个面向开发者的内容机构，通过技术写作、DevRel、视频和社区工作帮助 devtool 与 SaaS 团队增长。"
       },
-      "work": {
-        "title": "客户作品",
-        "description": "Studio1 为 AI、云、DevOps 和 Web 团队创建的技术教程、集成指南和开发者内容。"
-      },
       "product": {
         "title": "面向开发者团队的 Studio1 产品",
         "description": "Studio1 为开发者和 SaaS 团队打造的工具，包括用于 Web 分析的 Raah 和用于网站资产提取的 AssetSnip。"
@@ -129,7 +125,6 @@
       "about": "关于我们",
       "blog": "我们的博客",
       "caseStudies": "案例研究",
-      "clientWork": "客户作品",
       "content": "内容",
       "devrel": "DevRel 与增长",
       "docs": "文档与 DX 审计",
@@ -145,14 +140,8 @@
     },
     "descriptions": {
       "blog": "Studio1 团队的文章和观点",
-      "caseStudies": "来自文档、DevRel、发布和内容工作的证明",
-      "clientWork": "我们为客户撰写的教程和指南"
+      "caseStudies": "来自文档、DevRel、发布和内容工作的证明"
     }
-  },
-  "WorkPage": {
-    "eyebrow": "为客户发布",
-    "title": "客户作品",
-    "description": "我们为合作团队创建的教程、指南和开发者内容。"
   },
   "AboutPage": {
     "titlePrefix": "放大你的",
@@ -377,7 +366,6 @@
       "growth": "开发者增长",
       "docs": "文档与 DX",
       "products": "产品",
-      "work": "客户作品",
       "blog": "我们的博客",
       "careers": "招聘",
       "devrelJobs": "DevRel 职位"

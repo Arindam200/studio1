@@ -29,6 +29,7 @@ export type CaseStudyResultData = {
 type CaseStudyResultProps = {
   study: CaseStudyResultData;
   variant?: "featured" | "compact";
+  density?: "default" | "dense";
   className?: string;
 };
 
@@ -46,9 +47,11 @@ function ServiceCardEffects() {
 export function CaseStudyResult({
   study,
   variant = "compact",
+  density = "default",
   className,
 }: CaseStudyResultProps) {
   const { ref, onPointerMove } = useCursorGlow<HTMLAnchorElement>();
+  const isDense = density === "dense";
 
   if (variant === "featured") {
     return (
@@ -64,7 +67,14 @@ export function CaseStudyResult({
       >
         <CursorGlowCardEffects roundedClassName="rounded-lg" />
 
-        <div className="relative z-[2] flex flex-col justify-between gap-6 border-b border-border/60 p-6 md:w-[42%] md:border-b-0 md:border-r md:p-8 lg:p-10">
+        <div
+          className={cn(
+            "relative z-[2] flex flex-col justify-between border-b border-border/60 md:w-[42%] md:border-b-0 md:border-r",
+            isDense
+              ? "gap-4 p-5 md:p-6 lg:p-7"
+              : "gap-6 p-6 md:p-8 lg:p-10",
+          )}
+        >
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
               {study.category}
@@ -75,23 +85,49 @@ export function CaseStudyResult({
           </div>
 
           <div>
-            <p className="font-numeric text-5xl font-semibold tabular-nums leading-none tracking-tight text-primary md:text-6xl lg:text-7xl">
+            <p
+              className={cn(
+                "font-numeric font-semibold tabular-nums leading-none tracking-tight text-primary",
+                isDense
+                  ? "text-4xl md:text-5xl lg:text-6xl"
+                  : "text-5xl md:text-6xl lg:text-7xl",
+              )}
+            >
               <Num>{study.heroValue}</Num>
             </p>
-            <p className="mt-3 max-w-[16rem] text-sm leading-snug text-muted-foreground md:text-base">
+            <p className="mt-3 max-w-[16rem] text-sm leading-snug text-muted-foreground">
               {study.heroLabel}
             </p>
           </div>
         </div>
 
-        <div className="relative z-[2] flex flex-1 flex-col justify-between gap-8 p-6 md:p-8 lg:p-10">
+        <div
+          className={cn(
+            "relative z-[2] flex flex-1 flex-col justify-between",
+            isDense
+              ? "gap-5 p-5 md:p-6 lg:p-7"
+              : "gap-8 p-6 md:p-8 lg:p-10",
+          )}
+        >
           <div>
-            <p className="max-w-xl font-inter text-xl font-normal leading-snug tracking-tight text-foreground md:text-2xl lg:text-[1.65rem] lg:leading-snug">
+            <p
+              className={cn(
+                "max-w-xl font-inter font-normal leading-snug tracking-tight text-foreground",
+                isDense
+                  ? "text-lg md:text-xl lg:text-[1.4rem]"
+                  : "text-xl md:text-2xl lg:text-[1.65rem] lg:leading-snug",
+              )}
+            >
               {study.proof}
             </p>
 
             {study.stats && study.stats.length > 0 ? (
-              <dl className="mt-8 grid grid-cols-3 gap-4 border-t border-border/60 pt-6">
+              <dl
+                className={cn(
+                  "grid grid-cols-3 gap-4 border-t border-border/60",
+                  isDense ? "mt-5 pt-5" : "mt-8 pt-6",
+                )}
+              >
                 {study.stats.map((stat, index) => (
                   <div
                     key={`${stat.value}-${stat.label}-${index}`}

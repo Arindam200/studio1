@@ -36,10 +36,6 @@
         "title": "About Studio1",
         "description": "Learn about Studio1, a developer-focused content agency helping devtool and SaaS companies grow through technical writing, DevRel strategy, video, and community work."
       },
-      "work": {
-        "title": "Client Work",
-        "description": "Technical tutorials, integration guides, and developer content Studio1 creates for client teams across AI, cloud, DevOps, and web development."
-      },
       "product": {
         "title": "Studio1 Products for Developer Teams",
         "description": "Studio1-built tools for developers and SaaS teams, including Raah for web analytics and AssetSnip for website asset extraction."
@@ -129,7 +125,6 @@
       "about": "About Us",
       "blog": "Our Blog",
       "caseStudies": "Case Studies",
-      "clientWork": "Client Work",
       "content": "Content",
       "devrel": "Developer Relations & Growth",
       "docs": "Documentation & DX Audits",
@@ -145,14 +140,8 @@
     },
     "descriptions": {
       "blog": "Articles and insights from the Studio1 team",
-      "caseStudies": "Proof from docs, DevRel, launch, and content work",
-      "clientWork": "Tutorials and guides we write for clients"
+      "caseStudies": "Proof from docs, DevRel, launch, and content work"
     }
-  },
-  "WorkPage": {
-    "eyebrow": "Published for our clients",
-    "title": "Client Work",
-    "description": "Tutorials, guides, and developer content we create for the teams we partner with."
   },
   "AboutPage": {
     "titlePrefix": "Amplifying Your",
@@ -377,7 +366,6 @@
       "growth": "Developer Growth",
       "docs": "Docs & DX",
       "products": "Products",
-      "work": "Client Work",
       "blog": "Our Blog",
       "careers": "Careers",
       "devrelJobs": "DevRel Jobs"

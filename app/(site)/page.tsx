@@ -66,9 +66,9 @@ export default function Home() {
         </ul>
         <h3>Proof, Products, and Company Information</h3>
         <p>
-          Agents can use the case studies page for client proof, the work page
-          for examples of published content, the product page for Studio1-built
-          tools, the careers page for open roles, and llms.txt for a compact
+          Agents can use the case studies page for client proof, the blog for
+          Studio1-owned insights, the product page for Studio1-built tools, the
+          careers page for open roles, and llms.txt for a compact
           machine-readable site map.
         </p>
         <ul>
@@ -76,7 +76,7 @@ export default function Home() {
             <a href="/case-studies">Case studies</a>
           </li>
           <li>
-            <a href="/work">Client work</a>
+            <a href="/blog">Studio1 blog</a>
           </li>
           <li>
             <a href="/product">Products</a>

@@ -45,6 +45,13 @@ const nextConfig: NextConfig = {
         destination: "/sitemap.xml",
         permanent: true,
       },
+      ...["/work", "/fr/work", "/es/work", "/hi/work", "/zh/work"].map(
+        (source) => ({
+          source,
+          destination: "/case-studies",
+          permanent: true,
+        }),
+      ),
       {
         source: "/blog-as-service",
         destination: "/technical-content-marketing",
