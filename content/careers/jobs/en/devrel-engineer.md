@@ -11,7 +11,7 @@ type: Full-time
 status: Open
 applySubject: DevRel Engineer
 isRemote: true
-openings: 1
+openings: 2
 order: 4
 postedDate: 2026-08-21T00:00:00.000Z
 requisitionId: STU_DEVREL_ENGINEER_004

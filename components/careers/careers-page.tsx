@@ -41,7 +41,7 @@ const careerFilters = ["All", "Engineering", "Marketing", "Growth", "Other"] as 
 type CareerFilter = (typeof careerFilters)[number];
 
 const capsuleClassName =
-  "rounded-full px-3.5 py-1.5 inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground border border-border/40 dark:border-white/15 bg-white/55 dark:bg-white/[0.08] backdrop-b[...]";
+  "rounded-full px-3.5 py-1.5 inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-foreground border border-border/40 dark:border-white/15 bg-white/55 dark:bg-white/[0.08] backdrop-blur-md shadow-[0_6px_18px_-4px_hsl(var(--primary)/0.32)] dark:shadow-[0_6px_18px_-4px_hsl(var(--primary)/0.22)]";
 
 const heroAnimation = {
   hidden: { opacity: 0, y: 24 },
@@ -276,7 +276,7 @@ export function CareersPage({ jobOpenings }: CareersPageProps) {
             variants={staggerChildren}
           >
             <motion.div variants={itemVariants}>
-              <Badge className="mx-auto mb-6 flex w-fit items-center gap-2 bg-[color-mix(in_hsl,hsl(var(--primary-surface))_85%,hsl(var(--primary))_15%)] pb-1 hover:bg-[color-mix(in_hsl,hsl(var(-[...]"
+              <Badge className="mx-auto mb-6 flex w-fit items-center gap-2 bg-[color-mix(in_hsl,hsl(var(--primary-surface))_85%,hsl(var(--primary))_15%)] pb-1 hover:bg-[color-mix(in_hsl,hsl(var(--primary-surface))_85%,hsl(var(--primary))_15%)] dark:hover:bg-primary">
                 <RocketLaunch className="size-4" weight="fill" />
                 {t("badge")}
               </Badge>

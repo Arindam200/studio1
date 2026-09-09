@@ -7,7 +7,7 @@ description: >-
 department: Marketing
 location: Remote (India)
 type: Internship - 3 months
-status: Open
+status: Closed
 applySubject: Content Creator Intern
 isRemote: true
 openings: 1
