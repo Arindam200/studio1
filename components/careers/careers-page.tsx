@@ -190,28 +190,17 @@ function JobCard({
           isOpeningSoon &&
             "border-amber-400/35 bg-amber-400/10 text-amber-800 hover:bg-amber-400/15 dark:text-amber-200",
           isClosed &&
-            "border-red-400/35 bg-red-400/10 text-red-700 hover:bg-red-400/15 dark:text-red-300 cursor-not-allowed",
+            "border-red-400/35 bg-red-400/10 text-red-700 hover:bg-red-400/15 dark:text-red-300",
         )}
-        asChild={!isClosed}
-        disabled={isClosed}
+        asChild
       >
-        {isClosed ? (
-          <div>
-            {buttonLabel}
-            <ArrowRight
-              className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 motion-reduce:transform-none"
-              weight="bold"
-            />
-          </div>
-        ) : (
-          <Link href={`/careers/${id}`}>
-            {isUnavailable ? buttonLabel : t("applyNow")}
-            <ArrowRight
-              className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 motion-reduce:transform-none"
-              weight="bold"
-            />
-          </Link>
-        )}
+        <Link href={`/careers/${id}`}>
+          {isUnavailable ? buttonLabel : t("applyNow")}
+          <ArrowRight
+            className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 motion-reduce:transform-none"
+            weight="bold"
+          />
+        </Link>
       </Button>
     </article>
   );
