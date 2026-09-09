@@ -1,5 +1,5 @@
 ![image](app/opengraph-image.png)
 
 <h1 align="center">
-Studio1Hq
+Studio1HQ
 </h1>
